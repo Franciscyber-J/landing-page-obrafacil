@@ -1,0 +1,106 @@
+:root {
+  /* ================== DARK MODE PRINCIPAL (PADRÃO) ================== */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --bg-tertiary: #1f1f1f;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  
+  --color-accent: #0056D2;       /* Azul Engenharia */
+  --color-neon: #40C4FF;         /* Ciano Neon */
+  --color-neon-glow: rgba(64, 196, 255, 0.5);
+  
+  --color-pro: #FFD700;          /* Ouro PRO */
+  --color-pro-glow: rgba(255, 215, 0, 0.4);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(12px);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+  /* Utils */
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 24px;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* ================== LIGHT MODE ================== */
+[data-theme="light"] {
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f3f5;
+  
+  --text-primary: #212529;
+  --text-secondary: #495057;
+
+  --color-accent: #0043a6;       /* Azul mais escuro no tema claro */
+  --color-neon: #0091ea;         /* Azul ciano mais escuro */
+  --color-neon-glow: rgba(0, 145, 234, 0.3);
+  
+  --color-pro: #d4af37;          /* Ouro claro */
+  --color-pro-glow: rgba(212, 175, 55, 0.3);
+
+  /* Glassmorphism Light */
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --glass-blur: blur(16px);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+/* ================== SHARED CLASSES ================== */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--glass-shadow);
+}
+
+.neon-text {
+  color: var(--color-neon);
+  text-shadow: 0 0 8px var(--color-neon-glow);
+}
+
+.pro-text {
+  color: var(--color-pro);
+  text-shadow: 0 0 8px var(--color-pro-glow);
+}
+
+.btn-neon {
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: 0 0 15px var(--color-neon-glow);
+}
+
+.btn-neon:hover {
+  background: var(--color-neon);
+  box-shadow: 0 0 25px var(--color-neon-glow);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+  padding: 12px 24px;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-outline:hover {
+  background: var(--glass-bg);
+  border-color: var(--text-secondary);
+}

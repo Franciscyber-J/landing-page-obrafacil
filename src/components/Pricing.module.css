@@ -1,0 +1,161 @@
+.section {
+    position: relative;
+    z-index: 10;
+}
+
+.title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+    }
+}
+
+.card {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform var(--transition-normal);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.planName {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.planDesc {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.priceContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.anchorPrice {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    text-decoration: line-through;
+    opacity: 0.7;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.currency {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.amount {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.period {
+    color: var(--text-secondary);
+}
+
+.featureList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.featureList li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--text-primary);
+}
+
+.checkIcon {
+    color: var(--text-secondary);
+    flex-shrink: 0;
+}
+
+/* PRO Card specific */
+.proCard {
+    border: 2px solid var(--color-pro);
+    box-shadow: 0 0 40px var(--color-pro-glow);
+    transform: scale(1.02);
+}
+
+@media (min-width: 768px) {
+    .proCard {
+        transform: scale(1.05);
+    }
+
+    .proCard:hover {
+        transform: scale(1.05) translateY(-5px);
+    }
+}
+
+.popularBadge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-pro);
+    color: #000;
+    padding: 4px 16px;
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 15px var(--color-pro-glow);
+}
+
+.proText {
+    color: var(--color-pro);
+    text-shadow: 0 0 10px var(--color-pro-glow);
+}
+
+.proCheckIcon {
+    color: var(--color-pro);
+    flex-shrink: 0;
+}
+
+.proBtn {
+    background: var(--color-pro);
+    color: #000;
+    box-shadow: 0 0 20px var(--color-pro-glow);
+}
+
+.proBtn:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 30px var(--color-pro-glow);
+}
+
+.addonsText {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}

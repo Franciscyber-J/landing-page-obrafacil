@@ -1,0 +1,282 @@
+.section {
+    position: relative;
+    z-index: 10;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+    }
+}
+
+.card {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform var(--transition-normal);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.problemCard {
+    border-top: 3px solid #ff4d4f;
+}
+
+.solutionCard {
+    border-top: 3px solid var(--color-neon);
+    box-shadow: 0 0 30px var(--color-neon-glow);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.iconWrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.label {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.text {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    flex-grow: 1;
+}
+
+/* WhatsApp Mockup */
+.whatsappMockup {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #e5ddd5;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+[data-theme="dark"] .whatsappMockup {
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.waHeader {
+    background: #075E54;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    z-index: 2;
+}
+
+[data-theme="light"] .waHeader {
+    background: #128C7E;
+}
+
+.waAvatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #ccc;
+    flex-shrink: 0;
+}
+
+.waContact {
+    display: flex;
+    flex-direction: column;
+}
+
+.waContact strong {
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+.waContact span {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+.waBody {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #efeae2;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20h20v20H20z' fill='rgba(0,0,0,0.03)'/%3E%3C/svg%3E");
+    flex: 1;
+}
+
+[data-theme="dark"] .waBody {
+    background-color: #0b141a;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20h20v20H20z' fill='rgba(255,255,255,0.02)'/%3E%3C/svg%3E");
+}
+
+.waDate {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #555;
+    background: #fff;
+    padding: 4px 12px;
+    border-radius: 8px;
+    align-self: center;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .waDate {
+    background: #182229;
+    color: #ccc;
+}
+
+.waBubble {
+    max-width: 85%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: #111;
+}
+
+[data-theme="dark"] .waBubble {
+    color: #e9edef;
+}
+
+.waIncoming {
+    background: #fff;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+}
+
+[data-theme="dark"] .waIncoming {
+    background: #202c33;
+}
+
+.waOutgoing {
+    background: #dcf8c6;
+    align-self: flex-end;
+    border-top-right-radius: 0;
+}
+
+[data-theme="dark"] .waOutgoing {
+    background: #005c4b;
+}
+
+.waTime {
+    font-size: 0.65rem;
+    color: #999;
+    float: right;
+    margin-left: 8px;
+    margin-top: 4px;
+}
+
+.waTicks {
+    color: #34b7f1;
+    /* Blue ticks */
+    font-weight: bold;
+    letter-spacing: -2px;
+    margin-left: 2px;
+}
+
+/* Solution Person Mockup */
+.solutionMockup {
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16/9;
+}
+
+.phoneHolderPlaceholder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #222;
+}
+
+.placeholderLabel {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    z-index: 2;
+    padding: 24px;
+    text-align: center;
+}
+
+.personHoldingApp {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.appZoomOverlay {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 60%;
+    height: 80%;
+    background: #111;
+    border-radius: 16px;
+    border: 4px solid #333;
+    z-index: 3;
+    box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.5);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease;
+}
+
+.solutionMockup:hover .appZoomOverlay {
+    transform: scale(1.05) translate(-10px, -10px);
+}
+
+.appHeader {
+    height: 20px;
+    background: var(--color-neon);
+    border-radius: 4px;
+    margin-bottom: 8px;
+    width: 50%;
+}
+
+.appContent {
+    flex: 1;
+    background: var(--bg-tertiary);
+    border-radius: 8px;
+}

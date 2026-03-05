@@ -1,0 +1,156 @@
+{
+    "nav": {
+        "login": "Entrar",
+        "createAccount": "Criar Conta Grátis",
+        "lightMode": "Modo Claro",
+        "darkMode": "Modo Escuro"
+    },
+    "hero": {
+        "tagline": "🚀 Disponível em PT, EN e ES",
+        "headline": "Gestão de Obras Inteligente. Transparência que encanta o seu cliente.",
+        "subheadline": "Abandone as planilhas confusas. Controle finanças, gere Relatórios Diários (RDO) em segundos e ofereça um portal exclusivo para o seu cliente acompanhar a obra na palma da mão.",
+        "cta": "Criar minha Primeira Obra Grátis",
+        "socialProof": "Sem cartão de crédito. Configure em menos de 2 minutos.",
+        "downloadWindows": "Baixar para Windows",
+        "downloadApple": "App Store",
+        "downloadAndroid": "Google Play",
+        "downloadOn": "Disponível no",
+        "downloadAt": "Baixar na",
+        "desktopApp": "Aplicativo Desktop",
+        "videoApp": "App Windows (Vídeo)",
+        "projectProgress": "Progresso da Obra"
+    },
+    "problemSolution": {
+        "problemLabel": "O Problema",
+        "problemText": "Cansado de responder 'Como está a obra?' no WhatsApp toda sexta-feira?",
+        "solutionLabel": "A Solução Obra Fácil",
+        "solutionText": "Com o nosso sistema, o seu cliente tem um login exclusivo para ver o avanço da obra, fotos e relatórios. Você foca em construir, nós focamos em informar."
+    },
+    "problemSolutionMockup": {
+        "clientName": "João (Cliente)",
+        "online": "online",
+        "today": "HOJE",
+        "msg1": "Oi! Tudo bem? Como está a obra? Tem fotos de hoje?? 🙏",
+        "msg2": "Sexta-feira que vem já dá pra ver os pisos?",
+        "msg3": "Oi, tudo bem. Vou pedir pro mestre enviar.",
+        "videoPlaceholder": "[Vídeo/Imagem da Pessoa Segurando o App]"
+    },
+    "coreFeatures": {
+        "title": "Funcionalidades Matadoras",
+        "rdoTitle": "Relatório Diário de Obra (RDO)",
+        "rdoText": "Gere relatórios completos em PDF direto do canteiro. Clima, efetivo, atividades e galeria de fotos integrados.",
+        "financeTitle": "Gestão Financeira Categórica",
+        "financeText": "Controle de orçamento, gastos e transações. Saiba exatamente onde cada centavo foi investido.",
+        "portalTitle": "Portal do Cliente Blindado",
+        "portalText": "Dê acesso aos seus clientes para verem o cronograma e baixarem pacotes de fotos (limitado e controlado por você).",
+        "whiteLabelTitle": "Relatórios White-label (PRO)",
+        "whiteLabelText": "Gere PDFs com a sua logomarca no cabeçalho e rodapé personalizado. Aparência 100% profissional.",
+        "teamTitle": "Gestão a Quatro Mãos",
+        "teamText": "Dê acesso com permissões específicas para sua equipe, mestres e engenheiros.",
+        "syncTitle": "Sincronização em Tempo Real",
+        "syncText": "Disponível na Web, Windows, Android e iOS. O que você faz num dispositivo, atualiza nos outros na mesma hora."
+    },
+    "coManagement": {
+        "title": "Sua equipe trabalhando em sincronia.",
+        "description": "Convide sócios, engenheiros parceiros ou a equipe de campo para alimentar os dados da obra. Permissões de acesso granulares: O que o cliente vê é diferente do que o seu Mestre de Obras ou Engenheiro vê.",
+        "point1": "Administre níveis de permissão com total controle.",
+        "point2": "Sincronização imediata na Web, Desktop e Mobile.",
+        "point3": "Funciona 100% Offline na rua ou na fazenda, sincronizando quando tiver internet."
+    },
+    "coManagementRoles": {
+        "manager": "Gestor (Você)",
+        "fullAccess": "Acesso Total",
+        "engineer": "Engenheiro",
+        "techManagement": "Gestão Técnica",
+        "foreman": "Mestre de Obras",
+        "rdoPhotos": "RDO e Fotos",
+        "client": "Cliente",
+        "viewOnly": "Visualização"
+    },
+    "pricing": {
+        "title": "Planos e Preços",
+        "freePlan": "Plano Free",
+        "freeDesc": "Comece sem custos.",
+        "freeCta": "Testar Agora",
+        "freeFeatures": [
+            "1 Obra ativa",
+            "Limite de RDOs mensais",
+            "Armazenamento Básico",
+            "PDFs com marca d'água"
+        ],
+        "proPlan": "Plano PRO",
+        "proDesc": "Para profissionais de alto padrão.",
+        "proCta": "Assinar PRO",
+        "proFeatures": [
+            "Obras Ilimitadas",
+            "10GB+ de Armazenamento",
+            "PDFs com logotipo próprio",
+            "Rodapé personalizado",
+            "Suporte Prioritário"
+        ],
+        "addons": "Precisa de mais? Adicione pacotes de +20GB ou Downloads Extras a qualquer momento.",
+        "launchOffer": "Oferta de Lançamento!",
+        "fromPrice": "De R$ 199,90",
+        "currency": "R$",
+        "price0": "0",
+        "price49": "49,90",
+        "perMonth": "/mês"
+    },
+    "social": {
+        "title": "O que dizem os profissionais",
+        "test1": "\"Meus clientes ficaram impressionados com o aplicativo. Passou muito mais credibilidade e justificou o valor do meu gerenciamento.\"",
+        "author1": "Carlos M.",
+        "role1": "Engenheiro Civil",
+        "test2": "\"Fazer o RDO no fim do dia levava 1 hora no Word. Agora faço em 5 minutos pelo celular ainda no canteiro.\"",
+        "author2": "Roberto F.",
+        "role2": "Contrato Empreiteiro",
+        "test3": "\"As medições ficaram super simples de enviar. Sem confusão, o cliente aprova na hora.\"",
+        "author3": "Sandro P.",
+        "role3": "Mestre de Obras",
+        "test4": "\"A galeria de fotos ajudou muito a mostrar os detalhes do acabamento pro arquiteto sem ele precisar ir na obra o tempo todo.\"",
+        "author4": "Juliana T.",
+        "role4": "Arquiteta",
+        "test5": "\"Até o cliente final elogiou a organização. Finalmente pareço tão profissional quanto os granes escritórios.\"",
+        "author5": "Fernando S.",
+        "role5": "Empreiteiro Geral"
+    },
+    "faq": {
+        "title": "Perguntas Frequentes",
+        "q1": "O meu cliente paga para usar o aplicativo?",
+        "a1": "Não, o acesso do cliente é totalmente gratuito e controlado pelas permissões do seu plano.",
+        "q2": "Posso usar pelo computador e pelo celular?",
+        "a2": "Sim! O Obra Fácil é responsivo e roda tanto no navegador do seu PC quanto no smartphone na obra.",
+        "q3": "Meus dados estão seguros?",
+        "a3": "Com certeza. Utilizamos as infraestruturas mais modernas de nuvem e criptografia ponta-a-ponta para garantir a segurança dos seus dados.",
+        "q4": "Quais dados pessoais são coletados?",
+        "a4": "Coletamos apenas o necessário para criar sua conta: Nome, CPF/CNPJ, E-mail e Telefone, em total conformidade com a LGPD.",
+        "q5": "Como funciona o uso do aplicativo sem internet (offline)?",
+        "a5": "O aplicativo salva as informações temporariamente na memória do seu celular (cache). Ao recuperar a conexão, os dados são sincronizados automaticamente na nuvem.",
+        "q6": "Meu cliente perde o acesso aos arquivos se a obra acabar?",
+        "a6": "Se a obra atingir 70% ou mais de conclusão, o cliente ganha 15 dias de Carência (Grace Period) para baixar tudo antes de perder o acesso.",
+        "q7": "O Obra Fácil substitui um Engenheiro na obra?",
+        "a7": "Não. O aplicativo é uma ferramenta de gestão fenomenal, mas não substitui o acompanhamento técnico profissional e a emissão de ART/RRT.",
+        "q8": "Posso excluir minha conta e todos os meus dados?",
+        "a8": "Sim, você tem o direito ao esquecimento. Ao solicitar a exclusão da conta, todos os seus dados, fotos e PDFs são removidos permanentemente.",
+        "q9": "Estou no Plano PRO e adicionei mais pacotes. Posso cancelar?",
+        "a9": "Sim. Você pode cancelar assinaturas ou upgrades a qualquer momento para interromper a cobrança do próximo ciclo, sem perda imediata até o fim do ciclo pago.",
+        "q10": "O que acontece se a mensalidade atrasar?",
+        "a10": "O sistema bloqueia a criação de novas obras e uploads de arquivos, contudo você não perde os dados já registrados desde que regularize."
+    },
+    "loginModal": {
+        "title": "Acessar o Obra Fácil como:",
+        "managerTitle": "Gestor / Engenheiro",
+        "managerDesc": "Acesse seu painel completo de gestão de obras.",
+        "clientTitle": "Cliente",
+        "clientDesc": "Acompanhe o portal da sua obra e vistorias."
+    },
+    "footer": {
+        "ctaTitle": "Pronto para elevar o nível da sua gestão?",
+        "ctaBtn": "Cadastre-se Gratuitamente",
+        "links": "Links Úteis",
+        "terms": "Termos de Uso",
+        "privacy": "Política de Privacidade",
+        "help": "Central de Ajuda",
+        "support": "Suporte"
+    }
+}

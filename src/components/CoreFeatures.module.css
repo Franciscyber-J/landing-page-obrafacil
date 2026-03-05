@@ -1,0 +1,139 @@
+.section {
+    position: relative;
+    z-index: 10;
+}
+
+.sectionTitle {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    background: linear-gradient(90deg, #fff, var(--text-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .sectionTitle {
+    background: linear-gradient(90deg, #111, var(--color-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    transition: background var(--transition-normal);
+}
+
+.cyan::before {
+    background: var(--color-neon);
+}
+
+.cyan:hover {
+    box-shadow: 0 10px 30px var(--color-neon-glow);
+}
+
+.blue::before {
+    background: var(--color-accent);
+}
+
+.blue:hover {
+    box-shadow: 0 10px 30px rgba(0, 86, 210, 0.3);
+}
+
+.gold::before {
+    background: var(--color-pro);
+}
+
+.gold:hover {
+    box-shadow: 0 10px 30px var(--color-pro-glow);
+}
+
+.iconWrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-tertiary);
+    margin-bottom: 24px;
+}
+
+.icon {
+    width: 28px;
+    height: 28px;
+}
+
+.cyan .icon {
+    color: var(--color-neon);
+}
+
+.blue .icon {
+    color: var(--color-accent);
+}
+
+.gold .icon {
+    color: var(--color-pro);
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.cardText {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.proBadge {
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 100px;
+    background: var(--color-pro);
+    color: #000;
+    letter-spacing: 0.5px;
+}

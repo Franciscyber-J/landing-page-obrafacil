@@ -1,0 +1,156 @@
+{
+    "nav": {
+        "login": "Login",
+        "createAccount": "Create Free Account",
+        "lightMode": "Light Mode",
+        "darkMode": "Dark Mode"
+    },
+    "hero": {
+        "tagline": "🚀 Available in EN, PT and ES",
+        "headline": "Smart Construction Management. Transparency that delights your client.",
+        "subheadline": "Ditch confusing spreadsheets. Track finances, generate Daily Reports (RDO) in seconds, and offer an exclusive portal for your client to track the project right from their phone.",
+        "cta": "Create my First Project Free",
+        "socialProof": "No credit card required. Setup in under 2 minutes.",
+        "downloadWindows": "Download for Windows",
+        "downloadApple": "App Store",
+        "downloadAndroid": "Google Play",
+        "downloadOn": "Available on",
+        "downloadAt": "Download at",
+        "desktopApp": "Desktop App",
+        "videoApp": "Windows App (Video)",
+        "projectProgress": "Project Progress"
+    },
+    "problemSolution": {
+        "problemLabel": "The Problem",
+        "problemText": "Tired of answering 'How is the project going?' on WhatsApp every Friday?",
+        "solutionLabel": "The Obra Fácil Solution",
+        "solutionText": "With our system, your client gets an exclusive login to track progress, photos, and reports. You focus on building, we focus on informing them."
+    },
+    "problemSolutionMockup": {
+        "clientName": "John (Client)",
+        "online": "online",
+        "today": "TODAY",
+        "msg1": "Hi! How are you? How's the project going? Any photos today?? 🙏",
+        "msg2": "Will we be able to see the floors by next Friday?",
+        "msg3": "Hi, doing well. I'll ask the foreman to send them.",
+        "videoPlaceholder": "[Video/Image of Person Holding App]"
+    },
+    "coreFeatures": {
+        "title": "Core Features",
+        "rdoTitle": "Daily Construction Report (RDO)",
+        "rdoText": "Generate complete PDF reports right from the site. Weather, personnel, activities, and photo galleries integrated.",
+        "financeTitle": "Categorical Financial Management",
+        "financeText": "Control budgets, expenses, and transactions. Know exactly where every cent was invested.",
+        "portalTitle": "Bulletproof Client Portal",
+        "portalText": "Give your clients access to view schedules and download photo packages (limited and controlled by you).",
+        "whiteLabelTitle": "White-label Reports (PRO)",
+        "whiteLabelText": "Generate PDFs with your logo on the header and a custom footer. 100% professional appearance.",
+        "teamTitle": "Four-Handed Management",
+        "teamText": "Give access with specific permissions to your foreman, supervisors, and the project owner. Everything is logged.",
+        "syncTitle": "Real-Time Sync",
+        "syncText": "Available on Web, Windows, Android, and iOS. What you do on one device, instantly updates on the others."
+    },
+    "coManagement": {
+        "title": "Your team working in sync.",
+        "description": "Invite partners, associate engineers, or the field team to feed project data. Granular access permissions: What the client sees is different from what your Foreman or Engineer sees.",
+        "point1": "Manage permission levels with total control.",
+        "point2": "Immediate sync across Web, Desktop, and Mobile.",
+        "point3": "Works 100% Offline on the street or in remote locations, syncing when connected."
+    },
+    "coManagementRoles": {
+        "manager": "Manager (You)",
+        "fullAccess": "Full Access",
+        "engineer": "Engineer",
+        "techManagement": "Tech Management",
+        "foreman": "Foreman",
+        "rdoPhotos": "RDO & Photos",
+        "client": "Client",
+        "viewOnly": "View Only"
+    },
+    "pricing": {
+        "title": "Plans & Pricing",
+        "freePlan": "Free Plan",
+        "freeDesc": "Start at no cost.",
+        "freeCta": "Try Now",
+        "freeFeatures": [
+            "1 Active Project",
+            "Monthly RDO limit",
+            "Basic Storage",
+            "Watermarked PDFs"
+        ],
+        "proPlan": "PRO Plan",
+        "proDesc": "For high-end professionals.",
+        "proCta": "Subscribe to PRO",
+        "proFeatures": [
+            "Unlimited Projects",
+            "10GB+ Storage",
+            "PDFs with your own logo",
+            "Custom footer",
+            "Priority Support"
+        ],
+        "addons": "Need more? Add +20GB packages or Extra Downloads anytime.",
+        "launchOffer": "Launch Offer!",
+        "fromPrice": "From $ 49.90",
+        "currency": "$",
+        "price0": "0",
+        "price49": "12.90",
+        "perMonth": "/month"
+    },
+    "social": {
+        "title": "What professionals are saying",
+        "test1": "\"My clients were impressed with the app. It transmitted much more credibility and justified my management fees.\"",
+        "author1": "Carlos M.",
+        "role1": "Civil Engineer",
+        "test2": "\"Doing the RDO at the end of the day took 1 hour in Word. Now I do it in 5 minutes on my phone still at the site.\"",
+        "author2": "Roberto F.",
+        "role2": "Contractor",
+        "test3": "\"Submitting progress reports became super simple. No confusion, the client approves it instantly.\"",
+        "author3": "Sandro P.",
+        "role3": "Foreman",
+        "test4": "\"The photo gallery really helped show finishing details to the architect without them having to visit constantly.\"",
+        "author4": "Juliana T.",
+        "role4": "Architect",
+        "test5": "\"Even the final client praised the organization. I finally look as professional as the big firms.\"",
+        "author5": "Fernando S.",
+        "role5": "General Contractor"
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "q1": "Does my client pay to use the app?",
+        "a1": "No, client access is completely free and controlled by the permissions in your plan.",
+        "q2": "Can I use it on computer and mobile?",
+        "a2": "Yes! Obra Fácil is responsive and works both in your PC browser and on your smartphone at the site.",
+        "q3": "Is my data safe?",
+        "a3": "Absolutely. We use the most modern cloud infrastructures and end-to-end encryption to ensure code security.",
+        "q4": "What personal data is collected?",
+        "a4": "We only collect what's necessary to create your account: Name, Document ID, Email, and Phone, in full GDPR compliance.",
+        "q5": "How does offline usage work?",
+        "a5": "The app temporarily saves information in your phone's memory (cache). Once the connection is restored, data synchronizes to the cloud automatically.",
+        "q6": "Does my client lose access to files if the project ends?",
+        "a6": "If the project is 70% or more complete, the client gets a 15-day Grace Period to download everything before access goes away.",
+        "q7": "Does Obra Fácil replace a professional Engineer?",
+        "a7": "No. The app is an amazing management tool, but it does not replace technical professional oversight.",
+        "q8": "Can I delete my account and all my data?",
+        "a8": "Yes, you have the right to be forgotten. Upon requesting account deletion, all your data, photos, and PDFs are permanently removed.",
+        "q9": "I'm on the PRO plan and added extra storage. Can I cancel?",
+        "a9": "Yes. You can cancel subscriptions anytime to stop billing for the next cycle, keeping access until the paid period ends.",
+        "q10": "What happens if a monthly payment is late?",
+        "a10": "The system pauses the creation of new projects and file uploads, but you won't lose existing data as long as you regularize the payment."
+    },
+    "loginModal": {
+        "title": "Access Obra Fácil as:",
+        "managerTitle": "Manager / Engineer",
+        "managerDesc": "Access your full construction management dashboard.",
+        "clientTitle": "Client",
+        "clientDesc": "Track your project's portal and inspections."
+    },
+    "footer": {
+        "ctaTitle": "Ready to level up your management?",
+        "ctaBtn": "Sign Up for Free",
+        "links": "Useful Links",
+        "terms": "Terms of Use",
+        "privacy": "Privacy Policy",
+        "help": "Help Center",
+        "support": "Support"
+    }
+}
