@@ -144,6 +144,17 @@
         "clientTitle": "Cliente",
         "clientDesc": "Sigue el portal de tu obra e inspecciones."
     },
+    "helpCenter": {
+        "title": "Centro de Ayuda",
+        "subtitle": "Aprende a usar todas las funciones de ObraFácil",
+        "comingSoon": "Próximamente",
+        "video1": "Cómo crear una obra",
+        "video2": "Cómo invitar a un cliente",
+        "video3": "Gestión Financiera y Reportes",
+        "video4": "Centro de Documentos",
+        "video5": "Comunicación por la App",
+        "video6": "Configuraciones de Cuenta"
+    },
     "footer": {
         "ctaTitle": "¿Listo para elevar el nivel de tu gestión?",
         "ctaBtn": "Regístrate Gratis",

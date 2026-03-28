@@ -7,6 +7,7 @@ import {
     Sparkles,
     Users
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 import styles from './CoreFeatures.module.css';
 
 export default function CoreFeatures() {
@@ -62,13 +63,35 @@ export default function CoreFeatures() {
         <section className={`section ${styles.section}`}>
             <div className="container">
 
-                <div className="text-center mb-5">
+                <motion.div
+                    className="text-center mb-5"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6 }}
+                >
                     <h2 className={styles.sectionTitle}>{t('coreFeatures.title')}</h2>
-                </div>
+                </motion.div>
 
-                <div className={styles.grid}>
+                <motion.div
+                    className={styles.grid}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+                    }}
+                >
                     {features.map((feat) => (
-                        <div key={feat.id} className={`glass-panel ${styles.card} ${feat.colorClass}`}>
+                        <motion.div
+                            key={feat.id}
+                            className={`glass-panel ${styles.card} ${feat.colorClass}`}
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                visible: { opacity: 1, y: 0 }
+                            }}
+                        >
                             <div className={styles.iconWrapper}>
                                 {feat.icon}
                             </div>
@@ -77,9 +100,9 @@ export default function CoreFeatures() {
                                 {feat.isPro && <span className={styles.proBadge}>PRO</span>}
                             </h3>
                             <p className={styles.cardText}>{feat.text}</p>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
             </div>
         </section>

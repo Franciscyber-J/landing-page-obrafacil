@@ -7,6 +7,22 @@
     overflow: hidden;
 }
 
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background-color: rgba(10, 10, 10, 0.4);
+    /* Fade out the blur towards the right side where the mockups are */
+    mask-image: linear-gradient(to right, black 40%, transparent 70%);
+    -webkit-mask-image: linear-gradient(to right, black 40%, transparent 70%);
+}
+
+[data-theme="light"] .heroOverlay {
+    background-color: rgba(248, 249, 250, 0.6);
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -216,14 +232,13 @@
     opacity: 0.5;
 }
 
-.videoPlaceholderText {
-    position: relative;
-    z-index: 10;
-    color: var(--color-neon);
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-align: center;
-    animation: pulseText 2s infinite;
+.mockupImage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
 }
 
 .laptopKeyboard {

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Globe, Moon, Sun, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
 export default function Navbar({ onOpenLogin }) {
@@ -25,9 +26,18 @@ export default function Navbar({ onOpenLogin }) {
             <div className="container flex justify-between items-center">
 
                 {/* Logo */}
-                <div className={styles.logo}>
-                    <span className="neon-text">Obra Fácil</span>
-                </div>
+                <Link 
+                    to="/" 
+                    className={styles.logo}
+                    onClick={(e) => {
+                        if (window.location.pathname === '/') {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                    }}
+                >
+                    <img src="/logo_transparente.png" alt="Obra Fácil Logo" style={{ height: '48px', width: 'auto', objectFit: 'contain' }} />
+                </Link>
 
                 {/* Desktop Menu */}
                 <div className={styles.desktopMenu}>
@@ -65,32 +75,35 @@ export default function Navbar({ onOpenLogin }) {
 
             {/* Mobile Menu Panel */}
             {isMobileMenuOpen && (
-                <div className={`glass-panel ${styles.mobileMenu}`}>
-                    <div className="flex gap-2 items-center mb-3">
-                        <Globe size={20} />
-                        <select
-                            onChange={(e) => changeLanguage(e.target.value)}
-                            value={i18n.language}
-                            className={styles.select}
-                        >
-                            <option value="pt">Português (PT)</option>
-                            <option value="en">English (EN)</option>
-                            <option value="es">Español (ES)</option>
-                        </select>
-                    </div>
+                <>
+                    <div className={styles.mobileOverlay} onClick={() => setIsMobileMenuOpen(false)}></div>
+                    <div className={`glass-panel ${styles.mobileMenu}`}>
+                        <div className="flex gap-2 items-center mb-3">
+                            <Globe size={20} />
+                            <select
+                                onChange={(e) => changeLanguage(e.target.value)}
+                                value={i18n.language}
+                                className={styles.select}
+                            >
+                                <option value="pt">Português (PT)</option>
+                                <option value="en">English (EN)</option>
+                                <option value="es">Español (ES)</option>
+                            </select>
+                        </div>
 
-                    <div className="flex gap-2 items-center mb-4">
-                        <button onClick={toggleTheme} className="flex gap-2 items-center btn-outline" style={{ width: '100%' }}>
-                            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-                            {isDarkMode ? t('nav.lightMode') : t('nav.darkMode')}
-                        </button>
-                    </div>
+                        <div className="flex gap-2 items-center mb-4">
+                            <button onClick={toggleTheme} className="flex gap-2 items-center btn-outline" style={{ width: '100%' }}>
+                                {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+                                {isDarkMode ? t('nav.lightMode') : t('nav.darkMode')}
+                            </button>
+                        </div>
 
-                    <div className="flex flex-col gap-2">
-                        <button onClick={() => { setIsMobileMenuOpen(false); onOpenLogin(); }} className="btn-outline" style={{ textAlign: 'center' }}>{t('nav.login')}</button>
-                        <a href="https://obrafacilapp.expertbr.com/cadastro" className="btn-neon" style={{ textAlign: 'center' }}>{t('nav.createAccount')}</a>
+                        <div className="flex flex-col gap-2">
+                            <button onClick={() => { setIsMobileMenuOpen(false); onOpenLogin(); }} className="btn-outline" style={{ textAlign: 'center' }}>{t('nav.login')}</button>
+                            <a href="https://obrafacilapp.expertbr.com/cadastro" className="btn-neon" style={{ textAlign: 'center' }}>{t('nav.createAccount')}</a>
+                        </div>
                     </div>
-                </div>
+                </>
             )}
         </nav>
     );

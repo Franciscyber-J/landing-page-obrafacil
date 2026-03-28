@@ -9,6 +9,13 @@
     padding: 16px 0;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
 .logo span {
     font-size: 1.5rem;
     font-weight: 800;
@@ -81,6 +88,18 @@
     }
 }
 
+.mobileOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 998;
+}
+
 .mobileMenu {
     position: absolute;
     top: 100%;
@@ -90,6 +109,12 @@
     padding: 24px;
     display: flex;
     flex-direction: column;
+    z-index: 999;
+    background: var(--bg-primary) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
 }
 
 /* Premium Login Modal Overlay */

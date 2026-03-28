@@ -69,6 +69,8 @@
     },
     "pricing": {
         "title": "Planos e Preços",
+        "toggleMonthly": "Mensal",
+        "toggleAnnual": "Anual",
         "freePlan": "Plano Free",
         "freeDesc": "Comece sem custos.",
         "freeCta": "Testar Agora",
@@ -78,23 +80,48 @@
             "Armazenamento Básico",
             "PDFs com marca d'água"
         ],
-        "proPlan": "Plano PRO",
-        "proDesc": "Para profissionais de alto padrão.",
-        "proCta": "Assinar PRO",
-        "proFeatures": [
-            "Obras Ilimitadas",
-            "10GB+ de Armazenamento",
-            "PDFs com logotipo próprio",
-            "Rodapé personalizado",
+        "proPlanMensal": "PRO Mensal",
+        "proDescMensal": "Para construtoras e engenheiros que exigem controle total.",
+        "launchOfferMensal": "🔥 Oferta de Lançamento",
+        "fromPriceMensal": "De R$ 299,90",
+        "priceMensal": "99,90",
+        "proFeaturesMensal": [
+            "Obras ativas ilimitadas",
+            "RDOs e relatórios ilimitados",
+            "+10GB de Armazenamento em Nuvem",
+            "PDFs profissionais com logotipo da sua empresa",
+            "Controle financeiro avançado",
             "Suporte Prioritário"
         ],
+        "proCtaMensal": "GARANTIR PLANO MENSAL",
+        "proPlanAnnual": "PRO Anual",
+        "proDescAnnual": "Economia inteligente para quem pensa no longo prazo da obra.",
+        "launchOfferAnnual": "💎 Melhor Custo-Benefício (2 Meses Grátis!)",
+        "fromPriceAnnual": "De R$ 1.198,80",
+        "priceAnnual": "899,00",
+        "periodAnnual": "/ano",
+        "subtextAnnual": "(Equivale a apenas R$ 74,91 por mês)",
+        "proFeaturesAnnual": [
+            "Todas as vantagens do plano PRO Mensal",
+            "Economia de quase R$ 300,00 no caixa da empresa",
+            "Blindagem contra futuros reajustes de preço",
+            "Acesso prioritário a novas ferramentas e atualizações"
+        ],
+        "proCtaAnnual": "ASSINAR COM DESCONTO ANUAL",
         "addons": "Precisa de mais? Adicione pacotes de +20GB ou Downloads Extras a qualquer momento.",
-        "launchOffer": "Oferta de Lançamento!",
-        "fromPrice": "De R$ 199,90",
         "currency": "R$",
         "price0": "0",
-        "price49": "49,90",
         "perMonth": "/mês"
+    },
+    "popup": {
+        "title": "Espere! Vai mesmo continuar gerenciando suas obras no papel?",
+        "subtitle": "Antes de sair, tenho uma proposta irrecusável. Liberamos um lote secreto de **apenas 20 vagas** para Membros Fundadores.",
+        "body": "Chame nosso agente no WhatsApp agora mesmo e solicite o seu convite VIP. Você vai travar a sua assinatura PRO por apenas **R$ 49,90/mês** durante 1 ano inteiro.",
+        "scarcity": "Aviso: Os links expiram assim que as 20 vagas forem preenchidas.",
+        "cta": "RESGATAR DESCONTO COM O MAX"
+    },
+    "whatsapp": {
+        "tooltip": "Fale com o Suporte"
     },
     "social": {
         "title": "O que dizem os profissionais",
@@ -143,6 +170,17 @@
         "managerDesc": "Acesse seu painel completo de gestão de obras.",
         "clientTitle": "Cliente",
         "clientDesc": "Acompanhe o portal da sua obra e vistorias."
+    },
+    "helpCenter": {
+        "title": "Central de Ajuda",
+        "subtitle": "Aprenda a usar todas as funções do ObraFácil",
+        "comingSoon": "Em Breve",
+        "video1": "Como criar uma obra",
+        "video2": "Como convidar um cliente",
+        "video3": "Gestão Financeira e Relatórios",
+        "video4": "Central de Documentos",
+        "video5": "Comunicação pelo App",
+        "video6": "Configurações de Conta"
     },
     "footer": {
         "ctaTitle": "Pronto para elevar o nível da sua gestão?",

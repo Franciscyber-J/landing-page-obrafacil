@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Quote, ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import styles from './TestimonialsFaq.module.css';
 
 export default function TestimonialsFaq() {
@@ -66,7 +67,13 @@ export default function TestimonialsFaq() {
             <div className="container">
 
                 {/* Testimonials */}
-                <div className="mb-5">
+                <motion.div
+                    className="mb-5"
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
+                >
                     <h2 className="text-center mb-4" style={{ fontSize: '2rem', fontWeight: 800 }}>
                         {t('social.title')}
                     </h2>
@@ -112,10 +119,16 @@ export default function TestimonialsFaq() {
                             <ChevronRight size={24} />
                         </button>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* FAQ Section */}
-                <div className={styles.faqContainer}>
+                <motion.div
+                    className={styles.faqContainer}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                >
                     <h2 className="text-center mb-4" style={{ fontSize: '2rem', fontWeight: 800 }}>
                         {t('faq.title')}
                     </h2>
@@ -139,7 +152,7 @@ export default function TestimonialsFaq() {
                             </div>
                         ))}
                     </div>
-                </div>
+                </motion.div>
 
             </div>
         </section>

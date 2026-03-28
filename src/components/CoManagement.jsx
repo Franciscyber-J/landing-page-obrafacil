@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Shield, Eye, Edit3, UserPlus, HardHat } from 'lucide-react';
+import { motion } from 'framer-motion';
 import styles from './CoManagement.module.css';
 
 export default function CoManagement() {
@@ -10,7 +11,13 @@ export default function CoManagement() {
             <div className={`container ${styles.grid}`}>
 
                 {/* Abstract App Roles Visualization */}
-                <div className={styles.visuals}>
+                <motion.div
+                    className={styles.visuals}
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
+                >
                     <div className={styles.centerGlow}></div>
                     <div className={`glass-panel ${styles.roleCard} ${styles.pos1}`}>
                         <UserPlus className={styles.iconAdmin} />
@@ -44,10 +51,16 @@ export default function CoManagement() {
                             <p className={styles.roleAccess}>{t('coManagementRoles.viewOnly')}</p>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Content */}
-                <div className={styles.content}>
+                <motion.div
+                    className={styles.content}
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                >
                     <h2 className={styles.title}>{t('coManagement.title')}</h2>
                     <p className={styles.description}>{t('coManagement.description')}</p>
 
@@ -62,7 +75,7 @@ export default function CoManagement() {
                             <span className={styles.check}>✓</span> <strong>{t('coManagement.point3')}</strong>
                         </li>
                     </ul>
-                </div>
+                </motion.div>
 
             </div>
         </section>

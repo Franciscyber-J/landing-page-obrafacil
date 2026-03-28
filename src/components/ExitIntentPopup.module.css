@@ -1,0 +1,116 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.popup {
+    background: linear-gradient(145deg, #1A1A1A, #0A0A0A);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 187, 0, 0.1);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.popup::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--color-pro);
+    box-shadow: 0 0 20px var(--color-pro-glow);
+}
+
+.closeBtn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color var(--transition-short);
+    z-index: 10;
+}
+
+.closeBtn:hover {
+    color: #fff;
+}
+
+.content {
+    padding: 40px;
+    text-align: center;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.body {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.scarcity {
+    color: #EF4444;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 32px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+.ctaBtn {
+    display: block;
+    width: 100%;
+    background: #25D366;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.ctaBtn:hover {
+    background: #1EBE5D;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    color: #fff;
+}

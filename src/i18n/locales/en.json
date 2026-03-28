@@ -144,6 +144,17 @@
         "clientTitle": "Client",
         "clientDesc": "Track your project's portal and inspections."
     },
+    "helpCenter": {
+        "title": "Help Center",
+        "subtitle": "Learn how to use all ObraFácil features",
+        "comingSoon": "Coming Soon",
+        "video1": "How to create a project",
+        "video2": "How to invite a client",
+        "video3": "Financial Management & Reports",
+        "video4": "Document Center",
+        "video5": "App Communication",
+        "video6": "Account Settings"
+    },
     "footer": {
         "ctaTitle": "Ready to level up your management?",
         "ctaBtn": "Sign Up for Free",

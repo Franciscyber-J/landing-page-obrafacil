@@ -218,65 +218,135 @@
     aspect-ratio: 16/9;
 }
 
-.phoneHolderPlaceholder {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #222;
-}
-
-.placeholderLabel {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    z-index: 2;
-    padding: 24px;
-    text-align: center;
-}
-
-.personHoldingApp {
+.desktopFrame {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.4;
+    top: 5%;
+    left: 5%;
+    width: 80%;
+    height: 80%;
+    background: #111;
+    border-radius: 8px;
+    border: 4px solid #333;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
-.appZoomOverlay {
+[data-theme="light"] .desktopFrame {
+    border-color: #ddd;
+}
+
+.desktopImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.mobileFrame {
     position: absolute;
-    bottom: -20px;
-    right: -20px;
-    width: 60%;
-    height: 80%;
+    bottom: -15px;
+    right: -10px;
+    width: 32%;
+    height: 75%;
     background: #111;
-    border-radius: 16px;
-    border: 4px solid #333;
-    z-index: 3;
-    box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.5);
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
+    border-radius: 20px;
+    border: 6px solid #222;
+    overflow: hidden;
+    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.7);
+    z-index: 2;
     transition: transform 0.5s ease;
 }
 
-.solutionMockup:hover .appZoomOverlay {
+[data-theme="light"] .mobileFrame {
+    border-color: #ccc;
+}
+
+.solutionMockup:hover .mobileFrame {
     transform: scale(1.05) translate(-10px, -10px);
 }
 
-.appHeader {
-    height: 20px;
-    background: var(--color-neon);
-    border-radius: 4px;
-    margin-bottom: 8px;
-    width: 50%;
+.mobileImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
 }
 
-.appContent {
-    flex: 1;
-    background: var(--bg-tertiary);
-    border-radius: 8px;
+.iphoneNotch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 15px;
+    background: #222;
+    border-radius: 0 0 10px 10px;
+    z-index: 3;
+}
+
+[data-theme="light"] .iphoneNotch {
+    background: #ccc;
+}
+
+/* Lightbox & Interactions */
+.clickableMockup {
+    cursor: zoom-in;
+}
+
+.clickableMockup::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0);
+    transition: background 0.3s ease;
+    z-index: 10;
+}
+
+.clickableMockup:hover::after {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.lightboxOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+}
+
+.lightboxClose {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+    z-index: 10000;
+}
+
+.lightboxClose:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lightboxImage {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    cursor: default;
 }

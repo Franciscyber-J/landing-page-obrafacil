@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { ArrowRight, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -56,8 +57,8 @@ export default function Footer() {
                         <ul className={styles.linkList}>
                             <li><a href="https://appobrafacil.expertbr.com/termos-de-uso/" target="_blank" rel="noopener noreferrer">{t('footer.terms')}</a></li>
                             <li><a href="https://appobrafacil.expertbr.com/politicas-de-privacidade/" target="_blank" rel="noopener noreferrer">{t('footer.privacy')}</a></li>
-                            <li><a href="#">{t('footer.help')}</a></li>
-                            <li><a href="#">{t('footer.support')}</a></li>
+                            <li><Link to="/ajuda">{t('footer.help')}</Link></li>
+                            <li><a href="https://appobrafacil.expertbr.com/suporte/" target="_blank" rel="noopener noreferrer">{t('footer.support')}</a></li>
                         </ul>
                     </div>
 
