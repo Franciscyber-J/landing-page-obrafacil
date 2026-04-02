@@ -69,6 +69,8 @@
     },
     "pricing": {
         "title": "Plans & Pricing",
+        "toggleMonthly": "Monthly",
+        "toggleAnnual": "Annual",
         "freePlan": "Free Plan",
         "freeDesc": "Start at no cost.",
         "freeCta": "Try Now",
@@ -78,23 +80,48 @@
             "Basic Storage",
             "Watermarked PDFs"
         ],
-        "proPlan": "PRO Plan",
-        "proDesc": "For high-end professionals.",
-        "proCta": "Subscribe to PRO",
-        "proFeatures": [
-            "Unlimited Projects",
-            "10GB+ Storage",
-            "PDFs with your own logo",
-            "Custom footer",
+        "proPlanMensal": "PRO Monthly",
+        "proDescMensal": "For construction companies and engineers demanding total control.",
+        "launchOfferMensal": "🔥 Launch Offer",
+        "fromPriceMensal": "From $ 44.97",
+        "priceMensal": "14.99",
+        "proFeaturesMensal": [
+            "Unlimited active projects",
+            "Unlimited RDOs and reports",
+            "+10GB Cloud Storage",
+            "Professional PDFs with your company logo",
+            "Advanced financial control",
             "Priority Support"
         ],
+        "proCtaMensal": "SECURE MONTHLY PLAN",
+        "proPlanAnnual": "PRO Annual",
+        "proDescAnnual": "Smart savings for those who think about the long term.",
+        "launchOfferAnnual": "💎 Best Value (2 Months Free!)",
+        "fromPriceAnnual": "From $ 179.99",
+        "priceAnnual": "129.99",
+        "periodAnnual": "/year",
+        "subtextAnnual": "(Equivalent to just $ 10.83 per month)",
+        "proFeaturesAnnual": [
+            "All the benefits of the PRO Monthly plan",
+            "Savings of almost $ 50.00 for your company",
+            "Shield against future price increases",
+            "Priority access to new tools and updates"
+        ],
+        "proCtaAnnual": "SUBSCRIBE WITH ANNUAL DISCOUNT",
         "addons": "Need more? Add +20GB packages or Extra Downloads anytime.",
-        "launchOffer": "Launch Offer!",
-        "fromPrice": "From $ 49.90",
         "currency": "$",
         "price0": "0",
-        "price49": "12.90",
         "perMonth": "/month"
+    },
+    "popup": {
+        "title": "Wait! Are you really going to keep managing projects on paper?",
+        "subtitle": "Before you leave, I have an irresistible proposal. We've released a secret batch of **only 20 spots** for Founding Members.",
+        "body": "Contact our agent on WhatsApp right now and request your VIP invite. You will lock in your PRO subscription for only **$ 7.49/month** for a full year.",
+        "scarcity": "Notice: The links expire as soon as the 20 spots are filled.",
+        "cta": "REDEEM DISCOUNT WITH MAX"
+    },
+    "whatsapp": {
+        "tooltip": "Talk to Support"
     },
     "social": {
         "title": "What professionals are saying",

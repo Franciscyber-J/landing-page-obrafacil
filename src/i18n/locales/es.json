@@ -69,6 +69,8 @@
     },
     "pricing": {
         "title": "Planes y Precios",
+        "toggleMonthly": "Mensual",
+        "toggleAnnual": "Anual",
         "freePlan": "Plan Free",
         "freeDesc": "Empieza sin costo.",
         "freeCta": "Probar Ahora",
@@ -78,23 +80,48 @@
             "Almacenamiento Básico",
             "PDFs con marca de agua"
         ],
-        "proPlan": "Plan PRO",
-        "proDesc": "Para profesionales de alto nivel.",
-        "proCta": "Suscribirse al PRO",
-        "proFeatures": [
-            "Obras Ilimitadas",
-            "Más de 10GB de Almacenamiento",
-            "PDFs con tu propio logo",
-            "Pie de página personalizado",
+        "proPlanMensal": "PRO Mensual",
+        "proDescMensal": "Para constructoras e ingenieros que exigen control total.",
+        "launchOfferMensal": "🔥 Oferta de Lanzamiento",
+        "fromPriceMensal": "De € 53.97",
+        "priceMensal": "17.99",
+        "proFeaturesMensal": [
+            "Obras activas ilimitadas",
+            "RDOs y reportes ilimitados",
+            "+10GB de Almacenamiento en la Nube",
+            "PDFs profesionales con el logotipo de tu empresa",
+            "Control financiero avanzado",
             "Soporte Prioritario"
         ],
+        "proCtaMensal": "ASEGURAR PLAN MENSUAL",
+        "proPlanAnnual": "PRO Anual",
+        "proDescAnnual": "Ahorro inteligente para los que piensan en el largo plazo de la obra.",
+        "launchOfferAnnual": "💎 Mejor Costo-Beneficio (¡2 Meses Gratis!)",
+        "fromPriceAnnual": "De € 215.88",
+        "priceAnnual": "149.99",
+        "periodAnnual": "/año",
+        "subtextAnnual": "(Equivale a solo € 12.50 al mes)",
+        "proFeaturesAnnual": [
+            "Todas las ventajas del plan PRO Mensual",
+            "Ahorro de casi € 65.00 en la caja de la empresa",
+            "Blindaje contra futuros aumentos de precio",
+            "Acceso prioritario a nuevas herramientas y actualizaciones"
+        ],
+        "proCtaAnnual": "SUSCRIBIRSE CON DESCUENTO ANUAL",
         "addons": "¿Necesitas más? Agrega paquetes de +20GB o Descargas Extras en cualquier momento.",
-        "launchOffer": "¡Oferta de Lanzamiento!",
-        "fromPrice": "De $ 49.90",
-        "currency": "$",
+        "currency": "€",
         "price0": "0",
-        "price49": "12.90",
         "perMonth": "/mes"
+    },
+    "popup": {
+        "title": "¡Espera! ¿De verdad vas a seguir gestionando tus obras en papel?",
+        "subtitle": "Antes de salir, te tengo una propuesta irresistible. Liberamos un lote secreto de **solo 20 cupos** para Miembros Fundadores.",
+        "body": "Contacta a nuestro agente en WhatsApp ahora mismo y solicita tu invitación VIP. Vas a congelar tu suscripción PRO por solo **€ 8.99/mes** durante 1 año entero.",
+        "scarcity": "Aviso: Los enlaces caducan en cuanto se llenen los 20 cupos.",
+        "cta": "CANJEAR DESCUENTO CON MAX"
+    },
+    "whatsapp": {
+        "tooltip": "Habla con Soporte"
     },
     "social": {
         "title": "Lo que dicen los profesionales",
