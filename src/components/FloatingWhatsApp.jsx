@@ -7,7 +7,8 @@ export default function FloatingWhatsApp() {
     const { t } = useTranslation();
     
     // The link provided by the user
-    const whatsappLink = "https://wa.me/5562992666759?text=Ol%C3%A1%2C%20venho%20atrav%C3%A9s%20do%20site%20e%20quero%20tirar%20uma%20d%C3%BAvida";
+    const whatsappMessage = t('whatsapp.message', 'Olá, venho através do site e quero tirar uma dúvida');
+    const whatsappLink = `https://wa.me/5562992666759?text=${encodeURIComponent(whatsappMessage)}`;
 
     return (
         <motion.a 

@@ -41,7 +41,8 @@ export default function ExitIntentPopup() {
         setIsVisible(false);
     };
 
-    const whatsappLink = "https://wa.me/5562992666759?text=Oi,%20estava%20no%20site%20do%20Obra%20F%C3%A1cil,%20vi%20o%20convite%20oculto%20e%20quero%20garantir%20minha%20vaga%20de%20Membro%20Fundador%20por%20R$%2049,90.";
+    const whatsappMessage = t('popup.whatsappMessage');
+    const whatsappLink = `https://wa.me/5562992666759?text=${encodeURIComponent(whatsappMessage)}`;
 
     return (
         <AnimatePresence>
@@ -65,7 +66,7 @@ export default function ExitIntentPopup() {
                             }}></p>
                             
                             <p className={styles.body} dangerouslySetInnerHTML={{
-                                __html: t('popup.body').replace('**R$ 49,90/mês**', '<strong style="color: var(--color-pro)">R$ 49,90/mês</strong>')
+                                __html: t('popup.body').replace('**R$ 49,95/mês**', '<strong style="color: var(--color-pro)">R$ 49,95/mês</strong>')
                             }}></p>
                             
                             <p className={styles.scarcity}>

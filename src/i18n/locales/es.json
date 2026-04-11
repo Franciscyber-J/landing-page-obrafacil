@@ -118,10 +118,12 @@
         "subtitle": "Antes de salir, te tengo una propuesta irresistible. Liberamos un lote secreto de **solo 20 cupos** para Miembros Fundadores.",
         "body": "Contacta a nuestro agente en WhatsApp ahora mismo y solicita tu invitación VIP. Vas a congelar tu suscripción PRO por solo **€ 8.99/mes** durante 1 año entero.",
         "scarcity": "Aviso: Los enlaces caducan en cuanto se llenen los 20 cupos.",
+        "whatsappMessage": "Hola, estaba en el sitio web de Obra Fácil, vi la invitación oculta y quiero garantizar mi cupo de Miembro Fundador por € 8.99.",
         "cta": "CANJEAR DESCUENTO CON MAX"
     },
     "whatsapp": {
-        "tooltip": "Habla con Soporte"
+        "tooltip": "Habla con Soporte",
+        "message": "Hola, me pongo en contacto a través del sitio web y tengo una consulta"
     },
     "social": {
         "title": "Lo que dicen los profesionales",
@@ -172,15 +174,16 @@
         "clientDesc": "Sigue el portal de tu obra e inspecciones."
     },
     "helpCenter": {
-        "title": "Centro de Ayuda",
-        "subtitle": "Aprende a usar todas las funciones de ObraFácil",
-        "comingSoon": "Próximamente",
-        "video1": "Cómo crear una obra",
-        "video2": "Cómo invitar a un cliente",
-        "video3": "Gestión Financiera y Reportes",
-        "video4": "Centro de Documentos",
-        "video5": "Comunicación por la App",
-        "video6": "Configuraciones de Cuenta"
+        "title": "Tutoriales en Video",
+        "subtitle": "Aprende a usar cada función de Obra Fácil con videos paso a paso.",
+        "modPrefix": "Módulo",
+        "modPrimeirosPassos": "Primeros Pasos",
+        "modCanteiro": "Cantero de Obras",
+        "modFinanceiro": "Financiero",
+        "modPortalVIP": "Portal VIP",
+        "modConfiguracoes": "Configuraciones",
+        "assistir": "VER",
+        "emBreve": "PRÓXIMAMENTE"
     },
     "footer": {
         "ctaTitle": "¿Listo para elevar el nivel de tu gestión?",
@@ -188,7 +191,7 @@
         "links": "Enlaces Útiles",
         "terms": "Términos de Uso",
         "privacy": "Política de Privacidad",
-        "help": "Centro de Ayuda",
+        "help": "Tutoriales en Video",
         "support": "Soporte"
     }
 }

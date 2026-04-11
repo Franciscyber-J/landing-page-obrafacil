@@ -1,14 +1,36 @@
 .helpCenter {
     padding-top: 120px;
-    padding-bottom: 80px;
+    padding-bottom: 32px;
     min-height: 100vh;
 }
 
-.title {
-    font-size: 3rem;
-    font-weight: 800;
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.headerBlock {
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 40px;
+}
+
+.iconBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(0, 102, 255, 0.12);
+    color: #3b82f6;
+    margin: 0 auto 16px;
+}
+
+[data-theme="dark"] .iconBadge {
+    background: rgba(0, 255, 170, 0.1);
+    color: var(--color-neon);
+}
+
+.title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 12px;
     background: linear-gradient(90deg, #fff, var(--color-neon));
     background-clip: text;
     -webkit-background-clip: text;
@@ -23,119 +45,233 @@
 }
 
 .subtitle {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
-    text-align: center;
-    margin-bottom: 48px;
+    max-width: 520px;
+    margin: 0 auto;
 }
 
-.videoGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 32px;
+/* ── Module Dropdown Selector (all screen sizes) ──────────────────── */
+.mobileSelectWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
 }
 
+.mobileSelect {
+    width: 100%;
+    padding: 13px 44px 13px 16px;
+    border-radius: 12px;
+    border: 1.5px solid var(--color-neon);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mobileSelect:focus {
+    box-shadow: 0 0 0 3px rgba(0, 255, 170, 0.15);
+}
+
+[data-theme="light"] .mobileSelect {
+    border-color: var(--color-accent);
+    background: #fff;
+}
+
+[data-theme="light"] .mobileSelect:focus {
+    box-shadow: 0 0 0 3px rgba(0, 67, 166, 0.12);
+}
+
+.selectArrow {
+    position: absolute;
+    right: 14px;
+    pointer-events: none;
+    color: var(--color-neon);
+}
+
+[data-theme="light"] .selectArrow {
+    color: var(--color-accent);
+}
+
+/* ── Module Title ─────────────────────────────────────────────────────────── */
+.moduloTitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* ── Video List ──────────────────────────────────────────────────────────── */
+.videoList {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ── Video Card ──────────────────────────────────────────────────────────── */
 .videoCard {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px;
     background: var(--bg-secondary);
     border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    padding: 16px;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    border-radius: 14px;
+    transition: all 0.25s ease;
 }
 
 .videoCard:hover {
     border-color: var(--color-neon);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 255, 170, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 255, 170, 0.08);
 }
 
 [data-theme="light"] .videoCard:hover {
     border-color: var(--color-accent);
-    box-shadow: 0 10px 30px rgba(0, 67, 166, 0.1);
+    box-shadow: 0 6px 24px rgba(0, 67, 166, 0.08);
 }
 
-.videoPlaceholder {
+/* Thumbnail */
+.thumbnail {
+    flex-shrink: 0;
+    width: 100px;
+    height: 72px;
+    border-radius: 10px;
     background: var(--bg-tertiary);
-    border-radius: 8px;
-    aspect-ratio: 16/9;
+    border: 1px solid var(--glass-border);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 16px;
-    position: relative;
     overflow: hidden;
 }
 
-.playButton {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: transparent;
-    color: var(--text-secondary);
+.ytIcon {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
-    transition: all 0.3s ease;
+    width: 100%;
+    height: 100%;
 }
 
-.videoCard:hover .playButton {
-    background: transparent;
-    color: var(--color-neon);
-    transform: scale(1.2);
+.ytPlay {
+    width: 44px;
+    height: 32px;
+    background: #CC0000;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(204, 0, 0, 0.4);
 }
 
-[data-theme="light"] .videoCard:hover .playButton {
-    color: var(--color-accent);
+.comingSoonIcon {
+    color: #f59e0b;
+    opacity: 0.8;
 }
 
-.duration {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 500;
+/* Card Info */
+.cardInfo {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
-.comingSoonBadge {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: var(--color-neon);
-    color: var(--bg-primary);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    z-index: 10;
-    box-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
-}
-
-[data-theme="light"] .comingSoonBadge {
-    background: var(--color-accent);
-    color: #fff;
-    box-shadow: 0 0 10px rgba(0, 67, 166, 0.4);
-}
-
-.videoCard h3 {
-    font-size: 1.125rem;
+.cardOrdem {
+    font-size: 0.72rem;
     font-weight: 600;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     margin: 0;
 }
 
-@media (min-width: 768px) {
-    .videoGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.cardTitle {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.3;
+    /* Clamp to 2 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-@media (min-width: 1024px) {
-    .videoGrid {
-        grid-template-columns: repeat(3, 1fr);
+.cardAction {
+    margin-top: 6px;
+}
+
+/* Watch Button */
+.watchBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 14px;
+    border: 1.5px solid #CC0000;
+    border-radius: 6px;
+    color: #CC0000;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.watchBtn:hover {
+    background: #CC0000;
+    color: #fff;
+}
+
+/* Coming Soon Badge */
+.comingSoonBadge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border: 1px solid rgba(245, 158, 11, 0.5);
+    border-radius: 6px;
+    background: rgba(245, 158, 11, 0.08);
+    color: #f59e0b;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .thumbnail {
+        width: 80px;
+        height: 60px;
+    }
+
+    .ytPlay {
+        width: 36px;
+        height: 26px;
+    }
+
+    .cardTitle {
+        font-size: 0.875rem;
     }
 }

@@ -216,6 +216,36 @@
     align-items: center;
     justify-content: center;
     aspect-ratio: 16/9;
+    min-height: 200px;
+}
+
+@media (max-width: 767px) {
+    .card {
+        padding: 24px;
+    }
+
+    .solutionMockup {
+        aspect-ratio: 4/3;
+        min-height: 220px;
+    }
+
+    .desktopFrame {
+        top: 4%;
+        left: 4%;
+        width: 76%;
+        height: 80%;
+    }
+
+    .mobileFrame {
+        bottom: 4%;
+        right: 4%;
+        width: 30%;
+        height: 68%;
+    }
+
+    .solutionMockup:hover .mobileFrame {
+        transform: none;
+    }
 }
 
 .desktopFrame {

@@ -118,10 +118,12 @@
         "subtitle": "Before you leave, I have an irresistible proposal. We've released a secret batch of **only 20 spots** for Founding Members.",
         "body": "Contact our agent on WhatsApp right now and request your VIP invite. You will lock in your PRO subscription for only **$ 7.49/month** for a full year.",
         "scarcity": "Notice: The links expire as soon as the 20 spots are filled.",
+        "whatsappMessage": "Hi, I was on the Obra Fácil website, I saw the hidden invite and I want to secure my Founding Member spot for $ 7.49.",
         "cta": "REDEEM DISCOUNT WITH MAX"
     },
     "whatsapp": {
-        "tooltip": "Talk to Support"
+        "tooltip": "Talk to Support",
+        "message": "Hello, I'm reaching out from the website and have a question"
     },
     "social": {
         "title": "What professionals are saying",
@@ -172,15 +174,16 @@
         "clientDesc": "Track your project's portal and inspections."
     },
     "helpCenter": {
-        "title": "Help Center",
-        "subtitle": "Learn how to use all ObraFácil features",
-        "comingSoon": "Coming Soon",
-        "video1": "How to create a project",
-        "video2": "How to invite a client",
-        "video3": "Financial Management & Reports",
-        "video4": "Document Center",
-        "video5": "App Communication",
-        "video6": "Account Settings"
+        "title": "Video Tutorials",
+        "subtitle": "Learn how to use every Obra Fácil feature with step-by-step videos.",
+        "modPrefix": "Module",
+        "modPrimeirosPassos": "First Steps",
+        "modCanteiro": "Construction Site",
+        "modFinanceiro": "Financial",
+        "modPortalVIP": "VIP Portal",
+        "modConfiguracoes": "Settings",
+        "assistir": "WATCH",
+        "emBreve": "COMING SOON"
     },
     "footer": {
         "ctaTitle": "Ready to level up your management?",
@@ -188,7 +191,7 @@
         "links": "Useful Links",
         "terms": "Terms of Use",
         "privacy": "Privacy Policy",
-        "help": "Help Center",
+        "help": "Video Tutorials",
         "support": "Support"
     }
 }
