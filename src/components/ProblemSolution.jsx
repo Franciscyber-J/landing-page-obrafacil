@@ -9,7 +9,7 @@ export default function ProblemSolution() {
     const [activeLightbox, setActiveLightbox] = useState(null);
 
     return (
-        <section className={`section ${styles.section}`}>
+        <section id="sobre" className={`section ${styles.section}`}>
             <div className={`container ${styles.grid}`}>
 
                 {/* The Problem */}

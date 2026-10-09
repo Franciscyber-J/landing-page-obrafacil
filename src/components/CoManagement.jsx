@@ -7,7 +7,7 @@ export default function CoManagement() {
     const { t } = useTranslation();
 
     return (
-        <section className={`section ${styles.section}`}>
+        <section id="equipe" className={`section ${styles.section}`}>
             <div className={`container ${styles.grid}`}>
 
                 {/* Abstract App Roles Visualization */}

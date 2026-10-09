@@ -4,6 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import styles from './ExitIntentPopup.module.css';
 
+// Generic **bold** markdown → <strong> converter (locale-agnostic)
+const boldMarkdown = (str) =>
+    str.replace(/\*\*(.+?)\*\*/g, '<strong style="color: var(--color-pro)">$1</strong>');
+
 export default function ExitIntentPopup() {
     const { t } = useTranslation();
     const [isVisible, setIsVisible] = useState(false);
@@ -41,6 +45,7 @@ export default function ExitIntentPopup() {
         setIsVisible(false);
     };
 
+    // WhatsApp link — agente Max atende e aplica o desconto manualmente
     const whatsappMessage = t('popup.whatsappMessage');
     const whatsappLink = `https://wa.me/5562992666759?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -62,11 +67,11 @@ export default function ExitIntentPopup() {
                         <div className={styles.content}>
                             <h2 className={styles.title}>{t('popup.title')}</h2>
                             <p className={styles.subtitle} dangerouslySetInnerHTML={{
-                                __html: t('popup.subtitle').replace('**apenas 20 vagas**', '<strong style="color: var(--color-pro)">apenas 20 vagas</strong>')
+                                __html: boldMarkdown(t('popup.subtitle'))
                             }}></p>
                             
                             <p className={styles.body} dangerouslySetInnerHTML={{
-                                __html: t('popup.body').replace('**R$ 49,95/mês**', '<strong style="color: var(--color-pro)">R$ 49,95/mês</strong>')
+                                __html: boldMarkdown(t('popup.body'))
                             }}></p>
                             
                             <p className={styles.scarcity}>

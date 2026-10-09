@@ -1,12 +1,12 @@
 {
     "nav": {
         "login": "Ingresar",
-        "createAccount": "Crear Cuenta Gratis",
+        "createAccount": "Prueba Gratis 30 Días",
         "lightMode": "Modo Claro",
         "darkMode": "Modo Oscuro"
     },
     "hero": {
-        "tagline": "🚀 Disponible en ES, PT y EN",
+        "tagline": "🚀 Disponible en 8 idiomas",
         "headline": "Gestión Inteligente de Obras. Transparencia que encanta a tu cliente.",
         "subheadline": "Olvídate de las planillas confusas. Controla finanzas, genera Reportes Diarios (RDO) en segundos y ofrece un portal exclusivo para que tu cliente siga la obra desde su celular.",
         "cta": "Crear mi Primera Obra Gratis",
@@ -36,7 +36,9 @@
         "videoPlaceholder": "[Video/Imagen de Persona con la App]"
     },
     "coreFeatures": {
-        "title": "Características Principales",
+        "title": "Herramientas Profesionales para tu Obra",
+        "ctaMidButton": "Prueba Gratis durante 30 Días →",
+        "ctaMidSubtext": "Configura en menos de 2 minutos. Cancela cuando quieras.",
         "rdoTitle": "Reporte Diario de Obra (RDO)",
         "rdoText": "Genera reportes completos en PDF desde la obra. Clima, personal, actividades y galería de fotos integrados.",
         "financeTitle": "Gestión Financiera Categórica",
@@ -73,7 +75,7 @@
         "toggleAnnual": "Anual",
         "freePlan": "Plan Free",
         "freeDesc": "Empieza sin costo.",
-        "freeCta": "Probar Ahora",
+        "freeCta": "Prueba Gratis durante 30 Días",
         "freeFeatures": [
             "1 Obra activa",
             "Límite de RDOs mensuales",
@@ -187,7 +189,7 @@
     },
     "footer": {
         "ctaTitle": "¿Listo para elevar el nivel de tu gestión?",
-        "ctaBtn": "Regístrate Gratis",
+        "ctaBtn": "Prueba Gratis durante 30 Días",
         "links": "Enlaces Útiles",
         "terms": "Términos de Uso",
         "privacy": "Política de Privacidad",

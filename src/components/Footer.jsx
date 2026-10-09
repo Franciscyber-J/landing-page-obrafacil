@@ -16,7 +16,7 @@ export default function Footer() {
             <div className={styles.ctaSection}>
                 <div className="container text-center">
                     <h2 className={styles.ctaTitle}>{t('footer.ctaTitle')}</h2>
-                    <a href="https://obrafacilapp.expertbr.com/cadastro" className="btn-neon flex items-center gap-2" style={{ margin: '0 auto', fontSize: '1.2rem', padding: '16px 36px', display: 'inline-flex', justifyContent: 'center' }}>
+                    <a href="https://obrafacilapp.expertbr.com/cadastro?checkout=true&promo=30DIASFREE" className="btn-neon flex items-center gap-2" style={{ margin: '0 auto', fontSize: '1.2rem', padding: '16px 36px', display: 'inline-flex', justifyContent: 'center' }}>
                         {t('footer.ctaBtn')}
                         <ArrowRight size={20} />
                     </a>

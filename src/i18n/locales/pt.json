@@ -1,12 +1,12 @@
 {
     "nav": {
         "login": "Entrar",
-        "createAccount": "Criar Conta Grátis",
+        "createAccount": "Testar Grátis 30 Dias",
         "lightMode": "Modo Claro",
         "darkMode": "Modo Escuro"
     },
     "hero": {
-        "tagline": "🚀 Disponível em PT, EN e ES",
+        "tagline": "🚀 Disponível em 8 idiomas",
         "headline": "Gestão de Obras Inteligente. Transparência que encanta o seu cliente.",
         "subheadline": "Abandone as planilhas confusas. Controle finanças, gere Relatórios Diários (RDO) em segundos e ofereça um portal exclusivo para o seu cliente acompanhar a obra na palma da mão.",
         "cta": "Criar minha Primeira Obra Grátis",
@@ -36,7 +36,9 @@
         "videoPlaceholder": "[Vídeo/Imagem da Pessoa Segurando o App]"
     },
     "coreFeatures": {
-        "title": "Funcionalidades Matadoras",
+        "title": "Recursos Profissionais para sua Obra",
+        "ctaMidButton": "Testar Grátis por 30 Dias →",
+        "ctaMidSubtext": "Configure em menos de 2 minutos. Cancele quando quiser.",
         "rdoTitle": "Relatório Diário de Obra (RDO)",
         "rdoText": "Gere relatórios completos em PDF direto do canteiro. Clima, efetivo, atividades e galeria de fotos integrados.",
         "financeTitle": "Gestão Financeira Categórica",
@@ -73,7 +75,7 @@
         "toggleAnnual": "Anual",
         "freePlan": "Plano Free",
         "freeDesc": "Comece sem custos.",
-        "freeCta": "Testar Agora",
+        "freeCta": "Testar Grátis por 30 Dias",
         "freeFeatures": [
             "1 Obra ativa",
             "Limite de RDOs mensais",
@@ -187,7 +189,7 @@
     },
     "footer": {
         "ctaTitle": "Pronto para elevar o nível da sua gestão?",
-        "ctaBtn": "Cadastre-se Gratuitamente",
+        "ctaBtn": "Testar Grátis por 30 Dias",
         "links": "Links Úteis",
         "terms": "Termos de Uso",
         "privacy": "Política de Privacidade",

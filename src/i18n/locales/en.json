@@ -1,12 +1,12 @@
 {
     "nav": {
         "login": "Login",
-        "createAccount": "Create Free Account",
+        "createAccount": "Try Free 30 Days",
         "lightMode": "Light Mode",
         "darkMode": "Dark Mode"
     },
     "hero": {
-        "tagline": "🚀 Available in EN, PT and ES",
+        "tagline": "🚀 Available in 8 languages",
         "headline": "Smart Construction Management. Transparency that delights your client.",
         "subheadline": "Ditch confusing spreadsheets. Track finances, generate Daily Reports (RDO) in seconds, and offer an exclusive portal for your client to track the project right from their phone.",
         "cta": "Create my First Project Free",
@@ -36,7 +36,9 @@
         "videoPlaceholder": "[Video/Image of Person Holding App]"
     },
     "coreFeatures": {
-        "title": "Core Features",
+        "title": "Professional Tools for Your Project",
+        "ctaMidButton": "Try Free for 30 Days →",
+        "ctaMidSubtext": "Set up in under 2 minutes. Cancel anytime.",
         "rdoTitle": "Daily Construction Report (RDO)",
         "rdoText": "Generate complete PDF reports right from the site. Weather, personnel, activities, and photo galleries integrated.",
         "financeTitle": "Categorical Financial Management",
@@ -73,7 +75,7 @@
         "toggleAnnual": "Annual",
         "freePlan": "Free Plan",
         "freeDesc": "Start at no cost.",
-        "freeCta": "Try Now",
+        "freeCta": "Try Free for 30 Days",
         "freeFeatures": [
             "1 Active Project",
             "Monthly RDO limit",
@@ -187,7 +189,7 @@
     },
     "footer": {
         "ctaTitle": "Ready to level up your management?",
-        "ctaBtn": "Sign Up for Free",
+        "ctaBtn": "Try Free for 30 Days",
         "links": "Useful Links",
         "terms": "Terms of Use",
         "privacy": "Privacy Policy",

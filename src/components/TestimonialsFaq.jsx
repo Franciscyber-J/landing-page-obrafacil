@@ -26,26 +26,36 @@ export default function TestimonialsFaq() {
             text: t('social.test1'),
             author: t('social.author1'),
             role: t('social.role1'),
+            initials: 'CM',
+            color: '#3B82F6'
         },
         {
             text: t('social.test2'),
             author: t('social.author2'),
             role: t('social.role2'),
+            initials: 'RF',
+            color: '#F59E0B'
         },
         {
             text: t('social.test3'),
             author: t('social.author3'),
             role: t('social.role3'),
+            initials: 'SP',
+            color: '#EF4444'
         },
         {
             text: t('social.test4'),
             author: t('social.author4'),
             role: t('social.role4'),
+            initials: 'JT',
+            color: '#8B5CF6'
         },
         {
             text: t('social.test5'),
             author: t('social.author5'),
             role: t('social.role5'),
+            initials: 'FS',
+            color: '#10B981'
         },
     ];
 
@@ -63,7 +73,7 @@ export default function TestimonialsFaq() {
     ];
 
     return (
-        <section className={`section ${styles.section}`}>
+        <section id="faq" className={`section ${styles.section}`}>
             <div className="container">
 
                 {/* Testimonials */}
@@ -104,7 +114,21 @@ export default function TestimonialsFaq() {
                                         <Quote size={32} className={styles.quoteIcon} />
                                         <p className={styles.testText}>{test.text}</p>
                                         <div className={styles.authorInfo}>
-                                            <div className={styles.avatar}></div>
+                                            <div
+                                                className={styles.avatar}
+                                                style={{
+                                                    backgroundColor: test.color,
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    color: '#ffffff',
+                                                    fontWeight: '700',
+                                                    fontSize: '18px',
+                                                    fontFamily: "'Inter', sans-serif"
+                                                }}
+                                            >
+                                                {test.initials}
+                                            </div>
                                             <div>
                                                 <h4 className={styles.authorName}>{test.author}</h4>
                                                 <span className={styles.authorRole}>{test.role}</span>

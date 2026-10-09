@@ -1,6 +1,7 @@
 import HeroSection from './HeroSection';
 import ProblemSolution from './ProblemSolution';
 import CoreFeatures from './CoreFeatures';
+import MidCTA from './MidCTA';
 import CoManagement from './CoManagement';
 import Pricing from './Pricing';
 import TestimonialsFaq from './TestimonialsFaq';
@@ -14,6 +15,7 @@ export default function Home() {
                 <HeroSection />
                 <ProblemSolution />
                 <CoreFeatures />
+                <MidCTA />
                 <CoManagement />
                 <Pricing />
                 <TestimonialsFaq />

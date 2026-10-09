@@ -3,19 +3,34 @@ import { useTranslation } from 'react-i18next';
 import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './Pricing.module.css';
+import { getPricing } from '../i18n/pricing';
 
 export default function Pricing() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [isAnnual, setIsAnnual] = useState(false);
 
-    const freeFeatures = t('pricing.freeFeatures', { returnObjects: true });
+    const freeFeatures     = t('pricing.freeFeatures',     { returnObjects: true });
     const proFeaturesMensal = t('pricing.proFeaturesMensal', { returnObjects: true });
     const proFeaturesAnnual = t('pricing.proFeaturesAnnual', { returnObjects: true });
 
     const currentProFeatures = isAnnual ? proFeaturesAnnual : proFeaturesMensal;
 
+    // ── Preços calculados a partir da tabela Apple Store ─────────────────────
+    const p = getPricing(i18n.language);
+
+    // Strings "De X" (riscado)
+    const fromMonthlyStr = `${t('pricing.fromPrefix', 'De')} ${p.symbol} ${p.fromMonthly}`;
+    const fromAnnualStr  = `${t('pricing.fromPrefix', 'De')} ${p.symbol} ${p.fromAnnual}`;
+
+    // Subtext anual "Equivale a apenas X/mês"
+    const subtextAnnual = t('pricing.subtextAnnualTemplate', {
+        symbol: p.symbol,
+        amount: p.monthlyEquiv,
+        defaultValue: `(${t('pricing.subtextEquiv', 'Equivale a apenas')} ${p.symbol} ${p.monthlyEquiv} ${t('pricing.perMonth', '/mês')})`,
+    });
+
     return (
-        <section className={`section ${styles.section}`}>
+        <section id="precos" className={`section ${styles.section}`}>
             <div className="container">
 
                 <motion.div
@@ -64,8 +79,8 @@ export default function Pricing() {
                             <h3 className={styles.planName}>{t('pricing.freePlan')}</h3>
                             <p className={styles.planDesc}>{t('pricing.freeDesc')}</p>
                             <div className={styles.price}>
-                                <span className={styles.currency}>{t('pricing.currency')}</span>
-                                <span className={styles.amount}>{t('pricing.price0')}</span>
+                                <span className={styles.currency}>{p.symbol}</span>
+                                <span className={styles.amount}>0</span>
                                 <span className={styles.period}>{t('pricing.perMonth')}</span>
                             </div>
                         </div>
@@ -79,7 +94,7 @@ export default function Pricing() {
                             ))}
                         </ul>
 
-                        <a href="https://obrafacilapp.expertbr.com/cadastro" className="btn-outline" style={{ display: 'block', width: '100%', marginTop: 'auto', textAlign: 'center' }}>
+                        <a href="https://obrafacilapp.expertbr.com/cadastro?checkout=true&promo=30DIASFREE" className="btn-outline" style={{ display: 'block', width: '100%', marginTop: 'auto', textAlign: 'center' }}>
                             {t('pricing.freeCta')}
                         </a>
                     </motion.div>
@@ -100,13 +115,15 @@ export default function Pricing() {
                                 {isAnnual ? t('pricing.proDescAnnual') : t('pricing.proDescMensal')}
                             </p>
                             <div className={styles.priceContainer}>
-                                <div className={styles.anchorPrice}>
-                                    {isAnnual ? t('pricing.fromPriceAnnual') : t('pricing.fromPriceMensal')}
-                                </div>
+                                {isAnnual && (
+                                    <div className={styles.anchorPrice}>
+                                        {fromAnnualStr}
+                                    </div>
+                                )}
                                 <div className={styles.price}>
-                                    <span className={styles.currency}>{t('pricing.currency')}</span>
+                                    <span className={styles.currency}>{p.symbol}</span>
                                     <span className={styles.amount}>
-                                        {isAnnual ? t('pricing.priceAnnual') : t('pricing.priceMensal')}
+                                        {isAnnual ? p.annual : p.monthly}
                                     </span>
                                     <span className={styles.period}>
                                         {isAnnual ? t('pricing.periodAnnual', '/ano') : t('pricing.perMonth')}
@@ -114,7 +131,7 @@ export default function Pricing() {
                                 </div>
                                 {isAnnual && (
                                     <span className={styles.subtext}>
-                                        {t('pricing.subtextAnnual')}
+                                        {subtextAnnual}
                                     </span>
                                 )}
                             </div>
@@ -130,7 +147,10 @@ export default function Pricing() {
                         </ul>
 
                         <a 
-                            href={isAnnual ? "https://obrafacilapp.expertbr.com/cadastro?checkout=anual" : "https://obrafacilapp.expertbr.com/cadastro?checkout=true"} 
+                            href={isAnnual
+                                ? 'https://obrafacilapp.expertbr.com/cadastro?checkout=anual'
+                                : 'https://obrafacilapp.expertbr.com/cadastro?checkout=true'
+                            }
                             className={`btn-neon ${styles.proBtn}`} 
                             style={{ display: 'block', width: '100%', marginTop: 'auto', textAlign: 'center' }}
                         >

@@ -60,7 +60,7 @@ export default function CoreFeatures() {
     ];
 
     return (
-        <section className={`section ${styles.section}`}>
+        <section id="recursos" className={`section ${styles.section}`}>
             <div className="container">
 
                 <motion.div

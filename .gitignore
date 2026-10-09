@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Pacotes de deploy e backups ficam fora do projeto
+*.zip
