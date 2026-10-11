@@ -16,6 +16,13 @@ export default function ExitIntentPopup() {
     useEffect(() => {
         if (hasTriggered) return;
 
+        const triggerPopup = () => {
+            if (!hasTriggered) {
+                setIsVisible(true);
+                setHasTriggered(true);
+            }
+        };
+
         const handleMouseLeave = (e) => {
             if (e.clientY <= 0) {
                 triggerPopup();
@@ -33,13 +40,6 @@ export default function ExitIntentPopup() {
             document.documentElement.removeEventListener('mouseleave', handleMouseLeave);
         };
     }, [hasTriggered]);
-
-    const triggerPopup = () => {
-        if (!hasTriggered) {
-            setIsVisible(true);
-            setHasTriggered(true);
-        }
-    };
 
     const closePopup = () => {
         setIsVisible(false);
