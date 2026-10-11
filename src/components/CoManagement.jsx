@@ -2,12 +2,15 @@ import { useTranslation } from 'react-i18next';
 import { Shield, Eye, Edit3, UserPlus, HardHat } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './CoManagement.module.css';
+import { idDaSecao } from '../i18n/idiomas.js';
+import { useIdioma } from '../i18n/RotaDoIdioma.jsx';
 
 export default function CoManagement() {
+    const codigo = useIdioma();
     const { t } = useTranslation();
 
     return (
-        <section id="equipe" className={`section ${styles.section}`}>
+        <section id={idDaSecao(codigo, 'equipe')} className={`section ${styles.section}`}>
             <div className={`container ${styles.grid}`}>
 
                 {/* Abstract App Roles Visualization */}

@@ -1,0 +1,124 @@
+# =============================================================================
+# ObraFácil — appobrafacil.expertbr.com (Hostinger, pasta public_html/appobrafacil)
+#
+# Nesta pasta vivem duas coisas:
+#   - o site (React, gerado pelo "npm run build": index.html + assets/)
+#   - o WordPress, que ainda serve Termos de Uso, Política de Privacidade e Suporte.
+#
+# Este arquivo é versionado em landing_page/hospedagem/.htaccess. Para mudar,
+# edite no repositório e copie o arquivo INTEIRO para a Hostinger.
+# Os blocos "LSCACHE" e "WordPress" são escritos pelo plugin LiteSpeed Cache e
+# pelo WordPress: se eles mudarem sozinhos no servidor, traga a mudança para cá.
+# =============================================================================
+
+DirectoryIndex index.html index.php
+Options -Indexes
+
+# -----------------------------------------------------------------------------
+# Segurança: cabeçalhos em todas as respostas (site e WordPress)
+# -----------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), usb=()"
+    Header always unset X-Powered-By
+    Header unset X-Powered-By
+
+    # index.html do site: sempre conferir se há versão nova (os arquivos de
+    # assets/ têm o nome mudado a cada build, então podem ficar em cache).
+    <FilesMatch "^index\.html$">
+        Header set Cache-Control "no-cache"
+        # Política de conteúdo do site em modo de TESTE (só avisa no console,
+        # não bloqueia). Depois de conferido no navegador, troque
+        # "Content-Security-Policy-Report-Only" por "Content-Security-Policy".
+        Header set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://firestore.googleapis.com https://firebasestorage.googleapis.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.doubleclick.net https://*.googleadservices.com https://*.google.com https://pagead2.googlesyndication.com; frame-src https://td.doubleclick.net https://bid.g.doubleclick.net https://www.googletagmanager.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+    </FilesMatch>
+</IfModule>
+
+# -----------------------------------------------------------------------------
+# Segurança: WordPress
+# -----------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# xmlrpc.php não é usado e permite testar centenas de senhas numa só requisição.
+RewriteRule ^xmlrpc\.php$ - [F,L,NC]
+
+# Arquivos que só servem para mostrar a versão ou que nunca devem ser abertos.
+RewriteRule ^(readme\.html|license\.txt|wp-config\.php|wp-config-sample\.php|\.user\.ini|php\.ini|error_log)$ - [F,L,NC]
+RewriteRule \.(bak|bk|old|orig|sql|log|swp)$ - [F,L,NC]
+
+# Lista de usuários (entrega o nome de login do administrador) para quem não
+# está logado: pela API e pelo ?author=N. É a primeira barreira; a definitiva é o
+# arquivo wp-content/mu-plugins/obrafacil-seguranca.php (ver hospedagem/LEIAME.md).
+RewriteCond %{HTTP_COOKIE} !wordpress_logged_in_ [NC]
+RewriteRule ^wp-json/wp/v2/users - [F,L,NC]
+RewriteCond %{HTTP_COOKIE} !wordpress_logged_in_ [NC]
+RewriteCond %{QUERY_STRING} (^|&)rest_route=(/|%2F)?wp(/|%2F)v2(/|%2F)users [NC]
+RewriteRule ^ - [F,L]
+RewriteCond %{REQUEST_URI} !^/wp-admin/ [NC]
+RewriteCond %{QUERY_STRING} (^|&)author=[0-9]+ [NC]
+RewriteRule ^ - [F,L]
+
+# Nenhum PHP roda dentro da pasta de uploads.
+RewriteRule ^wp-content/uploads/.*\.(php|phtml|phar)$ - [F,L,NC]
+
+# -----------------------------------------------------------------------------
+# Site (React): endereços do site abrem o index.html
+# Endereços com prefixo de idioma (/pt-br/..., /en-us/..., /es-mx/...) e o antigo
+# /ajuda. Qualquer idioma novo já entra pela regra (duas letras + região opcional).
+# Arquivos e pastas que existem de verdade continuam sendo servidos direto.
+# -----------------------------------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(ajuda(/.*)?|[a-z]{2}(-[a-z]{2})?(/.*)?)$ /index.html [L,NC]
+</IfModule>
+
+# BEGIN LSCACHE
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule litespeed/debug/.*\.log$ - [F,L]
+RewriteRule \.litespeed_conf\.dat - [F,L]
+</IfModule>
+<IfModule LiteSpeed>
+CacheLookup on
+RewriteRule .* - [E=Cache-Control:no-autoflush]
+
+### marker ASYNC start ###
+RewriteCond %{REQUEST_URI} /wp-admin/admin-ajax\.php
+RewriteCond %{QUERY_STRING} action=async_litespeed
+RewriteRule .* - [E=noabort:1]
+### marker ASYNC end ###
+
+### marker DROPQS start ###
+CacheKeyModify -qs:fbclid
+CacheKeyModify -qs:gclid
+CacheKeyModify -qs:utm*
+CacheKeyModify -qs:_ga
+### marker DROPQS end ###
+
+</IfModule>
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+# END LSCACHE
+# BEGIN NON_LSCACHE
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+# END NON_LSCACHE
+# BEGIN WordPress
+# As diretrizes (linhas) entre "BEGIN WordPress" e "END WordPress" são
+# geradas dinamicamente e só devem ser modificadas através de filtros do WordPress.
+# Quaisquer alterações nas diretivas entre esses marcadores serão sobrescritas.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress

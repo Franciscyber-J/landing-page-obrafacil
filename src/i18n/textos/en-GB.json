@@ -1,0 +1,51 @@
+{
+    "hero": {
+        "socialProof": "No credit card required. Set up in under 2 minutes."
+    },
+    "coreFeatures": {
+        "financeText": "Control budgets, expenses, and transactions. Know exactly where every penny was invested."
+    },
+    "coManagement": {
+        "point3": "Works 100% Offline on site or in remote locations, syncing when connected."
+    },
+    "pricing": {
+        "fromPriceMensal": "From £ 44.97",
+        "fromPriceAnnual": "From £ 389.97",
+        "subtextAnnual": "(Equivalent to just £ 10.83 per month)",
+        "proFeaturesAnnual": [
+            "All the benefits of the PRO Monthly plan",
+            "Savings of almost £ 50.00 for your company",
+            "Shield against future price increases",
+            "Priority access to new tools and updates"
+        ],
+        "currency": "£"
+    },
+    "popup": {
+        "body": "Contact our agent on WhatsApp right now and request your VIP invite. You will lock in your PRO subscription for only **£ 7.49/month** for a full year.",
+        "whatsappMessage": "Hi, I was on the Obra Fácil website, I saw the hidden invite and I want to secure my Founding Member spot for £ 7.49."
+    },
+    "social": {
+        "test5": "\"Even the final client praised the organisation. I finally look as professional as the big firms.\""
+    },
+    "faq": {
+        "a3": "Absolutely. We use the most modern cloud infrastructures and end-to-end encryption to ensure data security.",
+        "a5": "The app temporarily saves information in your phone's memory (cache). Once the connection is restored, data synchronises to the cloud automatically.",
+        "a10": "The system pauses the creation of new projects and file uploads, but you won't lose existing data as long as you regularise the payment."
+    },
+    "ajuda": {
+        "titulo": "Help Centre",
+        "buscaRotulo": "Search the Help Centre",
+        "assuntosPerfil_todos": "Every topic in the Help Centre.",
+        "suporteTexto": "Chat with support on WhatsApp or raise a ticket in the app.",
+        "suporteMensagem": "Hi, I came from the Help Centre on your website and I have a question.",
+        "carregando": "Loading the Help Centre…",
+        "erroTitulo": "We couldn't load the Help Centre",
+        "vazioTitulo": "Our guides are on their way",
+        "vazioTexto": "Help Centre articles will appear here soon. In the meantime, support can answer your questions on WhatsApp.",
+        "naoEncontradoTexto": "This address doesn't lead to an article. It may have been renamed; try the Help Centre search.",
+        "voltarCentral": "Back to the Help Centre"
+    },
+    "footer": {
+        "help": "Help Centre"
+    }
+}
