@@ -4,7 +4,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { buscar, normalizar, prepararBusca, termosDaConsulta } from './busca.js';
 import { lerLinha, lerTexto } from './texto.js';
-import { idiomaDaAjuda, idiomaDoSite, IDIOMAS_AJUDA } from './idiomas.js';
+import { idiomaDoConteudo, IDIOMAS_AJUDA } from './idiomas.js';
 
 const ARTIGOS = [
     { id: 'cadastrar-colaborador', titulo: 'Como cadastrar um colaborador na sua equipe', resumo: 'Cadastre quem trabalha na obra.', tags: ['funcionário', 'pedreiro'], busca: 'Abra Equipe e toque em Novo colaborador.', prioritario: true },
@@ -73,11 +73,8 @@ test('texto: "**" sem par aparece como texto', () => {
     assert.deepEqual(pedacos.map((x) => [x.texto, x.negrito]), [['a ', false], ['b', true], [' c **d', false]]);
 });
 
-test('idiomas: ida e volta entre o site e a Central', () => {
-    for (const i of IDIOMAS_AJUDA) assert.equal(idiomaDaAjuda(idiomaDoSite(i)), i);
-    assert.equal(idiomaDaAjuda('pt'), 'pt-BR');
-    assert.equal(idiomaDaAjuda('es'), 'es-ES');
-    assert.equal(idiomaDaAjuda('en-NZ'), 'en-US');
-    assert.equal(idiomaDaAjuda('fr'), 'pt-BR');
-    assert.equal(idiomaDaAjuda(undefined), 'pt-BR');
+test('idiomas: idioma dos artigos para cada idioma do site', () => {
+    for (const i of IDIOMAS_AJUDA) assert.equal(idiomaDoConteudo(i), i);
+    assert.equal(idiomaDoConteudo('fr-FR'), 'en-US');
+    assert.equal(idiomaDoConteudo(undefined), 'en-US');
 });

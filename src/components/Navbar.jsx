@@ -1,47 +1,33 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import ReactCountryFlag from 'react-country-flag';
 import { Globe, Moon, Sun, Menu, X, ChevronDown, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { IDIOMAS, caminhoInicio, idioma } from '../i18n/idiomas.js';
+import { useIdioma, useTrocarIdioma } from '../i18n/RotaDoIdioma.jsx';
 import styles from './Navbar.module.css';
 
-const LANGUAGES = [
-    { code: 'pt',    country: 'BR', label: 'Português (Brasil)',     short: 'PT-BR' },
-    { code: 'pt-PT', country: 'PT', label: 'Português (Portugal)',   short: 'PT-PT' },
-    { code: 'en',    country: 'US', label: 'English (USA)',          short: 'EN-US' },
-    { code: 'en-GB', country: 'GB', label: 'English (UK)',           short: 'EN-GB' },
-    { code: 'en-AU', country: 'AU', label: 'English (Australia)',    short: 'EN-AU' },
-    { code: 'en-CA', country: 'CA', label: 'English (Canada)',       short: 'EN-CA' },
-    { code: 'es-MX', country: 'MX', label: 'Español (México/LATAM)', short: 'ES-MX' },
-    { code: 'es',    country: 'ES', label: 'Español (España)',       short: 'ES-ES' },
-];
+const TAMANHOS = { lg: [28, 20], md: [24, 17], sm: [20, 14] };
 
-// Reusable flag component with consistent sizing
-function Flag({ countryCode, size = 'md' }) {
-    const dimensions = size === 'lg'
-        ? { width: '28px', height: '20px' }
-        : size === 'sm'
-        ? { width: '20px', height: '14px' }
-        : { width: '24px', height: '17px' };
-
+// Bandeiras servidas pelo próprio site (public/bandeiras, geradas no build a partir do
+// pacote flag-icons): nada de CDN de terceiros.
+export function Bandeira({ pais, size = 'md' }) {
+    const [largura, altura] = TAMANHOS[size] ?? TAMANHOS.md;
     return (
-        <ReactCountryFlag
-            countryCode={countryCode}
-            svg
-            style={{
-                width: dimensions.width,
-                height: dimensions.height,
-                borderRadius: '3px',
-                objectFit: 'cover',
-                display: 'block',
-                flexShrink: 0,
-            }}
+        <img
+            src={`/bandeiras/${pais.toLowerCase()}.svg`}
+            alt=""
+            width={largura}
+            height={altura}
+            style={{ width: largura, height: altura, borderRadius: 3, objectFit: 'cover', display: 'block', flexShrink: 0 }}
         />
     );
 }
 
 export default function Navbar({ onOpenLogin }) {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
+    const codigo = useIdioma();
+    const trocarIdioma = useTrocarIdioma();
+    const inicio = caminhoInicio(codigo);
     const [isDarkMode, setIsDarkMode]       = useState(true);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [langOpen, setLangOpen]           = useState(false);
@@ -51,13 +37,6 @@ export default function Navbar({ onOpenLogin }) {
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
     }, [isDarkMode]);
-
-    // Update document lang attribute to match i18n language
-    useEffect(() => {
-        if (i18n.language) {
-            document.documentElement.lang = i18n.language;
-        }
-    }, [i18n.language]);
 
     // Close lang dropdown on outside click
     useEffect(() => {
@@ -73,14 +52,12 @@ export default function Navbar({ onOpenLogin }) {
     const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
     const changeLanguage = (lang) => {
-        i18n.changeLanguage(lang);
         setLangOpen(false);
+        setIsMobileMenuOpen(false);
+        if (lang !== codigo) trocarIdioma(lang);
     };
 
-    const currentLang =
-        LANGUAGES.find((l) => l.code === i18n.language) ||
-        LANGUAGES.find((l) => l.code === (i18n.language?.split('-')[0] || 'pt')) ||
-        LANGUAGES[0];
+    const currentLang = idioma(codigo) ?? IDIOMAS[0];
 
     return (
         <nav className={`glass-panel ${styles.navbar}`}>
@@ -88,10 +65,10 @@ export default function Navbar({ onOpenLogin }) {
 
                 {/* Logo */}
                 <Link
-                    to="/"
+                    to={inicio}
                     className={styles.logo}
                     onClick={(e) => {
-                        if (window.location.pathname === '/') {
+                        if (window.location.pathname === inicio && !window.location.hash) {
                             e.preventDefault();
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                         }
@@ -110,25 +87,31 @@ export default function Navbar({ onOpenLogin }) {
                             onClick={() => setLangOpen((o) => !o)}
                             aria-haspopup="listbox"
                             aria-expanded={langOpen}
-                            aria-label="Select language"
+                            aria-label={t('nav.chooseLanguage')}
                         >
-                            <Flag countryCode={currentLang.country} size="lg" />
+                            <Bandeira pais={currentLang.pais} size="lg" />
                             <ChevronDown size={13} className={`${styles.langChevron} ${langOpen ? styles.langChevronOpen : ''}`} />
                         </button>
 
                         {langOpen && (
-                            <ul className={styles.langDropdown} role="listbox">
-                                {LANGUAGES.map((lang) => (
+                            <ul className={styles.langDropdown} role="listbox" aria-label={t('nav.chooseLanguage')}>
+                                {IDIOMAS.map((lang) => (
                                     <li
-                                        key={lang.code}
+                                        key={lang.codigo}
                                         role="option"
-                                        aria-selected={currentLang.code === lang.code}
-                                        className={`${styles.langOption} ${currentLang.code === lang.code ? styles.langOptionActive : ''}`}
-                                        onClick={() => changeLanguage(lang.code)}
+                                        lang={lang.codigo}
+                                        tabIndex={0}
+                                        aria-selected={currentLang.codigo === lang.codigo}
+                                        className={`${styles.langOption} ${currentLang.codigo === lang.codigo ? styles.langOptionActive : ''}`}
+                                        onClick={() => changeLanguage(lang.codigo)}
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); changeLanguage(lang.codigo); }
+                                            if (e.key === 'Escape') setLangOpen(false);
+                                        }}
                                     >
-                                        <Flag countryCode={lang.country} size="md" />
-                                        <span className={styles.langOptionLabel}>{lang.label}</span>
-                                        {currentLang.code === lang.code && (
+                                        <Bandeira pais={lang.pais} size="md" />
+                                        <span className={styles.langOptionLabel}>{lang.nome}</span>
+                                        {currentLang.codigo === lang.codigo && (
                                             <Check size={13} className={styles.langOptionCheck} />
                                         )}
                                     </li>
@@ -137,7 +120,7 @@ export default function Navbar({ onOpenLogin }) {
                         )}
                     </div>
 
-                    <button onClick={toggleTheme} className={styles.iconBtn} aria-label="Toggle Theme">
+                    <button onClick={toggleTheme} className={styles.iconBtn} aria-label={t('nav.themeToggle')}>
                         {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
                     </button>
 
@@ -149,6 +132,8 @@ export default function Navbar({ onOpenLogin }) {
                 <button
                     className={styles.mobileToggle}
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    aria-label={t('nav.menu')}
+                    aria-expanded={isMobileMenuOpen}
                 >
                     {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
@@ -161,17 +146,19 @@ export default function Navbar({ onOpenLogin }) {
                     <div className={styles.mobileOverlay} onClick={() => setIsMobileMenuOpen(false)}></div>
                     <div className={`glass-panel ${styles.mobileMenu}`}>
                         {/* Language options inline in mobile menu */}
-                        <p className={styles.mobileSectionLabel}><Globe size={14} /> {t('nav.language') || 'Idioma'}</p>
+                        <p className={styles.mobileSectionLabel}><Globe size={14} /> {t('nav.language')}</p>
                         <div className={styles.mobileLangRow}>
-                            {LANGUAGES.map((lang) => (
+                            {IDIOMAS.map((lang) => (
                                 <button
-                                    key={lang.code}
-                                    className={`${styles.mobileLangBtn} ${currentLang.code === lang.code ? styles.mobileLangBtnActive : ''}`}
-                                    onClick={() => { changeLanguage(lang.code); }}
-                                    title={lang.label}
+                                    key={lang.codigo}
+                                    lang={lang.codigo}
+                                    className={`${styles.mobileLangBtn} ${currentLang.codigo === lang.codigo ? styles.mobileLangBtnActive : ''}`}
+                                    onClick={() => { changeLanguage(lang.codigo); }}
+                                    title={lang.nome}
+                                    aria-pressed={currentLang.codigo === lang.codigo}
                                 >
-                                    <Flag countryCode={lang.country} size="md" />
-                                    <span className={styles.mobileLangShort}>{lang.short}</span>
+                                    <Bandeira pais={lang.pais} size="md" />
+                                    <span className={styles.mobileLangShort}>{lang.curto}</span>
                                 </button>
                             ))}
                         </div>

@@ -7,14 +7,20 @@ Firestore pelo publicador (`gestao_obras/ferramentas/ajuda`). O site só lê.
 
 | Endereço | Página |
 | --- | --- |
-| `/ajuda` | Leva para a Central no idioma atual do site |
-| `/ajuda/pt-BR` | Início: busca, guias completos, assuntos e essenciais |
-| `/ajuda/pt-BR/assunto/diario-de-obra` | Todos os artigos de um assunto |
-| `/ajuda/pt-BR/criar-rdo` | Artigo (o final é o `slug` do artigo naquele idioma) |
+| `/pt-br/ajuda` · `/en-us/help` · `/es-es/ayuda` | Início: busca, guias completos, assuntos e essenciais |
+| `/pt-br/ajuda/assunto/diario-de-obra-rdo` · `/en-us/help/topic/daily-reports` | Todos os artigos de um assunto (nome do módulo no idioma) |
+| `/pt-br/ajuda/criar-rdo` · `/en-gb/help/create-daily-report` | Artigo (o final é o `slug` do artigo naquele idioma) |
+| `/ajuda`, `/ajuda/pt-BR/...` | Endereços antigos: levam ao endereço novo no idioma certo |
 
-Idiomas: `pt-BR`, `pt-PT`, `en-US`, `en-GB`, `en-AU`, `en-CA`, `es-ES`, `es-MX`. Trocar o idioma no
-menu do site leva para a mesma página no idioma novo. Um endereço com o `id` do artigo no lugar
-do `slug` (ex.: `/ajuda/en-US/criar-rdo`) é corrigido sozinho para o endereço certo.
+As palavras `ajuda`/`help`/`ayuda` e `assunto`/`topic`/`tema` vêm de `src/i18n/registro.js`
+(ver `src/i18n/LEIAME.md`). O nome do assunto no endereço é o nome do módulo sem acento; para isso o
+índice publicado traz `modulos[].nomes` (nome em todos os idiomas). Trocar o idioma no menu leva para a
+mesma página no idioma novo. Endereço com o `id` do artigo ou do módulo, ou com o nome em outro idioma
+(ex.: `/en-us/help/criar-rdo`), é corrigido sozinho para o endereço certo.
+
+Idiomas dos artigos: `pt-BR`, `pt-PT`, `en-US`, `en-GB`, `en-AU`, `en-CA`, `es-ES`, `es-MX`
+(`src/ajuda/idiomas.js`). Um idioma do site sem artigos próprios mostra os artigos do primeiro idioma
+da cadeia dele que tiver (ex.: francês → inglês), com a tela no idioma do site.
 
 Como o site é de página única, a hospedagem precisa devolver o `index.html` para qualquer
 endereço que não seja um arquivo (regra no `.htaccess` da Hostinger). Sem ela, abrir um link de
@@ -45,7 +51,8 @@ npm run dev
 | `src/ajuda/dados.js` | Lê índice e artigo (Firestore ou local), cache e endereço dos prints |
 | `src/ajuda/busca.js` | Busca sem acento e sem maiúscula; título > tag > resumo > texto dos passos |
 | `src/ajuda/texto.js` | Lê o texto dos passos: só `**negrito**`, lista `- ` e `[texto](artigo:id)`; nunca HTML |
-| `src/ajuda/idiomas.js` | Idiomas da Central e a ligação com os idiomas do site |
+| `src/ajuda/idiomas.js` | Idiomas em que os artigos são publicados e qual usar para cada idioma do site |
+| `src/ajuda/enderecos.js` | Endereços da Central no idioma do site (assunto pelo nome do módulo) |
 | `src/components/ajuda/` | Páginas (início, assunto, artigo), busca e estados (carregando, erro, vazio) |
 
 Testes da busca, do texto e dos idiomas: `npm test`.

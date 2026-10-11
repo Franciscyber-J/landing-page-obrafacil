@@ -3,13 +3,16 @@ import { useTranslation } from 'react-i18next';
 import { MessageCircle, ShieldCheck, XCircle, CheckCircle, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './ProblemSolution.module.css';
+import { idDaSecao } from '../i18n/idiomas.js';
+import { useIdioma } from '../i18n/RotaDoIdioma.jsx';
 
 export default function ProblemSolution() {
+    const codigo = useIdioma();
     const { t } = useTranslation();
     const [activeLightbox, setActiveLightbox] = useState(null);
 
     return (
-        <section id="sobre" className={`section ${styles.section}`}>
+        <section id={idDaSecao(codigo, 'sobre')} className={`section ${styles.section}`}>
             <div className={`container ${styles.grid}`}>
 
                 {/* The Problem */}

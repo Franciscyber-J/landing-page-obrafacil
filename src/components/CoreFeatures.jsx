@@ -9,8 +9,11 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './CoreFeatures.module.css';
+import { idDaSecao } from '../i18n/idiomas.js';
+import { useIdioma } from '../i18n/RotaDoIdioma.jsx';
 
 export default function CoreFeatures() {
+    const codigo = useIdioma();
     const { t } = useTranslation();
 
     const features = [
@@ -60,7 +63,7 @@ export default function CoreFeatures() {
     ];
 
     return (
-        <section id="recursos" className={`section ${styles.section}`}>
+        <section id={idDaSecao(codigo, 'recursos')} className={`section ${styles.section}`}>
             <div className="container">
 
                 <motion.div

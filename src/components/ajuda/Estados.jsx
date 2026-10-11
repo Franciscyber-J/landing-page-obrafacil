@@ -58,12 +58,12 @@ export function NadaPublicado() {
     );
 }
 
-export function NaoEncontrado({ idioma, titulo }) {
+export function NaoEncontrado({ para, titulo }) {
     const { t } = useTranslation();
     useTituloDaPagina(`${titulo} · ${t('ajuda.titulo')} · ObraFácil`);
     return (
         <Aviso icone={<SearchX size={28} aria-hidden="true" />} titulo={titulo} texto={t('ajuda.naoEncontradoTexto')}>
-            <Link className={styles.botao} to={`/ajuda/${idioma}`}>{t('ajuda.voltarCentral')}</Link>
+            <Link className={styles.botao} to={para}>{t('ajuda.voltarCentral')}</Link>
         </Aviso>
     );
 }

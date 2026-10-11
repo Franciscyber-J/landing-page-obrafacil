@@ -4,9 +4,12 @@ import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './Pricing.module.css';
 import { getPricing } from '../i18n/pricing';
+import { idDaSecao } from '../i18n/idiomas.js';
+import { useIdioma } from '../i18n/RotaDoIdioma.jsx';
 
 export default function Pricing() {
-    const { t, i18n } = useTranslation();
+    const codigo = useIdioma();
+    const { t } = useTranslation();
     const [isAnnual, setIsAnnual] = useState(false);
 
     const freeFeatures     = t('pricing.freeFeatures',     { returnObjects: true });
@@ -16,7 +19,7 @@ export default function Pricing() {
     const currentProFeatures = isAnnual ? proFeaturesAnnual : proFeaturesMensal;
 
     // ── Preços calculados a partir da tabela Apple Store ─────────────────────
-    const p = getPricing(i18n.language);
+    const p = getPricing(codigo);
 
     // Strings "De X" (riscado)
     const fromMonthlyStr = `${t('pricing.fromPrefix', 'De')} ${p.symbol} ${p.fromMonthly}`;
@@ -30,7 +33,7 @@ export default function Pricing() {
     });
 
     return (
-        <section id="precos" className={`section ${styles.section}`}>
+        <section id={idDaSecao(codigo, 'precos')} className={`section ${styles.section}`}>
             <div className="container">
 
                 <motion.div

@@ -1,14 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { ArrowRight, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { IDIOMAS, caminhoAjuda } from '../i18n/idiomas.js';
+import { useIdioma, useTrocarIdioma } from '../i18n/RotaDoIdioma.jsx';
 import styles from './Footer.module.css';
 
 export default function Footer() {
-    const { t, i18n } = useTranslation();
-
-    const changeLanguage = (lang) => {
-        i18n.changeLanguage(lang);
-    };
+    const { t } = useTranslation();
+    const codigo = useIdioma();
+    const trocarIdioma = useTrocarIdioma();
 
     return (
         <footer className={styles.footer}>
@@ -34,19 +34,20 @@ export default function Footer() {
                             <span className="neon-text">Obra Fácil</span>
                         </div>
                         <p className={styles.tagline}>
-                            Gestão de obras inteligente. Transparência que encanta o seu cliente.
+                            {t('footer.tagline')}
                         </p>
 
                         <div className={styles.langSelector}>
-                            <Globe size={18} />
+                            <Globe size={18} aria-hidden="true" />
                             <select
-                                onChange={(e) => changeLanguage(e.target.value)}
-                                value={i18n.language}
+                                onChange={(e) => trocarIdioma(e.target.value)}
+                                value={codigo}
                                 className={styles.select}
+                                aria-label={t('footer.language')}
                             >
-                                <option value="pt">Português (PT)</option>
-                                <option value="en">English (EN)</option>
-                                <option value="es">Español (ES)</option>
+                                {IDIOMAS.map((i) => (
+                                    <option key={i.codigo} value={i.codigo} lang={i.codigo}>{i.nome}</option>
+                                ))}
                             </select>
                         </div>
                     </div>
@@ -57,7 +58,7 @@ export default function Footer() {
                         <ul className={styles.linkList}>
                             <li><a href="https://appobrafacil.expertbr.com/termos-de-uso/" target="_blank" rel="noopener noreferrer">{t('footer.terms')}</a></li>
                             <li><a href="https://appobrafacil.expertbr.com/politicas-de-privacidade/" target="_blank" rel="noopener noreferrer">{t('footer.privacy')}</a></li>
-                            <li><Link to="/ajuda">{t('footer.help')}</Link></li>
+                            <li><Link to={caminhoAjuda(codigo)}>{t('footer.help')}</Link></li>
                             <li><a href="https://appobrafacil.expertbr.com/suporte/" target="_blank" rel="noopener noreferrer">{t('footer.support')}</a></li>
                         </ul>
                     </div>
@@ -66,7 +67,7 @@ export default function Footer() {
 
                 {/* Copyright */}
                 <div className={styles.copyright}>
-                    <p>&copy; {new Date().getFullYear()} Obra Fácil SaaS. Todos os direitos reservados.</p>
+                    <p>&copy; {new Date().getFullYear()} Obra Fácil SaaS. {t('footer.rights')}</p>
                 </div>
             </div>
         </footer>

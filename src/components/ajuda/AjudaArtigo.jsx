@@ -1,9 +1,10 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ExternalLink, Smartphone, Users, ListOrdered } from 'lucide-react';
-import { carregarArtigo, enderecoDoPrint } from '../../ajuda/dados.js';
-import { IDIOMAS_AJUDA, NOMES_IDIOMAS } from '../../ajuda/idiomas.js';
+import { enderecoDoPrint } from '../../ajuda/dados.js';
+import { idiomaDoConteudo } from '../../ajuda/idiomas.js';
+import { IDIOMAS, caminhoArtigo } from '../../i18n/idiomas.js';
 import AjudaBusca from './AjudaBusca.jsx';
 import IconeModulo from './IconeModulo.jsx';
 import TextoDoPasso from './TextoDoPasso.jsx';
@@ -13,24 +14,6 @@ import styles from './Ajuda.module.css';
 
 const ENDERECO_APP = 'https://obrafacilapp.expertbr.com';
 
-function useArtigo(entrada, idioma) {
-    const [tentativa, setTentativa] = useState(0);
-    const [estado, setEstado] = useState({ chave: null, tipo: 'carregando', doc: null });
-    const chave = entrada ? `${entrada.id}:${idioma}:${entrada.hash}:${tentativa}` : null;
-
-    useEffect(() => {
-        if (!entrada) return undefined;
-        let vivo = true;
-        carregarArtigo(entrada, idioma)
-            .then((doc) => { if (vivo) setEstado({ chave, tipo: doc ? 'pronto' : 'sumiu', doc }); })
-            .catch(() => { if (vivo) setEstado({ chave, tipo: 'erro', doc: null }); });
-        return () => { vivo = false; };
-    }, [chave]); // eslint-disable-line react-hooks/exhaustive-deps
-
-    const atual = estado.chave === chave ? estado : { chave, tipo: 'carregando', doc: null };
-    return { ...atual, tentarDeNovo: () => setTentativa((n) => n + 1) };
-}
-
 // "gestor e equipe", "manager, team and client"...
 function listaDePublico(publico, t) {
     const nomes = publico.map((p) => t(`ajuda.publico_${p}`));
@@ -38,9 +21,9 @@ function listaDePublico(publico, t) {
     return `${nomes.slice(0, -1).join(', ')} ${t('ajuda.e')} ${nomes[nomes.length - 1]}`;
 }
 
-export default function AjudaArtigo({ idioma, indice, preparado, entrada, slug }) {
+// artigo: { tipo: carregando | pronto | erro | sumiu, doc, tentarDeNovo } (carregado em AjudaPagina).
+export default function AjudaArtigo({ codigo, idioma, indice, preparado, rotas, entrada, slug, artigo }) {
     const { t } = useTranslation();
-    const artigo = useArtigo(entrada, idioma);
     const porId = useMemo(() => new Map(indice.artigos.map((a) => [a.id, a])), [indice]);
     const modulo = entrada ? indice.modulos.find((m) => m.id === entrada.modulo) : null;
     useTituloDaPagina(
@@ -48,25 +31,25 @@ export default function AjudaArtigo({ idioma, indice, preparado, entrada, slug }
         entrada?.resumo ?? null,
     );
 
-    if (!entrada) return <NaoEncontrado idioma={idioma} titulo={t('ajuda.naoEncontradoTitulo')} />;
+    if (!entrada) return <NaoEncontrado para={rotas.inicio} titulo={t('ajuda.naoEncontradoTitulo')} />;
     // Endereço pelo id ou com o nome antigo: troca pelo endereço certo deste idioma.
-    if (slug !== entrada.slug) return <Navigate to={`/ajuda/${idioma}/${entrada.slug}`} replace />;
+    if (slug !== entrada.slug) return <Navigate to={rotas.artigo(entrada.slug)} replace />;
 
-    const enderecoDoArtigo = (id) => (porId.has(id) ? `/ajuda/${idioma}/${porId.get(id).slug}` : null);
+    const enderecoDoArtigo = (id) => (porId.has(id) ? rotas.artigo(porId.get(id).slug) : null);
     const trilha = (
         <div className={styles.topoPagina}>
             <Trilha itens={[
-                { texto: t('ajuda.titulo'), para: `/ajuda/${idioma}` },
-                ...(modulo ? [{ texto: modulo.nome, para: `/ajuda/${idioma}/assunto/${modulo.id}` }] : []),
+                { texto: t('ajuda.titulo'), para: rotas.inicio },
+                ...(modulo ? [{ texto: modulo.nome, para: rotas.assunto(modulo) }] : []),
                 { texto: entrada.titulo },
             ]} />
-            <AjudaBusca idioma={idioma} indice={indice} preparado={preparado} compacto />
+            <AjudaBusca rotas={rotas} indice={indice} preparado={preparado} compacto />
         </div>
     );
 
     if (artigo.tipo === 'carregando') return <>{trilha}<Carregando /></>;
     if (artigo.tipo === 'erro') return <ErroAoCarregar aoTentarDeNovo={artigo.tentarDeNovo} />;
-    if (artigo.tipo === 'sumiu') return <NaoEncontrado idioma={idioma} titulo={t('ajuda.naoEncontradoTitulo')} />;
+    if (artigo.tipo === 'sumiu') return <NaoEncontrado para={rotas.inicio} titulo={t('ajuda.naoEncontradoTitulo')} />;
 
     const doc = artigo.doc;
     const conteudo = doc.conteudo[idioma];
@@ -77,7 +60,10 @@ export default function AjudaArtigo({ idioma, indice, preparado, entrada, slug }
     const posicao = doModulo.findIndex((a) => a.id === entrada.id);
     const anterior = posicao > 0 ? doModulo[posicao - 1] : null;
     const proximo = posicao >= 0 && posicao < doModulo.length - 1 ? doModulo[posicao + 1] : null;
-    const outrosIdiomas = IDIOMAS_AJUDA.filter((i) => i !== idioma && doc.conteudo[i]?.slug);
+    const outrosIdiomas = IDIOMAS
+        .filter((i) => i.codigo !== codigo)
+        .map((i) => ({ ...i, slug: doc.conteudo[idiomaDoConteudo(i.codigo)]?.slug }))
+        .filter((i) => i.slug);
 
     return (
         <div className={styles.container}>
@@ -85,7 +71,7 @@ export default function AjudaArtigo({ idioma, indice, preparado, entrada, slug }
 
             <header className={styles.cabecalhoArtigo}>
                 {modulo && (
-                    <Link to={`/ajuda/${idioma}/assunto/${modulo.id}`} className={styles.sobretituloLink}>
+                    <Link to={rotas.assunto(modulo)} className={styles.sobretituloLink}>
                         <IconeModulo nome={modulo.icone} size={18} />{modulo.nome}
                     </Link>
                 )}
@@ -134,7 +120,7 @@ export default function AjudaArtigo({ idioma, indice, preparado, entrada, slug }
                             <h2 id="ajuda-relacionados" className={styles.secaoTituloMenor}>{t('ajuda.relacionados')}</h2>
                             <div className={styles.gradeRelacionados}>
                                 {relacionados.map((a) => (
-                                    <Link key={a.id} to={`/ajuda/${idioma}/${a.slug}`} className={styles.relacionado}>
+                                    <Link key={a.id} to={rotas.artigo(a.slug)} className={styles.relacionado}>
                                         <span className={styles.iconeCaixaPequena}><IconeModulo nome={indice.modulos.find((m) => m.id === a.modulo)?.icone} size={18} /></span>
                                         {a.titulo}
                                     </Link>
@@ -146,13 +132,13 @@ export default function AjudaArtigo({ idioma, indice, preparado, entrada, slug }
                     {(anterior || proximo) && (
                         <nav className={styles.anteriorProximo} aria-label={t('ajuda.navegacaoArtigos')}>
                             {anterior ? (
-                                <Link to={`/ajuda/${idioma}/${anterior.slug}`} className={styles.cartaoNavegacao}>
+                                <Link to={rotas.artigo(anterior.slug)} className={styles.cartaoNavegacao}>
                                     <span className={styles.cartaoNavegacaoRotulo}>← {t('ajuda.anterior')}</span>
                                     <span>{anterior.titulo}</span>
                                 </Link>
                             ) : <span />}
                             {proximo && (
-                                <Link to={`/ajuda/${idioma}/${proximo.slug}`} className={`${styles.cartaoNavegacao} ${styles.cartaoNavegacaoProximo}`}>
+                                <Link to={rotas.artigo(proximo.slug)} className={`${styles.cartaoNavegacao} ${styles.cartaoNavegacaoProximo}`}>
                                     <span className={styles.cartaoNavegacaoRotulo}>{t('ajuda.proximo')} →</span>
                                     <span>{proximo.titulo}</span>
                                 </Link>
@@ -177,7 +163,7 @@ export default function AjudaArtigo({ idioma, indice, preparado, entrada, slug }
                         <div className={styles.caixaLateral}>
                             <h2 className={styles.caixaLateralTitulo}>{t('ajuda.antesDeComecar')}</h2>
                             <ul className={styles.listaSimples}>
-                                {antes.map((a) => <li key={a.id}><Link to={`/ajuda/${idioma}/${a.slug}`}>{a.titulo}</Link></li>)}
+                                {antes.map((a) => <li key={a.id}><Link to={rotas.artigo(a.slug)}>{a.titulo}</Link></li>)}
                             </ul>
                         </div>
                     )}
@@ -195,8 +181,8 @@ export default function AjudaArtigo({ idioma, indice, preparado, entrada, slug }
                             <h2 className={styles.caixaLateralTitulo}>{t('ajuda.tambemEm')}</h2>
                             <ul className={styles.listaIdiomas}>
                                 {outrosIdiomas.map((i) => (
-                                    <li key={i}>
-                                        <Link to={`/ajuda/${i}/${doc.conteudo[i].slug}`} hrefLang={i} lang={i}>{NOMES_IDIOMAS[i]}</Link>
+                                    <li key={i.codigo}>
+                                        <Link to={caminhoArtigo(i.codigo, i.slug)} hrefLang={i.codigo} lang={i.codigo}>{i.nome}</Link>
                                     </li>
                                 ))}
                             </ul>

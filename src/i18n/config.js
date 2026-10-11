@@ -1,35 +1,33 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import pt from './locales/pt.json';
-import ptPT from './locales/pt-PT.json';
-import en from './locales/en.json';
-import enGB from './locales/en-GB.json';
-import enAU from './locales/en-AU.json';
-import enCA from './locales/en-CA.json';
-import es from './locales/es.json';
-import esMX from './locales/es-MX.json';
+import { CODIGOS, cadeia } from './idiomas.js';
+import { idiomaInicial } from './preferencia.js';
+
+// Cada idioma vira um arquivo separado no build e só é baixado quando usado
+// (o idioma da página e os da cadeia dele: variante → base → inglês → português).
+const ARQUIVOS = import.meta.glob('./textos/*.json', { import: 'default' });
+
+const textosSobDemanda = {
+    type: 'backend',
+    init() {},
+    read(codigo, _ns, pronto) {
+        const carregar = ARQUIVOS[`./textos/${codigo}.json`];
+        if (!carregar) return pronto(null, {});
+        carregar().then((textos) => pronto(null, textos), (erro) => pronto(erro, null));
+    },
+};
 
 i18n
-    .use(LanguageDetector)
+    .use(textosSobDemanda)
     .use(initReactI18next)
     .init({
-        resources: {
-            'pt':    { translation: pt },
-            'pt-PT': { translation: ptPT },
-            'en':    { translation: en },
-            'en-GB': { translation: enGB },
-            'en-AU': { translation: enAU },
-            'en-CA': { translation: enCA },
-            'es':    { translation: es },
-            'es-MX': { translation: esMX },
-        },
-        fallbackLng: 'pt',
-        supportedLngs: ['pt', 'pt-PT', 'en', 'en-GB', 'en-AU', 'en-CA', 'es', 'es-MX'],
-        load: 'currentOnly', // use exact language codes as-is (supports subtags like pt-PT)
-        interpolation: {
-            escapeValue: false,
-        },
+        lng: idiomaInicial(),
+        supportedLngs: CODIGOS,
+        fallbackLng: (codigo) => cadeia(codigo).slice(1),
+        load: 'currentOnly',
+        returnEmptyString: false,
+        interpolation: { escapeValue: false },
+        react: { useSuspense: true },
     });
 
 export default i18n;

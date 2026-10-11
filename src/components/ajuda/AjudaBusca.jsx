@@ -8,7 +8,7 @@ import styles from './Ajuda.module.css';
 
 // Campo de busca com a lista de resultados embaixo. Setas sobem e descem, Enter abre,
 // Esc limpa. compacto: versão menor, usada no topo das páginas de assunto e de artigo.
-export default function AjudaBusca({ idioma, indice, preparado, compacto = false, sugestoes = [] }) {
+export default function AjudaBusca({ rotas, indice, preparado, compacto = false, sugestoes = [] }) {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const id = useId();
@@ -22,7 +22,7 @@ export default function AjudaBusca({ idioma, indice, preparado, compacto = false
     const resultados = useMemo(() => buscar(preparado, consulta, { limite: 8 }), [preparado, consulta]);
     const temConsulta = consulta.trim().length > 0;
     const mostrar = aberto && temConsulta;
-    const endereco = (a) => `/ajuda/${idioma}/${a.slug}`;
+    const endereco = (a) => rotas.artigo(a.slug);
 
     const aoDigitar = (e) => {
         setConsulta(e.target.value);

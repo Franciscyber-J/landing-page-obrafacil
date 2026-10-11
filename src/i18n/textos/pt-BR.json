@@ -1,9 +1,17 @@
 {
+    "meta": {
+        "titulo": "ObraFácil · Gestão de obras com RDO, cronograma e financeiro",
+        "descricao": "Aplicativo de gestão de obras: diário de obra (RDO), cronograma, equipe, financeiro e portal do cliente. Teste grátis por 30 dias."
+    },
     "nav": {
         "login": "Entrar",
         "createAccount": "Testar Grátis 30 Dias",
         "lightMode": "Modo Claro",
-        "darkMode": "Modo Escuro"
+        "darkMode": "Modo Escuro",
+        "language": "Idioma",
+        "chooseLanguage": "Escolher idioma",
+        "themeToggle": "Alternar tema claro e escuro",
+        "menu": "Abrir ou fechar o menu"
     },
     "hero": {
         "tagline": "🚀 Disponível em 8 idiomas",
@@ -210,6 +218,7 @@
         "perfil_equipe": "Equipe",
         "perfil_cliente": "Cliente",
         "artigos_one": "{{count}} artigo",
+        "artigos_many": "{{count}} de artigos",
         "artigos_other": "{{count}} artigos",
         "essenciaisTitulo": "Essenciais",
         "essenciaisSubtitulo": "O que todo mundo precisa saber nos primeiros dias.",
@@ -235,6 +244,7 @@
         "publico_cliente": "cliente",
         "e": "e",
         "passos_one": "{{count}} passo",
+        "passos_many": "{{count}} de passos",
         "passos_other": "{{count}} passos",
         "passoNumero": "Passo {{n}}",
         "printAlt": "Tela do app no passo {{n}}: {{titulo}}",
@@ -256,6 +266,9 @@
         "terms": "Termos de Uso",
         "privacy": "Política de Privacidade",
         "help": "Central de Ajuda",
-        "support": "Suporte"
+        "support": "Suporte",
+        "tagline": "Gestão de obras inteligente. Transparência que encanta o seu cliente.",
+        "rights": "Todos os direitos reservados.",
+        "language": "Idioma do site"
     }
 }

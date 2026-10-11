@@ -1,0 +1,43 @@
+{
+    "coManagement": {
+        "point3": "Works 100% Offline on site or in remote locations, syncing when connected."
+    },
+    "pricing": {
+        "fromPriceMensal": "From A$ 68.97",
+        "priceMensal": "22.99",
+        "fromPriceAnnual": "From A$ 599.97",
+        "priceAnnual": "199.99",
+        "subtextAnnual": "(Equivalent to just A$ 16.67 per month)",
+        "proFeaturesAnnual": [
+            "All the benefits of the PRO Monthly plan",
+            "Savings of almost A$ 76.00 for your company",
+            "Shield against future price increases",
+            "Priority access to new tools and updates"
+        ],
+        "currency": "A$"
+    },
+    "popup": {
+        "body": "Contact our agent on WhatsApp right now and request your VIP invite. You will lock in your PRO subscription for only **A$ 11.49/month** for a full year.",
+        "whatsappMessage": "Hi, I was on the Obra Fácil website, I saw the hidden invite and I want to secure my Founding Member spot for A$ 11.49."
+    },
+    "faq": {
+        "a3": "Absolutely. We use the most modern cloud infrastructures and end-to-end encryption to ensure data security.",
+        "a4": "We only collect what's necessary to create your account: Name, Document ID, Email, and Phone, in full compliance with Australian privacy law."
+    },
+    "ajuda": {
+        "titulo": "Help Centre",
+        "buscaRotulo": "Search the Help Centre",
+        "assuntosPerfil_todos": "Every topic in the Help Centre.",
+        "suporteTexto": "Chat with support on WhatsApp or raise a ticket in the app.",
+        "suporteMensagem": "Hi, I came from the Help Centre on your website and I have a question.",
+        "carregando": "Loading the Help Centre…",
+        "erroTitulo": "We couldn't load the Help Centre",
+        "vazioTitulo": "Our guides are on their way",
+        "vazioTexto": "Help Centre articles will appear here soon. In the meantime, support can answer your questions on WhatsApp.",
+        "naoEncontradoTexto": "This address doesn't lead to an article. It may have been renamed; try the Help Centre search.",
+        "voltarCentral": "Back to the Help Centre"
+    },
+    "footer": {
+        "help": "Help Centre"
+    }
+}

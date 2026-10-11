@@ -3,8 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { Quote, ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './TestimonialsFaq.module.css';
+import { idDaSecao } from '../i18n/idiomas.js';
+import { useIdioma } from '../i18n/RotaDoIdioma.jsx';
 
 export default function TestimonialsFaq() {
+    const codigo = useIdioma();
     const { t } = useTranslation();
     const [openFaq, setOpenFaq] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -73,7 +76,7 @@ export default function TestimonialsFaq() {
     ];
 
     return (
-        <section id="faq" className={`section ${styles.section}`}>
+        <section id={idDaSecao(codigo, 'faq')} className={`section ${styles.section}`}>
             <div className="container">
 
                 {/* Testimonials */}

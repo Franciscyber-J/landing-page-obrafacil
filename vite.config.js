@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
+import { IDIOMAS } from './src/i18n/registro.js'
 
 // Central de Ajuda em desenvolvimento, sem tocar no Firestore:
 //   1. No gestao_obras, gere os documentos:  node bin/publicar.mjs --saida D:\Projetos\ajuda_saida
@@ -57,7 +58,34 @@ function ajudaLocal() {
   }
 }
 
+// Bandeiras do menu de idiomas servidas pelo próprio site em /bandeiras/<país>.svg.
+// Só entram as bandeiras dos idiomas de src/i18n/registro.js (vêm do pacote flag-icons).
+function bandeiras() {
+  const pasta = path.resolve('node_modules/flag-icons/flags/4x3')
+  const paises = [...new Set(IDIOMAS.map((i) => i.pais.toLowerCase()))]
+  const ler = (pais) => fs.readFileSync(path.join(pasta, `${pais}.svg`))
+  return {
+    name: 'bandeiras',
+    buildStart() {
+      for (const pais of paises) {
+        if (!fs.existsSync(path.join(pasta, `${pais}.svg`))) this.error(`Bandeira não encontrada para o país "${pais}" (registro.js)`)
+      }
+    },
+    configureServer(server) {
+      server.middlewares.use('/bandeiras', (req, res, next) => {
+        const pais = (req.url ?? '').replace(/^\//, '').replace(/\.svg(\?.*)?$/, '')
+        if (!paises.includes(pais)) return next()
+        res.setHeader('Content-Type', 'image/svg+xml')
+        res.end(ler(pais))
+      })
+    },
+    generateBundle() {
+      for (const pais of paises) this.emitFile({ type: 'asset', fileName: `bandeiras/${pais}.svg`, source: ler(pais) })
+    },
+  }
+}
+
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), ajudaLocal()],
+  plugins: [react(), ajudaLocal(), bandeiras()],
 })

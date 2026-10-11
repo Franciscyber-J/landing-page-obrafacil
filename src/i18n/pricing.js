@@ -6,14 +6,13 @@
  * Fonte canônica de preços. Todos os valores em centavos/unidade
  * mínima de moeda (igual ao script Stripe que gerou os Price IDs).
  *
- * COMO ADICIONAR UM NOVO IDIOMA:
- *   1. Crie o arquivo de locale em src/i18n/locales/<code>.json
- *   2. Importe-o em src/i18n/config.js e adicione ao supportedLngs
- *   3. Adicione o locale ao LOCALE_CURRENCY_MAP abaixo (ex: 'ja': 'jpy')
- *   4. Os preços já serão aplicados automaticamente — zero mudança extra.
+ * MOEDA DE CADA IDIOMA: campo "moeda" do idioma em src/i18n/registro.js.
+ * O LOCALE_CURRENCY_MAP abaixo só é usado para idioma que não estiver lá.
  *
  * ============================================================
  */
+
+import { idioma } from './idiomas.js';
 
 // ── Todos os 43 preços (em centavos) espelhados da Apple Store ───────────────
 export const APPLE_PRICES = {
@@ -148,7 +147,8 @@ function formatAmount(cents, currency, locale) {
  * @returns pricing object com todos os valores prontos para exibir
  */
 export function getPricing(locale) {
-    const currency = LOCALE_CURRENCY_MAP[locale]
+    const currency = idioma(locale)?.moeda
+        ?? LOCALE_CURRENCY_MAP[locale]
         ?? LOCALE_CURRENCY_MAP[locale?.split('-')[0]]
         ?? 'brl';
 

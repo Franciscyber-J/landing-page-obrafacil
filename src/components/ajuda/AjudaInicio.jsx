@@ -10,7 +10,7 @@ import styles from './Ajuda.module.css';
 
 const PERFIS = ['todos', 'gestor', 'equipe', 'cliente'];
 
-export default function AjudaInicio({ idioma, indice, preparado }) {
+export default function AjudaInicio({ indice, preparado, rotas }) {
     const { t } = useTranslation();
     const [perfil, setPerfil] = useState('todos');
     useTituloDaPagina(`${t('ajuda.titulo')} · ObraFácil`, t('ajuda.metaDescricao'));
@@ -25,7 +25,7 @@ export default function AjudaInicio({ idioma, indice, preparado }) {
     const guias = indice.artigos.filter((a) => a.tipo === 'fluxo' && a.prioritario).slice(0, 3);
     const essenciais = indice.artigos.filter((a) => a.tipo !== 'fluxo' && a.prioritario).slice(0, 6);
     const sugestoes = [1, 2, 3, 4].map((n) => t(`ajuda.sugestao${n}`)).filter(Boolean);
-    const endereco = (a) => `/ajuda/${idioma}/${a.slug}`;
+    const endereco = (a) => rotas.artigo(a.slug);
 
     return (
         <>
@@ -37,7 +37,7 @@ export default function AjudaInicio({ idioma, indice, preparado }) {
                         {t('ajuda.heroiAntes')} <span className={styles.destaque}>{t('ajuda.heroiDestaque')}</span>{t('ajuda.heroiDepois')}
                     </h1>
                     <p className={styles.heroiSubtitulo}>{t('ajuda.heroiSubtitulo')}</p>
-                    <AjudaBusca idioma={idioma} indice={indice} preparado={preparado} sugestoes={sugestoes} />
+                    <AjudaBusca rotas={rotas} indice={indice} preparado={preparado} sugestoes={sugestoes} />
                 </div>
             </section>
 
@@ -82,7 +82,7 @@ export default function AjudaInicio({ idioma, indice, preparado }) {
                     {assuntos.length === 0 && <p className={styles.semAssuntos}>{t('ajuda.assuntosVazio')}</p>}
                     <div className={styles.gradeAssuntos}>
                         {assuntos.map((m) => (
-                            <Link key={m.id} to={`/ajuda/${idioma}/assunto/${m.id}`} className={styles.assunto}>
+                            <Link key={m.id} to={rotas.assunto(m)} className={styles.assunto}>
                                 <span className={styles.iconeCaixa}><IconeModulo nome={m.icone} /></span>
                                 <span className={styles.assuntoTexto}>
                                     <span className={styles.assuntoNome}>{m.nome}</span>

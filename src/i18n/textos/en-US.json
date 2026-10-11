@@ -1,16 +1,24 @@
 {
+    "meta": {
+        "titulo": "ObraFácil · Construction management with daily reports, schedules and finances",
+        "descricao": "Construction management app: daily reports, schedules, team, project finances and a client portal. Try it free for 30 days."
+    },
     "nav": {
         "login": "Login",
         "createAccount": "Try Free 30 Days",
         "lightMode": "Light Mode",
-        "darkMode": "Dark Mode"
+        "darkMode": "Dark Mode",
+        "language": "Language",
+        "chooseLanguage": "Choose language",
+        "themeToggle": "Switch between light and dark theme",
+        "menu": "Open or close the menu"
     },
     "hero": {
         "tagline": "🚀 Available in 8 languages",
         "headline": "Smart Construction Management. Transparency that delights your client.",
         "subheadline": "Ditch confusing spreadsheets. Track finances, generate Daily Reports (RDO) in seconds, and offer an exclusive portal for your client to track the project right from their phone.",
         "cta": "Create my First Project Free",
-        "socialProof": "No credit card required. Set up in under 2 minutes.",
+        "socialProof": "No credit card required. Setup in under 2 minutes.",
         "downloadWindows": "Download for Windows",
         "downloadApple": "App Store",
         "downloadAndroid": "Google Play",
@@ -42,7 +50,7 @@
         "rdoTitle": "Daily Construction Report (RDO)",
         "rdoText": "Generate complete PDF reports right from the site. Weather, personnel, activities, and photo galleries integrated.",
         "financeTitle": "Categorical Financial Management",
-        "financeText": "Control budgets, expenses, and transactions. Know exactly where every penny was invested.",
+        "financeText": "Control budgets, expenses, and transactions. Know exactly where every cent was invested.",
         "portalTitle": "Bulletproof Client Portal",
         "portalText": "Give your clients access to view schedules and download photo packages (limited and controlled by you).",
         "whiteLabelTitle": "White-label Reports (PRO)",
@@ -57,7 +65,7 @@
         "description": "Invite partners, associate engineers, or the field team to feed project data. Granular access permissions: What the client sees is different from what your Foreman or Engineer sees.",
         "point1": "Manage permission levels with total control.",
         "point2": "Immediate sync across Web, Desktop, and Mobile.",
-        "point3": "Works 100% Offline on site or in remote locations, syncing when connected."
+        "point3": "Works 100% Offline on the street or in remote locations, syncing when connected."
     },
     "coManagementRoles": {
         "manager": "Manager (You)",
@@ -85,7 +93,7 @@
         "proPlanMensal": "PRO Monthly",
         "proDescMensal": "For construction companies and engineers demanding total control.",
         "launchOfferMensal": "🔥 Launch Offer",
-        "fromPriceMensal": "From £ 44.97",
+        "fromPriceMensal": "From $ 44.97",
         "priceMensal": "14.99",
         "proFeaturesMensal": [
             "Unlimited active projects",
@@ -99,28 +107,28 @@
         "proPlanAnnual": "PRO Annual",
         "proDescAnnual": "Smart savings for those who think about the long term.",
         "launchOfferAnnual": "💎 Best Value (2 Months Free!)",
-        "fromPriceAnnual": "From £ 389.97",
+        "fromPriceAnnual": "From $ 179.99",
         "priceAnnual": "129.99",
         "periodAnnual": "/year",
-        "subtextAnnual": "(Equivalent to just £ 10.83 per month)",
+        "subtextAnnual": "(Equivalent to just $ 10.83 per month)",
         "proFeaturesAnnual": [
             "All the benefits of the PRO Monthly plan",
-            "Savings of almost £ 50.00 for your company",
+            "Savings of almost $ 50.00 for your company",
             "Shield against future price increases",
             "Priority access to new tools and updates"
         ],
         "proCtaAnnual": "SUBSCRIBE WITH ANNUAL DISCOUNT",
         "addons": "Need more? Add +20GB packages or Extra Downloads anytime.",
-        "currency": "£",
+        "currency": "$",
         "price0": "0",
         "perMonth": "/month"
     },
     "popup": {
         "title": "Wait! Are you really going to keep managing projects on paper?",
         "subtitle": "Before you leave, I have an irresistible proposal. We've released a secret batch of **only 20 spots** for Founding Members.",
-        "body": "Contact our agent on WhatsApp right now and request your VIP invite. You will lock in your PRO subscription for only **£ 7.49/month** for a full year.",
+        "body": "Contact our agent on WhatsApp right now and request your VIP invite. You will lock in your PRO subscription for only **$ 7.49/month** for a full year.",
         "scarcity": "Notice: The links expire as soon as the 20 spots are filled.",
-        "whatsappMessage": "Hi, I was on the Obra Fácil website, I saw the hidden invite and I want to secure my Founding Member spot for £ 7.49.",
+        "whatsappMessage": "Hi, I was on the Obra Fácil website, I saw the hidden invite and I want to secure my Founding Member spot for $ 7.49.",
         "cta": "REDEEM DISCOUNT WITH MAX"
     },
     "whatsapp": {
@@ -141,7 +149,7 @@
         "test4": "\"The photo gallery really helped show finishing details to the architect without them having to visit constantly.\"",
         "author4": "Juliana T.",
         "role4": "Architect",
-        "test5": "\"Even the final client praised the organisation. I finally look as professional as the big firms.\"",
+        "test5": "\"Even the final client praised the organization. I finally look as professional as the big firms.\"",
         "author5": "Fernando S.",
         "role5": "General Contractor"
     },
@@ -152,11 +160,11 @@
         "q2": "Can I use it on computer and mobile?",
         "a2": "Yes! Obra Fácil is responsive and works both in your PC browser and on your smartphone at the site.",
         "q3": "Is my data safe?",
-        "a3": "Absolutely. We use the most modern cloud infrastructures and end-to-end encryption to ensure data security.",
+        "a3": "Absolutely. We use the most modern cloud infrastructures and end-to-end encryption to ensure code security.",
         "q4": "What personal data is collected?",
         "a4": "We only collect what's necessary to create your account: Name, Document ID, Email, and Phone, in full GDPR compliance.",
         "q5": "How does offline usage work?",
-        "a5": "The app temporarily saves information in your phone's memory (cache). Once the connection is restored, data synchronises to the cloud automatically.",
+        "a5": "The app temporarily saves information in your phone's memory (cache). Once the connection is restored, data synchronizes to the cloud automatically.",
         "q6": "Does my client lose access to files if the project ends?",
         "a6": "If the project is 70% or more complete, the client gets a 15-day Grace Period to download everything before access goes away.",
         "q7": "Does Obra Fácil replace a professional Engineer?",
@@ -166,7 +174,7 @@
         "q9": "I'm on the PRO plan and added extra storage. Can I cancel?",
         "a9": "Yes. You can cancel subscriptions anytime to stop billing for the next cycle, keeping access until the paid period ends.",
         "q10": "What happens if a monthly payment is late?",
-        "a10": "The system pauses the creation of new projects and file uploads, but you won't lose existing data as long as you regularise the payment."
+        "a10": "The system pauses the creation of new projects and file uploads, but you won't lose existing data as long as you regularize the payment."
     },
     "loginModal": {
         "title": "Access Obra Fácil as:",
@@ -176,13 +184,13 @@
         "clientDesc": "Track your project's portal and inspections."
     },
     "ajuda": {
-        "titulo": "Help Centre",
+        "titulo": "Help Center",
         "metaDescricao": "Step-by-step ObraFácil guides: daily reports, team, finances, client portal and more.",
         "heroiAntes": "How can we",
         "heroiDestaque": "help",
         "heroiDepois": "?",
         "heroiSubtitulo": "Step-by-step ObraFácil guides, with a screenshot of every screen in your language.",
-        "buscaRotulo": "Search the Help Centre",
+        "buscaRotulo": "Search the Help Center",
         "buscaPlaceholder": "Search for daily report, worker, PDF, client…",
         "buscaLimpar": "Clear search",
         "buscaResultados": "Search results",
@@ -199,7 +207,7 @@
         "tipo_funcao": "Step by step",
         "tipo_conceito": "Learn",
         "assuntosTitulo": "Browse by topic",
-        "assuntosPerfil_todos": "Every topic in the Help Centre.",
+        "assuntosPerfil_todos": "Every topic in the Help Center.",
         "assuntosPerfil_gestor": "Topics for whoever manages the project.",
         "assuntosPerfil_equipe": "Topics for the crew on site.",
         "assuntosPerfil_cliente": "Topics for the project's client.",
@@ -214,19 +222,19 @@
         "essenciaisTitulo": "Essentials",
         "essenciaisSubtitulo": "What everyone needs to know in the first few days.",
         "suporteTitulo": "Didn't find what you were looking for?",
-        "suporteTexto": "Chat with support on WhatsApp or raise a ticket in the app.",
+        "suporteTexto": "Chat with support on WhatsApp or open a ticket right in the app.",
         "suporteBotao": "Chat on WhatsApp",
-        "suporteMensagem": "Hi, I came from the Help Centre on your website and I have a question.",
-        "carregando": "Loading the Help Centre…",
-        "erroTitulo": "We couldn't load the Help Centre",
+        "suporteMensagem": "Hi, I came from the Help Center on your website and I have a question.",
+        "carregando": "Loading the Help Center…",
+        "erroTitulo": "We couldn't load the Help Center",
         "erroTexto": "Check your internet connection and try again.",
         "tentarDeNovo": "Try again",
-        "vazioTitulo": "Our guides are on their way",
-        "vazioTexto": "Help Centre articles will appear here soon. In the meantime, support can answer your questions on WhatsApp.",
+        "vazioTitulo": "Our guides are on the way",
+        "vazioTexto": "Help Center articles will show up here soon. In the meantime, support can answer your questions on WhatsApp.",
         "naoEncontradoTitulo": "Article not found",
-        "naoEncontradoTexto": "This address doesn't lead to an article. It may have been renamed; try the Help Centre search.",
+        "naoEncontradoTexto": "This address doesn't lead to an article. It may have been renamed; try the Help Center search.",
         "assuntoNaoEncontrado": "Topic not found",
-        "voltarCentral": "Back to the Help Centre",
+        "voltarCentral": "Back to the Help Center",
         "trilha": "You are here",
         "outrosAssuntos": "Other topics",
         "paraPublico": "For {{lista}}",
@@ -255,7 +263,10 @@
         "links": "Useful Links",
         "terms": "Terms of Use",
         "privacy": "Privacy Policy",
-        "help": "Help Centre",
-        "support": "Support"
+        "help": "Help Center",
+        "support": "Support",
+        "tagline": "Smart construction management. Transparency your clients will love.",
+        "rights": "All rights reserved.",
+        "language": "Website language"
     }
 }

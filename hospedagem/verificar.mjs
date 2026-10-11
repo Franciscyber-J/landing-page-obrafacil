@@ -13,6 +13,9 @@ const conferencias = [
   { nome: 'link antigo /ajuda', url: '/ajuda', status: 200, contem: SPA },
   { nome: 'artigo pelo link direto', url: '/ajuda/pt-BR/criar-rdo', status: 200, contem: SPA },
   { nome: 'endereço com idioma', url: '/pt-br/ajuda', status: 200, contem: SPA },
+  { nome: 'endereço em inglês', url: '/en-us/help/topic/projects', status: 200, contem: SPA },
+  { nome: 'endereço em espanhol', url: '/es-mx/ayuda/crear-reporte-diario', status: 200, contem: SPA },
+  { nome: 'bandeira do menu de idiomas', url: '/bandeiras/br.svg', status: 200, contem: '<svg' },
   // O WordPress continua servindo as páginas que as lojas e o app usam.
   { nome: 'Termos de Uso (WordPress)', url: '/termos-de-uso/', status: 200, naoContem: SPA },
   { nome: 'Política de Privacidade (WordPress)', url: '/politicas-de-privacidade/', status: 200, naoContem: SPA },
