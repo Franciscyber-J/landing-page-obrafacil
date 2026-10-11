@@ -22,7 +22,6 @@ export default function Pricing() {
     const p = getPricing(codigo);
 
     // Strings "De X" (riscado)
-    const fromMonthlyStr = `${t('pricing.fromPrefix', 'De')} ${p.symbol} ${p.fromMonthly}`;
     const fromAnnualStr  = `${t('pricing.fromPrefix', 'De')} ${p.symbol} ${p.fromAnnual}`;
 
     // Subtext anual "Equivale a apenas X/mês"
