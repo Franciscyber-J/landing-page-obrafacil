@@ -11,8 +11,92 @@
 }
 
 .aparelho {
-  border-color: #ffffff;
+  position: relative;
+  border-color: var(--placa-texto);
   width: 100%;
+}
+
+.tela,
+.telaBaixo {
+  position: absolute;
+  inset: 0;
+}
+
+.telaNova {
+  animation: chapa 320ms var(--suave) both;
+}
+
+@keyframes chapa {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .telaNova {
+    animation-duration: 1ms;
+  }
+}
+
+/* Lista com a linha de leitura (só na tela larga, com movimento) */
+.listaCaixa {
+  position: relative;
+}
+
+.progresso {
+  display: none;
+}
+
+.itens.historia {
+  grid-template-columns: 1fr;
+}
+
+.listaCaixa:has(.historia) .progresso {
+  display: block;
+  position: absolute;
+  left: -28px;
+  top: 0;
+  bottom: 96px;
+  width: 4px;
+  background: var(--laranja);
+  transform-origin: top center;
+}
+
+/* O item ativo acende: título laranja, faixa mais longa, fundo um tom mais fundo. Os outros ficam
+   com as cores normais (nada de apagar texto: o contraste continua o mesmo). */
+.historia .item {
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  transition: background 400ms var(--suave);
+}
+
+.historia .itemAtivo {
+  background: var(--placa-funda);
+}
+
+.historia .item dt {
+  font-size: 2.25rem;
+  transition: color 400ms var(--suave);
+}
+
+.historia .itemAtivo dt {
+  color: var(--laranja);
+}
+
+.historia .item dt::before {
+  transition: width 400ms var(--suave);
+}
+
+.historia .itemAtivo dt::before {
+  width: 28px;
 }
 
 .legenda {

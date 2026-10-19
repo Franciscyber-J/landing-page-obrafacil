@@ -103,3 +103,20 @@
     padding-right: 0;
   }
 }
+
+/* Abrir e fechar a resposta com movimento, onde o navegador sabe animar o <details>. */
+@media (prefers-reduced-motion: no-preference) {
+  .lista {
+    interpolate-size: allow-keywords;
+  }
+
+  .pergunta::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition: block-size 380ms var(--suave), content-visibility 380ms allow-discrete;
+  }
+
+  .pergunta[open]::details-content {
+    block-size: auto;
+  }
+}

@@ -133,6 +133,9 @@ function bandeiras() {
 }
 
 // https://vite.dev/config/
+// Prévia para ver de fora (VITE_PREVIA=sim npx vite build --outDir <pasta>): endereços relativos.
+// O site de verdade continua com base "/".
 export default defineConfig({
+  base: process.env.VITE_PREVIA === 'sim' ? './' : '/',
   plugins: [react(), ajudaLocal(), legalLocal(), bandeiras()],
 })

@@ -221,6 +221,8 @@ html {
   height: 8px;
   margin-bottom: 20px;
   background: var(--laranja);
+  transform: scaleX(var(--barra, 1));
+  transform-origin: left center;
 }
 
 .secao-titulo {
@@ -274,4 +276,20 @@ html {
   .aparelho {
     width: min(240px, 100%);
   }
+}
+
+/* Linhas do título animado (SplitText): folga em cima e embaixo para o acento e a perna das letras. */
+.linha-mask {
+  padding: 0.16em 0 0.06em;
+  margin: -0.16em 0 -0.06em;
+}
+
+/* Perspectiva para as telas inclinadas em 3D */
+.palco-3d {
+  perspective: 1400px;
+}
+
+.palco-3d > * {
+  transform-style: preserve-3d;
+  will-change: transform;
 }

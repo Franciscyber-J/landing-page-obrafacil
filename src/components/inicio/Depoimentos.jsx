@@ -20,8 +20,8 @@ export default function Depoimentos() {
                     <h2 id="depoimentos-titulo" className="secao-titulo">{t('social.title')}</h2>
                 </div>
 
-                <div className={styles.grade}>
-                    <figure className={styles.destaque}>
+                <div className={styles.grade} data-grupo>
+                    <figure className={styles.destaque} data-item>
                         <blockquote>{semAspas(t(`social.test${destaque}`))}</blockquote>
                         <figcaption>
                             <strong>{t(`social.author${destaque}`)}</strong>
@@ -31,7 +31,7 @@ export default function Depoimentos() {
 
                     <div className={styles.outros}>
                         {outros.map((n) => (
-                            <figure key={n} className={styles.depoimento}>
+                            <figure key={n} className={styles.depoimento} data-item>
                                 <blockquote>{semAspas(t(`social.test${n}`))}</blockquote>
                                 <figcaption>
                                     <strong>{t(`social.author${n}`)}</strong>

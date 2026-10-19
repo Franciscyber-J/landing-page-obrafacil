@@ -1,5 +1,5 @@
 import { Suspense, useEffect } from 'react';
-import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, MemoryRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -81,15 +81,23 @@ function Site() {
   );
 }
 
+// Prévia (VITE_PREVIA=sim): a página roda fora da raiz do domínio, então o endereço fica na memória
+// e começa na página inicial em português. No site de verdade é sempre o BrowserRouter.
+const PREVIA = import.meta.env.VITE_PREVIA === 'sim';
+function Roteador({ children }) {
+  if (PREVIA) return <MemoryRouter initialEntries={['/pt-br/']}>{children}</MemoryRouter>;
+  return <BrowserRouter>{children}</BrowserRouter>;
+}
+
 function App() {
   return (
-    <BrowserRouter>
+    <Roteador>
       <Suspense fallback={null}>
         <Routes>
           <Route path="*" element={<Site />} />
         </Routes>
       </Suspense>
-    </BrowserRouter>
+    </Roteador>
   );
 }
 

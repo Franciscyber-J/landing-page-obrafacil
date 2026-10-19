@@ -8,6 +8,19 @@
   border-bottom: var(--borda-placa) solid var(--laranja);
 }
 
+.lido {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 3px;
+  background: var(--placa-texto);
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .conteudo {
   display: flex;
   align-items: center;

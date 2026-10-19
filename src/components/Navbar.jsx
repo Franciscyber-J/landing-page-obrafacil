@@ -1,11 +1,13 @@
 // Barra do topo: chapa azul da placa, logotipo numa chapa branca, links, idioma, tema e as ações.
 import { useEffect, useRef, useState } from 'react';
+import { ScrollTrigger, gsap, useGSAP } from '../movimento/index.js';
 import { useTranslation } from 'react-i18next';
 import { Check, ChevronDown, Menu, Moon, Sun, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { IDIOMAS, caminhoAjuda, caminhoInicio, idioma } from '../i18n/idiomas.js';
 import { useIdioma, useTrocarIdioma } from '../i18n/RotaDoIdioma.jsx';
 import { CADASTRO, LOGIN } from '../links.js';
+import { publico } from '../publico.js';
 import styles from './Navbar.module.css';
 
 const TAMANHOS = { lg: [28, 20], md: [24, 17], sm: [20, 14] };
@@ -16,7 +18,7 @@ export function Bandeira({ pais, size = 'md' }) {
     const [largura, altura] = TAMANHOS[size] ?? TAMANHOS.md;
     return (
         <img
-            src={`/bandeiras/${pais.toLowerCase()}.svg`}
+            src={publico(`bandeiras/${pais.toLowerCase()}.svg`)}
             alt=""
             width={largura}
             height={altura}
@@ -107,6 +109,26 @@ export default function Navbar() {
     const [tema, trocarTema] = useTema();
     const [menuAberto, setMenuAberto] = useState(false);
     const inicio = caminhoInicio(codigo);
+    const { pathname } = useLocation();
+    const barra = useRef(null);
+
+    // Linha laranja embaixo da barra mostrando quanto da página já foi lido.
+    useGSAP(() => {
+        const encher = gsap.quickSetter(barra.current, 'scaleX');
+        const gatilho = ScrollTrigger.create({ start: 0, end: 'max', onUpdate: (self) => encher(self.progress) });
+        encher(gatilho.progress);
+        // O conteúdo das páginas chega depois (textos do Firebase, imagens): recalcula a altura.
+        let espera = 0;
+        const observador = new ResizeObserver(() => {
+            window.clearTimeout(espera);
+            espera = window.setTimeout(() => ScrollTrigger.refresh(), 200);
+        });
+        observador.observe(document.body);
+        return () => {
+            window.clearTimeout(espera);
+            observador.disconnect();
+        };
+    }, { dependencies: [pathname], revertOnUpdate: true });
 
     const escolherIdioma = (novo) => {
         setMenuAberto(false);
@@ -130,6 +152,7 @@ export default function Navbar() {
 
     return (
         <header className={styles.barra}>
+            <span ref={barra} className={styles.lido} aria-hidden="true" />
             <div className={`container ${styles.conteudo}`}>
                 <Link
                     to={inicio}
@@ -142,7 +165,7 @@ export default function Navbar() {
                         }
                     }}
                 >
-                    <img src="/logo_transparente.png" alt="ObraFácil" width="1050" height="238" />
+                    <img src={publico('logo_transparente.png')} alt="ObraFácil" width="1050" height="238" />
                 </Link>
 
                 <nav className={styles.links} aria-label={t('nav.navegacao')}>

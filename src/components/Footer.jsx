@@ -5,6 +5,7 @@ import { IDIOMAS, caminhoAjuda, caminhoInicio, caminhoLegal } from '../i18n/idio
 import { useIdioma, useTrocarIdioma } from '../i18n/RotaDoIdioma.jsx';
 import { abrirAvisoCookies } from '../legal/cookies.js';
 import { CADASTRO, SUPORTE, WINDOWS, appStore, googlePlay, linkWhatsApp } from '../links.js';
+import { publico } from '../publico.js';
 import styles from './Footer.module.css';
 
 export default function Footer({ comChamada = true }) {
@@ -26,7 +27,7 @@ export default function Footer({ comChamada = true }) {
             <div className={`container ${styles.grade}`}>
                 <div className={styles.marca}>
                     <Link to={caminhoInicio(codigo)} className={styles.logo} aria-label={t('nav.inicio')}>
-                        <img src="/logo_transparente.png" alt="ObraFácil" width="1050" height="238" loading="lazy" />
+                        <img src={publico('logo_transparente.png')} alt="ObraFácil" width="1050" height="238" loading="lazy" />
                     </Link>
                     <p className={styles.frase}>{t('footer.tagline')}</p>
                     <label className={styles.idioma}>

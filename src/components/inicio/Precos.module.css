@@ -237,3 +237,33 @@
     padding: 22px 18px 24px;
   }
 }
+
+/* O número do preço sobe de baixo ao trocar mensal/anual (a key muda e a animação recomeça). */
+.valorCaixa {
+  display: inline-block;
+  /* corta só embaixo (de onde o número sobe), sem mexer na linha de base do preço */
+  clip-path: inset(-1em -1em 0 -1em);
+}
+
+.valor {
+  display: inline-block;
+  animation: rolar 520ms var(--suave) both;
+}
+
+@keyframes rolar {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .valor {
+    animation: none;
+  }
+}

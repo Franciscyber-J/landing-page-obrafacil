@@ -28,9 +28,9 @@ export default function Perguntas() {
                     </a>
                 </div>
 
-                <div className={styles.lista}>
+                <div className={styles.lista} data-grupo>
                     {NUMEROS.map((n) => (
-                        <details key={n} className={styles.pergunta}>
+                        <details key={n} className={styles.pergunta} data-item>
                             <summary>
                                 <span>{t(`faq.q${n}`)}</span>
                                 <Plus size={22} strokeWidth={2.5} aria-hidden="true" />

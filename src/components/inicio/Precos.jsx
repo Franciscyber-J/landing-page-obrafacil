@@ -1,12 +1,13 @@
 // Quadro de preços: grátis sem prazo e o PRO, mensal ou anual (o anual abre primeiro, com a economia
 // calculada a partir dos preços reais de src/i18n/pricing.js, sem preço "de" inventado).
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Check } from 'lucide-react';
 import { getPricing } from '../../i18n/pricing.js';
 import { idDaSecao } from '../../i18n/idiomas.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import { ASSINAR_ANUAL, ASSINAR_MENSAL, CADASTRO } from '../../links.js';
+import { COM_MOUSE, gsap, inclinarComPonteiro, magnetico, useGSAP } from '../../movimento/index.js';
 import styles from './Precos.module.css';
 
 // Lista de textos da tradução (returnObjects); qualquer outra coisa vira lista vazia.
@@ -29,7 +30,7 @@ function Preco({ p, valor, periodo, depois }) {
     return (
         <p className={styles.preco} aria-live="polite">
             {!depois && moeda}
-            <span className={styles.valor}>{valor}</span>
+            <span className={styles.valorCaixa}><span key={valor} className={styles.valor}>{valor}</span></span>
             {depois && moeda}
             {periodo && <span className={styles.periodoPreco}>{periodo}</span>}
         </p>
@@ -56,6 +57,19 @@ export default function Precos() {
     const [anual, setAnual] = useState(true);
     const p = getPricing(codigo);
     const depois = simboloDepois(codigo, p.currency);
+    const raiz = useRef(null);
+
+    useGSAP(() => {
+        const mm = gsap.matchMedia();
+        mm.add(COM_MOUSE, () => {
+            const q = gsap.utils.selector(raiz);
+            const limpar = [
+                inclinarComPonteiro(q('[data-m="pro"]')[0], q('[data-m="pro"]')[0], { graus: 4 }),
+                ...q('[data-m="assinar"]').map((b) => magnetico(b, { forca: 0.15 })),
+            ];
+            return () => limpar.forEach((f) => f());
+        });
+    }, { scope: raiz, dependencies: [codigo], revertOnUpdate: true });
 
     const itensPro = [
         ...(anual ? lista(t('pricing.pro.itensAnual', { returnObjects: true })) : []),
@@ -63,7 +77,7 @@ export default function Precos() {
     ].filter((item, i, todos) => todos.indexOf(item) === i);
 
     return (
-        <section id={idDaSecao(codigo, 'precos')} className="secao" aria-labelledby="precos-titulo">
+        <section ref={raiz} id={idDaSecao(codigo, 'precos')} className="secao" aria-labelledby="precos-titulo">
             <div className="container">
                 <div className={styles.cabeca}>
                     <div className="secao-cabeca">
@@ -83,8 +97,8 @@ export default function Precos() {
                     </div>
                 </div>
 
-                <div className={styles.grade}>
-                    <article className={styles.gratis} aria-labelledby="plano-gratis">
+                <div className={`${styles.grade} palco-3d`} data-grupo>
+                    <article className={styles.gratis} aria-labelledby="plano-gratis" data-item>
                         <h3 id="plano-gratis" className={styles.nome}>{t('pricing.gratis.nome')}</h3>
                         <p className={styles.desc}>{t('pricing.gratis.desc')}</p>
                         <Preco p={p} valor="0" depois={depois} />
@@ -93,7 +107,7 @@ export default function Precos() {
                         <a href={CADASTRO} className={`acao-contorno ${styles.botao}`}>{t('pricing.gratis.cta')}</a>
                     </article>
 
-                    <article className={styles.pro} aria-labelledby="plano-pro">
+                    <article className={styles.pro} aria-labelledby="plano-pro" data-item data-m="pro">
                         <div className={styles.faixa}>
                             <span>PRO</span>
                             {anual && <span>{t('pricing.selo')}</span>}
@@ -120,7 +134,7 @@ export default function Precos() {
                                 <p className={styles.detalhe}>{t('pricing.renovacao')}</p>
                             )}
                             <Lista itens={itensPro} clara />
-                            <a href={anual ? ASSINAR_ANUAL : ASSINAR_MENSAL} className={`acao ${styles.botao}`}>
+                            <a href={anual ? ASSINAR_ANUAL : ASSINAR_MENSAL} className={`acao ${styles.botao}`} data-m="assinar">
                                 {anual ? t('pricing.pro.ctaAnual') : t('pricing.pro.ctaMensal')}
                             </a>
                         </div>

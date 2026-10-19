@@ -1,0 +1,102 @@
+.cruzamento {
+  position: relative;
+  height: 170px;
+  overflow: clip;
+  margin: 8px 0;
+}
+
+.fita {
+  position: absolute;
+  left: -5%;
+  width: 110%;
+  top: 50%;
+  overflow: hidden;
+  padding: 12px 0;
+  font-family: var(--fonte-placa);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Bordas listradas da fita de isolamento */
+.fita::before,
+.fita::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 7px;
+  background: repeating-linear-gradient(-45deg, var(--sobre-laranja) 0 10px, transparent 10px 20px);
+}
+
+.fita::before {
+  top: 0;
+}
+
+.fita::after {
+  bottom: 0;
+}
+
+.laranja {
+  background: var(--laranja);
+  color: var(--sobre-laranja);
+  transform: translateY(-50%) rotate(-3deg);
+  z-index: 1;
+  box-shadow: 0 14px 28px -18px rgba(5, 20, 35, 0.6);
+}
+
+.azul {
+  background: var(--placa);
+  color: var(--placa-texto);
+  transform: translateY(-50%) rotate(2.4deg);
+}
+
+.azul::before,
+.azul::after {
+  background: repeating-linear-gradient(-45deg, var(--laranja) 0 10px, transparent 10px 20px);
+}
+
+.trilho {
+  display: flex;
+  width: max-content;
+}
+
+.lista {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.lista li {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+}
+
+.lista li::after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 26px;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 640px) {
+  .cruzamento {
+    height: 120px;
+  }
+
+  .fita {
+    font-size: 1.125rem;
+    padding: 10px 0;
+  }
+
+  .lista li::after {
+    margin: 0 18px;
+    width: 8px;
+    height: 8px;
+  }
+}
