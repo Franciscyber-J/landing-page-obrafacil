@@ -15,13 +15,14 @@
         "chooseLanguage": "Choose language",
         "themeToggle": "Switch between light and dark theme",
         "menu": "Open or close the menu",
-        "inicio": "ObraFácil home page"
+        "inicio": "ObraFácil home page",
+        "navegacao": "Main navigation"
     },
     "hero": {
         "faixa": "Construction management",
         "plataformas": "Android · iPhone · Windows · Browser",
         "titulo": "The whole project in one place",
-        "subtitulo": "Schedule, daily reports, finances, team and purchases on your phone and computer. And your client follows everything in the portal, without having to call you.",
+        "subtitulo": "Schedule, daily reports, finances, team and purchases on your phone and computer. And your client follows the project in the portal, without having to call you.",
         "comecar": "Start free",
         "verPlanos": "See the plans",
         "semCartao": "Free plan with no time limit and no credit card.",
@@ -37,7 +38,7 @@
             },
             "financeiro": {
                 "rotulo": "Finances",
-                "valor": "Budgeted, measured and paid per stage"
+                "valor": "Income, expenses and project balance"
             },
             "cliente": {
                 "rotulo": "Client",
@@ -60,7 +61,7 @@
         "toggleMonthly": "Monthly",
         "toggleAnnual": "Annual",
         "periodoRotulo": "Billing period",
-        "economia": "Save {{simbolo}} {{valor}}",
+        "economia": "Save {{simbolo}}{{valor}}",
         "perMonth": "/month",
         "periodAnnual": "/year",
         "gratis": {
@@ -68,10 +69,10 @@
             "desc": "To get started and get to know the app.",
             "cta": "Start free",
             "itens": [
-                "1 active project",
-                "Monthly limit on daily reports",
-                "Basic storage",
-                "Watermarked PDFs"
+                "1 project of your own at a time",
+                "7 PDF reports a month, watermarked",
+                "250 MB for photos and files",
+                "Your client following along in the portal"
             ]
         },
         "pro": {
@@ -79,34 +80,35 @@
             "nomeAnual": "PRO annual",
             "desc": "For builders, engineers and contractors running several projects.",
             "itens": [
-                "Unlimited active projects",
-                "Unlimited daily reports and reports",
-                "10 GB of storage",
-                "PDFs with your company logo",
-                "Full project finances"
+                "Unlimited projects",
+                "Unlimited PDF reports, no watermark",
+                "10 GB for photos and files",
+                "PDFs with your company logo and footer",
+                "Daily reports as ZIP and project files offline",
+                "Client Access available for each project"
             ],
             "itensAnual": [
                 "Everything in PRO monthly",
                 "Price locked for 12 months"
             ],
-            "comparacao": "Paying monthly, 12 months cost {{simbolo}} {{valor}}",
-            "equivale": "Works out to {{simbolo}} {{valor}} a month",
+            "comparacao": "Paying monthly, 12 months cost {{simbolo}}{{valor}}",
+            "equivale": "Works out to {{simbolo}}{{valor}} a month",
             "ctaMensal": "Subscribe to PRO monthly",
             "ctaAnual": "Subscribe to PRO annual"
         },
         "renovacao": "Renews automatically. Cancel anytime, in the same place you subscribed.",
         "lojas": "When you subscribe on your phone, the price and billing are those of Google Play or the App Store.",
-        "addons": "Need more? Add storage (+20 GB) and extra download packs at any time.",
+        "addons": "PRO only: +20 GB of storage (a separate subscription) and Client Access, which unlocks more in the portal (a one-time fee per project).",
         "selo": "Best value",
         "gratisPreco": "Free forever"
     },
     "popup": {
         "title": "Wait! Are you really going to keep managing projects on paper?",
         "subtitle": "Before you leave, I have an irresistible proposal. We've released a secret batch of **only 20 spots** for Founding Members.",
-        "body": "Contact our agent on WhatsApp right now and request your VIP invite. You will lock in your PRO subscription for only **$ 7.49/month** for a full year.",
+        "body": "Contact our agent on WhatsApp right now and request your VIP invite. You will lock in your PRO subscription for only **$7.49/month** for a full year.",
         "scarcity": "Notice: The links expire as soon as the 20 spots are filled.",
-        "whatsappMessage": "Hi, I was on the Obra Fácil website, I saw the hidden invite and I want to secure my Founding Member spot for $ 7.49.",
-        "cta": "REDEEM DISCOUNT WITH MAX",
+        "whatsappMessage": "Hi, I was on the ObraFácil website, I saw the hidden invite and I want to secure my Founding Member spot for $7.49.",
+        "cta": "Redeem discount with Max",
         "fechar": "Close",
         "faixa": "Founding Members"
     },
@@ -136,7 +138,7 @@
     "faq": {
         "title": "Frequently asked questions",
         "q1": "Does my client pay to follow the project?",
-        "a1": "No. You are the one who grants access, and the client pays nothing to follow the project in the portal.",
+        "a1": "No. Your client follows the project in the portal at no cost. If you want to share more, like downloading photos and seeing the full finances, Client Access is a one-time fee per project, paid by you on PRO.",
         "q2": "Can I use it on my computer and my phone?",
         "a2": "Yes. ObraFácil works on Android, iPhone, Windows and in the browser, with the same data everywhere.",
         "q3": "Is my data secure?",
@@ -272,7 +274,7 @@
     },
     "cliente": {
         "titulo": "No more answering “how is the project going?”",
-        "texto": "Your client gets an email invitation and follows the project in the Client Portal: photos, daily reports, schedule and, if you want, the finances. You decide what they see.",
+        "texto": "Your client gets an email invitation and follows the project in the Client Portal at no cost: photos, daily reports, schedule and a summary of the finances.",
         "antes": "Before: everything over WhatsApp",
         "depois": "Now: the project portal",
         "nome": "John (client)",
@@ -283,7 +285,7 @@
         "conversaAviso": "Sample conversation",
         "pontos": [
             "Your client signs in with their own account, from the invitation you send.",
-            "You turn on and off what they see: photos, documents, finances and schedule.",
+            "Want to share more? With Client Access (on PRO, a one-time fee per project), you choose what they can see and download: photos, full finances, the detailed schedule and opening issues.",
             "On projects 70% complete or more, when access ends the client still has 15 days to download what was shared."
         ],
         "telaPortal": "Client Portal with the latest project updates",
@@ -294,11 +296,11 @@
         "itens": {
             "cronograma": {
                 "titulo": "Stage-by-stage schedule",
-                "texto": "Set up the stages or generate 19 standard stages from the contract value, and track the physical progress of each one."
+                "texto": "Set up the project stages and track the physical progress of each one."
             },
             "diario": {
                 "titulo": "Daily report",
-                "texto": "Weather, activities, incidents, crew on site and photos. Exported as a PDF, ready to send and sign."
+                "texto": "Weather, activities, incidents, crew on site, photos and signature. Exported as a PDF, ready to send."
             },
             "financeiro": {
                 "titulo": "Project finances",

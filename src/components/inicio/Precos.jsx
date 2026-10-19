@@ -9,8 +9,35 @@ import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import { ASSINAR_ANUAL, ASSINAR_MENSAL, CADASTRO } from '../../links.js';
 import styles from './Precos.module.css';
 
+// Lista de textos da tradução (returnObjects); qualquer outra coisa vira lista vazia.
+function lista(valor) {
+    return Array.isArray(valor) ? valor : [];
+}
+
+// O símbolo vem antes ou depois do número conforme o idioma (R$ 99,90 / 17,99 €).
+function simboloDepois(codigo, moeda) {
+    try {
+        const partes = new Intl.NumberFormat(codigo, { style: 'currency', currency: moeda.toUpperCase() }).formatToParts(1);
+        return partes.findIndex((p) => p.type === 'currency') > partes.findIndex((p) => p.type === 'integer');
+    } catch {
+        return false;
+    }
+}
+
+function Preco({ p, valor, periodo, depois }) {
+    const moeda = <span className={styles.moeda}>{p.symbol}</span>;
+    return (
+        <p className={styles.preco} aria-live="polite">
+            {!depois && moeda}
+            <span className={styles.valor}>{valor}</span>
+            {depois && moeda}
+            {periodo && <span className={styles.periodoPreco}>{periodo}</span>}
+        </p>
+    );
+}
+
 function Lista({ itens, clara }) {
-    if (!Array.isArray(itens)) return null;
+    if (!itens.length) return null;
     return (
         <ul className={`${styles.lista} ${clara ? styles.listaClara : ''}`}>
             {itens.map((item) => (
@@ -28,10 +55,11 @@ export default function Precos() {
     const codigo = useIdioma();
     const [anual, setAnual] = useState(true);
     const p = getPricing(codigo);
+    const depois = simboloDepois(codigo, p.currency);
 
     const itensPro = [
-        ...(anual ? t('pricing.pro.itensAnual', { returnObjects: true }) : []),
-        ...t('pricing.pro.itens', { returnObjects: true }),
+        ...(anual ? lista(t('pricing.pro.itensAnual', { returnObjects: true })) : []),
+        ...lista(t('pricing.pro.itens', { returnObjects: true })),
     ].filter((item, i, todos) => todos.indexOf(item) === i);
 
     return (
@@ -59,12 +87,9 @@ export default function Precos() {
                     <article className={styles.gratis} aria-labelledby="plano-gratis">
                         <h3 id="plano-gratis" className={styles.nome}>{t('pricing.gratis.nome')}</h3>
                         <p className={styles.desc}>{t('pricing.gratis.desc')}</p>
-                        <p className={styles.preco}>
-                            <span className={styles.moeda}>{p.symbol}</span>
-                            <span className={styles.valor}>0</span>
-                        </p>
+                        <Preco p={p} valor="0" depois={depois} />
                         <p className={styles.detalhe}>{t('pricing.gratisPreco')}</p>
-                        <Lista itens={t('pricing.gratis.itens', { returnObjects: true })} />
+                        <Lista itens={lista(t('pricing.gratis.itens', { returnObjects: true }))} />
                         <a href={CADASTRO} className={`acao-contorno ${styles.botao}`}>{t('pricing.gratis.cta')}</a>
                     </article>
 
@@ -78,13 +103,12 @@ export default function Precos() {
                                 {anual ? t('pricing.pro.nomeAnual') : t('pricing.pro.nomeMensal')}
                             </h3>
                             <p className={styles.desc}>{t('pricing.pro.desc')}</p>
-                            <p className={styles.preco} aria-live="polite">
-                                <span className={styles.moeda}>{p.symbol}</span>
-                                <span className={styles.valor}>{anual ? p.annual : p.monthly}</span>
-                                <span className={styles.periodoPreco}>
-                                    {anual ? t('pricing.periodAnnual') : t('pricing.perMonth')}
-                                </span>
-                            </p>
+                            <Preco
+                                p={p}
+                                valor={anual ? p.annual : p.monthly}
+                                periodo={anual ? t('pricing.periodAnnual') : t('pricing.perMonth')}
+                                depois={depois}
+                            />
                             {anual ? (
                                 <div className={styles.detalhe}>
                                     <p className={styles.equivale}>

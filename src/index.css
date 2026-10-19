@@ -62,7 +62,7 @@ h3,
 h4 {
   font-family: var(--fonte-placa);
   font-weight: 700;
-  line-height: 0.95;
+  line-height: 1;
   text-wrap: balance;
 }
 
@@ -202,7 +202,9 @@ html {
   scroll-margin-top: 72px;
 }
 
+/* Sobre a placa azul o contorno de foco é laranja (4,67:1). */
 .secao-escura {
+  --foco: var(--laranja);
   background: var(--placa);
   color: var(--placa-texto);
 }
@@ -223,7 +225,7 @@ html {
 
 .secao-titulo {
   font-size: clamp(2.4rem, 5vw, 4rem);
-  line-height: 0.92;
+  line-height: 1;
   text-transform: uppercase;
 }
 

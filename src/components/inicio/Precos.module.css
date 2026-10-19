@@ -67,6 +67,7 @@
 }
 
 .pro {
+  --foco: var(--laranja);
   display: flex;
   flex-direction: column;
   background: var(--placa);

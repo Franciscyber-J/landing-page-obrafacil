@@ -119,7 +119,7 @@ export default function Placa() {
                                     className={anterior === null ? styles.tela : `${styles.tela} ${styles.telaNova}`}
                                     width="720"
                                     height="1600"
-                                    fetchpriority={anterior === null ? 'high' : undefined}
+                                    fetchPriority={anterior === null ? 'high' : undefined}
                                     onAnimationEnd={() => setAnterior(null)}
                                 />
                             </figure>

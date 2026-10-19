@@ -3,6 +3,7 @@
 }
 
 .placa {
+  --foco: var(--laranja);
   background: var(--placa);
   color: var(--placa-texto);
   border: var(--borda-placa) solid var(--placa);
@@ -39,7 +40,7 @@
 
 .titulo {
   font-size: clamp(3.1rem, 7.4vw, 6.4rem);
-  line-height: 0.86;
+  line-height: 1;
   text-transform: uppercase;
   letter-spacing: -0.005em;
   max-width: 11ch;
@@ -88,6 +89,9 @@
 }
 
 .campo[aria-selected='true'] {
+  /* a faixa entra pela margem: o valor continua alinhado com os outros campos */
+  margin-left: -18px;
+  width: calc(100% + 18px);
   padding-left: 18px;
   background: var(--placa-funda);
 }
@@ -175,8 +179,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* sem movimento, mas a animação precisa terminar para a tela anterior sair */
   .telaNova {
-    animation: none;
+    animation-duration: 1ms;
   }
 }
 
@@ -264,6 +269,12 @@
   .campo {
     grid-template-columns: 1fr;
     gap: 2px;
+  }
+
+  .campo[aria-selected='true'] {
+    margin-left: -12px;
+    width: calc(100% + 12px);
+    padding-left: 12px;
   }
 
   .subtitulo {

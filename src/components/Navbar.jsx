@@ -69,8 +69,8 @@ function SeletorDeIdioma({ codigo, aoEscolher }) {
                 type="button"
                 className={styles.idiomaBotao}
                 onClick={() => setAberto((a) => !a)}
-                aria-haspopup="true"
                 aria-expanded={aberto}
+                aria-controls="lista-idiomas"
                 aria-label={`${t('nav.chooseLanguage')}: ${atual.nome}`}
             >
                 <Bandeira pais={atual.pais} size="md" />
@@ -78,7 +78,7 @@ function SeletorDeIdioma({ codigo, aoEscolher }) {
                 <ChevronDown size={14} aria-hidden="true" className={aberto ? styles.girado : ''} />
             </button>
             {aberto && (
-                <ul className={styles.idiomaLista}>
+                <ul id="lista-idiomas" className={styles.idiomaLista}>
                     {IDIOMAS.map((i) => (
                         <li key={i.codigo}>
                             <button
@@ -145,7 +145,7 @@ export default function Navbar() {
                     <img src="/logo_transparente.png" alt="ObraFácil" width="1050" height="238" />
                 </Link>
 
-                <nav className={styles.links} aria-label={t('nav.menu')}>
+                <nav className={styles.links} aria-label={t('nav.navegacao')}>
                     {links.map((l) => <Link key={l.texto} to={l.para}>{l.texto}</Link>)}
                 </nav>
 
@@ -173,7 +173,7 @@ export default function Navbar() {
 
             {menuAberto && (
                 <div id="menu-celular" className={styles.menuCelular}>
-                    <nav className={styles.menuLinks} aria-label={t('nav.menu')}>
+                    <nav className={styles.menuLinks} aria-label={t('nav.navegacao')}>
                         {links.map((l) => <Link key={l.texto} to={l.para} onClick={() => setMenuAberto(false)}>{l.texto}</Link>)}
                     </nav>
                     <p className={styles.menuRotulo}>{t('nav.language')}</p>

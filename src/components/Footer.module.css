@@ -1,4 +1,5 @@
 .rodape {
+  --foco: var(--laranja);
   background: var(--placa-funda);
   color: var(--placa-texto);
   border-top: var(--borda-placa) solid var(--laranja);
@@ -23,7 +24,7 @@
   font-family: var(--fonte-placa);
   font-weight: 700;
   font-size: clamp(1.75rem, 3.4vw, 2.5rem);
-  line-height: 1;
+  line-height: 1.05;
   text-transform: uppercase;
 }
 

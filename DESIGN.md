@@ -18,7 +18,6 @@ colors:
   superficie-escura: "#0e1c2b"
   tinta-escura: "#e8eef5"
   tinta-2-escura: "#a8b8c9"
-  placa-escura: "#123f6b"
 typography:
   display:
     fontFamily: "Barlow Condensed, Arial Narrow, sans-serif"
@@ -95,7 +94,7 @@ para ler (modo Ler) e usam o mesmo mundo com menos volume.
 
 ## Colors
 
-- `placa` cobre as grandes áreas: barra do topo, primeira dobra, seção de recursos, depoimento em destaque,
+- `placa` (igual nos dois temas, para o laranja pequeno sobre ela ficar em 4,67:1) cobre as grandes áreas: barra do topo, primeira dobra, seção de recursos, depoimento em destaque,
   plano PRO, cabeça dos Termos e da Central, rodapé (`placa-funda`).
 - `laranja` é a faixa no alto das placas e a ação principal. Texto sobre laranja é sempre `sobre-laranja`
   (7,4:1), nunca branco.
@@ -121,8 +120,10 @@ para ler (modo Ler) e usam o mesmo mundo com menos volume.
   valor desce para baixo do rótulo.
 - Ordem da página inicial (venda): placa com a tela real → o cliente acompanha (antes/agora) → recursos →
   papéis → depoimentos → preços → perguntas → chamada laranja → rodapé.
-- Tudo funciona em 390 px sem rolagem lateral; a barra do topo mostra "Começar grátis" no celular até
-  370 px.
+- Tudo funciona em 360 e 390 px sem rolagem lateral; a barra do topo mostra "Começar grátis" no celular
+  (abaixo de 370 px o logotipo encolhe para caber).
+- Foco: contorno de 3 px em `--foco` (azul da placa no chão claro, laranja sobre a placa e no tema escuro).
+- Títulos em letra de placa com entrelinha 1: menos que isso, o acento (Ó, Á) bate na linha de cima.
 
 ## Elevation & Depth
 
@@ -161,8 +162,9 @@ para ler (modo Ler) e usam o mesmo mundo com menos volume.
 - Faça: todo texto por chave de tradução; endereços pelas funções de `src/i18n/idiomas.js`.
 - Não faça: gradiente, brilho, vidro, cantos arredondados grandes, cartões iguais em fila, ícone dentro de
   círculo colorido, foto de banco de imagens.
-- Não faça: número, garantia ou prazo que não esteja em `PRODUCT.md` ou não tenha sido confirmado pelo
-  Francis.
+- Não faça: número, garantia ou prazo que não esteja em `PRODUCT.md`, nos artigos da Central ou não tenha
+  sido confirmado pelo Francis. Planos e Acesso Cliente seguem os artigos `gratis-x-pro`, `acesso-cliente` e
+  `com-e-sem-acesso-cliente`.
 
 ## Origem das imagens
 

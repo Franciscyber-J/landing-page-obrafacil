@@ -15,13 +15,14 @@
         "chooseLanguage": "Escolher idioma",
         "themeToggle": "Alternar tema claro e escuro",
         "menu": "Abrir ou fechar o menu",
-        "inicio": "Página inicial do ObraFácil"
+        "inicio": "Página inicial do ObraFácil",
+        "navegacao": "Navegação principal"
     },
     "hero": {
         "faixa": "Gestão de obras",
         "plataformas": "Android · iPhone · Windows · Navegador",
         "titulo": "A obra inteira num lugar só",
-        "subtitulo": "Cronograma, diário de obra, financeiro, equipe e compras no celular e no computador. E o seu cliente acompanha tudo pelo portal, sem precisar te ligar.",
+        "subtitulo": "Cronograma, diário de obra, financeiro, equipe e compras no celular e no computador. E o seu cliente acompanha a obra pelo portal, sem precisar te ligar.",
         "comecar": "Começar grátis",
         "verPlanos": "Ver os planos",
         "semCartao": "Plano grátis sem prazo e sem cartão de crédito.",
@@ -37,7 +38,7 @@
             },
             "financeiro": {
                 "rotulo": "Financeiro",
-                "valor": "Orçado, medido e pago por etapa"
+                "valor": "Entradas, saídas e saldo da obra"
             },
             "cliente": {
                 "rotulo": "Cliente",
@@ -60,7 +61,7 @@
         "toggleMonthly": "Mensal",
         "toggleAnnual": "Anual",
         "periodoRotulo": "Forma de pagamento",
-        "economia": "Economize {{simbolo}} {{valor}}",
+        "economia": "Economize {{simbolo}} {{valor}}",
         "perMonth": "/mês",
         "periodAnnual": "/ano",
         "gratis": {
@@ -68,10 +69,10 @@
             "desc": "Para começar e conhecer o app.",
             "cta": "Começar grátis",
             "itens": [
-                "1 obra ativa",
-                "Diários de obra com limite por mês",
-                "Armazenamento básico",
-                "PDFs com marca d’água"
+                "1 obra sua por vez",
+                "7 relatórios PDF por mês, com marca d’água",
+                "250 MB para fotos e arquivos",
+                "Cliente acompanhando pelo portal"
             ]
         },
         "pro": {
@@ -79,34 +80,35 @@
             "nomeAnual": "PRO anual",
             "desc": "Para construtoras, engenheiros e empreiteiros com várias obras.",
             "itens": [
-                "Obras ativas ilimitadas",
-                "Diários e relatórios ilimitados",
-                "10 GB de armazenamento",
-                "PDFs com o logotipo da sua empresa",
-                "Financeiro completo da obra"
+                "Obras ilimitadas",
+                "Relatórios PDF ilimitados, sem marca d’água",
+                "10 GB para fotos e arquivos",
+                "PDFs com o logotipo e o rodapé da sua empresa",
+                "RDOs em ZIP e arquivos da obra sem internet",
+                "Acesso Cliente disponível para cada obra"
             ],
             "itensAnual": [
                 "Tudo o que o PRO mensal tem",
                 "Preço travado por 12 meses"
             ],
-            "comparacao": "Pagando mês a mês, 12 meses custam {{simbolo}} {{valor}}",
-            "equivale": "Equivale a {{simbolo}} {{valor}} por mês",
+            "comparacao": "Pagando mês a mês, 12 meses custam {{simbolo}} {{valor}}",
+            "equivale": "Equivale a {{simbolo}} {{valor}} por mês",
             "ctaMensal": "Assinar o PRO mensal",
             "ctaAnual": "Assinar o PRO anual"
         },
         "renovacao": "Renovação automática. Cancele quando quiser, no mesmo lugar em que assinou.",
         "lojas": "Assinando pelo celular, o preço e a cobrança são os da Google Play ou da App Store.",
-        "addons": "Precisa de mais? Expansão de armazenamento (+20 GB) e pacotes de downloads extras a qualquer momento.",
+        "addons": "Só no PRO: +20 GB de armazenamento (assinatura à parte) e o Acesso Cliente, que libera mais recursos no portal (taxa única por obra).",
         "selo": "Melhor preço",
         "gratisPreco": "Grátis para sempre"
     },
     "popup": {
         "title": "Espere! Vai mesmo continuar gerenciando suas obras no papel?",
         "subtitle": "Antes de sair, tenho uma proposta irrecusável. Liberamos um lote secreto de **apenas 20 vagas** para Membros Fundadores.",
-        "body": "Chame nosso agente no WhatsApp agora mesmo e solicite o seu convite VIP. Você vai travar a sua assinatura PRO por apenas **R$ 49,95/mês** durante 1 ano inteiro.",
+        "body": "Chame nosso agente no WhatsApp agora mesmo e solicite o seu convite VIP. Você vai travar a sua assinatura PRO por apenas **R$ 49,95/mês** durante 1 ano inteiro.",
         "scarcity": "Aviso: Os links expiram assim que as 20 vagas forem preenchidas.",
-        "whatsappMessage": "Oi, estava no site do Obra Fácil, vi o convite oculto e quero garantir minha vaga de Membro Fundador por R$ 49,95.",
-        "cta": "RESGATAR DESCONTO COM O MAX",
+        "whatsappMessage": "Oi, estava no site do ObraFácil, vi o convite oculto e quero garantir minha vaga de Membro Fundador por R$ 49,95.",
+        "cta": "Resgatar desconto com o Max",
         "fechar": "Fechar",
         "faixa": "Membros Fundadores"
     },
@@ -136,7 +138,7 @@
     "faq": {
         "title": "Perguntas frequentes",
         "q1": "O meu cliente paga para acompanhar a obra?",
-        "a1": "Não. Quem libera o acesso é você, e o cliente não paga nada para acompanhar a obra pelo portal.",
+        "a1": "Não. O cliente acompanha a obra pelo portal sem pagar nada. Se você quiser liberar mais para ele, como baixar fotos e ver o financeiro completo, o Acesso Cliente é uma taxa única por obra, paga por você no PRO.",
         "q2": "Posso usar no computador e no celular?",
         "a2": "Sim. O ObraFácil funciona no Android, no iPhone, no Windows e no navegador, com os mesmos dados em todos.",
         "q3": "Os meus dados estão seguros?",
@@ -274,7 +276,7 @@
     },
     "cliente": {
         "titulo": "Chega de responder “como está a obra?”",
-        "texto": "O cliente recebe um convite por e-mail e acompanha a obra pelo Portal do Cliente: fotos, diários, cronograma e, se você quiser, o financeiro. Você decide o que ele vê.",
+        "texto": "O cliente recebe um convite por e-mail e acompanha a obra pelo Portal do Cliente, sem pagar nada: fotos, diários, cronograma e o resumo do financeiro.",
         "antes": "Antes: tudo pelo WhatsApp",
         "depois": "Agora: o portal da obra",
         "nome": "João (cliente)",
@@ -285,7 +287,7 @@
         "conversaAviso": "Conversa de exemplo",
         "pontos": [
             "O cliente entra com a própria conta, pelo convite que você manda.",
-            "Você liga e desliga o que ele vê: fotos, documentos, financeiro e cronograma.",
+            "Quer liberar mais? Com o Acesso Cliente (no PRO, taxa única por obra), você liga o que ele pode ver e baixar: fotos, financeiro completo, cronograma detalhado e abrir ocorrências.",
             "Em obra com 70% ou mais, quando o acesso termina o cliente ainda tem 15 dias para baixar o que estava liberado."
         ],
         "telaPortal": "Portal do Cliente com as novidades da obra",
@@ -300,7 +302,7 @@
             },
             "diario": {
                 "titulo": "Diário de obra (RDO)",
-                "texto": "Clima, atividades, ocorrências, equipe presente e fotos. Sai em PDF, pronto para enviar e assinar."
+                "texto": "Clima, atividades, ocorrências, equipe presente, fotos e assinatura. Sai em PDF, pronto para enviar."
             },
             "financeiro": {
                 "titulo": "Financeiro da obra",

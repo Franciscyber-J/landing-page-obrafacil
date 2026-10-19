@@ -7,6 +7,7 @@
 }
 
 .cabecalho {
+  --foco: var(--laranja);
   margin-bottom: 48px;
   padding: 32px 32px 28px;
   background: var(--placa);
@@ -16,7 +17,7 @@
 
 .titulo {
   font-size: clamp(2.4rem, 5.4vw, 4rem);
-  line-height: 0.95;
+  line-height: 1;
   text-transform: uppercase;
   margin: 0 0 12px;
 }
@@ -97,8 +98,10 @@
 }
 
 .sumario a {
-  display: block;
-  padding: 7px 0 7px 10px;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 4px 0 4px 10px;
   border-left: 3px solid transparent;
   color: var(--tinta-2);
   text-decoration: none;

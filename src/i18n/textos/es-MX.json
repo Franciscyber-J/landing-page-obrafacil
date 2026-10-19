@@ -1,7 +1,7 @@
 {
     "popup": {
-        "body": "Contacta a nuestro agente en WhatsApp ahora mismo y solicita tu invitación VIP. Vas a congelar tu suscripción PRO por solo **$ 149.00/mes** durante 1 año entero.",
-        "whatsappMessage": "Hola, estaba en el sitio web de Obra Fácil, vi la invitación oculta y quiero garantizar mi cupo de Miembro Fundador por $ 149.00."
+        "body": "Contacta a nuestro agente en WhatsApp ahora mismo y solicita tu invitación VIP. Vas a congelar tu suscripción PRO por solo **$149.00/mes** durante 1 año entero.",
+        "whatsappMessage": "Hola, estaba en el sitio web de ObraFácil, vi la invitación oculta y quiero garantizar mi cupo de Miembro Fundador por $149.00."
     },
     "social": {
         "test4": "\"La galería de fotos ayudó mucho a mostrar los detalles de acabado al arquitecto sin que tuviera que ir a la obra constantemente.\"",
@@ -26,7 +26,7 @@
         "descricao": "App de gestión de obras: cronograma por etapas, reporte diario de obra con fotos, finanzas, equipo y portal del cliente. Empieza gratis, sin tarjeta."
     },
     "hero": {
-        "subtitulo": "Cronograma, reporte diario, finanzas, equipo y compras en el celular y en la computadora. Y tu cliente sigue todo en el portal, sin tener que llamarte.",
+        "subtitulo": "Cronograma, reporte diario, finanzas, equipo y compras en el celular y en la computadora. Y tu cliente sigue la obra en el portal, sin tener que llamarte.",
         "campos": {
             "diario": {
                 "rotulo": "Reporte diario"
@@ -39,15 +39,12 @@
         }
     },
     "cliente": {
-        "texto": "El cliente recibe una invitación por correo y sigue la obra en el Portal del Cliente: fotos, reportes diarios, cronograma y, si quieres, las finanzas. Tú decides lo que ve.",
+        "texto": "El cliente recibe una invitación por correo y sigue la obra en el Portal del Cliente sin pagar nada: fotos, reportes diarios, cronograma y el resumen de las finanzas.",
         "msg2": "¿El viernes que viene ya van a estar los pisos?",
         "msg3": "Hola. Le pido al maestro de obra que las mande."
     },
     "recursos": {
         "itens": {
-            "cronograma": {
-                "texto": "Crea las etapas o genera 19 etapas estándar a partir del monto del contrato, y sigue el avance físico de cada una."
-            },
             "diario": {
                 "titulo": "Reporte diario de obra"
             },
@@ -77,27 +74,31 @@
     "pricing": {
         "gratis": {
             "itens": [
-                "1 obra activa",
-                "Reportes diarios con límite mensual",
-                "Almacenamiento básico",
-                "PDF con marca de agua"
+                "1 obra propia a la vez",
+                "7 reportes PDF al mes, con marca de agua",
+                "250 MB para fotos y archivos",
+                "Tu cliente siguiendo la obra en el portal"
             ]
         },
         "pro": {
             "itens": [
-                "Obras activas ilimitadas",
-                "Reportes diarios e informes ilimitados",
-                "10 GB de almacenamiento",
-                "PDF con el logotipo de tu empresa",
-                "Finanzas completas de la obra"
-            ]
+                "Obras ilimitadas",
+                "Reportes PDF ilimitados, sin marca de agua",
+                "10 GB para fotos y archivos",
+                "PDF con el logotipo y el pie de página de tu empresa",
+                "Reportes diarios en ZIP y archivos de la obra sin conexión",
+                "Acceso Cliente disponible para cada obra"
+            ],
+            "comparacao": "Pagando mes a mes, 12 meses cuestan {{simbolo}}{{valor}}",
+            "equivale": "Equivale a {{simbolo}}{{valor}} al mes"
         },
-        "lojas": "Si te suscribes desde el celular, el precio y el cobro son los de Google Play o la App Store."
+        "lojas": "Si te suscribes desde el celular, el precio y el cobro son los de Google Play o la App Store.",
+        "economia": "Ahorra {{simbolo}}{{valor}}"
     },
     "faq": {
         "q2": "¿Puedo usarlo en la computadora y en el celular?",
         "q4": "¿Qué datos personales se recaban?",
-        "a4": "Para la cuenta: nombre, correo electrónico y teléfono; el RFC solo si lo indicas. La lista completa, y para qué sirve cada dato, está en la Política de Privacidad.",
+        "a4": "Para la cuenta: nombre, correo electrónico y teléfono; tu identificación fiscal (por ejemplo, el RFC) solo si la indicas. La lista completa, y para qué sirve cada dato, está en la Política de Privacidad.",
         "q7": "¿ObraFácil sustituye al responsable técnico de la obra?",
         "a7": "No. Es una herramienta de gestión y no sustituye al profesional responsable de la obra."
     }

@@ -10,6 +10,7 @@
 }
 
 .janela {
+  --foco: var(--laranja);
   width: min(560px, 100%);
   max-height: calc(100vh - 32px);
   overflow-y: auto;
@@ -63,7 +64,7 @@
 
 .titulo {
   font-size: clamp(2rem, 6vw, 2.75rem);
-  line-height: 0.95;
+  line-height: 1;
   text-transform: uppercase;
 }
 

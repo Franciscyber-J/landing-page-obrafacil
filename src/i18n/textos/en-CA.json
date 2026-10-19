@@ -1,7 +1,7 @@
 {
     "popup": {
-        "body": "Contact our agent on WhatsApp right now and request your VIP invite. You will lock in your PRO subscription for only **CA$ 9.99/month** for a full year.",
-        "whatsappMessage": "Hi, I was on the Obra Fácil website, I saw the hidden invite and I want to secure my Founding Member spot for CA$ 9.99."
+        "body": "Contact our agent on WhatsApp right now and request your VIP invite. You will lock in your PRO subscription for only **CA$9.99/month** for a full year.",
+        "whatsappMessage": "Hi, I was on the ObraFácil website, I saw the hidden invite and I want to secure my Founding Member spot for CA$9.99."
     },
     "ajuda": {
         "titulo": "Help Centre",
@@ -21,5 +21,8 @@
     },
     "footer": {
         "help": "Help Centre"
+    },
+    "faq": {
+        "verAjuda": "Visit the Help Centre"
     }
 }

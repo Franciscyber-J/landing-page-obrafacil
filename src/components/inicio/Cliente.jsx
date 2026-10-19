@@ -33,7 +33,7 @@ export default function Cliente() {
                 <div className={styles.comparacao}>
                     <figure className={styles.antes}>
                         <figcaption className={styles.legenda}>{t('cliente.antes')}</figcaption>
-                        <div className={styles.conversa} role="img" aria-label={t('cliente.conversaAviso')}>
+                        <div className={styles.conversa}>
                             <p className={styles.contato}>{t('cliente.nome')}</p>
                             <p className={styles.dia}>{t('cliente.hoje')}</p>
                             <p className={styles.recebida}>{t('cliente.msg1')}<span>07:42</span></p>

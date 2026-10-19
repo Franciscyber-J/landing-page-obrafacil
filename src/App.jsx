@@ -72,11 +72,11 @@ function Site() {
     <ProvedorDeRota codigo={codigo}>
       <ScrollToTop />
       <Alternativos />
+      <AvisoCookies />
       <Navbar />
       <Pagina codigo={codigo} lido={lido} />
       <Footer comChamada={lido.pagina !== 'inicio'} />
       <FloatingWhatsApp />
-      <AvisoCookies />
     </ProvedorDeRota>
   );
 }

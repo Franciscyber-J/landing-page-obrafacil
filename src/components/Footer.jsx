@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { IDIOMAS, caminhoAjuda, caminhoInicio, caminhoLegal } from '../i18n/idiomas.js';
 import { useIdioma, useTrocarIdioma } from '../i18n/RotaDoIdioma.jsx';
 import { abrirAvisoCookies } from '../legal/cookies.js';
-import { CADASTRO, WINDOWS, appStore, googlePlay, linkWhatsApp } from '../links.js';
+import { CADASTRO, SUPORTE, WINDOWS, appStore, googlePlay, linkWhatsApp } from '../links.js';
 import styles from './Footer.module.css';
 
 export default function Footer({ comChamada = true }) {
@@ -75,7 +75,7 @@ export default function Footer({ comChamada = true }) {
                             </a>
                         </li>
                         <li>
-                            <a href="https://appobrafacil.expertbr.com/suporte/" target="_blank" rel="noopener noreferrer">
+                            <a href={SUPORTE} target="_blank" rel="noopener noreferrer">
                                 {t('footer.support')}
                             </a>
                         </li>

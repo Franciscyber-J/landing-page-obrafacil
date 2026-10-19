@@ -37,6 +37,7 @@ export default function ExitIntentPopup() {
     const { t } = useTranslation();
     const [aberta, setAberta] = useState(false);
     const fechar = useRef(null);
+    const janela = useRef(null);
     const antes = useRef(null);
 
     const abrir = useCallback(() => {
@@ -68,7 +69,8 @@ export default function ExitIntentPopup() {
             ultimoT = agora;
         };
         const tempo = window.setInterval(() => {
-            if (Date.now() - inicio > 45000 && abrir()) window.clearInterval(tempo);
+            if (jaVista()) window.clearInterval(tempo);
+            else if (Date.now() - inicio > 45000 && abrir()) window.clearInterval(tempo);
         }, 5000);
 
         document.documentElement.addEventListener('mouseleave', saindoPeloTopo);
@@ -80,13 +82,35 @@ export default function ExitIntentPopup() {
         };
     }, [abrir]);
 
+    // Janela modal de verdade: o Tab circula só dentro dela, Esc fecha, a página de trás não rola,
+    // e ao fechar o foco volta para onde estava.
     useEffect(() => {
         if (!aberta) return undefined;
         fechar.current?.focus();
-        const tecla = (e) => { if (e.key === 'Escape') setAberta(false); };
+        const rolagem = document.documentElement.style.overflow;
+        document.documentElement.style.overflow = 'hidden';
+        const tecla = (e) => {
+            if (e.key === 'Escape') {
+                setAberta(false);
+                return;
+            }
+            if (e.key !== 'Tab' || !janela.current) return;
+            const focaveis = [...janela.current.querySelectorAll('a[href], button:not([disabled])')];
+            if (!focaveis.length) return;
+            const primeiro = focaveis[0];
+            const ultimo = focaveis[focaveis.length - 1];
+            if (e.shiftKey && (document.activeElement === primeiro || !janela.current.contains(document.activeElement))) {
+                e.preventDefault();
+                ultimo.focus();
+            } else if (!e.shiftKey && (document.activeElement === ultimo || !janela.current.contains(document.activeElement))) {
+                e.preventDefault();
+                primeiro.focus();
+            }
+        };
         document.addEventListener('keydown', tecla);
         return () => {
             document.removeEventListener('keydown', tecla);
+            document.documentElement.style.overflow = rolagem;
             antes.current?.focus?.();
         };
     }, [aberta]);
@@ -95,7 +119,7 @@ export default function ExitIntentPopup() {
 
     return (
         <div className={styles.fundo} onClick={(e) => { if (e.target === e.currentTarget) setAberta(false); }}>
-            <div className={styles.janela} role="dialog" aria-modal="true" aria-labelledby="oferta-titulo">
+            <div ref={janela} className={styles.janela} role="dialog" aria-modal="true" aria-labelledby="oferta-titulo">
                 <div className={styles.faixa}>
                     <span>{t('popup.faixa')}</span>
                     <button ref={fechar} type="button" className={styles.fechar} onClick={() => setAberta(false)} aria-label={t('popup.fechar')}>

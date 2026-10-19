@@ -4,7 +4,7 @@
 // aviso (liberada para uma data futura), a página avisa e deixa ler a nova.
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { conferirTexto, textoDaProxima, textoGuardado } from '../../legal/dados.js';
 import { lerTexto, sumario, tituloDoTexto } from '../../legal/markdown.js';
 import { caminhoLegal } from '../../i18n/idiomas.js';
@@ -67,6 +67,16 @@ export default function LegalPagina({ codigo, documento }) {
     useEffect(() => {
         document.title = `${titulo} · ObraFácil`;
     }, [titulo]);
+
+    // Link com âncora (#s15 do aviso de cookies): desce até a seção depois que o texto aparece.
+    const { hash } = useLocation();
+    const pronto = estado.tipo === 'pronto' && blocos.length > 0;
+    useEffect(() => {
+        if (!pronto || !hash) return undefined;
+        const id = decodeURIComponent(hash.slice(1));
+        const quadro = requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView());
+        return () => cancelAnimationFrame(quadro);
+    }, [pronto, hash]);
 
     const abrirProxima = () => {
         const p = estado.dados?.proxima;

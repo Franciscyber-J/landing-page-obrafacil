@@ -25,7 +25,7 @@
   --tinta-2: #3f5468;          /* texto secundário (7:1) */
   --linha: #c5d1dd;
   --linha-forte: #10243a;
-  --foco: #f28a1f;
+  --foco: #0f3a63;              /* contorno de foco no chão claro (10:1); sobre a placa vira laranja */
 
   /* Tipografia */
   --fonte-placa: 'Barlow Condensed', 'Arial Narrow', sans-serif;
@@ -64,11 +64,12 @@
 /* Tema escuro: noite no canteiro. A placa continua azul; o chão fica azul-noite. */
 [data-theme='dark'] {
   color-scheme: dark;
-  --placa: #123f6b;
+  --placa: #0f3a63;            /* igual ao claro: o laranja pequeno sobre ela fica em 4,67:1 */
   --placa-funda: #0b2742;
   --chao: #07111c;
   --superficie: #0e1c2b;
   --tinta: #e8eef5;
+  --foco: #f28a1f;
   --tinta-2: #a8b8c9;          /* 8:1 sobre o chão escuro */
   --linha: #26394e;
   --linha-forte: #e8eef5;
