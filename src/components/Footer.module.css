@@ -1,13 +1,15 @@
+/* Rodapé: bloco arredondado em cima, um tom abaixo do fundo, com a chamada curta (fora da inicial). */
 .rodape {
-  --foco: var(--laranja);
-  background: var(--placa-funda);
-  color: var(--placa-texto);
-  border-top: var(--borda-placa) solid var(--laranja);
+  position: relative;
+  margin-top: 24px;
+  border-radius: var(--raio-xg) var(--raio-xg) 0 0;
+  background: var(--fundo-2);
+  border-top: 1px solid var(--vidro-borda);
+  color: var(--texto);
 }
 
 .chamada {
-  background: var(--placa);
-  border-bottom: var(--borda) solid var(--placa-linha);
+  padding-top: 32px;
 }
 
 .chamadaConteudo {
@@ -16,16 +18,20 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px 32px;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding: 28px 32px;
+  border-radius: var(--raio-g);
+  color: var(--painel-texto);
+  background:
+    radial-gradient(420px 260px at 100% 0%, rgba(31, 111, 209, 0.5), transparent 70%),
+    var(--painel);
 }
 
 .chamadaTitulo {
-  font-family: var(--fonte-placa);
-  font-weight: 700;
-  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
-  line-height: 1.05;
-  text-transform: uppercase;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .grade {
@@ -39,22 +45,22 @@
 .logo {
   display: inline-flex;
   background: #ffffff;
-  padding: 8px 14px;
-  border-radius: var(--raio);
+  padding: 8px 16px;
+  border-radius: var(--pilula);
+  box-shadow: var(--sombra);
 }
 
 .logo img {
-  height: 32px;
+  height: 30px;
   width: auto;
 }
 
 .frase {
   margin-top: 16px;
-  font-family: var(--fonte-placa);
-  font-weight: 600;
-  font-size: 1.375rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
 }
 
 .idioma {
@@ -63,28 +69,30 @@
   gap: 6px;
   margin-top: 22px;
   max-width: 260px;
-  font-size: 0.875rem;
-  color: var(--placa-texto-2);
+  font-size: 0.8125rem;
+  color: var(--texto-2);
 }
 
 .idioma select {
-  min-height: 44px;
-  padding: 0 10px;
-  background: var(--placa);
-  color: var(--placa-texto);
-  border: var(--borda) solid var(--placa-linha);
-  border-radius: var(--raio);
+  min-height: 46px;
+  padding: 0 14px;
+  background: var(--vidro-forte);
+  color: var(--texto);
+  border: 1px solid var(--vidro-borda);
+  border-radius: var(--pilula);
   font: inherit;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   cursor: pointer;
 }
 
 .coluna h2 {
-  font-size: 1.125rem;
-  letter-spacing: 0.08em;
+  font-family: var(--fonte-texto);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--laranja);
-  margin-bottom: 12px;
+  color: var(--laranja-texto);
+  margin-bottom: 10px;
 }
 
 .coluna a,
@@ -96,25 +104,23 @@
   border: 0;
   padding: 0;
   cursor: pointer;
-  color: var(--placa-texto-2);
-  font-size: 1rem;
+  color: var(--texto-2);
+  font-size: 0.9375rem;
   text-align: left;
+  transition: color var(--tempo) var(--suave);
 }
 
 .coluna a:hover,
 .coluna button:hover {
-  color: #ffffff;
-  text-decoration: underline;
-  text-decoration-color: var(--laranja);
-  text-underline-offset: 4px;
+  color: var(--texto);
 }
 
 .base {
   padding-top: 20px;
   padding-bottom: 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 0.875rem;
-  color: var(--placa-texto-2);
+  border-top: 1px solid var(--linha);
+  font-size: 0.8125rem;
+  color: var(--texto-2);
 }
 
 @media (max-width: 1020px) {
@@ -124,6 +130,10 @@
 
   .marca {
     grid-column: 1 / -1;
+  }
+
+  .rodape {
+    border-radius: var(--raio-g) var(--raio-g) 0 0;
   }
 }
 

@@ -5,21 +5,27 @@
   display: grid;
   place-items: center;
   padding: 16px;
-  background: rgba(5, 18, 32, 0.72);
-  animation: aparecer 200ms var(--suave) both;
+  background: rgba(5, 18, 32, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: aparecer 220ms var(--suave) both;
 }
 
 .janela {
-  --foco: var(--laranja);
+  --foco: #ffb35c;
+  position: relative;
   width: min(560px, 100%);
   max-height: calc(100vh - 32px);
   overflow-y: auto;
-  background: var(--placa);
-  color: var(--placa-texto);
-  border: var(--borda-placa) solid var(--placa);
-  outline: var(--borda-placa) solid #ffffff;
-  outline-offset: -9px;
-  animation: chapa 320ms var(--suave) both;
+  border-radius: var(--raio-g);
+  color: var(--painel-texto);
+  background:
+    radial-gradient(420px 300px at 100% 0%, rgba(31, 111, 209, 0.55), transparent 70%),
+    radial-gradient(380px 280px at 0% 100%, rgba(242, 138, 31, 0.35), transparent 70%),
+    var(--painel);
+  border: 1px solid var(--painel-linha);
+  box-shadow: var(--sombra-forte);
+  animation: subir 420ms var(--suave) both;
 }
 
 .faixa {
@@ -27,14 +33,17 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin: 6px 6px 0;
-  padding: 4px 4px 4px 16px;
+  padding: 14px 14px 0 26px;
+}
+
+.faixa span {
+  padding: 5px 12px;
+  border-radius: var(--pilula);
   background: var(--laranja);
   color: var(--sobre-laranja);
-  font-family: var(--fonte-placa);
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: 0.1em;
+  font-weight: 800;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -44,57 +53,55 @@
   width: 44px;
   height: 44px;
   flex-shrink: 0;
-  background: transparent;
-  border: 0;
-  color: var(--sobre-laranja);
+  border-radius: 50%;
+  background: var(--painel-vidro);
+  border: 1px solid var(--painel-linha);
+  color: var(--painel-texto);
   cursor: pointer;
 }
 
 .fechar:hover {
-  background: rgba(19, 33, 47, 0.12);
-}
-
-.fechar:focus-visible {
-  outline-color: var(--sobre-laranja);
+  border-color: var(--painel-texto);
 }
 
 .corpo {
-  padding: 24px 28px 30px;
+  padding: 18px 26px 28px;
 }
 
 .titulo {
-  font-size: clamp(2rem, 6vw, 2.75rem);
-  line-height: 1;
-  text-transform: uppercase;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
 }
 
 .texto {
   margin-top: 14px;
   font-size: 1.0625rem;
   line-height: 1.55;
-  color: var(--placa-texto-2);
+  color: var(--painel-texto-2);
 }
 
 .texto strong {
-  color: #ffffff;
-  font-weight: 700;
-  background: linear-gradient(transparent 62%, rgba(242, 138, 31, 0.55) 62%);
+  color: #ffb35c;
+  font-weight: 800;
 }
 
 .escassez {
   margin-top: 16px;
-  padding: 10px 12px;
-  border-left: 6px solid var(--laranja);
-  background: var(--placa-funda);
+  padding: 12px 14px;
+  border-radius: var(--raio-p);
+  background: var(--painel-vidro);
+  border: 1px solid var(--painel-linha);
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .botao {
   margin-top: 22px;
   width: 100%;
   min-height: 56px;
-  font-size: 1.3125rem;
+  font-size: 1.0625rem;
 }
 
 @keyframes aparecer {
@@ -103,18 +110,15 @@
   }
 }
 
-@keyframes chapa {
+@keyframes subir {
   from {
-    clip-path: inset(0 0 100% 0);
-  }
-
-  to {
-    clip-path: inset(0 0 0 0);
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
   }
 }
 
 @media (max-width: 520px) {
   .corpo {
-    padding: 20px 18px 24px;
+    padding: 16px 20px 24px;
   }
 }

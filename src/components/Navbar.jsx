@@ -153,7 +153,8 @@ export default function Navbar() {
     return (
         <header className={styles.barra}>
             <span ref={barra} className={styles.lido} aria-hidden="true" />
-            <div className={`container ${styles.conteudo}`}>
+            <div className={styles.capsula}>
+            <div className={styles.conteudo}>
                 <Link
                     to={inicio}
                     className={styles.logo}
@@ -190,8 +191,9 @@ export default function Navbar() {
                     aria-expanded={menuAberto}
                     aria-controls="menu-celular"
                 >
-                    {menuAberto ? <X size={26} aria-hidden="true" /> : <Menu size={26} aria-hidden="true" />}
+                    {menuAberto ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
                 </button>
+            </div>
             </div>
 
             {menuAberto && (

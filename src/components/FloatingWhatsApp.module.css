@@ -5,28 +5,24 @@
   z-index: 55;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   min-height: 56px;
   min-width: 56px;
-  justify-content: center;
-  padding: 0 16px;
-  background: var(--placa);
+  padding: 0 20px 0 16px;
+  border-radius: var(--pilula);
+  background: var(--painel);
   color: #ffffff;
-  border: var(--borda) solid #ffffff;
-  outline: var(--borda) solid var(--placa);
-  border-radius: var(--raio);
-  box-shadow: 0 16px 32px -16px rgba(5, 20, 35, 0.7);
-  font-family: var(--fonte-placa);
+  border: 1px solid var(--painel-linha);
+  box-shadow: var(--sombra-forte);
   font-weight: 700;
-  font-size: 1.125rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: 0.9375rem;
   animation: entrar 400ms var(--suave) 1.2s both;
-  transition: background var(--tempo) var(--suave);
+  transition: transform var(--tempo) var(--suave);
 }
 
 .flutuante:hover {
-  background: var(--placa-funda);
+  transform: translateY(-2px);
 }
 
 @keyframes entrar {

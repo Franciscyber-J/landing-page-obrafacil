@@ -1,80 +1,112 @@
 /* =============================================================================
-   ObraFácil — mundo visual "Placa de obra" (outubro de 2026).
-   A placa que fica na frente de toda obra: campo azul, letra alta e estreita,
-   faixa laranja, campos com rótulo e valor. Azul e laranja são os do logotipo.
-   Decisão do Francis: direção B. Contrato da direção: docs/design/BRIEF_SITE.md.
+   ObraFácil — mundo visual "Obra de dia / Obra de noite" (outubro de 2026, escolha do Francis: estilo A).
+   Fundo com luzes azul e laranja do logotipo se movendo devagar, cartões de vidro, cantos arredondados,
+   botões em pílula, celulares flutuando. Tema escuro = "Noite de obra" (o que ele aprovou);
+   tema claro = "Obra de dia" (mesma forma, luzes mais suaves).
+   Contrato: docs/design/BRIEF_SITE.md. Sistema: DESIGN.md.
    ============================================================================= */
 
 :root {
   color-scheme: light;
 
-  /* Cores do mundo */
-  --placa: #0f3a63;            /* azul do logotipo, campo da placa */
-  --placa-funda: #0a2b4a;      /* painel dentro da placa */
-  --placa-linha: rgba(255, 255, 255, 0.55);
-  --placa-texto: #ffffff;
-  --placa-texto-2: #c7d8ea;    /* rótulos na placa (contraste 8:1 sobre --placa) */
-  --laranja: #f28a1f;          /* laranja do logotipo: faixa, ação principal */
-  --laranja-forte: #d9720a;    /* hover da ação */
-  --sobre-laranja: #13212f;    /* texto sobre o laranja (7,4:1) */
-
-  /* Chão da página (tema claro) */
-  --chao: #f2f5f8;
+  /* Fundo e superfícies (claro) */
+  --fundo: #f4f7fb;
+  --fundo-2: #eaf0f7;
   --superficie: #ffffff;
-  --tinta: #10243a;            /* texto principal (15:1 sobre o chão) */
-  --tinta-2: #3f5468;          /* texto secundário (7:1) */
-  --linha: #c5d1dd;
-  --linha-forte: #10243a;
-  --foco: #0f3a63;              /* contorno de foco no chão claro (10:1); sobre a placa vira laranja */
+  --vidro: rgba(255, 255, 255, 0.66);
+  --vidro-forte: rgba(255, 255, 255, 0.86);
+  --vidro-borda: rgba(15, 58, 99, 0.12);
+  --linha: rgba(15, 58, 99, 0.14);
+
+  /* Texto */
+  --texto: #0d2136;              /* 15:1 sobre o fundo */
+  --texto-2: #4a5f75;            /* 6,1:1 */
+
+  /* Marca */
+  --azul: #0f3a63;               /* azul do logotipo */
+  --azul-vivo: #1a5fb8;          /* links e detalhes (5,8:1) */
+  --laranja: #f28a1f;            /* laranja do logotipo: ação principal */
+  --laranja-forte: #e0700f;
+  --laranja-texto: #a84f08;      /* laranja usado como texto pequeno (5,2:1) */
+  --sobre-laranja: #1a1206;      /* texto sobre o laranja (7,4:1) */
+  --destaque: linear-gradient(90deg, #b4570a, #d9630a);   /* palavras em destaque nos títulos grandes */
+
+  /* Painel azul (recursos, plano PRO, chamadas): igual nos dois temas */
+  --painel: #0f3a63;
+  --painel-2: #0b2c4d;
+  --painel-texto: #ffffff;
+  --painel-texto-2: #c7d8ea;     /* 8:1 sobre o painel */
+  --painel-linha: rgba(255, 255, 255, 0.16);
+  --painel-vidro: rgba(255, 255, 255, 0.08);
+
+  /* Luzes do fundo */
+  --luz-azul: rgba(31, 111, 209, 0.22);
+  --luz-laranja: rgba(242, 138, 31, 0.2);
+
+  /* Sombras */
+  --sombra: 0 18px 40px -24px rgba(13, 33, 54, 0.35);
+  --sombra-forte: 0 40px 80px -36px rgba(13, 33, 54, 0.55);
+  --sombra-laranja: 0 12px 30px -12px rgba(242, 138, 31, 0.65);
+
+  --foco: #1a5fb8;
 
   /* Tipografia */
-  --fonte-placa: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-  --fonte-texto: 'Barlow', system-ui, sans-serif;
+  --fonte-titulo: 'Bricolage Grotesque', 'Manrope', system-ui, sans-serif;
+  --fonte-texto: 'Manrope', system-ui, sans-serif;
 
-  /* Ritmo */
-  --borda: 2px;
-  --borda-placa: 3px;
-  --raio: 2px;
-  --tempo: 220ms;
+  /* Forma e ritmo */
+  --raio-p: 12px;
+  --raio: 20px;
+  --raio-g: 28px;
+  --raio-xg: 40px;
+  --pilula: 999px;
+  --tempo: 260ms;
   --suave: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Nomes antigos (Central de Ajuda e telas que ainda usam): apontam para o mundo novo */
-  --bg-primary: var(--chao);
+  --chao: var(--fundo);
+  --tinta: var(--texto);
+  --tinta-2: var(--texto-2);
+  --linha-forte: var(--texto);
+  --placa: var(--painel);
+  --placa-funda: var(--painel-2);
+  --placa-texto: var(--painel-texto);
+  --placa-texto-2: var(--painel-texto-2);
+  --placa-linha: var(--painel-linha);
+  --fonte-placa: var(--fonte-titulo);
+  --borda: 1px;
+  --borda-placa: 1px;
+  --bg-primary: var(--fundo);
   --bg-secondary: var(--superficie);
-  --bg-tertiary: #e6ecf2;
-  --text-primary: var(--tinta);
-  --text-secondary: var(--tinta-2);
-  --color-accent: var(--placa);
-  --color-neon: var(--placa);
-  --color-neon-glow: transparent;
-  --color-pro: #a65a00;
-  --color-pro-glow: transparent;
-  --glass-bg: var(--superficie);
-  --glass-border: var(--linha);
-  --glass-blur: none;
-  --glass-shadow: none;
-  --border-radius-sm: var(--raio);
-  --border-radius-md: var(--raio);
-  --border-radius-lg: var(--raio);
+  --bg-tertiary: var(--fundo-2);
+  --text-primary: var(--texto);
+  --text-secondary: var(--texto-2);
+  --color-accent: var(--azul-vivo);
+  --color-pro: var(--laranja-texto);
   --transition-fast: var(--tempo) var(--suave);
   --transition-normal: var(--tempo) var(--suave);
-  --transition-short: var(--tempo) var(--suave);
 }
 
-/* Tema escuro: noite no canteiro. A placa continua azul; o chão fica azul-noite. */
+/* Tema escuro: "Noite de obra" */
 [data-theme='dark'] {
   color-scheme: dark;
-  --placa: #0f3a63;            /* igual ao claro: o laranja pequeno sobre ela fica em 4,67:1 */
-  --placa-funda: #0b2742;
-  --chao: #07111c;
-  --superficie: #0e1c2b;
-  --tinta: #e8eef5;
-  --foco: #f28a1f;
-  --tinta-2: #a8b8c9;          /* 8:1 sobre o chão escuro */
-  --linha: #26394e;
-  --linha-forte: #e8eef5;
-  --bg-tertiary: #13253a;
-  --color-accent: #8fc1ff;
-  --color-neon: #8fc1ff;
-  --color-pro: #ffb35c;
+  --fundo: #08172a;
+  --fundo-2: #0b1d33;
+  --superficie: #0f2238;
+  --vidro: rgba(255, 255, 255, 0.06);
+  --vidro-forte: rgba(15, 34, 56, 0.86);
+  --vidro-borda: rgba(255, 255, 255, 0.12);
+  --linha: rgba(255, 255, 255, 0.12);
+  --texto: #eef3f9;              /* 16:1 */
+  --texto-2: #a9bccf;            /* 9:1 */
+  --azul-vivo: #6aa8f0;
+  --laranja-texto: #ffb35c;
+  --destaque: linear-gradient(90deg, #ffb35c, #f28a1f);
+  --painel: #0f2a48;
+  --painel-2: #0a2038;
+  --luz-azul: rgba(31, 111, 209, 0.55);
+  --luz-laranja: rgba(242, 138, 31, 0.32);
+  --sombra: 0 18px 40px -24px rgba(0, 0, 0, 0.7);
+  --sombra-forte: 0 40px 80px -30px rgba(0, 0, 0, 0.8);
+  --foco: #ffb35c;
 }

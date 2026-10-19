@@ -1,47 +1,61 @@
 .secao {
-  background: var(--superficie);
-  border-top: var(--borda) solid var(--linha);
-  border-bottom: var(--borda) solid var(--linha);
+  background: transparent;
 }
 
 .grade {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 48px;
+  gap: 20px;
   align-items: start;
 }
 
 .destaque {
-  background: var(--placa);
-  color: var(--placa-texto);
+  position: relative;
+  overflow: hidden;
   padding: 36px 32px 32px;
-  border-top: 8px solid var(--laranja);
+  border-radius: var(--raio-g);
+  color: var(--painel-texto);
+  background:
+    radial-gradient(420px 300px at 100% 0%, rgba(31, 111, 209, 0.5), transparent 70%),
+    radial-gradient(360px 260px at 0% 100%, rgba(242, 138, 31, 0.28), transparent 70%),
+    var(--painel);
+  box-shadow: var(--sombra-forte);
 }
 
 .destaque blockquote {
-  font-family: var(--fonte-placa);
-  font-weight: 600;
-  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
-  line-height: 1.08;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
 }
 
+.destaque blockquote::before,
 .depoimento blockquote::before {
-  content: '';
+  content: '“';
   display: block;
-  width: 28px;
-  height: 6px;
-  margin-bottom: 14px;
-  background: var(--laranja);
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  line-height: 0.7;
+  background: var(--destaque);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.destaque blockquote::before {
+  font-size: 4.5rem;
+  margin-bottom: 6px;
 }
 
 .destaque figcaption {
-  margin-top: 28px;
+  margin-top: 26px;
   padding-top: 16px;
-  border-top: var(--borda) solid var(--placa-linha);
+  border-top: 1px solid var(--painel-linha);
 }
 
 .destaque figcaption span {
-  color: var(--placa-texto-2);
+  color: var(--painel-texto-2);
 }
 
 figcaption {
@@ -51,32 +65,29 @@ figcaption {
 }
 
 figcaption strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .outros {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: var(--borda-placa) solid var(--linha-forte);
+  gap: 12px;
 }
 
 .depoimento {
-  padding: 22px 20px 22px 0;
-  border-bottom: var(--borda) solid var(--linha);
-}
-
-.depoimento:nth-child(even) {
-  padding: 22px 0 22px 20px;
-  border-left: var(--borda) solid var(--linha);
+  padding: 22px;
+  border-radius: var(--raio);
+  background: var(--vidro);
+  border: 1px solid var(--vidro-borda);
 }
 
 .depoimento blockquote {
-  font-size: 1.0625rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
 .depoimento blockquote::before {
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin-bottom: 4px;
 }
 
@@ -85,20 +96,19 @@ figcaption strong {
 }
 
 .depoimento figcaption span {
-  color: var(--tinta-2);
+  color: var(--texto-2);
   font-size: 0.9375rem;
 }
 
 .aviso {
-  margin-top: 20px;
-  font-size: 0.875rem;
-  color: var(--tinta-2);
+  margin-top: 18px;
+  font-size: 0.8125rem;
+  color: var(--texto-2);
 }
 
 @media (max-width: 1020px) {
   .grade {
     grid-template-columns: 1fr;
-    gap: 32px;
   }
 }
 
@@ -107,13 +117,7 @@ figcaption strong {
     grid-template-columns: 1fr;
   }
 
-  .depoimento,
-  .depoimento:nth-child(even) {
-    padding: 20px 0;
-    border-left: 0;
-  }
-
   .destaque {
-    padding: 28px 20px 24px;
+    padding: 28px 22px 24px;
   }
 }

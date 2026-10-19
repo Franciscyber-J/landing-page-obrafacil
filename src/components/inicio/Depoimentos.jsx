@@ -21,7 +21,7 @@ export default function Depoimentos() {
                 </div>
 
                 <div className={styles.grade} data-grupo>
-                    <figure className={styles.destaque} data-item>
+                    <figure className={styles.destaque} data-item data-painel>
                         <blockquote>{semAspas(t(`social.test${destaque}`))}</blockquote>
                         <figcaption>
                             <strong>{t(`social.author${destaque}`)}</strong>

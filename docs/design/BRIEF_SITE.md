@@ -6,7 +6,7 @@ Documento de desenvolvimento (não vai para o site). Produto: `PRODUCT.md`. Sist
 Escopo (Francis, 18/10/2026): o site inteiro (página inicial, preços, Central de Ajuda, Termos e Política), com o
 visual novo. Modo da página inicial: Persuadir. Central, Termos e Política: Ler.
 
-Escolha: três esboços (A prancha técnica, B placa de obra, C via do formulário) mandados ao Francis em 18/10/2026; a
+Escolha final (19/10/2026): estilo A, "Noite de obra" (escuro) e "Obra de dia" (claro), arredondado, com vidro e luzes; o Francis recusou o visual de cantos retos da placa de obra. Ver DESIGN.md.
 direção B foi a recomendada e seguida (o Francis pode trocar). O lançador do Impeccable não está instalado neste
 projeto (decisão do Francis): não houve sorteio de direções; os esboços fizeram esse papel.
 

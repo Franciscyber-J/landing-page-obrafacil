@@ -7,6 +7,7 @@ import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import { CADASTRO } from '../../links.js';
 import { enderecoDaTela } from '../../telas.js';
 import { COM_MOVIMENTO, gsap, useGSAP } from '../../movimento/index.js';
+import { comDestaque } from '../../texto.jsx';
 import styles from './Cliente.module.css';
 
 export default function Cliente() {
@@ -43,7 +44,7 @@ export default function Cliente() {
             <div className={`container ${styles.grade}`}>
                 <div>
                     <div className="secao-cabeca">
-                        <h2 id="cliente-titulo" className="secao-titulo">{t('cliente.titulo')}</h2>
+                        <h2 id="cliente-titulo" className="secao-titulo">{comDestaque(t('cliente.titulo'))}</h2>
                         <p className="secao-texto">{t('cliente.texto')}</p>
                     </div>
                     <ol className={styles.pontos} data-grupo>

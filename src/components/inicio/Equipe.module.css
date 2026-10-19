@@ -6,47 +6,54 @@
 }
 
 .papeis {
-  border: var(--borda-placa) solid var(--linha-forte);
-  background: var(--superficie);
+  display: grid;
+  gap: 10px;
 }
 
 .papel {
   display: grid;
   grid-template-columns: 220px 1fr;
   gap: 16px;
-  align-items: baseline;
+  align-items: center;
   padding: 18px 20px;
+  border-radius: var(--raio);
+  background: var(--vidro);
+  border: 1px solid var(--vidro-borda);
+  transition: border-color var(--tempo) var(--suave), transform var(--tempo) var(--suave);
 }
 
-.papel + .papel {
-  border-top: var(--borda) solid var(--linha);
+.papel:hover {
+  border-color: rgba(242, 138, 31, 0.5);
 }
 
 .papel dt {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 12px;
-  font-family: var(--fonte-placa);
+  font-family: var(--fonte-titulo);
   font-weight: 700;
-  font-size: 1.625rem;
-  line-height: 1;
-  text-transform: uppercase;
+  font-size: 1.375rem;
+  line-height: 1.1;
 }
 
 .ordem {
   display: inline-grid;
   place-items: center;
-  width: 30px;
-  height: 30px;
-  background: var(--placa);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--azul);
   color: #ffffff;
-  font-size: 1.125rem;
+  font-size: 1rem;
   flex-shrink: 0;
-  transform: translateY(-2px);
+}
+
+[data-theme='dark'] .ordem {
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .papel dd {
-  color: var(--tinta-2);
+  color: var(--texto-2);
 }
 
 .painel {

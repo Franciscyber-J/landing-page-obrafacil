@@ -1,8 +1,20 @@
+/* Última chamada: painel azul arredondado com as luzes, título grande e a ação laranja. */
 .chamada {
-  background: var(--laranja);
-  color: var(--sobre-laranja);
-  padding: 72px 0;
-  border-top: var(--borda-placa) solid var(--sobre-laranja);
+  padding: 24px 0 104px;
+}
+
+.painel {
+  --foco: var(--laranja);
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--raio-xg);
+  padding: 64px 56px;
+  color: var(--painel-texto);
+  background:
+    radial-gradient(600px 420px at 100% 0%, rgba(31, 111, 209, 0.55), transparent 70%),
+    radial-gradient(520px 380px at 0% 100%, rgba(242, 138, 31, 0.35), transparent 70%),
+    var(--painel);
+  box-shadow: var(--sombra-forte);
 }
 
 .grade {
@@ -13,16 +25,17 @@
 }
 
 .titulo {
-  font-size: clamp(2.6rem, 6vw, 5rem);
-  line-height: 1;
-  text-transform: uppercase;
-  max-width: 14ch;
+  font-size: clamp(2.4rem, 5.2vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  max-width: 16ch;
 }
 
 .texto {
   margin-top: 16px;
-  font-size: 1.1875rem;
-  font-weight: 500;
+  font-size: 1.125rem;
+  color: var(--painel-texto-2);
   max-width: 50ch;
 }
 
@@ -39,33 +52,22 @@
   justify-content: center;
   min-height: 60px;
   padding: 0 28px;
-  background: var(--sobre-laranja);
-  color: #ffffff;
-  border-radius: var(--raio);
-  font-family: var(--fonte-placa);
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  transition: background var(--tempo) var(--suave), transform var(--tempo) var(--suave);
+  border-radius: var(--pilula);
+  background: var(--laranja);
+  color: var(--sobre-laranja);
+  font-size: 1.125rem;
+  font-weight: 800;
+  box-shadow: var(--sombra-laranja);
+  transition: background var(--tempo) var(--suave);
 }
 
 .botao:hover {
-  background: var(--placa);
-}
-
-.botao:active {
-  transform: translateY(1px);
-}
-
-.botao:focus-visible,
-.whatsapp:focus-visible {
-  outline-color: var(--sobre-laranja);
+  background: var(--laranja-forte);
 }
 
 .nota {
-  font-size: 0.9375rem;
-  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--painel-texto-2);
   text-align: center;
 }
 
@@ -74,10 +76,11 @@
   justify-content: center;
   align-items: center;
   min-height: 44px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 5px;
+  text-decoration-color: var(--laranja);
   text-align: center;
 }
 
@@ -87,7 +90,12 @@
     gap: 28px;
   }
 
+  .painel {
+    padding: 44px 24px;
+    border-radius: var(--raio-g);
+  }
+
   .chamada {
-    padding: 56px 0;
+    padding-bottom: 72px;
   }
 }

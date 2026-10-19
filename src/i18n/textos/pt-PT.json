@@ -91,7 +91,7 @@
         "baixarPara": "Transferir para"
     },
     "cliente": {
-        "titulo": "Chega de responder «como está a obra?»",
+        "titulo": "Chega de responder **«como está a obra?»**",
         "texto": "O cliente recebe um convite por e-mail e acompanha a obra pelo Portal do Cliente, sem pagar nada: fotografias, diários, cronograma e o resumo das finanças.",
         "msg1": "Olá! Está tudo bem? Como está a obra? Tem fotografias de hoje?",
         "msg2": "Na próxima sexta-feira já dá para ver os pavimentos?",
@@ -104,7 +104,7 @@
         "telaAcesso": "Ecrã em que o gestor escolhe o que o cliente pode ver"
     },
     "recursos": {
-        "titulo": "Tudo o que a obra pede, na mesma aplicação",
+        "titulo": "Tudo o que a obra pede, **na mesma aplicação**",
         "itens": {
             "cronograma": {
                 "texto": "Crie as etapas da obra e acompanhe a execução física de cada uma."

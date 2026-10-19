@@ -19,9 +19,8 @@
         "navegacao": "Main navigation"
     },
     "hero": {
-        "faixa": "Construction management",
         "plataformas": "Android · iPhone · Windows · Browser",
-        "titulo": "The whole project in one place",
+        "titulo": "The whole project **in one place**",
         "subtitulo": "Schedule, daily reports, finances, team and purchases on your phone and computer. And your client follows the project in the portal, without having to call you.",
         "comecar": "Start free",
         "verPlanos": "See the plans",
@@ -273,7 +272,7 @@
         "preferencias": "Cookies"
     },
     "cliente": {
-        "titulo": "No more answering “how is the project going?”",
+        "titulo": "No more answering **“how is the project going?”**",
         "texto": "Your client gets an email invitation and follows the project in the Client Portal at no cost: photos, daily reports, schedule and a summary of the finances.",
         "antes": "Before: everything over WhatsApp",
         "depois": "Now: the project portal",
@@ -292,7 +291,7 @@
         "telaAcesso": "Screen where the manager chooses what the client can see"
     },
     "recursos": {
-        "titulo": "Everything the project needs, in one app",
+        "titulo": "Everything the project needs, **in one app**",
         "itens": {
             "cronograma": {
                 "titulo": "Stage-by-stage schedule",
@@ -353,7 +352,7 @@
         "tela": "Daily report with the crew list and each person’s attendance"
     },
     "chamada": {
-        "titulo": "Start with your next project",
+        "titulo": "Start with your **next project**",
         "texto": "The free plan has no time limit. Subscribe to PRO when you need more.",
         "acao": "Start free",
         "duvida": "Questions? Talk to us on WhatsApp.",

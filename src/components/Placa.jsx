@@ -1,14 +1,15 @@
-// Primeira dobra: a placa da obra. Os campos são abas: escolher um campo troca a tela do app
-// no painel (a tela real daquela parte, no idioma da página).
-// Movimento: a placa se monta ao abrir (faixa, título linha por linha, campos, planta desenhando,
-// celular entrando em 3D); com mouse, o celular inclina seguindo o ponteiro; as abas passam sozinhas
-// a cada 4,5 s até a pessoa mexer nelas (e param fora da tela ou com "menos movimento").
+// Primeira dobra: título, ações e três celulares flutuando em leque sobre as luzes do fundo. As
+// partes da obra são abas: escolher uma troca a tela do celular do meio (a tela real, no idioma da página).
+// Movimento: a dobra se monta ao abrir (selo, título linha por linha, abas, planta desenhando, celulares
+// entrando em 3D); com mouse, o celular do meio inclina seguindo o ponteiro; as abas passam sozinhas a
+// cada 4,5 s até a pessoa mexer nelas (e param fora da tela ou com "menos movimento").
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { caminhoInicio } from '../i18n/idiomas.js';
 import { useIdioma } from '../i18n/RotaDoIdioma.jsx';
 import { CADASTRO, WINDOWS, appStore, googlePlay } from '../links.js';
+import { comDestaque } from '../texto.jsx';
 import { enderecoDaTela } from '../telas.js';
 import { COM_MOUSE, COM_MOVIMENTO, gsap, inclinarComPonteiro, magnetico, tituloSobe, useGSAP } from '../movimento/index.js';
 import styles from './Placa.module.css';
@@ -63,15 +64,15 @@ export default function Placa() {
         mm.add(COM_MOVIMENTO, () => {
             const q = gsap.utils.selector(raiz);
             const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
-            tl.from(q('[data-m="placa"]'), { clipPath: 'inset(0 0 100% 0)', duration: 0.9, ease: 'power3.inOut' })
-                .from(q('[data-m="faixa"]'), { scaleX: 0, transformOrigin: 'left center', duration: 0.7 }, '-=0.35')
-                .add(() => { tituloSobe(q('[data-m="titulo"]')[0]); }, '-=0.45')
-                .from(q('[data-m="subtitulo"]'), { y: 24, autoAlpha: 0, duration: 0.9 }, '+=0.25')
-                .from(q('[data-m="campo"]'), { x: -28, autoAlpha: 0, stagger: 0.07, duration: 0.8 }, '-=0.6')
-                .from(q('[data-m="acao"]'), { y: 18, autoAlpha: 0, stagger: 0.08, duration: 0.7 }, '-=0.5')
-                .from(q('[data-m="planta"] path'), { drawSVG: 0, stagger: 0.04, duration: 1.4, ease: 'power2.inOut' }, 0.5)
-                .from(q('[data-m="aparelho"]'), { y: 90, rotationY: -28, rotationX: 10, autoAlpha: 0, duration: 1.4 }, 0.7)
-                .from(q('[data-m="loja"]'), { y: 16, autoAlpha: 0, stagger: 0.06, duration: 0.6 }, '-=0.8');
+            tl.from(q('[data-m="selo"]'), { y: 20, autoAlpha: 0, duration: 0.8 })
+                .add(() => { tituloSobe(q('[data-m="titulo"]')[0]); }, '-=0.5')
+                .from(q('[data-m="subtitulo"]'), { y: 24, autoAlpha: 0, duration: 0.9 }, '+=0.35')
+                .from(q('[data-m="campo"]'), { y: 16, autoAlpha: 0, scale: 0.92, stagger: 0.06, duration: 0.7 }, '-=0.6')
+                .from(q('[data-m="acao"]'), { y: 18, autoAlpha: 0, stagger: 0.08, duration: 0.7 }, '-=0.45')
+                .from(q('[data-m="loja"]'), { y: 14, autoAlpha: 0, stagger: 0.06, duration: 0.6 }, '-=0.5')
+                .from(q('[data-m="planta"] path'), { drawSVG: 0, stagger: 0.04, duration: 1.6, ease: 'power2.inOut' }, 0.3)
+                .from(q('[data-m="aparelho"]'), { y: 110, rotationY: -30, rotationX: 12, autoAlpha: 0, duration: 1.4 }, 0.5)
+                .from(q('[data-m="lado"]'), { y: 140, rotationZ: (i) => (i ? 18 : -18), autoAlpha: 0, stagger: 0.12, duration: 1.4 }, 0.7);
         });
         mm.add(COM_MOUSE, () => {
             const q = gsap.utils.selector(raiz);
@@ -138,107 +139,106 @@ export default function Placa() {
 
     return (
         <section ref={raiz} className={styles.secao} aria-labelledby="placa-titulo">
-            <div className="container">
-                <div className={styles.placa} data-m="placa">
-                    <div className={styles.faixa} data-m="faixa">
-                        <span>{t('hero.faixa')}</span>
-                        <span className={styles.plataformas}>{t('hero.plataformas')}</span>
-                    </div>
+            <span className="luzes" aria-hidden="true" />
+            <div className={`container ${styles.grade}`}>
+                <div className={styles.texto}>
+                    <p className={styles.selo} data-m="selo"><span className={styles.ponto} aria-hidden="true" />{t('hero.plataformas')}</p>
+                    <h1 id="placa-titulo" className={styles.titulo} data-m="titulo">{comDestaque(t('hero.titulo'))}</h1>
+                    <p className={styles.subtitulo} data-m="subtitulo">{t('hero.subtitulo')}</p>
 
-                    <div className={styles.corpo}>
-                        <div className={styles.texto}>
-                            <h1 id="placa-titulo" className={styles.titulo} data-m="titulo">{t('hero.titulo')}</h1>
-                            <p className={styles.subtitulo} data-m="subtitulo">{t('hero.subtitulo')}</p>
-
-                            <div
-                                className={styles.campos}
-                                role="tablist"
-                                aria-label={t('hero.camposRotulo')}
-                                aria-orientation="vertical"
-                                onFocus={() => setAutomatico(false)}
+                    <div
+                        className={styles.campos}
+                        role="tablist"
+                        aria-label={t('hero.camposRotulo')}
+                        onFocus={() => setAutomatico(false)}
+                    >
+                        {CAMPOS.map((c, i) => (
+                            <button
+                                key={c.id}
+                                ref={(el) => { abas.current[i] = el; }}
+                                type="button"
+                                role="tab"
+                                id={`campo-${c.id}`}
+                                aria-selected={i === ativo}
+                                aria-controls="placa-tela"
+                                aria-describedby={i === ativo ? 'campo-valor' : undefined}
+                                tabIndex={i === ativo ? 0 : -1}
+                                className={styles.campo}
+                                data-m="campo"
+                                onClick={() => escolher(i)}
+                                onPointerEnter={(e) => { if (e.pointerType === 'mouse') escolher(i); }}
+                                onKeyDown={(e) => teclado(e, i)}
                             >
-                                {CAMPOS.map((c, i) => (
-                                    <button
-                                        key={c.id}
-                                        ref={(el) => { abas.current[i] = el; }}
-                                        type="button"
-                                        role="tab"
-                                        id={`campo-${c.id}`}
-                                        aria-selected={i === ativo}
-                                        aria-controls="placa-tela"
-                                        tabIndex={i === ativo ? 0 : -1}
-                                        className={styles.campo}
-                                        data-m="campo"
-                                        onClick={() => escolher(i)}
-                                        onPointerEnter={(e) => { if (e.pointerType === 'mouse') escolher(i); }}
-                                        onKeyDown={(e) => teclado(e, i)}
-                                    >
-                                        <span className={styles.rotulo}>{t(`hero.campos.${c.id}.rotulo`)}</span>
-                                        <span className={styles.valor}>{t(`hero.campos.${c.id}.valor`)}</span>
-                                    </button>
-                                ))}
-                            </div>
-
-                            <div className={styles.acoes}>
-                                <a href={CADASTRO} className="acao" data-m="acao">{t('hero.comecar')}</a>
-                                <Link to={caminhoInicio(codigo, 'precos')} className="acao-clara" data-m="acao">{t('hero.verPlanos')}</Link>
-                            </div>
-                            <p className={styles.nota}>{t('hero.semCartao')}</p>
-                        </div>
-
-                        <div className={`${styles.painel} palco-3d`} data-m="painel">
-                            <div data-m="planta" className={styles.plantaCaixa}><Planta /></div>
-                            <figure
-                                data-m="aparelho"
-                                id="placa-tela"
-                                role="tabpanel"
-                                aria-labelledby={`campo-${campo.id}`}
-                                className={styles.aparelho}
-                            >
-                                {anterior !== null && (
-                                    <img
-                                        key={`a-${CAMPOS[anterior].id}`}
-                                        src={enderecoDaTela(codigo, CAMPOS[anterior].tela)}
-                                        alt=""
-                                        aria-hidden="true"
-                                        className={styles.telaBaixo}
-                                        width="720"
-                                        height="1600"
-                                    />
-                                )}
-                                <img
-                                    key={campo.id}
-                                    src={enderecoDaTela(codigo, campo.tela)}
-                                    alt={t(`hero.telas.${campo.id}`)}
-                                    className={anterior === null ? styles.tela : `${styles.tela} ${styles.telaNova}`}
-                                    width="720"
-                                    height="1600"
-                                    fetchPriority={anterior === null ? 'high' : undefined}
-                                    onAnimationEnd={() => setAnterior(null)}
-                                />
-                            </figure>
-                            <p className={styles.legenda}>{t('hero.legendaTela')}</p>
-                        </div>
+                                {t(`hero.campos.${c.id}.rotulo`)}
+                            </button>
+                        ))}
                     </div>
+                    <p id="campo-valor" className={styles.valor} aria-live="polite">{t(`hero.campos.${campo.id}.valor`)}</p>
+
+                    <div className={styles.acoes}>
+                        <a href={CADASTRO} className="acao" data-m="acao">{t('hero.comecar')}</a>
+                        <Link to={caminhoInicio(codigo, 'precos')} className="acao-contorno" data-m="acao">{t('hero.verPlanos')}</Link>
+                    </div>
+                    <p className={styles.nota}>{t('hero.semCartao')}</p>
+
+                    <ul className={styles.lojas}>
+                        <li data-m="loja">
+                            <a href={googlePlay(codigo)} target="_blank" rel="noopener noreferrer">
+                                <small>{t('hero.disponivelNo')}</small> Google Play
+                            </a>
+                        </li>
+                        <li data-m="loja">
+                            <a href={appStore()} target="_blank" rel="noopener noreferrer">
+                                <small>{t('hero.baixarNa')}</small> App Store
+                            </a>
+                        </li>
+                        <li data-m="loja">
+                            <a href={WINDOWS}>
+                                <small>{t('hero.baixarPara')}</small> Windows
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-                <ul className={styles.lojas}>
-                    <li data-m="loja">
-                        <a href={googlePlay(codigo)} target="_blank" rel="noopener noreferrer">
-                            <small>{t('hero.disponivelNo')}</small> Google Play
-                        </a>
-                    </li>
-                    <li data-m="loja">
-                        <a href={appStore()} target="_blank" rel="noopener noreferrer">
-                            <small>{t('hero.baixarNa')}</small> App Store
-                        </a>
-                    </li>
-                    <li data-m="loja">
-                        <a href={WINDOWS}>
-                            <small>{t('hero.baixarPara')}</small> Windows
-                        </a>
-                    </li>
-                </ul>
+                <div className={`${styles.palco} palco-3d`} data-m="painel">
+                    <div data-m="planta" className={styles.plantaCaixa}><Planta /></div>
+                    <div className={`${styles.lado} ${styles.ladoEsquerdo}`} data-m="lado" aria-hidden="true">
+                        <img src={enderecoDaTela(codigo, 'obra')} alt="" width="720" height="1600" />
+                    </div>
+                    <div className={`${styles.lado} ${styles.ladoDireito}`} data-m="lado" aria-hidden="true">
+                        <img src={enderecoDaTela(codigo, 'equipe')} alt="" width="720" height="1600" />
+                    </div>
+                    <figure
+                        data-m="aparelho"
+                        id="placa-tela"
+                        role="tabpanel"
+                        aria-labelledby={`campo-${campo.id}`}
+                        className={styles.aparelho}
+                    >
+                        {anterior !== null && (
+                            <img
+                                key={`a-${CAMPOS[anterior].id}`}
+                                src={enderecoDaTela(codigo, CAMPOS[anterior].tela)}
+                                alt=""
+                                aria-hidden="true"
+                                className={styles.telaBaixo}
+                                width="720"
+                                height="1600"
+                            />
+                        )}
+                        <img
+                            key={campo.id}
+                            src={enderecoDaTela(codigo, campo.tela)}
+                            alt={t(`hero.telas.${campo.id}`)}
+                            className={anterior === null ? styles.tela : `${styles.tela} ${styles.telaNova}`}
+                            width="720"
+                            height="1600"
+                            fetchPriority={anterior === null ? 'high' : undefined}
+                            onAnimationEnd={() => setAnterior(null)}
+                        />
+                    </figure>
+                    <p className={styles.legenda}>{t('hero.legendaTela')}</p>
+                </div>
             </div>
         </section>
     );

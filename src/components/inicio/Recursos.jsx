@@ -9,6 +9,7 @@ import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import { CADASTRO } from '../../links.js';
 import { enderecoDaTela } from '../../telas.js';
 import { COM_MOVIMENTO, LARGO, ScrollTrigger, entrarEmGrupo, gsap, useGSAP } from '../../movimento/index.js';
+import { comDestaque } from '../../texto.jsx';
 import styles from './Recursos.module.css';
 
 // Cada parte e a tela real que a mostra (com o texto alternativo da tela).
@@ -86,7 +87,7 @@ export default function Recursos() {
         <section ref={raiz} id={idDaSecao(codigo, 'recursos')} className="secao secao-escura" aria-labelledby="recursos-titulo">
             <div className="container">
                 <div className="secao-cabeca">
-                    <h2 id="recursos-titulo" className="secao-titulo">{t('recursos.titulo')}</h2>
+                    <h2 id="recursos-titulo" className="secao-titulo">{comDestaque(t('recursos.titulo'))}</h2>
                 </div>
 
                 <div className={styles.grade}>

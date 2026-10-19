@@ -6,28 +6,38 @@
 }
 
 .pontos {
-  border-top: var(--borda) solid var(--linha-forte);
+  display: grid;
+  gap: 10px;
 }
 
 .pontos li {
   display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: 12px;
-  padding: 16px 0;
-  border-bottom: var(--borda) solid var(--linha);
-  font-size: 1.0625rem;
+  grid-template-columns: 44px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 16px 18px;
+  border-radius: var(--raio);
+  background: var(--vidro);
+  border: 1px solid var(--vidro-borda);
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
 .numero {
-  font-family: var(--fonte-placa);
-  font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.1;
-  color: var(--color-pro);
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(242, 138, 31, 0.16);
+  color: var(--laranja-texto);
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 0.9375rem;
 }
 
 .acao {
-  margin-top: 32px;
+  margin-top: 28px;
 }
 
 .comparacao {
@@ -38,18 +48,20 @@
 }
 
 .legenda {
-  font-family: var(--fonte-placa);
-  font-weight: 700;
-  font-size: 1.125rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
   margin-bottom: 14px;
+  border-radius: var(--pilula);
+  font-weight: 700;
+  font-size: 0.875rem;
 }
 
 .antes .legenda {
-  border: var(--borda) solid var(--linha-forte);
-  color: var(--tinta-2);
+  background: var(--vidro);
+  border: 1px solid var(--vidro-borda);
+  color: var(--texto-2);
 }
 
 .depois .legenda {
@@ -59,58 +71,65 @@
 
 /* Conversa genérica (sem imitar a marca de nenhum aplicativo de mensagens) */
 .conversa {
-  background: var(--superficie);
-  border: var(--borda) solid var(--linha);
-  padding: 14px 12px 18px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 16px 14px 20px;
+  border-radius: var(--raio-g);
+  background: var(--vidro-forte);
+  border: 1px solid var(--vidro-borda);
+  box-shadow: var(--sombra);
 }
 
 .contato {
-  font-weight: 600;
+  font-weight: 700;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--linha);
 }
 
 .dia {
   align-self: center;
-  font-size: 0.8125rem;
-  color: var(--tinta-2);
+  padding: 2px 10px;
+  border-radius: var(--pilula);
+  background: var(--fundo-2);
+  font-size: 0.75rem;
+  color: var(--texto-2);
 }
 
 .recebida,
 .enviada {
-  max-width: 90%;
-  padding: 8px 10px 6px;
+  max-width: 88%;
+  padding: 9px 12px 7px;
   font-size: 0.9375rem;
   line-height: 1.4;
-  border-radius: var(--raio);
+  border-radius: 18px;
 }
 
 .recebida span,
 .enviada span {
   display: block;
   margin-top: 2px;
-  font-size: 0.75rem;
-  color: var(--tinta-2);
+  font-size: 0.6875rem;
+  color: var(--texto-2);
   text-align: right;
 }
 
 .recebida {
   align-self: flex-start;
-  background: var(--bg-tertiary);
+  background: var(--fundo-2);
+  border-bottom-left-radius: 6px;
 }
 
 .enviada {
   align-self: flex-end;
-  border: 1px solid var(--linha);
+  background: rgba(26, 95, 184, 0.14);
+  border-bottom-right-radius: 6px;
 }
 
 .aviso {
-  margin-top: 8px;
+  margin-top: 10px;
   font-size: 0.8125rem;
-  color: var(--tinta-2);
+  color: var(--texto-2);
 }
 
 .telas {
@@ -128,7 +147,38 @@
   right: 0;
   top: 64px;
   width: min(210px, 62%) !important;
-  box-shadow: 0 24px 40px -24px rgba(5, 20, 35, 0.55);
+}
+
+/* "Digitando...": só aparece durante a animação (começa fechado). */
+.digitando {
+  display: none;
+  align-self: flex-start;
+  gap: 4px;
+  padding: 0 12px;
+  border-radius: 18px;
+  background: var(--fundo-2);
+}
+
+.digitando i {
+  width: 6px;
+  height: 6px;
+  margin: 11px 0;
+  border-radius: 50%;
+  background: var(--texto-2);
+  animation: pulo 900ms ease-in-out infinite;
+}
+
+.digitando i:nth-child(2) {
+  animation-delay: 150ms;
+}
+
+.digitando i:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+@keyframes pulo {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(-3px); opacity: 1; }
 }
 
 @media (max-width: 1020px) {
@@ -147,35 +197,4 @@
   .telas {
     padding-bottom: 24px;
   }
-}
-
-/* "Digitando...": só aparece durante a animação (começa fechado). */
-.digitando {
-  display: none;
-  align-self: flex-start;
-  gap: 4px;
-  padding: 0 10px;
-  background: var(--bg-tertiary);
-}
-
-.digitando i {
-  width: 6px;
-  height: 6px;
-  margin: 10px 0;
-  border-radius: 50%;
-  background: var(--tinta-2);
-  animation: pulo 900ms ease-in-out infinite;
-}
-
-.digitando i:nth-child(2) {
-  animation-delay: 150ms;
-}
-
-.digitando i:nth-child(3) {
-  animation-delay: 300ms;
-}
-
-@keyframes pulo {
-  0%, 100% { transform: translateY(0); opacity: 0.5; }
-  50% { transform: translateY(-3px); opacity: 1; }
 }

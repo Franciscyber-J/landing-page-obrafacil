@@ -19,9 +19,8 @@
         "navegacao": "Navegación principal"
     },
     "hero": {
-        "faixa": "Gestión de obras",
         "plataformas": "Android · iPhone · Windows · Navegador",
-        "titulo": "Toda la obra en un solo lugar",
+        "titulo": "Toda la obra **en un solo lugar**",
         "subtitulo": "Cronograma, parte diario, finanzas, equipo y compras en el móvil y en el ordenador. Y tu cliente sigue la obra en el portal, sin tener que llamarte.",
         "comecar": "Empezar gratis",
         "verPlanos": "Ver los planes",
@@ -275,7 +274,7 @@
         "preferencias": "Cookies"
     },
     "cliente": {
-        "titulo": "Se acabó responder «¿cómo va la obra?»",
+        "titulo": "Se acabó responder **«¿cómo va la obra?»**",
         "texto": "El cliente recibe una invitación por correo y sigue la obra en el Portal del Cliente sin pagar nada: fotos, partes diarios, cronograma y el resumen de las finanzas.",
         "antes": "Antes: todo por WhatsApp",
         "depois": "Ahora: el portal de la obra",
@@ -294,7 +293,7 @@
         "telaAcesso": "Pantalla en la que el gerente elige lo que el cliente puede ver"
     },
     "recursos": {
-        "titulo": "Todo lo que la obra necesita, en la misma app",
+        "titulo": "Todo lo que la obra necesita, **en la misma app**",
         "itens": {
             "cronograma": {
                 "titulo": "Cronograma por etapas",
@@ -355,7 +354,7 @@
         "tela": "Parte diario con la lista del equipo y la asistencia de cada uno"
     },
     "chamada": {
-        "titulo": "Empieza por tu próxima obra",
+        "titulo": "Empieza por tu **próxima obra**",
         "texto": "El plan gratuito no tiene plazo. Suscríbete a PRO cuando necesites más.",
         "acao": "Empezar gratis",
         "duvida": "¿Tienes dudas? Escríbenos por WhatsApp.",

@@ -14,8 +14,8 @@
     "idiomas": "node ferramentas/idiomas/idiomas.mjs"
   },
   "dependencies": {
-    "@fontsource/barlow": "^5.3.0",
-    "@fontsource/barlow-condensed": "^5.3.0",
+    "@fontsource/bricolage-grotesque": "5.3.0",
+    "@fontsource/manrope": "5.3.0",
     "@gsap/react": "2.1.2",
     "gsap": "3.15.0",
     "i18next": "^25.8.13",

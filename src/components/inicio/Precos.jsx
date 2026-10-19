@@ -107,7 +107,7 @@ export default function Precos() {
                         <a href={CADASTRO} className={`acao-contorno ${styles.botao}`}>{t('pricing.gratis.cta')}</a>
                     </article>
 
-                    <article className={styles.pro} aria-labelledby="plano-pro" data-item data-m="pro">
+                    <article className={styles.pro} aria-labelledby="plano-pro" data-item data-m="pro" data-painel>
                         <div className={styles.faixa}>
                             <span>PRO</span>
                             {anual && <span>{t('pricing.selo')}</span>}

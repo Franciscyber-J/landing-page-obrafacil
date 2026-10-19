@@ -2,6 +2,7 @@
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CADASTRO, linkWhatsApp } from '../../links.js';
+import { comDestaque } from '../../texto.jsx';
 import { COM_MOUSE, COM_MOVIMENTO, gsap, magnetico, tituloSobe, useGSAP } from '../../movimento/index.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import styles from './Chamada.module.css';
@@ -24,9 +25,11 @@ export default function Chamada() {
 
     return (
         <section ref={raiz} className={styles.chamada} aria-labelledby="chamada-titulo">
-            <div className={`container ${styles.grade}`}>
+            <div className="container">
+            <div className={styles.painel} data-painel>
+            <div className={styles.grade}>
                 <div>
-                    <h2 id="chamada-titulo" className={styles.titulo} data-m="titulo">{t('chamada.titulo')}</h2>
+                    <h2 id="chamada-titulo" className={styles.titulo} data-m="titulo">{comDestaque(t('chamada.titulo'))}</h2>
                     <p className={styles.texto}>{t('chamada.texto')}</p>
                 </div>
                 <div className={styles.acoes} data-m="lado">
@@ -36,6 +39,8 @@ export default function Chamada() {
                         {t('chamada.duvida')}
                     </a>
                 </div>
+            </div>
+            </div>
             </div>
         </section>
     );

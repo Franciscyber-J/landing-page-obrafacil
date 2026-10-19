@@ -16,8 +16,8 @@ export default function Footer({ comChamada = true }) {
     return (
         <footer className={styles.rodape}>
             {comChamada && (
-                <div className={styles.chamada}>
-                    <div className={`container ${styles.chamadaConteudo}`}>
+                <div className={`container ${styles.chamada}`}>
+                    <div className={styles.chamadaConteudo} data-painel>
                         <p className={styles.chamadaTitulo}>{t('footer.ctaTitle')}</p>
                         <a href={CADASTRO} className="acao">{t('footer.ctaBtn')}</a>
                     </div>
