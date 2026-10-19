@@ -34,3 +34,5 @@ o que é do Claude.
 
 - `idiomas-site`: textos, idiomas novos e endereços no idioma.
 - `publicar-site`: gerar e enviar o site para a Hostinger e conferir no ar.
+- `impeccable`: design e revisão visual (Paul Bakaus, Apache 2.0), só as instruções em texto, sem o launcher
+  (`.claude/skills/impeccable/LEIAME.md`).
