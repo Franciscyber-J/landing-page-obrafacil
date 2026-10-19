@@ -108,9 +108,10 @@ export function extensaoDoDestaque(largura, altura, marcacao, m) {
 // Onde o alvo fica no print mostrado (em pixels da tela), já com o zoom, o próprio zoom e o ponto que fica
 // parado durante o zoom (foco). entrada: valor já com a curva (0 a 1).
 //
-// Correção em relação ao app (no app o foco é sempre o centro do alvo): com o alvo perto da borda, o círculo
-// aumentado e a onda do pulso saíam do print e eram cortados. Aqui o zoom é o mesmo do app, mas o enquadramento
-// se desloca só o necessário para o destaque inteiro (contorno e onda no tamanho máximo) ficar dentro do print.
+// Alvo perto da borda: com o foco sempre no centro do alvo (como na 1.9.2 do app), o círculo aumentado e a onda
+// do pulso saíam do print e eram cortados. O zoom continua o mesmo, mas o enquadramento se desloca só o
+// necessário para o destaque inteiro (contorno e onda no tamanho máximo) ficar dentro do print. App (a partir da
+// versão seguinte à 1.9.2: GeometriaMarcacao.calcular e MedidasMarcacao) e site fazem a mesma conta.
 // O foco fica sempre dentro do print, então o print aumentado continua cobrindo a área toda (sem faixa vazia).
 // O limite do zoom (alvo com no máximo metade da largura e 35% da altura) já garante que o destaque aumentado
 // cabe no print; o que faltava era a margem junto da borda. Alvo colado na borda (folga menor que a margem
