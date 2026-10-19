@@ -80,8 +80,42 @@ export function zoomFinal(area, alvo) {
     return limitar(z, 1, 2.6);
 }
 
-// Onde o alvo fica no print mostrado (em pixels da tela), já com o zoom, e o próprio zoom.
-// entrada: valor já com a curva (0 a 1).
+// Medidas que acompanham o tamanho do print na tela (as do app): escala, traço do contorno e folga em volta do alvo.
+export function medidas(area) {
+    const escala = Math.min(area.largura, area.altura) / 360;
+    return { escala, traco: limitar(2.5 * escala, 1.5, 3.5), folga: limitar(4 * escala, 3, 8) };
+}
+
+// Quanto o destaque ocupa a partir do centro do alvo (meia largura e meia altura), para um alvo de
+// largura × altura já com o zoom: a forma com a folga e, com "circulo", o contorno (traço + 3) e a onda no
+// tamanho máximo do pulso (folga + 14 × escala). Cresce em linha reta com o tamanho do alvo.
+export function extensaoDoDestaque(largura, altura, marcacao, m) {
+    const circulo = tem(marcacao, 'circulo');
+    const camadas = circulo
+        ? [{ folga: m.folga, traco: m.traco + 3 }, { folga: m.folga + 14 * m.escala, traco: m.traco }]
+        : [{ folga: m.folga, traco: 0 }];
+    let x = 0;
+    let y = 0;
+    for (const camada of camadas) {
+        const forma = formaDoAlvo({ x: 0, y: 0, largura, altura }, camada.folga);
+        const meioTraco = camada.traco / 2;
+        x = Math.max(x, (forma.tipo === 'circulo' ? forma.raio : forma.largura / 2) + meioTraco);
+        y = Math.max(y, (forma.tipo === 'circulo' ? forma.raio : forma.altura / 2) + meioTraco);
+    }
+    return { x, y };
+}
+
+// Onde o alvo fica no print mostrado (em pixels da tela), já com o zoom, o próprio zoom e o ponto que fica
+// parado durante o zoom (foco). entrada: valor já com a curva (0 a 1).
+//
+// Correção em relação ao app (no app o foco é sempre o centro do alvo): com o alvo perto da borda, o círculo
+// aumentado e a onda do pulso saíam do print e eram cortados. Aqui o zoom é o mesmo do app, mas o enquadramento
+// se desloca só o necessário para o destaque inteiro (contorno e onda no tamanho máximo) ficar dentro do print.
+// O foco fica sempre dentro do print, então o print aumentado continua cobrindo a área toda (sem faixa vazia).
+// O limite do zoom (alvo com no máximo metade da largura e 35% da altura) já garante que o destaque aumentado
+// cabe no print; o que faltava era a margem junto da borda. Alvo colado na borda (folga menor que a margem
+// mesmo com o zoom) não tem como ganhar margem toda, porque a imagem não pode passar da própria borda: o
+// destaque fica o mais para dentro possível.
 export function geometria(area, marcacao, entrada) {
     const original = {
         x: marcacao.x * area.largura,
@@ -89,16 +123,26 @@ export function geometria(area, marcacao, entrada) {
         largura: marcacao.largura * area.largura,
         altura: marcacao.altura * area.altura,
     };
-    const foco = { x: original.x + original.largura / 2, y: original.y + original.altura / 2 };
-    const zoom = tem(marcacao, 'zoom')
-        ? 1 + (zoomFinal(area, original) - 1) * limitar(entrada, 0, 1)
-        : 1;
+    const centro = { x: original.x + original.largura / 2, y: original.y + original.altura / 2 };
+    if (!tem(marcacao, 'zoom')) return { alvo: original, zoom: 1, foco: centro };
+
+    const zoom = 1 + (zoomFinal(area, original) - 1) * limitar(entrada, 0, 1);
     const largura = original.largura * zoom;
     const altura = original.altura * zoom;
+    const ocupa = extensaoDoDestaque(largura, altura, marcacao, medidas(area));
+    const enquadrar = (c, tamanho, meio) => {
+        const desejado = 2 * meio <= tamanho ? limitar(c, meio, tamanho - meio) : c;
+        // Até onde o centro do alvo pode ir com este zoom sem o print deixar faixa vazia.
+        const novo = limitar(desejado, tamanho - zoom * (tamanho - c), zoom * c);
+        const foco = zoom - 1 < 1e-9 ? c : (novo - zoom * c) / (1 - zoom);
+        return { novo, foco: limitar(foco, 0, tamanho) };
+    };
+    const ex = enquadrar(centro.x, area.largura, ocupa.x);
+    const ey = enquadrar(centro.y, area.altura, ocupa.y);
     return {
-        alvo: { x: foco.x - largura / 2, y: foco.y - altura / 2, largura, altura },
+        alvo: { x: ex.novo - largura / 2, y: ey.novo - altura / 2, largura, altura },
         zoom,
-        foco,
+        foco: { x: ex.foco, y: ey.foco },
     };
 }
 
@@ -201,9 +245,7 @@ export function desenhoDaMarcacao(area, marcacao, quadro, parado = false) {
     const entrada = easeOutCubic(parado ? 1 : quadro.entrada);
     const pulso = parado ? 0 : quadro.pulso;
     const geo = geometria(area, marcacao, entrada);
-    const escala = Math.min(area.largura, area.altura) / 360; // traços proporcionais ao print na tela
-    const traco = limitar(2.5 * escala, 1.5, 3.5);
-    const folga = limitar(4 * escala, 3, 8);
+    const { escala, traco, folga } = medidas(area); // traços proporcionais ao print na tela
     const forma = caminhoDaForma(formaDoAlvo(geo.alvo, folga));
     const visivelNaEntrada = limitar(entrada, 0.4, 1);
 

@@ -63,6 +63,9 @@ Cada passo publicado traz, além do print limpo, o campo `marcacao`: onde fica o
 por cima do print, em SVG, o mesmo destaque que o app desenha a partir da 1.9.2
 (`gestao_obras/lib/ajuda/widgets/print_com_marcacao.dart`): mesmos tempos (entrada de 700 ms, pulso de 1,6 s),
 curva, espessuras, forma do contorno, lado da seta e zoom. Mudou lá, muda em `src/ajuda/marcacao.js`.
+Uma diferença, de propósito: com o alvo perto da borda, o app aumenta em volta do centro do alvo e corta o
+círculo e a onda do pulso; o site desloca o enquadramento só o necessário para o destaque inteiro caber
+(o mesmo ajuste falta no app, em `GeometriaMarcacao.calcular`).
 
 - A imagem não muda; o espaço do print fica reservado (1080 × 2400) antes de ela chegar.
 - Só anima com o print na tela; com "reduzir movimento" no aparelho, aparece parada no estado final.

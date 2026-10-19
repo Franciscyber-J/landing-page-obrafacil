@@ -12,6 +12,7 @@ import {
     formaDoAlvo,
     geometria,
     lerMarcacao,
+    medidas,
     quadroNoTempo,
     zoomFinal,
 } from './marcacao.js';
@@ -228,6 +229,101 @@ test('reduzir movimento: marcação parada no estado final (sem onda nem balanç
     assert.equal(parado.veu.opacidade, 1);
     assert.equal(parado.seta.opacidade, 1);
     perto(parado.zoom.escala, 0.5 / 0.292);
+});
+
+// Caixa que um caminho desenhado ocupa (círculo: "M cx-r cy A r r ..."; cápsula: pontos das retas e arcos).
+function caixaDoCaminho(d) {
+    if (/A[\d.]+ [\d.]+ 0 1 1/.test(d)) {
+        const [esq, cy, r] = numeros(d);
+        return { esq, dir: esq + 2 * r, cima: cy - r, baixo: cy + r };
+    }
+    const xs = [];
+    const ys = [];
+    for (const [, cmd, args] of d.matchAll(/([MLHVA])([^MLHVAZ]*)/g)) {
+        const n = numeros(args);
+        if (cmd === 'H') xs.push(n[0]);
+        else if (cmd === 'V') ys.push(n[0]);
+        else if (cmd === 'A') { xs.push(n[5]); ys.push(n[6]); }
+        else { xs.push(n[0]); ys.push(n[1]); }
+    }
+    return { esq: Math.min(...xs), dir: Math.max(...xs), cima: Math.min(...ys), baixo: Math.max(...ys) };
+}
+
+function cabeNoPrint(area, d, traco, rotulo) {
+    const c = caixaDoCaminho(d);
+    const meio = traco / 2;
+    const tol = 0.02; // arredondamento do caminho (2 casas)
+    assert.ok(c.esq - meio >= -tol, `${rotulo}: sai pela esquerda (${c.esq - meio})`);
+    assert.ok(c.cima - meio >= -tol, `${rotulo}: sai por cima (${c.cima - meio})`);
+    assert.ok(c.dir + meio <= area.largura + tol, `${rotulo}: sai pela direita (${c.dir + meio} > ${area.largura})`);
+    assert.ok(c.baixo + meio <= area.altura + tol, `${rotulo}: sai por baixo (${c.baixo + meio} > ${area.altura})`);
+}
+
+test('zoom perto da borda: círculo, contorno e onda no máximo cabem no print, nos 4 cantos', () => {
+    // Ícone (círculo) e botão (cápsula) a 2% a 5% da borda, como o botão "?" do passo 1 do gratis-x-pro.
+    const cantos = {
+        'em cima à esquerda': { x: 0.05, y: 0.02 },
+        'em cima à direita': { x: 0.895, y: 0.02 },
+        'embaixo à esquerda': { x: 0.05, y: 0.945 },
+        'embaixo à direita': { x: 0.895, y: 0.945 },
+    };
+    const formas = {
+        icone: { largura: 0.055, altura: 0.025 },
+        botao: { largura: 0.3, altura: 0.03 },
+    };
+    for (const area of [CELULAR, LARGO, { largura: 186, altura: 186 / (1080 / 2400) }]) {
+        const { traco } = medidas(area);
+        for (const [canto, pos] of Object.entries(cantos)) {
+            for (const [nome, tam] of Object.entries(formas)) {
+                // Do lado direito, o alvo termina a 5% da borda (o "?" do gratis-x-pro termina a 5%).
+                const x = pos.x > 0.5 ? 0.95 - tam.largura : pos.x;
+                const m = { x, y: pos.y, ...tam, efeitos: ['zoom', 'circulo', 'seta', 'escurecer'] };
+                const rotulo = `${nome} ${canto} (${area.largura} px)`;
+                for (const parado of [false, true]) {
+                    const d = desenhoDaMarcacao(area, m, { entrada: 1, pulso: 0.9999 }, parado);
+                    assert.ok(d.zoom.escala > 1, `${rotulo}: zoom`);
+                    cabeNoPrint(area, d.circulo.d, traco + 3, `${rotulo} contorno`);
+                    if (!parado) cabeNoPrint(area, d.circulo.onda.d, traco, `${rotulo} onda no máximo`);
+                    // O ponto parado do zoom fica dentro do print: o print aumentado cobre a área toda.
+                    const [ox, oy] = d.zoom.origem.split(' ').map(parseFloat);
+                    assert.ok(ox >= 0 && ox <= 100 && oy >= 0 && oy <= 100, `${rotulo}: origem ${d.zoom.origem}`);
+                }
+                // Durante toda a entrada também (o zoom cresce e o enquadramento acompanha).
+                for (const entrada of [0.2, 0.5, 0.8]) {
+                    const d = desenhoDaMarcacao(area, m, { entrada, pulso: 0.9999 });
+                    if (d.zoom.escala > 1.6) cabeNoPrint(area, d.circulo.onda.d, traco, `${rotulo} entrada ${entrada}`);
+                }
+            }
+        }
+    }
+});
+
+test('zoom no passo 1 do gratis-x-pro (botão "?" no canto): o alvo entra e o círculo inteiro aparece', () => {
+    const ajuda = { x: 0.895, y: 0.072, largura: 0.055, altura: 0.025, efeitos: ['zoom', 'circulo', 'seta'] };
+    const d = desenhoDaMarcacao(CELULAR, ajuda, { entrada: 1, pulso: 0.9999 });
+    const { traco } = medidas(CELULAR);
+    cabeNoPrint(CELULAR, d.circulo.onda.d, traco, 'onda');
+    // O alvo saiu do lugar (para dentro), e o zoom final continua o do app (2,6×).
+    const centroOriginal = (ajuda.x + ajuda.largura / 2) * CELULAR.largura;
+    assert.ok(d.alvo.x + d.alvo.largura / 2 < centroOriginal);
+    perto(d.zoom.escala, 2.6);
+});
+
+test('zoom longe da borda: igual ao app (o alvo cresce no mesmo lugar)', () => {
+    const meio = { x: 0.4, y: 0.45, largura: 0.1, altura: 0.04, efeitos: ['zoom', 'circulo'] };
+    const g = geometria(CELULAR, meio, 1);
+    perto(g.foco.x, 0.45 * CELULAR.largura);
+    perto(g.foco.y, 0.47 * CELULAR.altura);
+    perto(g.zoom, zoomFinal(CELULAR, { largura: 0.1 * 206, altura: 0.04 * CELULAR.altura }));
+});
+
+test('alvo colado na borda: o destaque vai o mais para dentro possível, sem faixa vazia no print', () => {
+    // Botão a 1 px da borda direita: nem com o zoom dá para ganhar a margem toda.
+    const colado = { x: 0.695, y: 0.4, largura: 0.3, altura: 0.03, efeitos: ['zoom', 'circulo'] };
+    const g = geometria(CELULAR, colado, 1);
+    perto(g.foco.x, CELULAR.largura); // a borda direita do print aumentado fica na borda da área
+    const semCorrecao = (colado.x + colado.largura) * CELULAR.largura + (g.zoom - 1) * (colado.largura / 2) * CELULAR.largura;
+    assert.ok(g.alvo.x + g.alvo.largura < semCorrecao); // bem mais para dentro que o app
 });
 
 test('print ainda sem tamanho na tela: nada a desenhar', () => {
