@@ -24,7 +24,19 @@ es-MX), muitos chegando por anúncio pago, quase sempre pelo celular.
 
 ObraFácil é um aplicativo de gestão de obras (Android, iPhone, Windows e navegador). O gestor registra a obra
 inteira num lugar só e compartilha com quem precisa ver. Sucesso no site: o visitante entende em segundos o que o
-app faz, confia que é sério e cria a conta grátis (ou assina o PRO).
+app faz, confia que é sério e cria a conta grátis.
+
+Meta do site (decisão do Francis em 19/10/2026): **cadastro, não assinatura**. O site leva a pessoa para dentro do
+app; quem converte em PRO é o app. Motivos: o cupom de Membro Fundador oferecido no site (50% por 12 meses, pelo
+WhatsApp) teve 0 usos; em produtos com plano grátis, a média de mercado é de 9 cadastros a cada 100 visitantes e
+de 3% a 5% dos usuários grátis virando assinantes (ChartMogul, Lenny Rachitsky); 82% dos testes grátis de apps
+começam no dia da instalação (RevenueCat 2025). Por isso:
+
+- todo botão principal é "Começar grátis": no celular abre a loja do aparelho, no computador o cadastro no
+  navegador (`src/comecar.js`);
+- os preços continuam à vista, com o botão do PRO em segundo plano;
+- o convite de saída chama para a conta grátis, sem preço, desconto ou contagem de vagas;
+- os cliques em "Começar grátis", nas lojas e no PRO são medidos (`public/tag-google.js`, `data-conversao`).
 
 ## Positioning
 

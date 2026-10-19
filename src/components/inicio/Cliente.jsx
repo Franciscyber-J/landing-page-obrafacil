@@ -4,11 +4,11 @@ import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { idDaSecao } from '../../i18n/idiomas.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
-import { CADASTRO } from '../../links.js';
 import { enderecoDaTela } from '../../telas.js';
 import { COM_MOVIMENTO, gsap, useGSAP } from '../../movimento/index.js';
 import { comDestaque } from '../../texto.jsx';
 import styles from './Cliente.module.css';
+import { linkComecar } from '../../comecar.js';
 
 export default function Cliente() {
     const { t } = useTranslation();
@@ -55,7 +55,7 @@ export default function Cliente() {
                             </li>
                         ))}
                     </ol>
-                    <a href={CADASTRO} className={`acao ${styles.acao}`}>{t('hero.comecar')}</a>
+                    <a {...linkComecar(codigo)} className={`acao ${styles.acao}`}>{t('hero.comecar')}</a>
                 </div>
 
                 <div className={styles.comparacao} ref={comparacao}>

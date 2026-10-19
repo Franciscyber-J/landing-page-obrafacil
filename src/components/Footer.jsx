@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { IDIOMAS, caminhoAjuda, caminhoInicio, caminhoLegal } from '../i18n/idiomas.js';
 import { useIdioma, useTrocarIdioma } from '../i18n/RotaDoIdioma.jsx';
 import { abrirAvisoCookies } from '../legal/cookies.js';
-import { CADASTRO, SUPORTE, WINDOWS, appStore, googlePlay, linkWhatsApp } from '../links.js';
+import { SUPORTE, WINDOWS, appStore, googlePlay, linkWhatsApp } from '../links.js';
 import { publico } from '../publico.js';
 import styles from './Footer.module.css';
+import { linkComecar } from '../comecar.js';
 
 export default function Footer({ comChamada = true }) {
     const { t } = useTranslation();
@@ -19,7 +20,7 @@ export default function Footer({ comChamada = true }) {
                 <div className={`container ${styles.chamada}`}>
                     <div className={styles.chamadaConteudo} data-painel>
                         <p className={styles.chamadaTitulo}>{t('footer.ctaTitle')}</p>
-                        <a href={CADASTRO} className="acao">{t('footer.ctaBtn')}</a>
+                        <a {...linkComecar(codigo)} className="acao">{t('footer.ctaBtn')}</a>
                     </div>
                 </div>
             )}
@@ -52,9 +53,9 @@ export default function Footer({ comChamada = true }) {
                 <nav className={styles.coluna} aria-labelledby="rodape-baixar">
                     <h2 id="rodape-baixar">{t('footer.baixar')}</h2>
                     <ul>
-                        <li><a href={googlePlay(codigo)} target="_blank" rel="noopener noreferrer">Google Play</a></li>
-                        <li><a href={appStore()} target="_blank" rel="noopener noreferrer">App Store</a></li>
-                        <li><a href={WINDOWS}>Windows</a></li>
+                        <li><a href={googlePlay(codigo)} data-conversao="loja_android" target="_blank" rel="noopener noreferrer">Google Play</a></li>
+                        <li><a href={appStore()} data-conversao="loja_ios" target="_blank" rel="noopener noreferrer">App Store</a></li>
+                        <li><a href={WINDOWS} data-conversao="windows">Windows</a></li>
                     </ul>
                 </nav>
 

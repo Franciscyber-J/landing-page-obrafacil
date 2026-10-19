@@ -6,9 +6,10 @@ import { Check, ChevronDown, Menu, Moon, Sun, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { IDIOMAS, caminhoAjuda, caminhoInicio, idioma } from '../i18n/idiomas.js';
 import { useIdioma, useTrocarIdioma } from '../i18n/RotaDoIdioma.jsx';
-import { CADASTRO, LOGIN } from '../links.js';
+import { LOGIN } from '../links.js';
 import { publico } from '../publico.js';
 import styles from './Navbar.module.css';
+import { linkComecar } from '../comecar.js';
 
 const TAMANHOS = { lg: [28, 20], md: [24, 17], sm: [20, 14] };
 
@@ -179,10 +180,10 @@ export default function Navbar() {
                         <IconeTema size={20} aria-hidden="true" />
                     </button>
                     <a href={LOGIN} className={styles.entrar}>{t('nav.login')}</a>
-                    <a href={CADASTRO} className="acao">{t('nav.comecar')}</a>
+                    <a {...linkComecar(codigo)} className="acao">{t('nav.comecar')}</a>
                 </div>
 
-                <a href={CADASTRO} className={`acao ${styles.comecarCelular}`}>{t('nav.comecar')}</a>
+                <a {...linkComecar(codigo)} className={`acao ${styles.comecarCelular}`}>{t('nav.comecar')}</a>
                 <button
                     type="button"
                     className={styles.menuBotao}
@@ -223,7 +224,7 @@ export default function Navbar() {
                     </button>
                     <div className={styles.menuAcoes}>
                         <a href={LOGIN} className="acao-clara">{t('nav.login')}</a>
-                        <a href={CADASTRO} className="acao">{t('nav.comecar')}</a>
+                        <a {...linkComecar(codigo)} className="acao">{t('nav.comecar')}</a>
                     </div>
                 </div>
             )}

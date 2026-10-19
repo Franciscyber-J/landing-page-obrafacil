@@ -1,11 +1,12 @@
 // Última chamada da página inicial: a faixa laranja da placa, com o cadastro e o WhatsApp.
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { CADASTRO, linkWhatsApp } from '../../links.js';
+import { linkWhatsApp } from '../../links.js';
 import { comDestaque } from '../../texto.jsx';
 import { COM_MOUSE, COM_MOVIMENTO, gsap, magnetico, tituloSobe, useGSAP } from '../../movimento/index.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import styles from './Chamada.module.css';
+import { linkComecar } from '../../comecar.js';
 
 export default function Chamada() {
     const { t } = useTranslation();
@@ -33,7 +34,7 @@ export default function Chamada() {
                     <p className={styles.texto}>{t('chamada.texto')}</p>
                 </div>
                 <div className={styles.acoes} data-m="lado">
-                    <a href={CADASTRO} className={styles.botao} data-m="botao">{t('chamada.acao')}</a>
+                    <a {...linkComecar(codigo)} className={styles.botao} data-m="botao">{t('chamada.acao')}</a>
                     <p className={styles.nota}>{t('hero.semCartao')}</p>
                     <a href={linkWhatsApp(t('whatsapp.message'))} target="_blank" rel="noopener noreferrer" className={styles.whatsapp}>
                         {t('chamada.duvida')}

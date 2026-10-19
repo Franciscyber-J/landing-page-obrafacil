@@ -132,6 +132,7 @@ flutuando. O escuro é o mundo principal; o claro tem a mesma forma com luzes ma
 ## Do's and Don'ts
 
 - Faça: tela real do app no idioma da página; vidro para agrupar; laranja só para ação e destaque.
+- Faça: o botão laranja de cada parte é "Começar grátis" (link de `src/comecar.js`); o PRO usa `.acao-clara`.
 - Faça: todo texto por chave de tradução; endereços pelas funções de `src/i18n/idiomas.js`.
 - Não faça: cantos retos, fios grossos, caixa alta em títulos, roxo, foto de banco de imagens, mais de um
   destaque laranja no mesmo título.

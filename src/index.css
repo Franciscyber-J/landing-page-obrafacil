@@ -248,6 +248,9 @@ button {
   position: relative;
   padding: 104px 0;
   scroll-margin-top: 80px;
+  /* celulares inclinados e em 3D não podem empurrar a página para o lado (clip não cria rolagem nem atrapalha
+     o celular parado dos Recursos) */
+  overflow-x: clip;
 }
 
 .secao > .container {

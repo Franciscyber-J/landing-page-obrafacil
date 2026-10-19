@@ -54,14 +54,14 @@ export const CURRENCY_SYMBOLS = {
 };
 
 // ── Moedas sem decimais (sem casas centavos) ─────────────────────────────────
-const NO_DECIMAL_CURRENCIES = new Set([
-    'clp', 'cop', 'huf', 'idr', 'jpy', 'krw', 'kzt', 'ngn',
-    'php', 'pkr', 'rub', 'thb', 'tzs', 'vnd',
-]);
+// Moedas sem centavos NO STRIPE (as da tabela acima; lista em https://docs.stripe.com/currencies#zero-decimal).
+// As outras, mesmo as que no dia a dia não usam centavos (peso colombiano, florim, rupia...), ficam no Stripe em
+// centésimos: 6990000 em COP são 69.900,00. Antes elas estavam aqui por engano e apareceriam 100 vezes maiores.
+const NO_DECIMAL_CURRENCIES = new Set(['clp', 'jpy', 'krw', 'vnd']);
 
 // ── Mapa locale → moeda ───────────────────────────────────────────────────────
 // Adicione aqui cada novo idioma que criar. Os preços serão aplicados
-// automaticamente no Pricing.jsx e ExitIntentPopup via usePricing().
+// automaticamente nos Preços da página inicial, por getPricing().
 export const LOCALE_CURRENCY_MAP = {
     // ── Ativos ──────────────────────────────────────────────
     'pt':    'brl',
@@ -119,13 +119,11 @@ export const LOCALE_CURRENCY_MAP = {
 export const STRIPE_LINKS = {
     monthly:  'https://buy.stripe.com/4gM28s7IT8Jcgxa65G0VO06',
     annual:   'https://buy.stripe.com/9B6dRabZ92kOgxa2Tu0VO07',
-    // Popup exit-intent com cupom FUNDADOR50 (≈50% off no 1º ano)
-    popup:    'https://buy.stripe.com/7sY3cw0grcZsft6gKk0VO08?prefilled_promo_code=FUNDADOR50',
 };
 
 // ── Hook: usePricing() ────────────────────────────────────────────────────────
 // Retorna todos os valores de preço formatados para o locale atual.
-// Usado em Pricing.jsx e ExitIntentPopup.jsx.
+// Usado em src/components/inicio/Precos.jsx.
 
 /**
  * Converte centavos para string de exibição.
@@ -172,10 +170,6 @@ export function getPricing(locale) {
         ? Math.round(rawAnnual / 12).toLocaleString(locale)
         : formatAmount(Math.round(rawAnnual / 12), currency, locale);
 
-    // Preço popup (≈50% do mensal)
-    const popupPrice = NO_DECIMAL_CURRENCIES.has(currency)
-        ? Math.round(rawMonthly / 2).toLocaleString(locale)
-        : formatAmount(Math.round(rawMonthly / 2), currency, locale);
 
     return {
         currency,      // 'brl'
@@ -186,6 +180,5 @@ export function getPricing(locale) {
         fromAnnual,    // '1.198,80'
         annualSavings, // '299,80'
         monthlyEquiv,  // '74,92'
-        popupPrice,    // '49,95'
     };
 }

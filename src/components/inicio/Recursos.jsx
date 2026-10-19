@@ -6,11 +6,11 @@ import { useCallback, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { idDaSecao } from '../../i18n/idiomas.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
-import { CADASTRO } from '../../links.js';
 import { enderecoDaTela } from '../../telas.js';
 import { COM_MOVIMENTO, LARGO, ScrollTrigger, entrarEmGrupo, gsap, useGSAP } from '../../movimento/index.js';
 import { comDestaque } from '../../texto.jsx';
 import styles from './Recursos.module.css';
+import { linkComecar } from '../../comecar.js';
 
 // Cada parte e a tela real que a mostra (com o texto alternativo da tela).
 const ITENS = [
@@ -129,7 +129,7 @@ export default function Recursos() {
                             ))}
                         </dl>
                         <div className={styles.acoes}>
-                            <a href={CADASTRO} className="acao">{t('hero.comecar')}</a>
+                            <a {...linkComecar(codigo)} className="acao">{t('hero.comecar')}</a>
                             <p>{t('hero.semCartao')}</p>
                         </div>
                     </div>

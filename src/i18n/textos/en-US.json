@@ -102,14 +102,12 @@
         "gratisPreco": "Free forever"
     },
     "popup": {
-        "title": "Wait! Are you really going to keep managing projects on paper?",
-        "subtitle": "Before you leave, I have an irresistible proposal. We've released a secret batch of **only 20 spots** for Founding Members.",
-        "body": "Contact our agent on WhatsApp right now and request your VIP invite. You will lock in your PRO subscription for only **$7.49/month** for a full year.",
-        "scarcity": "Notice: The links expire as soon as the 20 spots are filled.",
-        "whatsappMessage": "Hi, I was on the ObraFácil website, I saw the hidden invite and I want to secure my Founding Member spot for $7.49.",
-        "cta": "Redeem discount with Max",
-        "fechar": "Close",
-        "faixa": "Founding Members"
+        "faixa": "Free plan, no time limit",
+        "title": "Before you go, try it on your next project",
+        "texto": "Create your free account in a minute, no credit card needed. Add a project and see the schedule, the daily report with photos and the finances at work, with your client following along in the portal.",
+        "cta": "Start free",
+        "lojas": "Or download the app",
+        "fechar": "Close"
     },
     "whatsapp": {
         "tooltip": "Talk to Support",

@@ -102,14 +102,12 @@
         "gratisPreco": "Grátis para sempre"
     },
     "popup": {
-        "title": "Espere! Vai mesmo continuar gerenciando suas obras no papel?",
-        "subtitle": "Antes de sair, tenho uma proposta irrecusável. Liberamos um lote secreto de **apenas 20 vagas** para Membros Fundadores.",
-        "body": "Chame nosso agente no WhatsApp agora mesmo e solicite o seu convite VIP. Você vai travar a sua assinatura PRO por apenas **R$ 49,95/mês** durante 1 ano inteiro.",
-        "scarcity": "Aviso: Os links expiram assim que as 20 vagas forem preenchidas.",
-        "whatsappMessage": "Oi, estava no site do ObraFácil, vi o convite oculto e quero garantir minha vaga de Membro Fundador por R$ 49,95.",
-        "cta": "Resgatar desconto com o Max",
-        "fechar": "Fechar",
-        "faixa": "Membros Fundadores"
+        "faixa": "Plano grátis, sem prazo",
+        "title": "Antes de sair, teste na sua próxima obra",
+        "texto": "Crie a conta grátis em um minuto, sem cartão de crédito. Cadastre uma obra e veja o cronograma, o diário com fotos e o financeiro funcionando, com o seu cliente acompanhando pelo portal.",
+        "cta": "Começar grátis",
+        "lojas": "Ou baixe o app",
+        "fechar": "Fechar"
     },
     "whatsapp": {
         "tooltip": "Fale com o Suporte",

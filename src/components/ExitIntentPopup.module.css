@@ -82,26 +82,45 @@
   color: var(--painel-texto-2);
 }
 
-.texto strong {
-  color: #ffb35c;
-  font-weight: 800;
-}
-
-.escassez {
-  margin-top: 16px;
-  padding: 12px 14px;
-  border-radius: var(--raio-p);
-  background: var(--painel-vidro);
-  border: 1px solid var(--painel-linha);
-  font-size: 0.9375rem;
-  font-weight: 700;
-}
-
 .botao {
   margin-top: 22px;
   width: 100%;
   min-height: 56px;
   font-size: 1.0625rem;
+}
+
+.lojasRotulo {
+  margin-top: 18px;
+  font-size: 0.875rem;
+  color: var(--painel-texto-2);
+  text-align: center;
+}
+
+.lojas {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lojas a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: var(--pilula);
+  background: var(--painel-vidro);
+  border: 1px solid var(--painel-linha);
+  color: var(--painel-texto);
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+
+.lojas a:hover {
+  border-color: var(--painel-texto);
 }
 
 @keyframes aparecer {

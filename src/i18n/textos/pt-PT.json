@@ -1,9 +1,8 @@
 {
     "popup": {
-        "title": "Espere! Vai mesmo continuar a gerir as suas obras em papel?",
-        "subtitle": "Antes de sair, tenho uma proposta irrecusável. Lançámos um lote secreto de **apenas 20 vagas** para Membros Fundadores.",
-        "body": "Contacte o nosso agente no WhatsApp agora mesmo e solicite o seu convite VIP. Vai fixar a sua subscrição PRO por apenas **8,99 €/mês** durante 1 ano inteiro.",
-        "whatsappMessage": "Olá, estava no site do ObraFácil, vi o convite oculto e quero garantir a minha vaga de Membro Fundador por 8,99 €."
+        "title": "Antes de sair, experimente na sua próxima obra",
+        "texto": "Crie a conta grátis num minuto, sem cartão de crédito. Registe uma obra e veja o cronograma, o diário com fotografias e as finanças a funcionar, com o seu cliente a acompanhar pelo portal.",
+        "lojas": "Ou descarregue a app"
     },
     "social": {
         "test1": "\"Os meus clientes ficaram impressionados com a aplicação. Transmitiu muito mais credibilidade e justificou o valor da minha gestão.\"",

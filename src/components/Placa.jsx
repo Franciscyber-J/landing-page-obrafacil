@@ -8,11 +8,12 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { caminhoInicio } from '../i18n/idiomas.js';
 import { useIdioma } from '../i18n/RotaDoIdioma.jsx';
-import { CADASTRO, WINDOWS, appStore, googlePlay } from '../links.js';
+import { WINDOWS, appStore, googlePlay } from '../links.js';
 import { comDestaque } from '../texto.jsx';
 import { enderecoDaTela } from '../telas.js';
 import { COM_MOUSE, COM_MOVIMENTO, gsap, inclinarComPonteiro, magnetico, tituloSobe, useGSAP } from '../movimento/index.js';
 import styles from './Placa.module.css';
+import { linkComecar } from '../comecar.js';
 
 const CAMPOS = [
     { id: 'cronograma', tela: 'etapas' },
@@ -176,24 +177,24 @@ export default function Placa() {
                     <p id="campo-valor" className={styles.valor} aria-live="polite">{t(`hero.campos.${campo.id}.valor`)}</p>
 
                     <div className={styles.acoes}>
-                        <a href={CADASTRO} className="acao" data-m="acao">{t('hero.comecar')}</a>
+                        <a {...linkComecar(codigo)} className="acao" data-m="acao">{t('hero.comecar')}</a>
                         <Link to={caminhoInicio(codigo, 'precos')} className="acao-contorno" data-m="acao">{t('hero.verPlanos')}</Link>
                     </div>
                     <p className={styles.nota}>{t('hero.semCartao')}</p>
 
                     <ul className={styles.lojas}>
                         <li data-m="loja">
-                            <a href={googlePlay(codigo)} target="_blank" rel="noopener noreferrer">
+                            <a href={googlePlay(codigo)} data-conversao="loja_android" target="_blank" rel="noopener noreferrer">
                                 <small>{t('hero.disponivelNo')}</small> Google Play
                             </a>
                         </li>
                         <li data-m="loja">
-                            <a href={appStore()} target="_blank" rel="noopener noreferrer">
+                            <a href={appStore()} data-conversao="loja_ios" target="_blank" rel="noopener noreferrer">
                                 <small>{t('hero.baixarNa')}</small> App Store
                             </a>
                         </li>
                         <li data-m="loja">
-                            <a href={WINDOWS}>
+                            <a href={WINDOWS} data-conversao="windows">
                                 <small>{t('hero.baixarPara')}</small> Windows
                             </a>
                         </li>

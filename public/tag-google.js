@@ -24,3 +24,23 @@ gtag('config', 'AW-18200904302');
 // Vazio = o Analytics não é carregado. A Política de Privacidade 2.0 já cita o Analytics.
 var MEDICAO_GA4 = '';
 if (MEDICAO_GA4) gtag('config', MEDICAO_GA4);
+
+// Cliques que contam como conversão: todo link com data-conversao (src/comecar.js e os botões das lojas e do PRO).
+// Vão como eventos para o Google Ads e, com o código acima preenchido, para o Analytics:
+// - "comecar_gratis" (cadastro no navegador ou loja aberta pelo botão; parâmetro "destino");
+// - "assinar_pro" (parâmetro "plano": mensal ou anual).
+// Para o Google Ads contar como conversão, criar no Ads uma conversão do tipo "site" e colar abaixo o rótulo
+// dela (a parte depois da barra em "AW-18200904302/xxxxxxxx"). Vazio = só o evento, sem conversão.
+var ROTULO_CONVERSAO_CADASTRO = '';
+var ROTULO_CONVERSAO_ASSINATURA = '';
+document.addEventListener('click', function (evento) {
+  var alvo = evento.target && evento.target.closest ? evento.target.closest('[data-conversao]') : null;
+  if (!alvo) return;
+  var tipo = alvo.getAttribute('data-conversao');
+  var assinatura = tipo.indexOf('assinar_') === 0;
+  gtag('event', assinatura ? 'assinar_pro' : 'comecar_gratis', assinatura
+    ? { plano: tipo.slice(8), transport_type: 'beacon' }
+    : { destino: tipo, transport_type: 'beacon' });
+  var rotulo = assinatura ? ROTULO_CONVERSAO_ASSINATURA : ROTULO_CONVERSAO_CADASTRO;
+  if (rotulo) gtag('event', 'conversion', { send_to: 'AW-18200904302/' + rotulo, transport_type: 'beacon' });
+}, true);

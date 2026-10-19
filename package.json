@@ -10,7 +10,7 @@
     "postbuild": "node ferramentas/legal/gerar-paginas.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "node --test \"src/ajuda/*.test.js\" \"src/i18n/*.test.js\" \"src/legal/*.test.js\"",
+    "test": "node --test \"src/*.test.js\" \"src/ajuda/*.test.js\" \"src/i18n/*.test.js\" \"src/legal/*.test.js\"",
     "idiomas": "node ferramentas/idiomas/idiomas.mjs"
   },
   "dependencies": {
