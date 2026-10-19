@@ -3,7 +3,8 @@
 #
 # Nesta pasta vivem duas coisas:
 #   - o site (React, gerado pelo "npm run build": index.html + assets/)
-#   - o WordPress, que ainda serve Termos de Uso, Política de Privacidade e Suporte.
+#   - o WordPress, que ainda serve o Suporte e as páginas de pagamento usadas pelo app.
+#     Termos de Uso e Política de Privacidade passaram para o site (páginas por idioma).
 #
 # Este arquivo é versionado em landing_page/hospedagem/.htaccess. Para mudar,
 # edite no repositório e copie o arquivo INTEIRO para a Hostinger.
@@ -64,6 +65,62 @@ RewriteRule ^ - [F,L]
 
 # Nenhum PHP roda dentro da pasta de uploads.
 RewriteRule ^wp-content/uploads/.*\.(php|phtml|phar)$ - [F,L,NC]
+
+# -----------------------------------------------------------------------------
+# Termos de Uso e Política de Privacidade: os endereços antigos do WordPress
+# (/termos-de-uso/ e /politicas-de-privacidade/) estão cadastrados na App Store e na
+# Google Play. Eles continuam valendo e levam à página no idioma do navegador
+# (primeiro idioma do cabeçalho Accept-Language; sem idioma conhecido, inglês).
+# Mesma escolha de src/i18n/registro.js (campo regioes). Redirecionamento 302 e sem
+# cache, porque o destino muda conforme quem abre.
+# -----------------------------------------------------------------------------
+RewriteRule ^(termos-de-uso|politicas-de-privacidade)/?$ - [E=LEGAL_IDIOMA:en-us,E=Cache-Control:no-cache]
+RewriteCond %{HTTP:Accept-Language} ^pt\b [NC]
+RewriteRule ^(termos-de-uso|politicas-de-privacidade)/?$ - [E=LEGAL_IDIOMA:pt-br]
+RewriteCond %{HTTP:Accept-Language} ^pt-(PT|AO|MZ|CV|GW|ST|TL|MO)\b [NC]
+RewriteRule ^(termos-de-uso|politicas-de-privacidade)/?$ - [E=LEGAL_IDIOMA:pt-pt]
+RewriteCond %{HTTP:Accept-Language} ^es\b [NC]
+RewriteRule ^(termos-de-uso|politicas-de-privacidade)/?$ - [E=LEGAL_IDIOMA:es-es]
+RewriteCond %{HTTP:Accept-Language} ^es-(MX|419|AR|BO|CL|CO|CR|CU|DO|EC|GT|HN|NI|PA|PE|PR|PY|SV|US|UY|VE)\b [NC]
+RewriteRule ^(termos-de-uso|politicas-de-privacidade)/?$ - [E=LEGAL_IDIOMA:es-mx]
+RewriteCond %{HTTP:Accept-Language} ^en-(GB|IE|IN|ZA|SG|HK|NG|KE)\b [NC]
+RewriteRule ^(termos-de-uso|politicas-de-privacidade)/?$ - [E=LEGAL_IDIOMA:en-gb]
+RewriteCond %{HTTP:Accept-Language} ^en-(AU|NZ)\b [NC]
+RewriteRule ^(termos-de-uso|politicas-de-privacidade)/?$ - [E=LEGAL_IDIOMA:en-au]
+RewriteCond %{HTTP:Accept-Language} ^en-CA\b [NC]
+RewriteRule ^(termos-de-uso|politicas-de-privacidade)/?$ - [E=LEGAL_IDIOMA:en-ca]
+RewriteCond %{ENV:LEGAL_IDIOMA} ^pt-br$
+RewriteRule ^termos-de-uso/?$ /pt-br/termos-de-uso [R=302,L]
+RewriteCond %{ENV:LEGAL_IDIOMA} ^pt-br$
+RewriteRule ^politicas-de-privacidade/?$ /pt-br/politica-de-privacidade [R=302,L]
+RewriteCond %{ENV:LEGAL_IDIOMA} ^pt-pt$
+RewriteRule ^termos-de-uso/?$ /pt-pt/termos-de-utilizacao [R=302,L]
+RewriteCond %{ENV:LEGAL_IDIOMA} ^pt-pt$
+RewriteRule ^politicas-de-privacidade/?$ /pt-pt/politica-de-privacidade [R=302,L]
+RewriteCond %{ENV:LEGAL_IDIOMA} ^en-us$
+RewriteRule ^termos-de-uso/?$ /en-us/terms-of-use [R=302,L]
+RewriteCond %{ENV:LEGAL_IDIOMA} ^en-us$
+RewriteRule ^politicas-de-privacidade/?$ /en-us/privacy-policy [R=302,L]
+RewriteCond %{ENV:LEGAL_IDIOMA} ^en-gb$
+RewriteRule ^termos-de-uso/?$ /en-gb/terms-of-use [R=302,L]
+RewriteCond %{ENV:LEGAL_IDIOMA} ^en-gb$
+RewriteRule ^politicas-de-privacidade/?$ /en-gb/privacy-policy [R=302,L]
+RewriteCond %{ENV:LEGAL_IDIOMA} ^en-au$
+RewriteRule ^termos-de-uso/?$ /en-au/terms-of-use [R=302,L]
+RewriteCond %{ENV:LEGAL_IDIOMA} ^en-au$
+RewriteRule ^politicas-de-privacidade/?$ /en-au/privacy-policy [R=302,L]
+RewriteCond %{ENV:LEGAL_IDIOMA} ^en-ca$
+RewriteRule ^termos-de-uso/?$ /en-ca/terms-of-use [R=302,L]
+RewriteCond %{ENV:LEGAL_IDIOMA} ^en-ca$
+RewriteRule ^politicas-de-privacidade/?$ /en-ca/privacy-policy [R=302,L]
+RewriteCond %{ENV:LEGAL_IDIOMA} ^es-es$
+RewriteRule ^termos-de-uso/?$ /es-es/terminos-de-uso [R=302,L]
+RewriteCond %{ENV:LEGAL_IDIOMA} ^es-es$
+RewriteRule ^politicas-de-privacidade/?$ /es-es/politica-de-privacidad [R=302,L]
+RewriteCond %{ENV:LEGAL_IDIOMA} ^es-mx$
+RewriteRule ^termos-de-uso/?$ /es-mx/terminos-de-uso [R=302,L]
+RewriteCond %{ENV:LEGAL_IDIOMA} ^es-mx$
+RewriteRule ^politicas-de-privacidade/?$ /es-mx/politica-de-privacidad [R=302,L]
 
 # -----------------------------------------------------------------------------
 # Site (React): endereços do site abrem o index.html

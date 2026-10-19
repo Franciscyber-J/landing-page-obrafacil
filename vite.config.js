@@ -58,6 +58,53 @@ function ajudaLocal() {
   }
 }
 
+// Termos e Política em desenvolvimento, sem tocar no Firestore:
+//   $env:LEGAL_PASTA = "D:\Projetos\gestao_obras\legal"; npm run dev
+// Responde no formato da API REST do Firestore como se nada tivesse sido liberado ainda
+// (o site mostra a versão mais nova da pasta). Só vale para "npm run dev".
+const VERSAO = /^\d{1,4}(\.\d{1,4}){0,3}$/
+function legalLocal() {
+  const pasta = process.env.LEGAL_PASTA ? path.resolve(process.env.LEGAL_PASTA) : null
+  const texto = (v) => ({ stringValue: v })
+  return {
+    name: 'legal-local',
+    apply: 'serve',
+    config() {
+      return pasta ? { define: { 'import.meta.env.VITE_LEGAL_LOCAL': JSON.stringify('sim') } } : {}
+    },
+    configureServer(server) {
+      if (!pasta) return
+      server.config.logger.info(`  Termos e Política: lendo ${pasta}`)
+      server.middlewares.use('/__legal', (req, res, next) => {
+        const partes = decodeURIComponent((req.url ?? '').split('?')[0]).split('/').filter(Boolean)
+        const enviar = (status, corpo) => {
+          res.statusCode = status
+          res.setHeader('Content-Type', 'application/json; charset=utf-8')
+          res.end(JSON.stringify(corpo))
+        }
+        if (partes[0] !== 'documentos_legais' || !['termos', 'privacidade'].includes(partes[1])) return next()
+        const doc = partes[1]
+        if (partes.length === 2) return enviar(404, {})
+        if (partes.length === 3 && partes[2] === 'versoes') {
+          const versoes = fs.existsSync(path.join(pasta, doc)) ? fs.readdirSync(path.join(pasta, doc)).filter((v) => VERSAO.test(v)) : []
+          return enviar(200, { documents: versoes.map((v) => ({ name: `local/documentos_legais/${doc}/versoes/${v}` })) })
+        }
+        if (partes.length === 4 && partes[2] === 'versoes' && VERSAO.test(partes[3])) {
+          const dir = path.join(pasta, doc, partes[3])
+          if (!fs.existsSync(dir)) return enviar(404, {})
+          const textos = {}
+          for (const f of fs.readdirSync(dir)) {
+            const idioma = f.replace(/\.md$/, '')
+            if (IDIOMA.test(idioma)) textos[idioma] = texto(fs.readFileSync(path.join(dir, f), 'utf8'))
+          }
+          return enviar(200, { fields: { versao: texto(partes[3]), estado: texto('preparada'), textos: { mapValue: { fields: textos } } } })
+        }
+        return next()
+      })
+    },
+  }
+}
+
 // Bandeiras do menu de idiomas servidas pelo próprio site em /bandeiras/<país>.svg.
 // Só entram as bandeiras dos idiomas de src/i18n/registro.js (vêm do pacote flag-icons).
 function bandeiras() {
@@ -87,5 +134,5 @@ function bandeiras() {
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), ajudaLocal(), bandeiras()],
+  plugins: [react(), ajudaLocal(), legalLocal(), bandeiras()],
 })

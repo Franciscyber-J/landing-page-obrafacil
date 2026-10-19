@@ -14,6 +14,8 @@ Cadeia: pt-BR → en-US
 
 Cadeia: pt-PT → pt-BR → en-US
 
+Iguais à base pt-BR (podem ser apagados de textos/pt-PT.json): `legal.indisponivel`, `cookies.saibaMais`
+
 ## en-US — English (US) (base) — 0 a traduzir
 
 Cadeia: en-US → pt-BR

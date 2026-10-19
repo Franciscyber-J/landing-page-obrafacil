@@ -1,8 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { ArrowRight, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { IDIOMAS, caminhoAjuda } from '../i18n/idiomas.js';
+import { IDIOMAS, caminhoAjuda, caminhoLegal } from '../i18n/idiomas.js';
 import { useIdioma, useTrocarIdioma } from '../i18n/RotaDoIdioma.jsx';
+import { abrirAvisoCookies } from '../legal/cookies.js';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -56,8 +57,9 @@ export default function Footer() {
                     <div className={styles.linksCol}>
                         <h4 className={styles.colTitle}>{t('footer.links')}</h4>
                         <ul className={styles.linkList}>
-                            <li><a href="https://appobrafacil.expertbr.com/termos-de-uso/" target="_blank" rel="noopener noreferrer">{t('footer.terms')}</a></li>
-                            <li><a href="https://appobrafacil.expertbr.com/politicas-de-privacidade/" target="_blank" rel="noopener noreferrer">{t('footer.privacy')}</a></li>
+                            <li><Link to={caminhoLegal(codigo, 'termos')}>{t('footer.terms')}</Link></li>
+                            <li><Link to={caminhoLegal(codigo, 'privacidade')}>{t('footer.privacy')}</Link></li>
+                            <li><button type="button" className={styles.linkBotao} onClick={abrirAvisoCookies}>{t('cookies.preferencias')}</button></li>
                             <li><Link to={caminhoAjuda(codigo)}>{t('footer.help')}</Link></li>
                             <li><a href="https://appobrafacil.expertbr.com/suporte/" target="_blank" rel="noopener noreferrer">{t('footer.support')}</a></li>
                         </ul>

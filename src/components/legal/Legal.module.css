@@ -1,0 +1,116 @@
+.pagina {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 120px 20px 80px;
+}
+
+.cabecalho {
+  max-width: 72ch;
+  margin-bottom: 40px;
+}
+
+.titulo {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+
+.versao {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.aviso {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border: 1px solid var(--color-accent);
+  border-radius: 8px;
+}
+
+.aviso p {
+  margin: 0 0 12px;
+}
+
+.botao {
+  min-height: 44px;
+  padding: 10px 18px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.corpo {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 72ch);
+  gap: 48px;
+  align-items: start;
+}
+
+.sumario {
+  position: sticky;
+  top: 100px;
+  font-size: 0.875rem;
+}
+
+.sumarioTitulo {
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.sumario ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sumario a {
+  display: block;
+  padding: 6px 0;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.texto {
+  line-height: 1.65;
+  font-size: 1.0625rem;
+}
+
+.secao {
+  font-size: 1.375rem;
+  margin: 2.2em 0 0.6em;
+  scroll-margin-top: 100px;
+}
+
+.subsecao {
+  font-size: 1.125rem;
+  margin: 1.6em 0 0.5em;
+  scroll-margin-top: 100px;
+}
+
+.paragrafo {
+  margin: 0 0 1em;
+}
+
+.lista {
+  margin: 0 0 1em;
+  padding-left: 1.25em;
+}
+
+.outro {
+  margin-top: 48px;
+}
+
+.estado {
+  padding: 40px 0;
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .corpo {
+    grid-template-columns: 1fr;
+  }
+
+  .sumario {
+    position: static;
+  }
+}

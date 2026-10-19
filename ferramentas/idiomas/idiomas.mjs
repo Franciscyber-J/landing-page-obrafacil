@@ -186,6 +186,7 @@ function chavesSemUso(ref) {
 function conferirCadastro(erros) {
     const vistos = new Set();
     const regioesPorLingua = new Map();
+    const palavrasLegais = new Map();
     for (const i of IDIOMAS) {
         const onde = `registro.js (${i.codigo})`;
         if (!/^[a-z]{2}-[A-Z]{2}$/.test(i.codigo)) erros.push(`${onde}: código deve ser idioma de 2 letras + região de 2 letras (ex.: fr-FR)`);
@@ -213,13 +214,23 @@ function conferirCadastro(erros) {
             regioesPorLingua.set(chave, i.codigo);
             if (`${lingua}-${r}` === i.codigo || IDIOMAS.some((o) => o.codigo === `${lingua}-${r}`)) erros.push(`${onde}: a região ${r} já é um idioma cadastrado`);
         }
-        const palavras = [['ajuda', i.rotas.ajuda], ['assunto', i.rotas.assunto], ...SECOES.map((s) => [`secoes.${s}`, i.rotas.secoes[s]])];
+        const palavras = [['ajuda', i.rotas.ajuda], ['assunto', i.rotas.assunto], ['termos', i.rotas.termos], ['privacidade', i.rotas.privacidade], ...SECOES.map((s) => [`secoes.${s}`, i.rotas.secoes[s]])];
         for (const [campo, valor] of palavras) {
             if (!valor) erros.push(`${onde}: falta rotas.${campo}${i.base ? ' (nem na base)' : ''}`);
             else if (!PALAVRA_ENDERECO.test(valor)) erros.push(`${onde}: rotas.${campo} "${valor}" só pode ter letras minúsculas, números e hífen`);
             else if (campo === 'ajuda' && PARECE_PREFIXO.test(valor)) erros.push(`${onde}: rotas.ajuda "${valor}" parece código de idioma; use uma palavra maior`);
         }
         if (i.rotas.ajuda && i.rotas.ajuda === i.rotas.assunto) erros.push(`${onde}: rotas.ajuda e rotas.assunto não podem ser iguais`);
+        const doIdioma = [i.rotas.ajuda, i.rotas.termos, i.rotas.privacidade].filter(Boolean);
+        if (new Set(doIdioma).size !== doIdioma.length) erros.push(`${onde}: rotas.ajuda, rotas.termos e rotas.privacidade precisam ser diferentes`);
+        for (const [doc, valor] of [['termos', i.rotas.termos], ['privacidade', i.rotas.privacidade]]) {
+            if (!valor) continue;
+            const dono = palavrasLegais.get(valor);
+            if (dono && dono !== doc) erros.push(`${onde}: rotas.${doc} "${valor}" já é a palavra de outro documento em outro idioma`);
+            palavrasLegais.set(valor, doc);
+            if (IDIOMAS.some((o) => o.rotas.ajuda === valor)) erros.push(`${onde}: rotas.${doc} "${valor}" é igual à palavra da Central de algum idioma`);
+            if (['termos-de-uso', 'politicas-de-privacidade'].includes(valor) && doc !== (valor === 'termos-de-uso' ? 'termos' : 'privacidade')) erros.push(`${onde}: rotas.${doc} "${valor}" é endereço antigo de outro documento`);
+        }
         const secoes = SECOES.map((s) => i.rotas.secoes[s]).filter(Boolean);
         if (new Set(secoes).size !== secoes.length) erros.push(`${onde}: duas seções com a mesma palavra`);
     }

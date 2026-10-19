@@ -270,5 +270,27 @@
         "tagline": "Gestión de obras inteligente. Transparencia que encanta a tus clientes.",
         "rights": "Todos los derechos reservados.",
         "language": "Idioma del sitio"
+    },
+    "legal": {
+        "versao": "Versión {{versao}}",
+        "emVigorDesde": "en vigor desde el {{data}}",
+        "valeAPartir": "entra en vigor el {{data}}",
+        "novaVersao": "La versión {{versao}} entra en vigor el {{data}}. Ya puede leer lo que cambia.",
+        "lerNova": "Leer la nueva versión",
+        "vendoNova": "Está leyendo la nueva versión. Hasta su fecha, se aplica la versión {{versao}}.",
+        "voltarAtual": "Volver a la versión en vigor",
+        "sumario": "En esta página",
+        "carregando": "Cargando el texto…",
+        "erro": "No se ha podido cargar el texto ahora. Compruebe su conexión.",
+        "indisponivel": "El texto todavía no está disponible en esta dirección. Escriba a suporte@appobrafacil.expertbr.com.",
+        "tentarDeNovo": "Intentar de nuevo"
+    },
+    "cookies": {
+        "titulo": "Cookies",
+        "texto": "Usamos la etiqueta de Google para medir el resultado de nuestros anuncios. Solo guarda cookies si usted acepta.",
+        "saibaMais": "Más información en la Política de Privacidad.",
+        "aceitar": "Aceptar",
+        "recusar": "Rechazar",
+        "preferencias": "Cookies"
     }
 }

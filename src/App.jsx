@@ -6,10 +6,12 @@ import Footer from './components/Footer';
 import LoginModal from './components/LoginModal';
 import Home from './components/Home';
 import AjudaPagina from './components/ajuda/AjudaPagina';
+import LegalPagina from './components/legal/LegalPagina';
 import ExitIntentPopup from './components/ExitIntentPopup';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import AvisoCookies from './components/AvisoCookies';
 import {
-  analisarCaminho, caminhoAjuda, caminhoArtigo, caminhoAssunto, caminhoInicio, idioma, secaoDaAncora,
+  analisarCaminho, caminhoAjuda, caminhoArtigo, caminhoAssunto, caminhoInicio, caminhoLegal, idioma, secaoDaAncora,
 } from './i18n/idiomas.js';
 import { idiomaPreferido } from './i18n/preferencia.js';
 import { Alternativos, ProvedorDeRota } from './i18n/RotaDoIdioma.jsx';
@@ -29,12 +31,13 @@ function ScrollToTop() {
   return null;
 }
 
-// Endereço sem idioma (/, /ajuda/...): vai para o mesmo lugar no idioma da pessoa.
+// Endereço sem idioma (/, /ajuda/..., /termos-de-uso/ das lojas): vai para o mesmo lugar no idioma da pessoa.
 function destinoSemIdioma(lido, hash) {
   if (lido.tipo === 'raiz' || lido.tipo === 'desconhecido') {
     return caminhoInicio(idiomaPreferido(), secaoDaAncora(hash));
   }
   const codigo = lido.codigo ?? idiomaPreferido();
+  if (lido.pagina === 'legal') return caminhoLegal(codigo, lido.documento);
   if (lido.pagina === 'assunto') return caminhoAssunto(codigo, lido.modulo);
   if (lido.pagina === 'artigo') return caminhoArtigo(codigo, lido.slug);
   return caminhoAjuda(codigo);
@@ -43,6 +46,7 @@ function destinoSemIdioma(lido, hash) {
 function Pagina({ codigo, lido }) {
   if (lido.pagina === 'inicio') return <Home />;
   if (lido.pagina === 'nao-encontrado') return <Navigate to={caminhoInicio(codigo)} replace />;
+  if (lido.pagina === 'legal') return <LegalPagina key={`${codigo}:${lido.documento}`} codigo={codigo} documento={lido.documento} />;
   return <AjudaPagina key={codigo} codigo={codigo} tipo={lido.pagina === 'ajuda' ? 'inicio' : lido.pagina} modulo={lido.modulo} slug={lido.slug} />;
 }
 
@@ -76,6 +80,7 @@ function Site() {
       <Footer />
       <ExitIntentPopup />
       <FloatingWhatsApp />
+      <AvisoCookies />
       <LoginModal isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
     </ProvedorDeRota>
   );

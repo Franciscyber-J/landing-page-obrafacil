@@ -51,5 +51,8 @@
     },
     "footer": {
         "ctaBtn": "Prueba Gratis por 30 Días"
+    },
+    "legal": {
+        "erro": "No se pudo cargar el texto en este momento. Revise su conexión."
     }
 }

@@ -268,5 +268,27 @@
         "tagline": "Smart construction management. Transparency your clients will love.",
         "rights": "All rights reserved.",
         "language": "Website language"
+    },
+    "legal": {
+        "versao": "Version {{versao}}",
+        "emVigorDesde": "in effect since {{data}}",
+        "valeAPartir": "takes effect on {{data}}",
+        "novaVersao": "Version {{versao}} takes effect on {{data}}. You can read what changes now.",
+        "lerNova": "Read the new version",
+        "vendoNova": "You are reading the new version. Until it takes effect, version {{versao}} applies.",
+        "voltarAtual": "Back to the version in effect",
+        "sumario": "On this page",
+        "carregando": "Loading the text…",
+        "erro": "We couldn't load the text right now. Please check your connection.",
+        "indisponivel": "The text isn't available at this address yet. Write to suporte@appobrafacil.expertbr.com.",
+        "tentarDeNovo": "Try again"
+    },
+    "cookies": {
+        "titulo": "Cookies",
+        "texto": "We use the Google tag to measure how our ads perform. It only stores cookies if you accept.",
+        "saibaMais": "Learn more in the Privacy Policy.",
+        "aceitar": "Accept",
+        "recusar": "Decline",
+        "preferencias": "Cookies"
     }
 }

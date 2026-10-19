@@ -2,7 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-    IDIOMAS, analisarCaminho, cadeia, caminhoAjuda, caminhoArtigo, caminhoAssunto, caminhoInicio,
+    IDIOMAS, analisarCaminho, cadeia, caminhoAjuda, caminhoArtigo, caminhoAssunto, caminhoInicio, caminhoLegal,
     escolherIdioma, idDaSecao, secaoDaAncora, slugDoTexto,
 } from './idiomas.js';
 import { acharModulo, criarRotas, slugDoModulo } from '../ajuda/enderecos.js';
@@ -100,4 +100,27 @@ test('nome do assunto no endereço', () => {
     assert.equal(acharModulo(modulos, 'financeiro-da-obra', 'en-US'), financeiro);
     assert.equal(acharModulo(modulos, 'nada', 'en-US'), null);
     assert.equal(criarRotas('en-GB').assunto(financeiro), '/en-gb/help/topic/project-finances');
+});
+
+test('Termos de Uso e Política de Privacidade com a palavra de cada idioma', () => {
+    assert.equal(caminhoLegal('pt-BR', 'termos'), '/pt-br/termos-de-uso');
+    assert.equal(caminhoLegal('pt-PT', 'termos'), '/pt-pt/termos-de-utilizacao');
+    assert.equal(caminhoLegal('pt-PT', 'privacidade'), '/pt-pt/politica-de-privacidade');
+    assert.equal(caminhoLegal('en-GB', 'privacidade'), '/en-gb/privacy-policy');
+    assert.equal(caminhoLegal('es-MX', 'termos'), '/es-mx/terminos-de-uso');
+    assert.deepEqual(
+        analisarCaminho('/en-us/terms-of-use'),
+        { tipo: 'pagina', codigo: 'en-US', pagina: 'legal', documento: 'termos', canonico: null },
+    );
+    // Palavra de outro idioma vai para a palavra certa.
+    assert.equal(analisarCaminho('/en-us/termos-de-uso').canonico, '/en-us/terms-of-use');
+    assert.equal(analisarCaminho('/pt-pt/termos-de-uso').canonico, '/pt-pt/termos-de-utilizacao');
+    assert.equal(analisarCaminho('/ES-ES/privacy-policy').canonico, '/es-es/politica-de-privacidad');
+    assert.equal(analisarCaminho('/pt-br/termos-de-uso/x').pagina, 'nao-encontrado');
+});
+
+test('endereços antigos do WordPress (lojas de aplicativos) continuam valendo', () => {
+    assert.deepEqual(analisarCaminho('/termos-de-uso/'), { tipo: 'antigo', codigo: null, pagina: 'legal', documento: 'termos' });
+    assert.deepEqual(analisarCaminho('/politicas-de-privacidade'), { tipo: 'antigo', codigo: null, pagina: 'legal', documento: 'privacidade' });
+    assert.equal(analisarCaminho('/termos-de-uso/outra').tipo, 'desconhecido');
 });

@@ -151,5 +151,18 @@
         "ctaBtn": "Experimentar Grátis por 30 Dias",
         "terms": "Termos de Utilização",
         "help": "Centro de Ajuda"
+    },
+    "legal": {
+        "novaVersao": "A versão {{versao}} entra em vigor a {{data}}. Já pode ler o que muda.",
+        "valeAPartir": "entra em vigor a {{data}}",
+        "vendoNova": "Está a ler a nova versão. Até essa data, aplica-se a versão {{versao}}.",
+        "carregando": "A carregar o texto…",
+        "erro": "Não foi possível carregar o texto agora. Verifique a sua ligação.",
+        "indisponivel": "O texto ainda não está disponível neste endereço. Escreva para suporte@appobrafacil.expertbr.com.",
+        "tentarDeNovo": "Tentar novamente"
+    },
+    "cookies": {
+        "texto": "Utilizamos a etiqueta do Google para medir o resultado dos nossos anúncios. Só grava cookies se aceitar.",
+        "saibaMais": "Saiba mais na Política de Privacidade."
     }
 }
