@@ -156,6 +156,19 @@ para ler (modo Ler) e usam o mesmo mundo com menos volume.
 - Termos e Política: cabeça em placa pequena; texto em coluna de 72 caracteres; sumário com fio laranja no
   passar do mouse.
 
+## Motion
+
+- GSAP 3.15 (com ScrollTrigger, SplitText e DrawSVG), empacotado com o site; tudo em `src/movimento/`.
+- Uma regra só: `COM_MOVIMENTO` (`prefers-reduced-motion: no-preference`). Com "menos movimento", o
+  site fica parado e completo. Nada começa escondido no CSS: a animação parte do estado escondido só
+  quando roda.
+- Saída exponencial (`expo.out`), 0,6 a 1,4 s; trocas de tela por máscara vertical (280 a 320 ms).
+- Momentos: a placa monta ao abrir; fitas de obra cruzadas; mensagens do cliente chegando; celular
+  parado com a tela trocando nos recursos (tela larga); títulos que sobem linha por linha (máscara
+  com folga para o acento); inclinação 3D e botões magnéticos só com mouse; linha de leitura na barra.
+- O que não fazer: animação que esconde texto para sempre, efeito que dispara sozinho em loop sem
+  parar quando a pessoa interage (as abas da placa param ao primeiro toque), parallax em texto.
+
 ## Do's and Don'ts
 
 - Faça: tela real do app no idioma da página; rótulo + valor em fio; laranja só para ação e faixa.
