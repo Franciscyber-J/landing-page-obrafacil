@@ -10,6 +10,7 @@
 // novo quando o hash dele no índice muda.
 
 import { ehIdiomaDaAjuda } from './idiomas.js';
+import { lerMarcacao } from './marcacao.js';
 
 export const PROJETO = 'gestao-obras-app-8342c';
 export const BUCKET = 'gestao-obras-app-8342c.firebasestorage.app';
@@ -171,4 +172,12 @@ export function enderecoDoPrint(caminho) {
     if (!m || !ehIdiomaDaAjuda(m[1])) return null;
     if (PRINTS_LOCAIS) return `/__ajuda/prints/${m[1]}/${m[2]}/${m[3]}`;
     return `https://firebasestorage.googleapis.com/v0/b/${BUCKET}/o/${encodeURIComponent(caminho)}?alt=media`;
+}
+
+// Print do passo e a marcação desenhada por cima (Fase 12). null se o passo não tiver print válido.
+// Marcação só existe com print; valor fora do formato vira null (print limpo). Ver src/ajuda/marcacao.js.
+export function printDoPasso(passo) {
+    const endereco = enderecoDoPrint(passo?.print);
+    if (!endereco) return null;
+    return { endereco, marcacao: lerMarcacao(passo.marcacao) };
 }

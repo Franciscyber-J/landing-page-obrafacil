@@ -127,6 +127,8 @@ flutuando. O escuro é o mundo principal; o claro tem a mesma forma com luzes ma
   parado com a tela trocando nos recursos (tela larga); títulos que sobem linha por linha (máscara
   com folga para o acento); inclinação 3D e botões magnéticos só com mouse; linha de leitura na barra.
 - Luzes do fundo (`.luzes`) vagam devagar (16 a 20 s) e param com "menos movimento".
+- Marcação nos prints da Central (`PrintComMarcacao.jsx`): a mesma do app (véu, contorno pulsando, seta,
+  zoom), sem GSAP, só quando o print está na tela; com "menos movimento", parada no estado final.
 - O que não fazer: animação que esconde texto para sempre, efeito que dispara sozinho em loop sem
   parar quando a pessoa interage (as abas da placa param ao primeiro toque), parallax em texto.
 
