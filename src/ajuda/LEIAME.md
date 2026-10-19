@@ -51,8 +51,25 @@ npm run dev
 | `src/ajuda/dados.js` | Lê índice e artigo (Firestore ou local), cache e endereço dos prints |
 | `src/ajuda/busca.js` | Busca sem acento e sem maiúscula; título > tag > resumo > texto dos passos |
 | `src/ajuda/texto.js` | Lê o texto dos passos: só `**negrito**`, lista `- ` e `[texto](artigo:id)`; nunca HTML |
+| `src/ajuda/marcacao.js` | Marcação animada dos prints: leitura conferida do campo `marcacao` e as contas do desenho (iguais às do app) |
 | `src/ajuda/idiomas.js` | Idiomas em que os artigos são publicados e qual usar para cada idioma do site |
 | `src/ajuda/enderecos.js` | Endereços da Central no idioma do site (assunto pelo nome do módulo) |
 | `src/components/ajuda/` | Páginas (início, assunto, artigo), busca e estados (carregando, erro, vazio) |
 
-Testes da busca, do texto e dos idiomas: `npm test`.
+## Marcação animada nos prints
+
+Cada passo publicado traz, além do print limpo, o campo `marcacao`: onde fica o alvo, em proporção do print
+(`x`, `y`, `largura`, `altura`, de 0 a 1), e os efeitos (`escurecer`, `circulo`, `seta`, `zoom`). O site desenha
+por cima do print, em SVG, o mesmo destaque que o app desenha a partir da 1.9.2
+(`gestao_obras/lib/ajuda/widgets/print_com_marcacao.dart`): mesmos tempos (entrada de 700 ms, pulso de 1,6 s),
+curva, espessuras, forma do contorno, lado da seta e zoom. Mudou lá, muda em `src/ajuda/marcacao.js`.
+
+- A imagem não muda; o espaço do print fica reservado (1080 × 2400) antes de ela chegar.
+- Só anima com o print na tela; com "reduzir movimento" no aparelho, aparece parada no estado final.
+- Para o leitor de tela a marcação não existe (`aria-hidden`); vale o texto alternativo do print.
+- Número fora de 0 a 1, alvo vazio ou fora do print: print limpo. Efeito desconhecido é descartado (se não
+  sobrar nenhum, print limpo), como no app.
+- Cores: `--marcacao`, `--marcacao-contorno` e `--marcacao-veu` em `src/styles/design-tokens.css`.
+- Componente: `src/components/ajuda/PrintComMarcacao.jsx`.
+
+Testes da busca, do texto, dos idiomas e da marcação: `npm test`.

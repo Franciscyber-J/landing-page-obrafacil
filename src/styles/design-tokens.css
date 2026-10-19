@@ -50,6 +50,13 @@
 
   --foco: #1a5fb8;
 
+  /* Marcação animada nos prints da Central (Fase 12): as mesmas cores do app (TokensVisual), porque ela fica
+     sobre o print, que é sempre uma tela clara do app. Azul sobre o print branco 6,4:1 (mínimo do projeto 4,5:1), com o contorno branco
+     por baixo para separar do véu; véu de 55% de preto. */
+  --marcacao: #0056d2;
+  --marcacao-contorno: #ffffff;
+  --marcacao-veu: rgba(0, 0, 0, 0.55);
+
   /* Tipografia */
   --fonte-titulo: 'Bricolage Grotesque', 'Manrope', system-ui, sans-serif;
   --fonte-texto: 'Manrope', system-ui, sans-serif;
@@ -109,4 +116,7 @@
   --sombra: 0 18px 40px -24px rgba(0, 0, 0, 0.7);
   --sombra-forte: 0 40px 80px -30px rgba(0, 0, 0, 0.8);
   --foco: #ffb35c;
+  /* Marcação no escuro, como no app: azul 4,6:1 sobre o print branco; véu de 65% de preto. */
+  --marcacao: #1f6feb;
+  --marcacao-veu: rgba(0, 0, 0, 0.65);
 }

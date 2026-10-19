@@ -946,11 +946,48 @@
     box-shadow: var(--aj-sombra);
 }
 
-.celular img {
+/* Print do passo (PrintComMarcacao.jsx): o espaço já tem a proporção do print antes de a imagem chegar.
+   O recorte arredondado também prende o zoom e o véu da marcação. */
+.print {
+    position: relative;
+    overflow: hidden;
+    border-radius: 23px;
+    clip-path: inset(0 round 23px);
+}
+
+.print img {
     display: block;
     width: 100%;
-    height: auto;
-    border-radius: 23px;
+    height: 100%;
+}
+
+/* Marcação animada (Fase 12): desenhada por cima do print, igual à do app. Cores em design-tokens.css. */
+.marcacao {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.marcacaoVeu {
+    fill: var(--marcacao-veu);
+}
+
+.marcacaoCor {
+    stroke: var(--marcacao);
+}
+
+.marcacaoContorno {
+    stroke: var(--marcacao-contorno);
+}
+
+/* Seta: contorno claro por baixo e a cor por cima (paint-order), como no app. */
+.marcacaoSeta {
+    fill: var(--marcacao);
+    stroke: var(--marcacao-contorno);
+    stroke-linejoin: round;
+    paint-order: stroke;
 }
 
 .secaoArtigo {
