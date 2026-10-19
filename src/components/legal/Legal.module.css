@@ -1,0 +1,211 @@
+/* Termos e Política: modo leitura. A cabeça é um painel azul arredondado; o texto fica no fundo,
+   com coluna de leitura de 72 caracteres e o sumário ao lado. */
+.pagina {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 40px 24px 96px;
+}
+
+.cabecalho {
+  --foco: #ffb35c;
+  margin-bottom: 48px;
+  padding: 40px 40px 34px;
+  border-radius: var(--raio-g);
+  color: var(--painel-texto);
+  background:
+    radial-gradient(520px 340px at 100% 0%, rgba(31, 111, 209, 0.5), transparent 70%),
+    radial-gradient(420px 300px at 0% 100%, rgba(242, 138, 31, 0.28), transparent 70%),
+    var(--painel);
+  box-shadow: var(--sombra-forte);
+}
+
+.titulo {
+  font-size: clamp(2.4rem, 5.4vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 0 12px;
+}
+
+.versao {
+  color: var(--placa-texto-2);
+  margin: 0;
+}
+
+.aviso {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: var(--raio);
+  background: var(--painel-vidro);
+  border: 1px solid var(--painel-linha);
+  max-width: 72ch;
+}
+
+.aviso p {
+  margin: 0 0 12px;
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  background: var(--laranja);
+  color: var(--sobre-laranja);
+  border: 0;
+  border-radius: var(--pilula);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: var(--laranja-forte);
+}
+
+.botao:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.corpo {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 72ch);
+  gap: 56px;
+  align-items: start;
+}
+
+.sumario {
+  position: sticky;
+  top: 96px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  font-size: 0.9375rem;
+  padding: 16px 12px;
+  border-radius: var(--raio);
+  background: var(--vidro);
+  border: 1px solid var(--vidro-borda);
+}
+
+.sumarioTitulo {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 0 10px;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.sumario ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sumario a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 4px 0 4px 10px;
+  border-radius: var(--raio-p);
+  color: var(--tinta-2);
+  text-decoration: none;
+  line-height: 1.35;
+}
+
+.sumario a:hover {
+  color: var(--tinta);
+  background: var(--fundo-2);
+}
+
+.texto {
+  line-height: 1.7;
+  font-size: 1.0625rem;
+}
+
+.texto a {
+  color: var(--azul-vivo);
+  text-decoration: underline;
+  text-decoration-color: var(--laranja);
+  text-underline-offset: 3px;
+}
+
+.secao {
+  font-size: 1.625rem;
+  line-height: 1.15;
+  margin: 2.2em 0 0.7em;
+  padding-top: 14px;
+  border-top: 1px solid var(--linha);
+  scroll-margin-top: 96px;
+}
+
+.secao:first-child {
+  margin-top: 0;
+}
+
+.subsecao {
+  font-size: 1.3125rem;
+  margin: 1.6em 0 0.5em;
+  scroll-margin-top: 96px;
+}
+
+.paragrafo {
+  margin: 0 0 1em;
+}
+
+.lista {
+  margin: 0 0 1em;
+  padding-left: 1.25em;
+  list-style: square;
+}
+
+.lista li::marker {
+  color: var(--laranja);
+}
+
+.outro {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--linha);
+  font-family: var(--fonte-titulo);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.outro a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.estado {
+  padding: 64px 0;
+  text-align: center;
+}
+
+.estado .botao {
+  margin-top: 16px;
+}
+
+@media (max-width: 860px) {
+  .corpo {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .sumario {
+    position: static;
+    max-height: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .pagina {
+    padding: 20px 16px 72px;
+  }
+
+  .cabecalho {
+    padding: 24px 18px 20px;
+    margin-bottom: 32px;
+  }
+}

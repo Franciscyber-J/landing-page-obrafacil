@@ -1,96 +1,59 @@
-.floatingBtn {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    width: 60px;
-    height: 60px;
-    background-color: #25D366;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-    z-index: 1000;
-    transition: transform var(--transition-short), background-color var(--transition-short);
-    text-decoration: none;
+.flutuante {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 55;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 56px;
+  min-width: 56px;
+  padding: 0 20px 0 16px;
+  border-radius: var(--pilula);
+  background: var(--painel);
+  color: #ffffff;
+  border: 1px solid var(--painel-linha);
+  box-shadow: var(--sombra-forte);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  animation: entrar 400ms var(--suave) 1.2s both;
+  transition: transform var(--tempo) var(--suave);
 }
 
-.floatingBtn:hover {
-    background-color: #1EBE5D;
-    transform: translateY(-5px);
-    color: white;
+.flutuante:hover {
+  transform: translateY(-2px);
 }
 
-.floatingBtn::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(37, 211, 102, 0.4);
-    border-radius: 50%;
-    z-index: -1;
-    animation: ripple 2s infinite;
-}
-
-@keyframes ripple {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1.5);
-        opacity: 0;
-    }
-}
-
-.tooltip {
-    position: absolute;
-    right: 80px;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    white-space: nowrap;
+@keyframes entrar {
+  from {
     opacity: 0;
-    visibility: hidden;
-    transition: all var(--transition-short);
-    transform: translateX(10px);
-}
+    transform: translateY(12px);
+  }
 
-.tooltip::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -5px;
-    transform: translateY(-50%);
-    border-width: 5px 0 5px 5px;
-    border-style: solid;
-    border-color: transparent transparent transparent rgba(0, 0, 0, 0.8);
-}
-
-.floatingBtn:hover .tooltip {
+  to {
     opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
+    transform: none;
+  }
 }
 
-@media (max-width: 768px) {
-    .floatingBtn {
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-    }
-    
-    .floatingBtn svg {
-        width: 24px;
-        height: 24px;
-    }
-    
-    .tooltip {
-        display: none;
-    }
+/* Enquanto o aviso de cookies está aberto, o botão sai do caminho. */
+:global(:root[data-cookies='aberto']) .flutuante {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .flutuante {
+    padding: 0;
+    width: 56px;
+  }
+
+  .rotulo {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
 }

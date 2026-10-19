@@ -1,0 +1,47 @@
+/* Aviso de cookies: cartão de vidro no canto. Recusar e aceitar têm o mesmo peso visual. */
+.aviso {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 60;
+  width: min(480px, calc(100% - 32px));
+  padding: 20px 20px 18px;
+  border-radius: var(--raio-g);
+  background: var(--vidro-forte);
+  color: var(--texto);
+  border: 1px solid var(--vidro-borda);
+  box-shadow: var(--sombra-forte);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.texto p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.texto a {
+  color: var(--azul-vivo);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 6px !important;
+}
+
+.botoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.botao {
+  min-height: 46px;
+  font-size: 0.9375rem;
+}

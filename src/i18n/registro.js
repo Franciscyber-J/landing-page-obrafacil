@@ -30,8 +30,10 @@
 //            (ex.: navegador em es-AR abre o espanhol do México, não o da Espanha).
 //   rotas    palavras dos endereços. Na variante regional, só se forem diferentes da base.
 //            Letras minúsculas, números e hífen; podem ter acento ou outro alfabeto (ex.: ヘルプ).
-//            ajuda   → /pt-br/ajuda
-//            assunto → /pt-br/ajuda/assunto/<assunto>
+//            ajuda       → /pt-br/ajuda
+//            assunto     → /pt-br/ajuda/assunto/<assunto>
+//            termos      → /pt-br/termos-de-uso       (Termos de Uso)
+//            privacidade → /pt-br/politica-de-privacidade (Política de Privacidade)
 //            secoes  → âncoras da página inicial (/pt-br/#precos)
 
 export const REFERENCIA = 'pt-BR';
@@ -41,18 +43,19 @@ export const IDIOMAS = [
     {
         codigo: 'pt-BR', nome: 'Português (Brasil)', curto: 'PT-BR', pais: 'BR', moeda: 'brl',
         rotas: {
-            ajuda: 'ajuda', assunto: 'assunto',
+            ajuda: 'ajuda', assunto: 'assunto', termos: 'termos-de-uso', privacidade: 'politica-de-privacidade',
             secoes: { sobre: 'sobre', recursos: 'recursos', equipe: 'equipe', precos: 'precos', faq: 'perguntas-frequentes' },
         },
     },
     {
         codigo: 'pt-PT', base: 'pt-BR', nome: 'Português (Portugal)', curto: 'PT-PT', pais: 'PT', moeda: 'eur',
         regioes: ['AO', 'MZ', 'CV', 'GW', 'ST', 'TL', 'MO'],
+        rotas: { termos: 'termos-de-utilizacao' },
     },
     {
         codigo: 'en-US', nome: 'English (US)', curto: 'EN-US', pais: 'US', moeda: 'usd',
         rotas: {
-            ajuda: 'help', assunto: 'topic',
+            ajuda: 'help', assunto: 'topic', termos: 'terms-of-use', privacidade: 'privacy-policy',
             secoes: { sobre: 'about', recursos: 'features', equipe: 'team', precos: 'pricing', faq: 'faq' },
         },
     },
@@ -65,7 +68,7 @@ export const IDIOMAS = [
     {
         codigo: 'es-ES', nome: 'Español (España)', curto: 'ES-ES', pais: 'ES', moeda: 'eur',
         rotas: {
-            ajuda: 'ayuda', assunto: 'tema',
+            ajuda: 'ayuda', assunto: 'tema', termos: 'terminos-de-uso', privacidade: 'politica-de-privacidad',
             secoes: { sobre: 'acerca-de', recursos: 'funciones', equipe: 'equipo', precos: 'precios', faq: 'preguntas-frecuentes' },
         },
     },

@@ -1,0 +1,193 @@
+.grade {
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.painel {
+  position: sticky;
+  top: 110px;
+}
+
+.aparelho {
+  position: relative;
+  width: 100%;
+  border-color: #233a55;
+}
+
+.tela,
+.telaBaixo {
+  position: absolute;
+  inset: 0;
+}
+
+.telaNova {
+  animation: chapa 320ms var(--suave) both;
+}
+
+@keyframes chapa {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .telaNova {
+    animation-duration: 1ms;
+  }
+}
+
+.legenda {
+  margin-top: 12px;
+  font-size: 0.8125rem;
+  color: var(--painel-texto-2);
+  text-align: center;
+}
+
+/* Lista com a linha de leitura (só na tela larga, com movimento) */
+.listaCaixa {
+  position: relative;
+}
+
+.progresso {
+  display: none;
+}
+
+.itens {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.item {
+  padding: 22px 22px 24px;
+  border-radius: var(--raio);
+  background: var(--painel-vidro);
+  border: 1px solid var(--painel-linha);
+}
+
+.item dt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.3125rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.item dt::before {
+  content: '';
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--laranja);
+  box-shadow: 0 0 0 5px rgba(242, 138, 31, 0.2);
+}
+
+.item dd {
+  margin-top: 8px;
+  color: var(--painel-texto-2);
+  line-height: 1.55;
+}
+
+.itens.historia {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.listaCaixa:has(.historia) .progresso {
+  display: block;
+  position: absolute;
+  left: -26px;
+  top: 0;
+  bottom: 110px;
+  width: 4px;
+  border-radius: var(--pilula);
+  background: var(--destaque);
+  transform-origin: top center;
+}
+
+/* O item ativo acende: vidro mais claro, título laranja, ponto maior. Os outros ficam com as cores
+   normais (nada de apagar texto: o contraste continua o mesmo). */
+.historia .item {
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: transparent;
+  border-color: transparent;
+  transition: background 400ms var(--suave), border-color 400ms var(--suave);
+}
+
+.historia .itemAtivo {
+  background: var(--painel-vidro);
+  border-color: var(--painel-linha);
+}
+
+.historia .item dt {
+  font-size: 2.1rem;
+  transition: color 400ms var(--suave);
+}
+
+.historia .itemAtivo dt {
+  color: #ffb35c;
+}
+
+.historia .item dt::before {
+  transition: transform 400ms var(--suave);
+}
+
+.historia .itemAtivo dt::before {
+  transform: scale(1.4);
+}
+
+.acoes {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+.acoes p {
+  color: var(--painel-texto-2);
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 1020px) {
+  .grade {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .painel {
+    position: static;
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aparelho {
+    width: min(250px, 78%);
+  }
+}
+
+@media (max-width: 640px) {
+  .itens {
+    grid-template-columns: 1fr;
+  }
+
+  .acoes .acao,
+  .acoes a {
+    flex: 1 1 100%;
+  }
+}

@@ -28,6 +28,7 @@ o que é do Claude.
 | Idiomas, endereços, como incluir idioma | `src/i18n/LEIAME.md` |
 | Central de Ajuda (leitura do Firestore, endereços) | `src/ajuda/LEIAME.md` |
 | Hospedagem, segurança e verificador | `hospedagem/LEIAME.md` |
+| Checklist dos idiomas novos (site e app; atualizar a cada achado) | `D:\Projetos\gestao_obras\docs\CHECKLIST_IDIOMAS_NOVOS.md` |
 | Tarefas do Codex e relatórios | `docs/tarefas_codex/` (mesmo modelo do gestao_obras, skill `tarefa-codex` de lá) |
 
 ## Skills deste projeto

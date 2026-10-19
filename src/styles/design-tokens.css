@@ -1,106 +1,112 @@
+/* =============================================================================
+   ObraFácil — mundo visual "Obra de dia / Obra de noite" (outubro de 2026, escolha do Francis: estilo A).
+   Fundo com luzes azul e laranja do logotipo se movendo devagar, cartões de vidro, cantos arredondados,
+   botões em pílula, celulares flutuando. Tema escuro = "Noite de obra" (o que ele aprovou);
+   tema claro = "Obra de dia" (mesma forma, luzes mais suaves).
+   Contrato: docs/design/BRIEF_SITE.md. Sistema: DESIGN.md.
+   ============================================================================= */
+
 :root {
-  /* ================== DARK MODE PRINCIPAL (PADRÃO) ================== */
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #141414;
-  --bg-tertiary: #1f1f1f;
-  
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
-  
-  --color-accent: #0056D2;       /* Azul Engenharia */
-  --color-neon: #40C4FF;         /* Ciano Neon */
-  --color-neon-glow: rgba(64, 196, 255, 0.5);
-  
-  --color-pro: #FFD700;          /* Ouro PRO */
-  --color-pro-glow: rgba(255, 215, 0, 0.4);
+  color-scheme: light;
 
-  /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-blur: blur(12px);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  
-  /* Utils */
-  --border-radius-sm: 8px;
-  --border-radius-md: 16px;
-  --border-radius-lg: 24px;
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.3s ease;
+  /* Fundo e superfícies (claro) */
+  --fundo: #f4f7fb;
+  --fundo-2: #eaf0f7;
+  --superficie: #ffffff;
+  --vidro: rgba(255, 255, 255, 0.66);
+  --vidro-forte: rgba(255, 255, 255, 0.86);
+  --vidro-borda: rgba(15, 58, 99, 0.12);
+  --linha: rgba(15, 58, 99, 0.14);
+
+  /* Texto */
+  --texto: #0d2136;              /* 15:1 sobre o fundo */
+  --texto-2: #4a5f75;            /* 6,1:1 */
+
+  /* Marca */
+  --azul: #0f3a63;               /* azul do logotipo */
+  --azul-vivo: #1a5fb8;          /* links e detalhes (5,8:1) */
+  --laranja: #f28a1f;            /* laranja do logotipo: ação principal */
+  --laranja-forte: #e0700f;
+  --laranja-texto: #a84f08;      /* laranja usado como texto pequeno (5,2:1) */
+  --sobre-laranja: #1a1206;      /* texto sobre o laranja (7,4:1) */
+  --destaque: linear-gradient(90deg, #b4570a, #d9630a);   /* palavras em destaque nos títulos grandes */
+
+  /* Painel azul (recursos, plano PRO, chamadas); no escuro um azul mais fundo (abaixo) */
+  --painel: #0f3a63;
+  --painel-2: #0b2c4d;
+  --painel-texto: #ffffff;
+  --painel-texto-2: #c7d8ea;     /* 8:1 sobre o painel */
+  --painel-linha: rgba(255, 255, 255, 0.16);
+  --painel-vidro: rgba(255, 255, 255, 0.08);
+
+  /* Luzes do fundo */
+  --luz-azul: rgba(31, 111, 209, 0.22);
+  --luz-laranja: rgba(242, 138, 31, 0.2);
+
+  /* Sombras */
+  --sombra: 0 18px 40px -24px rgba(13, 33, 54, 0.35);
+  --sombra-forte: 0 40px 80px -36px rgba(13, 33, 54, 0.55);
+  --sombra-laranja: 0 12px 30px -12px rgba(242, 138, 31, 0.65);
+
+  --foco: #1a5fb8;
+
+  /* Tipografia */
+  --fonte-titulo: 'Bricolage Grotesque', 'Manrope', system-ui, sans-serif;
+  --fonte-texto: 'Manrope', system-ui, sans-serif;
+
+  /* Forma e ritmo */
+  --raio-p: 12px;
+  --raio: 20px;
+  --raio-g: 28px;
+  --raio-xg: 40px;
+  --pilula: 999px;
+  --tempo: 260ms;
+  --suave: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Nomes antigos (Central de Ajuda e telas que ainda usam): apontam para o mundo novo */
+  --chao: var(--fundo);
+  --tinta: var(--texto);
+  --tinta-2: var(--texto-2);
+  --linha-forte: var(--texto);
+  --placa: var(--painel);
+  --placa-funda: var(--painel-2);
+  --placa-texto: var(--painel-texto);
+  --placa-texto-2: var(--painel-texto-2);
+  --placa-linha: var(--painel-linha);
+  --fonte-placa: var(--fonte-titulo);
+  --borda: 1px;
+  --borda-placa: 1px;
+  --bg-primary: var(--fundo);
+  --bg-secondary: var(--superficie);
+  --bg-tertiary: var(--fundo-2);
+  --text-primary: var(--texto);
+  --text-secondary: var(--texto-2);
+  --color-accent: var(--azul-vivo);
+  --color-pro: var(--laranja-texto);
+  --transition-fast: var(--tempo) var(--suave);
+  --transition-normal: var(--tempo) var(--suave);
 }
 
-/* ================== LIGHT MODE ================== */
-[data-theme="light"] {
-  --bg-primary: #f8f9fa;
-  --bg-secondary: #ffffff;
-  --bg-tertiary: #f1f3f5;
-  
-  --text-primary: #212529;
-  --text-secondary: #495057;
-
-  --color-accent: #0043a6;       /* Azul mais escuro no tema claro */
-  --color-neon: #0091ea;         /* Azul ciano mais escuro */
-  --color-neon-glow: rgba(0, 145, 234, 0.3);
-  
-  --color-pro: #d4af37;          /* Ouro claro */
-  --color-pro-glow: rgba(212, 175, 55, 0.3);
-
-  /* Glassmorphism Light */
-  --glass-bg: rgba(255, 255, 255, 0.6);
-  --glass-border: rgba(0, 0, 0, 0.05);
-  --glass-blur: blur(16px);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-}
-
-/* ================== SHARED CLASSES ================== */
-.glass-panel {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--glass-shadow);
-}
-
-.neon-text {
-  color: var(--color-neon);
-  text-shadow: 0 0 8px var(--color-neon-glow);
-}
-
-.pro-text {
-  color: var(--color-pro);
-  text-shadow: 0 0 8px var(--color-pro-glow);
-}
-
-.btn-neon {
-  background: var(--color-accent);
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  border-radius: var(--border-radius-sm);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-normal);
-  box-shadow: 0 0 15px var(--color-neon-glow);
-}
-
-.btn-neon:hover {
-  background: var(--color-neon);
-  box-shadow: 0 0 25px var(--color-neon-glow);
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--glass-border);
-  padding: 12px 24px;
-  border-radius: var(--border-radius-sm);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.btn-outline:hover {
-  background: var(--glass-bg);
-  border-color: var(--text-secondary);
+/* Tema escuro: "Noite de obra" */
+[data-theme='dark'] {
+  color-scheme: dark;
+  --fundo: #08172a;
+  --fundo-2: #0b1d33;
+  --superficie: #0f2238;
+  --vidro: rgba(255, 255, 255, 0.06);
+  --vidro-forte: rgba(15, 34, 56, 0.86);
+  --vidro-borda: rgba(255, 255, 255, 0.12);
+  --linha: rgba(255, 255, 255, 0.12);
+  --texto: #eef3f9;              /* 16:1 */
+  --texto-2: #a9bccf;            /* 9:1 */
+  --azul-vivo: #6aa8f0;
+  --laranja-texto: #ffb35c;
+  --destaque: linear-gradient(90deg, #ffb35c, #f28a1f);
+  --painel: #0f2a48;
+  --painel-2: #0a2038;
+  --luz-azul: rgba(31, 111, 209, 0.55);
+  --luz-laranja: rgba(242, 138, 31, 0.32);
+  --sombra: 0 18px 40px -24px rgba(0, 0, 0, 0.7);
+  --sombra-forte: 0 40px 80px -30px rgba(0, 0, 0, 0.8);
+  --foco: #ffb35c;
 }

@@ -39,6 +39,12 @@ Regras permanentes para qualquer agente de código que trabalhe nesta pasta. Val
 - O texto dos artigos é lido por `src/ajuda/texto.js` (só negrito, lista e link para artigo); nunca usar `dangerouslySetInnerHTML` com conteúdo publicado.
 - Nada de solução paliativa: se a especificação não resolve o caso por completo, parar e relatar.
 
+## Idiomas novos
+
+- O checklist de tudo o que muda quando um idioma entra fica no gestao_obras: `docs/CHECKLIST_IDIOMAS_NOVOS.md`
+  (itens do site com o prefixo `site:`). Toda tarefa que mexe em algo que depende do idioma (registro, textos,
+  endereços, moeda, fonte, `.htaccess`, telas por idioma) atualiza esse arquivo, e o relatório diz o que mudou nele.
+
 ## Conferência antes de entregar
 
 `npm test`, `npm run idiomas`, `npm run lint` e `npm run build`, todos sem erro.

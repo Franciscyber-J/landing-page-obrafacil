@@ -1,114 +1,15 @@
 {
-    "meta": {
-        "titulo": "ObraFácil · Gestão de obras com diário de obra, cronograma e finanças",
-        "descricao": "Aplicação de gestão de obras: diário de obra, cronograma, equipa, finanças e portal do cliente. Experimente grátis durante 30 dias."
-    },
-    "nav": {
-        "login": "Iniciar Sessão",
-        "createAccount": "Experimentar Grátis 30 Dias",
-        "themeToggle": "Alternar entre tema claro e escuro"
-    },
-    "hero": {
-        "subheadline": "Abandone as folhas de cálculo confusas. Controle finanças, gere Relatórios Diários de Obra (RDO) em segundos e ofereça um portal exclusivo para o seu cliente acompanhar a obra na palma da mão.",
-        "cta": "Criar a minha Primeira Obra Grátis",
-        "downloadWindows": "Transferir para Windows",
-        "downloadAt": "Transferir na",
-        "desktopApp": "Aplicação Desktop"
-    },
-    "problemSolution": {
-        "problemText": "Cansado de responder 'Como está a obra?' no WhatsApp todas as sextas-feiras?",
-        "solutionText": "Com o nosso sistema, o seu cliente tem um login exclusivo para ver o avanço da obra, fotos e relatórios. Você foca-se em construir, nós focamo-nos em informar."
-    },
-    "problemSolutionMockup": {
-        "msg1": "Olá! Tudo bem? Como está a obra? Tem fotos de hoje?? 🙏",
-        "msg2": "Na próxima sexta-feira já dá para ver os pavimentos?",
-        "msg3": "Olá, tudo bem. Vou pedir ao mestre para enviar.",
-        "videoPlaceholder": "[Vídeo/Imagem da Pessoa com a App]"
-    },
-    "coreFeatures": {
-        "title": "Recursos Profissionais para a sua Obra",
-        "ctaMidButton": "Experimentar Grátis por 30 Dias →",
-        "rdoText": "Gere relatórios completos em PDF directamente do estaleiro. Clima, efetivo, actividades e galeria de fotos integrados.",
-        "financeText": "Controlo de orçamento, gastos e transacções. Saiba exactamente onde cada cêntimo foi investido.",
-        "portalTitle": "Portal do Cliente Protegido",
-        "portalText": "Dê acesso aos seus clientes para verem o cronograma e transferirem pacotes de fotos (limitado e controlado por si).",
-        "teamText": "Dê acesso com permissões específicas à sua equipa, mestres e engenheiros.",
-        "syncText": "Disponível na Web, Windows, Android e iOS. O que faz num dispositivo, actualiza nos outros no mesmo instante."
-    },
-    "coManagement": {
-        "title": "A sua equipa a trabalhar em sincronia.",
-        "description": "Convide sócios, engenheiros parceiros ou a equipa de campo para alimentar os dados da obra. Permissões de acesso granulares: O que o cliente vê é diferente do que o seu Mestre de Obras ou Engenheiro vê.",
-        "point1": "Administre níveis de permissão com total controlo.",
-        "point3": "Funciona 100% Offline na rua ou no campo, sincronizando quando tiver internet."
-    },
-    "pricing": {
-        "freeCta": "Experimentar Grátis por 30 Dias",
-        "freeFeatures": [
-            "1 Obra activa",
-            "Limite de RDOs mensais",
-            "Armazenamento Básico",
-            "PDFs com marca de água"
-        ],
-        "proDescMensal": "Para construtoras e engenheiros que exigem controlo total.",
-        "fromPriceMensal": "De € 53,97",
-        "priceMensal": "17,99",
-        "proFeaturesMensal": [
-            "Obras activas ilimitadas",
-            "RDOs e relatórios ilimitados",
-            "+10GB de Armazenamento na Nuvem",
-            "PDFs profissionais com logótipo da sua empresa",
-            "Controlo financeiro avançado",
-            "Suporte Prioritário"
-        ],
-        "proDescAnnual": "Poupança inteligente para quem pensa no longo prazo da obra.",
-        "fromPriceAnnual": "De € 215,88",
-        "priceAnnual": "149,99",
-        "subtextAnnual": "(Equivale a apenas € 12,50 por mês)",
-        "proFeaturesAnnual": [
-            "Todas as vantagens do plano PRO Mensal",
-            "Poupança de quase € 66,00 na caixa da empresa",
-            "Protecção contra futuros reajustes de preço",
-            "Acesso prioritário a novas ferramentas e actualizações"
-        ],
-        "proCtaAnnual": "SUBSCREVER COM DESCONTO ANUAL",
-        "addons": "Precisa de mais? Adicione pacotes de +20GB ou Transferências Extra a qualquer momento.",
-        "currency": "€"
-    },
     "popup": {
-        "title": "Espere! Vai mesmo continuar a gerir as suas obras em papel?",
-        "subtitle": "Antes de sair, tenho uma proposta irrecusável. Lançámos um lote secreto de **apenas 20 vagas** para Membros Fundadores.",
-        "body": "Contacte o nosso agente no WhatsApp agora mesmo e solicite o seu convite VIP. Vai fixar a sua subscrição PRO por apenas **€ 8,99/mês** durante 1 ano inteiro.",
-        "whatsappMessage": "Olá, estava no site do Obra Fácil, vi o convite oculto e quero garantir a minha vaga de Membro Fundador por € 8,99."
+        "title": "Antes de sair, experimente na sua próxima obra",
+        "texto": "Crie a conta grátis, sem cartão de crédito. Registe uma obra e veja o cronograma, o diário com fotografias e as finanças a funcionar, com o seu cliente a acompanhar pelo portal.",
+        "lojas": "Ou transfira a aplicação"
     },
     "social": {
         "test1": "\"Os meus clientes ficaram impressionados com a aplicação. Transmitiu muito mais credibilidade e justificou o valor da minha gestão.\"",
         "test2": "\"Fazer o RDO no fim do dia demorava 1 hora no Word. Agora faço em 5 minutos pelo telemóvel ainda no estaleiro.\"",
-        "role2": "Empreiteiro",
         "test4": "\"A galeria de fotos ajudou muito a mostrar os detalhes do acabamento ao arquitecto sem ele precisar ir à obra o tempo todo.\"",
         "role4": "Arquitecta",
         "test5": "\"Até o cliente final elogiou a organização. Finalmente pareço tão profissional como os grandes escritórios.\""
-    },
-    "faq": {
-        "q1": "O meu cliente paga para usar a aplicação?",
-        "q2": "Posso usar no computador e no telemóvel?",
-        "a2": "Sim! O Obra Fácil é responsivo e funciona tanto no navegador do seu PC como no smartphone no estaleiro.",
-        "q3": "Os meus dados estão seguros?",
-        "a3": "Com certeza. Utilizamos as infra-estruturas de nuvem mais modernas e encriptação ponta-a-ponta para garantir a segurança dos seus dados.",
-        "q4": "Que dados pessoais são recolhidos?",
-        "a4": "Recolhemos apenas o necessário para criar a sua conta: Nome, NIF/NIPC, E-mail e Telefone, em total conformidade com o RGPD.",
-        "q5": "Como funciona o uso da aplicação sem internet (offline)?",
-        "a5": "A aplicação guarda as informações temporariamente na memória do seu telemóvel (cache). Ao recuperar a ligação, os dados são sincronizados automaticamente na nuvem.",
-        "q6": "O meu cliente perde o acesso aos ficheiros se a obra terminar?",
-        "a6": "Se a obra atingir 70% ou mais de conclusão, o cliente tem 15 dias de Carência (Grace Period) para transferir tudo antes de perder o acesso.",
-        "a7": "Não. A aplicação é uma ferramenta de gestão fenomenal, mas não substitui o acompanhamento técnico profissional.",
-        "q8": "Posso eliminar a minha conta e todos os meus dados?",
-        "a8": "Sim, tem o direito ao esquecimento. Ao solicitar a eliminação da conta, todos os seus dados, fotos e PDFs são removidos permanentemente.",
-        "a9": "Sim. Pode cancelar subscrições ou actualizações a qualquer momento para interromper a cobrança do próximo ciclo, sem perda imediata até ao fim do ciclo pago.",
-        "a10": "O sistema bloqueia a criação de novas obras e uploads de ficheiros, contudo não perde os dados já registados desde que regularize."
-    },
-    "loginModal": {
-        "title": "Aceder ao Obra Fácil como:",
-        "managerDesc": "Aceda ao seu painel completo de gestão de obras."
     },
     "ajuda": {
         "titulo": "Centro de Ajuda",
@@ -147,9 +48,161 @@
         "appTitulo": "Faça em simultâneo na aplicação",
         "appTexto": "Abra o ObraFácil noutro separador e siga os passos enquanto lê."
     },
+    "legal": {
+        "novaVersao": "A versão {{versao}} entra em vigor a {{data}}. Já pode ler o que muda.",
+        "valeAPartir": "entra em vigor a {{data}}",
+        "vendoNova": "Está a ler a nova versão. Até essa data, aplica-se a versão {{versao}}.",
+        "carregando": "A carregar o texto…",
+        "erro": "Não foi possível carregar o texto agora. Verifique a sua ligação.",
+        "tentarDeNovo": "Tentar novamente"
+    },
+    "cookies": {
+        "texto": "Utilizamos o Google Analytics e o Google Ads para medir as visitas ao site e o resultado dos nossos anúncios. Só gravam cookies se aceitar."
+    },
+    "meta": {
+        "titulo": "ObraFácil · Gestão de obras: cronograma, diário de obra, finanças e portal do cliente",
+        "descricao": "Aplicação de gestão de obras: cronograma por etapas, diário de obra com fotografias, finanças, equipa e portal do cliente. Comece grátis, sem cartão de crédito."
+    },
+    "nav": {
+        "login": "Iniciar sessão",
+        "ajuda": "Centro de Ajuda",
+        "themeToggle": "Alternar entre tema claro e escuro"
+    },
+    "hero": {
+        "subtitulo": "Cronograma, diário de obra, finanças, equipa e compras no telemóvel e no computador. E o seu cliente acompanha a obra pelo portal, sem precisar de lhe ligar.",
+        "camposRotulo": "Partes da obra na aplicação",
+        "campos": {
+            "diario": {
+                "valor": "Fotografias, clima e equipa, em PDF"
+            },
+            "financeiro": {
+                "rotulo": "Finanças"
+            },
+            "cliente": {
+                "valor": "Acompanha pelo portal, sem lhe ligar"
+            }
+        },
+        "legendaTela": "Ecrã da aplicação, com dados de exemplo",
+        "telas": {
+            "financeiro": "Finanças da obra com custo por metro quadrado, entradas, saídas e saldo"
+        },
+        "baixarNa": "Transferir na",
+        "baixarPara": "Transferir para"
+    },
+    "cliente": {
+        "titulo": "Chega de responder **«como está a obra?»**",
+        "texto": "O cliente recebe um convite por e-mail e acompanha a obra pelo Portal do Cliente, sem pagar nada: fotografias, diários, cronograma e o resumo das finanças.",
+        "msg1": "Olá! Está tudo bem? Como está a obra? Tem fotografias de hoje?",
+        "msg2": "Na próxima sexta-feira já dá para ver os pavimentos?",
+        "msg3": "Olá, tudo bem. Vou pedir ao encarregado para enviar.",
+        "pontos": [
+            "O cliente entra com a própria conta, pelo convite que lhe envia.",
+            "Quer disponibilizar mais? Com o Acesso Cliente (no PRO, taxa única por obra), liga o que ele pode ver e transferir: fotografias, finanças completas, cronograma detalhado e abrir ocorrências.",
+            "Em obra com 70 % ou mais, quando o acesso termina o cliente ainda tem 15 dias para transferir o que estava disponível."
+        ],
+        "telaAcesso": "Ecrã em que o gestor escolhe o que o cliente pode ver"
+    },
+    "recursos": {
+        "titulo": "Tudo o que a obra pede, **na mesma aplicação**",
+        "itens": {
+            "cronograma": {
+                "texto": "Crie as etapas da obra e acompanhe a execução física de cada uma."
+            },
+            "diario": {
+                "titulo": "Diário de obra",
+                "texto": "Clima, atividades, ocorrências, equipa presente, fotografias e assinatura. Sai em PDF, pronto a enviar."
+            },
+            "financeiro": {
+                "titulo": "Finanças da obra"
+            },
+            "equipe": {
+                "titulo": "Equipa e salários",
+                "texto": "Registe os colaboradores, marque a presença no diário e calcule o processamento de salários."
+            },
+            "compras": {
+                "texto": "Registe as compras com fatura e controle os materiais e ferramentas de cada obra."
+            },
+            "marca": {
+                "texto": "No PRO, os PDF saem com o logótipo e o rodapé da sua empresa."
+            },
+            "offline": {
+                "titulo": "Sem rede no estaleiro",
+                "texto": "A aplicação guarda o que regista e envia sozinha quando a ligação volta."
+            },
+            "aparelhos": {
+                "titulo": "Em todos os dispositivos"
+            }
+        }
+    },
+    "equipe": {
+        "texto": "Convide engenheiros, a equipa e o cliente para a obra. Quem é dono da obra decide quem entra e o que cada função pode ver e fazer.",
+        "papeis": {
+            "engenheiro": {
+                "desc": "Acompanha e alimenta a obra com as permissões que lhe der."
+            },
+            "equipe": {
+                "nome": "Equipa",
+                "desc": "Regista o dia a dia: diário, fotografias e presenças."
+            },
+            "cliente": {
+                "desc": "Acompanha pelo Portal do Cliente o que disponibilizar."
+            }
+        },
+        "tela": "Diário de obra com a lista da equipa e a presença de cada um"
+    },
+    "chamada": {
+        "texto": "O plano grátis não tem prazo. Subscreva o PRO quando precisar de mais.",
+        "duvida": "Ficou com dúvidas? Fale connosco no WhatsApp."
+    },
+    "pricing": {
+        "economia": "Poupe {{valor}} {{simbolo}}",
+        "gratis": {
+            "desc": "Para começar e conhecer a aplicação.",
+            "itens": [
+                "1 obra sua de cada vez",
+                "7 relatórios PDF por mês, com marca de água",
+                "250 MB para fotografias e ficheiros",
+                "Cliente a acompanhar pelo portal"
+            ]
+        },
+        "pro": {
+            "itens": [
+                "Obras ilimitadas",
+                "Relatórios PDF ilimitados, sem marca de água",
+                "10 GB para fotografias e ficheiros",
+                "PDF com o logótipo e o rodapé da sua empresa",
+                "RDO em ZIP e ficheiros da obra sem internet",
+                "Acesso Cliente disponível para cada obra"
+            ],
+            "ctaMensal": "Subscrever o PRO mensal",
+            "ctaAnual": "Subscrever o PRO anual",
+            "comparacao": "Pagando mês a mês, 12 meses custam {{valor}} {{simbolo}}",
+            "equivale": "Equivale a {{valor}} {{simbolo}} por mês"
+        },
+        "renovacao": "Renovação automática. Cancele quando quiser, no mesmo local onde subscreveu.",
+        "lojas": "Ao subscrever pelo telemóvel, o preço e a cobrança são os da Google Play ou da App Store.",
+        "addons": "Só no PRO: +20 GB de armazenamento (subscrição à parte) e o Acesso Cliente, que disponibiliza mais recursos no portal (taxa única por obra)."
+    },
+    "faq": {
+        "a1": "Não. O cliente acompanha a obra pelo portal sem pagar nada. Se quiser disponibilizar mais, como transferir fotografias e ver as finanças completas, o Acesso Cliente é uma taxa única por obra, paga por si no PRO.",
+        "q2": "Posso utilizar no computador e no telemóvel?",
+        "a3": "Os dados circulam cifrados e ficam guardados nos servidores da Google, também cifrados. Cada pessoa só vê as obras em que participa, com as permissões da sua função.",
+        "q4": "Que dados pessoais são recolhidos?",
+        "a4": "Para a conta: nome, e-mail e telefone; o número de contribuinte só se o indicar. A lista completa, e para que serve cada dado, está na Política de Privacidade.",
+        "a5": "Sim. Sem internet, a aplicação guarda no dispositivo o que regista e envia sozinha quando a ligação volta.",
+        "a6": "Se a obra estiver com 70 % ou mais quando o acesso termina, o cliente ainda tem 15 dias para ver e transferir o que estava disponível.",
+        "a7": "Não. É uma ferramenta de gestão e não substitui o técnico habilitado responsável pela obra.",
+        "q8": "Posso eliminar a minha conta?",
+        "a8": "Sim, em Perfil > Eliminar conta. A conta fica suspensa durante 30 dias (pode voltar atrás) e depois as suas obras e dados são apagados. Alguns registos, como os de pagamento e da aceitação dos Termos, ficam guardados pelo prazo da Política de Privacidade.",
+        "a9": "Sim, a qualquer momento, no mesmo local onde subscreveu. A renovação seguinte não é cobrada e o acesso mantém-se até ao fim do período pago.",
+        "a10": "A conta volta ao plano grátis. Nada é apagado; se passar do limite do plano grátis, só o envio de ficheiros novos fica bloqueado até libertar espaço ou voltar a subscrever.",
+        "mais": "Não encontrou a sua resposta?",
+        "verAjuda": "Ver o Centro de Ajuda"
+    },
     "footer": {
-        "ctaBtn": "Experimentar Grátis por 30 Dias",
         "terms": "Termos de Utilização",
-        "help": "Centro de Ajuda"
+        "help": "Centro de Ajuda",
+        "baixar": "Transferir a aplicação",
+        "contato": "Contacto"
     }
 }

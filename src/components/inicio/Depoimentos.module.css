@@ -1,0 +1,123 @@
+.secao {
+  background: transparent;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.destaque {
+  position: relative;
+  overflow: hidden;
+  padding: 36px 32px 32px;
+  border-radius: var(--raio-g);
+  color: var(--painel-texto);
+  background:
+    radial-gradient(420px 300px at 100% 0%, rgba(31, 111, 209, 0.5), transparent 70%),
+    radial-gradient(360px 260px at 0% 100%, rgba(242, 138, 31, 0.28), transparent 70%),
+    var(--painel);
+  box-shadow: var(--sombra-forte);
+}
+
+.destaque blockquote {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.destaque blockquote::before,
+.depoimento blockquote::before {
+  content: '“';
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  line-height: 0.7;
+  background: var(--destaque);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.destaque blockquote::before {
+  font-size: 4.5rem;
+  margin-bottom: 6px;
+}
+
+.destaque figcaption {
+  margin-top: 26px;
+  padding-top: 16px;
+  border-top: 1px solid var(--painel-linha);
+}
+
+.destaque figcaption span {
+  color: var(--painel-texto-2);
+}
+
+figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+figcaption strong {
+  font-weight: 700;
+}
+
+.outros {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.depoimento {
+  padding: 22px;
+  border-radius: var(--raio);
+  background: var(--vidro);
+  border: 1px solid var(--vidro-borda);
+}
+
+.depoimento blockquote {
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.depoimento blockquote::before {
+  font-size: 2.8rem;
+  margin-bottom: 4px;
+}
+
+.depoimento figcaption {
+  margin-top: 14px;
+}
+
+.depoimento figcaption span {
+  color: var(--texto-2);
+  font-size: 0.9375rem;
+}
+
+.aviso {
+  margin-top: 18px;
+  font-size: 0.8125rem;
+  color: var(--texto-2);
+}
+
+@media (max-width: 1020px) {
+  .grade {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .outros {
+    grid-template-columns: 1fr;
+  }
+
+  .destaque {
+    padding: 28px 22px 24px;
+  }
+}

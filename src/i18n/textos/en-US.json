@@ -1,135 +1,113 @@
 {
     "meta": {
-        "titulo": "ObraFácil · Construction management with daily reports, schedules and finances",
-        "descricao": "Construction management app: daily reports, schedules, team, project finances and a client portal. Try it free for 30 days."
+        "titulo": "ObraFácil · Construction project management: schedule, daily reports, finances and client portal",
+        "descricao": "Construction management app: stage-by-stage schedule, daily reports with photos, project finances, team and a client portal. Start free, no credit card."
     },
     "nav": {
-        "login": "Login",
-        "createAccount": "Try Free 30 Days",
-        "lightMode": "Light Mode",
-        "darkMode": "Dark Mode",
+        "login": "Sign in",
+        "comecar": "Start free",
+        "recursos": "Features",
+        "precos": "Pricing",
+        "ajuda": "Help Center",
+        "lightMode": "Light theme",
+        "darkMode": "Dark theme",
         "language": "Language",
         "chooseLanguage": "Choose language",
         "themeToggle": "Switch between light and dark theme",
-        "menu": "Open or close the menu"
+        "menu": "Open or close the menu",
+        "inicio": "ObraFácil home page",
+        "navegacao": "Main navigation"
     },
     "hero": {
-        "tagline": "🚀 Available in 8 languages",
-        "headline": "Smart Construction Management. Transparency that delights your client.",
-        "subheadline": "Ditch confusing spreadsheets. Track finances, generate Daily Reports (RDO) in seconds, and offer an exclusive portal for your client to track the project right from their phone.",
-        "cta": "Create my First Project Free",
-        "socialProof": "No credit card required. Setup in under 2 minutes.",
-        "downloadWindows": "Download for Windows",
-        "downloadApple": "App Store",
-        "downloadAndroid": "Google Play",
-        "downloadOn": "Available on",
-        "downloadAt": "Download at",
-        "desktopApp": "Desktop App",
-        "videoApp": "Windows App (Video)",
-        "projectProgress": "Project Progress"
-    },
-    "problemSolution": {
-        "problemLabel": "The Problem",
-        "problemText": "Tired of answering 'How is the project going?' on WhatsApp every Friday?",
-        "solutionLabel": "The Obra Fácil Solution",
-        "solutionText": "With our system, your client gets an exclusive login to track progress, photos, and reports. You focus on building, we focus on informing them."
-    },
-    "problemSolutionMockup": {
-        "clientName": "John (Client)",
-        "online": "online",
-        "today": "TODAY",
-        "msg1": "Hi! How are you? How's the project going? Any photos today?? 🙏",
-        "msg2": "Will we be able to see the floors by next Friday?",
-        "msg3": "Hi, doing well. I'll ask the foreman to send them.",
-        "videoPlaceholder": "[Video/Image of Person Holding App]"
-    },
-    "coreFeatures": {
-        "title": "Professional Tools for Your Project",
-        "ctaMidButton": "Try Free for 30 Days →",
-        "ctaMidSubtext": "Set up in under 2 minutes. Cancel anytime.",
-        "rdoTitle": "Daily Construction Report (RDO)",
-        "rdoText": "Generate complete PDF reports right from the site. Weather, personnel, activities, and photo galleries integrated.",
-        "financeTitle": "Categorical Financial Management",
-        "financeText": "Control budgets, expenses, and transactions. Know exactly where every cent was invested.",
-        "portalTitle": "Bulletproof Client Portal",
-        "portalText": "Give your clients access to view schedules and download photo packages (limited and controlled by you).",
-        "whiteLabelTitle": "White-label Reports (PRO)",
-        "whiteLabelText": "Generate PDFs with your logo on the header and a custom footer. 100% professional appearance.",
-        "teamTitle": "Four-Handed Management",
-        "teamText": "Give access with specific permissions to your foreman, supervisors, and the project owner. Everything is logged.",
-        "syncTitle": "Real-Time Sync",
-        "syncText": "Available on Web, Windows, Android, and iOS. What you do on one device, instantly updates on the others."
-    },
-    "coManagement": {
-        "title": "Your team working in sync.",
-        "description": "Invite partners, associate engineers, or the field team to feed project data. Granular access permissions: What the client sees is different from what your Foreman or Engineer sees.",
-        "point1": "Manage permission levels with total control.",
-        "point2": "Immediate sync across Web, Desktop, and Mobile.",
-        "point3": "Works 100% Offline on the street or in remote locations, syncing when connected."
-    },
-    "coManagementRoles": {
-        "manager": "Manager (You)",
-        "fullAccess": "Full Access",
-        "engineer": "Engineer",
-        "techManagement": "Tech Management",
-        "foreman": "Foreman",
-        "rdoPhotos": "RDO & Photos",
-        "client": "Client",
-        "viewOnly": "View Only"
+        "plataformas": "Android · iPhone · Windows · Browser",
+        "titulo": "The whole project **in one place**",
+        "subtitulo": "Schedule, daily reports, finances, team and purchases on your phone and computer. And your client follows the project in the portal, without having to call you.",
+        "comecar": "Start free",
+        "verPlanos": "See the plans",
+        "semCartao": "Free plan with no time limit and no credit card.",
+        "camposRotulo": "Parts of the project in the app",
+        "campos": {
+            "cronograma": {
+                "rotulo": "Schedule",
+                "valor": "Stages, physical progress and dates"
+            },
+            "diario": {
+                "rotulo": "Daily report",
+                "valor": "Photos, weather and crew, as a PDF"
+            },
+            "financeiro": {
+                "rotulo": "Finances",
+                "valor": "Income, expenses and project balance"
+            },
+            "cliente": {
+                "rotulo": "Client",
+                "valor": "Follows in the portal, without calling you"
+            }
+        },
+        "legendaTela": "App screen, with sample data",
+        "telas": {
+            "cronograma": "Project stages with budget, measured amount, amount payable and physical progress",
+            "diario": "New daily report with weather, activities and incidents",
+            "financeiro": "Project finances with cost per area, income, expenses and balance",
+            "cliente": "Client Portal with the latest project updates"
+        },
+        "disponivelNo": "Get it on",
+        "baixarNa": "Download on the",
+        "baixarPara": "Download for"
     },
     "pricing": {
-        "title": "Plans & Pricing",
+        "title": "Plans and pricing",
         "toggleMonthly": "Monthly",
         "toggleAnnual": "Annual",
-        "freePlan": "Free Plan",
-        "freeDesc": "Start at no cost.",
-        "freeCta": "Try Free for 30 Days",
-        "freeFeatures": [
-            "1 Active Project",
-            "Monthly RDO limit",
-            "Basic Storage",
-            "Watermarked PDFs"
-        ],
-        "proPlanMensal": "PRO Monthly",
-        "proDescMensal": "For construction companies and engineers demanding total control.",
-        "launchOfferMensal": "🔥 Launch Offer",
-        "fromPriceMensal": "From $ 44.97",
-        "priceMensal": "14.99",
-        "proFeaturesMensal": [
-            "Unlimited active projects",
-            "Unlimited RDOs and reports",
-            "+10GB Cloud Storage",
-            "Professional PDFs with your company logo",
-            "Advanced financial control",
-            "Priority Support"
-        ],
-        "proCtaMensal": "SECURE MONTHLY PLAN",
-        "proPlanAnnual": "PRO Annual",
-        "proDescAnnual": "Smart savings for those who think about the long term.",
-        "launchOfferAnnual": "💎 Best Value (2 Months Free!)",
-        "fromPriceAnnual": "From $ 179.99",
-        "priceAnnual": "129.99",
+        "periodoRotulo": "Billing period",
+        "economia": "Save {{simbolo}}{{valor}}",
+        "perMonth": "/month",
         "periodAnnual": "/year",
-        "subtextAnnual": "(Equivalent to just $ 10.83 per month)",
-        "proFeaturesAnnual": [
-            "All the benefits of the PRO Monthly plan",
-            "Savings of almost $ 50.00 for your company",
-            "Shield against future price increases",
-            "Priority access to new tools and updates"
-        ],
-        "proCtaAnnual": "SUBSCRIBE WITH ANNUAL DISCOUNT",
-        "addons": "Need more? Add +20GB packages or Extra Downloads anytime.",
-        "currency": "$",
-        "price0": "0",
-        "perMonth": "/month"
+        "gratis": {
+            "nome": "Free",
+            "desc": "To get started and get to know the app.",
+            "cta": "Start free",
+            "itens": [
+                "1 project of your own at a time",
+                "7 PDF reports a month, watermarked",
+                "250 MB for photos and files",
+                "Your client following along in the portal"
+            ]
+        },
+        "pro": {
+            "nomeMensal": "PRO monthly",
+            "nomeAnual": "PRO annual",
+            "desc": "For builders, engineers and contractors running several projects.",
+            "itens": [
+                "Unlimited projects",
+                "Unlimited PDF reports, no watermark",
+                "10 GB for photos and files",
+                "PDFs with your company logo and footer",
+                "Daily reports as ZIP and project files offline",
+                "Client Access available for each project"
+            ],
+            "itensAnual": [
+                "Everything in PRO monthly",
+                "Price locked for 12 months"
+            ],
+            "comparacao": "Paying monthly, 12 months cost {{simbolo}}{{valor}}",
+            "equivale": "Works out to {{simbolo}}{{valor}} a month",
+            "ctaMensal": "Subscribe to PRO monthly",
+            "ctaAnual": "Subscribe to PRO annual"
+        },
+        "renovacao": "Renews automatically. Cancel anytime, in the same place you subscribed.",
+        "lojas": "When you subscribe on your phone, the price and billing are those of Google Play or the App Store.",
+        "addons": "PRO only: +20 GB of storage (a separate subscription) and Client Access, which unlocks more in the portal (a one-time fee per project).",
+        "selo": "Best value",
+        "gratisPreco": "Free forever"
     },
     "popup": {
-        "title": "Wait! Are you really going to keep managing projects on paper?",
-        "subtitle": "Before you leave, I have an irresistible proposal. We've released a secret batch of **only 20 spots** for Founding Members.",
-        "body": "Contact our agent on WhatsApp right now and request your VIP invite. You will lock in your PRO subscription for only **$ 7.49/month** for a full year.",
-        "scarcity": "Notice: The links expire as soon as the 20 spots are filled.",
-        "whatsappMessage": "Hi, I was on the Obra Fácil website, I saw the hidden invite and I want to secure my Founding Member spot for $ 7.49.",
-        "cta": "REDEEM DISCOUNT WITH MAX"
+        "faixa": "Free plan, no time limit",
+        "title": "Before you go, try it on your next project",
+        "texto": "Create your free account, no credit card needed. Add a project and see the schedule, the daily report with photos and the finances at work, with your client following along in the portal.",
+        "cta": "Start free",
+        "lojas": "Or download the app",
+        "fechar": "Close"
     },
     "whatsapp": {
         "tooltip": "Talk to Support",
@@ -151,37 +129,33 @@
         "role4": "Architect",
         "test5": "\"Even the final client praised the organization. I finally look as professional as the big firms.\"",
         "author5": "Fernando S.",
-        "role5": "General Contractor"
+        "role5": "General Contractor",
+        "aviso": "Customer testimonials, published with permission."
     },
     "faq": {
-        "title": "Frequently Asked Questions",
-        "q1": "Does my client pay to use the app?",
-        "a1": "No, client access is completely free and controlled by the permissions in your plan.",
-        "q2": "Can I use it on computer and mobile?",
-        "a2": "Yes! Obra Fácil is responsive and works both in your PC browser and on your smartphone at the site.",
-        "q3": "Is my data safe?",
-        "a3": "Absolutely. We use the most modern cloud infrastructures and end-to-end encryption to ensure code security.",
-        "q4": "What personal data is collected?",
-        "a4": "We only collect what's necessary to create your account: Name, Document ID, Email, and Phone, in full GDPR compliance.",
-        "q5": "How does offline usage work?",
-        "a5": "The app temporarily saves information in your phone's memory (cache). Once the connection is restored, data synchronizes to the cloud automatically.",
-        "q6": "Does my client lose access to files if the project ends?",
-        "a6": "If the project is 70% or more complete, the client gets a 15-day Grace Period to download everything before access goes away.",
-        "q7": "Does Obra Fácil replace a professional Engineer?",
-        "a7": "No. The app is an amazing management tool, but it does not replace technical professional oversight.",
-        "q8": "Can I delete my account and all my data?",
-        "a8": "Yes, you have the right to be forgotten. Upon requesting account deletion, all your data, photos, and PDFs are permanently removed.",
-        "q9": "I'm on the PRO plan and added extra storage. Can I cancel?",
-        "a9": "Yes. You can cancel subscriptions anytime to stop billing for the next cycle, keeping access until the paid period ends.",
-        "q10": "What happens if a monthly payment is late?",
-        "a10": "The system pauses the creation of new projects and file uploads, but you won't lose existing data as long as you regularize the payment."
-    },
-    "loginModal": {
-        "title": "Access Obra Fácil as:",
-        "managerTitle": "Manager / Engineer",
-        "managerDesc": "Access your full construction management dashboard.",
-        "clientTitle": "Client",
-        "clientDesc": "Track your project's portal and inspections."
+        "title": "Frequently asked questions",
+        "q1": "Does my client pay to follow the project?",
+        "a1": "No. Your client follows the project in the portal at no cost. If you want to share more, like downloading photos and seeing the full finances, Client Access is a one-time fee per project, paid by you on PRO.",
+        "q2": "Can I use it on my computer and my phone?",
+        "a2": "Yes. ObraFácil works on Android, iPhone, Windows and in the browser, with the same data everywhere.",
+        "q3": "Is my data secure?",
+        "a3": "Data travels encrypted and is stored on Google’s servers, also encrypted. Each person only sees the projects they take part in, with the permissions of their role.",
+        "q4": "What personal data do you collect?",
+        "a4": "For the account: name, email address and phone number; a tax number only if you provide it. The full list, and what each piece of data is for, is in the Privacy Policy.",
+        "q5": "Does it work without internet?",
+        "a5": "Yes. Without internet, the app keeps what you record on the device and sends it automatically when the connection returns.",
+        "q6": "Does the client lose access to the files when the project ends?",
+        "a6": "If the project is 70% complete or more when access ends, the client still has 15 days to view and download what was shared.",
+        "q7": "Does ObraFácil replace the project engineer?",
+        "a7": "No. It is a management tool and does not replace the qualified professional responsible for the works.",
+        "q8": "Can I delete my account?",
+        "a8": "Yes, under Profile > Delete account. The account is suspended for 30 days (you can change your mind) and then your projects and data are deleted. Some records, such as payments and acceptance of the Terms, are kept for the period set out in the Privacy Policy.",
+        "q9": "Can I cancel PRO or the storage expansion?",
+        "a9": "Yes, at any time, in the same place you subscribed. The next renewal is not charged and access continues until the end of the paid period.",
+        "q10": "What if a renewal is not paid?",
+        "a10": "The account goes back to the free plan. Nothing is deleted; if you are over the free plan limit, only uploading new files is blocked until you free up space or subscribe again.",
+        "mais": "Didn’t find your answer?",
+        "verAjuda": "Visit the Help Center"
     },
     "ajuda": {
         "titulo": "Help Center",
@@ -258,15 +232,128 @@
         "tambemEm": "Also available in"
     },
     "footer": {
-        "ctaTitle": "Ready to level up your management?",
-        "ctaBtn": "Try Free for 30 Days",
-        "links": "Useful Links",
+        "ctaTitle": "Ready to organize your next project?",
+        "ctaBtn": "Start free",
         "terms": "Terms of Use",
         "privacy": "Privacy Policy",
         "help": "Help Center",
         "support": "Support",
-        "tagline": "Smart construction management. Transparency your clients will love.",
+        "tagline": "The whole project in one place.",
         "rights": "All rights reserved.",
-        "language": "Website language"
+        "language": "Site language",
+        "baixar": "Download the app",
+        "produto": "Product",
+        "legal": "Legal",
+        "contato": "Contact",
+        "whatsapp": "WhatsApp"
+    },
+    "legal": {
+        "versao": "Version {{versao}}",
+        "emVigorDesde": "in effect since {{data}}",
+        "valeAPartir": "takes effect on {{data}}",
+        "novaVersao": "Version {{versao}} takes effect on {{data}}. You can read what changes now.",
+        "lerNova": "Read the new version",
+        "vendoNova": "You are reading the new version. Until it takes effect, version {{versao}} applies.",
+        "voltarAtual": "Back to the version in effect",
+        "sumario": "On this page",
+        "carregando": "Loading the text…",
+        "erro": "We couldn't load the text right now. Please check your connection.",
+        "indisponivel": "The text isn't available at this address yet. Write to suporte@appobrafacil.expertbr.com.",
+        "tentarDeNovo": "Try again"
+    },
+    "cookies": {
+        "titulo": "Cookies",
+        "texto": "We use Google Analytics and Google Ads to measure visits to the site and how our ads perform. They only store cookies if you accept.",
+        "saibaMais": "Learn more in the Privacy Policy.",
+        "aceitar": "Accept",
+        "recusar": "Decline",
+        "preferencias": "Cookies"
+    },
+    "cliente": {
+        "titulo": "No more answering **“how is the project going?”**",
+        "texto": "Your client gets an email invitation and follows the project in the Client Portal at no cost: photos, daily reports, schedule and a summary of the finances.",
+        "antes": "Before: everything over WhatsApp",
+        "depois": "Now: the project portal",
+        "nome": "John (client)",
+        "hoje": "Today",
+        "msg1": "Hi! How is the project going? Any photos from today?",
+        "msg2": "Will the floors be done by next Friday?",
+        "msg3": "Hi. I’ll ask the foreman to send some.",
+        "conversaAviso": "Sample conversation",
+        "pontos": [
+            "Your client signs in with their own account, from the invitation you send.",
+            "Want to share more? With Client Access (on PRO, a one-time fee per project), you choose what they can see and download: photos, full finances, the detailed schedule and opening issues.",
+            "On projects 70% complete or more, when access ends the client still has 15 days to download what was shared."
+        ],
+        "telaPortal": "Client Portal with the latest project updates",
+        "telaAcesso": "Screen where the manager chooses what the client can see"
+    },
+    "recursos": {
+        "titulo": "Everything the project needs, **in one app**",
+        "itens": {
+            "cronograma": {
+                "titulo": "Stage-by-stage schedule",
+                "texto": "Set up the project stages and track the physical progress of each one."
+            },
+            "diario": {
+                "titulo": "Daily report",
+                "texto": "Weather, activities, incidents, crew on site, photos and signature. Exported as a PDF, ready to send."
+            },
+            "financeiro": {
+                "titulo": "Project finances",
+                "texto": "Budgeted, measured and what can be paid at each stage, with income, expenses and a statement."
+            },
+            "equipe": {
+                "titulo": "Team and payroll",
+                "texto": "Register your workers, mark attendance in the daily report and calculate payroll."
+            },
+            "compras": {
+                "titulo": "Purchases and inventory",
+                "texto": "Record purchases with invoices and keep track of each project’s materials and tools."
+            },
+            "marca": {
+                "titulo": "Reports with your brand",
+                "texto": "On PRO, PDFs carry your company’s logo and footer."
+            },
+            "offline": {
+                "titulo": "No signal on site",
+                "texto": "The app keeps what you record and sends it automatically when the connection returns."
+            },
+            "aparelhos": {
+                "titulo": "On every device",
+                "texto": "Android, iPhone, Windows and browser, always with the same data."
+            }
+        },
+        "tela": "Project overview with the contract value, dates and overall physical progress"
+    },
+    "equipe": {
+        "titulo": "Everyone sees what they need",
+        "texto": "Invite engineers, your team and the client to the project. The project owner decides who joins and what each role can see and do.",
+        "papeis": {
+            "gestor": {
+                "nome": "Manager",
+                "desc": "Owns the project. Invites people and sets permissions."
+            },
+            "engenheiro": {
+                "nome": "Engineer",
+                "desc": "Follows and updates the project with the permissions you give."
+            },
+            "equipe": {
+                "nome": "Team",
+                "desc": "Records the day-to-day: daily reports, photos and attendance."
+            },
+            "cliente": {
+                "nome": "Client",
+                "desc": "Follows what you share in the Client Portal."
+            }
+        },
+        "tela": "Daily report with the crew list and each person’s attendance"
+    },
+    "chamada": {
+        "titulo": "Start with your **next project**",
+        "texto": "The free plan has no time limit. Subscribe to PRO when you need more.",
+        "acao": "Start free",
+        "duvida": "Questions? Talk to us on WhatsApp.",
+        "whatsapp": "Message us on WhatsApp"
     }
 }

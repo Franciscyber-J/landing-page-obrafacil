@@ -21,6 +21,8 @@ function completar(entrada, porCodigo) {
         rotas: {
             ajuda: rotas.ajuda ?? rotasBase.ajuda,
             assunto: rotas.assunto ?? rotasBase.assunto,
+            termos: rotas.termos ?? rotasBase.termos,
+            privacidade: rotas.privacidade ?? rotasBase.privacidade,
             secoes: { ...(rotasBase.secoes ?? {}), ...(rotas.secoes ?? {}) },
         },
     };
@@ -106,6 +108,18 @@ export function caminhoArtigo(codigo, slug) {
     return `${caminhoAjuda(codigo)}/${slug}`;
 }
 
+// Termos de Uso e Política de Privacidade (documento: 'termos' | 'privacidade').
+export const DOCUMENTOS_LEGAIS = ['termos', 'privacidade'];
+
+export function caminhoLegal(codigo, documento) {
+    const i = idioma(codigo) ?? idioma(REFERENCIA);
+    if (!DOCUMENTOS_LEGAIS.includes(documento)) throw new Error(`Documento legal desconhecido: ${documento}`);
+    return `/${i.prefixo}/${i.rotas[documento]}`;
+}
+
+// Endereços que o WordPress usava (e que estão nas lojas de aplicativos): continuam valendo.
+const LEGAIS_ANTIGOS = { 'termos-de-uso': 'termos', 'politicas-de-privacidade': 'privacidade' };
+
 // Nome do assunto no endereço: o nome do módulo no idioma, sem acento ("Financeiro da obra"
 // → financeiro-da-obra). Letras de outros alfabetos ficam como estão.
 export function slugDoTexto(texto) {
@@ -126,18 +140,24 @@ function decodificar(parte) {
 }
 
 const PALAVRAS_AJUDA = new Set(IDIOMAS.map((i) => i.rotas.ajuda.toLowerCase()));
+// Palavra do endereço (de qualquer idioma) → documento legal.
+const PALAVRAS_LEGAIS = new Map(IDIOMAS.flatMap((i) => DOCUMENTOS_LEGAIS.map((d) => [i.rotas[d].toLowerCase(), d])));
 const PALAVRAS_ASSUNTO = new Set(IDIOMAS.map((i) => i.rotas.assunto.toLowerCase()));
 
 // Lê um endereço do site. Resultado:
 //   { tipo: 'raiz' }                                   → /
 //   { tipo: 'antigo', codigo|null, pagina, modulo, slug } → /ajuda/... (endereços de antes)
+//   { tipo: 'antigo', codigo: null, pagina: 'legal', documento } → /termos-de-uso/, /politicas-de-privacidade/
 //   { tipo: 'pagina', codigo, pagina, modulo, slug, canonico }
-//       pagina: inicio | ajuda | assunto | artigo | nao-encontrado
+//       pagina: inicio | ajuda | assunto | artigo | legal (com documento) | nao-encontrado
 //       canonico: endereço certo quando o pedido veio com outra grafia (/PT-BR/help → /pt-br/ajuda)
 //   { tipo: 'desconhecido' }
 export function analisarCaminho(pathname) {
     const segs = String(pathname ?? '/').split('/').filter(Boolean).map(decodificar);
     if (segs.length === 0) return { tipo: 'raiz' };
+
+    const antigo = LEGAIS_ANTIGOS[segs[0].toLowerCase()];
+    if (antigo && segs.length === 1) return { tipo: 'antigo', codigo: null, pagina: 'legal', documento: antigo };
 
     if (segs[0].toLowerCase() === 'ajuda' && !idioma(segs[0])) {
         const resto = segs.slice(1);
@@ -159,6 +179,12 @@ export function analisarCaminho(pathname) {
     if (resto.length === 0) return pagina({ pagina: 'inicio' }, prefixoErrado ? caminhoInicio(i.codigo) : null);
 
     const palavra = resto[0].toLowerCase();
+    const documento = PALAVRAS_LEGAIS.get(palavra);
+    if (documento) {
+        if (resto.length !== 1) return pagina({ pagina: 'nao-encontrado' }, null);
+        const certo = caminhoLegal(i.codigo, documento);
+        return pagina({ pagina: 'legal', documento }, prefixoErrado || resto[0] !== r[documento] ? certo : null);
+    }
     if (!PALAVRAS_AJUDA.has(palavra)) return pagina({ pagina: 'nao-encontrado' }, null);
     const ajudaErrada = prefixoErrado || resto[0] !== r.ajuda;
 
