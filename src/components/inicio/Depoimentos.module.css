@@ -1,0 +1,119 @@
+.secao {
+  background: var(--superficie);
+  border-top: var(--borda) solid var(--linha);
+  border-bottom: var(--borda) solid var(--linha);
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.destaque {
+  background: var(--placa);
+  color: var(--placa-texto);
+  padding: 36px 32px 32px;
+  border-top: 8px solid var(--laranja);
+}
+
+.destaque blockquote {
+  font-family: var(--fonte-placa);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  line-height: 1.08;
+}
+
+.depoimento blockquote::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 6px;
+  margin-bottom: 14px;
+  background: var(--laranja);
+}
+
+.destaque figcaption {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: var(--borda) solid var(--placa-linha);
+}
+
+.destaque figcaption span {
+  color: var(--placa-texto-2);
+}
+
+figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+figcaption strong {
+  font-weight: 600;
+}
+
+.outros {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: var(--borda-placa) solid var(--linha-forte);
+}
+
+.depoimento {
+  padding: 22px 20px 22px 0;
+  border-bottom: var(--borda) solid var(--linha);
+}
+
+.depoimento:nth-child(even) {
+  padding: 22px 0 22px 20px;
+  border-left: var(--borda) solid var(--linha);
+}
+
+.depoimento blockquote {
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+.depoimento blockquote::before {
+  font-size: 3rem;
+  margin-bottom: 4px;
+}
+
+.depoimento figcaption {
+  margin-top: 14px;
+}
+
+.depoimento figcaption span {
+  color: var(--tinta-2);
+  font-size: 0.9375rem;
+}
+
+.aviso {
+  margin-top: 20px;
+  font-size: 0.875rem;
+  color: var(--tinta-2);
+}
+
+@media (max-width: 1020px) {
+  .grade {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .outros {
+    grid-template-columns: 1fr;
+  }
+
+  .depoimento,
+  .depoimento:nth-child(even) {
+    padding: 20px 0;
+    border-left: 0;
+  }
+
+  .destaque {
+    padding: 28px 20px 24px;
+  }
+}

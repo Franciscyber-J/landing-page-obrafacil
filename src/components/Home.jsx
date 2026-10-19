@@ -1,14 +1,15 @@
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import HeroSection from './HeroSection';
-import ProblemSolution from './ProblemSolution';
-import CoreFeatures from './CoreFeatures';
-import MidCTA from './MidCTA';
-import CoManagement from './CoManagement';
-import Pricing from './Pricing';
-import TestimonialsFaq from './TestimonialsFaq';
-import Globe from './Globe';
+import Placa from './Placa';
+import Cliente from './inicio/Cliente';
+import Recursos from './inicio/Recursos';
+import Equipe from './inicio/Equipe';
+import Depoimentos from './inicio/Depoimentos';
+import Precos from './inicio/Precos';
+import Perguntas from './inicio/Perguntas';
+import Chamada from './inicio/Chamada';
+import ExitIntentPopup from './ExitIntentPopup';
 import useTituloDaPagina from './ajuda/useTituloDaPagina.js';
 import { idDaSecao, secaoDaAncora } from '../i18n/idiomas.js';
 import { useIdioma } from '../i18n/RotaDoIdioma.jsx';
@@ -39,16 +40,19 @@ export default function Home() {
 
     return (
         <>
-            <Globe />
-            <main style={{ position: 'relative', zIndex: 1, background: 'transparent' }}>
-                <HeroSection />
-                <ProblemSolution />
-                <CoreFeatures />
-                <MidCTA />
-                <CoManagement />
-                <Pricing />
-                <TestimonialsFaq />
+            {/* Ordem pensada para a venda: o que é e a tela real; o diferencial (o cliente acompanha);
+                o que faz; quem usa; a prova (depoimentos) logo antes do preço; as dúvidas; a chamada. */}
+            <main>
+                <Placa />
+                <Cliente />
+                <Recursos />
+                <Equipe />
+                <Depoimentos />
+                <Precos />
+                <Perguntas />
+                <Chamada />
             </main>
+            <ExitIntentPopup />
         </>
     );
 }

@@ -1,116 +1,119 @@
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+.fundo {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(5, 18, 32, 0.72);
+  animation: aparecer 200ms var(--suave) both;
 }
 
-.popup {
-    background: linear-gradient(145deg, #1A1A1A, #0A0A0A);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 187, 0, 0.1);
-    border-radius: 24px;
-    width: 100%;
-    max-width: 500px;
-    position: relative;
-    overflow: hidden;
+.janela {
+  width: min(560px, 100%);
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  background: var(--placa);
+  color: var(--placa-texto);
+  border: var(--borda-placa) solid var(--placa);
+  outline: var(--borda-placa) solid #ffffff;
+  outline-offset: -9px;
+  animation: chapa 320ms var(--suave) both;
 }
 
-.popup::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--color-pro);
-    box-shadow: 0 0 20px var(--color-pro-glow);
+.faixa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 6px 6px 0;
+  padding: 4px 4px 4px 16px;
+  background: var(--laranja);
+  color: var(--sobre-laranja);
+  font-family: var(--fonte-placa);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.closeBtn {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    background: transparent;
-    border: none;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: color var(--transition-short);
-    z-index: 10;
+.fechar {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  background: transparent;
+  border: 0;
+  color: var(--sobre-laranja);
+  cursor: pointer;
 }
 
-.closeBtn:hover {
-    color: #fff;
+.fechar:hover {
+  background: rgba(19, 33, 47, 0.12);
 }
 
-.content {
-    padding: 40px;
-    text-align: center;
+.fechar:focus-visible {
+  outline-color: var(--sobre-laranja);
 }
 
-.title {
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin-bottom: 16px;
-    line-height: 1.3;
+.corpo {
+  padding: 24px 28px 30px;
 }
 
-.subtitle {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    margin-bottom: 24px;
-    line-height: 1.5;
+.titulo {
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  line-height: 0.95;
+  text-transform: uppercase;
 }
 
-.body {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 24px;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 16px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+.texto {
+  margin-top: 14px;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--placa-texto-2);
 }
 
-.scarcity {
-    color: #EF4444;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 32px;
-    animation: pulse 2s infinite;
+.texto strong {
+  color: #ffffff;
+  font-weight: 700;
+  background: linear-gradient(transparent 62%, rgba(242, 138, 31, 0.55) 62%);
 }
 
-@keyframes pulse {
-    0% { opacity: 0.7; }
-    50% { opacity: 1; }
-    100% { opacity: 0.7; }
+.escassez {
+  margin-top: 16px;
+  padding: 10px 12px;
+  border-left: 6px solid var(--laranja);
+  background: var(--placa-funda);
+  font-size: 0.9375rem;
+  font-weight: 600;
 }
 
-.ctaBtn {
-    display: block;
-    width: 100%;
-    background: #25D366;
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.1rem;
-    padding: 16px;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: all var(--transition-normal);
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+.botao {
+  margin-top: 22px;
+  width: 100%;
+  min-height: 56px;
+  font-size: 1.3125rem;
 }
 
-.ctaBtn:hover {
-    background: #1EBE5D;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-    color: #fff;
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes chapa {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (max-width: 520px) {
+  .corpo {
+    padding: 20px 18px 24px;
+  }
 }

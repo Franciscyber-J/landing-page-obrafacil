@@ -1,13 +1,11 @@
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect } from 'react';
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import LoginModal from './components/LoginModal';
 import Home from './components/Home';
 import AjudaPagina from './components/ajuda/AjudaPagina';
 import LegalPagina from './components/legal/LegalPagina';
-import ExitIntentPopup from './components/ExitIntentPopup';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import AvisoCookies from './components/AvisoCookies';
 import {
@@ -63,7 +61,6 @@ function useIdiomaDoEndereco(codigo) {
 
 function Site() {
   const { pathname, search, hash } = useLocation();
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const lido = analisarCaminho(pathname);
   const codigo = lido.tipo === 'pagina' ? lido.codigo : null;
   useIdiomaDoEndereco(codigo ?? idiomaPreferido());
@@ -75,13 +72,11 @@ function Site() {
     <ProvedorDeRota codigo={codigo}>
       <ScrollToTop />
       <Alternativos />
-      <Navbar onOpenLogin={() => setIsLoginModalOpen(true)} />
+      <Navbar />
       <Pagina codigo={codigo} lido={lido} />
-      <Footer />
-      <ExitIntentPopup />
+      <Footer comChamada={lido.pagina !== 'inicio'} />
       <FloatingWhatsApp />
       <AvisoCookies />
-      <LoginModal isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
     </ProvedorDeRota>
   );
 }

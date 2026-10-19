@@ -1,9 +1,11 @@
-import { useState, useEffect, useRef } from 'react';
+// Barra do topo: chapa azul da placa, logotipo numa chapa branca, links, idioma, tema e as ações.
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Globe, Moon, Sun, Menu, X, ChevronDown, Check } from 'lucide-react';
+import { Check, ChevronDown, Menu, Moon, Sun, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { IDIOMAS, caminhoInicio, idioma } from '../i18n/idiomas.js';
+import { IDIOMAS, caminhoAjuda, caminhoInicio, idioma } from '../i18n/idiomas.js';
 import { useIdioma, useTrocarIdioma } from '../i18n/RotaDoIdioma.jsx';
+import { CADASTRO, LOGIN } from '../links.js';
 import styles from './Navbar.module.css';
 
 const TAMANHOS = { lg: [28, 20], md: [24, 17], sm: [20, 14] };
@@ -18,55 +20,121 @@ export function Bandeira({ pais, size = 'md' }) {
             alt=""
             width={largura}
             height={altura}
-            style={{ width: largura, height: altura, borderRadius: 3, objectFit: 'cover', display: 'block', flexShrink: 0 }}
+            className={styles.bandeira}
+            style={{ width: largura, height: altura }}
         />
     );
 }
 
-export default function Navbar({ onOpenLogin }) {
+function temaAtual() {
+    return document.documentElement.getAttribute('data-theme') === 'dark' ? 'escuro' : 'claro';
+}
+
+function useTema() {
+    const [tema, setTema] = useState(temaAtual);
+    const trocar = () => {
+        const novo = tema === 'escuro' ? 'claro' : 'escuro';
+        document.documentElement.setAttribute('data-theme', novo === 'escuro' ? 'dark' : 'light');
+        try {
+            window.localStorage.setItem('obrafacil:tema', novo);
+        } catch {
+            // sem permissão para guardar: vale só nesta visita
+        }
+        setTema(novo);
+    };
+    return [tema, trocar];
+}
+
+function SeletorDeIdioma({ codigo, aoEscolher }) {
+    const { t } = useTranslation();
+    const [aberto, setAberto] = useState(false);
+    const caixa = useRef(null);
+    const atual = idioma(codigo) ?? IDIOMAS[0];
+
+    useEffect(() => {
+        if (!aberto) return undefined;
+        const fora = (e) => { if (caixa.current && !caixa.current.contains(e.target)) setAberto(false); };
+        const tecla = (e) => { if (e.key === 'Escape') setAberto(false); };
+        document.addEventListener('mousedown', fora);
+        document.addEventListener('keydown', tecla);
+        return () => {
+            document.removeEventListener('mousedown', fora);
+            document.removeEventListener('keydown', tecla);
+        };
+    }, [aberto]);
+
+    return (
+        <div className={styles.idioma} ref={caixa}>
+            <button
+                type="button"
+                className={styles.idiomaBotao}
+                onClick={() => setAberto((a) => !a)}
+                aria-haspopup="true"
+                aria-expanded={aberto}
+                aria-label={`${t('nav.chooseLanguage')}: ${atual.nome}`}
+            >
+                <Bandeira pais={atual.pais} size="md" />
+                <span>{atual.curto}</span>
+                <ChevronDown size={14} aria-hidden="true" className={aberto ? styles.girado : ''} />
+            </button>
+            {aberto && (
+                <ul className={styles.idiomaLista}>
+                    {IDIOMAS.map((i) => (
+                        <li key={i.codigo}>
+                            <button
+                                type="button"
+                                lang={i.codigo}
+                                className={styles.idiomaOpcao}
+                                aria-current={i.codigo === atual.codigo ? 'true' : undefined}
+                                onClick={() => { setAberto(false); aoEscolher(i.codigo); }}
+                            >
+                                <Bandeira pais={i.pais} size="md" />
+                                <span>{i.nome}</span>
+                                {i.codigo === atual.codigo && <Check size={14} aria-hidden="true" />}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </div>
+    );
+}
+
+export default function Navbar() {
     const { t } = useTranslation();
     const codigo = useIdioma();
     const trocarIdioma = useTrocarIdioma();
+    const [tema, trocarTema] = useTema();
+    const [menuAberto, setMenuAberto] = useState(false);
     const inicio = caminhoInicio(codigo);
-    const [isDarkMode, setIsDarkMode]       = useState(true);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [langOpen, setLangOpen]           = useState(false);
-    const langRef                           = useRef(null);
 
-    // Toggle Theme
-    useEffect(() => {
-        document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
-    }, [isDarkMode]);
-
-    // Close lang dropdown on outside click
-    useEffect(() => {
-        const handler = (e) => {
-            if (langRef.current && !langRef.current.contains(e.target)) {
-                setLangOpen(false);
-            }
-        };
-        document.addEventListener('mousedown', handler);
-        return () => document.removeEventListener('mousedown', handler);
-    }, []);
-
-    const toggleTheme = () => setIsDarkMode(!isDarkMode);
-
-    const changeLanguage = (lang) => {
-        setLangOpen(false);
-        setIsMobileMenuOpen(false);
-        if (lang !== codigo) trocarIdioma(lang);
+    const escolherIdioma = (novo) => {
+        setMenuAberto(false);
+        if (novo !== codigo) trocarIdioma(novo);
     };
 
-    const currentLang = idioma(codigo) ?? IDIOMAS[0];
+    useEffect(() => {
+        if (!menuAberto) return undefined;
+        const tecla = (e) => { if (e.key === 'Escape') setMenuAberto(false); };
+        document.addEventListener('keydown', tecla);
+        return () => document.removeEventListener('keydown', tecla);
+    }, [menuAberto]);
+
+    const links = [
+        { para: caminhoInicio(codigo, 'recursos'), texto: t('nav.recursos') },
+        { para: caminhoInicio(codigo, 'precos'), texto: t('nav.precos') },
+        { para: caminhoAjuda(codigo), texto: t('nav.ajuda') },
+    ];
+
+    const IconeTema = tema === 'escuro' ? Sun : Moon;
 
     return (
-        <nav className={`glass-panel ${styles.navbar}`}>
-            <div className="container flex justify-between items-center">
-
-                {/* Logo */}
+        <header className={styles.barra}>
+            <div className={`container ${styles.conteudo}`}>
                 <Link
                     to={inicio}
                     className={styles.logo}
+                    aria-label={t('nav.inicio')}
                     onClick={(e) => {
                         if (window.location.pathname === inicio && !window.location.hash) {
                             e.preventDefault();
@@ -74,109 +142,66 @@ export default function Navbar({ onOpenLogin }) {
                         }
                     }}
                 >
-                    <img src="/logo_transparente.png" alt="Obra Fácil Logo" style={{ height: '48px', width: 'auto', objectFit: 'contain' }} />
+                    <img src="/logo_transparente.png" alt="ObraFácil" width="1050" height="238" />
                 </Link>
 
-                {/* Desktop Menu */}
-                <div className={styles.desktopMenu}>
+                <nav className={styles.links} aria-label={t('nav.menu')}>
+                    {links.map((l) => <Link key={l.texto} to={l.para}>{l.texto}</Link>)}
+                </nav>
 
-                    {/* Custom Language Dropdown */}
-                    <div className={styles.langSelector} ref={langRef}>
-                        <button
-                            className={`${styles.langSelectorInner} ${langOpen ? styles.langSelectorOpen : ''}`}
-                            onClick={() => setLangOpen((o) => !o)}
-                            aria-haspopup="listbox"
-                            aria-expanded={langOpen}
-                            aria-label={t('nav.chooseLanguage')}
-                        >
-                            <Bandeira pais={currentLang.pais} size="lg" />
-                            <ChevronDown size={13} className={`${styles.langChevron} ${langOpen ? styles.langChevronOpen : ''}`} />
-                        </button>
-
-                        {langOpen && (
-                            <ul className={styles.langDropdown} role="listbox" aria-label={t('nav.chooseLanguage')}>
-                                {IDIOMAS.map((lang) => (
-                                    <li
-                                        key={lang.codigo}
-                                        role="option"
-                                        lang={lang.codigo}
-                                        tabIndex={0}
-                                        aria-selected={currentLang.codigo === lang.codigo}
-                                        className={`${styles.langOption} ${currentLang.codigo === lang.codigo ? styles.langOptionActive : ''}`}
-                                        onClick={() => changeLanguage(lang.codigo)}
-                                        onKeyDown={(e) => {
-                                            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); changeLanguage(lang.codigo); }
-                                            if (e.key === 'Escape') setLangOpen(false);
-                                        }}
-                                    >
-                                        <Bandeira pais={lang.pais} size="md" />
-                                        <span className={styles.langOptionLabel}>{lang.nome}</span>
-                                        {currentLang.codigo === lang.codigo && (
-                                            <Check size={13} className={styles.langOptionCheck} />
-                                        )}
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
-                    </div>
-
-                    <button onClick={toggleTheme} className={styles.iconBtn} aria-label={t('nav.themeToggle')}>
-                        {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+                <div className={styles.direita}>
+                    <SeletorDeIdioma codigo={codigo} aoEscolher={escolherIdioma} />
+                    <button type="button" className={styles.icone} onClick={trocarTema} aria-label={t('nav.themeToggle')}>
+                        <IconeTema size={20} aria-hidden="true" />
                     </button>
-
-                    <button onClick={onOpenLogin} className="btn-outline">{t('nav.login')}</button>
-                    <a href="https://obrafacilapp.expertbr.com/cadastro?checkout=true&promo=30DIASFREE" className="btn-neon">{t('nav.createAccount')}</a>
+                    <a href={LOGIN} className={styles.entrar}>{t('nav.login')}</a>
+                    <a href={CADASTRO} className="acao">{t('nav.comecar')}</a>
                 </div>
 
-                {/* Mobile Menu Toggle */}
+                <a href={CADASTRO} className={`acao ${styles.comecarCelular}`}>{t('nav.comecar')}</a>
                 <button
-                    className={styles.mobileToggle}
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    type="button"
+                    className={styles.menuBotao}
+                    onClick={() => setMenuAberto((m) => !m)}
                     aria-label={t('nav.menu')}
-                    aria-expanded={isMobileMenuOpen}
+                    aria-expanded={menuAberto}
+                    aria-controls="menu-celular"
                 >
-                    {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    {menuAberto ? <X size={26} aria-hidden="true" /> : <Menu size={26} aria-hidden="true" />}
                 </button>
-
             </div>
 
-            {/* Mobile Menu Panel */}
-            {isMobileMenuOpen && (
-                <>
-                    <div className={styles.mobileOverlay} onClick={() => setIsMobileMenuOpen(false)}></div>
-                    <div className={`glass-panel ${styles.mobileMenu}`}>
-                        {/* Language options inline in mobile menu */}
-                        <p className={styles.mobileSectionLabel}><Globe size={14} /> {t('nav.language')}</p>
-                        <div className={styles.mobileLangRow}>
-                            {IDIOMAS.map((lang) => (
-                                <button
-                                    key={lang.codigo}
-                                    lang={lang.codigo}
-                                    className={`${styles.mobileLangBtn} ${currentLang.codigo === lang.codigo ? styles.mobileLangBtnActive : ''}`}
-                                    onClick={() => { changeLanguage(lang.codigo); }}
-                                    title={lang.nome}
-                                    aria-pressed={currentLang.codigo === lang.codigo}
-                                >
-                                    <Bandeira pais={lang.pais} size="md" />
-                                    <span className={styles.mobileLangShort}>{lang.curto}</span>
-                                </button>
-                            ))}
-                        </div>
-
-                        <div className="flex gap-2 items-center mb-4">
-                            <button onClick={toggleTheme} className="flex gap-2 items-center btn-outline" style={{ width: '100%' }}>
-                                {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-                                {isDarkMode ? t('nav.lightMode') : t('nav.darkMode')}
+            {menuAberto && (
+                <div id="menu-celular" className={styles.menuCelular}>
+                    <nav className={styles.menuLinks} aria-label={t('nav.menu')}>
+                        {links.map((l) => <Link key={l.texto} to={l.para} onClick={() => setMenuAberto(false)}>{l.texto}</Link>)}
+                    </nav>
+                    <p className={styles.menuRotulo}>{t('nav.language')}</p>
+                    <div className={styles.menuIdiomas}>
+                        {IDIOMAS.map((i) => (
+                            <button
+                                key={i.codigo}
+                                type="button"
+                                lang={i.codigo}
+                                className={styles.menuIdioma}
+                                aria-pressed={i.codigo === codigo}
+                                onClick={() => escolherIdioma(i.codigo)}
+                            >
+                                <Bandeira pais={i.pais} size="sm" />
+                                <span>{i.curto}</span>
                             </button>
-                        </div>
-
-                        <div className="flex flex-col gap-2">
-                            <button onClick={() => { setIsMobileMenuOpen(false); onOpenLogin(); }} className="btn-outline" style={{ textAlign: 'center' }}>{t('nav.login')}</button>
-                            <a href="https://obrafacilapp.expertbr.com/cadastro?checkout=true&promo=30DIASFREE" className="btn-neon" style={{ textAlign: 'center' }}>{t('nav.createAccount')}</a>
-                        </div>
+                        ))}
                     </div>
-                </>
+                    <button type="button" className={styles.menuTema} onClick={trocarTema}>
+                        <IconeTema size={20} aria-hidden="true" />
+                        {tema === 'escuro' ? t('nav.lightMode') : t('nav.darkMode')}
+                    </button>
+                    <div className={styles.menuAcoes}>
+                        <a href={LOGIN} className="acao-clara">{t('nav.login')}</a>
+                        <a href={CADASTRO} className="acao">{t('nav.comecar')}</a>
+                    </div>
+                </div>
             )}
-        </nav>
+        </header>
     );
 }

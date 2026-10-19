@@ -1,32 +1,4 @@
 {
-    "meta": {
-        "descricao": "App de gestión de obras: reportes diarios, cronograma, equipo, finanzas y portal del cliente. Pruébala gratis por 30 días."
-    },
-    "problemSolutionMockup": {
-        "msg3": "Hola, todo bien. Le pediré al maestro que las mande."
-    },
-    "coreFeatures": {
-        "ctaMidButton": "Prueba Gratis por 30 Días →",
-        "financeText": "Control de presupuesto, gastos y transacciones. Sabe exactamente dónde se invirtió cada peso."
-    },
-    "coManagement": {
-        "point3": "Funciona 100% Offline en la calle o zonas remotas, sincronizando al conectarse."
-    },
-    "pricing": {
-        "freeCta": "Prueba Gratis por 30 Días",
-        "fromPriceMensal": "De $ 897.00",
-        "priceMensal": "299.00",
-        "fromPriceAnnual": "De $ 8,997.00",
-        "priceAnnual": "2,999.00",
-        "subtextAnnual": "(Equivale a solo $ 249.92 al mes)",
-        "proFeaturesAnnual": [
-            "Todas las ventajas del plan PRO Mensual",
-            "Ahorro de casi $ 589.00 en la caja de la empresa",
-            "Blindaje contra futuros aumentos de precio",
-            "Acceso prioritario a nuevas herramientas y actualizaciones"
-        ],
-        "currency": "$"
-    },
     "popup": {
         "body": "Contacta a nuestro agente en WhatsApp ahora mismo y solicita tu invitación VIP. Vas a congelar tu suscripción PRO por solo **$ 149.00/mes** durante 1 año entero.",
         "whatsappMessage": "Hola, estaba en el sitio web de Obra Fácil, vi la invitación oculta y quiero garantizar mi cupo de Miembro Fundador por $ 149.00."
@@ -34,9 +6,6 @@
     "social": {
         "test4": "\"La galería de fotos ayudó mucho a mostrar los detalles de acabado al arquitecto sin que tuviera que ir a la obra constantemente.\"",
         "test5": "\"Hasta el cliente final elogió la organización. Por fin me veo tan profesional como las grandes empresas.\""
-    },
-    "faq": {
-        "a4": "Recopilamos solo lo necesario para crear tu cuenta: Nombre, RFC/CURP, Correo Electrónico y Teléfono, en total cumplimiento con la Ley de Protección de Datos."
     },
     "ajuda": {
         "buscaSemResultado": "No hay artículos para “{{termo}}”. Prueba con otra palabra o contacta a soporte.",
@@ -49,10 +18,87 @@
         "printAlt": "Pantalla de la app en el paso {{n}}: {{titulo}}",
         "appTitulo": "Hazlo al mismo tiempo en la app"
     },
-    "footer": {
-        "ctaBtn": "Prueba Gratis por 30 Días"
-    },
     "legal": {
         "erro": "No se pudo cargar el texto en este momento. Revise su conexión."
+    },
+    "meta": {
+        "titulo": "ObraFácil · Gestión de obras: cronograma, reporte diario, finanzas y portal del cliente",
+        "descricao": "App de gestión de obras: cronograma por etapas, reporte diario de obra con fotos, finanzas, equipo y portal del cliente. Empieza gratis, sin tarjeta."
+    },
+    "hero": {
+        "subtitulo": "Cronograma, reporte diario, finanzas, equipo y compras en el celular y en la computadora. Y tu cliente sigue todo en el portal, sin tener que llamarte.",
+        "campos": {
+            "diario": {
+                "rotulo": "Reporte diario"
+            }
+        },
+        "telas": {
+            "cronograma": "Etapas de la obra con presupuesto, medido, monto a pagar y avance físico",
+            "diario": "Nuevo reporte diario con clima, actividades e incidencias",
+            "financeiro": "Finanzas de la obra con costo por metro cuadrado, ingresos, gastos y saldo"
+        }
+    },
+    "cliente": {
+        "texto": "El cliente recibe una invitación por correo y sigue la obra en el Portal del Cliente: fotos, reportes diarios, cronograma y, si quieres, las finanzas. Tú decides lo que ve.",
+        "msg2": "¿El viernes que viene ya van a estar los pisos?",
+        "msg3": "Hola. Le pido al maestro de obra que las mande."
+    },
+    "recursos": {
+        "itens": {
+            "cronograma": {
+                "texto": "Crea las etapas o genera 19 etapas estándar a partir del monto del contrato, y sigue el avance físico de cada una."
+            },
+            "diario": {
+                "titulo": "Reporte diario de obra"
+            },
+            "financeiro": {
+                "texto": "Presupuestado, medido y lo que ya se puede pagar en cada etapa, con ingresos, gastos y estado de cuenta."
+            },
+            "equipe": {
+                "titulo": "Equipo y nómina",
+                "texto": "Registra a los trabajadores, marca la asistencia en el reporte y calcula la nómina."
+            },
+            "marca": {
+                "titulo": "Reportes con tu marca"
+            },
+            "offline": {
+                "titulo": "Sin señal en la obra"
+            }
+        }
+    },
+    "equipe": {
+        "papeis": {
+            "equipe": {
+                "desc": "Registra el día a día: reportes, fotos y asistencia."
+            }
+        },
+        "tela": "Reporte diario con la lista del equipo y la asistencia de cada uno"
+    },
+    "pricing": {
+        "gratis": {
+            "itens": [
+                "1 obra activa",
+                "Reportes diarios con límite mensual",
+                "Almacenamiento básico",
+                "PDF con marca de agua"
+            ]
+        },
+        "pro": {
+            "itens": [
+                "Obras activas ilimitadas",
+                "Reportes diarios e informes ilimitados",
+                "10 GB de almacenamiento",
+                "PDF con el logotipo de tu empresa",
+                "Finanzas completas de la obra"
+            ]
+        },
+        "lojas": "Si te suscribes desde el celular, el precio y el cobro son los de Google Play o la App Store."
+    },
+    "faq": {
+        "q2": "¿Puedo usarlo en la computadora y en el celular?",
+        "q4": "¿Qué datos personales se recaban?",
+        "a4": "Para la cuenta: nombre, correo electrónico y teléfono; el RFC solo si lo indicas. La lista completa, y para qué sirve cada dato, está en la Política de Privacidad.",
+        "q7": "¿ObraFácil sustituye al responsable técnico de la obra?",
+        "a7": "No. Es una herramienta de gestión y no sustituye al profesional responsable de la obra."
     }
 }

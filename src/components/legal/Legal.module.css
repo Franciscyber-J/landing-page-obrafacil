@@ -1,30 +1,37 @@
+/* Termos e Política: modo leitura. A cabeça é uma placa azul pequena; o texto fica no chão claro,
+   com coluna de leitura de 72 caracteres e o sumário ao lado. */
 .pagina {
-  max-width: 1120px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 120px 20px 80px;
+  padding: 40px 24px 96px;
 }
 
 .cabecalho {
-  max-width: 72ch;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
+  padding: 32px 32px 28px;
+  background: var(--placa);
+  color: var(--placa-texto);
+  border-top: 8px solid var(--laranja);
 }
 
 .titulo {
-  font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.1;
+  font-size: clamp(2.4rem, 5.4vw, 4rem);
+  line-height: 0.95;
+  text-transform: uppercase;
   margin: 0 0 12px;
 }
 
 .versao {
-  color: var(--text-secondary);
+  color: var(--placa-texto-2);
   margin: 0;
 }
 
 .aviso {
   margin-top: 20px;
   padding: 16px 18px;
-  border: 1px solid var(--color-accent);
-  border-radius: 8px;
+  background: var(--placa-funda);
+  border-left: 6px solid var(--laranja);
+  max-width: 72ch;
 }
 
 .aviso p {
@@ -32,28 +39,54 @@
 }
 
 .botao {
+  display: inline-flex;
+  align-items: center;
   min-height: 44px;
-  padding: 10px 18px;
-  font: inherit;
-  font-weight: 600;
+  padding: 0 18px;
+  background: var(--laranja);
+  color: var(--sobre-laranja);
+  border: 0;
+  border-radius: var(--raio);
+  font-family: var(--fonte-placa);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   cursor: pointer;
+}
+
+.botao:hover {
+  background: var(--laranja-forte);
+}
+
+.botao:disabled {
+  opacity: 0.6;
+  cursor: progress;
 }
 
 .corpo {
   display: grid;
-  grid-template-columns: 240px minmax(0, 72ch);
-  gap: 48px;
+  grid-template-columns: 260px minmax(0, 72ch);
+  gap: 56px;
   align-items: start;
 }
 
 .sumario {
   position: sticky;
-  top: 100px;
-  font-size: 0.875rem;
+  top: 96px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  font-size: 0.9375rem;
+  border-top: var(--borda-placa) solid var(--linha-forte);
+  padding-top: 12px;
 }
 
 .sumarioTitulo {
+  font-family: var(--fonte-placa);
+  font-size: 1.125rem;
   font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   margin: 0 0 8px;
 }
 
@@ -65,26 +98,46 @@
 
 .sumario a {
   display: block;
-  padding: 6px 0;
-  color: var(--text-secondary);
+  padding: 7px 0 7px 10px;
+  border-left: 3px solid transparent;
+  color: var(--tinta-2);
   text-decoration: none;
+  line-height: 1.35;
+}
+
+.sumario a:hover {
+  color: var(--tinta);
+  border-left-color: var(--laranja);
 }
 
 .texto {
-  line-height: 1.65;
+  line-height: 1.7;
   font-size: 1.0625rem;
 }
 
+.texto a {
+  text-decoration: underline;
+  text-decoration-color: var(--laranja);
+  text-underline-offset: 3px;
+}
+
 .secao {
-  font-size: 1.375rem;
-  margin: 2.2em 0 0.6em;
-  scroll-margin-top: 100px;
+  font-size: 1.75rem;
+  line-height: 1.05;
+  margin: 2.2em 0 0.7em;
+  padding-top: 14px;
+  border-top: var(--borda) solid var(--linha);
+  scroll-margin-top: 96px;
+}
+
+.secao:first-child {
+  margin-top: 0;
 }
 
 .subsecao {
-  font-size: 1.125rem;
+  font-size: 1.3125rem;
   margin: 1.6em 0 0.5em;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 96px;
 }
 
 .paragrafo {
@@ -94,23 +147,51 @@
 .lista {
   margin: 0 0 1em;
   padding-left: 1.25em;
+  list-style: square;
+}
+
+.lista li::marker {
+  color: var(--laranja);
 }
 
 .outro {
-  margin-top: 48px;
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: var(--borda-placa) solid var(--linha-forte);
+  font-family: var(--fonte-placa);
+  font-size: 1.375rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .estado {
-  padding: 40px 0;
+  padding: 64px 0;
   text-align: center;
+}
+
+.estado .botao {
+  margin-top: 16px;
 }
 
 @media (max-width: 860px) {
   .corpo {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .sumario {
     position: static;
+    max-height: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .pagina {
+    padding: 20px 16px 72px;
+  }
+
+  .cabecalho {
+    padding: 24px 18px 20px;
+    margin-bottom: 32px;
   }
 }

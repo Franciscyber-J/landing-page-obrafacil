@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import './styles/design-tokens.css';
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -9,15 +10,35 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+  }
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.6;
-  transition: background-color var(--transition-normal), color var(--transition-normal);
+  font-family: var(--fonte-texto);
+  font-size: 1.0625rem;
+  background-color: var(--chao);
+  color: var(--tinta);
+  line-height: 1.55;
   overflow-x: hidden;
+  font-variant-numeric: lining-nums;
+}
+
+::selection {
+  background: var(--laranja);
+  color: var(--sobre-laranja);
 }
 
 a {
@@ -25,123 +46,230 @@ a {
   text-decoration: none;
 }
 
-ul {
+ul,
+ol {
   list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
-  line-height: 1.2;
+h4 {
+  font-family: var(--fonte-placa);
   font-weight: 700;
+  line-height: 0.95;
+  text-wrap: balance;
 }
 
-/* Container limits for sections */
+:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 2px;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* Largura da página */
 .container {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-.section {
-  padding: 80px 0;
+@media (max-width: 640px) {
+  .container {
+    padding: 0 16px;
+  }
 }
 
-/* Utilities */
-.text-center {
-  text-align: center;
+.somente-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
-.mb-1 {
-  margin-bottom: 8px;
+/* Ações. Botão retangular como chapa: laranja é a ação principal; contorno é a secundária. */
+.acao,
+.acao-contorno,
+.acao-clara {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: var(--raio);
+  font-family: var(--fonte-placa);
+  font-size: 1.1875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--tempo) var(--suave), color var(--tempo) var(--suave), transform var(--tempo) var(--suave);
 }
 
-.mb-2 {
-  margin-bottom: 16px;
+.acao {
+  background: var(--laranja);
+  color: var(--sobre-laranja);
+  border: 0;
 }
 
-.mb-3 {
+.acao:hover {
+  background: var(--laranja-forte);
+}
+
+.acao:active,
+.acao-contorno:active,
+.acao-clara:active {
+  transform: translateY(1px);
+}
+
+.acao-contorno {
+  background: transparent;
+  color: var(--tinta);
+  border: var(--borda) solid var(--linha-forte);
+}
+
+.acao-contorno:hover {
+  background: var(--tinta);
+  color: var(--chao);
+}
+
+/* Contorno sobre a placa azul */
+.acao-clara {
+  background: transparent;
+  color: var(--placa-texto);
+  border: var(--borda) solid var(--placa-texto);
+}
+
+.acao-clara:hover {
+  background: var(--placa-texto);
+  color: var(--placa);
+}
+
+/* Barras de rolagem no tom do site */
+html {
+  scrollbar-color: var(--placa) var(--chao);
+}
+
+/* Página gerada no build (Termos e Política) antes do site carregar: leitura simples. */
+.legal-estatico {
+  max-width: 72ch;
+  margin: 0 auto;
+  padding: 40px 16px 80px;
+  line-height: 1.65;
+}
+
+.legal-estatico h1 {
+  font-size: 2.5rem;
   margin-bottom: 24px;
 }
 
-.mb-4 {
-  margin-bottom: 32px;
+.legal-estatico h2 {
+  font-size: 1.6rem;
+  margin: 2em 0 0.6em;
 }
 
-.mb-5 {
+.legal-estatico h3 {
+  font-size: 1.25rem;
+  margin: 1.4em 0 0.5em;
+}
+
+.legal-estatico p,
+.legal-estatico ul {
+  margin: 0 0 1em;
+}
+
+.legal-estatico ul {
+  list-style: disc;
+  padding-left: 1.25em;
+}
+
+/* Seções da página inicial: fio grosso no alto e uma faixa laranja curta, como a borda da placa. */
+.secao {
+  padding: 96px 0;
+  scroll-margin-top: 72px;
+}
+
+.secao-escura {
+  background: var(--placa);
+  color: var(--placa-texto);
+}
+
+.secao-cabeca {
+  max-width: 760px;
   margin-bottom: 48px;
 }
 
-.mt-1 {
-  margin-top: 8px;
+.secao-cabeca::before {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 8px;
+  margin-bottom: 20px;
+  background: var(--laranja);
 }
 
-.mt-2 {
-  margin-top: 16px;
+.secao-titulo {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 0.92;
+  text-transform: uppercase;
 }
 
-.mt-3 {
-  margin-top: 24px;
+.secao-texto {
+  margin-top: 18px;
+  font-size: 1.1875rem;
+  line-height: 1.55;
+  color: var(--tinta-2);
+  max-width: 60ch;
 }
 
-.mt-4 {
-  margin-top: 32px;
+.secao-escura .secao-texto {
+  color: var(--placa-texto-2);
 }
 
-.mt-5 {
-  margin-top: 48px;
+/* Moldura de aparelho para as telas reais do app */
+.aparelho {
+  width: min(280px, 100%);
+  aspect-ratio: 720 / 1600;
+  border: var(--borda-placa) solid var(--linha-forte);
+  border-radius: 26px;
+  overflow: hidden;
+  background: #ffffff;
 }
 
-/* Flexbox utilities */
-.flex {
-  display: flex;
+.aparelho img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 
-.flex-col {
-  flex-direction: column;
-}
+@media (max-width: 760px) {
+  .secao {
+    padding: 64px 0;
+  }
 
-.items-center {
-  align-items: center;
-}
+  .secao-cabeca {
+    margin-bottom: 32px;
+  }
 
-.justify-center {
-  justify-content: center;
-}
+  .secao-texto {
+    font-size: 1.0625rem;
+  }
 
-.justify-between {
-  justify-content: space-between;
-}
-
-.gap-2 {
-  gap: 16px;
-}
-
-.gap-3 {
-  gap: 24px;
-}
-
-.gap-4 {
-  gap: 32px;
-}
-
-/* Hide scrollbar for clean UI */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-accent);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-neon);
+  .aparelho {
+    width: min(240px, 100%);
+  }
 }

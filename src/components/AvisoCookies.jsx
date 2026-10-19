@@ -20,6 +20,13 @@ export default function AvisoCookies() {
         return () => window.removeEventListener(EVENTO_ABRIR, abrir);
     }, []);
 
+    // Enquanto o aviso está aberto, o botão do WhatsApp sai do caminho (ver FloatingWhatsApp.module.css)
+    // e a janela de saída espera a escolha.
+    useEffect(() => {
+        if (aberto) document.documentElement.dataset.cookies = 'aberto';
+        else delete document.documentElement.dataset.cookies;
+    }, [aberto]);
+
     if (!aberto) return null;
 
     const escolher = (aceito) => {
@@ -37,8 +44,8 @@ export default function AvisoCookies() {
                 </p>
             </div>
             <div className={styles.botoes}>
-                <button type="button" className={styles.botao} onClick={() => escolher(false)}>{t('cookies.recusar')}</button>
-                <button type="button" className={styles.botao} onClick={() => escolher(true)}>{t('cookies.aceitar')}</button>
+                <button type="button" className={`acao-contorno ${styles.botao}`} onClick={() => escolher(false)}>{t('cookies.recusar')}</button>
+                <button type="button" className={`acao-contorno ${styles.botao}`} onClick={() => escolher(true)}>{t('cookies.aceitar')}</button>
             </div>
         </section>
     );

@@ -1,90 +1,123 @@
-import { useState, useEffect } from 'react';
+// Oferta de saída (Membros Fundadores, atendida pelo Max no WhatsApp). Aparece uma vez por visita:
+// no computador quando o mouse sai pela parte de cima da janela; no celular quando a pessoa sobe a
+// página depressa depois de ter lido boa parte dela; e, em último caso, depois de 45 s na página.
+// Espera o aviso de cookies ser respondido, para não abrir uma janela sobre a outra.
+import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import { linkWhatsApp } from '../links.js';
 import styles from './ExitIntentPopup.module.css';
 
-// Generic **bold** markdown → <strong> converter (locale-agnostic)
-const boldMarkdown = (str) =>
-    str.replace(/\*\*(.+?)\*\*/g, '<strong style="color: var(--color-pro)">$1</strong>');
+const CHAVE = 'obrafacil:oferta-vista';
+
+function jaVista() {
+    try {
+        return window.sessionStorage.getItem(CHAVE) === 'sim';
+    } catch {
+        return false;
+    }
+}
+
+function marcarVista() {
+    try {
+        window.sessionStorage.setItem(CHAVE, 'sim');
+    } catch {
+        // sem permissão para guardar: pode aparecer de novo nesta visita
+    }
+}
+
+// **negrito** do texto vira <strong>, sem HTML.
+function comNegrito(texto) {
+    return String(texto).split('**').map((parte, i) => (
+        i % 2 === 1 ? <strong key={i}>{parte}</strong> : <Fragment key={i}>{parte}</Fragment>
+    ));
+}
 
 export default function ExitIntentPopup() {
     const { t } = useTranslation();
-    const [isVisible, setIsVisible] = useState(false);
-    const [hasTriggered, setHasTriggered] = useState(false);
+    const [aberta, setAberta] = useState(false);
+    const fechar = useRef(null);
+    const antes = useRef(null);
+
+    const abrir = useCallback(() => {
+        if (jaVista() || document.documentElement.dataset.cookies === 'aberto') return false;
+        marcarVista();
+        antes.current = document.activeElement;
+        setAberta(true);
+        return true;
+    }, []);
 
     useEffect(() => {
-        if (hasTriggered) return;
+        if (jaVista()) return undefined;
+        const inicio = Date.now();
+        let ultimoY = window.scrollY;
+        let ultimoT = performance.now();
+        let leuBastante = false;
 
-        const triggerPopup = () => {
-            if (!hasTriggered) {
-                setIsVisible(true);
-                setHasTriggered(true);
-            }
+        const saindoPeloTopo = (e) => {
+            if (e.clientY <= 0 && Date.now() - inicio > 8000) abrir();
         };
-
-        const handleMouseLeave = (e) => {
-            if (e.clientY <= 0) {
-                triggerPopup();
-            }
+        const rolando = () => {
+            const y = window.scrollY;
+            const agora = performance.now();
+            const altura = document.documentElement.scrollHeight - window.innerHeight;
+            if (altura > 0 && y / altura > 0.4) leuBastante = true;
+            const subida = ultimoY - y;
+            if (leuBastante && Date.now() - inicio > 20000 && subida > 160 && agora - ultimoT < 250) abrir();
+            ultimoY = y;
+            ultimoT = agora;
         };
+        const tempo = window.setInterval(() => {
+            if (Date.now() - inicio > 45000 && abrir()) window.clearInterval(tempo);
+        }, 5000);
 
-        const timer = setTimeout(() => {
-            triggerPopup();
-        }, 15000);
-
-        document.documentElement.addEventListener('mouseleave', handleMouseLeave);
-
+        document.documentElement.addEventListener('mouseleave', saindoPeloTopo);
+        window.addEventListener('scroll', rolando, { passive: true });
         return () => {
-            clearTimeout(timer);
-            document.documentElement.removeEventListener('mouseleave', handleMouseLeave);
+            window.clearInterval(tempo);
+            document.documentElement.removeEventListener('mouseleave', saindoPeloTopo);
+            window.removeEventListener('scroll', rolando);
         };
-    }, [hasTriggered]);
+    }, [abrir]);
 
-    const closePopup = () => {
-        setIsVisible(false);
-    };
+    useEffect(() => {
+        if (!aberta) return undefined;
+        fechar.current?.focus();
+        const tecla = (e) => { if (e.key === 'Escape') setAberta(false); };
+        document.addEventListener('keydown', tecla);
+        return () => {
+            document.removeEventListener('keydown', tecla);
+            antes.current?.focus?.();
+        };
+    }, [aberta]);
 
-    // WhatsApp link — agente Max atende e aplica o desconto manualmente
-    const whatsappMessage = t('popup.whatsappMessage');
-    const whatsappLink = `https://wa.me/5562992666759?text=${encodeURIComponent(whatsappMessage)}`;
+    if (!aberta) return null;
 
     return (
-        <AnimatePresence>
-            {isVisible && (
-                <div className={styles.overlay}>
-                    <motion.div 
-                        className={styles.popup}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.8 }}
-                        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-                    >
-                        <button className={styles.closeBtn} onClick={closePopup}>
-                            <X size={24} />
-                        </button>
-                        
-                        <div className={styles.content}>
-                            <h2 className={styles.title}>{t('popup.title')}</h2>
-                            <p className={styles.subtitle} dangerouslySetInnerHTML={{
-                                __html: boldMarkdown(t('popup.subtitle'))
-                            }}></p>
-                            
-                            <p className={styles.body} dangerouslySetInnerHTML={{
-                                __html: boldMarkdown(t('popup.body'))
-                            }}></p>
-                            
-                            <p className={styles.scarcity}>
-                                {t('popup.scarcity')}
-                            </p>
-                            
-                            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.ctaBtn}>
-                                📲 {t('popup.cta')}
-                            </a>
-                        </div>
-                    </motion.div>
+        <div className={styles.fundo} onClick={(e) => { if (e.target === e.currentTarget) setAberta(false); }}>
+            <div className={styles.janela} role="dialog" aria-modal="true" aria-labelledby="oferta-titulo">
+                <div className={styles.faixa}>
+                    <span>{t('popup.faixa')}</span>
+                    <button ref={fechar} type="button" className={styles.fechar} onClick={() => setAberta(false)} aria-label={t('popup.fechar')}>
+                        <X size={22} strokeWidth={2.5} aria-hidden="true" />
+                    </button>
                 </div>
-            )}
-        </AnimatePresence>
+                <div className={styles.corpo}>
+                    <h2 id="oferta-titulo" className={styles.titulo}>{t('popup.title')}</h2>
+                    <p className={styles.texto}>{comNegrito(t('popup.subtitle'))}</p>
+                    <p className={styles.texto}>{comNegrito(t('popup.body'))}</p>
+                    <p className={styles.escassez}>{t('popup.scarcity')}</p>
+                    <a
+                        href={linkWhatsApp(t('popup.whatsappMessage'))}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`acao ${styles.botao}`}
+                        onClick={() => setAberta(false)}
+                    >
+                        {t('popup.cta')}
+                    </a>
+                </div>
+            </div>
+        </div>
     );
 }

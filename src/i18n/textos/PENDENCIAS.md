@@ -14,8 +14,6 @@ Cadeia: pt-BR → en-US
 
 Cadeia: pt-PT → pt-BR → en-US
 
-Iguais à base pt-BR (podem ser apagados de textos/pt-PT.json): `legal.indisponivel`, `cookies.saibaMais`
-
 ## en-US — English (US) (base) — 0 a traduzir
 
 Cadeia: en-US → pt-BR
@@ -39,18 +37,3 @@ Cadeia: es-ES → en-US → pt-BR
 ## es-MX — Español (México/LATAM) (variante de es-ES) — 0 a traduzir
 
 Cadeia: es-MX → es-ES → en-US → pt-BR
-
-## Textos que o código não usa
-
-Conferência automática (pode errar em chave montada no código). Se não forem usados, apague do pt-BR e dos outros idiomas.
-
-- `hero.videoApp`
-- `hero.projectProgress`
-- `problemSolutionMockup.videoPlaceholder`
-- `pricing.fromPriceMensal`
-- `pricing.priceMensal`
-- `pricing.fromPriceAnnual`
-- `pricing.priceAnnual`
-- `pricing.subtextAnnual`
-- `pricing.currency`
-- `pricing.price0`

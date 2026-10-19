@@ -1,0 +1,276 @@
+.secao {
+  padding: 32px 0 40px;
+}
+
+.placa {
+  background: var(--placa);
+  color: var(--placa-texto);
+  border: var(--borda-placa) solid var(--placa);
+  outline: var(--borda-placa) solid #ffffff;
+  outline-offset: -9px;
+}
+
+.faixa {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 6px 6px 0;
+  padding: 9px 18px;
+  background: var(--laranja);
+  color: var(--sobre-laranja);
+  font-family: var(--fonte-placa);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.corpo {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  margin: 0 6px 6px;
+}
+
+.texto {
+  padding: 40px 40px 36px;
+  border-right: var(--borda-placa) solid #ffffff;
+}
+
+.titulo {
+  font-size: clamp(3.1rem, 7.4vw, 6.4rem);
+  line-height: 0.86;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  max-width: 11ch;
+}
+
+.subtitulo {
+  margin-top: 22px;
+  max-width: 54ch;
+  font-size: 1.1875rem;
+  line-height: 1.5;
+  color: var(--placa-texto-2);
+}
+
+.campos {
+  margin-top: 28px;
+  border-top: var(--borda) solid var(--placa-linha);
+}
+
+.campo {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  align-items: baseline;
+  gap: 12px;
+  min-height: 52px;
+  padding: 12px 12px 12px 0;
+  background: transparent;
+  border: 0;
+  border-bottom: var(--borda) solid var(--placa-linha);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  transition: background var(--tempo) var(--suave), padding var(--tempo) var(--suave);
+}
+
+.campo::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -2px;
+  bottom: -2px;
+  width: 0;
+  background: var(--laranja);
+  transition: width var(--tempo) var(--suave);
+}
+
+.campo[aria-selected='true'] {
+  padding-left: 18px;
+  background: var(--placa-funda);
+}
+
+.campo[aria-selected='true']::before {
+  width: 6px;
+}
+
+.campo:hover .rotulo {
+  color: #ffffff;
+}
+
+.rotulo {
+  font-family: var(--fonte-placa);
+  font-weight: 700;
+  font-size: 1.1875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--placa-texto-2);
+}
+
+.campo[aria-selected='true'] .rotulo {
+  color: var(--laranja);
+}
+
+.valor {
+  font-size: 1.0625rem;
+}
+
+.acoes {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nota {
+  margin-top: 12px;
+  font-size: 0.9375rem;
+  color: var(--placa-texto-2);
+}
+
+.painel {
+  background: var(--placa-funda);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px 20px;
+}
+
+.aparelho {
+  position: relative;
+  width: min(300px, 100%);
+  aspect-ratio: 720 / 1600;
+  border: var(--borda-placa) solid #ffffff;
+  border-radius: 26px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 30px 50px -30px rgba(0, 0, 0, 0.7);
+}
+
+.tela,
+.telaBaixo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.telaNova {
+  animation: chapa 280ms var(--suave) both;
+}
+
+@keyframes chapa {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .telaNova {
+    animation: none;
+  }
+}
+
+.legenda {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: var(--placa-texto-2);
+  text-align: center;
+}
+
+.lojas {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lojas a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: var(--borda) solid var(--linha-forte);
+  border-radius: var(--raio);
+  font-family: var(--fonte-placa);
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background var(--tempo) var(--suave), color var(--tempo) var(--suave);
+}
+
+.lojas a:hover {
+  background: var(--tinta);
+  color: var(--chao);
+}
+
+.lojas small {
+  font-family: var(--fonte-texto);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@media (max-width: 960px) {
+  .corpo {
+    grid-template-columns: 1fr;
+  }
+
+  .texto {
+    border-right: 0;
+    border-bottom: var(--borda-placa) solid #ffffff;
+    padding: 28px 22px 28px;
+  }
+
+  .painel {
+    padding: 28px 16px 18px;
+  }
+}
+
+@media (max-width: 520px) {
+  .secao {
+    padding: 16px 0 28px;
+  }
+
+  .faixa {
+    font-size: 0.9375rem;
+    padding: 8px 12px;
+  }
+
+  .plataformas {
+    display: none;
+  }
+
+  .aparelho {
+    width: min(250px, 100%);
+  }
+
+  .texto {
+    padding: 24px 16px 24px;
+  }
+
+  .campo {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .subtitulo {
+    font-size: 1.0625rem;
+  }
+
+  .acoes a {
+    flex: 1 1 100%;
+  }
+}
