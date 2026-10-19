@@ -620,6 +620,12 @@
     padding-top: 40px;
 }
 
+/* A trilha fica numa linha flexível com a busca (.topoPagina): precisa poder encolher até a largura da tela. */
+.trilha {
+    min-width: 0;
+    max-width: 100%;
+}
+
 .trilha ol {
     display: flex;
     flex-wrap: wrap;
@@ -629,10 +635,15 @@
     color: var(--text-secondary);
 }
 
+/* min-width: 0 e max-width: 100%: o item pode encolher até a largura da linha. Sem isso, o título longo da
+   página atual (até 42 caracteres, sem quebra) com o "/" na frente passava da tela no celular e dava rolagem
+   para o lado; agora ele é cortado com "..." dentro da linha. */
 .trilha li {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    min-width: 0;
+    max-width: 100%;
 }
 
 .trilha li + li::before {
@@ -653,6 +664,7 @@
 }
 
 .trilha [aria-current='page'] {
+    min-width: 0;
     max-width: 42ch;
     overflow: hidden;
     text-overflow: ellipsis;
