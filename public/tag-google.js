@@ -29,10 +29,12 @@ if (MEDICAO_GA4) gtag('config', MEDICAO_GA4);
 // Vão como eventos para o Google Ads e, com o código acima preenchido, para o Analytics:
 // - "comecar_gratis" (cadastro no navegador ou loja aberta pelo botão; parâmetro "destino");
 // - "assinar_pro" (parâmetro "plano": mensal ou anual).
-// Para o Google Ads contar como conversão, criar no Ads uma conversão do tipo "site" e colar abaixo o rótulo
-// dela (a parte depois da barra em "AW-18200904302/xxxxxxxx"). Vazio = só o evento, sem conversão.
+// Para o Google Ads contar como conversão, criar no Ads uma conversão do tipo "site" com o nome "Clique para
+// começar grátis" (é um clique de intenção, não o cadastro feito), contagem "Uma", e colar abaixo o rótulo dela
+// (a parte depois da barra em "AW-18200904302/xxxxxxxx"). Vazio = só o evento, sem conversão.
 var ROTULO_CONVERSAO_CADASTRO = '';
 var ROTULO_CONVERSAO_ASSINATURA = '';
+var conversoesEnviadas = {};
 document.addEventListener('click', function (evento) {
   var alvo = evento.target && evento.target.closest ? evento.target.closest('[data-conversao]') : null;
   if (!alvo) return;
@@ -41,6 +43,10 @@ document.addEventListener('click', function (evento) {
   gtag('event', assinatura ? 'assinar_pro' : 'comecar_gratis', assinatura
     ? { plano: tipo.slice(8), transport_type: 'beacon' }
     : { destino: tipo, transport_type: 'beacon' });
+  // A conversão do Ads conta uma vez por página aberta (dois toques ou loja + cadastro não viram duas).
   var rotulo = assinatura ? ROTULO_CONVERSAO_ASSINATURA : ROTULO_CONVERSAO_CADASTRO;
-  if (rotulo) gtag('event', 'conversion', { send_to: 'AW-18200904302/' + rotulo, transport_type: 'beacon' });
+  if (rotulo && !conversoesEnviadas[rotulo]) {
+    conversoesEnviadas[rotulo] = true;
+    gtag('event', 'conversion', { send_to: 'AW-18200904302/' + rotulo, transport_type: 'beacon' });
+  }
 }, true);

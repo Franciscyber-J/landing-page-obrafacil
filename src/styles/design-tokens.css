@@ -31,7 +31,7 @@
   --sobre-laranja: #1a1206;      /* texto sobre o laranja (7,4:1) */
   --destaque: linear-gradient(90deg, #b4570a, #d9630a);   /* palavras em destaque nos títulos grandes */
 
-  /* Painel azul (recursos, plano PRO, chamadas): igual nos dois temas */
+  /* Painel azul (recursos, plano PRO, chamadas); no escuro um azul mais fundo (abaixo) */
   --painel: #0f3a63;
   --painel-2: #0b2c4d;
   --painel-texto: #ffffff;

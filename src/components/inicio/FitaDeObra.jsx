@@ -51,7 +51,25 @@ export default function FitaDeObra() {
                     });
                 },
             });
-            return () => gatilho.kill();
+            // Paradas fora da tela (não gastam bateria) e enquanto o mouse está em cima (dá para ler).
+            const visivel = ScrollTrigger.create({
+                trigger: raiz.current,
+                start: 'top bottom',
+                end: 'bottom top',
+                onToggle: (self) => [ida, volta].forEach((tw) => tw.paused(!self.isActive)),
+            });
+            if (!visivel.isActive) [ida, volta].forEach((tw) => tw.pause());
+            const parar = () => [ida, volta].forEach((tw) => tw.pause());
+            const seguir = () => { if (visivel.isActive) [ida, volta].forEach((tw) => tw.play()); };
+            raiz.current.addEventListener('pointerenter', parar);
+            raiz.current.addEventListener('pointerleave', seguir);
+            const elemento = raiz.current;
+            return () => {
+                gatilho.kill();
+                visivel.kill();
+                elemento.removeEventListener('pointerenter', parar);
+                elemento.removeEventListener('pointerleave', seguir);
+            };
         });
     }, { scope: raiz, dependencies: [codigo], revertOnUpdate: true });
 

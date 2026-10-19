@@ -42,7 +42,8 @@ function destinoSemIdioma(lido, hash) {
 }
 
 function Pagina({ codigo, lido }) {
-  if (lido.pagina === 'inicio') return <Home />;
+  // key: a página inicial nasce de novo em cada idioma (as animações de título guardam o texto que dividiram)
+  if (lido.pagina === 'inicio') return <Home key={codigo} />;
   if (lido.pagina === 'nao-encontrado') return <Navigate to={caminhoInicio(codigo)} replace />;
   if (lido.pagina === 'legal') return <LegalPagina key={`${codigo}:${lido.documento}`} codigo={codigo} documento={lido.documento} />;
   return <AjudaPagina key={codigo} codigo={codigo} tipo={lido.pagina === 'ajuda' ? 'inicio' : lido.pagina} modulo={lido.modulo} slug={lido.slug} />;
@@ -60,6 +61,7 @@ function useIdiomaDoEndereco(codigo) {
 }
 
 function Site() {
+  const { i18n } = useTranslation();
   const { pathname, search, hash } = useLocation();
   const lido = analisarCaminho(pathname);
   const codigo = lido.tipo === 'pagina' ? lido.codigo : null;
@@ -74,7 +76,8 @@ function Site() {
       <Alternativos />
       <AvisoCookies />
       <Navbar />
-      <Pagina codigo={codigo} lido={lido} />
+      {/* Só depois de os textos do idioma chegarem: a página não nasce com os textos do idioma anterior. */}
+      {i18n.language === codigo && <Pagina codigo={codigo} lido={lido} />}
       <Footer comChamada={lido.pagina !== 'inicio'} />
       <FloatingWhatsApp />
     </ProvedorDeRota>

@@ -776,6 +776,7 @@
 .sobretituloLink {
     display: inline-flex;
     align-items: center;
+    min-height: 44px;
     gap: 10px;
     align-self: flex-start;
     font-size: 13px;
@@ -1067,11 +1068,14 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 0;
 }
 
 .listaSimples a,
 .listaIdiomas a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     color: var(--aj-ac);
 }
 

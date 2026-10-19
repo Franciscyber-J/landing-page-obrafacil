@@ -172,6 +172,12 @@
   font-weight: 700;
 }
 
+.outro a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
 .estado {
   padding: 64px 0;
   text-align: center;

@@ -76,8 +76,9 @@ flutuando. O escuro é o mundo principal; o claro tem a mesma forma com luzes ma
 
 ## Colors
 
-- Fundo e superfícies trocam com o tema (`--fundo`, `--vidro`, `--texto`...); o painel azul (`--painel`) é o
-  mesmo nos dois e leva os recursos, o plano PRO, o depoimento em destaque e a chamada final.
+- Fundo e superfícies trocam com o tema (`--fundo`, `--vidro`, `--texto`...). O painel azul (`--painel`) leva os
+  recursos, o plano PRO, o depoimento em destaque, o convite de saída e a chamada final: `#0f3a63` no claro e um
+  azul mais fundo (`#0f2a48`) no escuro, para não sumir no fundo escuro; o texto sobre ele é o mesmo nos dois.
 - Laranja é a ação principal (texto escuro `--sobre-laranja` em cima, 7,4:1) e o destaque de palavras nos
   títulos (`--destaque`, gradiente; no claro um laranja mais escuro para ter contraste; sobre o painel, o
   laranja claro, por `data-painel`).

@@ -174,7 +174,7 @@ export default function Placa() {
                             </button>
                         ))}
                     </div>
-                    <p id="campo-valor" className={styles.valor} aria-live="polite">{t(`hero.campos.${campo.id}.valor`)}</p>
+                    <p id="campo-valor" className={styles.valor} aria-live={automatico ? 'off' : 'polite'}>{t(`hero.campos.${campo.id}.valor`)}</p>
 
                     <div className={styles.acoes}>
                         <a {...linkComecar(codigo)} className="acao" data-m="acao">{t('hero.comecar')}</a>

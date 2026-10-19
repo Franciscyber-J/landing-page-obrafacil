@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { X } from 'lucide-react';
 import { useIdioma } from '../i18n/RotaDoIdioma.jsx';
 import { WINDOWS, appStore, googlePlay } from '../links.js';
-import { linkComecar } from '../comecar.js';
+import { aparelho, linkComecar } from '../comecar.js';
 import styles from './ExitIntentPopup.module.css';
 
 const CHAVE = 'obrafacil:convite-visto';
@@ -137,18 +137,23 @@ export default function ExitIntentPopup() {
                     <a {...linkComecar(codigo)} className={`acao ${styles.botao}`} onClick={() => setAberta(false)}>
                         {t('popup.cta')}
                     </a>
-                    <p className={styles.lojasRotulo}>{t('popup.lojas')}</p>
-                    <ul className={styles.lojas}>
-                        <li>
-                            <a href={googlePlay(codigo)} data-conversao="loja_android" target="_blank" rel="noopener noreferrer">Google Play</a>
-                        </li>
-                        <li>
-                            <a href={appStore()} data-conversao="loja_ios" target="_blank" rel="noopener noreferrer">App Store</a>
-                        </li>
-                        <li>
-                            <a href={WINDOWS} data-conversao="windows">Windows</a>
-                        </li>
-                    </ul>
+                    {/* No celular o botão já abre a loja do aparelho; as três opções ficam para o computador. */}
+                    {aparelho() === 'outro' && (
+                        <>
+                            <p className={styles.lojasRotulo}>{t('popup.lojas')}</p>
+                            <ul className={styles.lojas}>
+                                <li>
+                                    <a href={googlePlay(codigo)} data-conversao="loja_android" target="_blank" rel="noopener noreferrer">Google Play</a>
+                                </li>
+                                <li>
+                                    <a href={appStore()} data-conversao="loja_ios" target="_blank" rel="noopener noreferrer">App Store</a>
+                                </li>
+                                <li>
+                                    <a href={WINDOWS} data-conversao="windows">Windows</a>
+                                </li>
+                            </ul>
+                        </>
+                    )}
                 </div>
             </div>
         </div>
