@@ -21,5 +21,14 @@
     },
     "faq": {
         "verAjuda": "Visit the Help Centre"
+    },
+    "perfil": {
+        "gerenciarLugar": "Cancelling in one place doesn't cancel a subscription made in the other.",
+        "artigosTitulo": "In the Help Centre"
+    },
+    "suporte": {
+        "metaDescricao": "Contact ObraFácil support on WhatsApp, by email or with a ticket in the app, and see step-by-step guides in the Help Centre.",
+        "centralTitulo": "Help Centre",
+        "centralBotao": "Open the Help Centre"
     }
 }

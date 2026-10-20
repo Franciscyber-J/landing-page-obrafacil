@@ -355,5 +355,112 @@
         "acao": "Start free",
         "duvida": "Questions? Talk to us on WhatsApp.",
         "whatsapp": "Message us on WhatsApp"
+    },
+    "conta": {
+        "abrirApp": "Open ObraFácil in your browser",
+        "lojasTitulo": "ObraFácil on every device",
+        "lojasTexto": "Sign in with the same account on your phone, computer or browser: what you bought works on all of them.",
+        "falarSuporte": "Contact support"
+    },
+    "pagamento": {
+        "metaTitulo": "Payment confirmed · ObraFácil",
+        "metaDescricao": "Your payment went through. See when your purchase shows up in ObraFácil and what to do if it takes a while.",
+        "agoraTitulo": "What happens next",
+        "voltarTitulo": "Go back to ObraFácil",
+        "voltarTexto": "Go back to the browser tab or the Windows app where you made the purchase. If you already closed it, open ObraFácil again with the same account.",
+        "automaticoTitulo": "It unlocks automatically",
+        "automaticoTexto": "Stripe, which processes the payment, notifies our server, and your purchase is unlocked on your account within moments. You don't need to do anything.",
+        "conferirTitulo": "Check in the app",
+        "demoraTitulo": "If it hasn't shown up yet",
+        "demoraEsperar": "Wait a minute, then close and reopen the app. In your browser, reload the ObraFácil page.",
+        "demoraSairEntrar": "Still on the free plan? Sign out and sign in again with the same email you used to pay: when you sign in, the app looks for the website subscription and turns PRO on.",
+        "demoraRestaurar": "**Restore purchases** won't help here: it only finds purchases made in your phone's app store (Google Play or App Store).",
+        "demoraSuporte": "If nothing works, contact support and include the email you used to pay.",
+        "compras": {
+            "geral": {
+                "sobretitulo": "Payment confirmed",
+                "titulo": "Payment **confirmed**",
+                "texto": "Your payment went through. Within moments ObraFácil receives the confirmation and unlocks what you bought.",
+                "conferir": "Open ObraFácil with the same account you used to buy: your purchase shows up by itself.",
+                "artigo": "Where to see your payment history"
+            },
+            "pro": {
+                "sobretitulo": "Subscription confirmed",
+                "titulo": "Welcome to ObraFácil **PRO**",
+                "texto": "Your subscription is confirmed. Within moments PRO turns on by itself on your account, on your phone, computer and browser.",
+                "conferir": "Open **Profile**: the badge on the top card changes to **PRO member** and the **Your plan** card shows **ObraFácil PRO**.",
+                "artigo": "I bought PRO on the website: how to activate it"
+            },
+            "acesso": {
+                "sobretitulo": "Payment confirmed",
+                "titulo": "**Client Access** payment confirmed",
+                "texto": "The project fee is paid. Within moments the app unlocks the paid Client Portal features for this project's client.",
+                "conferir": "Open the project: at the bottom of the **PROJECT MENU**, the **Client Access** card shows **Access Granted**. Tap **CONFIGURE** and choose what the client can see and download.",
+                "artigo": "What Client Access is"
+            },
+            "downloads": {
+                "sobretitulo": "Payment confirmed",
+                "titulo": "**Extra Project Package** confirmed",
+                "texto": "Within moments the project gets 2 more full downloads of the gallery ZIP, shared by all guests.",
+                "conferir": "Go back to the **Project Gallery** and tap **Download All** again.",
+                "artigo": "How to buy extra gallery downloads"
+            },
+            "armazenamento": {
+                "sobretitulo": "Subscription confirmed",
+                "titulo": "**20 GB** more for your projects",
+                "texto": "Your storage expansion is confirmed. Within moments the app adds 20 GB to your plan's space.",
+                "conferir": "Open **Profile**: below the **Storage** bar, the **Your plan** card shows **+20 GB expansion active**.",
+                "artigo": "How to add 20 GB of storage"
+            }
+        }
+    },
+    "perfil": {
+        "metaTitulo": "Your subscription · ObraFácil",
+        "metaDescricao": "See where to find your plan, payment card and subscription cancellation in ObraFácil.",
+        "sobretitulo": "Your subscription",
+        "titulo": "Your subscription lives in the app's **Profile**",
+        "texto": "Your plan, charges, card and cancellation are in the app: in Profile, on the Your plan card. Open ObraFácil with your account and follow the steps below.",
+        "artigoBotao": "How to manage or cancel",
+        "passosTitulo": "How to get there",
+        "passo1Titulo": "Open ObraFácil",
+        "passo1Texto": "On your phone, in the Windows app or in your browser, sign in with your account.",
+        "passo2Titulo": "Open Profile",
+        "passo2Texto": "On a phone, tap the menu (three lines) at the top of the dashboard, then your card, with your photo and name. On a computer, tap your card in the side bar.",
+        "passo3Titulo": "Use the Your plan card",
+        "passo3Texto": "Right below your photo, the **Your plan** card shows your plan, storage used, projects and reports this month. With a subscription, tap **Manage**.",
+        "gerenciarTitulo": "Where Manage takes you",
+        "gerenciarCelular": "**Subscribed on your phone**: the Google Play or App Store subscriptions area, with renewal, charges and cancellation.",
+        "gerenciarSite": "**Subscribed on the website or a computer**: the payments page in your browser, to change your card, see charges or cancel.",
+        "gerenciarLugar": "Canceling in one place doesn't cancel a subscription made in the other.",
+        "avisoTitulo": "Got a payment not processed notice?",
+        "avisoTexto": "Your bank declined the subscription charge. Tap **Manage** and add a valid card to keep PRO. If you've already paid, you can ignore the notice.",
+        "artigosTitulo": "In the Help Center",
+        "artigoCartao": "Understanding the Your plan card",
+        "artigoCancelar": "How to manage or cancel your subscription",
+        "artigoPagamentos": "Payment history and refunds"
+    },
+    "suporte": {
+        "metaTitulo": "Support · ObraFácil",
+        "metaDescricao": "Contact ObraFácil support on WhatsApp, by email or with a ticket in the app, and see step-by-step guides in the Help Center.",
+        "sobretitulo": "Support",
+        "titulo": "Talk to **support**",
+        "texto": "Ask a question, report a problem in the app or get help with charges. Average response time is 24 to 48 business hours.",
+        "canaisTitulo": "How to reach us",
+        "whatsappTitulo": "WhatsApp",
+        "whatsappTexto": "To chat and ask questions.",
+        "whatsappBotao": "Open WhatsApp",
+        "whatsappMensagem": "Hello, I came from the support page on your website and need help with ObraFácil.",
+        "emailTitulo": "Email",
+        "emailTexto": "To send details, screenshots and attachments. If you can, write from your account's email.",
+        "emailBotao": "Write an email",
+        "chamadoTitulo": "Ticket in the app",
+        "chamadoTexto": "It stays on your account and is the way to request a refund for website purchases, under **Financial Help**. The reply goes to your account email.",
+        "chamadoBotao": "How to open a ticket",
+        "centralTitulo": "Help Center",
+        "centralTexto": "Step-by-step guides for every screen in the app, with real screenshots.",
+        "centralBotao": "Open the Help Center",
+        "lojasTitulo": "Bought on Google Play or the App Store?",
+        "lojasTexto": "Charges and refunds for those purchases are handled by the store itself, under its rules. To cancel, use **Manage** on the **Your plan** card in Profile.",
+        "perfilLink": "Where to see your subscription"
     }
 }

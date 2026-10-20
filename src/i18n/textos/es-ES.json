@@ -357,5 +357,112 @@
         "acao": "Empezar gratis",
         "duvida": "¿Tienes dudas? Escríbenos por WhatsApp.",
         "whatsapp": "Escribir por WhatsApp"
+    },
+    "conta": {
+        "abrirApp": "Abrir ObraFácil en el navegador",
+        "lojasTitulo": "ObraFácil en todos tus dispositivos",
+        "lojasTexto": "Entra con la misma cuenta en el móvil, en el ordenador o en el navegador: lo que compraste vale en todos.",
+        "falarSuporte": "Hablar con soporte"
+    },
+    "pagamento": {
+        "metaTitulo": "Pago confirmado · ObraFácil",
+        "metaDescricao": "El pago se ha completado. Mira cuándo aparece la compra en ObraFácil y qué hacer si tarda.",
+        "agoraTitulo": "Qué pasa ahora",
+        "voltarTitulo": "Vuelve a ObraFácil",
+        "voltarTexto": "Vuelve a la pestaña del navegador o a la aplicación para Windows donde hiciste la compra. Si ya la cerraste, abre ObraFácil otra vez con la misma cuenta.",
+        "automaticoTitulo": "La activación es automática",
+        "automaticoTexto": "Stripe, que procesa el pago, avisa a nuestro servidor, y la compra se activa en tu cuenta en unos instantes. No tienes que hacer nada.",
+        "conferirTitulo": "Compruébalo en la app",
+        "demoraTitulo": "Si todavía no aparece",
+        "demoraEsperar": "Espera un minuto, cierra la app y vuelve a abrirla. En el navegador, recarga la página de ObraFácil.",
+        "demoraSairEntrar": "¿Sigues en el plan gratuito? Cierra sesión y vuelve a entrar con el mismo correo que usaste para pagar: al entrar, la app busca la suscripción hecha en el sitio web y activa el PRO.",
+        "demoraRestaurar": "**Restaurar compras** no sirve aquí: solo encuentra compras hechas en la tienda del móvil (Google Play o App Store).",
+        "demoraSuporte": "Si nada funciona, habla con soporte e indica el correo que usaste para pagar.",
+        "compras": {
+            "geral": {
+                "sobretitulo": "Pago confirmado",
+                "titulo": "Pago **confirmado**",
+                "texto": "El pago se ha completado. En unos instantes ObraFácil recibe la confirmación y activa lo que compraste.",
+                "conferir": "Abre ObraFácil con la misma cuenta que usaste para comprar: la compra aparece sola.",
+                "artigo": "Dónde ver el historial de pagos"
+            },
+            "pro": {
+                "sobretitulo": "Suscripción confirmada",
+                "titulo": "Te damos la bienvenida a ObraFácil **PRO**",
+                "texto": "Tu suscripción está confirmada. En unos instantes el PRO se activa solo en tu cuenta, en el móvil, en el ordenador y en el navegador.",
+                "conferir": "Abre el **Perfil**: la insignia de la tarjeta de arriba cambia a **Miembro PRO** y la tarjeta **Su plan** muestra **ObraFácil PRO**.",
+                "artigo": "Compré el PRO en el sitio web: cómo activarlo"
+            },
+            "acesso": {
+                "sobretitulo": "Pago confirmado",
+                "titulo": "Pago del **Acceso Cliente** confirmado",
+                "texto": "La tarifa de la obra está pagada. En unos instantes la app libera para el cliente de esa obra las funciones de pago del Portal del Cliente.",
+                "conferir": "Abre la obra: al final del **MENÚ DE LA OBRA**, la tarjeta **Acceso Cliente** muestra **Acceso Liberado**. Pulsa **CONFIGURAR** y elige lo que el cliente puede ver y descargar.",
+                "artigo": "Qué es el Acceso Cliente"
+            },
+            "downloads": {
+                "sobretitulo": "Pago confirmado",
+                "titulo": "**Paquete Extra de Obra** confirmado",
+                "texto": "En unos instantes la obra recibe 2 descargas completas más del ZIP de la galería, compartidas entre todos los invitados.",
+                "conferir": "Vuelve a la **Galería de la Obra** y pulsa **Descargar Todo** otra vez.",
+                "artigo": "Cómo comprar descargas extra de la galería"
+            },
+            "armazenamento": {
+                "sobretitulo": "Suscripción confirmada",
+                "titulo": "**20 GB** más para tus obras",
+                "texto": "La ampliación de almacenamiento está confirmada. En unos instantes la app suma 20 GB al espacio de tu plan.",
+                "conferir": "Abre el **Perfil**: debajo de la barra **Almacenamiento**, la tarjeta **Su plan** muestra **Ampliación de +20 GB activa**.",
+                "artigo": "Cómo contratar +20 GB de almacenamiento"
+            }
+        }
+    },
+    "perfil": {
+        "metaTitulo": "Tu suscripción · ObraFácil",
+        "metaDescricao": "Mira dónde están el plan, la tarjeta de pago y la cancelación de la suscripción en ObraFácil.",
+        "sobretitulo": "Tu suscripción",
+        "titulo": "Tu suscripción está en el **Perfil** de la app",
+        "texto": "El plan, los cobros, la tarjeta y la cancelación están en la app: en el Perfil, en la tarjeta Su plan. Abre ObraFácil con tu cuenta y sigue estos pasos.",
+        "artigoBotao": "Cómo gestionar o cancelar",
+        "passosTitulo": "Cómo llegar",
+        "passo1Titulo": "Abre ObraFácil",
+        "passo1Texto": "En el móvil, en la aplicación para Windows o en el navegador, entra con tu cuenta.",
+        "passo2Titulo": "Abre el Perfil",
+        "passo2Texto": "En el móvil, pulsa el menú (tres líneas) arriba del panel y luego tu tarjeta, con foto y nombre. En el ordenador, pulsa tu tarjeta en la barra lateral.",
+        "passo3Titulo": "Usa la tarjeta Su plan",
+        "passo3Texto": "Justo debajo de tu foto, la tarjeta **Su plan** muestra el plan, el espacio usado, las obras y los informes del mes. Con una suscripción, pulsa **Gestionar**.",
+        "gerenciarTitulo": "Adónde te lleva Gestionar",
+        "gerenciarCelular": "**Si te suscribiste en el móvil**: el área de suscripciones de Google Play o de App Store, con la renovación, los cobros y la cancelación.",
+        "gerenciarSite": "**Si te suscribiste en el sitio web o en el ordenador**: la página de pagos, en el navegador, para cambiar la tarjeta, ver los cobros o cancelar.",
+        "gerenciarLugar": "Cancelar en un sitio no cancela una suscripción hecha en el otro.",
+        "avisoTitulo": "¿Recibiste un aviso de pago no procesado?",
+        "avisoTexto": "El banco rechazó el cobro de la suscripción. Pulsa **Gestionar** y añade una tarjeta válida para no perder el PRO. Si ya pagaste, puedes ignorar el aviso.",
+        "artigosTitulo": "En el Centro de Ayuda",
+        "artigoCartao": "Cómo leer la tarjeta Su plan",
+        "artigoCancelar": "Cómo gestionar o cancelar la suscripción",
+        "artigoPagamentos": "Historial de pagos y reembolsos"
+    },
+    "suporte": {
+        "metaTitulo": "Soporte · ObraFácil",
+        "metaDescricao": "Habla con el soporte de ObraFácil por WhatsApp, por correo o con un ticket en la app, y consulta el paso a paso en el Centro de Ayuda.",
+        "sobretitulo": "Soporte",
+        "titulo": "Habla con **soporte**",
+        "texto": "Resuelve dudas, cuéntanos un problema en la app o pide ayuda con los cobros. El tiempo medio de respuesta es de 24 a 48 horas hábiles.",
+        "canaisTitulo": "Cómo contactarnos",
+        "whatsappTitulo": "WhatsApp",
+        "whatsappTexto": "Para conversar y resolver dudas.",
+        "whatsappBotao": "Abrir WhatsApp",
+        "whatsappMensagem": "Hola, vengo de la página de soporte del sitio web y necesito ayuda con ObraFácil.",
+        "emailTitulo": "Correo",
+        "emailTexto": "Para enviar detalles, capturas y archivos. Si puedes, escribe desde el correo de tu cuenta.",
+        "emailBotao": "Escribir un correo",
+        "chamadoTitulo": "Ticket en la app",
+        "chamadoTexto": "Queda registrado en tu cuenta y es la forma de pedir el reembolso de compras hechas en el sitio web, en **Ayuda Financiera**. La respuesta llega al correo de la cuenta.",
+        "chamadoBotao": "Cómo abrir un ticket",
+        "centralTitulo": "Centro de Ayuda",
+        "centralTexto": "El paso a paso de cada pantalla de la app, con las pantallas reales.",
+        "centralBotao": "Abrir el Centro de Ayuda",
+        "lojasTitulo": "¿Compraste en Google Play o en App Store?",
+        "lojasTexto": "Los cobros y reembolsos de esas compras los gestiona la propia tienda, con sus reglas. Para cancelar, usa **Gestionar** en la tarjeta **Su plan** del Perfil.",
+        "perfilLink": "Dónde ver tu suscripción"
     }
 }

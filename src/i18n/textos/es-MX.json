@@ -100,5 +100,35 @@
         "a4": "Para la cuenta: nombre, correo electrónico y teléfono; tu identificación fiscal (por ejemplo, el RFC) solo si la indicas. La lista completa, y para qué sirve cada dato, está en la Política de Privacidad.",
         "q7": "¿ObraFácil sustituye al responsable técnico de la obra?",
         "a7": "No. Es una herramienta de gestión y no sustituye al profesional responsable de la obra."
+    },
+    "conta": {
+        "lojasTexto": "Entra con la misma cuenta en el celular, en la computadora o en el navegador: lo que compraste vale en todos."
+    },
+    "pagamento": {
+        "metaDescricao": "El pago se completó. Mira cuándo aparece la compra en ObraFácil y qué hacer si tarda.",
+        "demoraRestaurar": "**Restaurar compras** no sirve aquí: solo encuentra compras hechas en la tienda del celular (Google Play o App Store).",
+        "compras": {
+            "geral": {
+                "texto": "El pago se completó. En unos instantes ObraFácil recibe la confirmación y activa lo que compraste."
+            },
+            "pro": {
+                "texto": "Tu suscripción está confirmada. En unos instantes el PRO se activa solo en tu cuenta, en el celular, en la computadora y en el navegador."
+            },
+            "acesso": {
+                "conferir": "Abre la obra: al final del **MENÚ DE LA OBRA**, la tarjeta **Acceso Cliente** muestra **Acceso Liberado**. Toca **CONFIGURAR** y elige lo que el cliente puede ver y descargar."
+            },
+            "downloads": {
+                "conferir": "Vuelve a la **Galería de la Obra** y toca **Descargar Todo** otra vez."
+            }
+        }
+    },
+    "perfil": {
+        "passo1Texto": "En el celular, en la aplicación para Windows o en el navegador, entra con tu cuenta.",
+        "passo2Texto": "En el celular, toca el menú (tres líneas) arriba del panel y luego tu tarjeta, con foto y nombre. En la computadora, toca tu tarjeta en la barra lateral.",
+        "passo3Texto": "Justo debajo de tu foto, la tarjeta **Su plan** muestra el plan, el espacio usado, las obras y los informes del mes. Con una suscripción, toca **Gestionar**.",
+        "gerenciarCelular": "**Si te suscribiste en el celular**: el área de suscripciones de Google Play o de App Store, con la renovación, los cobros y la cancelación.",
+        "gerenciarSite": "**Si te suscribiste en el sitio web o en la computadora**: la página de pagos, en el navegador, para cambiar la tarjeta, ver los cobros o cancelar.",
+        "gerenciarLugar": "Cancelar en un lugar no cancela una suscripción hecha en el otro.",
+        "avisoTexto": "El banco rechazó el cobro de la suscripción. Toca **Gestionar** y agrega una tarjeta válida para no perder el PRO. Si ya pagaste, puedes ignorar el aviso."
     }
 }

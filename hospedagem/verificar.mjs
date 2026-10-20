@@ -6,6 +6,9 @@
 
 const BASE = (process.argv[2] ?? 'https://appobrafacil.expertbr.com').replace(/\/$/, '');
 const SPA = '<div id="root">';
+// Endereço que não existe nem no site nem no WordPress: o WordPress responde com a página 404 dele (é a
+// página do WordPress usada para conferir os cabeçalhos e a versão escondida).
+const PAGINA_DO_WORDPRESS = '/obrafacil-verificacao-inexistente/';
 
 const conferencias = [
   // O site (React) abre em qualquer endereço dele, inclusive direto pelo link.
@@ -13,6 +16,8 @@ const conferencias = [
   { nome: 'link antigo /ajuda', url: '/ajuda', status: 200, contem: SPA },
   { nome: 'artigo pelo link direto', url: '/ajuda/pt-BR/criar-rdo', status: 200, contem: SPA },
   { nome: 'endereço com idioma', url: '/pt-br/ajuda', status: 200, contem: SPA },
+  { nome: 'início do idioma (pasta sem index.html)', url: '/pt-br/', status: 200, contem: SPA },
+  { nome: 'início de outro idioma', url: '/en-us/', status: 200, contem: SPA },
   { nome: 'endereço em inglês', url: '/en-us/help/topic/projects', status: 200, contem: SPA },
   { nome: 'endereço em espanhol', url: '/es-mx/ayuda/crear-reporte-diario', status: 200, contem: SPA },
   { nome: 'bandeira do menu de idiomas', url: '/bandeiras/br.svg', status: 200, contem: '<svg' },
@@ -31,9 +36,27 @@ const conferencias = [
   { nome: 'privacidade antiga, navegador en-GB', url: '/politicas-de-privacidade/', idioma: 'en-GB,en;q=0.9', status: 302, destino: '/en-gb/privacy-policy' },
   { nome: 'privacidade antiga, navegador de-DE', url: '/politicas-de-privacidade/', idioma: 'de-DE', status: 302, destino: '/en-us/privacy-policy' },
   { nome: 'privacidade antiga, sem idioma', url: '/politicas-de-privacidade/', status: 302, destino: '/en-us/privacy-policy' },
-  // O WordPress continua servindo as páginas que o app usa.
-  { nome: 'Suporte (WordPress)', url: '/suporte/', status: 200, naoContem: SPA },
+  // Páginas que o WordPress servia e que o app usa (volta do pagamento da Stripe, e-mails, Suporte): agora
+  // abrem o site, com e sem barra no fim, e o site leva à página no idioma da pessoa.
+  ...[
+    ['volta do PRO pago pelo site', '/primeiros-passos'],
+    ['volta do Acesso Cliente', '/pagamento-ok'],
+    ['volta dos downloads extras', '/pacote-downloads-extras'],
+    ['volta da expansão de +20 GB', '/expansao-20gb-ok'],
+    ['Perfil (e-mails de cobrança)', '/perfil'],
+    ['Suporte', '/suporte'],
+  ].flatMap(([nome, url]) => [
+    { nome: `${nome} (site)`, url, status: 200, contem: SPA },
+    { nome: `${nome} com barra (site)`, url: `${url}/`, status: 200, contem: SPA },
+  ]),
+  { nome: 'volta do pagamento com ?session_id', url: '/pagamento-ok/?session_id=cs_test_verificacao', status: 200, contem: SPA },
+  { nome: 'volta do pagamento no idioma', url: '/pt-br/pagamento-confirmado/pro', status: 200, contem: SPA },
+  { nome: 'Perfil no idioma', url: '/en-us/profile', status: 200, contem: SPA },
+  { nome: 'Suporte no idioma', url: '/es-es/soporte', status: 200, contem: SPA },
+  // O WordPress continua no ar até ser desligado (hospedagem/LEIAME.md).
   { nome: 'login do WordPress continua abrindo', url: '/wp-login.php', status: 200 },
+  // 404 (e não 200 com o site): o endereço passou pelo site e chegou ao WordPress.
+  { nome: 'endereço inexistente cai no WordPress (404)', url: PAGINA_DO_WORDPRESS, status: 404 },
   // O que não pode mais aparecer.
   { nome: 'lista de usuários pela API', url: '/wp-json/wp/v2/users', status: [401, 403] },
   { nome: 'lista de usuários com cookie falso', url: '/wp-json/wp/v2/users', cookie: 'wordpress_logged_in_x=1', status: [401, 403] },
@@ -94,7 +117,7 @@ for (const c of conferencias) {
 }
 
 console.log('');
-for (const [pagina, caminho] of [['site', '/'], ['Termos', '/pt-br/termos-de-uso/'], ['WordPress', '/suporte/']]) {
+for (const [pagina, caminho] of [['site', '/'], ['Termos', '/pt-br/termos-de-uso/'], ['Suporte', '/suporte/'], ['WordPress', PAGINA_DO_WORDPRESS]]) {
   const r = await pedir(caminho);
   for (const [nome, regra] of CABECALHOS) {
     const valor = r.cabecalhos.get(nome);

@@ -7,6 +7,8 @@ import { IDIOMAS as CADASTRO, INTERNACIONAL, REFERENCIA } from './registro.js';
 export { INTERNACIONAL, REFERENCIA };
 
 const SECOES = ['sobre', 'recursos', 'equipe', 'precos', 'faq'];
+// Compras com página própria de volta do pagamento (rotas.compras no cadastro).
+const COMPRAS = ['pro', 'acesso', 'downloads', 'armazenamento'];
 
 function completar(entrada, porCodigo) {
     const base = entrada.base ? porCodigo.get(entrada.base) : null;
@@ -23,6 +25,10 @@ function completar(entrada, porCodigo) {
             assunto: rotas.assunto ?? rotasBase.assunto,
             termos: rotas.termos ?? rotasBase.termos,
             privacidade: rotas.privacidade ?? rotasBase.privacidade,
+            pagamento: rotas.pagamento ?? rotasBase.pagamento,
+            compras: { ...(rotasBase.compras ?? {}), ...(rotas.compras ?? {}) },
+            perfil: rotas.perfil ?? rotasBase.perfil,
+            suporte: rotas.suporte ?? rotasBase.suporte,
             secoes: { ...(rotasBase.secoes ?? {}), ...(rotas.secoes ?? {}) },
         },
     };
@@ -117,8 +123,38 @@ export function caminhoLegal(codigo, documento) {
     return `/${i.prefixo}/${i.rotas[documento]}`;
 }
 
+// Página de volta do pagamento pelo navegador (compra: pro | acesso | downloads | armazenamento; sem compra,
+// o texto geral) e as páginas do Perfil e do Suporte.
+export function caminhoPagamento(codigo, compra) {
+    const i = idioma(codigo) ?? idioma(REFERENCIA);
+    if (compra && !COMPRAS.includes(compra)) throw new Error(`Compra desconhecida: ${compra}`);
+    return `/${i.prefixo}/${i.rotas.pagamento}${compra ? `/${i.rotas.compras[compra]}` : ''}`;
+}
+
+export function caminhoPerfil(codigo) {
+    const i = idioma(codigo) ?? idioma(REFERENCIA);
+    return `/${i.prefixo}/${i.rotas.perfil}`;
+}
+
+export function caminhoSuporte(codigo) {
+    const i = idioma(codigo) ?? idioma(REFERENCIA);
+    return `/${i.prefixo}/${i.rotas.suporte}`;
+}
+
 // Endereços que o WordPress usava (e que estão nas lojas de aplicativos): continuam valendo.
 const LEGAIS_ANTIGOS = { 'termos-de-uso': 'termos', 'politicas-de-privacidade': 'privacidade' };
+
+// Endereços sem idioma que o WordPress servia e que estão nas sessões de pagamento da Stripe, no Payment Link
+// do site e em e-mails já enviados (gestao_obras, functions/src/index.ts). Não podem mudar: o .htaccess
+// entrega o site neles e o site leva à página no idioma da pessoa.
+export const PAGINAS_ANTIGAS = {
+    'pagamento-ok': { pagina: 'pagamento', compra: 'acesso' },
+    'pacote-downloads-extras': { pagina: 'pagamento', compra: 'downloads' },
+    'primeiros-passos': { pagina: 'pagamento', compra: 'pro' },
+    'expansao-20gb-ok': { pagina: 'pagamento', compra: 'armazenamento' },
+    perfil: { pagina: 'perfil' },
+    suporte: { pagina: 'suporte' },
+};
 
 // Nome do assunto no endereço: o nome do módulo no idioma, sem acento ("Financeiro da obra"
 // → financeiro-da-obra). Letras de outros alfabetos ficam como estão.
@@ -143,21 +179,30 @@ const PALAVRAS_AJUDA = new Set(IDIOMAS.map((i) => i.rotas.ajuda.toLowerCase()));
 // Palavra do endereço (de qualquer idioma) → documento legal.
 const PALAVRAS_LEGAIS = new Map(IDIOMAS.flatMap((i) => DOCUMENTOS_LEGAIS.map((d) => [i.rotas[d].toLowerCase(), d])));
 const PALAVRAS_ASSUNTO = new Set(IDIOMAS.map((i) => i.rotas.assunto.toLowerCase()));
+// Palavra do endereço (de qualquer idioma) → página de conta (pagamento, perfil, suporte) e compra.
+const PALAVRAS_CONTA = new Map(IDIOMAS.flatMap((i) => ['pagamento', 'perfil', 'suporte'].map((p) => [i.rotas[p].toLowerCase(), p])));
+const PALAVRAS_COMPRA = new Map(IDIOMAS.flatMap((i) => COMPRAS.map((c) => [i.rotas.compras[c].toLowerCase(), c])));
 
 // Lê um endereço do site. Resultado:
 //   { tipo: 'raiz' }                                   → /
 //   { tipo: 'antigo', codigo|null, pagina, modulo, slug } → /ajuda/... (endereços de antes)
 //   { tipo: 'antigo', codigo: null, pagina: 'legal', documento } → /termos-de-uso/, /politicas-de-privacidade/
+//   { tipo: 'antigo', codigo: null, pagina: 'pagamento' (com compra) | 'perfil' | 'suporte' } → PAGINAS_ANTIGAS
 //   { tipo: 'pagina', codigo, pagina, modulo, slug, canonico }
-//       pagina: inicio | ajuda | assunto | artigo | legal (com documento) | nao-encontrado
+//       pagina: inicio | ajuda | assunto | artigo | legal (com documento) | pagamento (com compra, ou null)
+//               | perfil | suporte | nao-encontrado
 //       canonico: endereço certo quando o pedido veio com outra grafia (/PT-BR/help → /pt-br/ajuda)
 //   { tipo: 'desconhecido' }
 export function analisarCaminho(pathname) {
     const segs = String(pathname ?? '/').split('/').filter(Boolean).map(decodificar);
     if (segs.length === 0) return { tipo: 'raiz' };
 
-    const antigo = LEGAIS_ANTIGOS[segs[0].toLowerCase()];
+    // Object.hasOwn: "/constructor" ou "/toString" não podem ser lidos como endereço antigo.
+    const primeiro = segs[0].toLowerCase();
+    const antigo = Object.hasOwn(LEGAIS_ANTIGOS, primeiro) ? LEGAIS_ANTIGOS[primeiro] : null;
     if (antigo && segs.length === 1) return { tipo: 'antigo', codigo: null, pagina: 'legal', documento: antigo };
+    const paginaAntiga = Object.hasOwn(PAGINAS_ANTIGAS, primeiro) ? PAGINAS_ANTIGAS[primeiro] : null;
+    if (paginaAntiga && segs.length === 1) return { tipo: 'antigo', codigo: null, ...paginaAntiga };
 
     if (segs[0].toLowerCase() === 'ajuda' && !idioma(segs[0])) {
         const resto = segs.slice(1);
@@ -185,6 +230,19 @@ export function analisarCaminho(pathname) {
         const certo = caminhoLegal(i.codigo, documento);
         return pagina({ pagina: 'legal', documento }, prefixoErrado || resto[0] !== r[documento] ? certo : null);
     }
+    const conta = PALAVRAS_CONTA.get(palavra);
+    if (conta === 'pagamento') {
+        if (resto.length > 2) return pagina({ pagina: 'nao-encontrado' }, null);
+        // Compra desconhecida (ou sem compra): o texto geral, no endereço sem a compra.
+        const compra = resto.length === 2 ? PALAVRAS_COMPRA.get(resto[1].toLowerCase()) ?? null : null;
+        const errado = prefixoErrado || resto[0] !== r.pagamento || (resto.length === 2 && resto[1] !== r.compras[compra]);
+        return pagina({ pagina: 'pagamento', compra }, errado ? caminhoPagamento(i.codigo, compra) : null);
+    }
+    if (conta) {
+        if (resto.length !== 1) return pagina({ pagina: 'nao-encontrado' }, null);
+        const certo = conta === 'perfil' ? caminhoPerfil(i.codigo) : caminhoSuporte(i.codigo);
+        return pagina({ pagina: conta }, prefixoErrado || resto[0] !== r[conta] ? certo : null);
+    }
     if (!PALAVRAS_AJUDA.has(palavra)) return pagina({ pagina: 'nao-encontrado' }, null);
     const ajudaErrada = prefixoErrado || resto[0] !== r.ajuda;
 
@@ -197,6 +255,24 @@ export function analisarCaminho(pathname) {
         return pagina({ pagina: 'artigo', slug: resto[1] }, ajudaErrada ? caminhoArtigo(i.codigo, resto[1]) : null);
     }
     return pagina({ pagina: 'nao-encontrado' }, null);
+}
+
+// Endereço antigo (tipo 'antigo' de analisarCaminho) → mesma página no idioma pedido.
+export function caminhoDoAntigo(lido, codigo) {
+    if (lido.pagina === 'legal') return caminhoLegal(codigo, lido.documento);
+    if (lido.pagina === 'pagamento') return caminhoPagamento(codigo, lido.compra);
+    if (lido.pagina === 'perfil') return caminhoPerfil(codigo);
+    if (lido.pagina === 'suporte') return caminhoSuporte(codigo);
+    if (lido.pagina === 'assunto') return caminhoAssunto(codigo, lido.modulo);
+    if (lido.pagina === 'artigo') return caminhoArtigo(codigo, lido.slug);
+    return caminhoAjuda(codigo);
+}
+
+// O que vem depois do "?" ao levar um endereço antigo para o novo. Os anúncios (?utm_..., ?gclid=...) seguem.
+// A volta do pagamento e o link dos e-mails não levam nada adiante: a consulta pode trazer o identificador da
+// sessão de pagamento (?session_id=...), que não serve à página e não deve ficar no endereço.
+export function consultaQueSegue(lido, search) {
+    return lido.pagina === 'pagamento' || lido.pagina === 'perfil' ? '' : (search ?? '');
 }
 
 // Âncora da página inicial (#precos, #pricing...) → seção (precos). Aceita a palavra de
@@ -215,4 +291,4 @@ export function idDaSecao(codigo, secao) {
     return (idioma(codigo) ?? idioma(REFERENCIA)).rotas.secoes[secao] ?? secao;
 }
 
-export { SECOES };
+export { COMPRAS, SECOES };
