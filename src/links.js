@@ -6,7 +6,8 @@ export const ASSINAR_MENSAL = `${APP}/cadastro?checkout=true`;
 export const ASSINAR_ANUAL = `${APP}/cadastro?checkout=anual`;
 export const WINDOWS = 'https://appobrafacil.expertbr.com/download/Instalador_ObraFacil_Windows.exe';
 export const WHATSAPP = '5562992666759';
-export const SUPORTE = 'https://appobrafacil.expertbr.com/suporte/';
+// E-mail oficial do suporte (o mesmo da tela Sobre o App do aplicativo).
+export const EMAIL_SUPORTE = 'suporte@appobrafacil.expertbr.com';
 
 // Lojas no idioma da página (a loja usa o país da conta da pessoa; o idioma só muda os textos).
 export function googlePlay(codigo) {

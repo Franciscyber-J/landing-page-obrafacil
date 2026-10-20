@@ -204,5 +204,86 @@
         "help": "Centro de Ajuda",
         "baixar": "Transferir a aplicação",
         "contato": "Contacto"
+    },
+    "conta": {
+        "lojasTitulo": "O ObraFácil em todos os dispositivos",
+        "lojasTexto": "Entre com a mesma conta no telemóvel, no computador ou no navegador: o que comprou vale em todos.",
+        "falarSuporte": "Falar com o apoio"
+    },
+    "pagamento": {
+        "voltarTexto": "Volte ao separador do navegador ou à aplicação para Windows em que fez a compra. Se já fechou, abra novamente o ObraFácil com a mesma conta.",
+        "automaticoTitulo": "O desbloqueio é automático",
+        "automaticoTexto": "A Stripe, que processa o pagamento, avisa o nosso servidor, e a compra fica disponível na sua conta dentro de instantes. Não precisa de fazer nada.",
+        "conferirTitulo": "Confirme na aplicação",
+        "demoraTitulo": "Se ainda não aparece",
+        "demoraEsperar": "Aguarde um minuto, feche e volte a abrir a aplicação. No navegador, recarregue a página do ObraFácil.",
+        "demoraSairEntrar": "Continua no plano grátis? Termine a sessão e volte a entrar com o mesmo e-mail usado no pagamento: ao entrar, a aplicação procura a subscrição feita no site e ativa o PRO.",
+        "demoraRestaurar": "**Restaurar compras** não ajuda aqui: só procura compras feitas na loja do telemóvel (Google Play ou App Store).",
+        "demoraSuporte": "Se nada resultar, contacte o apoio e indique o e-mail usado no pagamento.",
+        "compras": {
+            "geral": {
+                "texto": "O pagamento foi concluído. Dentro de instantes o ObraFácil recebe a confirmação e desbloqueia o que comprou.",
+                "conferir": "Abra o ObraFácil com a mesma conta usada na compra: o que comprou aparece sozinho."
+            },
+            "pro": {
+                "sobretitulo": "Subscrição confirmada",
+                "texto": "A sua subscrição foi confirmada. Dentro de instantes o PRO fica ativo sozinho na sua conta, no telemóvel, no computador e no navegador.",
+                "conferir": "Abra o **Perfil**: o selo do cartão do topo passa a **Membro PRO** e o cartão **O seu plano** mostra **ObraFácil PRO**.",
+                "artigo": "Comprei o PRO no site: como ativar"
+            },
+            "acesso": {
+                "texto": "A taxa da obra foi paga. Dentro de instantes a aplicação desbloqueia para o cliente dessa obra os recursos pagos do Portal do Cliente.",
+                "conferir": "Abra a obra: no fim do **MENU DA OBRA**, o cartão **Acesso Cliente** mostra **Acesso Desbloqueado**. Toque em **CONFIGURAR** e escolha o que o cliente pode ver e transferir."
+            },
+            "downloads": {
+                "texto": "Dentro de instantes a obra recebe mais 2 transferências completas do ZIP da galeria, partilhadas por todos os convidados.",
+                "conferir": "Volte à **Galeria da Obra** e toque de novo em **Transferir Tudo**.",
+                "artigo": "Como comprar transferências extra da galeria"
+            },
+            "armazenamento": {
+                "sobretitulo": "Subscrição confirmada",
+                "texto": "A expansão de armazenamento foi confirmada. Dentro de instantes a aplicação acrescenta 20 GB ao espaço do seu plano.",
+                "conferir": "Abra o **Perfil**: por baixo da barra **Armazenamento**, o cartão **O seu plano** mostra **Expansão de +20 GB ativa**."
+            }
+        }
+    },
+    "perfil": {
+        "metaTitulo": "A sua subscrição · ObraFácil",
+        "metaDescricao": "Veja onde estão o plano, o cartão de pagamento e o cancelamento da subscrição no ObraFácil.",
+        "sobretitulo": "A sua subscrição",
+        "titulo": "A sua subscrição está no **Perfil** da aplicação",
+        "texto": "O plano, as cobranças, o cartão e o cancelamento estão na aplicação: no Perfil, no cartão O seu plano. Abra o ObraFácil com a sua conta e siga os passos abaixo.",
+        "artigoBotao": "Como gerir ou cancelar",
+        "passosTitulo": "Como lá chegar",
+        "passo1Texto": "No telemóvel, na aplicação para Windows ou no navegador, entre com a sua conta.",
+        "passo2Texto": "No telemóvel, toque no menu (três linhas) no topo do painel e depois no seu cartão, com fotografia e nome. No computador, toque no seu cartão na barra lateral.",
+        "passo3Titulo": "Use o cartão O seu plano",
+        "passo3Texto": "Logo abaixo da sua fotografia, o cartão **O seu plano** mostra o plano, o espaço usado, as obras e os relatórios do mês. Na subscrição, toque em **Gerir**.",
+        "gerenciarTitulo": "Para onde o Gerir leva",
+        "gerenciarCelular": "**Subscreveu no telemóvel**: a área de subscrições da Google Play ou da App Store, com a renovação, as cobranças e o cancelamento.",
+        "gerenciarSite": "**Subscreveu no site ou no computador**: a página de pagamentos, no navegador, para trocar o cartão, ver as cobranças ou cancelar.",
+        "gerenciarLugar": "Cancelar num lado não cancela uma subscrição feita no outro.",
+        "avisoTexto": "O banco recusou a cobrança da subscrição. Toque em **Gerir** e adicione um cartão válido para não perder o PRO. Se já pagou, pode ignorar o aviso.",
+        "artigosTitulo": "No Centro de Ajuda",
+        "artigoCartao": "Como funciona o cartão O seu plano",
+        "artigoCancelar": "Como gerir ou cancelar a subscrição"
+    },
+    "suporte": {
+        "metaTitulo": "Apoio · ObraFácil",
+        "metaDescricao": "Fale com o apoio do ObraFácil pelo WhatsApp, por e-mail ou por pedido na aplicação, e veja o passo a passo no Centro de Ajuda.",
+        "sobretitulo": "Apoio",
+        "titulo": "Fale com o **apoio**",
+        "texto": "Tire dúvidas, conte um problema na aplicação ou peça ajuda com cobranças. O tempo médio de resposta é de 24 a 48 horas úteis.",
+        "canaisTitulo": "Como falar connosco",
+        "whatsappMensagem": "Olá, vim pela página de apoio do site e preciso de ajuda com o ObraFácil.",
+        "emailTexto": "Para enviar detalhes, capturas de ecrã e anexos. Se puder, escreva a partir do e-mail da sua conta.",
+        "chamadoTitulo": "Pedido pela aplicação",
+        "chamadoTexto": "Fica registado na sua conta e é o caminho para pedir reembolso de compras feitas no site, em **Ajuda Financeira**. A resposta chega ao e-mail da conta.",
+        "chamadoBotao": "Como abrir um pedido de apoio",
+        "centralTitulo": "Centro de Ajuda",
+        "centralTexto": "O passo a passo de cada ecrã da aplicação, com os ecrãs reais.",
+        "centralBotao": "Abrir o Centro de Ajuda",
+        "lojasTexto": "As cobranças e os reembolsos dessas compras são feitos pela própria loja, segundo as regras dela. Para cancelar, use **Gerir** no cartão **O seu plano** do Perfil.",
+        "perfilLink": "Onde ver a subscrição"
     }
 }

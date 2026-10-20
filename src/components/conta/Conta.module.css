@@ -1,0 +1,405 @@
+/* Volta do pagamento, Perfil e Suporte: cabeça em painel azul arredondado (como nos Termos), luzes do fundo
+   e cartões de vidro. Cores só dos tokens (src/styles/design-tokens.css): claro e escuro. */
+.pagina {
+  position: relative;
+  overflow-x: clip;
+}
+
+/* Luzes azul e laranja do fundo (decorativas), em gradiente que some sozinho: sem borda cortada. */
+.brilho {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(720px 520px at 100% 18%, var(--luz-azul), transparent 70%),
+    radial-gradient(640px 520px at 0% 88%, var(--luz-laranja), transparent 70%);
+}
+
+.conteudo {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 96px;
+}
+
+/* ── Cabeça ─────────────────────────────────────────────────────────────── */
+.cabeca {
+  padding: 44px 48px 40px;
+  border-radius: var(--raio-xg);
+  color: var(--painel-texto);
+  background:
+    radial-gradient(560px 360px at 100% 0%, rgba(31, 111, 209, 0.5), transparent 70%),
+    radial-gradient(440px 320px at 0% 100%, rgba(242, 138, 31, 0.28), transparent 70%),
+    var(--painel);
+  box-shadow: var(--sombra-forte);
+}
+
+.cabecaTopo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.cabecaIcone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--pilula);
+  background: var(--painel-vidro);
+  border: 1px solid var(--painel-linha);
+  color: #ffb35c;
+}
+
+.sobretitulo {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--painel-texto-2);
+}
+
+.titulo {
+  max-width: 22ch;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  overflow-wrap: anywhere;
+}
+
+.texto {
+  max-width: 62ch;
+  margin-top: 18px;
+  font-size: 1.1875rem;
+  line-height: 1.6;
+  color: var(--painel-texto-2);
+}
+
+.texto strong {
+  color: var(--painel-texto);
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+/* Botões destas páginas podem quebrar a linha (textos longos em alguns idiomas, celular de 360 px). */
+.botao {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.botaoCartao {
+  margin-top: 22px;
+}
+
+/* ── Grade de cartões ───────────────────────────────────────────────────── */
+.grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+.coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.cartao {
+  min-width: 0;
+  padding: 32px;
+  border-radius: var(--raio-g);
+  background: var(--vidro);
+  border: 1px solid var(--vidro-borda);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: var(--sombra);
+}
+
+.cartaoDestaque {
+  border-color: var(--laranja);
+}
+
+.cartaoTitulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.cartaoIcone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--pilula);
+  background: var(--fundo-2);
+  color: var(--laranja-texto);
+}
+
+.paragrafo {
+  color: var(--texto-2);
+  line-height: 1.6;
+}
+
+.paragrafo strong,
+.lista strong,
+.passoTexto strong,
+.canalTexto strong {
+  color: var(--texto);
+}
+
+/* Passos numerados */
+.passos {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.passos li {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 16px;
+}
+
+.numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--pilula);
+  background: var(--laranja);
+  color: var(--sobre-laranja);
+  font-weight: 800;
+}
+
+.passoTitulo {
+  font-size: 1.1875rem;
+  line-height: 1.25;
+  margin: 7px 0 6px;
+}
+
+.passoTexto {
+  color: var(--texto-2);
+  line-height: 1.6;
+}
+
+/* Lista com ponto laranja */
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lista li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--texto-2);
+  line-height: 1.6;
+}
+
+.lista li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--pilula);
+  background: var(--laranja);
+}
+
+/* Lojas (mesmo desenho da abertura da página inicial) */
+.lojas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.lojas a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  min-height: 44px;
+  padding: 12px 16px;
+  border-radius: var(--raio-p);
+  border: 1px solid var(--vidro-borda);
+  background: var(--vidro-forte);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  transition: border-color var(--tempo) var(--suave);
+}
+
+.lojas a:hover {
+  border-color: var(--texto-2);
+}
+
+.lojas small {
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: var(--texto-2);
+}
+
+/* Links para a Central */
+.artigos {
+  display: flex;
+  flex-direction: column;
+}
+
+.artigos li + li {
+  border-top: 1px solid var(--linha);
+}
+
+.artigos a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 52px;
+  padding: 10px 0;
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.artigos a svg {
+  flex-shrink: 0;
+  color: var(--laranja-texto);
+  transition: transform var(--tempo) var(--suave);
+}
+
+.artigos a:hover {
+  color: var(--azul-vivo);
+}
+
+.artigos a:hover svg {
+  transform: translateX(3px);
+}
+
+/* ── Suporte: canais ────────────────────────────────────────────────────── */
+.canais {
+  margin: 48px 0 28px;
+}
+
+.secaoTitulo {
+  font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+  margin-bottom: 22px;
+}
+
+.gradeCanais {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.canal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 28px 24px;
+  border-radius: var(--raio-g);
+  background: var(--vidro);
+  border: 1px solid var(--vidro-borda);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: var(--sombra);
+}
+
+.canalIcone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--pilula);
+  background: var(--fundo-2);
+  color: var(--laranja-texto);
+}
+
+.canalTitulo {
+  font-size: 1.375rem;
+}
+
+.canalTexto {
+  color: var(--texto-2);
+  line-height: 1.55;
+}
+
+.canalAcao {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.endereco {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1080px) {
+  .gradeCanais {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .grade {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .conteudo {
+    padding: 24px 16px 72px;
+  }
+
+  .cabeca {
+    padding: 28px 22px 26px;
+    border-radius: var(--raio-g);
+  }
+
+  .texto {
+    font-size: 1.0625rem;
+  }
+
+  .acoes {
+    flex-direction: column;
+  }
+
+  .acoes .botao {
+    width: 100%;
+  }
+
+  .cartao {
+    padding: 24px 20px;
+  }
+
+  .cartaoTitulo {
+    font-size: 1.3125rem;
+  }
+
+  .gradeCanais {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -357,5 +357,112 @@
         "acao": "Começar grátis",
         "duvida": "Ficou com dúvida? Fale com a gente no WhatsApp.",
         "whatsapp": "Chamar no WhatsApp"
+    },
+    "conta": {
+        "abrirApp": "Abrir o ObraFácil no navegador",
+        "lojasTitulo": "O ObraFácil em todos os aparelhos",
+        "lojasTexto": "Entre com a mesma conta no celular, no computador ou no navegador: o que você comprou vale em todos.",
+        "falarSuporte": "Falar com o suporte"
+    },
+    "pagamento": {
+        "metaTitulo": "Pagamento confirmado · ObraFácil",
+        "metaDescricao": "O pagamento foi concluído. Veja quando a compra aparece no ObraFácil e o que fazer se demorar.",
+        "agoraTitulo": "O que acontece agora",
+        "voltarTitulo": "Volte ao ObraFácil",
+        "voltarTexto": "Volte à aba do navegador ou ao aplicativo para Windows em que você fez a compra. Se já fechou, abra o ObraFácil de novo com a mesma conta.",
+        "automaticoTitulo": "A liberação é automática",
+        "automaticoTexto": "A Stripe, que processa o pagamento, avisa o nosso servidor, e a compra é liberada na sua conta em instantes. Você não precisa fazer nada.",
+        "conferirTitulo": "Confira no app",
+        "demoraTitulo": "Se ainda não apareceu",
+        "demoraEsperar": "Espere um minuto, feche e abra o app de novo. No navegador, recarregue a página do ObraFácil.",
+        "demoraSairEntrar": "Continua no plano grátis? Saia da conta e entre de novo com o mesmo e-mail usado no pagamento: ao entrar, o app procura a assinatura feita pelo site e ativa o PRO.",
+        "demoraRestaurar": "**Restaurar compras** não ajuda aqui: ele só busca compras feitas na loja do celular (Google Play ou App Store).",
+        "demoraSuporte": "Se nada resolver, fale com o suporte e informe o e-mail usado no pagamento.",
+        "compras": {
+            "geral": {
+                "sobretitulo": "Pagamento confirmado",
+                "titulo": "Pagamento **confirmado**",
+                "texto": "O pagamento foi concluído. Em instantes o ObraFácil recebe a confirmação e libera o que você comprou.",
+                "conferir": "Abra o ObraFácil com a mesma conta usada na compra: o que você comprou aparece sozinho.",
+                "artigo": "Onde ver o histórico de pagamentos"
+            },
+            "pro": {
+                "sobretitulo": "Assinatura confirmada",
+                "titulo": "Bem-vindo ao ObraFácil **PRO**",
+                "texto": "A sua assinatura foi confirmada. Em instantes o PRO liga sozinho na sua conta, no celular, no computador e no navegador.",
+                "conferir": "Abra o **Perfil**: o selo do cartão do alto vira **Membro PRO** e o cartão **Seu plano** mostra **ObraFácil PRO**.",
+                "artigo": "Comprei o PRO pelo site: como ativar"
+            },
+            "acesso": {
+                "sobretitulo": "Pagamento confirmado",
+                "titulo": "Pagamento do **Acesso Cliente** confirmado",
+                "texto": "A taxa da obra foi paga. Em instantes o app libera para o cliente dessa obra os recursos pagos do Portal do Cliente.",
+                "conferir": "Abra a obra: no fim do **MENU DA OBRA**, o cartão **Acesso Cliente** mostra **Acesso Liberado**. Toque em **CONFIGURAR** e escolha o que o cliente pode ver e baixar.",
+                "artigo": "O que é o Acesso Cliente"
+            },
+            "downloads": {
+                "sobretitulo": "Pagamento confirmado",
+                "titulo": "**Pacote Extra** da obra confirmado",
+                "texto": "Em instantes a obra ganha mais 2 downloads completos do ZIP da galeria, divididos entre todos os convidados.",
+                "conferir": "Volte à **Galeria da Obra** e toque em **Baixar Tudo** de novo.",
+                "artigo": "Como comprar downloads extras da galeria"
+            },
+            "armazenamento": {
+                "sobretitulo": "Assinatura confirmada",
+                "titulo": "Mais **20 GB** para as suas obras",
+                "texto": "A expansão de armazenamento foi confirmada. Em instantes o app soma 20 GB ao espaço do seu plano.",
+                "conferir": "Abra o **Perfil**: embaixo da barra **Armazenamento**, o cartão **Seu plano** mostra **Expansão de +20 GB ativa**.",
+                "artigo": "Como contratar +20 GB de armazenamento"
+            }
+        }
+    },
+    "perfil": {
+        "metaTitulo": "Sua assinatura · ObraFácil",
+        "metaDescricao": "Veja onde ficam o plano, o cartão de pagamento e o cancelamento da assinatura no ObraFácil.",
+        "sobretitulo": "Sua assinatura",
+        "titulo": "Sua assinatura fica no **Perfil** do app",
+        "texto": "O plano, as cobranças, o cartão e o cancelamento ficam no app: no Perfil, no cartão Seu plano. Abra o ObraFácil com a sua conta e siga os passos abaixo.",
+        "artigoBotao": "Como gerenciar ou cancelar",
+        "passosTitulo": "Como chegar lá",
+        "passo1Titulo": "Abra o ObraFácil",
+        "passo1Texto": "No celular, no aplicativo para Windows ou no navegador, entre com a sua conta.",
+        "passo2Titulo": "Abra o Perfil",
+        "passo2Texto": "No celular, toque no menu (três linhas) no alto do painel e depois no seu cartão, com foto e nome. No computador, toque no seu cartão na barra lateral.",
+        "passo3Titulo": "Use o cartão Seu plano",
+        "passo3Texto": "Logo abaixo da sua foto, o cartão **Seu plano** mostra o plano, o espaço usado, as obras e os relatórios do mês. Na assinatura, toque em **Gerenciar**.",
+        "gerenciarTitulo": "Para onde o Gerenciar leva",
+        "gerenciarCelular": "**Assinou no celular**: a área de assinaturas da Google Play ou da App Store, com a renovação, as cobranças e o cancelamento.",
+        "gerenciarSite": "**Assinou pelo site ou no computador**: a página de pagamentos, no navegador, para trocar o cartão, ver as cobranças ou cancelar.",
+        "gerenciarLugar": "Cancelar em um lugar não cancela uma assinatura feita no outro.",
+        "avisoTitulo": "Recebeu um aviso de pagamento não processado?",
+        "avisoTexto": "O banco recusou a cobrança da assinatura. Toque em **Gerenciar** e coloque um cartão válido para não perder o PRO. Se você já pagou, pode ignorar o aviso.",
+        "artigosTitulo": "Na Central de Ajuda",
+        "artigoCartao": "Entendendo o cartão Seu plano",
+        "artigoCancelar": "Como gerenciar ou cancelar a assinatura",
+        "artigoPagamentos": "Histórico de pagamentos e reembolso"
+    },
+    "suporte": {
+        "metaTitulo": "Suporte · ObraFácil",
+        "metaDescricao": "Fale com o suporte do ObraFácil pelo WhatsApp, por e-mail ou por chamado no app, e veja o passo a passo na Central de Ajuda.",
+        "sobretitulo": "Suporte",
+        "titulo": "Fale com o **suporte**",
+        "texto": "Tire dúvidas, conte um problema no app ou peça ajuda com cobranças. O tempo médio de resposta é de 24 a 48 horas úteis.",
+        "canaisTitulo": "Como falar com a gente",
+        "whatsappTitulo": "WhatsApp",
+        "whatsappTexto": "Para conversar e tirar dúvidas.",
+        "whatsappBotao": "Abrir o WhatsApp",
+        "whatsappMensagem": "Olá, vim pela página de suporte do site e preciso de ajuda com o ObraFácil.",
+        "emailTitulo": "E-mail",
+        "emailTexto": "Para mandar detalhes, prints e anexos. Se puder, escreva do e-mail da sua conta.",
+        "emailBotao": "Escrever um e-mail",
+        "chamadoTitulo": "Chamado pelo app",
+        "chamadoTexto": "Fica registrado na sua conta e é o caminho para pedir reembolso de compras feitas pelo site, em **Ajuda Financeira**. A resposta chega no e-mail da conta.",
+        "chamadoBotao": "Como abrir um chamado",
+        "centralTitulo": "Central de Ajuda",
+        "centralTexto": "O passo a passo de cada tela do app, com as telas de verdade.",
+        "centralBotao": "Abrir a Central de Ajuda",
+        "lojasTitulo": "Comprou pela Google Play ou pela App Store?",
+        "lojasTexto": "Cobranças e reembolsos dessas compras são feitos pela própria loja, pelas regras dela. Para cancelar, use **Gerenciar** no cartão **Seu plano** do Perfil.",
+        "perfilLink": "Onde ver a assinatura"
     }
 }
