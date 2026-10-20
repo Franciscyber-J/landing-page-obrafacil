@@ -34,6 +34,11 @@
 //            assunto     → /pt-br/ajuda/assunto/<assunto>
 //            termos      → /pt-br/termos-de-uso       (Termos de Uso)
 //            privacidade → /pt-br/politica-de-privacidade (Política de Privacidade)
+//            pagamento   → /pt-br/pagamento-confirmado/<compra> (volta do pagamento pelo navegador)
+//            compras     → a palavra de cada compra nesse endereço: pro (assinatura PRO), acesso (Acesso
+//                          Cliente da obra), downloads (pacote de downloads extras), armazenamento (+20 GB)
+//            perfil      → /pt-br/perfil (onde ver a assinatura no app; link dos e-mails de cobrança)
+//            suporte     → /pt-br/suporte (contato do suporte)
 //            secoes  → âncoras da página inicial (/pt-br/#precos)
 
 export const REFERENCIA = 'pt-BR';
@@ -44,18 +49,24 @@ export const IDIOMAS = [
         codigo: 'pt-BR', nome: 'Português (Brasil)', curto: 'PT-BR', pais: 'BR', moeda: 'brl',
         rotas: {
             ajuda: 'ajuda', assunto: 'assunto', termos: 'termos-de-uso', privacidade: 'politica-de-privacidade',
+            pagamento: 'pagamento-confirmado',
+            compras: { pro: 'pro', acesso: 'acesso-cliente', downloads: 'downloads-extras', armazenamento: 'mais-20-gb' },
+            perfil: 'perfil', suporte: 'suporte',
             secoes: { sobre: 'sobre', recursos: 'recursos', equipe: 'equipe', precos: 'precos', faq: 'perguntas-frequentes' },
         },
     },
     {
         codigo: 'pt-PT', base: 'pt-BR', nome: 'Português (Portugal)', curto: 'PT-PT', pais: 'PT', moeda: 'eur',
         regioes: ['AO', 'MZ', 'CV', 'GW', 'ST', 'TL', 'MO'],
-        rotas: { termos: 'termos-de-utilizacao' },
+        rotas: { termos: 'termos-de-utilizacao', suporte: 'apoio', compras: { downloads: 'transferencias-extra' } },
     },
     {
         codigo: 'en-US', nome: 'English (US)', curto: 'EN-US', pais: 'US', moeda: 'usd',
         rotas: {
             ajuda: 'help', assunto: 'topic', termos: 'terms-of-use', privacidade: 'privacy-policy',
+            pagamento: 'payment-confirmed',
+            compras: { pro: 'pro', acesso: 'client-access', downloads: 'extra-downloads', armazenamento: 'plus-20-gb' },
+            perfil: 'profile', suporte: 'support',
             secoes: { sobre: 'about', recursos: 'features', equipe: 'team', precos: 'pricing', faq: 'faq' },
         },
     },
@@ -69,6 +80,9 @@ export const IDIOMAS = [
         codigo: 'es-ES', nome: 'Español (España)', curto: 'ES-ES', pais: 'ES', moeda: 'eur',
         rotas: {
             ajuda: 'ayuda', assunto: 'tema', termos: 'terminos-de-uso', privacidade: 'politica-de-privacidad',
+            pagamento: 'pago-confirmado',
+            compras: { pro: 'pro', acesso: 'acceso-cliente', downloads: 'descargas-extra', armazenamento: 'mas-20-gb' },
+            perfil: 'perfil', suporte: 'soporte',
             secoes: { sobre: 'acerca-de', recursos: 'funciones', equipe: 'equipo', precos: 'precios', faq: 'preguntas-frecuentes' },
         },
     },
