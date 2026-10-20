@@ -126,10 +126,13 @@ RewriteRule ^politicas-de-privacidade/?$ /es-mx/politica-de-privacidad [R=302,L]
 # Site (React): endereços do site abrem o index.html
 # Endereços com prefixo de idioma (/pt-br/..., /en-us/..., /es-mx/...) e o antigo
 # /ajuda. Qualquer idioma novo já entra pela regra (duas letras + região opcional).
-# Arquivos e pastas que existem de verdade continuam sendo servidos direto.
+# Arquivos que existem de verdade continuam sendo servidos direto, e também as pastas
+# com index.html próprio (Termos e Política gerados no build: /pt-br/termos-de-uso/...).
+# A pasta do idioma (/pt-br/) existe por causa dessas páginas, mas não tem index.html:
+# sem a segunda condição abaixo ela dava 403 (Options -Indexes) em vez de abrir o site.
 # -----------------------------------------------------------------------------
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}/index.html !-f
 RewriteRule ^(ajuda(/.*)?|[a-z]{2}(-[a-z]{2})?(/.*)?)$ /index.html [L,NC]
 </IfModule>
 

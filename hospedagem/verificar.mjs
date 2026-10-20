@@ -13,6 +13,8 @@ const conferencias = [
   { nome: 'link antigo /ajuda', url: '/ajuda', status: 200, contem: SPA },
   { nome: 'artigo pelo link direto', url: '/ajuda/pt-BR/criar-rdo', status: 200, contem: SPA },
   { nome: 'endereço com idioma', url: '/pt-br/ajuda', status: 200, contem: SPA },
+  { nome: 'início do idioma (pasta sem index.html)', url: '/pt-br/', status: 200, contem: SPA },
+  { nome: 'início de outro idioma', url: '/en-us/', status: 200, contem: SPA },
   { nome: 'endereço em inglês', url: '/en-us/help/topic/projects', status: 200, contem: SPA },
   { nome: 'endereço em espanhol', url: '/es-mx/ayuda/crear-reporte-diario', status: 200, contem: SPA },
   { nome: 'bandeira do menu de idiomas', url: '/bandeiras/br.svg', status: 200, contem: '<svg' },
