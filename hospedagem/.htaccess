@@ -3,8 +3,9 @@
 #
 # Nesta pasta vivem duas coisas:
 #   - o site (React, gerado pelo "npm run build": index.html + assets/)
-#   - o WordPress, que ainda serve o Suporte e as páginas de pagamento usadas pelo app.
-#     Termos de Uso e Política de Privacidade passaram para o site (páginas por idioma).
+#   - o WordPress, que não serve mais nada que o app use: Termos de Uso, Política de
+#     Privacidade, Suporte, Perfil e as páginas de volta do pagamento passaram para o site
+#     (páginas por idioma). Ver hospedagem/LEIAME.md (o que falta para desligá-lo).
 #
 # Este arquivo é versionado em landing_page/hospedagem/.htaccess. Para mudar,
 # edite no repositório e copie o arquivo INTEIRO para a Hostinger.
@@ -121,6 +122,23 @@ RewriteCond %{ENV:LEGAL_IDIOMA} ^es-mx$
 RewriteRule ^termos-de-uso/?$ /es-mx/terminos-de-uso [R=302,L]
 RewriteCond %{ENV:LEGAL_IDIOMA} ^es-mx$
 RewriteRule ^politicas-de-privacidade/?$ /es-mx/politica-de-privacidad [R=302,L]
+
+# -----------------------------------------------------------------------------
+# Páginas que o WordPress servia e que o app usa: volta do pagamento pelo navegador
+# (Stripe), o link "Perfil" dos e-mails de cobrança e o Suporte. Os endereços estão nas
+# sessões de pagamento da Stripe, num Payment Link e em e-mails já enviados: não podem
+# mudar. Agora abrem o site (index.html, resposta 200), que leva à página no idioma da
+# pessoa (src/i18n/idiomas.js, PAGINAS_ANTIGAS):
+#   /primeiros-passos          PRO pago pelo site (e prêmio do Primeiros passos)
+#   /pagamento-ok/             Acesso Cliente da obra
+#   /pacote-downloads-extras/  pacote de downloads extras da galeria
+#   /expansao-20gb-ok/         expansão de +20 GB
+#   /perfil                    e-mails de pagamento não processado
+#   /suporte/                  contato do suporte
+# Ficam antes das regras do WordPress, que tem páginas com esses mesmos nomes.
+# Com e sem barra no fim; o que vem depois do "?" é ignorado pelo site.
+# -----------------------------------------------------------------------------
+RewriteRule ^(pagamento-ok|pacote-downloads-extras|primeiros-passos|expansao-20gb-ok|perfil|suporte)/?$ /index.html [L,NC]
 
 # -----------------------------------------------------------------------------
 # Site (React): endereços do site abrem o index.html
