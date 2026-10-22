@@ -14,6 +14,25 @@ gsap.defaults({ ease: 'expo.out', duration: 0.8 });
 export { gsap, ScrollTrigger, SplitText, useGSAP };
 
 export const COM_MOVIMENTO = '(prefers-reduced-motion: no-preference)';
+// Página que chegou pronta do build (texto já no HTML) e já apareceu na tela antes de o JavaScript carregar:
+// o que a pessoa já está vendo não pode sumir para "entrar" de novo (seria um piscar). Vale só no primeiro
+// desenho; navegar para outra página ou trocar de idioma anima como sempre.
+let chegouPronta = false;
+
+export function marcarChegadaPronta(valor) {
+    chegouPronta = Boolean(valor);
+}
+
+export function encerrarChegada() {
+    chegouPronta = false;
+}
+
+// true se o elemento já está (ou já passou) na tela de uma página que chegou pronta: pular a entrada dele.
+export function jaApareceu(elemento) {
+    if (!chegouPronta || !elemento || typeof window === 'undefined') return false;
+    return elemento.getBoundingClientRect().top < window.innerHeight;
+}
+
 // Inclinação 3D que segue o ponteiro: só com mouse de verdade (no toque não há "passar por cima").
 export const COM_MOUSE = '(prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine)';
 // Recursos com o celular parado e a tela trocando: só quando cabem lado a lado.
@@ -109,6 +128,7 @@ export function entrarEmGrupo(alvos, vars = {}) {
     const lista = gsap.utils.toArray(alvos);
     if (!lista.length) return null;
     const { gatilho = lista[0], de = { y: 40, autoAlpha: 0 }, stagger = 0.08, start = 'top 85%' } = vars;
+    if (jaApareceu(gatilho)) return null;
     return gsap.from(lista, {
         ...de,
         stagger,

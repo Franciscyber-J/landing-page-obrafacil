@@ -5,14 +5,15 @@ import AjudaBusca from './AjudaBusca.jsx';
 import IconeModulo from './IconeModulo.jsx';
 import { BandaSuporte, NaoEncontrado, Trilha } from './Estados.jsx';
 import useTituloDaPagina from './useTituloDaPagina.js';
+import { descricaoDaPagina, tituloDaPagina } from '../../seo/textos.js';
 import styles from './Ajuda.module.css';
 
 // atual: módulo achado pelo endereço (ou null); pedido: o pedaço do endereço como veio.
 export default function AjudaAssunto({ indice, preparado, rotas, atual, pedido }) {
     const { t } = useTranslation();
     useTituloDaPagina(
-        atual ? `${atual.nome} · ${t('ajuda.titulo')} · ObraFácil` : null,
-        atual?.descricao ?? null,
+        atual ? tituloDaPagina(t, { tipo: 'assunto' }, { modulo: atual }) : null,
+        atual ? descricaoDaPagina(t, { tipo: 'assunto' }, { modulo: atual }) : null,
     );
     if (!atual) return <NaoEncontrado para={rotas.inicio} titulo={t('ajuda.assuntoNaoEncontrado')} />;
     // Endereço com o id ou com o nome em outro idioma: troca pelo endereço certo deste idioma.

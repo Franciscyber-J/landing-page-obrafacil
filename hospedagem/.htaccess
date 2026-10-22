@@ -1,23 +1,27 @@
 # =============================================================================
 # ObraFácil — appobrafacil.expertbr.com (Hostinger, pasta public_html/appobrafacil)
 #
-# Nesta pasta vivem duas coisas:
-#   - o site (React, gerado pelo "npm run build": index.html + assets/)
-#   - o WordPress, que não serve mais nada que o app use: Termos de Uso, Política de
-#     Privacidade, Suporte, Perfil e as páginas de volta do pagamento passaram para o site
-#     (páginas por idioma). Ver hospedagem/LEIAME.md (o que falta para desligá-lo).
+# Nesta pasta fica só o site (React, gerado pelo "npm run build": o conteúdo de dist/). O WordPress foi
+# desligado; as páginas que ele servia (Termos, Política, Suporte, Perfil, volta do pagamento) estão no
+# site, em cada idioma, e os endereços antigos levam a elas (ver hospedagem/LEIAME.md).
 #
-# Este arquivo é versionado em landing_page/hospedagem/.htaccess. Para mudar,
-# edite no repositório e copie o arquivo INTEIRO para a Hostinger.
-# Os blocos "LSCACHE" e "WordPress" são escritos pelo plugin LiteSpeed Cache e
-# pelo WordPress: se eles mudarem sozinhos no servidor, traga a mudança para cá.
+# Este arquivo é versionado em landing_page/hospedagem/.htaccess. Para mudar, edite no repositório e
+# copie o arquivo INTEIRO para a Hostinger. O bloco "ENDEREÇOS POR IDIOMA" (idiomas, endereços antigos, barra
+# no fim, páginas prontas e o site) é gerado por "npm run htaccess" a partir de src/i18n/registro.js e de
+# ferramentas/hospedagem/htaccess.mjs: mude lá e rode o comando (idioma novo: só rodar e enviar de novo).
 # =============================================================================
 
-DirectoryIndex index.html index.php
-Options -Indexes
+DirectoryIndex index.html
+Options -Indexes -MultiViews
+# Sem a barra automática nas pastas: /pt-br/ajuda é a página pronta pt-br/ajuda.html, mesmo existindo a pasta
+# pt-br/ajuda/ (a dos artigos). A página inicial do idioma (/pt-br → /pt-br/) tem regra própria, abaixo.
+<IfModule mod_dir.c>
+    DirectorySlash Off
+</IfModule>
+AddDefaultCharset UTF-8
 
 # -----------------------------------------------------------------------------
-# Segurança: cabeçalhos em todas as respostas (site e WordPress)
+# Segurança e cache: cabeçalhos em todas as respostas
 # -----------------------------------------------------------------------------
 <IfModule mod_headers.c>
     Header always set Strict-Transport-Security "max-age=31536000"
@@ -28,175 +32,319 @@ Options -Indexes
     Header always unset X-Powered-By
     Header unset X-Powered-By
 
-    # index.html do site: sempre conferir se há versão nova (os arquivos de
-    # assets/ têm o nome mudado a cada build, então podem ficar em cache).
-    <FilesMatch "^index\.html$">
+    # Redirecionamento que depende do idioma do navegador (raiz e endereços antigos): ninguém guarda.
+    Header always merge Vary "Accept-Language" env=VARIA_IDIOMA
+    Header always set Cache-Control "no-cache, private" env=VARIA_IDIOMA
+
+    # Páginas do site (o index.html e as páginas prontas de cada idioma): sempre conferir se há versão nova
+    # (os arquivos de assets/ têm o nome mudado a cada build, então podem ficar em cache).
+    <FilesMatch "\.html$">
         Header set Cache-Control "no-cache"
         # Política de conteúdo do site em modo de TESTE (só avisa no console,
         # não bloqueia). Depois de conferido no navegador, troque
         # "Content-Security-Policy-Report-Only" por "Content-Security-Policy".
         Header set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; connect-src 'self' https://firestore.googleapis.com https://firebasestorage.googleapis.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.doubleclick.net https://*.googleadservices.com https://*.google.com https://pagead2.googlesyndication.com; frame-src https://td.doubleclick.net https://bid.g.doubleclick.net https://www.googletagmanager.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
     </FilesMatch>
+
+    # robots.txt, sitemap.xml e llms.txt mudam a cada build: sem cache longo.
+    <FilesMatch "^(robots\.txt|sitemap\.xml|llms\.txt)$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+
+    # Índice da Central de cada idioma (dados/ajuda/<idioma>.<código>.json): o nome muda quando o conteúdo
+    # muda, então pode ficar guardado no navegador.
+    <FilesMatch "\.[0-9a-f]{12}\.json$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
 </IfModule>
 
-# -----------------------------------------------------------------------------
-# Segurança: WordPress
-# -----------------------------------------------------------------------------
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
-# xmlrpc.php não é usado e permite testar centenas de senhas numa só requisição.
-RewriteRule ^xmlrpc\.php$ - [F,L,NC]
-
-# Arquivos que só servem para mostrar a versão ou que nunca devem ser abertos.
-RewriteRule ^(readme\.html|license\.txt|wp-config\.php|wp-config-sample\.php|\.user\.ini|php\.ini|error_log)$ - [F,L,NC]
+# -----------------------------------------------------------------------------
+# Arquivos que nunca devem ser abertos (backups, logs, configuração do PHP da hospedagem).
+# -----------------------------------------------------------------------------
+RewriteRule ^(\.user\.ini|php\.ini|error_log)$ - [F,L,NC]
 RewriteRule \.(bak|bk|old|orig|sql|log|swp)$ - [F,L,NC]
 
-# Lista de usuários (entrega o nome de login do administrador) para quem não
-# está logado: pela API e pelo ?author=N. É a primeira barreira; a definitiva é o
-# arquivo wp-content/mu-plugins/obrafacil-seguranca.php (ver hospedagem/LEIAME.md).
-RewriteCond %{HTTP_COOKIE} !wordpress_logged_in_ [NC]
-RewriteRule ^wp-json/wp/v2/users - [F,L,NC]
-RewriteCond %{HTTP_COOKIE} !wordpress_logged_in_ [NC]
-RewriteCond %{QUERY_STRING} (^|&)rest_route=(/|%2F)?wp(/|%2F)v2(/|%2F)users [NC]
-RewriteRule ^ - [F,L]
-RewriteCond %{REQUEST_URI} !^/wp-admin/ [NC]
-RewriteCond %{QUERY_STRING} (^|&)author=[0-9]+ [NC]
-RewriteRule ^ - [F,L]
+# -----------------------------------------------------------------------------
+# Um endereço só para cada página (o Google não vê cópias):
+#   /index.html e /pt-br/index.html → / e /pt-br/
+#   /pt-br/ajuda.html (arquivo da página pronta) → /pt-br/ajuda
+# THE_REQUEST é o pedido original do navegador: as regras não pegam os redirecionamentos internos abaixo.
+# -----------------------------------------------------------------------------
+RewriteCond %{THE_REQUEST} ^[A-Z]+\s/+((?:[^\s?]*/)?)index\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+RewriteCond %{THE_REQUEST} ^[A-Z]+\s/+([a-z]{2}-[a-z]{2}/[^\s?]+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
 
-# Nenhum PHP roda dentro da pasta de uploads.
-RewriteRule ^wp-content/uploads/.*\.(php|phtml|phar)$ - [F,L,NC]
+# >>> ENDEREÇOS POR IDIOMA
+# Gerado por "npm run htaccess" a partir de src/i18n/registro.js. Não edite à mão: rode o comando.
+#
+# 1) Idioma do navegador (Accept-Language), só nos endereços que precisam dele (a raiz e os antigos do
+#    WordPress): a primeira língua da lista que o site tem; a região escolhe a variante. Mesma escolha de
+#    src/i18n/idiomas.js (escolherIdioma).
+RewriteRule ^(?:|termos\-de\-uso|politicas\-de\-privacidade|pagamento\-ok|pacote\-downloads\-extras|primeiros\-passos|expansao\-20gb\-ok|perfil|suporte|ajuda)/?$ - [NC,E=QUER_IDIOMA:1]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*pt-(?:br)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:pt-br]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*pt-(?:pt|ao|mz|cv|gw|st|tl|mo)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:pt-pt]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*en-(?:us)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:en-us]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*en-(?:gb|ie|in|za|sg|hk|ng|ke)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:en-gb]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*en-(?:au|nz)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:en-au]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*en-(?:ca)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:en-ca]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*es-(?:es)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:es-es]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*es-(?:mx|419|ar|bo|cl|co|cr|cu|do|ec|gt|hn|ni|pa|pe|pr|py|sv|us|uy|ve)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:es-mx]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*pt(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:pt-br]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*en(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:en-us]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*es(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:es-es]
 
-# -----------------------------------------------------------------------------
-# Termos de Uso e Política de Privacidade: os endereços antigos do WordPress
-# (/termos-de-uso/ e /politicas-de-privacidade/) estão cadastrados na App Store e na
-# Google Play. Eles continuam valendo e levam à página no idioma do navegador
-# (primeiro idioma do cabeçalho Accept-Language; sem idioma conhecido, inglês).
-# Mesma escolha de src/i18n/registro.js (campo regioes). Redirecionamento 302 e sem
-# cache, porque o destino muda conforme quem abre.
-# -----------------------------------------------------------------------------
-RewriteRule ^(termos-de-uso|politicas-de-privacidade)/?$ - [E=LEGAL_IDIOMA:en-us,E=Cache-Control:no-cache]
-RewriteCond %{HTTP:Accept-Language} ^pt\b [NC]
-RewriteRule ^(termos-de-uso|politicas-de-privacidade)/?$ - [E=LEGAL_IDIOMA:pt-br]
-RewriteCond %{HTTP:Accept-Language} ^pt-(PT|AO|MZ|CV|GW|ST|TL|MO)\b [NC]
-RewriteRule ^(termos-de-uso|politicas-de-privacidade)/?$ - [E=LEGAL_IDIOMA:pt-pt]
-RewriteCond %{HTTP:Accept-Language} ^es\b [NC]
-RewriteRule ^(termos-de-uso|politicas-de-privacidade)/?$ - [E=LEGAL_IDIOMA:es-es]
-RewriteCond %{HTTP:Accept-Language} ^es-(MX|419|AR|BO|CL|CO|CR|CU|DO|EC|GT|HN|NI|PA|PE|PR|PY|SV|US|UY|VE)\b [NC]
-RewriteRule ^(termos-de-uso|politicas-de-privacidade)/?$ - [E=LEGAL_IDIOMA:es-mx]
-RewriteCond %{HTTP:Accept-Language} ^en-(GB|IE|IN|ZA|SG|HK|NG|KE)\b [NC]
-RewriteRule ^(termos-de-uso|politicas-de-privacidade)/?$ - [E=LEGAL_IDIOMA:en-gb]
-RewriteCond %{HTTP:Accept-Language} ^en-(AU|NZ)\b [NC]
-RewriteRule ^(termos-de-uso|politicas-de-privacidade)/?$ - [E=LEGAL_IDIOMA:en-au]
-RewriteCond %{HTTP:Accept-Language} ^en-CA\b [NC]
-RewriteRule ^(termos-de-uso|politicas-de-privacidade)/?$ - [E=LEGAL_IDIOMA:en-ca]
-RewriteCond %{ENV:LEGAL_IDIOMA} ^pt-br$
-RewriteRule ^termos-de-uso/?$ /pt-br/termos-de-uso [R=302,L]
-RewriteCond %{ENV:LEGAL_IDIOMA} ^pt-br$
-RewriteRule ^politicas-de-privacidade/?$ /pt-br/politica-de-privacidade [R=302,L]
-RewriteCond %{ENV:LEGAL_IDIOMA} ^pt-pt$
-RewriteRule ^termos-de-uso/?$ /pt-pt/termos-de-utilizacao [R=302,L]
-RewriteCond %{ENV:LEGAL_IDIOMA} ^pt-pt$
-RewriteRule ^politicas-de-privacidade/?$ /pt-pt/politica-de-privacidade [R=302,L]
-RewriteCond %{ENV:LEGAL_IDIOMA} ^en-us$
-RewriteRule ^termos-de-uso/?$ /en-us/terms-of-use [R=302,L]
-RewriteCond %{ENV:LEGAL_IDIOMA} ^en-us$
-RewriteRule ^politicas-de-privacidade/?$ /en-us/privacy-policy [R=302,L]
-RewriteCond %{ENV:LEGAL_IDIOMA} ^en-gb$
-RewriteRule ^termos-de-uso/?$ /en-gb/terms-of-use [R=302,L]
-RewriteCond %{ENV:LEGAL_IDIOMA} ^en-gb$
-RewriteRule ^politicas-de-privacidade/?$ /en-gb/privacy-policy [R=302,L]
-RewriteCond %{ENV:LEGAL_IDIOMA} ^en-au$
-RewriteRule ^termos-de-uso/?$ /en-au/terms-of-use [R=302,L]
-RewriteCond %{ENV:LEGAL_IDIOMA} ^en-au$
-RewriteRule ^politicas-de-privacidade/?$ /en-au/privacy-policy [R=302,L]
-RewriteCond %{ENV:LEGAL_IDIOMA} ^en-ca$
-RewriteRule ^termos-de-uso/?$ /en-ca/terms-of-use [R=302,L]
-RewriteCond %{ENV:LEGAL_IDIOMA} ^en-ca$
-RewriteRule ^politicas-de-privacidade/?$ /en-ca/privacy-policy [R=302,L]
-RewriteCond %{ENV:LEGAL_IDIOMA} ^es-es$
-RewriteRule ^termos-de-uso/?$ /es-es/terminos-de-uso [R=302,L]
-RewriteCond %{ENV:LEGAL_IDIOMA} ^es-es$
-RewriteRule ^politicas-de-privacidade/?$ /es-es/politica-de-privacidad [R=302,L]
-RewriteCond %{ENV:LEGAL_IDIOMA} ^es-mx$
-RewriteRule ^termos-de-uso/?$ /es-mx/terminos-de-uso [R=302,L]
-RewriteCond %{ENV:LEGAL_IDIOMA} ^es-mx$
-RewriteRule ^politicas-de-privacidade/?$ /es-mx/politica-de-privacidad [R=302,L]
+# 2) Raiz "/": vai para a página inicial no idioma da pessoa; sem língua conhecida, en-US (o mesmo
+#    que o site faz). 302 de propósito: o destino muda conforme quem abre, e a raiz continua sendo a
+#    "x-default" do hreflang (a porta de entrada que escolhe o idioma). Um 301 faria o Google e os
+#    navegadores guardarem um idioma só para todo mundo.
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteRule ^$ /en-us/ [R=302,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^(pt-br|pt-pt|en-us|en-gb|en-au|en-ca|es-es|es-mx)$
+RewriteRule ^$ /%1/ [R=302,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
 
-# -----------------------------------------------------------------------------
-# Páginas que o WordPress servia e que o app usa: volta do pagamento pelo navegador
-# (Stripe), o link "Perfil" dos e-mails de cobrança e o Suporte. Os endereços estão nas
-# sessões de pagamento da Stripe, num Payment Link e em e-mails já enviados: não podem
-# mudar. Agora abrem o site (index.html, resposta 200), que leva à página no idioma da
-# pessoa (src/i18n/idiomas.js, PAGINAS_ANTIGAS):
-#   /primeiros-passos          PRO pago pelo site (e prêmio do Primeiros passos)
-#   /pagamento-ok/             Acesso Cliente da obra
-#   /pacote-downloads-extras/  pacote de downloads extras da galeria
-#   /expansao-20gb-ok/         expansão de +20 GB
-#   /perfil                    e-mails de pagamento não processado
-#   /suporte/                  contato do suporte
-# Ficam antes das regras do WordPress, que tem páginas com esses mesmos nomes.
-# Com e sem barra no fim; o que vem depois do "?" é ignorado pelo site.
-# -----------------------------------------------------------------------------
-RewriteRule ^(pagamento-ok|pacote-downloads-extras|primeiros-passos|expansao-20gb-ok|perfil|suporte)/?$ /index.html [L,NC]
+# 3) Endereços antigos do WordPress (estão nas lojas, na Stripe, num Payment Link, no app e em e-mails já
+#    enviados): 301 para a mesma página no idioma do navegador. Sem cabeçalho de idioma nenhum (robôs, como o
+#    Google), pt-BR: eram páginas em português, e o 301 passa o histórico delas para a página nova.
+#    Com idioma, mas nenhum dos do site (de-DE, *...), en-US, como na raiz.
+#    Sem cache (o destino muda conforme quem abre). Com e sem barra no fim, maiúsculas ou não.
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^\s*$
+RewriteRule ^.+$ - [E=IDIOMA_NAVEGADOR:pt-br]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteRule ^.+$ - [E=IDIOMA_NAVEGADOR:en-us]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-br
+RewriteRule ^termos\-de\-uso/?$ /pt-br/termos-de-uso [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-br
+RewriteRule ^politicas\-de\-privacidade/?$ /pt-br/politica-de-privacidade [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-br
+RewriteRule ^pagamento\-ok/?$ /pt-br/pagamento-confirmado/acesso-cliente? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-br
+RewriteRule ^pacote\-downloads\-extras/?$ /pt-br/pagamento-confirmado/downloads-extras? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-br
+RewriteRule ^primeiros\-passos/?$ /pt-br/pagamento-confirmado/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-br
+RewriteRule ^expansao\-20gb\-ok/?$ /pt-br/pagamento-confirmado/mais-20-gb? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-br
+RewriteRule ^perfil/?$ /pt-br/perfil? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-br
+RewriteRule ^suporte/?$ /pt-br/suporte [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-br
+RewriteRule ^ajuda/?$ /pt-br/ajuda [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-pt
+RewriteRule ^termos\-de\-uso/?$ /pt-pt/termos-de-utilizacao [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-pt
+RewriteRule ^politicas\-de\-privacidade/?$ /pt-pt/politica-de-privacidade [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-pt
+RewriteRule ^pagamento\-ok/?$ /pt-pt/pagamento-confirmado/acesso-cliente? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-pt
+RewriteRule ^pacote\-downloads\-extras/?$ /pt-pt/pagamento-confirmado/transferencias-extra? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-pt
+RewriteRule ^primeiros\-passos/?$ /pt-pt/pagamento-confirmado/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-pt
+RewriteRule ^expansao\-20gb\-ok/?$ /pt-pt/pagamento-confirmado/mais-20-gb? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-pt
+RewriteRule ^perfil/?$ /pt-pt/perfil? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-pt
+RewriteRule ^suporte/?$ /pt-pt/apoio [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-pt
+RewriteRule ^ajuda/?$ /pt-pt/ajuda [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-us
+RewriteRule ^termos\-de\-uso/?$ /en-us/terms-of-use [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-us
+RewriteRule ^politicas\-de\-privacidade/?$ /en-us/privacy-policy [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-us
+RewriteRule ^pagamento\-ok/?$ /en-us/payment-confirmed/client-access? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-us
+RewriteRule ^pacote\-downloads\-extras/?$ /en-us/payment-confirmed/extra-downloads? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-us
+RewriteRule ^primeiros\-passos/?$ /en-us/payment-confirmed/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-us
+RewriteRule ^expansao\-20gb\-ok/?$ /en-us/payment-confirmed/plus-20-gb? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-us
+RewriteRule ^perfil/?$ /en-us/profile? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-us
+RewriteRule ^suporte/?$ /en-us/support [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-us
+RewriteRule ^ajuda/?$ /en-us/help [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-gb
+RewriteRule ^termos\-de\-uso/?$ /en-gb/terms-of-use [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-gb
+RewriteRule ^politicas\-de\-privacidade/?$ /en-gb/privacy-policy [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-gb
+RewriteRule ^pagamento\-ok/?$ /en-gb/payment-confirmed/client-access? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-gb
+RewriteRule ^pacote\-downloads\-extras/?$ /en-gb/payment-confirmed/extra-downloads? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-gb
+RewriteRule ^primeiros\-passos/?$ /en-gb/payment-confirmed/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-gb
+RewriteRule ^expansao\-20gb\-ok/?$ /en-gb/payment-confirmed/plus-20-gb? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-gb
+RewriteRule ^perfil/?$ /en-gb/profile? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-gb
+RewriteRule ^suporte/?$ /en-gb/support [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-gb
+RewriteRule ^ajuda/?$ /en-gb/help [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-au
+RewriteRule ^termos\-de\-uso/?$ /en-au/terms-of-use [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-au
+RewriteRule ^politicas\-de\-privacidade/?$ /en-au/privacy-policy [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-au
+RewriteRule ^pagamento\-ok/?$ /en-au/payment-confirmed/client-access? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-au
+RewriteRule ^pacote\-downloads\-extras/?$ /en-au/payment-confirmed/extra-downloads? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-au
+RewriteRule ^primeiros\-passos/?$ /en-au/payment-confirmed/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-au
+RewriteRule ^expansao\-20gb\-ok/?$ /en-au/payment-confirmed/plus-20-gb? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-au
+RewriteRule ^perfil/?$ /en-au/profile? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-au
+RewriteRule ^suporte/?$ /en-au/support [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-au
+RewriteRule ^ajuda/?$ /en-au/help [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-ca
+RewriteRule ^termos\-de\-uso/?$ /en-ca/terms-of-use [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-ca
+RewriteRule ^politicas\-de\-privacidade/?$ /en-ca/privacy-policy [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-ca
+RewriteRule ^pagamento\-ok/?$ /en-ca/payment-confirmed/client-access? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-ca
+RewriteRule ^pacote\-downloads\-extras/?$ /en-ca/payment-confirmed/extra-downloads? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-ca
+RewriteRule ^primeiros\-passos/?$ /en-ca/payment-confirmed/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-ca
+RewriteRule ^expansao\-20gb\-ok/?$ /en-ca/payment-confirmed/plus-20-gb? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-ca
+RewriteRule ^perfil/?$ /en-ca/profile? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-ca
+RewriteRule ^suporte/?$ /en-ca/support [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =en-ca
+RewriteRule ^ajuda/?$ /en-ca/help [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-es
+RewriteRule ^termos\-de\-uso/?$ /es-es/terminos-de-uso [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-es
+RewriteRule ^politicas\-de\-privacidade/?$ /es-es/politica-de-privacidad [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-es
+RewriteRule ^pagamento\-ok/?$ /es-es/pago-confirmado/acceso-cliente? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-es
+RewriteRule ^pacote\-downloads\-extras/?$ /es-es/pago-confirmado/descargas-extra? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-es
+RewriteRule ^primeiros\-passos/?$ /es-es/pago-confirmado/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-es
+RewriteRule ^expansao\-20gb\-ok/?$ /es-es/pago-confirmado/mas-20-gb? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-es
+RewriteRule ^perfil/?$ /es-es/perfil? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-es
+RewriteRule ^suporte/?$ /es-es/soporte [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-es
+RewriteRule ^ajuda/?$ /es-es/ayuda [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-mx
+RewriteRule ^termos\-de\-uso/?$ /es-mx/terminos-de-uso [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-mx
+RewriteRule ^politicas\-de\-privacidade/?$ /es-mx/politica-de-privacidad [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-mx
+RewriteRule ^pagamento\-ok/?$ /es-mx/pago-confirmado/acceso-cliente? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-mx
+RewriteRule ^pacote\-downloads\-extras/?$ /es-mx/pago-confirmado/descargas-extra? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-mx
+RewriteRule ^primeiros\-passos/?$ /es-mx/pago-confirmado/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-mx
+RewriteRule ^expansao\-20gb\-ok/?$ /es-mx/pago-confirmado/mas-20-gb? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-mx
+RewriteRule ^perfil/?$ /es-mx/perfil? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-mx
+RewriteRule ^suporte/?$ /es-mx/soporte [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-mx
+RewriteRule ^ajuda/?$ /es-mx/ayuda [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
 
-# -----------------------------------------------------------------------------
-# Site (React): endereços do site abrem o index.html
-# Endereços com prefixo de idioma (/pt-br/..., /en-us/..., /es-mx/...) e o antigo
-# /ajuda. Qualquer idioma novo já entra pela regra (duas letras + região opcional).
-# Arquivos que existem de verdade continuam sendo servidos direto, e também as pastas
-# com index.html próprio (Termos e Política gerados no build: /pt-br/termos-de-uso/...).
-# A pasta do idioma (/pt-br/) existe por causa dessas páginas, mas não tem index.html:
-# sem a segunda condição abaixo ela dava 403 (Options -Indexes) em vez de abrir o site.
-# -----------------------------------------------------------------------------
+# 4) Endereços antigos da Central com o idioma (/ajuda/pt-BR/criar-rdo) → /pt-br/ajuda/criar-rdo. Sem
+#    idioma (/ajuda/criar-rdo), pt-BR. O site corrige sozinho o resto (nome do assunto no idioma).
+RewriteRule ^ajuda/pt-br(/.*)?$ /pt-br/ajuda$1 [NC,R=301,L]
+RewriteRule ^ajuda/pt-pt(/.*)?$ /pt-pt/ajuda$1 [NC,R=301,L]
+RewriteRule ^ajuda/en-us(/.*)?$ /en-us/help$1 [NC,R=301,L]
+RewriteRule ^ajuda/en-gb(/.*)?$ /en-gb/help$1 [NC,R=301,L]
+RewriteRule ^ajuda/en-au(/.*)?$ /en-au/help$1 [NC,R=301,L]
+RewriteRule ^ajuda/en-ca(/.*)?$ /en-ca/help$1 [NC,R=301,L]
+RewriteRule ^ajuda/es-es(/.*)?$ /es-es/ayuda$1 [NC,R=301,L]
+RewriteRule ^ajuda/es-mx(/.*)?$ /es-mx/ayuda$1 [NC,R=301,L]
+RewriteRule ^ajuda/(.+)$ /pt-br/ajuda/$1 [NC,R=301,L]
+
+# 5) Idioma com maiúsculas (/PT-BR/ajuda) → minúsculas; página inicial sem barra (/pt-br) → com barra.
+RewriteCond %{REQUEST_URI} !^/pt-br(?:/|$)
+RewriteRule ^pt-br(/.*)?$ /pt-br$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/pt-pt(?:/|$)
+RewriteRule ^pt-pt(/.*)?$ /pt-pt$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/en-us(?:/|$)
+RewriteRule ^en-us(/.*)?$ /en-us$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/en-gb(?:/|$)
+RewriteRule ^en-gb(/.*)?$ /en-gb$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/en-au(?:/|$)
+RewriteRule ^en-au(/.*)?$ /en-au$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/en-ca(?:/|$)
+RewriteRule ^en-ca(/.*)?$ /en-ca$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/es-es(?:/|$)
+RewriteRule ^es-es(/.*)?$ /es-es$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/es-mx(?:/|$)
+RewriteRule ^es-mx(/.*)?$ /es-mx$1 [NC,R=301,L]
+RewriteRule ^(pt-br|pt-pt|en-us|en-gb|en-au|en-ca|es-es|es-mx)$ /$1/ [R=301,L]
+
+# 6) Barra no fim: só a página inicial do idioma tem (/pt-br/). /pt-br/ajuda/ → /pt-br/ajuda (301).
+RewriteRule ^([a-z]{2}-[a-z]{2}/.+)/$ /$1 [R=301,L]
+
+# 7) Páginas prontas do build (texto já no HTML, para o Google e os buscadores com IA): /pt-br/ajuda/criar-rdo
+#    é entregue a partir de pt-br/ajuda/criar-rdo.html, sem mudar o endereço. Quando o endereço é uma pasta
+#    (/pt-br/ajuda é também a pasta dos artigos), o servidor pode pôr uma barra no fim do nome do arquivo
+#    pedido: a primeira condição tira essa barra.
+RewriteCond %{REQUEST_FILENAME} ^(.*?)/?$
+RewriteCond %1.html -f
+RewriteRule ^([a-z]{2}-[a-z]{2}/.+)$ /$1.html [L]
+
+# 8) Os outros endereços do site abrem o index.html e o site desenha a página no navegador (artigo publicado
+#    depois do último build, endereço com o nome antigo de um artigo...). Arquivos de verdade são servidos
+#    direto. Pasta com index.html só quando pedida com a barra (/pt-br/ → pt-br/index.html); pedida sem a
+#    barra (pasta velha de um build antigo, com a barra automática desligada), abre o site, sem 404 nem vaivém.
 RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !/$ [OR]
 RewriteCond %{REQUEST_FILENAME}/index.html !-f
 RewriteRule ^(ajuda(/.*)?|[a-z]{2}(-[a-z]{2})?(/.*)?)$ /index.html [L,NC]
+# <<< ENDEREÇOS POR IDIOMA
 </IfModule>
-
-# BEGIN LSCACHE
-## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
-<IfModule mod_rewrite.c>
-RewriteEngine on
-RewriteRule litespeed/debug/.*\.log$ - [F,L]
-RewriteRule \.litespeed_conf\.dat - [F,L]
-</IfModule>
-<IfModule LiteSpeed>
-CacheLookup on
-RewriteRule .* - [E=Cache-Control:no-autoflush]
-
-### marker ASYNC start ###
-RewriteCond %{REQUEST_URI} /wp-admin/admin-ajax\.php
-RewriteCond %{QUERY_STRING} action=async_litespeed
-RewriteRule .* - [E=noabort:1]
-### marker ASYNC end ###
-
-### marker DROPQS start ###
-CacheKeyModify -qs:fbclid
-CacheKeyModify -qs:gclid
-CacheKeyModify -qs:utm*
-CacheKeyModify -qs:_ga
-### marker DROPQS end ###
-
-</IfModule>
-## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
-# END LSCACHE
-# BEGIN NON_LSCACHE
-## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
-## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
-# END NON_LSCACHE
-# BEGIN WordPress
-# As diretrizes (linhas) entre "BEGIN WordPress" e "END WordPress" são
-# geradas dinamicamente e só devem ser modificadas através de filtros do WordPress.
-# Quaisquer alterações nas diretivas entre esses marcadores serão sobrescritas.
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-</IfModule>
-
-# END WordPress

@@ -11,8 +11,9 @@ import Perguntas from './inicio/Perguntas';
 import Chamada from './inicio/Chamada';
 import ExitIntentPopup from './ExitIntentPopup';
 import FitaDeObra from './inicio/FitaDeObra';
-import { COM_MOVIMENTO, entrarEmGrupo, gsap, tituloSobe, useGSAP } from '../movimento/index.js';
+import { COM_MOVIMENTO, entrarEmGrupo, gsap, jaApareceu, tituloSobe, useGSAP } from '../movimento/index.js';
 import useTituloDaPagina from './ajuda/useTituloDaPagina.js';
+import { descricaoDaPagina, tituloDaPagina } from '../seo/textos.js';
 import { idDaSecao, secaoDaAncora } from '../i18n/idiomas.js';
 import { useIdioma } from '../i18n/RotaDoIdioma.jsx';
 
@@ -37,7 +38,7 @@ function useAncoraNoIdioma(codigo) {
 export default function Home() {
     const { t } = useTranslation();
     const codigo = useIdioma();
-    useTituloDaPagina(t('meta.titulo'), t('meta.descricao'));
+    useTituloDaPagina(tituloDaPagina(t, { tipo: 'inicio' }), descricaoDaPagina(t, { tipo: 'inicio' }));
     useAncoraNoIdioma(codigo);
     const principal = useRef(null);
 
@@ -48,6 +49,7 @@ export default function Home() {
         mm.add(COM_MOVIMENTO, () => {
             const q = gsap.utils.selector(principal);
             q('.secao-cabeca').forEach((cabeca) => {
+                if (jaApareceu(cabeca)) return;
                 const gatilho = { trigger: cabeca, start: 'top 85%', once: true };
                 gsap.fromTo(cabeca, { '--barra': 0 }, { '--barra': 1, duration: 0.9, ease: 'power3.out', scrollTrigger: gatilho });
                 tituloSobe(cabeca.querySelector('.secao-titulo'), { scrollTrigger: gatilho, delay: 0.1 });

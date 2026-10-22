@@ -1,7 +1,38 @@
 {
-    "meta": {
-        "titulo": "ObraFácil · Gestão de obras: cronograma, diário de obra, financeiro e portal do cliente",
-        "descricao": "Aplicativo de gestão de obras: cronograma por etapas, diário de obra (RDO) com fotos, financeiro, equipe e portal do cliente. Comece grátis, sem cartão de crédito."
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil: aplicativo de gestão de obras e diário de obra (RDO)",
+            "descricao": "Aplicativo de gestão de obras no celular e no computador: cronograma, diário de obra (RDO) com fotos, financeiro, equipe e portal do cliente. Comece grátis."
+        },
+        "ajuda": {
+            "titulo": "Central de Ajuda do ObraFácil: guias passo a passo",
+            "descricao": "Guias passo a passo do aplicativo de gestão de obras ObraFácil: diário de obra (RDO), cronograma, financeiro, equipe e portal do cliente, com as telas do app."
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · Central de Ajuda do ObraFácil",
+            "descricao": "{{descricao}} Guias passo a passo com as telas do app ObraFácil."
+        },
+        "artigo": {
+            "titulo": "{{titulo}} · ObraFácil"
+        },
+        "app": {
+            "descricao": "Aplicativo de gestão de obras para construtoras, engenheiros, arquitetos e empreiteiros: cronograma por etapas, diário de obra (RDO) com fotos e PDF, financeiro da obra, equipe e folha de pagamento, compras e almoxarifado, e portal para o cliente acompanhar a obra. Funciona no Android, no iPhone, no Windows e no navegador, inclusive sem internet no canteiro.",
+            "categoria": "Gestão de obras"
+        },
+        "imagemAlt": "Logotipo do ObraFácil, aplicativo de gestão de obras",
+        "llms": {
+            "sobre": "O que é o ObraFácil",
+            "paraQuem": "Para quem: construtoras, engenheiros civis, arquitetos, empreiteiros e mestres de obras que tocam uma ou várias obras e querem registrar o dia a dia, controlar prazos e custos e mostrar o andamento ao cliente.",
+            "plataformas": "Plataformas",
+            "recursos": "Recursos",
+            "papeis": "Quem faz o quê na obra",
+            "planos": "Planos e preços",
+            "precosPorIdioma": "Preço do PRO em cada idioma e moeda do site",
+            "precoLinha": "{{mensal}} por mês ou {{anual}} por ano",
+            "paginas": "Páginas principais",
+            "idiomas": "O site e o app estão nestes idiomas",
+            "todosArtigos": "Todos os artigos da Central de Ajuda"
+        }
     },
     "nav": {
         "login": "Entrar",
@@ -159,7 +190,6 @@
     },
     "ajuda": {
         "titulo": "Central de Ajuda",
-        "metaDescricao": "Guias passo a passo do ObraFácil: diário de obra, equipe, financeiro, portal do cliente e muito mais.",
         "heroiAntes": "Como podemos",
         "heroiDestaque": "ajudar",
         "heroiDepois": "?",

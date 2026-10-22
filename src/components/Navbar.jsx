@@ -1,5 +1,5 @@
 // Barra do topo: chapa azul da placa, logotipo numa chapa branca, links, idioma, tema e as ações.
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { ScrollTrigger, gsap, useGSAP } from '../movimento/index.js';
 import { useTranslation } from 'react-i18next';
 import { Check, ChevronDown, Menu, Moon, Sun, X } from 'lucide-react';
@@ -9,7 +9,7 @@ import { useIdioma, useTrocarIdioma } from '../i18n/RotaDoIdioma.jsx';
 import { LOGIN } from '../links.js';
 import { publico } from '../publico.js';
 import styles from './Navbar.module.css';
-import { linkComecar } from '../comecar.js';
+import { useLinkComecar } from '../useNavegador.js';
 
 const TAMANHOS = { lg: [28, 20], md: [24, 17], sm: [20, 14] };
 
@@ -33,19 +33,37 @@ function temaAtual() {
     return document.documentElement.getAttribute('data-theme') === 'dark' ? 'escuro' : 'claro';
 }
 
+// O tema fica no atributo data-theme da página (posto por public/tema.js antes de ela aparecer). A página pronta
+// do build não sabe o tema de quem abre: o primeiro desenho usa "claro" e logo se ajusta (o ícone do botão não
+// depende disso: os dois ícones estão na página e o CSS mostra o do tema certo desde o início).
+function assinarTema(aviso) {
+    const observador = new MutationObserver(aviso);
+    observador.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => observador.disconnect();
+}
+
 function useTema() {
-    const [tema, setTema] = useState(temaAtual);
+    const tema = useSyncExternalStore(assinarTema, temaAtual, () => 'claro');
     const trocar = () => {
-        const novo = tema === 'escuro' ? 'claro' : 'escuro';
+        const novo = temaAtual() === 'escuro' ? 'claro' : 'escuro';
         document.documentElement.setAttribute('data-theme', novo === 'escuro' ? 'dark' : 'light');
         try {
             window.localStorage.setItem('obrafacil:tema', novo);
         } catch {
             // sem permissão para guardar: vale só nesta visita
         }
-        setTema(novo);
     };
     return [tema, trocar];
+}
+
+// Lua no tema claro (passar para o escuro) e sol no escuro: escolhidos pelo CSS.
+function IconeTema() {
+    return (
+        <>
+            <Moon size={20} aria-hidden="true" className={styles.soClaro} />
+            <Sun size={20} aria-hidden="true" className={styles.soEscuro} />
+        </>
+    );
 }
 
 function SeletorDeIdioma({ codigo, aoEscolher }) {
@@ -106,6 +124,7 @@ function SeletorDeIdioma({ codigo, aoEscolher }) {
 export default function Navbar() {
     const { t } = useTranslation();
     const codigo = useIdioma();
+    const comecar = useLinkComecar(codigo);
     const trocarIdioma = useTrocarIdioma();
     const [tema, trocarTema] = useTema();
     const [menuAberto, setMenuAberto] = useState(false);
@@ -149,8 +168,6 @@ export default function Navbar() {
         { para: caminhoAjuda(codigo), texto: t('nav.ajuda') },
     ];
 
-    const IconeTema = tema === 'escuro' ? Sun : Moon;
-
     return (
         <header className={styles.barra}>
             <span ref={barra} className={styles.lido} aria-hidden="true" />
@@ -177,13 +194,13 @@ export default function Navbar() {
                 <div className={styles.direita}>
                     <SeletorDeIdioma codigo={codigo} aoEscolher={escolherIdioma} />
                     <button type="button" className={styles.icone} onClick={trocarTema} aria-label={t('nav.themeToggle')}>
-                        <IconeTema size={20} aria-hidden="true" />
+                        <IconeTema />
                     </button>
                     <a href={LOGIN} className={styles.entrar}>{t('nav.login')}</a>
-                    <a {...linkComecar(codigo)} className="acao">{t('nav.comecar')}</a>
+                    <a {...comecar} className="acao">{t('nav.comecar')}</a>
                 </div>
 
-                <a {...linkComecar(codigo)} className={`acao ${styles.comecarCelular}`}>{t('nav.comecar')}</a>
+                <a {...comecar} className={`acao ${styles.comecarCelular}`}>{t('nav.comecar')}</a>
                 <button
                     type="button"
                     className={styles.menuBotao}
@@ -219,12 +236,12 @@ export default function Navbar() {
                         ))}
                     </div>
                     <button type="button" className={styles.menuTema} onClick={trocarTema}>
-                        <IconeTema size={20} aria-hidden="true" />
+                        <IconeTema />
                         {tema === 'escuro' ? t('nav.lightMode') : t('nav.darkMode')}
                     </button>
                     <div className={styles.menuAcoes}>
                         <a href={LOGIN} className="acao-contorno">{t('nav.login')}</a>
-                        <a {...linkComecar(codigo)} className="acao">{t('nav.comecar')}</a>
+                        <a {...comecar} className="acao">{t('nav.comecar')}</a>
                     </div>
                 </div>
             )}

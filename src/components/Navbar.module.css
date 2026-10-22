@@ -128,6 +128,19 @@
   transform: rotate(180deg);
 }
 
+/* Ícone do tema: os dois estão na página e o tema (data-theme, posto antes de a página aparecer) escolhe. */
+.soEscuro {
+  display: none;
+}
+
+:global([data-theme='dark']) .soClaro {
+  display: none;
+}
+
+:global([data-theme='dark']) .soEscuro {
+  display: block;
+}
+
 .idiomaLista {
   position: absolute;
   right: 0;

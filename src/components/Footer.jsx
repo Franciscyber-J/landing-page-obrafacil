@@ -7,11 +7,12 @@ import { abrirAvisoCookies } from '../legal/cookies.js';
 import { WINDOWS, appStore, googlePlay, linkWhatsApp } from '../links.js';
 import { publico } from '../publico.js';
 import styles from './Footer.module.css';
-import { linkComecar } from '../comecar.js';
+import { useLinkComecar } from '../useNavegador.js';
 
 export default function Footer({ comChamada = true }) {
     const { t } = useTranslation();
     const codigo = useIdioma();
+    const comecar = useLinkComecar(codigo);
     const trocarIdioma = useTrocarIdioma();
 
     return (
@@ -20,7 +21,7 @@ export default function Footer({ comChamada = true }) {
                 <div className={`container ${styles.chamada}`}>
                     <div className={styles.chamadaConteudo} data-painel>
                         <p className={styles.chamadaTitulo}>{t('footer.ctaTitle')}</p>
-                        <a {...linkComecar(codigo)} className="acao">{t('footer.ctaBtn')}</a>
+                        <a {...comecar} className="acao">{t('footer.ctaBtn')}</a>
                     </div>
                 </div>
             )}
@@ -84,7 +85,8 @@ export default function Footer({ comChamada = true }) {
             </div>
 
             <div className={`container ${styles.base}`}>
-                <p>&copy; {new Date().getFullYear()} ObraFácil. {t('footer.rights')}</p>
+                {/* O ano da página pronta é o do build; no navegador, o de hoje (sem aviso de diferença na virada do ano). */}
+                <p>&copy; <span suppressHydrationWarning>{new Date().getFullYear()}</span> ObraFácil. {t('footer.rights')}</p>
             </div>
         </footer>
     );

@@ -16,6 +16,8 @@ import {
 } from './i18n/idiomas.js';
 import { idiomaPreferido } from './i18n/preferencia.js';
 import { Alternativos, ProvedorDeRota } from './i18n/RotaDoIdioma.jsx';
+import { encerrarChegada } from './movimento/index.js';
+import useCabecaDaPagina from './components/conta/useCabecaDaPagina.js';
 
 // Mantém o que vem depois do endereço (?utm_..., ?gclid=... dos anúncios) ao redirecionar.
 function comConsulta(caminho, search) {
@@ -41,10 +43,17 @@ function destinoSemIdioma(lido, hash) {
   return caminhoDoAntigo(lido, lido.codigo ?? idiomaPreferido());
 }
 
+// Endereço com idioma que não é página do site: vai para a página inicial do idioma, como sempre, e enquanto isso
+// a página fica marcada como noindex (o Google não guarda o endereço inexistente).
+function Inexistente({ para }) {
+  useCabecaDaPagina({ semIndexar: true });
+  return <Navigate to={para} replace />;
+}
+
 function Pagina({ codigo, lido }) {
   // key: a página inicial nasce de novo em cada idioma (as animações de título guardam o texto que dividiram)
   if (lido.pagina === 'inicio') return <Home key={codigo} />;
-  if (lido.pagina === 'nao-encontrado') return <Navigate to={caminhoInicio(codigo)} replace />;
+  if (lido.pagina === 'nao-encontrado') return <Inexistente para={caminhoInicio(codigo)} />;
   if (lido.pagina === 'legal') return <LegalPagina key={`${codigo}:${lido.documento}`} codigo={codigo} documento={lido.documento} />;
   if (lido.pagina === 'pagamento') return <PagamentoPagina codigo={codigo} compra={lido.compra} />;
   if (lido.pagina === 'perfil') return <PerfilPagina codigo={codigo} />;
@@ -98,14 +107,26 @@ function Roteador({ children }) {
   return <BrowserRouter>{children}</BrowserRouter>;
 }
 
+// As rotas do site, sem o roteador: o navegador usa o BrowserRouter (App) e o build das páginas prontas usa o
+// StaticRouter (src/ssr/entrada.jsx). As duas formas desenham exatamente o mesmo HTML.
+export function RotasDoSite() {
+  return (
+    <Suspense fallback={null}>
+      <Routes>
+        <Route path="*" element={<Site />} />
+      </Routes>
+    </Suspense>
+  );
+}
+
 function App() {
+  // Depois do primeiro desenho, as animações de entrada voltam ao normal (ver encerrarChegada).
+  useEffect(() => {
+    encerrarChegada();
+  }, []);
   return (
     <Roteador>
-      <Suspense fallback={null}>
-        <Routes>
-          <Route path="*" element={<Site />} />
-        </Routes>
-      </Suspense>
+      <RotasDoSite />
     </Roteador>
   );
 }

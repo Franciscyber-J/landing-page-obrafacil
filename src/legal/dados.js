@@ -1,7 +1,8 @@
 // Termos e Política no navegador: guarda no navegador o texto já lido e confere no Firestore
 // uma vez por visita (duas leituras: a lista de versões e, só se mudou, o texto do idioma).
-// A página gerada no build já traz o texto (legal-inicial): quem abre direto não espera.
+// A página pronta do build já traz o texto (src/dadosIniciais.js): quem abre direto não espera.
 
+import { dadosIniciais } from '../dadosIniciais.js';
 import { textoDaVersao, versoesDoDocumento } from './firestore.js';
 
 const PREFIXO = 'legal:v1:';
@@ -28,24 +29,21 @@ function valido(t) {
     return t && typeof t.versao === 'string' && typeof t.texto === 'string' && t.texto.startsWith('# ');
 }
 
-// Texto que a página gerada no build trouxe, se for deste documento e idioma.
+// Texto com que a página pronta do build foi desenhada (src/dadosIniciais.js), se for deste documento e idioma.
 function textoDoBuild(documento, idioma) {
-    try {
-        const el = document.getElementById('legal-inicial');
-        if (!el) return null;
-        const dados = JSON.parse(el.textContent);
-        if (dados?.documento !== documento || dados?.idioma !== idioma || !valido(dados.atual)) return null;
-        return { atual: dados.atual, proxima: dados.proxima ?? null };
-    } catch {
-        return null;
-    }
+    const dados = dadosIniciais()?.legal;
+    if (dados?.documento !== documento || dados?.idioma !== idioma || !valido(dados.atual)) return null;
+    return { atual: dados.atual, proxima: dados.proxima ?? null };
 }
 
-// O que já dá para mostrar sem rede (build ou navegador). null se nada.
+// O que já dá para mostrar sem rede. null se nada. O texto do build vem antes do guardado no navegador: é o
+// que já está na tela da página pronta (a conferência no Firestore troca se houver versão mais nova).
 export function textoGuardado(documento, idioma) {
+    const doBuild = textoDoBuild(documento, idioma);
+    if (doBuild) return doBuild;
     const doCache = lerCache(`${documento}:${idioma}`);
     if (doCache && valido(doCache.atual)) return { atual: doCache.atual, proxima: doCache.proxima ?? null };
-    return textoDoBuild(documento, idioma);
+    return null;
 }
 
 // Confere no Firestore e devolve { atual: {versao, texto, vigenteDesde}, proxima: {versao, vigenteDesde}|null }

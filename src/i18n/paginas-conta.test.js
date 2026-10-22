@@ -143,25 +143,28 @@ test('cadastro: palavras dos endereços das páginas completas, válidas e sem r
     }
 });
 
-test('.htaccess entrega o site nos endereços antigos antes das regras do WordPress', () => {
+test('.htaccess leva os endereços antigos (301) à página no idioma, com e sem barra no fim', () => {
     const htaccess = fs.readFileSync(path.join(RAIZ, 'hospedagem', '.htaccess'), 'utf8');
-    const linha = htaccess.split('\n').find((l) => l.startsWith('RewriteRule ^(pagamento-ok'));
-    assert.ok(linha, 'regra dos endereços antigos não encontrada');
-    const [, padrao, destino, opcoes] = linha.split(/\s+/);
-    assert.equal(destino, '/index.html');
-    assert.equal(opcoes, '[L,NC]');
-    const regra = new RegExp(padrao, 'i');
-    const nomes = padrao.match(/^\^\(([^)]+)\)/)[1].split('|').sort();
-    assert.deepEqual(nomes, Object.keys(PAGINAS_ANTIGAS).sort());
+    // Regras do bloco gerado (ferramentas/hospedagem/htaccess.mjs): RewriteRule ^<antigo>/?$ <destino> [NC,R=301,...]
+    const regras = htaccess.split('\n').filter((l) => /^RewriteRule \^[a-z0-9\\-]+\/\?\$ \/[a-z]{2}-[a-z]{2}\//.test(l) && l.includes('R=301'));
     for (const url of ANTIGOS) {
-        // No .htaccess o caminho chega sem a barra do começo.
-        assert.ok(regra.test(url.slice(1)), url);
-        assert.ok(regra.test(`${url.slice(1)}/`), `${url}/`);
+        const daPagina = regras.filter((l) => new RegExp(l.split(/\s+/)[1], 'i').test(url.slice(1)));
+        assert.equal(daPagina.length, IDIOMAS.length, `${url}: uma regra por idioma`);
+        for (const l of daPagina) {
+            const [, padrao, destino] = l.split(/\s+/);
+            const regra = new RegExp(padrao, 'i');
+            // No .htaccess o caminho chega sem a barra do começo.
+            assert.ok(regra.test(`${url.slice(1)}/`), `${url}/`);
+            assert.ok(!regra.test(`${url.slice(1)}/outra`));
+            const lido = analisarCaminho(destino.replace(/\?$/, ''));
+            assert.equal(lido.tipo, 'pagina', destino);
+            assert.equal(lido.canonico, null, `${destino} já é o endereço certo`);
+            const antigo = PAGINAS_ANTIGAS[url.slice(1)];
+            assert.equal(lido.pagina, antigo.pagina, destino);
+            // A volta do pagamento e o Perfil descartam o ?session_id; o Suporte mantém o ?utm_.
+            assert.equal(destino.endsWith('?'), consultaQueSegue(antigo, '?x=1') === '', destino);
+        }
     }
-    assert.ok(!regra.test('perfil/outra'));
-    assert.ok(!regra.test('suporte-tecnico'));
-    assert.ok(htaccess.indexOf(linha) < htaccess.indexOf('# BEGIN WordPress'), 'a regra precisa vir antes do WordPress');
-    assert.ok(htaccess.indexOf(linha) < htaccess.indexOf('# BEGIN LSCACHE'), 'a regra precisa vir antes do bloco do LiteSpeed');
 });
 
 test('verificar.mjs confere cada endereço antigo no ar', () => {

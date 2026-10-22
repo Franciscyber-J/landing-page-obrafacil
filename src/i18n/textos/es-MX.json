@@ -1,4 +1,18 @@
 {
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil: aplicación para administrar obras y bitácora de obra",
+            "descricao": "Aplicación para administrar obras desde el celular y la computadora: cronograma, bitácora y reporte diario con fotos, finanzas, equipo y portal del cliente. Empieza gratis."
+        },
+        "ajuda": {
+            "descricao": "Guías paso a paso de la aplicación para administrar obras ObraFácil: reporte diario y bitácora, cronograma, finanzas, equipo y portal del cliente, con las pantallas reales de la app."
+        },
+        "app": {
+            "descricao": "Aplicación para administrar obras pensada para constructoras, ingenieros, arquitectos y contratistas: cronograma por etapas, bitácora y reporte diario de obra con fotos y PDF, finanzas de la obra, equipo y nómina, compras y almacén, y un portal para que el cliente siga la obra. Funciona en Android, iPhone, Windows y navegador, incluso sin señal en la obra.",
+            "categoria": "Administración de obras"
+        },
+        "imagemAlt": "Logotipo de ObraFácil, aplicación para administrar obras"
+    },
     "popup": {
         "texto": "Crea tu cuenta gratis, sin tarjeta de crédito. Registra una obra y mira el cronograma, el reporte diario con fotos y las finanzas funcionando, con tu cliente siguiéndolo todo en el portal."
     },
@@ -19,10 +33,6 @@
     },
     "legal": {
         "erro": "No se pudo cargar el texto en este momento. Revise su conexión."
-    },
-    "meta": {
-        "titulo": "ObraFácil · Gestión de obras: cronograma, reporte diario, finanzas y portal del cliente",
-        "descricao": "App de gestión de obras: cronograma por etapas, reporte diario de obra con fotos, finanzas, equipo y portal del cliente. Empieza gratis, sin tarjeta."
     },
     "hero": {
         "subtitulo": "Cronograma, reporte diario, finanzas, equipo y compras en el celular y en la computadora. Y tu cliente sigue la obra en el portal, sin tener que llamarte.",

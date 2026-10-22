@@ -140,15 +140,32 @@ function formatAmount(cents, currency, locale) {
     });
 }
 
+// Moeda dos preços de um idioma (minúsculas, como na tabela acima).
+export function moedaDoIdioma(locale) {
+    return idioma(locale)?.moeda
+        ?? LOCALE_CURRENCY_MAP[locale]
+        ?? LOCALE_CURRENCY_MAP[locale?.split('-')[0]]
+        ?? 'brl';
+}
+
+// Preços do PRO de um idioma em número com ponto (para os dados estruturados do Google e o llms.txt):
+// { moeda: 'BRL', mensal: '99.90', anual: '899.00' }. Mesma tabela que a página de preços mostra.
+export function precosDoIdioma(locale) {
+    const moeda = moedaDoIdioma(locale);
+    const numero = (centavos) => (NO_DECIMAL_CURRENCIES.has(moeda) ? String(centavos) : (centavos / 100).toFixed(2));
+    return {
+        moeda: moeda.toUpperCase(),
+        mensal: numero(APPLE_PRICES.monthly[moeda]),
+        anual: numero(APPLE_PRICES.annual[moeda]),
+    };
+}
+
 /**
  * @param {string} locale  — ex: 'pt', 'en-GB', 'es-MX'
  * @returns pricing object com todos os valores prontos para exibir
  */
 export function getPricing(locale) {
-    const currency = idioma(locale)?.moeda
-        ?? LOCALE_CURRENCY_MAP[locale]
-        ?? LOCALE_CURRENCY_MAP[locale?.split('-')[0]]
-        ?? 'brl';
+    const currency = moedaDoIdioma(locale);
 
     const symbol = CURRENCY_SYMBOLS[currency] ?? 'R$';
     const rawMonthly = APPLE_PRICES.monthly[currency];

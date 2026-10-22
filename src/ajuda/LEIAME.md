@@ -22,9 +22,15 @@ Idiomas dos artigos: `pt-BR`, `pt-PT`, `en-US`, `en-GB`, `en-AU`, `en-CA`, `es-E
 (`src/ajuda/idiomas.js`). Um idioma do site sem artigos próprios mostra os artigos do primeiro idioma
 da cadeia dele que tiver (ex.: francês → inglês), com a tela no idioma do site.
 
-Como o site é de página única, a hospedagem precisa devolver o `index.html` para qualquer
-endereço que não seja um arquivo (regra no `.htaccess` da Hostinger). Sem ela, abrir um link de
-artigo direto dá erro 404.
+## Páginas prontas
+
+O build grava cada página da Central (início, assuntos e artigos) em cada idioma com o texto já no HTML
+(`ferramentas/paginas/gerar.mjs`), para o Google e os buscadores com IA, e põe tudo no `sitemap.xml` com a data da
+publicação de cada artigo no Firestore. O índice de cada idioma vai junto em `dados/ajuda/<idioma>.<código>.json`:
+a página pronta o lê antes de ligar os botões (a busca funciona na hora) e depois confere o Firestore como sempre.
+Artigo publicado depois do último build não tem página pronta: o `.htaccess` devolve o `index.html` e o site
+desenha o artigo no navegador. Por isso, depois de publicar artigos novos, vale gerar e publicar o site de novo
+(skill `publicar-site`).
 
 ## De onde vem o conteúdo
 

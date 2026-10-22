@@ -1,4 +1,12 @@
 {
+    "seo": {
+        "ajuda": {
+            "titulo": "ObraFácil Help Centre: step-by-step guides"
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · ObraFácil Help Centre"
+        }
+    },
     "ajuda": {
         "titulo": "Help Centre",
         "buscaRotulo": "Search the Help Centre",

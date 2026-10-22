@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { MessageCircle, RefreshCw, SearchX, Hourglass } from 'lucide-react';
 import useTituloDaPagina from './useTituloDaPagina.js';
+import useCabecaDaPagina from '../conta/useCabecaDaPagina.js';
 import styles from './Ajuda.module.css';
 
 const WHATSAPP = '5562992666759';
@@ -61,6 +62,8 @@ export function NadaPublicado() {
 export function NaoEncontrado({ para, titulo }) {
     const { t } = useTranslation();
     useTituloDaPagina(`${titulo} · ${t('ajuda.titulo')} · ObraFácil`);
+    // Endereço que não leva a nada: fora do Google (noindex), mesmo respondendo pela página do site.
+    useCabecaDaPagina({ semIndexar: true });
     return (
         <Aviso icone={<SearchX size={28} aria-hidden="true" />} titulo={titulo} texto={t('ajuda.naoEncontradoTexto')}>
             <Link className={styles.botao} to={para}>{t('ajuda.voltarCentral')}</Link>

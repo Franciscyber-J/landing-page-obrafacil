@@ -9,15 +9,27 @@ import AjudaInicio from './AjudaInicio.jsx';
 import AjudaAssunto from './AjudaAssunto.jsx';
 import AjudaArtigo from './AjudaArtigo.jsx';
 import { Carregando, ErroAoCarregar, NadaPublicado } from './Estados.jsx';
+import { dadosIniciais } from '../../dadosIniciais.js';
 import styles from './Ajuda.module.css';
 
-// Índice do idioma: aparece na hora se estiver guardado no navegador e é conferido em
-// segundo plano; a tela só muda se a conferência trouxer algo diferente.
+// Índice e artigo com que a página pronta do build foi desenhada (src/dadosIniciais.js), se forem deste idioma.
+function indiceDoBuild(idioma) {
+    const indice = dadosIniciais()?.ajuda?.indice;
+    return indice && typeof indice === 'object' && indice.idioma === idioma ? indice : null;
+}
+
+function artigoDoBuild(entrada, idioma) {
+    const doc = dadosIniciais()?.ajuda?.artigo;
+    return entrada && doc && doc.id === entrada.id && doc.conteudo?.[idioma] ? doc : null;
+}
+
+// Índice do idioma: aparece na hora (o do build, na página pronta; senão o guardado no navegador) e é
+// conferido em segundo plano; a tela só muda se a conferência trouxer algo diferente.
 function useIndice(idioma) {
     const [tentativa, setTentativa] = useState(0);
     const [estado, setEstado] = useState({ chave: null, tipo: 'carregando', indice: null });
     const chave = `${idioma}:${tentativa}`;
-    const guardado = useMemo(() => indiceGuardado(idioma), [idioma]);
+    const guardado = useMemo(() => indiceDoBuild(idioma) ?? indiceGuardado(idioma), [idioma]);
 
     useEffect(() => {
         let vivo = true;
@@ -37,10 +49,12 @@ function useIndice(idioma) {
 }
 
 // Artigo inteiro (passos, prints, slugs de todos os idiomas). Baixado de novo só quando o hash muda.
+// Na página pronta, o artigo do build aparece na hora; sem internet, ele continua na tela.
 function useArtigo(entrada, idioma) {
     const [tentativa, setTentativa] = useState(0);
     const [estado, setEstado] = useState({ chave: null, tipo: 'carregando', doc: null });
     const chave = entrada ? `${entrada.id}:${idioma}:${entrada.hash}:${tentativa}` : null;
+    const doBuild = useMemo(() => artigoDoBuild(entrada, idioma), [entrada, idioma]);
 
     useEffect(() => {
         if (!entrada) return undefined;
@@ -51,7 +65,10 @@ function useArtigo(entrada, idioma) {
         return () => { vivo = false; };
     }, [chave]); // eslint-disable-line react-hooks/exhaustive-deps
 
-    const atual = estado.chave === chave ? estado : { chave, tipo: 'carregando', doc: null };
+    let atual;
+    if (estado.chave === chave && !(estado.tipo === 'erro' && doBuild)) atual = estado;
+    else if (doBuild) atual = { chave, tipo: 'pronto', doc: doBuild };
+    else atual = { chave, tipo: 'carregando', doc: null };
     return { ...atual, tentarDeNovo: () => setTentativa((n) => n + 1) };
 }
 
