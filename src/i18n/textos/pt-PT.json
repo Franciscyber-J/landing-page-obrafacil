@@ -1,4 +1,22 @@
 {
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil: aplicação de gestão de obras e diário de obra",
+            "descricao": "Aplicação de gestão de obras no telemóvel e no computador: cronograma, diário de obra com fotografias, finanças, equipa e portal do cliente. Comece grátis."
+        },
+        "ajuda": {
+            "titulo": "Centro de Ajuda do ObraFácil: guias passo a passo",
+            "descricao": "Guias passo a passo da aplicação de gestão de obras ObraFácil: diário de obra, cronograma, finanças, equipa e portal do cliente, com os ecrãs reais da aplicação."
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · Centro de Ajuda do ObraFácil",
+            "descricao": "{{descricao}} Guias passo a passo com os ecrãs da aplicação ObraFácil."
+        },
+        "app": {
+            "descricao": "Aplicação de gestão de obras para construtoras, engenheiros, arquitetos e empreiteiros: cronograma por etapas, diário de obra com fotografias e PDF, finanças da obra, equipa e processamento de salários, compras e armazém, e portal para o cliente acompanhar a obra. Funciona em Android, iPhone, Windows e navegador, mesmo sem internet no estaleiro."
+        },
+        "imagemAlt": "Logótipo do ObraFácil, aplicação de gestão de obras"
+    },
     "popup": {
         "title": "Antes de sair, experimente na sua próxima obra",
         "texto": "Crie a conta grátis, sem cartão de crédito. Registe uma obra e veja o cronograma, o diário com fotografias e as finanças a funcionar, com o seu cliente a acompanhar pelo portal.",
@@ -13,7 +31,6 @@
     },
     "ajuda": {
         "titulo": "Centro de Ajuda",
-        "metaDescricao": "Guias passo a passo do ObraFácil: diário de obra, equipa, financeiro, portal do cliente e muito mais.",
         "heroiSubtitulo": "Guias passo a passo do ObraFácil, com a imagem de cada ecrã no seu idioma.",
         "buscaRotulo": "Pesquisar no Centro de Ajuda",
         "buscaPlaceholder": "Pesquise por diário, colaborador, PDF, cliente…",
@@ -58,10 +75,6 @@
     },
     "cookies": {
         "texto": "Utilizamos o Google Analytics e o Google Ads para medir as visitas ao site e o resultado dos nossos anúncios. Só gravam cookies se aceitar."
-    },
-    "meta": {
-        "titulo": "ObraFácil · Gestão de obras: cronograma, diário de obra, finanças e portal do cliente",
-        "descricao": "Aplicação de gestão de obras: cronograma por etapas, diário de obra com fotografias, finanças, equipa e portal do cliente. Comece grátis, sem cartão de crédito."
     },
     "nav": {
         "login": "Iniciar sessão",

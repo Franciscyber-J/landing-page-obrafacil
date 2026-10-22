@@ -6,6 +6,7 @@ import AjudaBusca from './AjudaBusca.jsx';
 import IconeModulo from './IconeModulo.jsx';
 import { BandaSuporte } from './Estados.jsx';
 import useTituloDaPagina from './useTituloDaPagina.js';
+import { descricaoDaPagina, tituloDaPagina } from '../../seo/textos.js';
 import styles from './Ajuda.module.css';
 
 const PERFIS = ['todos', 'gestor', 'equipe', 'cliente'];
@@ -13,7 +14,7 @@ const PERFIS = ['todos', 'gestor', 'equipe', 'cliente'];
 export default function AjudaInicio({ indice, preparado, rotas }) {
     const { t } = useTranslation();
     const [perfil, setPerfil] = useState('todos');
-    useTituloDaPagina(`${t('ajuda.titulo')} · ObraFácil`, t('ajuda.metaDescricao'));
+    useTituloDaPagina(tituloDaPagina(t, { tipo: 'ajuda' }), descricaoDaPagina(t, { tipo: 'ajuda' }));
 
     const modulos = useMemo(() => new Map(indice.modulos.map((m) => [m.id, m])), [indice]);
     const doPerfil = (a) => perfil === 'todos' || a.publico.includes(perfil);

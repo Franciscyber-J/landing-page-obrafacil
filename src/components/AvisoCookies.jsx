@@ -7,11 +7,14 @@ import { Link } from 'react-router-dom';
 import { caminhoLegal } from '../i18n/idiomas.js';
 import { useIdioma } from '../i18n/RotaDoIdioma.jsx';
 import { EVENTO_ABRIR, aplicarEscolha, lerEscolha } from '../legal/cookies.js';
+import { useMontado } from '../useNavegador.js';
 import styles from './AvisoCookies.module.css';
 
 export default function AvisoCookies() {
     const { t } = useTranslation();
     const codigo = useIdioma();
+    // A escolha fica no navegador: a página pronta do build não tem o aviso, que aparece logo depois de ela abrir.
+    const montado = useMontado();
     const [aberto, setAberto] = useState(() => !lerEscolha());
 
     useEffect(() => {
@@ -27,7 +30,7 @@ export default function AvisoCookies() {
         else delete document.documentElement.dataset.cookies;
     }, [aberto]);
 
-    if (!aberto) return null;
+    if (!aberto || !montado) return null;
 
     const escolher = (aceito) => {
         aplicarEscolha(aceito);

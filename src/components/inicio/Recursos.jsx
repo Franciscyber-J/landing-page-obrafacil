@@ -7,10 +7,10 @@ import { useTranslation } from 'react-i18next';
 import { idDaSecao } from '../../i18n/idiomas.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import { enderecoDaTela } from '../../telas.js';
-import { COM_MOVIMENTO, LARGO, ScrollTrigger, entrarEmGrupo, gsap, useGSAP } from '../../movimento/index.js';
+import { COM_MOVIMENTO, LARGO, ScrollTrigger, entrarEmGrupo, gsap, jaApareceu, useGSAP } from '../../movimento/index.js';
 import { comDestaque } from '../../texto.jsx';
 import styles from './Recursos.module.css';
-import { linkComecar } from '../../comecar.js';
+import { useLinkComecar } from '../../useNavegador.js';
 
 // Cada parte e a tela real que a mostra (com o texto alternativo da tela).
 const ITENS = [
@@ -27,6 +27,7 @@ const ITENS = [
 export default function Recursos() {
     const { t } = useTranslation();
     const codigo = useIdioma();
+    const comecar = useLinkComecar(codigo);
     const raiz = useRef(null);
     const [ativo, setAtivo] = useState(null);
     const [anterior, setAnterior] = useState(null);
@@ -65,10 +66,12 @@ export default function Recursos() {
                 ease: 'none',
                 scrollTrigger: { trigger: q('[data-m="lista"]')[0], start: 'top 55%', end: 'bottom 55%', scrub: true },
             });
-            gsap.from(q('[data-m="aparelho"]'), {
-                y: 100, autoAlpha: 0, duration: 1.2,
-                scrollTrigger: { trigger: raiz.current, start: 'top 70%', once: true },
-            });
+            if (!jaApareceu(q('[data-m="aparelho"]')[0])) {
+                gsap.from(q('[data-m="aparelho"]'), {
+                    y: 100, autoAlpha: 0, duration: 1.2,
+                    scrollTrigger: { trigger: raiz.current, start: 'top 70%', once: true },
+                });
+            }
             return () => {
                 setHistoria(false);
                 setAtivo(null);
@@ -129,7 +132,7 @@ export default function Recursos() {
                             ))}
                         </dl>
                         <div className={styles.acoes}>
-                            <a {...linkComecar(codigo)} className="acao">{t('hero.comecar')}</a>
+                            <a {...comecar} className="acao">{t('hero.comecar')}</a>
                             <p>{t('hero.semCartao')}</p>
                         </div>
                     </div>

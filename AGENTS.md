@@ -4,7 +4,7 @@ Regras permanentes para qualquer agente de código que trabalhe nesta pasta. Val
 
 ## Projeto
 
-- Site de vendas e Central de Ajuda do ObraFácil: Vite + React + react-router + i18next. No ar em `https://appobrafacil.expertbr.com` (Hostinger, junto com um WordPress que ainda serve termos, privacidade e páginas de pagamento usadas pelo app).
+- Site de vendas e Central de Ajuda do ObraFácil: Vite + React + react-router + i18next. No ar em `https://appobrafacil.expertbr.com` (Hostinger). O build grava uma página pronta (texto no HTML, para o Google e os buscadores com IA) de cada endereço público em cada idioma, mais `sitemap.xml`, `robots.txt` e `llms.txt` (`ferramentas/paginas/`, `src/seo/`). O WordPress foi desligado; os endereços antigos dele (lojas, Stripe, e-mails) levam às páginas do site pelo `.htaccess`.
 - A Central de Ajuda só lê os artigos publicados no Firestore (o conteúdo nasce no repositório `gestao_obras`, em `ajuda/`).
 - Dono: Francis. Ele aprova, faz merge e publica. O Claude escreve as especificações, revisa e também trabalha direto nesta pasta (cria a branch da tarefa e faz commit nela).
 - Responda sempre em português do Brasil.
@@ -26,7 +26,7 @@ Regras permanentes para qualquer agente de código que trabalhe nesta pasta. Val
 
 ## Revisão obrigatória
 
-`hospedagem/` (`.htaccess`, plugin do WordPress, verificador), `src/i18n/registro.js` e `ferramentas/` não são editados pelo agente por conta própria: a mudança vem pronta do Claude. Só a tarefa que autoriza expressamente permite tocar nesses arquivos.
+`hospedagem/` (`.htaccess`, verificador), `src/i18n/registro.js` e `ferramentas/` não são editados pelo agente por conta própria: a mudança vem pronta do Claude. Só a tarefa que autoriza expressamente permite tocar nesses arquivos.
 
 ## Código
 
@@ -35,6 +35,7 @@ Regras permanentes para qualquer agente de código que trabalhe nesta pasta. Val
   - chave nova entra primeiro no `src/i18n/textos/pt-BR.json` e nos outros idiomas-base;
   - `npm run idiomas` precisa terminar sem erros (ele também roda antes do build).
 - Endereços de página sempre pelas funções de `src/i18n/idiomas.js` e `src/ajuda/enderecos.js` (`caminhoInicio`, `caminhoAjuda`, `rotas.artigo`...), nunca montados à mão: cada idioma tem as próprias palavras no endereço.
+- As páginas são desenhadas também no build (páginas prontas) e depois "hidratadas" no navegador: o primeiro desenho de um componente não pode depender do navegador (`window`, `localStorage`, aparelho, tema, data de hoje). Use os ganchos de `src/useNavegador.js` (`useMontado`, `useLinkComecar`) ou o CSS, e confira com `npm run build` e o console sem erro de hidratação. Animação de entrada não esconde o que já está na tela (`jaApareceu`, `src/movimento/index.js`).
 - Toda tela funciona em tema claro e escuro, com as cores de `src/styles/design-tokens.css`, e no celular (390 px) sem rolagem para o lado.
 - O texto dos artigos é lido por `src/ajuda/texto.js` (só negrito, lista e link para artigo); nunca usar `dangerouslySetInnerHTML` com conteúdo publicado.
 - Nada de solução paliativa: se a especificação não resolve o caso por completo, parar e relatar.

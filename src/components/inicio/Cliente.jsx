@@ -5,20 +5,22 @@ import { useTranslation } from 'react-i18next';
 import { idDaSecao } from '../../i18n/idiomas.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import { enderecoDaTela } from '../../telas.js';
-import { COM_MOVIMENTO, gsap, useGSAP } from '../../movimento/index.js';
+import { COM_MOVIMENTO, gsap, jaApareceu, useGSAP } from '../../movimento/index.js';
 import { comDestaque } from '../../texto.jsx';
 import styles from './Cliente.module.css';
-import { linkComecar } from '../../comecar.js';
+import { useLinkComecar } from '../../useNavegador.js';
 
 export default function Cliente() {
     const { t } = useTranslation();
     const codigo = useIdioma();
+    const comecar = useLinkComecar(codigo);
     const pontos = t('cliente.pontos', { returnObjects: true });
     const comparacao = useRef(null);
 
     useGSAP(() => {
         const mm = gsap.matchMedia();
         mm.add(COM_MOVIMENTO, () => {
+            if (jaApareceu(comparacao.current)) return;
             const q = gsap.utils.selector(comparacao);
             const tl = gsap.timeline({ scrollTrigger: { trigger: comparacao.current, start: 'top 75%', once: true } });
             tl.from(q('[data-m="legenda-antes"]'), { y: 16, autoAlpha: 0, duration: 0.6 })
@@ -55,7 +57,7 @@ export default function Cliente() {
                             </li>
                         ))}
                     </ol>
-                    <a {...linkComecar(codigo)} className={`acao ${styles.acao}`}>{t('hero.comecar')}</a>
+                    <a {...comecar} className={`acao ${styles.acao}`}>{t('hero.comecar')}</a>
                 </div>
 
                 <div className={styles.comparacao} ref={comparacao}>

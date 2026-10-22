@@ -9,6 +9,7 @@ import { conferirTexto, textoDaProxima, textoGuardado } from '../../legal/dados.
 import { lerTexto, sumario, tituloDoTexto } from '../../legal/markdown.js';
 import { caminhoLegal } from '../../i18n/idiomas.js';
 import { useRotaEquivalente } from '../../i18n/RotaDoIdioma.jsx';
+import { tituloDaPagina } from '../../seo/textos.js';
 import styles from './Legal.module.css';
 
 function useTexto(documento, codigo) {
@@ -65,8 +66,8 @@ export default function LegalPagina({ codigo, documento }) {
     const secoes = useMemo(() => sumario(blocos), [blocos]);
 
     useEffect(() => {
-        document.title = `${titulo} · ObraFácil`;
-    }, [titulo]);
+        document.title = tituloDaPagina(t, { tipo: 'legal' }, { titulo });
+    }, [t, titulo]);
 
     // Link com âncora (#s15 do aviso de cookies): desce até a seção depois que o texto aparece.
     const { hash } = useLocation();
@@ -114,7 +115,8 @@ export default function LegalPagina({ codigo, documento }) {
         <main className={styles.pagina}>
             <header className={styles.cabecalho}>
                 <h1 className={styles.titulo}>{titulo}</h1>
-                <p className={styles.versao}>
+                {/* A data de hoje do navegador pode ser outra que a do build (aviso de diferença dispensado). */}
+                <p className={styles.versao} suppressHydrationWarning>
                     {t('legal.versao', { versao: mostrado.versao })}
                     {vigencia ? ` · ${t(vigencia > agora ? 'legal.valeAPartir' : 'legal.emVigorDesde', { data: dataPorExtenso(vigencia, codigo) })}` : ''}
                 </p>

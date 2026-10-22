@@ -11,6 +11,7 @@ import TextoDoPasso from './TextoDoPasso.jsx';
 import PrintComMarcacao from './PrintComMarcacao.jsx';
 import { BandaSuporte, Carregando, ErroAoCarregar, NaoEncontrado, Trilha } from './Estados.jsx';
 import useTituloDaPagina from './useTituloDaPagina.js';
+import { descricaoDaPagina, tituloDaPagina } from '../../seo/textos.js';
 import styles from './Ajuda.module.css';
 
 const ENDERECO_APP = 'https://obrafacilapp.expertbr.com';
@@ -28,8 +29,8 @@ export default function AjudaArtigo({ codigo, idioma, indice, preparado, rotas, 
     const porId = useMemo(() => new Map(indice.artigos.map((a) => [a.id, a])), [indice]);
     const modulo = entrada ? indice.modulos.find((m) => m.id === entrada.modulo) : null;
     useTituloDaPagina(
-        entrada ? `${entrada.titulo} · ${t('ajuda.titulo')} · ObraFácil` : null,
-        entrada?.resumo ?? null,
+        entrada ? tituloDaPagina(t, { tipo: 'artigo' }, { entrada }) : null,
+        entrada ? descricaoDaPagina(t, { tipo: 'artigo' }, { entrada }) : null,
     );
 
     if (!entrada) return <NaoEncontrado para={rotas.inicio} titulo={t('ajuda.naoEncontradoTitulo')} />;

@@ -11,9 +11,9 @@ import { useIdioma } from '../i18n/RotaDoIdioma.jsx';
 import { WINDOWS, appStore, googlePlay } from '../links.js';
 import { comDestaque } from '../texto.jsx';
 import { enderecoDaTela } from '../telas.js';
-import { COM_MOUSE, COM_MOVIMENTO, gsap, inclinarComPonteiro, magnetico, tituloSobe, useGSAP } from '../movimento/index.js';
+import { COM_MOUSE, COM_MOVIMENTO, gsap, inclinarComPonteiro, jaApareceu, magnetico, tituloSobe, useGSAP } from '../movimento/index.js';
 import styles from './Placa.module.css';
-import { linkComecar } from '../comecar.js';
+import { useLinkComecar } from '../useNavegador.js';
 
 const CAMPOS = [
     { id: 'cronograma', tela: 'etapas' },
@@ -53,6 +53,7 @@ function Planta() {
 export default function Placa() {
     const { t } = useTranslation();
     const codigo = useIdioma();
+    const comecar = useLinkComecar(codigo);
     const [ativo, setAtivo] = useState(0);
     const [anterior, setAnterior] = useState(null);
     const [automatico, setAutomatico] = useState(true);
@@ -63,6 +64,8 @@ export default function Placa() {
     useGSAP(() => {
         const mm = gsap.matchMedia();
         mm.add(COM_MOVIMENTO, () => {
+            // Página pronta já na tela: a placa fica como está (sem sumir para entrar de novo).
+            if (jaApareceu(raiz.current)) return;
             const q = gsap.utils.selector(raiz);
             const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
             tl.from(q('[data-m="selo"]'), { y: 20, autoAlpha: 0, duration: 0.8 })
@@ -180,7 +183,7 @@ export default function Placa() {
                     <p id="campo-valor" className={styles.valor} aria-live={automatico ? 'off' : 'polite'}>{t(`hero.campos.${campo.id}.valor`)}</p>
 
                     <div className={styles.acoes}>
-                        <a {...linkComecar(codigo)} className="acao" data-m="acao">{t('hero.comecar')}</a>
+                        <a {...comecar} className="acao" data-m="acao">{t('hero.comecar')}</a>
                         <Link to={caminhoInicio(codigo, 'precos')} className="acao-contorno" data-m="acao">{t('hero.verPlanos')}</Link>
                     </div>
                     <p className={styles.nota}>{t('hero.semCartao')}</p>

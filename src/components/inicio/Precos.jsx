@@ -9,7 +9,7 @@ import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import { ASSINAR_ANUAL, ASSINAR_MENSAL } from '../../links.js';
 import { COM_MOUSE, gsap, inclinarComPonteiro, magnetico, useGSAP } from '../../movimento/index.js';
 import styles from './Precos.module.css';
-import { linkComecar } from '../../comecar.js';
+import { useLinkComecar } from '../../useNavegador.js';
 
 // Lista de textos da tradução (returnObjects); qualquer outra coisa vira lista vazia.
 function lista(valor) {
@@ -55,6 +55,7 @@ function Lista({ itens, clara }) {
 export default function Precos() {
     const { t } = useTranslation();
     const codigo = useIdioma();
+    const comecar = useLinkComecar(codigo);
     const [anual, setAnual] = useState(true);
     const p = getPricing(codigo);
     const depois = simboloDepois(codigo, p.currency);
@@ -105,7 +106,7 @@ export default function Precos() {
                         <Preco p={p} valor="0" depois={depois} />
                         <p className={styles.detalhe}>{t('pricing.gratisPreco')}</p>
                         <Lista itens={lista(t('pricing.gratis.itens', { returnObjects: true }))} />
-                        <a {...linkComecar(codigo)} className={`acao ${styles.botao}`}>{t('pricing.gratis.cta')}</a>
+                        <a {...comecar} className={`acao ${styles.botao}`}>{t('pricing.gratis.cta')}</a>
                     </article>
 
                     <article className={styles.pro} aria-labelledby="plano-pro" data-item data-m="pro" data-painel>

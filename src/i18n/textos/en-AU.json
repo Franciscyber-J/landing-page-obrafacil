@@ -1,4 +1,20 @@
 {
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil: construction management app and site diary",
+            "descricao": "Construction management app for mobile and computer: project schedule, site diary with photos, project finances, team and a client portal. Start free."
+        },
+        "ajuda": {
+            "titulo": "ObraFácil Help Centre: step-by-step guides",
+            "descricao": "Step-by-step guides for the ObraFácil construction management app: site diary, schedule, project finances, team and client portal, with real app screens."
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · ObraFácil Help Centre"
+        },
+        "app": {
+            "descricao": "Construction management app for builders, contractors, civil engineers and architects: stage-by-stage project schedule, site diary (daily reports) with photos and PDF, project finances, team and payroll, purchases and stock, and a portal where the client follows the project. Works on Android, iPhone, Windows and the web, even offline on site."
+        }
+    },
     "ajuda": {
         "titulo": "Help Centre",
         "buscaRotulo": "Search the Help Centre",

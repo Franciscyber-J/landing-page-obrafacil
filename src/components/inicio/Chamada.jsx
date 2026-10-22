@@ -3,20 +3,22 @@ import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { linkWhatsApp } from '../../links.js';
 import { comDestaque } from '../../texto.jsx';
-import { COM_MOUSE, COM_MOVIMENTO, gsap, magnetico, tituloSobe, useGSAP } from '../../movimento/index.js';
+import { COM_MOUSE, COM_MOVIMENTO, gsap, jaApareceu, magnetico, tituloSobe, useGSAP } from '../../movimento/index.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import styles from './Chamada.module.css';
-import { linkComecar } from '../../comecar.js';
+import { useLinkComecar } from '../../useNavegador.js';
 
 export default function Chamada() {
     const { t } = useTranslation();
     const codigo = useIdioma();
+    const comecar = useLinkComecar(codigo);
     const raiz = useRef(null);
 
     useGSAP(() => {
         const mm = gsap.matchMedia();
         const q = gsap.utils.selector(raiz);
         mm.add(COM_MOVIMENTO, () => {
+            if (jaApareceu(raiz.current)) return;
             const gatilho = { trigger: raiz.current, start: 'top 80%', once: true };
             tituloSobe(q('[data-m="titulo"]')[0], { scrollTrigger: gatilho, stagger: 0.12 });
             gsap.from(q('[data-m="lado"]'), { x: 40, autoAlpha: 0, duration: 1, delay: 0.3, scrollTrigger: gatilho });
@@ -34,7 +36,7 @@ export default function Chamada() {
                     <p className={styles.texto}>{t('chamada.texto')}</p>
                 </div>
                 <div className={styles.acoes} data-m="lado">
-                    <a {...linkComecar(codigo)} className={styles.botao} data-m="botao">{t('chamada.acao')}</a>
+                    <a {...comecar} className={styles.botao} data-m="botao">{t('chamada.acao')}</a>
                     <p className={styles.nota}>{t('hero.semCartao')}</p>
                     <a href={linkWhatsApp(t('whatsapp.message'))} target="_blank" rel="noopener noreferrer" className={styles.whatsapp}>
                         {t('chamada.duvida')}

@@ -10,7 +10,8 @@ import { useTranslation } from 'react-i18next';
 import { X } from 'lucide-react';
 import { useIdioma } from '../i18n/RotaDoIdioma.jsx';
 import { WINDOWS, appStore, googlePlay } from '../links.js';
-import { aparelho, linkComecar } from '../comecar.js';
+import { aparelho } from '../comecar.js';
+import { useLinkComecar } from '../useNavegador.js';
 import styles from './ExitIntentPopup.module.css';
 
 const CHAVE = 'obrafacil:convite-visto';
@@ -34,6 +35,7 @@ function marcarVista() {
 export default function ExitIntentPopup() {
     const { t } = useTranslation();
     const codigo = useIdioma();
+    const comecar = useLinkComecar(codigo);
     const [aberta, setAberta] = useState(false);
     const fechar = useRef(null);
     const janela = useRef(null);
@@ -134,7 +136,7 @@ export default function ExitIntentPopup() {
                 <div className={styles.corpo}>
                     <h2 id="convite-titulo" className={styles.titulo}>{t('popup.title')}</h2>
                     <p id="convite-texto" className={styles.texto}>{t('popup.texto')}</p>
-                    <a {...linkComecar(codigo)} className={`acao ${styles.botao}`} onClick={() => setAberta(false)}>
+                    <a {...comecar} className={`acao ${styles.botao}`} onClick={() => setAberta(false)}>
                         {t('popup.cta')}
                     </a>
                     {/* No celular o botão já abre a loja do aparelho; as três opções ficam para o computador. */}

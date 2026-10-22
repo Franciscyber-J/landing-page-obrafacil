@@ -1,7 +1,38 @@
 {
-    "meta": {
-        "titulo": "ObraFácil · Construction project management: schedule, daily reports, finances and client portal",
-        "descricao": "Construction management app: stage-by-stage schedule, daily reports with photos, project finances, team and a client portal. Start free, no credit card."
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil: construction management app with daily logs",
+            "descricao": "Construction management app for phone and computer: project schedule, daily logs with photos, project finances, crew and a client portal. Start free."
+        },
+        "ajuda": {
+            "titulo": "ObraFácil Help Center: step-by-step guides",
+            "descricao": "Step-by-step guides for the ObraFácil construction management app: daily reports, schedule, project finances, team and client portal, with real app screens."
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · ObraFácil Help Center",
+            "descricao": "{{descricao}} Step-by-step guides with real ObraFácil screens."
+        },
+        "artigo": {
+            "titulo": "{{titulo}} · ObraFácil"
+        },
+        "app": {
+            "descricao": "Construction management app for builders, contractors, civil engineers and architects: stage-by-stage project schedule, daily reports (daily logs) with photos and PDF, project finances, crew and payroll, purchases and inventory, and a portal where the client follows the project. Works on Android, iPhone, Windows and the web, even offline on the job site.",
+            "categoria": "Construction management"
+        },
+        "imagemAlt": "ObraFácil logo, construction management app",
+        "llms": {
+            "sobre": "What ObraFácil is",
+            "paraQuem": "Who it is for: construction companies, civil engineers, architects, contractors and site foremen running one or many projects who want to record the daily work, keep schedules and costs under control and show progress to the client.",
+            "plataformas": "Platforms",
+            "recursos": "Features",
+            "papeis": "Who does what on a project",
+            "planos": "Plans and pricing",
+            "precosPorIdioma": "PRO price in each site language and currency",
+            "precoLinha": "{{mensal}} per month or {{anual}} per year",
+            "paginas": "Main pages",
+            "idiomas": "The site and the app are available in these languages",
+            "todosArtigos": "All Help Center articles"
+        }
     },
     "nav": {
         "login": "Sign in",
@@ -159,7 +190,6 @@
     },
     "ajuda": {
         "titulo": "Help Center",
-        "metaDescricao": "Step-by-step ObraFácil guides: daily reports, team, finances, client portal and more.",
         "heroiAntes": "How can we",
         "heroiDestaque": "help",
         "heroiDepois": "?",

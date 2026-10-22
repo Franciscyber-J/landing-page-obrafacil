@@ -17,7 +17,9 @@ const textosSobDemanda = {
     },
 };
 
-i18n
+// textosProntos: os textos do idioma da página (e da cadeia dele) já chegaram. A página pronta do build só é
+// "hidratada" depois disso (src/main.jsx), para o primeiro desenho sair igual ao que já está na tela.
+export const textosProntos = i18n
     .use(textosSobDemanda)
     .use(initReactI18next)
     .init({
@@ -27,6 +29,7 @@ i18n
         load: 'currentOnly',
         returnEmptyString: false,
         interpolation: { escapeValue: false },
+        showSupportNotice: false,
         react: { useSuspense: true },
     });
 

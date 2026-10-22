@@ -16,6 +16,7 @@ import {
 } from './i18n/idiomas.js';
 import { idiomaPreferido } from './i18n/preferencia.js';
 import { Alternativos, ProvedorDeRota } from './i18n/RotaDoIdioma.jsx';
+import { encerrarChegada } from './movimento/index.js';
 
 // Mantém o que vem depois do endereço (?utm_..., ?gclid=... dos anúncios) ao redirecionar.
 function comConsulta(caminho, search) {
@@ -98,14 +99,26 @@ function Roteador({ children }) {
   return <BrowserRouter>{children}</BrowserRouter>;
 }
 
+// As rotas do site, sem o roteador: o navegador usa o BrowserRouter (App) e o build das páginas prontas usa o
+// StaticRouter (src/ssr/entrada.jsx). As duas formas desenham exatamente o mesmo HTML.
+export function RotasDoSite() {
+  return (
+    <Suspense fallback={null}>
+      <Routes>
+        <Route path="*" element={<Site />} />
+      </Routes>
+    </Suspense>
+  );
+}
+
 function App() {
+  // Depois do primeiro desenho, as animações de entrada voltam ao normal (ver encerrarChegada).
+  useEffect(() => {
+    encerrarChegada();
+  }, []);
   return (
     <Roteador>
-      <Suspense fallback={null}>
-        <Routes>
-          <Route path="*" element={<Site />} />
-        </Routes>
-      </Suspense>
+      <RotasDoSite />
     </Roteador>
   );
 }

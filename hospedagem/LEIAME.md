@@ -1,25 +1,62 @@
 # Hospedagem (Hostinger) — appobrafacil.expertbr.com
 
-A pasta `public_html/appobrafacil` tem duas coisas juntas:
-
-- o **site** (React): `index.html`, `assets/`, imagens; é o que o `npm run build` gera em `dist/`;
-- o **WordPress**, que **não serve mais nada que o app, as lojas ou a Stripe usem** (ver "O que o WordPress
-  ainda serve", abaixo).
+A pasta `public_html/appobrafacil` tem só o **site**: o conteúdo de `dist/` que o `npm run build` gera (páginas
+prontas de cada idioma, `index.html`, `assets/`, imagens, `robots.txt`, `sitemap.xml`, `llms.txt`), mais a pasta
+`download/` (instalador do Windows, enviado à parte) e o `.htaccess` desta pasta. O WordPress foi desligado: as
+páginas que ele servia estão no site, em cada idioma, e os endereços antigos levam a elas.
 
 | Arquivo aqui | Vai para |
 | --- | --- |
 | `.htaccess` | `public_html/appobrafacil/.htaccess` (substitui o atual inteiro) |
-| `wordpress/mu-plugins/obrafacil-seguranca.php` | `public_html/appobrafacil/wp-content/mu-plugins/obrafacil-seguranca.php` |
 | `verificar.mjs` | não vai para o servidor: roda no computador e confere o site no ar |
 
-## Endereços antigos que passaram para o site
+## Páginas prontas (Google e buscadores com IA)
+
+O build grava uma página de verdade para cada endereço público, em cada idioma, com o texto já dentro do HTML
+(`ferramentas/paginas/gerar.mjs`): início, Central de Ajuda (início, assuntos e artigos), Termos, Política,
+Suporte, Perfil e volta do pagamento. Robôs que não rodam JavaScript (GPTBot, ClaudeBot, PerplexityBot) leem
+tudo; o Google lê na hora, sem esperar a fila de renderização. Cada página tem título, descrição, `canonical`,
+`hreflang` dos 8 idiomas e `x-default`, Open Graph e dados estruturados (aplicativo com os preços do país,
+empresa, site, perguntas frequentes, trilha nos artigos). O site, ao abrir, "hidrata" a página (liga os botões)
+sem desenhar de novo.
+
+| Endereço | Arquivo no servidor |
+| --- | --- |
+| `/pt-br/` | `pt-br/index.html` |
+| `/pt-br/ajuda` | `pt-br/ajuda.html` |
+| `/pt-br/ajuda/criar-rdo` | `pt-br/ajuda/criar-rdo.html` |
+| `/pt-br/termos-de-uso` | `pt-br/termos-de-uso.html` |
+
+O `.htaccess` entrega o `.html` sem mudar o endereço. Endereço que não tem página pronta (artigo publicado depois
+do último build, nome antigo de um artigo) abre o `index.html` e o site desenha a página no navegador, como antes.
+
+## Um endereço só para cada página
+
+O Search Console avisava "Cópia, o Google e o usuário selecionaram uma página canônica diferente". As causas eram
+endereços diferentes com a mesma página: `/` e `/pt-br/`, com e sem barra no fim, maiúsculas, os endereços antigos
+do WordPress abrindo o site com 200, e os Termos com `canonical` sem barra num endereço que o servidor mandava para
+o com barra. Agora:
+
+| Pedido | Resposta |
+| --- | --- |
+| `/` | 302 para a página inicial no idioma do navegador (sem idioma conhecido, inglês). 302 porque o destino muda conforme quem abre; a raiz é a `x-default` do `hreflang` |
+| `/index.html`, `/pt-br/index.html`, `/pt-br/ajuda.html` | 301 para `/`, `/pt-br/`, `/pt-br/ajuda` |
+| `/PT-BR/...` | 301 para `/pt-br/...` |
+| `/pt-br` | 301 para `/pt-br/` (só a página inicial do idioma tem barra no fim) |
+| `/pt-br/ajuda/`, `/pt-br/termos-de-uso/` | 301 para o mesmo endereço sem a barra |
+| `/ajuda`, `/ajuda/pt-BR/criar-rdo` | 301 para `/pt-br/ajuda`, `/pt-br/ajuda/criar-rdo` |
+
+## Endereços antigos do WordPress
 
 Estão no app, nas lojas, nas sessões de pagamento da Stripe, num Payment Link e em e-mails já enviados, e não
-podem mudar. Todos abrem o site, que leva à página no idioma da pessoa:
+podem mudar. Todos respondem **301** para a página no idioma do navegador (cabeçalho `Accept-Language`, mesma
+escolha do site). Sem idioma conhecido (o Google não manda nenhum), **pt-BR**: eram páginas em português e o 301
+passa o histórico delas para a página nova. A resposta não fica guardada (`Cache-Control: no-cache`,
+`Vary: Accept-Language`), então cada pessoa cai no idioma dela.
 
-| Endereço antigo | Quem usa | Vai para (exemplo em pt-BR) |
+| Endereço antigo | Quem usa | Vai para (exemplo sem idioma) |
 | --- | --- | --- |
-| `/termos-de-uso/`, `/politicas-de-privacidade/` | App Store, Google Play, app | `/pt-br/termos-de-uso` (redirecionamento 302 pelo `.htaccess`, idioma do navegador) |
+| `/termos-de-uso/`, `/politicas-de-privacidade/` | App Store, Google Play, app | `/pt-br/termos-de-uso`, `/pt-br/politica-de-privacidade` |
 | `/primeiros-passos` | volta do PRO pago pelo site, prêmio do Primeiros passos, Payment Link | `/pt-br/pagamento-confirmado/pro` |
 | `/pagamento-ok/` | volta do Acesso Cliente da obra | `/pt-br/pagamento-confirmado/acesso-cliente` |
 | `/pacote-downloads-extras/` | volta do pacote de downloads extras | `/pt-br/pagamento-confirmado/downloads-extras` |
@@ -27,72 +64,49 @@ podem mudar. Todos abrem o site, que leva à página no idioma da pessoa:
 | `/perfil` | e-mails de pagamento não processado | `/pt-br/perfil` |
 | `/suporte/` | rodapé do site, links antigos | `/pt-br/suporte` |
 
-Os seis últimos (com e sem barra no fim) recebem o `index.html` do site pela regra do `.htaccess` que fica antes do
-WordPress; o próprio site escolhe o idioma (o escolhido no menu; senão, o do navegador) e troca o endereço. O que vem
-depois do `?` na volta do pagamento e no `/perfil` é descartado (pode ser o identificador da sessão da Stripe).
-As páginas de pagamento e do Perfil têm `noindex` (não vão para o Google); o Suporte pode ir.
+Com e sem barra no fim, maiúsculas ou não. Na volta do pagamento e no `/perfil`, o que vem depois do `?` é
+descartado (pode ser o identificador da sessão da Stripe); no Suporte e nos Termos, o `?utm_...` segue. As páginas
+de pagamento e do Perfil têm `noindex` (não vão para o Google nem para o sitemap); o Suporte vai.
 
-## O que o WordPress ainda serve
+As regras de idioma ficam no bloco `ENDEREÇOS POR IDIOMA` do `.htaccess`, gerado por `npm run htaccess` a partir de
+`src/i18n/registro.js`. Idioma novo: rode `npm run htaccess` e envie o `.htaccess` (o `npm test` avisa se o bloco
+estiver desatualizado).
 
-Nada que o app use. Continuam lá só o painel (`/wp-admin`, `/wp-login.php`), as páginas antigas que ninguém mais
-abre e a página 404 dele para endereços que não existem no site.
+## robots.txt, sitemap.xml e llms.txt
 
-Para desligar o WordPress de vez (só você, depois de publicar esta versão e rodar o verificador sem falhas):
+Gerados no build, na raiz do site:
 
-1. Conferir no painel do WordPress se há alguma página, formulário ou plugin ainda usado por alguém (ex.: um
-   código de conversão do Google Ads nas antigas páginas de pagamento; se havia, ele precisa ser refeito no site).
-2. Fazer o backup completo do WordPress (arquivos e banco) e guardar fora da Hostinger.
-3. Apagar os arquivos do WordPress de `public_html/appobrafacil` (`wp-admin/`, `wp-content/`, `wp-includes/`,
-   `wp-*.php`, `index.php`, `xmlrpc.php`, `readme.html`, `license.txt`) e o banco de dados dele no hPanel.
-   Nunca apagar os arquivos do site (tudo o que vem do `dist`: `index.html`, `assets/`, `bandeiras/`, `telas/`,
-   `tema.js`, `tag-google.js`, imagens, as pastas dos idiomas), a pasta `download/` (instalador do Windows) nem
-   o `.htaccess`.
-4. Pedir ao Claude o `.htaccess` sem os blocos do WordPress (segurança do WordPress, `LSCACHE` e `WordPress`) e
-   sem as conferências do WordPress no `verificar.mjs`.
-5. Desativar o plugin LiteSpeed Cache não é preciso: ele some com o WordPress.
+- `robots.txt`: libera tudo para todos, com linhas próprias para Googlebot, Google-Extended, Bingbot, GPTBot,
+  OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, Claude-User, PerplexityBot e Perplexity-User, e aponta
+  o sitemap. Nada é bloqueado: as páginas que não devem aparecer (pagamento, Perfil) têm `noindex` na própria
+  página, e o robô precisa abri-las para ver o aviso.
+- `sitemap.xml`: todas as páginas públicas dos 8 idiomas, com as versões de cada idioma (`hreflang`) e a data da
+  última mudança (artigos: data da publicação no Firestore).
+- `llms.txt`: resumo do ObraFácil para os assistentes de IA (o que é, para quem, recursos, plataformas, planos e
+  preços de cada idioma, páginas principais, Central, Termos, Política e contato), em inglês e português.
 
 ## O que o `.htaccess` faz
 
-- **Links do site abrem direto.** Antes, abrir `/ajuda` pelo link ou apertar F5 caía na página
-  "não encontrada" do WordPress. Agora qualquer endereço do site (o antigo `/ajuda` e os novos com idioma,
-  `/pt-br/...`, `/en-us/...`) abre o `index.html`.
-- **Endereços antigos do WordPress usados pelo app abrem o site** (tabela acima), antes das regras do WordPress.
-- **Cabeçalhos de segurança** em tudo: HTTPS obrigatório no navegador (HSTS), proibição de abrir o site dentro
-  de outro site, `nosniff`, política de referência e de permissões; esconde a versão do PHP.
-- **WordPress fechado**: bloqueia `xmlrpc.php` (teste de senhas em massa), `readme.html`/`license.txt`
-  (entregam a versão), `wp-config.php` direto, PHP dentro de uploads, arquivos de backup e a lista de usuários
-  (que hoje mostra o seu login de administrador).
-- **Política de conteúdo (CSP) do site em modo de teste**: só avisa no console do navegador, não bloqueia nada.
-  Depois de conferir que o site, o Google Ads e a Central funcionam sem aviso, troque
-  `Content-Security-Policy-Report-Only` por `Content-Security-Policy`.
-- `index.html` sem cache, para cada build novo aparecer na hora.
-
-## O que o `obrafacil-seguranca.php` faz
-
-Fica em `wp-content/mu-plugins/` (pasta de plugins "obrigatórios": sempre ativos, não dá para desativar
-sem querer). Desliga o XML-RPC, esconde a lista de usuários da API para quem não está logado (o
-`.htaccess` sozinho é contornável com um cookie falso), tira a página de autor e o mapa de usuários,
-deixa a mensagem de login igual para usuário e senha errados e tira a versão do WordPress do HTML.
+- **Páginas prontas** entregues sem o `.html` e sem barra no fim; o resto do site abre o `index.html`.
+- **Um endereço só por página** e **endereços antigos** (tabelas acima).
+- **Cabeçalhos de segurança** em tudo: HTTPS obrigatório no navegador (HSTS), proibição de abrir o site dentro de
+  outro site, `nosniff`, política de referência e de permissões; esconde a versão do PHP.
+- **Política de conteúdo (CSP) em modo de teste**: só avisa no console do navegador, não bloqueia nada. Depois de
+  conferir que o site, o Google Ads e a Central funcionam sem aviso, troque `Content-Security-Policy-Report-Only`
+  por `Content-Security-Policy`.
+- Páginas `.html`, `robots.txt`, `sitemap.xml` e `llms.txt` sem cache longo, para cada build aparecer na hora.
+- Bloqueia arquivos de backup e de log.
 
 ## Como aplicar (Gerenciador de Arquivos da Hostinger)
 
-1. Baixe o `.htaccess` atual de `public_html/appobrafacil` para o seu computador (fora da pasta do projeto).
-   É o backup: se algo der errado, é só subir ele de volta.
-2. Suba o `.htaccess` desta pasta para `public_html/appobrafacil`, substituindo o atual.
-3. Em `public_html/appobrafacil/wp-content`, crie a pasta `mu-plugins` (se não existir) e suba
-   `obrafacil-seguranca.php` para dentro dela.
-4. No computador, na pasta `landing_page`: `node hospedagem/verificar.mjs`. Tem que terminar com "Tudo certo.".
-5. Abra o site, a Central, Termos, Privacidade e Suporte no navegador, e os endereços antigos da tabela acima
-   (cada um precisa abrir a página do site no seu idioma); entre no WordPress (`/wp-admin`) e confira que o
-   painel abre normalmente.
-6. Com o site aberto, aperte F12 → Console: avisos "Content-Security-Policy-Report-Only" mostram o que a
-   política bloquearia. Mande para o Claude ajustar antes de ativar de verdade.
+Passo a passo completo na skill `publicar-site` (`.claude/skills/publicar-site/SKILL.md`). Em resumo:
 
-Se o site ou o WordPress der erro 500 depois do passo 2: suba de volta o backup do passo 1.
+1. Baixe o `.htaccess` atual de `public_html/appobrafacil` para o seu computador (fora da pasta do projeto). É a
+   volta: se algo der errado, é só subir ele de volta.
+2. Suba o `.htaccess` desta pasta, substituindo o atual.
+3. No computador, na pasta `landing_page`: `node hospedagem/verificar.mjs`. Tem que terminar com "Tudo certo.".
 
-## Ainda no WordPress (só você)
+Se o site der erro 500 depois do passo 2: suba de volta o backup do passo 1 e mande a mensagem de erro para o Claude.
 
-- Senha do administrador longa e única, e verificação em duas etapas no login.
-- Manter WordPress, Elementor e Site Kit atualizados (o hPanel atualiza o WordPress sozinho).
-- Termos, Privacidade, Suporte, Perfil e as páginas de pagamento já estão no site, com endereço em cada idioma.
-  Falta só desligar o WordPress (passos em "O que o WordPress ainda serve").
+O `.htaccess` foi testado num Apache 2.4 com as mesmas regras. A Hostinger usa LiteSpeed, que lê o mesmo arquivo;
+o verificador confere no ar o que o LiteSpeed responde de verdade.

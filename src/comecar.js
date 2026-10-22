@@ -15,7 +15,11 @@ export function aparelho(nav = typeof navigator === 'undefined' ? null : navigat
 
 // Atributos do link "Começar grátis" para o idioma da página: { href, 'data-conversao' }.
 export function linkComecar(codigo, nav) {
-    const tipo = aparelho(nav);
+    return linkDoAparelho(codigo, aparelho(nav));
+}
+
+// O mesmo, a partir do tipo de aparelho já conhecido ('android' | 'ios' | 'outro').
+export function linkDoAparelho(codigo, tipo) {
     if (tipo === 'android') return { href: googlePlay(codigo), 'data-conversao': 'loja_android' };
     if (tipo === 'ios') return { href: appStore(), 'data-conversao': 'loja_ios' };
     return { href: CADASTRO, 'data-conversao': 'cadastro' };

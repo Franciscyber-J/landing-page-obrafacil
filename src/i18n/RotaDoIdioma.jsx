@@ -53,6 +53,18 @@ function absoluto(caminho) {
     return new URL(caminho, window.location.origin).href;
 }
 
+// A página pronta do build já veio com a cabeça certa (canonical, hreflang, Open Graph, dados estruturados,
+// todos com data-build: src/seo/cabeca.js) para este endereço: nada a trocar.
+function cabecaDoBuildServe(pathname) {
+    const canonical = document.head.querySelector('link[rel="canonical"][data-build]');
+    if (!canonical) return false;
+    try {
+        return new URL(canonical.getAttribute('href')).pathname === pathname;
+    } catch {
+        return false;
+    }
+}
+
 // <link rel="canonical"> e <link rel="alternate" hreflang="..."> da página aberta.
 export function Alternativos() {
     const ctx = useContext(Contexto);
@@ -60,8 +72,10 @@ export function Alternativos() {
     const gerador = ctx?.gerador;
 
     useEffect(() => {
+        if (cabecaDoBuildServe(pathname)) return undefined;
         const head = document.head;
-        head.querySelectorAll('link[data-idiomas]').forEach((l) => l.remove());
+        // Ao navegar para outra página, a cabeça do build (que era da primeira) sai inteira.
+        head.querySelectorAll('[data-build], link[data-idiomas]').forEach((l) => l.remove());
         const novos = [];
         const add = (rel, href, hreflang) => {
             const l = document.createElement('link');
