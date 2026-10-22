@@ -69,7 +69,10 @@ export default function Placa() {
                 .add(() => { tituloSobe(q('[data-m="titulo"]')[0]); }, '-=0.5')
                 .from(q('[data-m="subtitulo"]'), { y: 24, autoAlpha: 0, duration: 0.9 }, '+=0.35')
                 .from(q('[data-m="campo"]'), { y: 16, autoAlpha: 0, scale: 0.92, stagger: 0.06, duration: 0.7 }, '-=0.6')
-                .from(q('[data-m="acao"]'), { y: 18, autoAlpha: 0, stagger: 0.08, duration: 0.7 }, '-=0.45')
+                // fromTo com o destino escrito: os botões têm transição de transform no CSS (hover), e um from() lia como
+                // destino a posição do meio dessa transição quando a animação recomeçava (troca de idioma), deixando os
+                // botões 18 px abaixo até alguém passar o mouse.
+                .fromTo(q('[data-m="acao"]'), { y: 18, autoAlpha: 0 }, { y: 0, autoAlpha: 1, stagger: 0.08, duration: 0.7 }, '-=0.45')
                 .from(q('[data-m="loja"]'), { y: 14, autoAlpha: 0, stagger: 0.06, duration: 0.6 }, '-=0.5')
                 .from(q('[data-m="planta"] path'), { drawSVG: 0, stagger: 0.04, duration: 1.6, ease: 'power2.inOut' }, 0.3)
                 .from(q('[data-m="aparelho"]'), { y: 110, rotationY: -30, rotationX: 12, autoAlpha: 0, duration: 1.4 }, 0.5)
