@@ -7,7 +7,7 @@
 
 .papeis {
   display: grid;
-  gap: 10px;
+  gap: var(--vao-lista);
 }
 
 .papel {
@@ -15,7 +15,7 @@
   grid-template-columns: 220px 1fr;
   gap: 16px;
   align-items: center;
-  padding: 18px 20px;
+  padding: var(--respiro-linha);
   border-radius: var(--raio);
   background: var(--vidro);
   border: 1px solid var(--vidro-borda);
@@ -72,6 +72,5 @@
   .papel {
     grid-template-columns: 1fr;
     gap: 6px;
-    padding: 16px;
   }
 }

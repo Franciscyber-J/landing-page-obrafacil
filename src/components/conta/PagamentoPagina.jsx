@@ -42,7 +42,9 @@ export default function PagamentoPagina({ codigo, compra }) {
                 <Link to={caminhoArtigo(codigo, ARTIGO[tipo])} className={`acao-clara ${styles.botao}`}>{texto('artigo')}</Link>
             </Cabeca>
 
-            <div className={styles.grade}>
+            {/* Os dois cartões lado a lado com a mesma altura e as lojas na largura toda embaixo (antes as lojas
+                ficavam sob o cartão da direita, deixando um vazio grande à esquerda e quebrando o Windows sozinho). */}
+            <div className={`${styles.grade} ${styles.gradePareada}`}>
                 <Cartao id="pagamento-agora" titulo={t('pagamento.agoraTitulo')}>
                     <Passos
                         itens={[
@@ -53,15 +55,14 @@ export default function PagamentoPagina({ codigo, compra }) {
                     />
                 </Cartao>
 
-                <div className={styles.coluna}>
-                    <Cartao id="pagamento-demora" titulo={t('pagamento.demoraTitulo')}>
-                        <Lista itens={demora} />
-                        <Link to={caminhoSuporte(codigo)} className={`acao-contorno ${styles.botao} ${styles.botaoCartao}`}>
-                            {t('conta.falarSuporte')}
-                        </Link>
-                    </Cartao>
-                    <Lojas codigo={codigo} />
-                </div>
+                <Cartao id="pagamento-demora" titulo={t('pagamento.demoraTitulo')}>
+                    <Lista itens={demora} />
+                    <Link to={caminhoSuporte(codigo)} className={`acao-contorno ${styles.botao} ${styles.botaoCartao}`}>
+                        {t('conta.falarSuporte')}
+                    </Link>
+                </Cartao>
+
+                <Lojas codigo={codigo} classe={styles.larguraToda} />
             </div>
         </Pagina>
     );

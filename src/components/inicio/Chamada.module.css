@@ -1,6 +1,6 @@
 /* Última chamada: painel azul arredondado com as luzes, título grande e a ação laranja. */
 .chamada {
-  padding: 24px 0 104px;
+  padding: 24px 0 var(--secao);
 }
 
 .painel {
@@ -8,7 +8,7 @@
   position: relative;
   overflow: hidden;
   border-radius: var(--raio-xg);
-  padding: 64px 56px;
+  padding: 64px var(--respiro-painel);
   color: var(--painel-texto);
   background:
     radial-gradient(600px 420px at 100% 0%, rgba(31, 111, 209, 0.55), transparent 70%),
@@ -43,7 +43,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 10px;
+  gap: var(--vao-botoes);
 }
 
 .botao {
@@ -66,6 +66,8 @@
 }
 
 .nota {
+  /* com o botão, mas sem encostar na sombra dele (antes 10 px) */
+  margin-top: calc(var(--respiro-nota) - var(--vao-botoes));
   font-size: 0.875rem;
   color: var(--painel-texto-2);
   text-align: center;
@@ -91,11 +93,7 @@
   }
 
   .painel {
-    padding: 44px 24px;
+    padding-block: 44px;
     border-radius: var(--raio-g);
-  }
-
-  .chamada {
-    padding-bottom: 72px;
   }
 }

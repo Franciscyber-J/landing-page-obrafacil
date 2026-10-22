@@ -40,7 +40,7 @@
 .lista {
   grid-area: lista;
   display: grid;
-  gap: 10px;
+  gap: var(--vao-lista);
 }
 
 .pergunta {
@@ -61,7 +61,7 @@
   align-items: center;
   gap: 20px;
   min-height: 64px;
-  padding: 16px 20px;
+  padding: var(--respiro-linha);
   cursor: pointer;
   list-style: none;
   font-weight: 700;

@@ -2,17 +2,21 @@
   background: transparent;
 }
 
+/* O depoimento em destaque acompanha a altura da grade ao lado (antes terminava 100 px acima dela), e o vão
+   entre ele e a grade é o mesmo vão entre os cartões da grade. */
 .grade {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 20px;
-  align-items: start;
+  gap: var(--vao-cartoes);
+  align-items: stretch;
 }
 
 .destaque {
   position: relative;
   overflow: hidden;
-  padding: 36px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  padding: 36px var(--respiro-cartao-g) var(--respiro-cartao-g);
   border-radius: var(--raio-g);
   color: var(--painel-texto);
   background:
@@ -48,6 +52,11 @@
   margin-bottom: 6px;
 }
 
+.destaque blockquote,
+.depoimento blockquote {
+  flex: 1;
+}
+
 .destaque figcaption {
   margin-top: 26px;
   padding-top: 16px;
@@ -71,11 +80,14 @@ figcaption strong {
 .outros {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: var(--vao-cartoes);
 }
 
+/* Nome de quem falou sempre no pé do cartão: os nomes de uma mesma linha ficam na mesma altura. */
 .depoimento {
-  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--respiro-cartao);
   border-radius: var(--raio);
   background: var(--vidro);
   border: 1px solid var(--vidro-borda);
@@ -118,6 +130,6 @@ figcaption strong {
   }
 
   .destaque {
-    padding: 28px 22px 24px;
+    padding-top: 28px;
   }
 }
