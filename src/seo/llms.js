@@ -18,9 +18,10 @@ const PERGUNTAS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const limpo = (texto) => String(texto ?? '').replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
 const lista = (valor) => (Array.isArray(valor) ? valor : []);
 
+// Com o código da moeda (BRL 99,90, MXN 299,00): o "$" sozinho seria dólar, peso ou real para quem lê.
 function preco(codigo, valor, moeda) {
     try {
-        return new Intl.NumberFormat(codigo, { style: 'currency', currency: moeda }).format(Number(valor));
+        return new Intl.NumberFormat(codigo, { style: 'currency', currency: moeda, currencyDisplay: 'code' }).format(Number(valor));
     } catch {
         return `${moeda} ${valor}`;
     }

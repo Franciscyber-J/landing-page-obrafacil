@@ -94,12 +94,17 @@ export function gerarBloco() {
     l.push('RewriteRule ^$ /%1/ [R=302,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]');
     l.push('');
     l.push('# 3) Endereços antigos do WordPress (estão nas lojas, na Stripe, num Payment Link, no app e em e-mails já');
-    l.push('#    enviados): 301 para a mesma página no idioma do navegador. Sem língua conhecida (o Google não manda');
-    l.push(`#    nenhuma), ${REFERENCIA}: eram páginas em português, e o 301 passa o histórico delas para a página nova.`);
+    l.push('#    enviados): 301 para a mesma página no idioma do navegador. Sem cabeçalho de idioma nenhum (robôs, como o');
+    l.push(`#    Google), ${REFERENCIA}: eram páginas em português, e o 301 passa o histórico delas para a página nova.`);
+    l.push(`#    Com idioma, mas nenhum dos do site (de-DE, *...), ${INTERNACIONAL}, como na raiz.`);
     l.push('#    Sem cache (o destino muda conforme quem abre). Com e sem barra no fim, maiúsculas ou não.');
-    l.push(`RewriteCond %{ENV:QUER_IDIOMA} =1`);
+    l.push('RewriteCond %{ENV:QUER_IDIOMA} =1');
     l.push('RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$');
+    l.push('RewriteCond %{HTTP:Accept-Language} ^\\s*$');
     l.push(`RewriteRule ^.+$ - [E=IDIOMA_NAVEGADOR:${prefixo(REFERENCIA)}]`);
+    l.push('RewriteCond %{ENV:QUER_IDIOMA} =1');
+    l.push('RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$');
+    l.push(`RewriteRule ^.+$ - [E=IDIOMA_NAVEGADOR:${prefixo(INTERNACIONAL)}]`);
     for (const i of IDIOMAS) {
         for (const [antigo, destino, semConsulta] of antigos()) {
             l.push(`RewriteCond %{ENV:IDIOMA_NAVEGADOR} =${prefixo(i.codigo)}`);
@@ -120,6 +125,26 @@ export function gerarBloco() {
         l.push(`RewriteRule ^${c}(/.*)?$ /${c}$1 [NC,R=301,L]`);
     }
     l.push(`RewriteRule ^(${codigos.join('|')})$ /$1/ [R=301,L]`);
+    l.push('');
+    l.push('# 6) Barra no fim: só a página inicial do idioma tem (/pt-br/). /pt-br/ajuda/ → /pt-br/ajuda (301).');
+    l.push('RewriteRule ^([a-z]{2}-[a-z]{2}/.+)/$ /$1 [R=301,L]');
+    l.push('');
+    l.push('# 7) Páginas prontas do build (texto já no HTML, para o Google e os buscadores com IA): /pt-br/ajuda/criar-rdo');
+    l.push('#    é entregue a partir de pt-br/ajuda/criar-rdo.html, sem mudar o endereço. Quando o endereço é uma pasta');
+    l.push('#    (/pt-br/ajuda é também a pasta dos artigos), o servidor pode pôr uma barra no fim do nome do arquivo');
+    l.push('#    pedido: a primeira condição tira essa barra.');
+    l.push('RewriteCond %{REQUEST_FILENAME} ^(.*?)/?$');
+    l.push('RewriteCond %1.html -f');
+    l.push('RewriteRule ^([a-z]{2}-[a-z]{2}/.+)$ /$1.html [L]');
+    l.push('');
+    l.push('# 8) Os outros endereços do site abrem o index.html e o site desenha a página no navegador (artigo publicado');
+    l.push('#    depois do último build, endereço com o nome antigo de um artigo...). Arquivos de verdade são servidos');
+    l.push('#    direto. Pasta com index.html só quando pedida com a barra (/pt-br/ → pt-br/index.html); pedida sem a');
+    l.push('#    barra (pasta velha de um build antigo, com a barra automática desligada), abre o site, sem 404 nem vaivém.');
+    l.push('RewriteCond %{REQUEST_FILENAME} !-f');
+    l.push('RewriteCond %{REQUEST_URI} !/$ [OR]');
+    l.push('RewriteCond %{REQUEST_FILENAME}/index.html !-f');
+    l.push('RewriteRule ^(ajuda(/.*)?|[a-z]{2}(-[a-z]{2})?(/.*)?)$ /index.html [L,NC]');
     l.push(FIM);
     return l.join('\n');
 }

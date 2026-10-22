@@ -5,7 +5,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SITE } from '../../src/seo/paginas.js';
+import { spawnSync } from 'node:child_process';
+import os from 'node:os';
 import { conferirDist, conferirLlms, conferirPagina, conferirRobots, conferirSitemap } from './conferir.mjs';
+import { conferirFontes } from './fontes.mjs';
+import { IDIOMAS } from '../../src/i18n/idiomas.js';
 
 const URL_ARTIGO = `${SITE}/pt-br/ajuda/criar-rdo`;
 const TEXTO = 'Texto do artigo, visível sem JavaScript. '.repeat(10);
@@ -49,6 +53,35 @@ test('sitemap: pega endereço repetido, hreflang que não volta e & sem escape',
 test('robots.txt e llms.txt: pega o que falta', () => {
     assert.match(conferirRobots('User-agent: *\nDisallow: /\n').join(), /sitemap absoluto.*GPTBot|GPTBot/s);
     assert.match(conferirLlms('# Outro\n').join(), /ObraFácil/);
+});
+
+test('fontes: sem a Central ou os Termos o build para; com --sem-firestore só avisa', () => {
+    const textos = Object.fromEntries(IDIOMAS.map((i) => [i.codigo, { atual: {} }]));
+    const legal = { termos: textos, privacidade: textos };
+    const ajuda = { indices: { 'pt-BR': {} }, artigos: new Map([['a', {}]]) };
+    assert.deepEqual(conferirFontes({ ajuda, legal }), { erros: [], avisos: [] });
+    assert.equal(conferirFontes({ ajuda: null, erroAjuda: new Error('fetch failed'), legal }).erros.length, 1);
+    assert.equal(conferirFontes({ ajuda: { indices: {}, artigos: new Map() }, legal }).erros.length, 1);
+    assert.equal(conferirFontes({ ajuda, legal: {}, erroLegal: new Error('fetch failed') }).erros.length, 1);
+    assert.equal(conferirFontes({ ajuda, legal: { termos: textos, privacidade: {} } }).erros.length, 1);
+    const sem = conferirFontes({ ajuda: null, erroAjuda: new Error('x'), legal: {}, erroLegal: new Error('x'), semFirestore: true });
+    assert.equal(sem.erros.length, 0);
+    assert.equal(sem.avisos.length, 2);
+    const umIdioma = conferirFontes({ ajuda, legal: { termos: { 'pt-BR': {} }, privacidade: textos } });
+    assert.equal(umIdioma.erros.length, 0);
+    assert.match(umIdioma.avisos.join(), /termos: sem texto em pt-PT/);
+});
+
+const SSR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'dist-ssr', 'entrada.js');
+test('gerador sai com erro (sem gravar nada) quando a Central não é lida', { skip: fs.existsSync(SSR) ? false : 'sem dist-ssr (rode npm run build)' }, () => {
+    const vazia = fs.mkdtempSync(path.join(os.tmpdir(), 'ajuda-vazia-'));
+    const sitemap = path.join(path.dirname(SSR), '..', 'dist', 'sitemap.xml');
+    const antes = fs.existsSync(sitemap) ? fs.statSync(sitemap).mtimeMs : null;
+    const r = spawnSync(process.execPath, [path.join(path.dirname(fileURLToPath(import.meta.url)), 'gerar.mjs'), '--ajuda-local', vazia], { encoding: 'utf8' });
+    fs.rmSync(vazia, { recursive: true });
+    assert.equal(r.status, 1, r.stdout + r.stderr);
+    assert.match(r.stderr, /Central de Ajuda não lida/);
+    assert.equal(fs.existsSync(sitemap) ? fs.statSync(sitemap).mtimeMs : null, antes, 'nada foi gravado');
 });
 
 // Depois do "npm run build" (ou do gerador com as pastas locais), confere o dist/ inteiro.

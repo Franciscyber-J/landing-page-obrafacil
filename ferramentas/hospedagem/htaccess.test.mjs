@@ -54,13 +54,32 @@ test('raiz e endereços antigos: uma regra para cada idioma do registro', () => 
     assert.match(bloco, /RewriteRule \^\$ \/%1\/ \[R=302/);
 });
 
-test('.htaccess sem o WordPress e com as regras das páginas prontas', () => {
+test('.htaccess sem o WordPress e com as regras das páginas prontas, na ordem certa', () => {
     assert.doesNotMatch(htaccess, /BEGIN WordPress|LSCACHE|xmlrpc|index\.php/);
     assert.match(htaccess, /DirectorySlash Off/);
+    assert.match(htaccess, /Options -Indexes -MultiViews/);
     assert.match(htaccess, /RewriteCond %1\.html -f\nRewriteRule \^\(\[a-z\]\{2\}-\[a-z\]\{2\}\/\.\+\)\$ \/\$1\.html \[L\]/);
-    // A barra no fim sai antes da regra das páginas prontas, e a regra do site (index.html) vem por último.
-    const ordem = ['index\\.html[\\s?]', '# >>> ENDEREÇOS POR IDIOMA', 'RewriteRule ^([a-z]{2}-[a-z]{2}/.+)/$', 'RewriteCond %1.html -f', 'RewriteRule ^(ajuda(/.*)?|'];
+    // Pasta velha sem barra abre o site; /pt-br/ (com barra) continua no pt-br/index.html.
+    assert.ok(htaccess.includes('RewriteCond %{REQUEST_FILENAME} !-f\nRewriteCond %{REQUEST_URI} !/$ [OR]\nRewriteCond %{REQUEST_FILENAME}/index.html !-f\nRewriteRule ^(ajuda(/.*)?|'));
+    const ordem = ['index\\.html[\\s?]', '# >>> ENDEREÇOS POR IDIOMA', 'RewriteRule ^([a-z]{2}-[a-z]{2}/.+)/$', 'RewriteCond %1.html -f', 'RewriteRule ^(ajuda(/.*)?|', '# <<< ENDEREÇOS POR IDIOMA'];
     const posicoes = ordem.map((t) => htaccess.indexOf(t));
     assert.ok(posicoes.every((p) => p >= 0), JSON.stringify(posicoes));
     assert.deepEqual([...posicoes].sort((a, b) => a - b), posicoes);
+});
+
+// Endereço antigo: idioma do navegador; sem cabeçalho nenhum (robôs) pt-BR; com idioma fora do site, inglês.
+function antigoDoServidor(cabecalho) {
+    for (const [codigo, padrao] of regrasDoNavegador()) if (new RegExp(padrao, 'i').test(cabecalho)) return codigo;
+    return /^\s*$/.test(cabecalho) ? 'pt-BR' : INTERNACIONAL;
+}
+
+test('endereços antigos: sem Accept-Language vai para pt-BR; com idioma fora do site, inglês (como a raiz)', () => {
+    assert.equal(antigoDoServidor(''), 'pt-BR');
+    assert.equal(antigoDoServidor('de-DE,de;q=0.9'), 'en-US');
+    assert.equal(antigoDoServidor('*'), 'en-US');
+    assert.equal(antigoDoServidor('pt-BR,pt;q=0.9'), 'pt-BR');
+    assert.equal(antigoDoServidor('es-AR'), 'es-MX');
+    const bloco = gerarBloco();
+    assert.ok(bloco.includes('RewriteCond %{HTTP:Accept-Language} ^\\s*$\nRewriteRule ^.+$ - [E=IDIOMA_NAVEGADOR:pt-br]'));
+    assert.ok(bloco.includes('RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$\nRewriteRule ^.+$ - [E=IDIOMA_NAVEGADOR:en-us]'));
 });

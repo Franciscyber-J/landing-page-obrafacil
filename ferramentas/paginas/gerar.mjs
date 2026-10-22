@@ -7,11 +7,11 @@
 // navegadores sem JavaScript leem tudo; o site, ao abrir, "hidrata" a página (liga os botões) sem redesenhar.
 // Grava também sitemap.xml, robots.txt, llms.txt e o índice da Central de cada idioma em dados/ajuda/.
 //
-// O conteúdo da Central e dos Termos vem do Firestore (leitura pública, sem chave). Sem internet, essas páginas
-// não são geradas, o build continua (com aviso) e o site as desenha no navegador, como antes.
+// O conteúdo da Central e dos Termos vem do Firestore (leitura pública, sem chave).
 //
-// Teste no computador, sem o Firestore (nunca para publicar):
+// Sem ler a Central ou os Termos, o build para com erro (nada é gravado). Testes no computador (nunca para publicar):
 //   node ferramentas/paginas/gerar.mjs --ajuda-local <saída do publicador> --legal-local <gestao_obras/legal>
+//   node ferramentas/paginas/gerar.mjs --sem-firestore   (sem internet: só as páginas que não dependem do Firestore)
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -25,7 +25,7 @@ import { arquivoDaPagina, indexavel } from '../../src/seo/paginas.js';
 import { cabecaDaPagina, montarPagina } from '../../src/seo/cabeca.js';
 import { gerarRobots, gerarSitemap } from '../../src/seo/sitemap.js';
 import { gerarLlms } from '../../src/seo/llms.js';
-import { lerAjuda, lerLegal } from './fontes.mjs';
+import { conferirFontes, lerAjuda, lerLegal } from './fontes.mjs';
 import { conferirDist } from './conferir.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -76,19 +76,28 @@ async function principal() {
     const legalLocal = opcao('--legal-local');
     if (ajudaLocal || legalLocal) console.warn('\nATENÇÃO: conteúdo de pastas locais (teste). Este dist NÃO é para publicar.\n');
 
+    // Sem a Central ou sem os Termos o build para: publicar assim tiraria os artigos do sitemap e deixaria páginas
+    // velhas no servidor. Só com --sem-firestore (teste sem internet) ele segue, avisando.
+    const semFirestore = process.argv.includes('--sem-firestore');
     let ajuda = null;
+    let erroAjuda = null;
     try {
         ajuda = await lerAjuda({ local: ajudaLocal });
     } catch (erro) {
-        console.warn(`\nAVISO: Central de Ajuda sem páginas prontas e fora do sitemap (${erro.message}).`);
-        console.warn('O build continua; o site lê os artigos no Firestore quando a pessoa abre a página.\n');
+        erroAjuda = erro;
     }
     let legal = {};
+    let erroLegal = null;
     try {
         legal = await lerLegal({ local: legalLocal });
     } catch (erro) {
-        console.warn(`\nAVISO: Termos e Política sem páginas prontas (${erro.message}).`);
-        console.warn('O build continua; o site lê o texto no Firestore quando a pessoa abre a página.\n');
+        erroLegal = erro;
+    }
+    const { erros, avisos } = conferirFontes({ ajuda, erroAjuda, legal, erroLegal, semFirestore });
+    for (const aviso of avisos) console.warn(`AVISO: ${aviso}`);
+    if (erros.length) {
+        for (const erro of erros) console.error(`ERRO: ${erro}`);
+        throw new Error('o conteúdo do Firestore não foi lido; confira a internet e rode o build de novo (nada foi gravado)');
     }
 
     // ---------- Lista das páginas ----------
@@ -195,8 +204,6 @@ async function principal() {
     for (const p of paginas) porTipo[p.pagina.tipo] = (porTipo[p.pagina.tipo] ?? 0) + 1;
     console.log(`Páginas prontas: ${paginas.length} (${Object.entries(porTipo).map(([k, v]) => `${k} ${v}`).join(', ')}).`);
     console.log(`sitemap.xml: ${noSitemap.length} endereço(s); robots.txt e llms.txt gravados.`);
-    if (!ajuda) console.warn('AVISO: sitemap.xml e llms.txt sem a Central de Ajuda (ver aviso acima).');
-    if (!Object.values(legal).some((d) => Object.keys(d).length)) console.warn('AVISO: sitemap.xml sem os Termos e a Política (ver aviso acima).');
 
     // Conferência de tudo o que foi gravado: título, descrição, canonical, hreflang recíproco, dados estruturados,
     // texto visível, sitemap, robots.txt e llms.txt. Qualquer problema para o build.

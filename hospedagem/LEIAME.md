@@ -50,11 +50,12 @@ o com barra. Agora:
 
 Estão no app, nas lojas, nas sessões de pagamento da Stripe, num Payment Link e em e-mails já enviados, e não
 podem mudar. Todos respondem **301** para a página no idioma do navegador (cabeçalho `Accept-Language`, mesma
-escolha do site). Sem idioma conhecido (o Google não manda nenhum), **pt-BR**: eram páginas em português e o 301
-passa o histórico delas para a página nova. A resposta não fica guardada (`Cache-Control: no-cache`,
+escolha do site). Sem cabeçalho de idioma nenhum (robôs: o Google não manda), **pt-BR**: eram páginas em português
+e o 301 passa o histórico delas para a página nova. Com idioma, mas nenhum dos 8 do site (alemão, `*`...),
+**inglês**, como na raiz. A resposta não fica guardada (`Cache-Control: no-cache`,
 `Vary: Accept-Language`), então cada pessoa cai no idioma dela.
 
-| Endereço antigo | Quem usa | Vai para (exemplo sem idioma) |
+| Endereço antigo | Quem usa | Vai para (exemplo sem cabeçalho de idioma) |
 | --- | --- | --- |
 | `/termos-de-uso/`, `/politicas-de-privacidade/` | App Store, Google Play, app | `/pt-br/termos-de-uso`, `/pt-br/politica-de-privacidade` |
 | `/primeiros-passos` | volta do PRO pago pelo site, prêmio do Primeiros passos, Payment Link | `/pt-br/pagamento-confirmado/pro` |
@@ -68,8 +69,10 @@ Com e sem barra no fim, maiúsculas ou não. Na volta do pagamento e no `/perfil
 descartado (pode ser o identificador da sessão da Stripe); no Suporte e nos Termos, o `?utm_...` segue. As páginas
 de pagamento e do Perfil têm `noindex` (não vão para o Google nem para o sitemap); o Suporte vai.
 
-As regras de idioma ficam no bloco `ENDEREÇOS POR IDIOMA` do `.htaccess`, gerado por `npm run htaccess` a partir de
-`src/i18n/registro.js`. Idioma novo: rode `npm run htaccess` e envie o `.htaccess` (o `npm test` avisa se o bloco
+As regras de endereço (idiomas, antigos, barra no fim, páginas prontas e o site) ficam no bloco
+`ENDEREÇOS POR IDIOMA` do `.htaccess`, gerado por `npm run htaccess` a partir de `src/i18n/registro.js` e de
+`ferramentas/hospedagem/htaccess.mjs`. Pasta velha de um build antigo pedida sem barra abre o site (sem 404 nem
+vaivém de redirecionamento). Idioma novo: rode `npm run htaccess` e envie o `.htaccess` (o `npm test` avisa se o bloco
 estiver desatualizado).
 
 ## robots.txt, sitemap.xml e llms.txt
@@ -95,16 +98,19 @@ Gerados no build, na raiz do site:
   conferir que o site, o Google Ads e a Central funcionam sem aviso, troque `Content-Security-Policy-Report-Only`
   por `Content-Security-Policy`.
 - Páginas `.html`, `robots.txt`, `sitemap.xml` e `llms.txt` sem cache longo, para cada build aparecer na hora.
-- Bloqueia arquivos de backup e de log.
+- Bloqueia arquivos de backup e de log; sem lista de pastas e sem "adivinhar" arquivo parecido (`-Indexes -MultiViews`).
+- O verificador também confere o logo dos e-mails, o instalador do Windows, a política de conteúdo e que o
+  WordPress não responde mais (`/wp-login.php` 404).
 
 ## Como aplicar (Gerenciador de Arquivos da Hostinger)
 
-Passo a passo completo na skill `publicar-site` (`.claude/skills/publicar-site/SKILL.md`). Em resumo:
+Passo a passo completo na skill `publicar-site` (`.claude/skills/publicar-site/SKILL.md`). Em resumo, nesta ordem:
 
 1. Baixe o `.htaccess` atual de `public_html/appobrafacil` para o seu computador (fora da pasta do projeto). É a
    volta: se algo der errado, é só subir ele de volta.
-2. Suba o `.htaccess` desta pasta, substituindo o atual.
-3. No computador, na pasta `landing_page`: `node hospedagem/verificar.mjs`. Tem que terminar com "Tudo certo.".
+2. Apague as 8 pastas dos idiomas e a pasta `dados` (se existir) e envie o conteúdo do `dist`.
+3. **Por último**, suba o `.htaccess` desta pasta, substituindo o atual.
+4. No computador, na pasta `landing_page`: `node hospedagem/verificar.mjs`. Tem que terminar com "Tudo certo.".
 
 Se o site der erro 500 depois do passo 2: suba de volta o backup do passo 1 e mande a mensagem de erro para o Claude.
 

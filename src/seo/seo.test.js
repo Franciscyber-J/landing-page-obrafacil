@@ -170,8 +170,12 @@ test('llms.txt: título, resumo, inglês e português, preços de cada idioma e 
     assert.ok(texto.includes('## What ObraFácil is (English (US))'));
     assert.ok(texto.includes('## O que é o ObraFácil (Português (Brasil))'));
     assert.ok(texto.includes('## Optional'));
-    assert.match(texto, /R\$\s99,90/, 'preço em real');
-    assert.ok(texto.includes('€'), 'preço em euro');
+    assert.match(texto, /BRL\s99,90/, 'preço em real com o código');
+    for (const { codigo, nome } of IDIOMAS) {
+        const { moeda } = precosDoIdioma(codigo);
+        const linha = texto.split('\n').find((l) => l.startsWith(`- [${nome}](`) && l.includes('#'));
+        assert.ok(linha && (linha.match(new RegExp(moeda, 'g')) ?? []).length === 2, `${codigo}: ${linha}`);
+    }
     assert.ok(texto.includes(`${SITE}/pt-br/ajuda/criar-rdo`) && texto.includes(`${SITE}/en-us/help/create-daily-report`));
     assert.doesNotMatch(texto, /\{\{|\*\*\*/);
     for (const m of texto.matchAll(/\]\(([^)]+)\)/g)) assert.match(m[1], /^https:\/\//);

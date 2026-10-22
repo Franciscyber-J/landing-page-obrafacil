@@ -30,24 +30,29 @@ O `npm run build` faz tudo: confere os idiomas, gera o site, desenha as páginas
 Central e os Termos no Firestore, só leitura) e grava `sitemap.xml`, `robots.txt` e `llms.txt`. No fim ele confere
 todas as páginas e para com erro se alguma estiver errada.
 
-- Tem que terminar com `Conferência: ... página(s) pronta(s) sem problema.` e sem nenhuma linha `AVISO`.
-- `AVISO: Central de Ajuda sem páginas prontas` ou `AVISO: Termos e Política sem páginas prontas` = o computador não
-  conseguiu ler o Firestore (internet). **Não publique**: rode `npm run build` de novo com internet. Publicar assim
-  tira os artigos do sitemap e deixa no servidor as páginas antigas deles.
+- Tem que terminar com `Conferência: ... página(s) pronta(s) sem problema.`
+- `ERRO: Central de Ajuda não lida` ou `ERRO: Termos e Política não lidos` = o computador não conseguiu ler o
+  Firestore (internet). O build para sem gravar as páginas: **não publique**; rode `npm run build` de novo com
+  internet. (A opção `--sem-firestore` do gerador existe só para teste e nunca serve para publicar.)
 - O `gerar_site.bat` precisa rodar `npm run build` (e não `vite build` direto); senão as páginas prontas, o
   sitemap, o robots.txt e o llms.txt não são gerados.
 
-## Enviar
+## Enviar (nesta ordem)
 
-1. Só se `hospedagem/.htaccess` mudou: baixar antes o `.htaccess` atual para o computador (é a volta) e enviar o novo.
-2. Apagar no servidor as pastas dos idiomas (`pt-br`, `pt-pt`, `en-us`, `en-gb`, `en-au`, `en-ca`, `es-es`, `es-mx`)
-   e a pasta `dados`. Elas só têm páginas geradas, e o build novo traz todas de novo; assim não sobra página de
-   artigo que saiu da Central. Nunca apagar `download/` (instalador do Windows), `email/` nem o `.htaccess`.
+1. Baixar o `.htaccess` atual de `public_html/appobrafacil` para o computador, fora da pasta do projeto (é a volta).
+2. Apagar no servidor as 8 pastas dos idiomas (`pt-br`, `pt-pt`, `en-us`, `en-gb`, `en-au`, `en-ca`, `es-es`,
+   `es-mx`) e a pasta `dados`, se existir. Elas só têm páginas geradas e o build novo traz todas de novo; assim não
+   sobra página velha (artigo que saiu da Central, a pasta antiga dos Termos). Nunca apagar `download/`
+   (instalador do Windows), `email/` nem o `.htaccess`. Enquanto isso o site continua abrindo (o `index.html`
+   desenha as páginas no navegador).
 3. Enviar **o conteúdo** de `dist` (não a pasta), substituindo: as pastas dos idiomas, `dados/`, `index.html`,
    `assets/`, `bandeiras/`, `telas/`, `email/` (o logo dos e-mails do app: nunca muda de nome nem sai do ar),
    imagens, `tema.js`, `tag-google.js`, `robots.txt`, `sitemap.xml` e `llms.txt`. A pasta `dist-ssr` não vai.
    No Gerenciador de Arquivos, o mais rápido é compactar o conteúdo de `dist` num zip (fora da pasta do projeto),
    enviar o zip para `public_html/appobrafacil`, extrair lá e apagar o zip do servidor.
+4. **Por último**, só se `hospedagem/.htaccess` mudou: enviar o `.htaccess` novo, substituindo o atual. Com o
+   `.htaccess` antigo e o `dist` novo o site já funciona (desenhando no navegador); o novo liga as páginas prontas
+   e os redirecionamentos. Se der erro 500, suba de volta o `.htaccess` do passo 1.
 
 ## Conferir no ar
 
@@ -81,4 +86,4 @@ Só na primeira publicação com as páginas prontas, e depois quando o sitemap 
 ## Voltar atrás
 
 Enviar o `.htaccess` guardado e reenviar o `dist` do commit anterior (`git switch --detach <commit>`, `npm ci`,
-`npm run build`), apagando antes as pastas dos idiomas e `dados` como no envio normal.
+`npm run build`), na mesma ordem do envio normal (pastas dos idiomas e `dados` apagadas antes).

@@ -20,7 +20,8 @@ async function pedir(caminho, { idioma, metodo = 'GET' } = {}) {
   const resposta = await fetch(BASE + caminho, {
     method: metodo,
     redirect: 'manual',
-    headers: { 'User-Agent': 'ObraFacil-verificacao/2.0', ...(idioma ? { 'Accept-Language': idioma } : {}) },
+    // Sem idioma = como os robôs (o Google não manda Accept-Language). O fetch do Node mandaria "*" sozinho.
+    headers: { 'User-Agent': 'ObraFacil-verificacao/2.0', 'Accept-Language': idioma ?? '' },
   });
   const corpo = metodo === 'GET' ? await resposta.text() : '';
   const destino = resposta.headers.get('location');
@@ -132,13 +133,32 @@ await paginaPronta('Perfil (noindex)', '/en-us/profile', { semIndexar: true });
 await abre('artigo publicado depois do build abre o site', '/pt-br/ajuda/artigo-publicado-depois-do-build', CASCA);
 await abre('bandeira do menu de idiomas', '/bandeiras/br.svg', '<svg');
 
-console.log('\nEndereços antigos do WordPress (lojas, Stripe, e-mails): 301 para o idioma do navegador (sem idioma, pt-BR)');
+console.log('\nArquivos que não podem sair do ar');
+for (const [nome, caminho, tipo, metodo] of [
+  ['logo dos e-mails do app', '/email/logo-obrafacil.png', /^image\/png/, 'GET'],
+  ['instalador do Windows', '/download/Instalador_ObraFacil_Windows.exe', /./, 'HEAD'],
+]) {
+  try {
+    const r = await pedir(caminho, { metodo });
+    const conteudo = r.cabecalhos.get('content-type') ?? '';
+    linha(r.status === 200 && tipo.test(conteudo), `${nome.padEnd(44)} ${caminho}  (HTTP ${r.status}, ${conteudo || 'sem tipo'})`);
+  } catch (e) {
+    linha(false, `${nome.padEnd(44)} ${caminho}  (erro: ${e.message})`);
+  }
+}
+const wp = await pedir('/wp-login.php');
+linha(wp.status === 404, `WordPress desligado                           /wp-login.php  (HTTP ${wp.status}; esperado 404)`);
+
+console.log('\nEndereços antigos do WordPress (lojas, Stripe, e-mails): 301 para o idioma do navegador (sem idioma, pt-BR; idioma fora do site, inglês)');
 await redireciona('termos antigo, navegador pt-BR', '/termos-de-uso/', 301, '/pt-br/termos-de-uso', 'pt-BR,pt;q=0.9');
 await redireciona('privacidade antiga, navegador pt-PT', '/politicas-de-privacidade/', 301, '/pt-pt/politica-de-privacidade', 'pt-PT,pt;q=0.8');
 await redireciona('termos antigo, navegador es-AR', '/termos-de-uso', 301, '/es-mx/terminos-de-uso', 'es-AR,es;q=0.9');
 await redireciona('termos antigo, navegador es', '/termos-de-uso/', 301, '/es-es/terminos-de-uso', 'es');
 await redireciona('privacidade antiga, navegador en-GB', '/politicas-de-privacidade/', 301, '/en-gb/privacy-policy', 'en-GB,en;q=0.9');
-await redireciona('privacidade antiga, sem idioma', '/politicas-de-privacidade/', 301, '/pt-br/politica-de-privacidade');
+await redireciona('privacidade antiga, sem idioma (robôs)', '/politicas-de-privacidade/', 301, '/pt-br/politica-de-privacidade');
+await redireciona('privacidade antiga, navegador de-DE', '/politicas-de-privacidade/', 301, '/en-us/privacy-policy', 'de-DE,de;q=0.9');
+await redireciona('termos antigo, navegador "*"', '/termos-de-uso/', 301, '/en-us/terms-of-use', '*');
+await redireciona('Perfil, navegador fr-FR', '/perfil', 301, '/en-us/profile', 'fr-FR');
 await redireciona('termos antigo em maiúsculas', '/Termos-De-Uso/', 301, '/pt-br/termos-de-uso');
 const PAGAMENTO = [
   ['volta do PRO pago pelo site', '/primeiros-passos', '/pt-br/pagamento-confirmado/pro'],
@@ -216,6 +236,8 @@ for (const [pagina, caminho] of [['início', '/pt-br/'], ['artigo', '/pt-br/ajud
   }
   linha(/no-cache/.test(r.cabecalhos.get('cache-control') ?? ''), `página sem cache longo                         (${pagina}): ${r.cabecalhos.get('cache-control') ?? 'ausente'}`);
   linha(!r.cabecalhos.get('x-powered-by'), `cabeçalho x-powered-by escondido               (${pagina})`);
+  const csp = r.cabecalhos.get('content-security-policy') ?? r.cabecalhos.get('content-security-policy-report-only');
+  linha(Boolean(csp && /default-src 'self'/.test(csp)), `política de conteúdo (CSP)                     (${pagina}): ${csp ? 'presente' : 'ausente'}`);
 }
 
 console.log(`\n${falhas ? `${falhas} conferência(s) falharam.` : 'Tudo certo.'}`);

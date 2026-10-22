@@ -6,12 +6,13 @@
 # site, em cada idioma, e os endereços antigos levam a elas (ver hospedagem/LEIAME.md).
 #
 # Este arquivo é versionado em landing_page/hospedagem/.htaccess. Para mudar, edite no repositório e
-# copie o arquivo INTEIRO para a Hostinger. O bloco "ENDEREÇOS POR IDIOMA" é gerado por "npm run htaccess"
-# a partir de src/i18n/registro.js (idioma novo: rode o comando e envie o arquivo de novo).
+# copie o arquivo INTEIRO para a Hostinger. O bloco "ENDEREÇOS POR IDIOMA" (idiomas, endereços antigos, barra
+# no fim, páginas prontas e o site) é gerado por "npm run htaccess" a partir de src/i18n/registro.js e de
+# ferramentas/hospedagem/htaccess.mjs: mude lá e rode o comando (idioma novo: só rodar e enviar de novo).
 # =============================================================================
 
 DirectoryIndex index.html
-Options -Indexes
+Options -Indexes -MultiViews
 # Sem a barra automática nas pastas: /pt-br/ajuda é a página pronta pt-br/ajuda.html, mesmo existindo a pasta
 # pt-br/ajuda/ (a dos artigos). A página inicial do idioma (/pt-br → /pt-br/) tem regra própria, abaixo.
 <IfModule mod_dir.c>
@@ -139,12 +140,17 @@ RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^(pt-br|pt-pt|en-us|en-gb|en-au|en-ca|es-es|
 RewriteRule ^$ /%1/ [R=302,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
 
 # 3) Endereços antigos do WordPress (estão nas lojas, na Stripe, num Payment Link, no app e em e-mails já
-#    enviados): 301 para a mesma página no idioma do navegador. Sem língua conhecida (o Google não manda
-#    nenhuma), pt-BR: eram páginas em português, e o 301 passa o histórico delas para a página nova.
+#    enviados): 301 para a mesma página no idioma do navegador. Sem cabeçalho de idioma nenhum (robôs, como o
+#    Google), pt-BR: eram páginas em português, e o 301 passa o histórico delas para a página nova.
+#    Com idioma, mas nenhum dos do site (de-DE, *...), en-US, como na raiz.
 #    Sem cache (o destino muda conforme quem abre). Com e sem barra no fim, maiúsculas ou não.
 RewriteCond %{ENV:QUER_IDIOMA} =1
 RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^\s*$
 RewriteRule ^.+$ - [E=IDIOMA_NAVEGADOR:pt-br]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteRule ^.+$ - [E=IDIOMA_NAVEGADOR:en-us]
 RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-br
 RewriteRule ^termos\-de\-uso/?$ /pt-br/termos-de-uso [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
 RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pt-br
@@ -320,30 +326,25 @@ RewriteRule ^es-es(/.*)?$ /es-es$1 [NC,R=301,L]
 RewriteCond %{REQUEST_URI} !^/es-mx(?:/|$)
 RewriteRule ^es-mx(/.*)?$ /es-mx$1 [NC,R=301,L]
 RewriteRule ^(pt-br|pt-pt|en-us|en-gb|en-au|en-ca|es-es|es-mx)$ /$1/ [R=301,L]
-# <<< ENDEREÇOS POR IDIOMA
 
-# -----------------------------------------------------------------------------
-# Barra no fim: só a página inicial do idioma tem (/pt-br/). /pt-br/ajuda/ → /pt-br/ajuda (301).
-# -----------------------------------------------------------------------------
+# 6) Barra no fim: só a página inicial do idioma tem (/pt-br/). /pt-br/ajuda/ → /pt-br/ajuda (301).
 RewriteRule ^([a-z]{2}-[a-z]{2}/.+)/$ /$1 [R=301,L]
 
-# -----------------------------------------------------------------------------
-# Páginas prontas do build (texto já no HTML, para o Google e os buscadores com IA): /pt-br/ajuda/criar-rdo
-# é entregue a partir de pt-br/ajuda/criar-rdo.html, sem mudar o endereço. Vem antes da regra abaixo e
-# antes da barra automática das pastas (/pt-br/ajuda é também a pasta dos artigos). Quando o endereço é uma
-# pasta, o servidor pode pôr uma barra no fim do nome do arquivo pedido: a primeira condição tira essa barra.
-# -----------------------------------------------------------------------------
+# 7) Páginas prontas do build (texto já no HTML, para o Google e os buscadores com IA): /pt-br/ajuda/criar-rdo
+#    é entregue a partir de pt-br/ajuda/criar-rdo.html, sem mudar o endereço. Quando o endereço é uma pasta
+#    (/pt-br/ajuda é também a pasta dos artigos), o servidor pode pôr uma barra no fim do nome do arquivo
+#    pedido: a primeira condição tira essa barra.
 RewriteCond %{REQUEST_FILENAME} ^(.*?)/?$
 RewriteCond %1.html -f
 RewriteRule ^([a-z]{2}-[a-z]{2}/.+)$ /$1.html [L]
 
-# -----------------------------------------------------------------------------
-# Site (React): os outros endereços do site abrem o index.html, e o site desenha a página no navegador
-# (artigo publicado depois do último build, endereço com o nome antigo de um artigo...). Endereços com
-# prefixo de idioma (/pt-br/..., /en-us/...); qualquer idioma novo já entra pela regra. Arquivos que existem
-# de verdade continuam sendo servidos direto, e também as pastas com index.html próprio (/pt-br/).
-# -----------------------------------------------------------------------------
+# 8) Os outros endereços do site abrem o index.html e o site desenha a página no navegador (artigo publicado
+#    depois do último build, endereço com o nome antigo de um artigo...). Arquivos de verdade são servidos
+#    direto. Pasta com index.html só quando pedida com a barra (/pt-br/ → pt-br/index.html); pedida sem a
+#    barra (pasta velha de um build antigo, com a barra automática desligada), abre o site, sem 404 nem vaivém.
 RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !/$ [OR]
 RewriteCond %{REQUEST_FILENAME}/index.html !-f
 RewriteRule ^(ajuda(/.*)?|[a-z]{2}(-[a-z]{2})?(/.*)?)$ /index.html [L,NC]
+# <<< ENDEREÇOS POR IDIOMA
 </IfModule>

@@ -127,3 +127,28 @@ function legalLocal(pasta) {
 export async function lerLegal({ local = null } = {}) {
     return local ? legalLocal(local) : legalDoFirestore();
 }
+
+// O que fazer com o que foi lido: erros (o build para) e avisos. Central e Termos são obrigatórios; só com
+// semFirestore (teste sem internet) a falta deles vira aviso. Idioma sem texto dos Termos é só aviso (a página
+// daquele idioma fica sem versão pronta e o site lê o texto no navegador).
+export function conferirFontes({ ajuda, erroAjuda = null, legal, erroLegal = null, semFirestore = false }) {
+    const erros = [];
+    const avisos = [];
+    const falta = (texto) => (semFirestore ? avisos : erros).push(texto);
+    if (erroAjuda || !ajuda || !Object.keys(ajuda.indices ?? {}).length || !ajuda.artigos?.size) {
+        falta(`Central de Ajuda não lida (${erroAjuda?.message ?? 'nada publicado'}): sem páginas prontas dos artigos e fora do sitemap.`);
+    }
+    if (erroLegal) {
+        falta(`Termos e Política não lidos (${erroLegal.message}): sem páginas prontas.`);
+    } else {
+        for (const documento of DOCUMENTOS) {
+            const idiomas = Object.keys(legal?.[documento] ?? {});
+            if (!idiomas.length) falta(`${documento}: nenhum texto publicado; sem páginas prontas.`);
+            else {
+                const faltam = IDIOMAS.map((i) => i.codigo).filter((c) => !idiomas.includes(c));
+                if (faltam.length) avisos.push(`${documento}: sem texto em ${faltam.join(', ')}; essas páginas não ficam prontas.`);
+            }
+        }
+    }
+    return { erros, avisos };
+}
