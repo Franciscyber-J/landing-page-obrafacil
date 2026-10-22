@@ -24,8 +24,9 @@ npm ci
 npm run build
 ```
 
-1. Enviar **o conteúdo** de `dist` (não a pasta): `index.html`, `assets/`, `bandeiras/`. Substituir; nunca apagar
-   arquivos do WordPress.
+1. Enviar **o conteúdo** de `dist` (não a pasta): `index.html`, `assets/`, `bandeiras/`, `email/` (o logo dos
+   e-mails do app, `email/logo-obrafacil.png`: os e-mails já enviados apontam para este endereço, então ele nunca
+   muda de nome nem sai do ar). Substituir; nunca apagar arquivos do WordPress.
 2. Só se `hospedagem/.htaccess` mudou: baixar antes o `.htaccess` atual para o computador (é a volta) e enviar o novo.
 3. Só se o plugin mudou: `hospedagem/wordpress/mu-plugins/obrafacil-seguranca.php` em `wp-content/mu-plugins/`.
 4. Painel da Hostinger → LiteSpeed Cache → Limpar todo o cache.
@@ -36,7 +37,8 @@ npm run build
 node hospedagem/verificar.mjs
 ```
 
-Tudo OK. Depois, no navegador: `/` leva ao idioma certo, troca de idioma mantém a página, a Central abre um artigo,
+Tudo OK. O logo dos e-mails abre como imagem: `https://appobrafacil.expertbr.com/email/logo-obrafacil.png`
+(352 × 78, PNG). Depois, no navegador: `/` leva ao idioma certo, troca de idioma mantém a página, a Central abre um artigo,
 e o console não mostra erro (avisos de `Content-Security-Policy-Report-Only` são anotados para a decisão de ativar a CSP).
 
 ## Voltar atrás
