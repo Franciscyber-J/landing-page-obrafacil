@@ -45,9 +45,17 @@ export function tituloSobe(alvo, vars = {}) {
 // Inclinação 3D de um elemento seguindo o ponteiro dentro de uma área. Devolve a limpeza.
 export function inclinarComPonteiro(area, alvo, { graus = 8 } = {}) {
     if (!area || !alvo) return () => {};
-    const girarY = gsap.quickTo(alvo, 'rotationY', { duration: 0.6, ease: 'power3.out' });
-    const girarX = gsap.quickTo(alvo, 'rotationX', { duration: 0.6, ease: 'power3.out' });
+    // Os quickTo só nascem no primeiro movimento do ponteiro: criados antes, eles interrompem a animação de
+    // entrada do mesmo elemento (o GSAP desliga a propriedade na outra animação) e o elemento fica parado no meio.
+    let girarY = null;
+    let girarX = null;
+    const criar = () => {
+        if (girarY) return;
+        girarY = gsap.quickTo(alvo, 'rotationY', { duration: 0.6, ease: 'power3.out' });
+        girarX = gsap.quickTo(alvo, 'rotationX', { duration: 0.6, ease: 'power3.out' });
+    };
     const mover = (e) => {
+        criar();
         const r = area.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width - 0.5;
         const y = (e.clientY - r.top) / r.height - 0.5;
@@ -55,6 +63,7 @@ export function inclinarComPonteiro(area, alvo, { graus = 8 } = {}) {
         girarX(-y * graus * 2);
     };
     const sair = () => {
+        if (!girarY) return;
         girarY(0);
         girarX(0);
     };
@@ -69,14 +78,21 @@ export function inclinarComPonteiro(area, alvo, { graus = 8 } = {}) {
 // Botão "magnético": puxa um pouco em direção ao ponteiro. Devolve a limpeza.
 export function magnetico(botao, { forca = 0.25 } = {}) {
     if (!botao) return () => {};
-    const irX = gsap.quickTo(botao, 'x', { duration: 0.4, ease: 'power3.out' });
-    const irY = gsap.quickTo(botao, 'y', { duration: 0.4, ease: 'power3.out' });
+    // Criados só no primeiro movimento (ver inclinarComPonteiro): antes, eles paravam a entrada do botão no meio,
+    // 18 px abaixo do lugar, até alguém passar o mouse.
+    let irX = null;
+    let irY = null;
     const mover = (e) => {
+        if (!irX) {
+            irX = gsap.quickTo(botao, 'x', { duration: 0.4, ease: 'power3.out' });
+            irY = gsap.quickTo(botao, 'y', { duration: 0.4, ease: 'power3.out' });
+        }
         const r = botao.getBoundingClientRect();
         irX((e.clientX - (r.left + r.width / 2)) * forca);
         irY((e.clientY - (r.top + r.height / 2)) * forca);
     };
     const sair = () => {
+        if (!irX) return;
         irX(0);
         irY(0);
     };
