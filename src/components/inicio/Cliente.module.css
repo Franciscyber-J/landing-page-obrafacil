@@ -7,7 +7,7 @@
 
 .pontos {
   display: grid;
-  gap: 10px;
+  gap: var(--vao-lista);
 }
 
 .pontos li {
@@ -15,7 +15,7 @@
   grid-template-columns: 44px 1fr;
   gap: 14px;
   align-items: start;
-  padding: 16px 18px;
+  padding: var(--respiro-linha);
   border-radius: var(--raio);
   background: var(--vidro);
   border: 1px solid var(--vidro-borda);
@@ -37,7 +37,7 @@
 }
 
 .acao {
-  margin-top: 28px;
+  margin-top: var(--respiro-grupo);
 }
 
 .comparacao {

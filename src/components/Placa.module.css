@@ -54,9 +54,15 @@
   color: var(--texto-2);
 }
 
+/* Ritmo da coluna de texto: grupos (texto, abas, ações, lojas) separados por --respiro-grupo; dentro do grupo,
+   espaços curtos. A nota "sem cartão de crédito" fica com o botão, mas com respiro (antes encostava na sombra). */
+.texto {
+  container-type: inline-size;
+}
+
 /* Abas das partes da obra: cápsulas de vidro */
 .campos {
-  margin-top: 26px;
+  margin-top: var(--respiro-grupo);
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -95,23 +101,49 @@
 }
 
 .acoes {
-  margin-top: 24px;
+  margin-top: var(--respiro-grupo);
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: var(--vao-botoes);
 }
 
 .nota {
-  margin-top: 12px;
+  margin-top: var(--respiro-nota);
   font-size: 0.875rem;
+  line-height: 1.5;
   color: var(--texto-2);
 }
 
+/* Lojas: numa linha quando cabem; senão em grade simétrica (duas colunas com a terceira inteira embaixo) e,
+   na coluna estreita do celular, uma embaixo da outra, todas da mesma largura. Medido pela largura da coluna
+   (container query), não da tela: o espanhol e o português de Portugal precisam de mais espaço. */
 .lojas {
-  margin-top: 26px;
+  margin-top: var(--respiro-grupo);
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+@container (max-width: 599.98px) {
+  .lojas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lojas li:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .lojas a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@container (max-width: 419.98px) {
+  .lojas {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .lojas a {

@@ -1,16 +1,18 @@
 /* Termos e Política: modo leitura. A cabeça é um painel azul arredondado; o texto fica no fundo,
    com coluna de leitura de 72 caracteres e o sumário ao lado. */
+/* Mesma largura, margem e cabeça das outras páginas (antes 1240 px: o painel azul passava 20 px da barra do
+   topo e do rodapé de cada lado, e o respiro dentro dele era menor que nas páginas de conta). */
 .pagina {
-  max-width: 1240px;
+  max-width: var(--largura);
   margin: 0 auto;
-  padding: 40px 24px 96px;
+  padding: 40px var(--margem) 96px;
 }
 
 .cabecalho {
   --foco: #ffb35c;
-  margin-bottom: 48px;
-  padding: 40px 40px 34px;
-  border-radius: var(--raio-g);
+  margin-bottom: var(--respiro-cabeca);
+  padding: 44px var(--respiro-painel) 40px;
+  border-radius: var(--raio-xg);
   color: var(--painel-texto);
   background:
     radial-gradient(520px 340px at 100% 0%, rgba(31, 111, 209, 0.5), transparent 70%),
@@ -102,11 +104,13 @@
   padding: 0;
 }
 
+/* Mesmo respiro em cima e embaixo de cada item, com uma ou duas linhas (antes os itens de duas linhas ficavam
+   espremidos entre os de uma linha). */
 .sumario a {
   display: flex;
   align-items: center;
   min-height: 44px;
-  padding: 4px 0 4px 10px;
+  padding: 10px 0 10px 10px;
   border-radius: var(--raio-p);
   color: var(--tinta-2);
   text-decoration: none;
@@ -201,11 +205,13 @@
 
 @media (max-width: 640px) {
   .pagina {
-    padding: 20px 16px 72px;
+    padding-top: 24px;
+    padding-bottom: 72px;
   }
 
   .cabecalho {
-    padding: 24px 18px 20px;
-    margin-bottom: 32px;
+    padding-top: 28px;
+    padding-bottom: 26px;
+    border-radius: var(--raio-g);
   }
 }

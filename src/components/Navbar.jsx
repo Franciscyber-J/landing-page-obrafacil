@@ -223,7 +223,7 @@ export default function Navbar() {
                         {tema === 'escuro' ? t('nav.lightMode') : t('nav.darkMode')}
                     </button>
                     <div className={styles.menuAcoes}>
-                        <a href={LOGIN} className="acao-clara">{t('nav.login')}</a>
+                        <a href={LOGIN} className="acao-contorno">{t('nav.login')}</a>
                         <a {...linkComecar(codigo)} className="acao">{t('nav.comecar')}</a>
                     </div>
                 </div>

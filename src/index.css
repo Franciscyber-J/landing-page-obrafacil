@@ -82,15 +82,9 @@ button {
 /* Largura da página */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--largura);
   margin: 0 auto;
-  padding: 0 24px;
-}
-
-@media (max-width: 640px) {
-  .container {
-    padding: 0 16px;
-  }
+  padding: 0 var(--margem);
 }
 
 .somente-leitor {
@@ -169,6 +163,9 @@ button {
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
+  /* As luzes somem antes do fim da seção: sem a borda reta onde a seção acaba. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 220px), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 220px), transparent);
 }
 
 .luzes::before,
@@ -246,7 +243,7 @@ button {
 /* Seções da página inicial */
 .secao {
   position: relative;
-  padding: 104px 0;
+  padding: var(--secao) 0;
   scroll-margin-top: 80px;
   /* celulares inclinados e em 3D não podem empurrar a página para o lado (clip não cria rolagem nem atrapalha
      o celular parado dos Recursos) */
@@ -258,16 +255,25 @@ button {
   z-index: 1;
 }
 
-/* Painel azul arredondado (recursos): o mesmo nos dois temas */
+/* Painel azul arredondado (recursos): o mesmo nos dois temas.
+   --painel-margem: distância do painel até a borda da tela. O conteúdo fica alinhado com as outras seções e,
+   quando a tela é estreita demais para isso, entra o bastante para nunca ficar a menos de --painel-respiro da
+   borda do painel (antes, entre 960 e 1310 px e no celular, os cartões ficavam a 8-12 px da borda azul). */
 .secao-escura {
   --foco: var(--laranja);
+  --painel-margem: max(12px, calc((100vw - 1260px) / 2));
+  --painel-respiro: 40px;
   color: var(--painel-texto);
+}
+
+.secao-escura > .container {
+  padding-inline: max(var(--margem), calc(var(--painel-margem) + var(--painel-respiro) - max(0px, (100vw - var(--largura)) / 2)));
 }
 
 .secao-escura::before {
   content: '';
   position: absolute;
-  inset: 0 max(12px, calc((100vw - 1260px) / 2));
+  inset: 0 var(--painel-margem);
   border-radius: var(--raio-xg);
   background:
     radial-gradient(600px 400px at 85% 0%, rgba(31, 111, 209, 0.45), transparent 70%),
@@ -279,7 +285,7 @@ button {
 /* Cabeça de seção: selo em pílula com ponto laranja, título e texto. */
 .secao-cabeca {
   max-width: 780px;
-  margin-bottom: 48px;
+  margin-bottom: var(--respiro-cabeca);
 }
 
 .secao-cabeca::before {
@@ -348,17 +354,13 @@ button {
 }
 
 @media (max-width: 760px) {
-  .secao {
-    padding: 72px 0;
+  .secao-escura {
+    --painel-margem: 8px;
+    --painel-respiro: 20px;
   }
 
   .secao-escura::before {
-    inset: 0 8px;
     border-radius: var(--raio-g);
-  }
-
-  .secao-cabeca {
-    margin-bottom: 32px;
   }
 
   .secao-texto {

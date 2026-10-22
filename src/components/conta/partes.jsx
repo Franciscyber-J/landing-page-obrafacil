@@ -32,9 +32,10 @@ export function Cabeca({ icone: Icone, sobretitulo, titulo, texto, children }) {
     );
 }
 
-export function Cartao({ id, titulo, icone: Icone, destaque = false, children }) {
+// classe: posição na grade da página (ex.: cartão que ocupa a largura toda).
+export function Cartao({ id, titulo, icone: Icone, destaque = false, classe = '', children }) {
     return (
-        <section className={`${styles.cartao} ${destaque ? styles.cartaoDestaque : ''}`} aria-labelledby={id}>
+        <section className={`${styles.cartao} ${destaque ? styles.cartaoDestaque : ''} ${classe}`} aria-labelledby={id}>
             <h2 id={id} className={styles.cartaoTitulo}>
                 {Icone && <span className={styles.cartaoIcone} aria-hidden="true"><Icone size={20} strokeWidth={2.25} /></span>}
                 <span>{titulo}</span>
@@ -80,10 +81,10 @@ export function AbrirApp({ classe = 'acao' }) {
 }
 
 // Lojas e Windows (sem data-conversao: quem chega aqui já é cliente; não conta como "Começar grátis").
-export function Lojas({ codigo }) {
+export function Lojas({ codigo, classe = '' }) {
     const { t } = useTranslation();
     return (
-        <Cartao id="conta-lojas" titulo={t('conta.lojasTitulo')}>
+        <Cartao id="conta-lojas" titulo={t('conta.lojasTitulo')} classe={classe}>
             <p className={styles.paragrafo}>{t('conta.lojasTexto')}</p>
             <ul className={styles.lojas}>
                 <li>

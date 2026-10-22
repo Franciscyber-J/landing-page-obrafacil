@@ -1,15 +1,22 @@
 /* Volta do pagamento, Perfil e Suporte: cabeça em painel azul arredondado (como nos Termos), luzes do fundo
    e cartões de vidro. Cores só dos tokens (src/styles/design-tokens.css): claro e escuro. */
+/* A página sobe por baixo da barra do topo (como a página inicial e a Central): as luzes começam no alto da
+   tela, sem a linha reta que aparecia logo abaixo da barra. */
 .pagina {
   position: relative;
   overflow-x: clip;
+  margin-top: -90px;
+  padding-top: 90px;
 }
 
-/* Luzes azul e laranja do fundo (decorativas), em gradiente que some sozinho: sem borda cortada. */
+/* Luzes azul e laranja do fundo (decorativas). Somem antes do fim da página: sem a borda reta em cima do
+   rodapé. */
 .brilho {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 260px), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 260px), transparent);
   background:
     radial-gradient(720px 520px at 100% 18%, var(--luz-azul), transparent 70%),
     radial-gradient(640px 520px at 0% 88%, var(--luz-laranja), transparent 70%);
@@ -18,14 +25,14 @@
 .conteudo {
   position: relative;
   z-index: 1;
-  max-width: 1200px;
+  max-width: var(--largura);
   margin: 0 auto;
-  padding: 40px 24px 96px;
+  padding: 40px var(--margem) 96px;
 }
 
 /* ── Cabeça ─────────────────────────────────────────────────────────────── */
 .cabeca {
-  padding: 44px 48px 40px;
+  padding: 44px var(--respiro-painel) 40px;
   border-radius: var(--raio-xg);
   color: var(--painel-texto);
   background:
@@ -99,28 +106,38 @@
 }
 
 .botaoCartao {
-  margin-top: 22px;
+  margin-top: var(--respiro-grupo);
 }
 
 /* ── Grade de cartões ───────────────────────────────────────────────────── */
 .grade {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-  gap: 24px;
+  gap: var(--vao-blocos);
   align-items: start;
-  margin-top: 28px;
+  margin-top: var(--vao-blocos);
+}
+
+/* Dois cartões lado a lado com a mesma altura (volta do pagamento). */
+.gradePareada {
+  align-items: stretch;
+}
+
+.larguraToda {
+  grid-column: 1 / -1;
 }
 
 .coluna {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--vao-blocos);
   min-width: 0;
 }
 
 .cartao {
+  container-type: inline-size;
   min-width: 0;
-  padding: 32px;
+  padding: var(--respiro-cartao-g);
   border-radius: var(--raio-g);
   background: var(--vidro);
   border: 1px solid var(--vidro-borda);
@@ -227,12 +244,35 @@
   background: var(--laranja);
 }
 
-/* Lojas (mesmo desenho da abertura da página inicial) */
+/* Lojas (mesmo desenho e mesma regra da abertura da página inicial): numa linha quando cabem; senão duas
+   colunas com a terceira inteira embaixo; no cartão estreito do celular, uma embaixo da outra. */
 .lojas {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 18px;
+}
+
+@container (max-width: 599.98px) {
+  .lojas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lojas li:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .lojas a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@container (max-width: 419.98px) {
+  .lojas {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .lojas a {
@@ -296,7 +336,7 @@
 
 /* ── Suporte: canais ────────────────────────────────────────────────────── */
 .canais {
-  margin: 48px 0 28px;
+  margin: var(--respiro-cabeca) 0 var(--vao-blocos);
 }
 
 .secaoTitulo {
@@ -304,10 +344,12 @@
   margin-bottom: 22px;
 }
 
+/* Duas colunas: com quatro, os botões quebravam em duas linhas (alturas diferentes lado a lado) e o e-mail do
+   suporte se partia no meio, em todos os idiomas. Assim os quatro cartões seguem o desenho do cartão de baixo. */
 .gradeCanais {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--vao-blocos);
 }
 
 .canal {
@@ -315,7 +357,7 @@
   flex-direction: column;
   gap: 12px;
   min-width: 0;
-  padding: 28px 24px;
+  padding: var(--respiro-cartao-g);
   border-radius: var(--raio-g);
   background: var(--vidro);
   border: 1px solid var(--vidro-borda);
@@ -347,20 +389,15 @@
 .canalAcao {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: flex-start;
+  gap: var(--vao-botoes);
   margin-top: auto;
-  padding-top: 8px;
+  padding-top: calc(var(--respiro-grupo) - 12px);
 }
 
 .endereco {
   font-weight: 700;
   overflow-wrap: anywhere;
-}
-
-@media (max-width: 1080px) {
-  .gradeCanais {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 860px) {
@@ -371,11 +408,13 @@
 
 @media (max-width: 640px) {
   .conteudo {
-    padding: 24px 16px 72px;
+    padding-top: 24px;
+    padding-bottom: 72px;
   }
 
   .cabeca {
-    padding: 28px 22px 26px;
+    padding-top: 28px;
+    padding-bottom: 26px;
     border-radius: var(--raio-g);
   }
 
@@ -387,12 +426,14 @@
     flex-direction: column;
   }
 
-  .acoes .botao {
+  /* No celular todo botão das páginas de conta ocupa a largura toda, como os da cabeça. */
+  .acoes .botao,
+  .botaoCartao {
     width: 100%;
   }
 
-  .cartao {
-    padding: 24px 20px;
+  .canalAcao {
+    align-items: stretch;
   }
 
   .cartaoTitulo {

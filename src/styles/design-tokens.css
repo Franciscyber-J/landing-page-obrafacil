@@ -70,6 +70,23 @@
   --tempo: 260ms;
   --suave: cubic-bezier(0.16, 1, 0.3, 1);
 
+  /* Medidas da página (revisão de simetria, 21/10/2026). Toda página usa a mesma largura e a mesma margem,
+     para o conteúdo de todas as partes começar e terminar na mesma linha da barra do topo e do rodapé. */
+  --largura: 1200px;             /* largura máxima da página, com a margem */
+  --margem: 24px;                /* margem lateral (16 px no celular, abaixo) */
+  --secao: 104px;                /* respiro em cima e embaixo de cada seção (72 px no celular) */
+  --respiro-cabeca: 48px;        /* da cabeça de uma seção (título e texto) até o conteúdo dela */
+  --respiro-painel: 48px;        /* respiro lateral dentro dos painéis azuis (24 px no celular) */
+  --respiro-cartao-g: 32px;      /* dentro dos cartões grandes: planos, cartões da conta, canais (24 px no celular) */
+  --respiro-cartao: 24px;        /* dentro dos cartões menores: recursos, depoimentos, assuntos (20 px no celular) */
+  --respiro-linha: 16px 20px;    /* dentro das linhas em cartão: pontos, papéis, perguntas, artigos */
+  --vao-cartoes: 16px;           /* entre cartões lado a lado da mesma grade */
+  --vao-blocos: 24px;            /* entre blocos grandes (planos, cartões da conta) */
+  --vao-lista: 10px;             /* entre linhas empilhadas de uma lista */
+  --vao-botoes: 12px;            /* entre botões lado a lado ou empilhados */
+  --respiro-nota: 20px;          /* do botão até a nota curta logo abaixo dele ("sem cartão de crédito") */
+  --respiro-grupo: 32px;         /* entre grupos de uma mesma coluna (texto, abas, ações, lojas) */
+
   /* Nomes antigos (Central de Ajuda e telas que ainda usam): apontam para o mundo novo */
   --chao: var(--fundo);
   --tinta: var(--texto);
@@ -92,6 +109,23 @@
   --color-pro: var(--laranja-texto);
   --transition-fast: var(--tempo) var(--suave);
   --transition-normal: var(--tempo) var(--suave);
+}
+
+/* Medidas no celular */
+@media (max-width: 760px) {
+  :root {
+    --secao: 72px;
+    --respiro-cabeca: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --margem: 16px;
+    --respiro-painel: 24px;
+    --respiro-cartao-g: 24px;
+    --respiro-cartao: 20px;
+  }
 }
 
 /* Tema escuro: "Noite de obra" */

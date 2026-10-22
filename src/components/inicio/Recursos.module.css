@@ -61,11 +61,11 @@
 .itens {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: var(--vao-cartoes);
 }
 
 .item {
-  padding: 22px 22px 24px;
+  padding: var(--respiro-cartao);
   border-radius: var(--raio);
   background: var(--painel-vidro);
   border: 1px solid var(--painel-linha);
@@ -73,7 +73,7 @@
 
 .item dt {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
   font-family: var(--fonte-titulo);
   font-weight: 700;
@@ -82,9 +82,11 @@
   letter-spacing: -0.01em;
 }
 
+/* Ponto na altura da primeira linha do título (com duas linhas ele ficava entre as duas). */
 .item dt::before {
   content: '';
   flex-shrink: 0;
+  margin-top: calc((1.15em - 10px) / 2);
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -150,11 +152,11 @@
 }
 
 .acoes {
-  margin-top: 32px;
+  margin-top: var(--respiro-grupo);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px 20px;
+  gap: var(--respiro-nota);
 }
 
 .acoes p {

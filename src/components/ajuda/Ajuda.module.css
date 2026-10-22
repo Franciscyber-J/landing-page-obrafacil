@@ -33,10 +33,20 @@
     outline-offset: 2px;
 }
 
+/* Mesma largura e margem do resto do site (antes 1180 px e 24 px também no celular: a Central ficava
+   10 px para dentro da barra do topo e do rodapé). */
 .container {
-    max-width: 1180px;
+    width: 100%;
+    max-width: var(--largura);
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 var(--margem);
+}
+
+/* Aviso sozinho na página (artigo não encontrado, erro, nada publicado): no meio do espaço, não colado no alto
+   com a tela vazia embaixo. */
+.ajuda:has(> .container > .aviso) {
+    display: grid;
+    align-content: center;
 }
 
 .somenteLeitor {
@@ -103,6 +113,9 @@
     background:
         radial-gradient(520px 380px at 85% 10%, var(--luz-azul), transparent 70%),
         radial-gradient(460px 340px at 10% 90%, var(--luz-laranja), transparent 70%);
+    /* some antes do fim do topo: sem a borda reta onde ele acaba */
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 200px), transparent);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 200px), transparent);
 }
 
 .heroiConteudo {
@@ -370,7 +383,7 @@
 .gradeGuias {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
+    gap: var(--vao-cartoes);
     margin-top: 24px;
 }
 
@@ -378,7 +391,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding: 26px;
+    padding: var(--respiro-cartao);
     border-radius: var(--raio);
     border: var(--borda) solid var(--aj-linha);
     background: var(--aj-s1);
@@ -459,7 +472,7 @@
 .gradeAssuntos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 14px;
+    gap: var(--vao-cartoes);
     margin-top: 24px;
 }
 
@@ -476,7 +489,7 @@
     display: flex;
     gap: 16px;
     align-items: flex-start;
-    padding: 22px;
+    padding: var(--respiro-cartao);
     border-radius: var(--raio);
     border: var(--borda) solid var(--aj-linha);
     background: var(--aj-vidro);
@@ -545,7 +558,7 @@
 .gradeLinhas {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 10px;
+    gap: var(--vao-lista);
     margin-top: 24px;
 }
 
@@ -553,7 +566,7 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 14px 18px;
+    padding: var(--respiro-linha);
     border-radius: var(--raio);
     border: var(--borda) solid var(--aj-linha);
     background: var(--aj-s1);
@@ -585,7 +598,7 @@
     justify-content: space-between;
     gap: 24px;
     margin: 72px 0 56px;
-    padding: 36px;
+    padding: 36px var(--respiro-painel);
     border-radius: var(--raio-xg);
     --foco: #ffb35c;
     border: 0;
@@ -1156,7 +1169,7 @@
 .aviso {
     max-width: 560px;
     margin: 0 auto;
-    padding: 96px 0 120px;
+    padding: 96px 0;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -1295,7 +1308,7 @@
     }
 
     .suporte {
-        padding: 26px;
+        padding-block: 26px;
     }
 
     .topoPagina {
