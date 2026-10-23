@@ -236,8 +236,14 @@ for (const [pagina, caminho] of [['início', '/pt-br/'], ['artigo', '/pt-br/ajud
   }
   linha(/no-cache/.test(r.cabecalhos.get('cache-control') ?? ''), `página sem cache longo                         (${pagina}): ${r.cabecalhos.get('cache-control') ?? 'ausente'}`);
   linha(!r.cabecalhos.get('x-powered-by'), `cabeçalho x-powered-by escondido               (${pagina})`);
-  const csp = r.cabecalhos.get('content-security-policy') ?? r.cabecalhos.get('content-security-policy-report-only');
-  linha(Boolean(csp && /default-src 'self'/.test(csp)), `política de conteúdo (CSP)                     (${pagina}): ${csp ? 'presente' : 'ausente'}`);
+  // A Hostinger acrescenta a própria "Content-Security-Policy: upgrade-insecure-requests" (forçar HTTPS), e a nossa
+  // política vai em "Content-Security-Policy-Report-Only" até ser ativada (.htaccess). Vale a que tiver
+  // default-src 'self', em qualquer um dos dois cabeçalhos.
+  const cspAplicada = r.cabecalhos.get('content-security-policy') ?? '';
+  const cspRelatorio = r.cabecalhos.get('content-security-policy-report-only') ?? '';
+  const cspNossa = [cspAplicada, cspRelatorio].find((valor) => /default-src 'self'/.test(valor));
+  const situacaoCsp = !cspNossa ? 'ausente' : cspNossa === cspAplicada ? 'aplicada' : 'em modo de relatório';
+  linha(Boolean(cspNossa), `política de conteúdo (CSP)                     (${pagina}): ${situacaoCsp}`);
 }
 
 console.log(`\n${falhas ? `${falhas} conferência(s) falharam.` : 'Tudo certo.'}`);
