@@ -12,7 +12,8 @@ muda e uma lista de pendências gerada.
 | `preferencia.js` | Idioma escolhido no menu (fica no navegador) e idioma com que o site abre |
 | `RotaDoIdioma.jsx` | Troca de idioma levando para a mesma página, e `hreflang`/`canonical` para o Google |
 | `config.js` | i18next: cada idioma é um arquivo separado no build, baixado só quando usado |
-| `pricing.js` | Preços; a moeda de cada idioma vem do campo `moeda` do cadastro (`precosDoIdioma` dá os números para o Google e o llms.txt) |
+| `pricing.js` | Preços; a moeda de cada idioma vem do campo `moeda` do cadastro (`precosDoIdioma` dá os números para o Google e o llms.txt). Rupia, florim e dólar de Taiwan aparecem sem centavos (`casasNaTela`), como no app |
+| `formatos.js` | **Único lugar que formata número e data** (`formatarNumero`, `partesDoNumero`, `formatarData`, `anoNoIdioma`): algarismos sempre 0-9 (o `ar-SA` sairia com ٠-٩), tailandês no ano budista (2570), os outros no calendário gregoriano, como o app. O teste acusa `Intl.NumberFormat`, `Intl.DateTimeFormat` ou `toLocaleString` fora dele |
 
 ## Endereços
 

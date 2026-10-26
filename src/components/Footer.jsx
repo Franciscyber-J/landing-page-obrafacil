@@ -2,6 +2,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { IDIOMAS, caminhoAjuda, caminhoInicio, caminhoLegal, caminhoSuporte } from '../i18n/idiomas.js';
+import { anoNoIdioma } from '../i18n/formatos.js';
 import { useIdioma, useTrocarIdioma } from '../i18n/RotaDoIdioma.jsx';
 import { abrirAvisoCookies } from '../legal/cookies.js';
 import { WINDOWS, appStore, googlePlay, linkWhatsApp } from '../links.js';
@@ -85,8 +86,9 @@ export default function Footer({ comChamada = true }) {
             </div>
 
             <div className={`container ${styles.base}`}>
-                {/* O ano da página pronta é o do build; no navegador, o de hoje (sem aviso de diferença na virada do ano). */}
-                <p>&copy; <span suppressHydrationWarning>{new Date().getFullYear()}</span> ObraFácil. {t('footer.rights')}</p>
+                {/* O ano da página pronta é o do build; no navegador, o de hoje (sem aviso de diferença na virada do ano).
+                    No calendário do idioma (th-TH: ano budista), como as outras datas do site. */}
+                <p>&copy; <span suppressHydrationWarning>{anoNoIdioma(codigo, new Date())}</span> ObraFácil. {t('footer.rights')}</p>
             </div>
         </footer>
     );

@@ -4,7 +4,8 @@
 // Inglês primeiro (o idioma internacional do site) e depois português (o idioma de referência).
 
 import { IDIOMAS, INTERNACIONAL, REFERENCIA, caminhoAjuda, caminhoInicio, caminhoLegal, caminhoSuporte, idioma } from '../i18n/idiomas.js';
-import { precosDoIdioma } from '../i18n/pricing.js';
+import { casasNaTela, precosDoIdioma } from '../i18n/pricing.js';
+import { formatarNumero } from '../i18n/formatos.js';
 import { EMAIL_SUPORTE, WINDOWS, appStore, googlePlay, linkWhatsApp } from '../links.js';
 import { idiomaDoConteudo } from '../ajuda/idiomas.js';
 import { criarRotas } from '../ajuda/enderecos.js';
@@ -19,9 +20,13 @@ const limpo = (texto) => String(texto ?? '').replace(/\*\*/g, '').replace(/\s+/g
 const lista = (valor) => (Array.isArray(valor) ? valor : []);
 
 // Com o código da moeda (BRL 99,90, MXN 299,00): o "$" sozinho seria dólar, peso ou real para quem lê.
+// Casas como na página de preços (IDR 249.000, sem centavos) e algarismos 0-9.
 function preco(codigo, valor, moeda) {
     try {
-        return new Intl.NumberFormat(codigo, { style: 'currency', currency: moeda, currencyDisplay: 'code' }).format(Number(valor));
+        const casas = casasNaTela(moeda);
+        return formatarNumero(codigo, Number(valor), {
+            style: 'currency', currency: moeda, currencyDisplay: 'code', minimumFractionDigits: casas, maximumFractionDigits: casas,
+        });
     } catch {
         return `${moeda} ${valor}`;
     }
