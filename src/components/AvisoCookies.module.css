@@ -1,7 +1,7 @@
 /* Aviso de cookies: cartão de vidro no canto. Recusar e aceitar têm o mesmo peso visual. */
 .aviso {
   position: fixed;
-  left: 16px;
+  inset-inline-start: 16px;
   bottom: 16px;
   z-index: 60;
   width: min(480px, calc(100% - 32px));

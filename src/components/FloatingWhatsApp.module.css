@@ -1,6 +1,6 @@
 .flutuante {
   position: fixed;
-  right: 16px;
+  inset-inline-end: 16px;
   bottom: 16px;
   z-index: 55;
   display: inline-flex;
@@ -9,7 +9,8 @@
   gap: 10px;
   min-height: 56px;
   min-width: 56px;
-  padding: 0 20px 0 16px;
+  padding-block: 0;
+  padding-inline: 16px 20px;
   border-radius: var(--pilula);
   background: var(--painel);
   color: #ffffff;

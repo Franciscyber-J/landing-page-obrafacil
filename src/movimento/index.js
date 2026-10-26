@@ -12,6 +12,8 @@ gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin, useGSAP);
 gsap.defaults({ ease: 'expo.out', duration: 0.8 });
 
 export { gsap, ScrollTrigger, SplitText, useGSAP };
+// Direção da escrita (árabe, hebraico): o movimento em X espelha (ver sentido.js).
+export { inicioDoIdioma, passoDaSeta, sentidoDaDirecao, sentidoDoIdioma } from './sentido.js';
 
 export const COM_MOVIMENTO = '(prefers-reduced-motion: no-preference)';
 // Página que chegou pronta do build (texto já no HTML) e já apareceu na tela antes de o JavaScript carregar:
@@ -62,6 +64,7 @@ export function tituloSobe(alvo, vars = {}) {
 }
 
 // Inclinação 3D de um elemento seguindo o ponteiro dentro de uma área. Devolve a limpeza.
+// Lado físico de propósito (também na escrita da direita para a esquerda): o elemento vira para onde o ponteiro está.
 export function inclinarComPonteiro(area, alvo, { graus = 8 } = {}) {
     if (!area || !alvo) return () => {};
     // Os quickTo só nascem no primeiro movimento do ponteiro: criados antes, eles interrompem a animação de
@@ -94,7 +97,7 @@ export function inclinarComPonteiro(area, alvo, { graus = 8 } = {}) {
     };
 }
 
-// Botão "magnético": puxa um pouco em direção ao ponteiro. Devolve a limpeza.
+// Botão "magnético": puxa um pouco em direção ao ponteiro. Devolve a limpeza. Lado físico de propósito (segue o ponteiro).
 export function magnetico(botao, { forca = 0.25 } = {}) {
     if (!botao) return () => {};
     // Criados só no primeiro movimento (ver inclinarComPonteiro): antes, eles paravam a entrada do botão no meio,

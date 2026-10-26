@@ -111,19 +111,19 @@
   margin-top: 2px;
   font-size: 0.6875rem;
   color: var(--texto-2);
-  text-align: right;
+  text-align: end;
 }
 
 .recebida {
   align-self: flex-start;
   background: var(--fundo-2);
-  border-bottom-left-radius: 6px;
+  border-end-start-radius: 6px;
 }
 
 .enviada {
   align-self: flex-end;
   background: rgba(26, 95, 184, 0.14);
-  border-bottom-right-radius: 6px;
+  border-end-end-radius: 6px;
 }
 
 .aviso {
@@ -144,7 +144,7 @@
 
 .segunda {
   position: absolute;
-  right: 0;
+  inset-inline-end: 0;
   top: 64px;
   width: min(210px, 62%) !important;
 }

@@ -11,7 +11,9 @@ import { useIdioma } from '../i18n/RotaDoIdioma.jsx';
 import { WINDOWS, appStore, googlePlay } from '../links.js';
 import { comDestaque } from '../texto.jsx';
 import { enderecoDaTela } from '../telas.js';
-import { COM_MOUSE, COM_MOVIMENTO, gsap, inclinarComPonteiro, jaApareceu, magnetico, tituloSobe, useGSAP } from '../movimento/index.js';
+import {
+    COM_MOUSE, COM_MOVIMENTO, gsap, inclinarComPonteiro, jaApareceu, magnetico, passoDaSeta, sentidoDoIdioma, tituloSobe, useGSAP,
+} from '../movimento/index.js';
 import styles from './Placa.module.css';
 import { useLinkComecar } from '../useNavegador.js';
 
@@ -63,6 +65,7 @@ export default function Placa() {
     // Entrada da placa e inclinação do celular
     useGSAP(() => {
         const mm = gsap.matchMedia();
+        const s = sentidoDoIdioma(codigo);
         mm.add(COM_MOVIMENTO, () => {
             // Página pronta já na tela: a placa fica como está (sem sumir para entrar de novo).
             if (jaApareceu(raiz.current)) return;
@@ -78,7 +81,9 @@ export default function Placa() {
                 .fromTo(q('[data-m="acao"]'), { y: 18, autoAlpha: 0 }, { y: 0, autoAlpha: 1, stagger: 0.08, duration: 0.7 }, '-=0.45')
                 .from(q('[data-m="loja"]'), { y: 14, autoAlpha: 0, stagger: 0.06, duration: 0.6 }, '-=0.5')
                 .from(q('[data-m="planta"] path'), { drawSVG: 0, stagger: 0.04, duration: 1.6, ease: 'power2.inOut' }, 0.3)
-                .from(q('[data-m="aparelho"]'), { y: 110, rotationY: -30, rotationX: 12, autoAlpha: 0, duration: 1.4 }, 0.5)
+                .from(q('[data-m="aparelho"]'), { y: 110, rotationY: -30 * s, rotationX: 12, autoAlpha: 0, duration: 1.4 }, 0.5)
+                // Os dois celulares dos lados são uma composição simétrica com lado físico (ladoEsquerdo/ladoDireito no CSS):
+                // o giro deles não espelha.
                 .from(q('[data-m="lado"]'), { y: 140, rotationZ: (i) => (i ? 18 : -18), autoAlpha: 0, stagger: 0.12, duration: 1.4 }, 0.7);
         });
         mm.add(COM_MOUSE, () => {
@@ -132,8 +137,9 @@ export default function Placa() {
 
     const teclado = (e, indice) => {
         let novo = null;
-        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') novo = (indice + 1) % CAMPOS.length;
-        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') novo = (indice - 1 + CAMPOS.length) % CAMPOS.length;
+        // Seta para baixo avança; as setas horizontais seguem a escrita (na da direita para a esquerda, a esquerda avança).
+        const passo = e.key === 'ArrowDown' ? 1 : e.key === 'ArrowUp' ? -1 : passoDaSeta(e.key, sentidoDoIdioma(codigo));
+        if (passo) novo = (indice + passo + CAMPOS.length) % CAMPOS.length;
         if (e.key === 'Home') novo = 0;
         if (e.key === 'End') novo = CAMPOS.length - 1;
         if (novo === null) return;

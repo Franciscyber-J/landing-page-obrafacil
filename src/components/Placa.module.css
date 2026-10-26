@@ -202,11 +202,14 @@
   opacity: 0.92;
 }
 
+/* Lado físico de propósito: os dois celulares dos lados são uma composição simétrica (cada um inclinado para fora),
+   que fica igual na escrita da direita para a esquerda. */
 .ladoEsquerdo {
   left: 2%;
   transform: rotate(-9deg);
 }
 
+/* lado físico: ver .ladoEsquerdo */
 .ladoDireito {
   right: 2%;
   transform: rotate(9deg);
@@ -261,8 +264,7 @@
 .legenda {
   position: absolute;
   bottom: 4px;
-  left: 0;
-  right: 0;
+  inset-inline: 0;
   z-index: 2;
   font-size: 0.8125rem;
   color: var(--texto-2);
@@ -327,10 +329,12 @@
     top: 60px;
   }
 
+  /* lado físico: ver .ladoEsquerdo */
   .ladoEsquerdo {
     left: 4%;
   }
 
+  /* lado físico: ver .ladoEsquerdo */
   .ladoDireito {
     right: 4%;
   }
@@ -361,10 +365,12 @@
     width: 150px;
   }
 
+  /* lado físico: ver .ladoEsquerdo */
   .ladoEsquerdo {
     left: 0;
   }
 
+  /* lado físico: ver .ladoEsquerdo */
   .ladoDireito {
     right: 0;
   }

@@ -228,7 +228,7 @@
 
 .lista li {
   position: relative;
-  padding-left: 22px;
+  padding-inline-start: 22px;
   color: var(--texto-2);
   line-height: 1.6;
 }
@@ -236,7 +236,7 @@
 .lista li::before {
   content: '';
   position: absolute;
-  left: 0;
+  inset-inline-start: 0;
   top: 0.62em;
   width: 8px;
   height: 8px;
@@ -323,7 +323,7 @@
 .artigos a svg {
   flex-shrink: 0;
   color: var(--laranja-texto);
-  transition: transform var(--tempo) var(--suave);
+  transition: translate var(--tempo) var(--suave);
 }
 
 .artigos a:hover {
@@ -331,7 +331,7 @@
 }
 
 .artigos a:hover svg {
-  transform: translateX(3px);
+  translate: calc(3px * var(--sentido)) 0;
 }
 
 /* ── Suporte: canais ────────────────────────────────────────────────────── */

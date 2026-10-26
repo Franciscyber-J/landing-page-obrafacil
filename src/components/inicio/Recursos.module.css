@@ -108,7 +108,7 @@
 .listaCaixa:has(.historia) .progresso {
   display: block;
   position: absolute;
-  left: -26px;
+  inset-inline-start: -26px;
   top: 0;
   bottom: 110px;
   width: 4px;

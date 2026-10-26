@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { idDaSecao } from '../../i18n/idiomas.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import { enderecoDaTela } from '../../telas.js';
-import { COM_MOUSE, COM_MOVIMENTO, gsap, inclinarComPonteiro, jaApareceu, useGSAP } from '../../movimento/index.js';
+import { COM_MOUSE, COM_MOVIMENTO, gsap, inclinarComPonteiro, jaApareceu, sentidoDoIdioma, useGSAP } from '../../movimento/index.js';
 import styles from './Equipe.module.css';
 
 const PAPEIS = ['gestor', 'engenheiro', 'equipe', 'cliente'];
@@ -18,6 +18,7 @@ export default function Equipe() {
     useGSAP(() => {
         const mm = gsap.matchMedia();
         const q = gsap.utils.selector(raiz);
+        const s = sentidoDoIdioma(codigo);
         mm.add(COM_MOVIMENTO, () => {
             if (!jaApareceu(q('[data-grupo]')[0])) {
                 gsap.from(q('[data-m="ordem"]'), {
@@ -27,7 +28,7 @@ export default function Equipe() {
             }
             if (!jaApareceu(q('[data-m="painel"]')[0])) {
                 gsap.from(q('[data-m="aparelho"]'), {
-                    y: 80, rotationY: 30, rotationZ: -4, autoAlpha: 0, duration: 1.3,
+                    y: 80, rotationY: 30 * s, rotationZ: -4 * s, autoAlpha: 0, duration: 1.3,
                     scrollTrigger: { trigger: q('[data-m="painel"]')[0], start: 'top 80%', once: true },
                 });
             }

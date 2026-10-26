@@ -53,7 +53,7 @@ export default function AjudaInicio({ indice, preparado, rotas }) {
                                     <span className={styles.guiaRotulo}><Route size={16} aria-hidden="true" />{t('ajuda.tipo_fluxo')}</span>
                                     <span className={styles.guiaTitulo}>{a.titulo}</span>
                                     <span className={styles.guiaResumo}>{a.resumo}</span>
-                                    <span className={styles.guiaAcao}>{t('ajuda.comecar')} →</span>
+                                    <span className={styles.guiaAcao}>{t('ajuda.comecar')} <span className="seta" aria-hidden="true">→</span></span>
                                 </Link>
                             ))}
                         </div>
@@ -104,7 +104,7 @@ export default function AjudaInicio({ indice, preparado, rotas }) {
                                 <Link key={a.id} to={endereco(a)} className={styles.linha}>
                                     <span className={styles.iconeCaixaPequena}><IconeModulo nome={modulos.get(a.modulo)?.icone} size={18} /></span>
                                     <span className={styles.linhaTexto}>{a.titulo}</span>
-                                    <ChevronRight size={18} aria-hidden="true" className={styles.linhaSeta} />
+                                    <ChevronRight size={18} aria-hidden="true" className={`${styles.linhaSeta} seta`} />
                                 </Link>
                             ))}
                         </div>

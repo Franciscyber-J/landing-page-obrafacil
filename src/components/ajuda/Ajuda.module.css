@@ -164,7 +164,7 @@
     width: 100%;
     max-width: 680px;
     margin-top: 8px;
-    text-align: left;
+    text-align: start;
 }
 
 .buscaCompacta {
@@ -182,7 +182,8 @@
     align-items: center;
     gap: 12px;
     height: 64px;
-    padding: 0 10px 0 18px;
+    padding-block: 0;
+    padding-inline: 18px 10px;
     background: var(--aj-s1);
     border: var(--borda) solid var(--aj-linha);
     border-radius: var(--raio);
@@ -193,7 +194,7 @@
     height: 48px;
     border-radius: var(--raio);
     box-shadow: none;
-    padding-left: 14px;
+    padding-inline-start: 14px;
 }
 
 .buscaCampo:focus-within {
@@ -251,8 +252,7 @@
 .buscaPainel {
     position: absolute;
     box-shadow: 0 20px 40px -20px rgba(5, 20, 35, 0.55) !important;
-    left: 0;
-    right: 0;
+    inset-inline: 0;
     top: calc(100% + 10px);
     z-index: 20;
     padding: 8px;
@@ -320,7 +320,7 @@
 }
 
 .sugestoes > span {
-    margin-right: 4px;
+    margin-inline-end: 4px;
 }
 
 .chip {
@@ -883,7 +883,7 @@
 .passo::before {
     content: '';
     position: absolute;
-    left: 21px;
+    inset-inline-start: 21px;
     top: 52px;
     bottom: 6px;
     width: 2px;
@@ -945,7 +945,7 @@
 
 .passoLista {
     list-style: disc;
-    padding-left: 22px;
+    padding-inline-start: 22px;
 }
 
 .passoParagrafo strong,
@@ -1070,8 +1070,8 @@
 }
 
 .cartaoNavegacaoProximo {
-    text-align: right;
-    margin-left: auto;
+    text-align: end;
+    margin-inline-start: auto;
 }
 
 .cartaoNavegacaoRotulo {
@@ -1329,7 +1329,7 @@
     }
 
     .passo::before {
-        left: 17px;
+        inset-inline-start: 17px;
         top: 44px;
     }
 

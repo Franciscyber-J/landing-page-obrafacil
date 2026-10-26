@@ -10,7 +10,7 @@
     "postbuild": "node ferramentas/paginas/gerar.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "node --test \"src/*.test.js\" \"src/ajuda/*.test.js\" \"src/i18n/*.test.js\" \"src/legal/*.test.js\" \"src/seo/*.test.js\" \"ferramentas/**/*.test.mjs\"",
+    "test": "node --test \"src/*.test.js\" \"src/ajuda/*.test.js\" \"src/i18n/*.test.js\" \"src/legal/*.test.js\" \"src/movimento/*.test.js\" \"src/seo/*.test.js\" \"ferramentas/**/*.test.mjs\"",
     "idiomas": "node ferramentas/idiomas/idiomas.mjs",
     "htaccess": "node ferramentas/hospedagem/htaccess.mjs"
   },

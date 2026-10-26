@@ -7,7 +7,7 @@
 
 .fita {
   position: absolute;
-  left: -5%;
+  inset-inline-start: -5%;
   width: 110%;
   top: 50%;
   overflow: hidden;
@@ -25,8 +25,7 @@
 .fita::after {
   content: '';
   position: absolute;
-  left: 0;
-  right: 0;
+  inset-inline: 0;
   height: 7px;
   background: repeating-linear-gradient(-45deg, var(--sobre-laranja) 0 10px, transparent 10px 20px);
 }

@@ -49,7 +49,7 @@ export default function AjudaAssunto({ indice, preparado, rotas, atual, pedido }
                                 <span className={styles.itemArtigoTitulo}>{a.titulo}</span>
                                 <span className={styles.itemArtigoResumo}>{a.resumo}</span>
                             </span>
-                            <ChevronRight size={20} aria-hidden="true" className={styles.linhaSeta} />
+                            <ChevronRight size={20} aria-hidden="true" className={`${styles.linhaSeta} seta`} />
                         </Link>
                     </li>
                 ))}
