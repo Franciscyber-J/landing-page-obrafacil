@@ -2,7 +2,7 @@
 
 O app ObraFácil baixa daqui, só na primeira vez que a pessoa gera um PDF num desses idiomas, a fonte da escrita e
 guarda no aparelho. Ele confere o SHA-256 de cada arquivo (fixo no código do app, em
-lib/services/pdf/fontes_do_pdf.dart do gestao_obras) antes de usar.
+lib/services/pdf/escrita_do_pdf.dart do gestao_obras) antes de usar.
 
 O que este script faz, para cada Noto Sans (variável, do repositório google/fonts):
   1. varLib.instancer: fonte estática no peso normal (400) e no negrito (700), largura 100. O pacote pdf do Dart
