@@ -97,6 +97,11 @@ flutuando. O escuro é o mundo principal; o claro tem a mesma forma com luzes ma
 - Ordem da página inicial: abertura com os celulares → fitas de obra → o cliente acompanha → recursos (painel
   azul, celular parado na tela larga) → papéis → depoimentos → preços → perguntas → chamada → rodapé.
 - 360 e 390 px sem rolagem lateral.
+- Direita para a esquerda (árabe, hebraico): o `<html>` vem com `dir` do cadastro do idioma. No CSS, só lados lógicos
+  (`margin-inline-start`, `inset-inline-end`, `text-align: start`...); o que não tem versão lógica usa `--sentido`,
+  `--inicio` e `--fim` (`design-tokens.css`). Lado físico de propósito leva o comentário "lado físico" com o motivo
+  (hoje só os celulares dos lados da abertura). Setas de direção com a classe `.seta`, que espelha; logotipo, marcas e
+  prints nunca. O `npm test` acusa lado fixo novo (`src/direcao-css.test.js`).
 
 ## Elevation & Depth
 
@@ -127,6 +132,10 @@ flutuando. O escuro é o mundo principal; o claro tem a mesma forma com luzes ma
   parado com a tela trocando nos recursos (tela larga); títulos que sobem linha por linha (máscara
   com folga para o acento); inclinação 3D e botões magnéticos só com mouse; linha de leitura na barra.
 - Luzes do fundo (`.luzes`) vagam devagar (16 a 20 s) e param com "menos movimento".
+- Direita para a esquerda: o que se move em X espelha. No GSAP, `x`, `xPercent`, `rotationY` e `rotationZ` são
+  multiplicados por `sentidoDoIdioma(codigo)` e o `transformOrigin` usa `inicioDoIdioma(codigo)`
+  (`src/movimento/sentido.js`, pelo cadastro do idioma, sem depender do navegador); no CSS, `var(--sentido)`. O que
+  segue o ponteiro (inclinação 3D, botão magnético) é físico.
 - Marcação nos prints da Central (`PrintComMarcacao.jsx`): a mesma do app (véu, contorno pulsando, seta,
   zoom), sem GSAP, só quando o print está na tela; com "menos movimento", parada no estado final.
 - O que não fazer: animação que esconde texto para sempre, efeito que dispara sozinho em loop sem
