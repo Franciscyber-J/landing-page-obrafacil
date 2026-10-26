@@ -49,6 +49,26 @@ diferente e importe. O que ficar igual à base é descartado.
 Os artigos da Central de Ajuda são publicados por outro caminho (`gestao_obras/ajuda`). Um idioma do site
 sem artigos próprios mostra os artigos do primeiro idioma da cadeia que tiver (ver `src/ajuda/LEIAME.md`).
 
+## Plurais
+
+Texto com número que muda (`{{count}}`) é sempre plural: `chave_one`, `chave_other` e as outras formas que a língua usa
+(`_zero`, `_two`, `_few`, `_many`), pela regra do `Intl.PluralRules`, a mesma que o i18next usa para escolher a forma
+pelo `count` (`t('ajuda.artigos', { count })`). Português e espanhol usam one/many/other; inglês one/other; árabe as
+seis; hebraico one/two/other; polonês one/few/many/other; japonês só other.
+
+- `npm run idiomas` acusa `{{count}}` fora de plural no pt-BR (erro) e lista em `PENDENCIAS.md` ("Plurais") as formas
+  de cada idioma, com exemplos de números, e as que faltam. `npm run idiomas -- plurais ar-SA he-IL` mostra as formas
+  de um idioma ainda não cadastrado.
+- O `{{count}}` é obrigatório nas formas que valem para vários números; na que vale para um número só (zero, one do
+  inglês, two do árabe) ele pode dar lugar à palavra ("one article", "مقالان").
+- Variante regional: não precisa repetir os plurais da base. Ao carregar, as formas da base entram na variante e são
+  escolhidas pela regra dela (`plurais.js`: em Portugal "0 artigos", no Brasil "0 artigo").
+
+## Direção da escrita
+
+`direcao: 'rtl'` no cadastro (árabe, hebraico) põe `dir="rtl"` no `<html>` (páginas prontas e site). O CSS só usa lados
+lógicos e as animações espelham sozinhas (ver "Direita para a esquerda" no `DESIGN.md`).
+
 ## Textos para o Google e os buscadores com IA (chaves `seo.*`)
 
 Título e descrição de cada página em cada idioma (`seo.inicio`, `seo.ajuda`, `seo.assunto`, `seo.artigo`; Suporte,

@@ -1,6 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { CODIGOS, cadeia } from './idiomas.js';
+import { CODIGOS, cadeia, idioma } from './idiomas.js';
+import { comPluraisDaBase } from './plurais.js';
 import { idiomaInicial } from './preferencia.js';
 
 // Cada idioma vira um arquivo separado no build e só é baixado quando usado
@@ -13,7 +14,12 @@ const textosSobDemanda = {
     read(codigo, _ns, pronto) {
         const carregar = ARQUIVOS[`./textos/${codigo}.json`];
         if (!carregar) return pronto(null, {});
-        carregar().then((textos) => pronto(null, textos), (erro) => pronto(erro, null));
+        // Variante: os plurais herdados da base usam a regra de plural da variante (ver plurais.js). A base já é
+        // baixada de qualquer jeito (vem logo depois na cadeia).
+        const base = idioma(codigo)?.base;
+        const carregarBase = base ? ARQUIVOS[`./textos/${base}.json`] : null;
+        Promise.all([carregar(), carregarBase ? carregarBase() : null])
+            .then(([textos, daBase]) => pronto(null, daBase ? comPluraisDaBase(textos, daBase) : textos), (erro) => pronto(erro, null));
     },
 };
 

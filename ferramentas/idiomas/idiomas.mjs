@@ -8,10 +8,13 @@
 //          [--de pt-BR]                    idioma de origem do pacote (padrão: inglês, ou a base da variante)
 //          [--tudo]                        inclui os textos já traduzidos (para revisar)
 //   npm run idiomas -- importar fr-FR      junta o pacote traduzido em src/i18n/textos/fr-FR.json
+//   npm run idiomas -- plurais [ar-SA ...] formas de plural de cada idioma (cadastrado ou não) e as que faltam
 //
 // Erros (param o build): chave que não existe no pt-BR, placeholder {{x}} diferente, texto vazio,
-// tipo diferente (lista × texto), cadastro inválido. Pendências (não param): textos que faltam
-// traduzir; enquanto faltar, o site mostra o texto do próximo idioma da cadeia.
+// tipo diferente (lista × texto), cadastro inválido, texto do pt-BR com {{count}} que não é plural (o número
+// apareceria sempre com a mesma palavra: "1 artigos"). Pendências (não param): textos que faltam traduzir, inclusive
+// as formas de plural que a língua usa (zero, one, two, few, many, other, pela regra do Intl.PluralRules, a mesma do
+// i18next); enquanto faltar, o site mostra o texto do próximo idioma da cadeia.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -77,10 +80,43 @@ function placeholders(valor) {
 
 function categoriasDe(codigo) {
     try {
-        return new Intl.PluralRules(codigo).resolvedOptions().pluralCategories;
+        const cats = new Intl.PluralRules(codigo).resolvedOptions().pluralCategories;
+        return [...cats].sort((a, b) => CATEGORIAS.indexOf(a) - CATEGORIAS.indexOf(b));
     } catch {
         return ['one', 'other'];
     }
+}
+
+// Inteiros de 0 a 1000 que caem numa forma de plural do idioma (exemplos e "forma fixa").
+const INTEIROS = Array.from({ length: 1001 }, (_, n) => n);
+function numerosDaForma(codigo, categoria) {
+    if (categoria === 'zero') return [0]; // o i18next usa _zero para o 0 em qualquer língua, se existir
+    let regras;
+    try {
+        regras = new Intl.PluralRules(codigo);
+    } catch {
+        return [];
+    }
+    return INTEIROS.filter((n) => regras.select(n) === categoria);
+}
+
+// Forma fixa: vale para um número só (zero; one = 1 em inglês; two = 2 em árabe). Nela o texto pode trazer a palavra
+// no lugar do número ("um artigo", "مقالان"), então o {{count}} pode faltar. Nas outras ele é obrigatório.
+function formaFixa(codigo, categoria) {
+    return numerosDaForma(codigo, categoria).length === 1;
+}
+
+// Erro de {{...}} de um texto em relação ao pt-BR (null se estiver certo). Forma de plural: comparada com a forma
+// "other" do pt-BR (a dos números em geral), porque cada língua tem as próprias formas.
+function erroDePlaceholder(valor, original, chave, codigo, ehPlural) {
+    const esperado = placeholders(original);
+    const veio = placeholders(valor);
+    if (veio === esperado) return null;
+    const lista = (p) => p.split(',').filter(Boolean);
+    const categoria = ehPlural ? chave.match(SUFIXO_PLURAL)[2] : null;
+    const semCount = lista(esperado).filter((n) => n !== 'count').join(',');
+    if (categoria && lista(esperado).includes('count') && veio === semCount && formaFixa(codigo, categoria)) return null;
+    return `tem {{...}} diferente do ${REFERENCIA} (esperado: ${esperado || 'nenhum'}; veio: ${veio || 'nenhum'})`;
 }
 
 function lerJson(arquivo) {
@@ -158,6 +194,36 @@ function daReferencia(ref, plurais, chave) {
     if (m && plurais.has(m[1])) return ref.get(`${m[1]}_other`);
     return undefined;
 }
+
+// Formas de plural que faltam: texto com plural → categorias (a partir da lista do que falta traduzir).
+function pluraisFaltando(faltam, plurais) {
+    const saida = new Map();
+    for (const chave of faltam) {
+        const m = chave.match(SUFIXO_PLURAL);
+        if (!m || !plurais.has(m[1])) continue;
+        if (!saida.has(m[1])) saida.set(m[1], []);
+        saida.get(m[1]).push(m[2]);
+    }
+    return saida;
+}
+
+// "one (1), few (2–4, 22–24…), many (0, 5–20…), other (só decimais)" — formas da língua com exemplos de inteiros.
+function descreverFormas(codigo) {
+    return categoriasDe(codigo).map((c) => {
+        const ns = numerosDaForma(codigo, c);
+        if (!ns.length) return `${c} (só em decimal ou número abreviado, como "1 mi": o site não mostra)`;
+        const faixas = [];
+        for (const n of ns) {
+            const ultima = faixas[faixas.length - 1];
+            if (ultima && ultima[1] === n - 1) ultima[1] = n;
+            else faixas.push([n, n]);
+        }
+        const texto = faixas.slice(0, 3).map(([a, b]) => (a === b ? `${a}` : `${a}–${b}`)).join(', ');
+        return `${c} (${texto}${faixas.length > 3 ? '…' : ''})`;
+    }).join(', ');
+}
+
+const listaDePlurais = (mapa) => [...mapa].map(([g, cs]) => `\`${g}\` (${cs.join(', ')})`).join('; ');
 
 // ---------- Uso das chaves no código (só informativo) ----------
 
@@ -251,6 +317,19 @@ function conferir() {
         if (!idioma(codigo)) erros.push(`textos/${codigo}.json: idioma não cadastrado em registro.js`);
     }
 
+    // Número no texto: só por plural. {{count}} fora de um plural sai sempre com a mesma palavra ("1 artigos").
+    for (const [chave, valor] of ref) {
+        const m = chave.match(SUFIXO_PLURAL);
+        const ehPlural = m && plurais.has(m[1]);
+        const nomes = placeholders(valor).split(',');
+        if (!ehPlural && nomes.includes('count')) {
+            erros.push(`textos/${REFERENCIA}.json: ${chave} tem {{count}} e não é plural: troque por ${chave}_one e ${chave}_other (e as outras formas do ${REFERENCIA}: ${categoriasDe(REFERENCIA).join(', ')})`);
+        }
+        if (ehPlural && m[2] === 'other' && !nomes.includes('count')) {
+            erros.push(`textos/${REFERENCIA}.json: ${chave} precisa do {{count}} (é a forma dos números em geral)`);
+        }
+    }
+
     for (const i of IDIOMAS) {
         const proprio = textos.get(i.codigo);
         const nomeArq = `textos/${i.codigo}.json`;
@@ -276,9 +355,8 @@ function conferir() {
             }
             const vazios = (Array.isArray(valor) ? valor : [valor]).some((v) => typeof v !== 'string' || !v.trim());
             if (vazios) erros.push(`${nomeArq}: ${chave} está vazio`);
-            if (placeholders(valor) !== placeholders(original)) {
-                erros.push(`${nomeArq}: ${chave} tem {{...}} diferente do ${REFERENCIA} (esperado: ${placeholders(original) || 'nenhum'}; veio: ${placeholders(valor) || 'nenhum'})`);
-            }
+            const erroPh = erroDePlaceholder(valor, ehPlural ? ref.get(`${m[1]}_other`) : original, chave, i.codigo, ehPlural);
+            if (erroPh) erros.push(`${nomeArq}: ${chave} ${erroPh}`);
         }
 
         const faltam = [];
@@ -288,16 +366,24 @@ function conferir() {
             for (const [chave, valor] of proprio) {
                 if (JSON.stringify(base.get(chave)) === JSON.stringify(valor)) repetidos.push(chave);
             }
+            // A variante herda os plurais da base com a regra dela (src/i18n/plurais.js); só a forma que a língua da
+            // variante usa e a base não tem precisa ser escrita nela.
+            const catsBase = categoriasDe(i.base);
+            for (const grupo of plurais.keys()) {
+                for (const c of cats) {
+                    if (!catsBase.includes(c) && !proprio.has(`${grupo}_${c}`)) faltam.push(`${grupo}_${c}`);
+                }
+            }
         } else {
             for (const chave of necessarias) if (!proprio.has(chave)) faltam.push(chave);
         }
-        relatorio.push({ i, faltam, repetidos, cadeia: cadeia(i.codigo) });
+        relatorio.push({ i, faltam, repetidos, cadeia: cadeia(i.codigo), pluraisFaltando: pluraisFaltando(faltam, plurais) });
     }
 
     return { erros, avisos, relatorio, textos, ref, plurais, semUso: chavesSemUso(ref) };
 }
 
-function escreverPendencias({ relatorio, textos, avisos, semUso }) {
+function escreverPendencias({ relatorio, textos, avisos, semUso, plurais }) {
     const linhas = [
         '# Pendências dos idiomas do site',
         '',
@@ -325,6 +411,15 @@ function escreverPendencias({ relatorio, textos, avisos, semUso }) {
             linhas.push(`Iguais à base ${i.base} (podem ser apagados de textos/${i.codigo}.json): ${repetidos.map((k) => `\`${k}\``).join(', ')}`, '');
         }
     }
+    linhas.push('## Plurais', '');
+    linhas.push(`Textos com plural: ${[...plurais.keys()].map((g) => `\`${g}\``).join(', ') || 'nenhum'}. Cada idioma escreve as formas que a língua dele usa`);
+    linhas.push('(regra do `Intl.PluralRules`, a mesma que o i18next usa para escolher a forma pelo `count`). Variante herda as formas da');
+    linhas.push('base com a regra dela (`src/i18n/plurais.js`). Para um idioma ainda não cadastrado: `npm run idiomas -- plurais ar-SA`.', '');
+    linhas.push('| Idioma | Formas (exemplos de números) | Faltam |', '| --- | --- | --- |');
+    for (const { i, pluraisFaltando: pf } of relatorio) {
+        linhas.push(`| ${i.codigo} | ${descreverFormas(i.codigo)} | ${pf.size ? listaDePlurais(pf) : '—'} |`);
+    }
+    linhas.push('');
     if (avisos.length) linhas.push('## Avisos', '', ...avisos.map((a) => `- ${a}`), '');
     if (semUso.length) {
         linhas.push('## Textos que o código não usa', '', 'Conferência automática (pode errar em chave montada no código). Se não forem usados, apague do pt-BR e dos outros idiomas.', '');
@@ -359,7 +454,7 @@ function exportar(codigo, opcoes) {
     }
     const instrucoes = alvo.base
         ? `Variante ${alvo.codigo} de ${alvo.base}. Mude só os textos que são diferentes em ${alvo.nome}; os iguais são descartados ao importar.`
-        : `Traduza cada valor para ${alvo.nome} (${alvo.codigo}). Não mude as chaves nem o que está entre {{ }}. **texto** é negrito. Chaves terminadas em _one, _few, _many, _other são as formas de plural de ${alvo.codigo}.`;
+        : `Traduza cada valor para ${alvo.nome} (${alvo.codigo}). Não mude as chaves nem o que está entre {{ }}. **texto** é negrito. Chaves terminadas em _zero, _one, _two, _few, _many, _other são as formas de plural de ${alvo.codigo}, escolhidas pelo número {{count}}: ${descreverFormas(alvo.codigo)}. Na forma que vale para um número só, o {{count}} pode dar lugar à palavra (ex.: "um artigo").`;
     const arquivo = path.join(PASTA_PACOTES, `${alvo.codigo}.json`);
     gravarJson(arquivo, { _instrucoes: instrucoes, _origem: origem, textos: pacote });
     console.log(`Pacote para tradução: ${path.relative(RAIZ, arquivo)} (${Object.keys(pacote).length} textos, origem ${origem}).`);
@@ -382,7 +477,10 @@ function importarPacote(codigo) {
         if (!aceitas.has(chave)) { problemas.push(`${chave}: chave desconhecida`); continue; }
         if (valor === null || valor === undefined || (typeof valor === 'string' && !valor.trim())) continue;
         const original = daReferencia(ref, plurais, chave);
-        if (placeholders(valor) !== placeholders(original)) { problemas.push(`${chave}: {{...}} diferente do ${REFERENCIA}`); continue; }
+        const m = chave.match(SUFIXO_PLURAL);
+        const ehPlural = Boolean(m && plurais.has(m[1]));
+        const erroPh = erroDePlaceholder(valor, ehPlural ? ref.get(`${m[1]}_other`) : original, chave, alvo.codigo, ehPlural);
+        if (erroPh) { problemas.push(`${chave}: ${erroPh}`); continue; }
         if (base && JSON.stringify(base.get(chave)) === JSON.stringify(valor)) {
             if (atual.delete(chave)) descartados += 1;
             continue;
@@ -407,9 +505,10 @@ function executarConferencia(silencioso) {
     escreverPendencias(resultado);
     const { erros, avisos, relatorio } = resultado;
     if (!silencioso || erros.length) {
-        for (const { i, faltam, repetidos } of relatorio) {
+        for (const { i, faltam, repetidos, pluraisFaltando: pf } of relatorio) {
             const extra = repetidos.length ? `, ${repetidos.length} igual(is) à base` : '';
-            console.log(`  ${i.codigo.padEnd(6)} ${faltam.length ? `${faltam.length} a traduzir` : 'completo'}${extra}`);
+            const plural = pf.size ? `; plural sem as formas: ${listaDePlurais(pf).replace(/`/g, '')}` : '';
+            console.log(`  ${i.codigo.padEnd(6)} ${faltam.length ? `${faltam.length} a traduzir` : 'completo'}${extra}${plural}`);
         }
         for (const a of avisos) console.log(`  aviso: ${a}`);
     }
@@ -419,6 +518,25 @@ function executarConferencia(silencioso) {
     }
     const pendentes = relatorio.reduce((n, r) => n + r.faltam.length, 0);
     console.log(`Idiomas: ${IDIOMAS.length} idioma(s), sem erros${pendentes ? `; ${pendentes} texto(s) a traduzir (src/i18n/textos/PENDENCIAS.md)` : ''}.`);
+}
+
+// Formas de plural de cada idioma (cadastrado ou não: serve para preparar um idioma novo) e as que faltam.
+function mostrarPlurais(codigos) {
+    const { relatorio, plurais } = conferir();
+    const lista = codigos.length ? codigos : IDIOMAS.map((i) => i.codigo);
+    console.log(`Textos com plural no ${REFERENCIA}: ${[...plurais.keys()].join(', ') || 'nenhum'}`);
+    for (const pedido of lista) {
+        let canonico;
+        try {
+            [canonico] = Intl.getCanonicalLocales(pedido);
+        } catch {
+            throw new Error(`${pedido}: código de idioma inválido`);
+        }
+        const r = relatorio.find((x) => x.i.codigo === canonico);
+        console.log(`\n${canonico}${r ? '' : ' (não cadastrado)'}: ${descreverFormas(canonico)}`);
+        if (r) console.log(`  faltam: ${r.pluraisFaltando.size ? listaDePlurais(r.pluraisFaltando).replace(/`/g, '') : 'nada'}`);
+        else console.log(`  cada texto com plural precisa de: ${categoriasDe(canonico).join(', ')}`);
+    }
 }
 
 const [comando, codigo, ...resto] = process.argv.slice(2);
@@ -439,11 +557,12 @@ try {
         exportar(alvo.codigo, opcoes);
         executarConferencia(true);
     } else if (comando === 'exportar') exportar(codigo, opcoes);
+    else if (comando === 'plurais') mostrarPlurais(process.argv.slice(3));
     else if (comando === 'importar') {
         importarPacote(codigo);
         executarConferencia(true);
     } else {
-        console.error(`Comando desconhecido: ${comando}. Use: conferir | novo <idioma> | exportar <idioma> | importar <idioma>`);
+        console.error(`Comando desconhecido: ${comando}. Use: conferir | novo <idioma> | exportar <idioma> | importar <idioma> | plurais [idiomas]`);
         process.exit(1);
     }
 } catch (e) {
