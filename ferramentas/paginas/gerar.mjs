@@ -140,11 +140,11 @@ async function principal() {
                 pagina: { tipo: 'assunto', codigo, modulo },
                 dadosCabeca: { modulo },
                 dados: doIndice(), dadosRender: paraRender(),
-                lastmod: maisRecente(doModulo.map((a) => ajuda.atualizados.get(a.id))),
+                lastmod: maisRecente(doModulo.map((a) => ajuda.atualizados[idiomaConteudo]?.get(a.id))),
             });
         }
         for (const entrada of indice.artigos) {
-            const doc = ajuda.artigos.get(entrada.id);
+            const doc = ajuda.artigos[idiomaConteudo]?.get(entrada.id);
             if (!doc?.conteudo?.[idiomaConteudo]) {
                 console.warn(`  artigo ${entrada.id} (${idiomaConteudo}) está no índice mas não foi publicado; página não gerada.`);
                 continue;
@@ -155,7 +155,7 @@ async function principal() {
                 pagina: { tipo: 'artigo', codigo, artigo: { id: doc.id, slugs: slugsDoArtigo(doc) } },
                 dadosCabeca: { entrada, modulo },
                 dados: doIndice({ artigo }), dadosRender: paraRender({ artigo }),
-                lastmod: ajuda.atualizados.get(doc.id),
+                lastmod: ajuda.atualizados[idiomaConteudo]?.get(doc.id),
             });
         }
     }

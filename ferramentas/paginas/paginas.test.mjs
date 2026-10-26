@@ -8,7 +8,7 @@ import { SITE } from '../../src/seo/paginas.js';
 import { spawnSync } from 'node:child_process';
 import os from 'node:os';
 import { conferirDist, conferirLlms, conferirPagina, conferirRobots, conferirSitemap } from './conferir.mjs';
-import { conferirFontes } from './fontes.mjs';
+import { conferirFontes, lerAjuda } from './fontes.mjs';
 import { IDIOMAS } from '../../src/i18n/idiomas.js';
 
 const URL_ARTIGO = `${SITE}/pt-br/ajuda/criar-rdo`;
@@ -58,10 +58,11 @@ test('robots.txt e llms.txt: pega o que falta', () => {
 test('fontes: sem a Central ou os Termos o build para; com --sem-firestore só avisa', () => {
     const textos = Object.fromEntries(IDIOMAS.map((i) => [i.codigo, { atual: {} }]));
     const legal = { termos: textos, privacidade: textos };
-    const ajuda = { indices: { 'pt-BR': {} }, artigos: new Map([['a', {}]]) };
+    const ajuda = { indices: { 'pt-BR': {} }, artigos: { 'pt-BR': new Map([['a', {}]]) } };
     assert.deepEqual(conferirFontes({ ajuda, legal }), { erros: [], avisos: [] });
     assert.equal(conferirFontes({ ajuda: null, erroAjuda: new Error('fetch failed'), legal }).erros.length, 1);
-    assert.equal(conferirFontes({ ajuda: { indices: {}, artigos: new Map() }, legal }).erros.length, 1);
+    assert.equal(conferirFontes({ ajuda: { indices: {}, artigos: {} }, legal }).erros.length, 1);
+    assert.equal(conferirFontes({ ajuda: { indices: { 'pt-BR': {} }, artigos: { 'pt-BR': new Map() } }, legal }).erros.length, 1);
     assert.equal(conferirFontes({ ajuda, legal: {}, erroLegal: new Error('fetch failed') }).erros.length, 1);
     assert.equal(conferirFontes({ ajuda, legal: { termos: textos, privacidade: {} } }).erros.length, 1);
     const sem = conferirFontes({ ajuda: null, erroAjuda: new Error('x'), legal: {}, erroLegal: new Error('x'), semFirestore: true });
@@ -70,6 +71,83 @@ test('fontes: sem a Central ou os Termos o build para; com --sem-firestore só a
     const umIdioma = conferirFontes({ ajuda, legal: { termos: { 'pt-BR': {} }, privacidade: textos } });
     assert.equal(umIdioma.erros.length, 0);
     assert.match(umIdioma.avisos.join(), /termos: sem texto em pt-PT/);
+});
+
+// ---------- Central no formato novo (um documento por idioma): só o idioma de cada página ----------
+
+function cabecalho(idioma, hash = 'h1') {
+    return { formato: 2, idioma, hash, versao: 1, total: 1 };
+}
+function indiceDe(idioma, hash = 'h1') {
+    return { formato: 2, idioma, hash, versao: 1, total: 1, modulos: [{ id: 'diario', nome: 'Diário', nomes: {}, total: 1 }], artigos: [{ id: 'criar-rdo', slug: `rdo-${idioma}`, modulo: 'diario', hash: 'a1' }] };
+}
+function artigoDe(idioma, id = 'criar-rdo') {
+    return {
+        formato: 2, id, idioma, modulo: 'diario', publico: ['gestor'], pre_requisitos: [], relacionados: [],
+        conteudo: { slug: `rdo-${idioma}`, titulo: `Criar RDO (${idioma})`, resumo: 'r', tags: [], passos: [{ titulo: 'p', texto: 't' }] },
+        slugs: { 'pt-BR': 'rdo-pt-BR', 'en-US': 'rdo-en-US' }, busca: 'p t', hash: 'a1', hash_documento: 'x',
+    };
+}
+
+test('fontes: Central da pasta local (saída do publicador com --saida), no formato novo', async () => {
+    const pasta = fs.mkdtempSync(path.join(os.tmpdir(), 'ajuda-por-idioma-'));
+    const gravar = (caminho, dados) => {
+        const arq = path.join(pasta, ...`${caminho}.json`.split('/'));
+        fs.mkdirSync(path.dirname(arq), { recursive: true });
+        fs.writeFileSync(arq, JSON.stringify(dados));
+    };
+    try {
+        for (const idioma of ['pt-BR', 'en-US']) {
+            gravar(`ajuda_idiomas/${idioma}`, cabecalho(idioma));
+            gravar(`ajuda_idiomas/${idioma}/partes/indice`, indiceDe(idioma));
+            gravar(`ajuda_idiomas/${idioma}/artigos/criar-rdo`, artigoDe(idioma));
+        }
+        // Sobra do formato antigo na mesma pasta: o site não lê mais.
+        gravar('ajuda_indices/es-ES', indiceDe('es-ES'));
+        const ajuda = await lerAjuda({ local: pasta });
+        assert.deepEqual(Object.keys(ajuda.indices).sort(), ['en-US', 'pt-BR']);
+        const doc = ajuda.artigos['pt-BR'].get('criar-rdo');
+        assert.equal(doc.conteudo['pt-BR'].titulo, 'Criar RDO (pt-BR)');
+        assert.deepEqual(doc.conteudo['en-US'], { slug: 'rdo-en-US' }, 'só o endereço nos outros idiomas (hreflang)');
+        assert.equal(ajuda.artigos['en-US'].get('criar-rdo').conteudo['en-US'].titulo, 'Criar RDO (en-US)');
+        assert.ok(ajuda.atualizados['pt-BR'].get('criar-rdo'));
+        assert.deepEqual(conferirFontes({ ajuda, legal: { termos: {}, privacidade: {} }, semFirestore: true }).erros, []);
+    } finally {
+        fs.rmSync(pasta, { recursive: true });
+    }
+});
+
+test('fontes: Central do Firestore pela API REST, com páginas de artigos, só nos idiomas publicados', async () => {
+    const valor = (v) => (v === null ? { nullValue: null } : Array.isArray(v) ? { arrayValue: { values: v.map(valor) } }
+        : typeof v === 'object' ? { mapValue: { fields: campos(v) } } : typeof v === 'number' ? { integerValue: String(v) }
+            : typeof v === 'boolean' ? { booleanValue: v } : { stringValue: v });
+    const campos = (o) => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, valor(v)]));
+    const pedidos = [];
+    const original = globalThis.fetch;
+    globalThis.fetch = async (url) => {
+        const [caminho, busca = ''] = String(url).split('/documents/')[1].split('?');
+        pedidos.push(caminho + (busca ? `?${busca}` : ''));
+        const resposta = (corpo) => ({ ok: true, status: 200, json: async () => corpo });
+        if (caminho === 'ajuda_idiomas/pt-BR') return resposta({ fields: campos(cabecalho('pt-BR')) });
+        if (caminho === 'ajuda_idiomas/pt-BR/partes/indice') return resposta({ fields: campos(indiceDe('pt-BR')), updateTime: '2026-10-26T10:00:00Z' });
+        if (caminho === 'ajuda_idiomas/pt-BR/artigos') {
+            return busca.includes('pageToken')
+                ? resposta({ documents: [{ fields: campos(artigoDe('pt-BR', 'editar-rdo')), updateTime: '2026-10-25T10:00:00Z' }] })
+                : resposta({ documents: [{ fields: campos(artigoDe('pt-BR')), updateTime: '2026-10-26T09:00:00Z' }], nextPageToken: 'p2' });
+        }
+        return { ok: false, status: 404, json: async () => ({}) };
+    };
+    try {
+        const ajuda = await lerAjuda();
+        assert.deepEqual(Object.keys(ajuda.indices), ['pt-BR']);
+        assert.deepEqual([...ajuda.artigos['pt-BR'].keys()].sort(), ['criar-rdo', 'editar-rdo']);
+        assert.equal(ajuda.atualizados['pt-BR'].get('criar-rdo'), '2026-10-26T09:00:00Z');
+        assert.equal(ajuda.indicesAtualizados['pt-BR'], '2026-10-26T10:00:00Z');
+        assert.ok(pedidos.every((p) => p.startsWith('ajuda_idiomas/')), 'nada do formato antigo');
+        assert.ok(!pedidos.some((p) => p.startsWith('ajuda_idiomas/en-US/')), 'idioma sem cabeçalho: nem o índice nem os artigos');
+    } finally {
+        globalThis.fetch = original;
+    }
 });
 
 const SSR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'dist-ssr', 'entrada.js');
