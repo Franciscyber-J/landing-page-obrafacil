@@ -1,7 +1,8 @@
 // Busca da Central de Ajuda. Roda no navegador, sobre o índice do idioma (sem servidor).
 // Sem diferença de acento nem de maiúscula; título pesa mais que tag, tag mais que resumo
 // e resumo mais que o texto dos passos. Todas as palavras importantes da busca precisam
-// aparecer em algum lugar do artigo.
+// aparecer em algum lugar do artigo. Vale para qualquer escrita (latina, grega, cirílica,
+// árabe, hebraica, indianas, tailandesa, chinesa, japonesa, coreana).
 
 const PESOS = { titulo: 10, tags: 6, resumo: 3, busca: 1 };
 
@@ -13,12 +14,36 @@ const PALAVRAS_VAZIAS = new Set([
     'el', 'la', 'los', 'las', 'un', 'una', 'del', 'en', 'y', 'con', 'cómo', 'mi', 'es',
 ].map(normalizar));
 
+// Escritas sem espaço entre as palavras (tailandês, chinês, japonês). Faixas fixas de código, e
+// não \p{Script}, para o app (Dart) conferir exatamente igual. O coreano tem espaço: fica de fora.
+const SEM_ESPACO = [
+    [0x0E00, 0x0E7F], // tailandês
+    [0x3005, 0x3007], // 々 〆 〇
+    [0x3021, 0x3029], // numerais de Hangzhou
+    [0x3038, 0x303B], // 〸 〹 〺 〻
+    [0x3040, 0x30FF], // hiragana e katakana (com ー)
+    [0x31F0, 0x31FF], // katakana: extensão fonética
+    [0x3400, 0x4DBF], // ideogramas: extensão A
+    [0x4E00, 0x9FFF], // ideogramas
+    [0xF900, 0xFAFF], // ideogramas de compatibilidade
+    [0xFF66, 0xFF9F], // katakana de meia largura
+    [0x1B000, 0x1B16F], // kana: suplemento e extensões
+    [0x20000, 0x3FFFF], // ideogramas: extensões B em diante
+];
+
+// NFD e retirada das marcas U+0300–U+036F: tira o acento do latim, do grego e do cirílico
+// ("é" → "e", "ά" → "α", "й" → "и"). As outras marcas (vogais e sinais das escritas indianas e do
+// tailandês, por exemplo) fazem parte da palavra e ficam. Volta para NFC para o coreano não ficar
+// decomposto. O "ς" (sigma do fim da palavra) vira "σ": a mesma palavra em maiúsculas e em
+// minúsculas fica igual, aqui e no app. Fica só letra, marca e número, de qualquer escrita.
 export function normalizar(texto) {
     return String(texto ?? '')
         .normalize('NFD')
         .replace(/[̀-ͯ]/g, '')
+        .normalize('NFC')
         .toLowerCase()
-        .replace(/[^a-z0-9]+/g, ' ')
+        .replace(/ς/g, 'σ')
+        .replace(/[^\p{L}\p{M}\p{N}]+/gu, ' ')
         .trim();
 }
 
@@ -44,10 +69,42 @@ function variantes(termo) {
     return lista;
 }
 
+function semEspaco(codigo) {
+    return SEM_ESPACO.some(([de, ate]) => codigo >= de && codigo <= ate);
+}
+
+// Na consulta, cada pedaço contínuo de escrita sem espaço vira pares de letras vizinhas
+// ("写真を追加" → "写真", "真を", "を追", "追加"); pedaço de uma letra fica como está. O resto da
+// palavra fica inteiro ("rdoの写真" → "rdo", "の写", "写真"). No texto do artigo nada muda: o
+// pedaço de palavra já é achado.
+function pedacos(palavra) {
+    const termos = [];
+    let outra = '';
+    let seguidas = [];
+    const fecharSeguidas = () => {
+        if (seguidas.length === 1) termos.push(seguidas[0]);
+        for (let i = 0; i + 1 < seguidas.length; i++) termos.push(seguidas[i] + seguidas[i + 1]);
+        seguidas = [];
+    };
+    for (const letra of palavra) {
+        if (semEspaco(letra.codePointAt(0))) {
+            if (outra) termos.push(outra);
+            outra = '';
+            seguidas.push(letra);
+        } else {
+            fecharSeguidas();
+            outra += letra;
+        }
+    }
+    fecharSeguidas();
+    if (outra) termos.push(outra);
+    return termos;
+}
+
 export function termosDaConsulta(consulta) {
     const todos = normalizar(consulta).split(' ').filter(Boolean);
     const importantes = todos.filter((t) => !PALAVRAS_VAZIAS.has(t));
-    return importantes.length ? importantes : todos;
+    return (importantes.length ? importantes : todos).flatMap(pedacos);
 }
 
 function pontuarCampo(texto, termo) {
