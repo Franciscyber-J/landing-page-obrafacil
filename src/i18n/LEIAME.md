@@ -77,6 +77,34 @@ idioma) entram sozinhos no próximo build. Falta só:
 pt-BR, `{{...}}` diferente, texto vazio, lista no lugar de texto (ou o contrário), cadastro inválido
 (código, bandeira, moeda, palavras dos endereços). Texto faltando não para o build: entra em `PENDENCIAS.md`.
 
+## Fontes de cada escrita
+
+A Manrope (texto) e a Bricolage Grotesque (títulos) cobrem latim e vietnamita; a Manrope também cirílico e grego
+(nos títulos, essas letras saem na Manrope). Japonês, coreano, chinês tradicional, árabe (e persa e urdu), hebraico,
+devanágari (hindi) e tailandês usam a Noto Sans da escrita, dos pacotes `@fontsource-variable/noto-sans-*` (versão
+exata no `package.json`), servida pelo próprio site.
+
+- O idioma diz a escrita no campo `escrita` do `registro.js` (`'japonesa'`, `'coreana'`, `'chinesaTradicional'`,
+  `'arabe'`, `'hebraica'`, `'devanagari'`, `'tailandesa'`); sem o campo, latina. A variante herda o da base. Valor
+  que não existe para o build com a mensagem.
+- `src/fontes/escritas.js` monta no build o módulo `virtual:fontes-das-escritas` só com as escritas que algum idioma
+  usa. Cada escrita é um CSS (`src/fontes/<escrita>.css`) baixado só nas páginas dela: põe a Noto depois da Manrope
+  nas variáveis `--fonte-texto` e `--fonte-titulo` (`<html data-escrita="...">`). O CSS do pacote divide a fonte por
+  `unicode-range`: o navegador baixa só os pedaços das letras que estão na página.
+- Com os 8 idiomas de hoje o módulo é uma função vazia e o `dist/` sai igual, byte a byte, ao de antes das fontes.
+- A fonte entra depois do JavaScript abrir (a página pronta mostra antes a fonte do sistema para essas letras).
+
+## Fontes dos PDFs do app (`public/fontes/pdf/`)
+
+O app baixa daqui, na primeira vez que a pessoa gera um PDF em japonês, coreano, chinês tradicional, árabe, hebraico,
+hindi ou tailandês, a Noto Sans da escrita (normal e negrito), e confere o SHA-256 fixo no código dele
+(`gestao_obras/lib/services/pdf/escrita_do_pdf.dart`). Os arquivos são gerados por `ferramentas/fontes-pdf/gerar.py`
+(como usar no começo do arquivo), com o OFL de cada família e a `lista.json` (nome, bytes e SHA-256).
+
+- Arquivo novo tem nome novo (o começo do SHA-256 vai no nome). Nunca apague nem troque um arquivo que já foi
+  publicado: as versões antigas do app continuam buscando o dele.
+- Publique o site com os arquivos **antes** da versão do app que os usa.
+
 ## Hospedagem
 
 O `.htaccess` (`hospedagem/.htaccess`) entrega as páginas prontas e o `index.html` para
