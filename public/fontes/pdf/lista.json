@@ -1,0 +1,132 @@
+{
+  "origem": "https://github.com/google/fonts",
+  "commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "arquivos": [
+    {
+      "arquivo": "NotoSansJP-Regular.855b894c7322.ttf",
+      "familia": "NotoSansJP",
+      "peso": 400,
+      "bytes": 5033952,
+      "sha256": "855b894c732243c1e3e5c659259229aec039feb636e7bded75b276112ffe22e5",
+      "caracteres": 16732,
+      "origem": "ofl/notosansjp/NotoSansJP[wght].ttf"
+    },
+    {
+      "arquivo": "NotoSansJP-Bold.4492b1989b5c.ttf",
+      "familia": "NotoSansJP",
+      "peso": 700,
+      "bytes": 5025672,
+      "sha256": "4492b1989b5c7304103272a2623e6df713aceaf6967021a54b2101526c18b3c1",
+      "caracteres": 16732,
+      "origem": "ofl/notosansjp/NotoSansJP[wght].ttf"
+    },
+    {
+      "arquivo": "NotoSansKR-Regular.4ef3992d5177.ttf",
+      "familia": "NotoSansKR",
+      "peso": 400,
+      "bytes": 5653904,
+      "sha256": "4ef3992d517736a3c1719f2ff7891267603e404848346b007f8bf72cc2572dc5",
+      "caracteres": 23174,
+      "origem": "ofl/notosanskr/NotoSansKR[wght].ttf"
+    },
+    {
+      "arquivo": "NotoSansKR-Bold.eb4d894e2b03.ttf",
+      "familia": "NotoSansKR",
+      "peso": 700,
+      "bytes": 5648160,
+      "sha256": "eb4d894e2b031f20a090ee8b7082a26f7d00e91b2ac9d7b94237a9f06f2e487c",
+      "caracteres": 23174,
+      "origem": "ofl/notosanskr/NotoSansKR[wght].ttf"
+    },
+    {
+      "arquivo": "NotoSansTC-Regular.16e6f97c1cdf.ttf",
+      "familia": "NotoSansTC",
+      "peso": 400,
+      "bytes": 6863388,
+      "sha256": "16e6f97c1cdfd448b8c5c8c1204290a515e5232274d1caa639abc4fe74892d30",
+      "caracteres": 20745,
+      "origem": "ofl/notosanstc/NotoSansTC[wght].ttf"
+    },
+    {
+      "arquivo": "NotoSansTC-Bold.4bdd3fea9029.ttf",
+      "familia": "NotoSansTC",
+      "peso": 700,
+      "bytes": 6854248,
+      "sha256": "4bdd3fea902991ec693cea5a619cc10cb549a3c48de9b41d5e24a992b7c20930",
+      "caracteres": 20745,
+      "origem": "ofl/notosanstc/NotoSansTC[wght].ttf"
+    },
+    {
+      "arquivo": "NotoSansArabic-Regular.ec12005718f7.ttf",
+      "familia": "NotoSansArabic",
+      "peso": 400,
+      "bytes": 134408,
+      "sha256": "ec12005718f7a5286038e03dacaf8b40cb8ed3dadcc2115c6c383509f8ebdf2c",
+      "caracteres": 1561,
+      "origem": "ofl/notosansarabic/NotoSansArabic[wdth,wght].ttf"
+    },
+    {
+      "arquivo": "NotoSansArabic-Bold.edcd86f5a790.ttf",
+      "familia": "NotoSansArabic",
+      "peso": 700,
+      "bytes": 134380,
+      "sha256": "edcd86f5a790c1e15ed7088efe20701119569e6c0e366e5cf43ba34a1ac989cf",
+      "caracteres": 1561,
+      "origem": "ofl/notosansarabic/NotoSansArabic[wdth,wght].ttf"
+    },
+    {
+      "arquivo": "NotoSansHebrew-Regular.c80d694db03e.ttf",
+      "familia": "NotoSansHebrew",
+      "peso": 400,
+      "bytes": 30104,
+      "sha256": "c80d694db03e6c082d6bb50cb7534906d9fedcea92f94758b71faed60bb521b8",
+      "caracteres": 464,
+      "origem": "ofl/notosanshebrew/NotoSansHebrew[wdth,wght].ttf"
+    },
+    {
+      "arquivo": "NotoSansHebrew-Bold.e25f55602d9e.ttf",
+      "familia": "NotoSansHebrew",
+      "peso": 700,
+      "bytes": 30044,
+      "sha256": "e25f55602d9e6dc5f6c53ff2630380c6ea6af7ed551f3d8040b22d3d6ab19bad",
+      "caracteres": 464,
+      "origem": "ofl/notosanshebrew/NotoSansHebrew[wdth,wght].ttf"
+    },
+    {
+      "arquivo": "NotoSansDevanagari-Regular.ba2659464876.ttf",
+      "familia": "NotoSansDevanagari",
+      "peso": 400,
+      "bytes": 47312,
+      "sha256": "ba26594648763ef07dbec3396fd4ad85e67b0de3dc35cb82dd552721c0f249a8",
+      "caracteres": 551,
+      "origem": "ofl/notosansdevanagari/NotoSansDevanagari[wdth,wght].ttf"
+    },
+    {
+      "arquivo": "NotoSansDevanagari-Bold.ceb25258033f.ttf",
+      "familia": "NotoSansDevanagari",
+      "peso": 700,
+      "bytes": 47280,
+      "sha256": "ceb25258033f40fba7ec063d45368ffe854160c3bc92835f1d6e5bc0378f0e04",
+      "caracteres": 551,
+      "origem": "ofl/notosansdevanagari/NotoSansDevanagari[wdth,wght].ttf"
+    },
+    {
+      "arquivo": "NotoSansThai-Regular.26e029366440.ttf",
+      "familia": "NotoSansThai",
+      "peso": 400,
+      "bytes": 33016,
+      "sha256": "26e029366440a879f687a76ab8d3e7b3817fe9d0568bb9c51d81565b05be64da",
+      "caracteres": 426,
+      "origem": "ofl/notosansthai/NotoSansThai[wdth,wght].ttf"
+    },
+    {
+      "arquivo": "NotoSansThai-Bold.8c0763c71864.ttf",
+      "familia": "NotoSansThai",
+      "peso": 700,
+      "bytes": 32980,
+      "sha256": "8c0763c71864b2b0a633988b35d915aa8c29c35a5bac3f3dd8279c0c50449685",
+      "caracteres": 426,
+      "origem": "ofl/notosansthai/NotoSansThai[wdth,wght].ttf"
+    }
+  ]
+}
