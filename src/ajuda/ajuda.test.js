@@ -58,6 +58,16 @@ const ESCRITAS = [
     ['ar', 'تغيير كلمة المرور', 'تغيير كلمة المرور', ['تغيير', 'كلمة', 'المرور']],
     ['he', 'איך מוסיפים תמונה לדוח היומי?', 'איך מוסיפים תמונה לדוח היומי', ['איך', 'מוסיפים', 'תמונה', 'לדוח', 'היומי']],
     ['he', 'שינוי סיסמה', 'שינוי סיסמה', ['שינוי', 'סיסמה']],
+    // Sinais de vogal opcionais (harakat e tatweel do árabe, niqqud do hebraico): somem, dos dois lados. As letras
+    // com hamza ou madda (أ إ آ ؤ ئ) ficam; o maqaf hebraico (־) separa palavras.
+    ['ar', 'أَضِفْ صُوَرًا إِلَى التَّقْرِيرِ اليَوْمِيِّ', 'أضف صورا إلى التقرير اليومي', ['أضف', 'صورا', 'إلى', 'التقرير', 'اليومي']],
+    ['ar', 'صورًا', 'صورا', ['صورا']],
+    ['ar', 'تـغـيـيـر كَلِمَةِ المُرُورِ', 'تغيير كلمة المرور', ['تغيير', 'كلمة', 'المرور']],
+    ['ar', 'آخِر تقرير مُؤَرَّخ', 'آخر تقرير مؤرخ', ['آخر', 'تقرير', 'مؤرخ']],
+    ['he', 'אֵיךְ מוֹסִיפִים תְּמוּנָה לַדּוֹחַ הַיּוֹמִי?', 'איך מוסיפים תמונה לדוח היומי', ['איך', 'מוסיפים', 'תמונה', 'לדוח', 'היומי']],
+    ['he', 'שִׁינּוּי סִיסְמָה', 'שינוי סיסמה', ['שינוי', 'סיסמה']],
+    ['he', 'בֵּית־סֵפֶר', 'בית ספר', ['בית', 'ספר']],
+    ['he', '\uFB2Aלום', 'שלום', ['שלום']],
     ['hi', 'दैनिक रिपोर्ट में फ\u093Cोटो कैसे जोड\u093Cें?', 'दैनिक रिपोर्ट में फ\u093Cोटो कैसे जोड\u093Cें', ['दैनिक', 'रिपोर्ट', 'में', 'फ\u093Cोटो', 'कैसे', 'जोड\u093Cें']],
     ['hi', '\u095Eोटो जो\u095Cें', 'फ\u093Cोटो जोड\u093Cें', ['फ\u093Cोटो', 'जोड\u093Cें']],
     ['hi', 'पासवर्ड बदलें', 'पासवर्ड बदलें', ['पासवर्ड', 'बदलें']],
@@ -111,6 +121,46 @@ test('outras escritas: acha sem acento, sem maiúscula e por pedaço, e exige to
     assert.deepEqual(ids(buscar(OUTRAS, 'รายงาน ภาพถ่าย')), ['foto-th']);
     assert.deepEqual(ids(buscar(OUTRAS, '비밀번호')), ['senha-ko']);
     assert.deepEqual(ids(buscar(OUTRAS, '비밀')), ['senha-ko']);
+});
+
+// Índices de exemplo em árabe e hebraico: os mesmos do campo "exemplos" de ajuda/testes/busca_casos.json
+// (gestao_obras), com as consultas e os artigos esperados (o app tem de achar os mesmos).
+const EXEMPLOS = [
+    {
+        artigos: [
+            { id: 'exemplo-fotos', titulo: 'إضافة صورة إلى التقرير اليومي', resumo: 'أرفق صُوَرًا بالتقرير.', tags: ['صور', 'تقرير'], busca: 'كاميرا مَعرض' },
+            { id: 'exemplo-senha', titulo: 'تَغْيِيرُ كَلِمَةِ المُرُورِ', resumo: 'غيّر كلمة المرور من الإعدادات.', tags: ['أمان'], busca: '' },
+            { id: 'exemplo-relatorio', titulo: 'تـقـريـر بصيغة PDF', resumo: 'شارك التقرير.', tags: [], busca: '' },
+        ],
+        consultas: [
+            ['صورا', ['exemplo-fotos']], ['صورًا', ['exemplo-fotos']], ['صُوَر', ['exemplo-fotos']],
+            ['كلمة المرور', ['exemplo-senha']], ['كَلِمَة المُرُور', ['exemplo-senha']], ['غير', ['exemplo-senha']],
+            ['تقرير', ['exemplo-relatorio', 'exemplo-fotos']], ['معرض', ['exemplo-fotos']],
+            ['أمان', ['exemplo-senha']], ['امان', []],
+        ],
+    },
+    {
+        artigos: [
+            { id: 'exemplo-fotos', titulo: 'הוספת תמונה לדוח היומי', resumo: 'מצרפים תְּמוּנוֹת לַדּוֹחַ.', tags: ['תמונות'], busca: 'מצלמה' },
+            { id: 'exemplo-senha', titulo: 'שִׁינּוּי סִיסְמָה', resumo: 'מחליפים סיסמה בהגדרות.', tags: ['אבטחה'], busca: '' },
+            { id: 'exemplo-escola', titulo: 'בית־ספר', resumo: 'דוגמה עם מקף.', tags: [], busca: '' },
+        ],
+        consultas: [
+            ['תמונות', ['exemplo-fotos']], ['תְּמוּנוֹת', ['exemplo-fotos']], ['דוח', ['exemplo-fotos']],
+            ['סיסמה', ['exemplo-senha']], ['שינוי סִיסְמָה', ['exemplo-senha']],
+            ['ספר', ['exemplo-escola']], ['בית ספר', ['exemplo-escola']],
+        ],
+    },
+];
+
+test('árabe e hebraico: com e sem os sinais de vogal, no artigo e na consulta, acha o mesmo artigo', () => {
+    for (const { artigos, consultas } of EXEMPLOS) {
+        const indice = prepararBusca(artigos);
+        for (const [consulta, esperado] of consultas) assert.deepEqual(ids(buscar(indice, consulta)), esperado, consulta);
+    }
+    // A letra com hamza é outra letra (não vira ا); o ponto do shin e o dagesh das formas prontas somem.
+    assert.equal(normalizar('أ إ آ ؤ ئ'), 'أ إ آ ؤ ئ');
+    assert.equal(normalizar('\uFB2Aלום \uFB31ית'), 'שלום בית');
 });
 
 test('texto: negrito, link para artigo e lista', () => {

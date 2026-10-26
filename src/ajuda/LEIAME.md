@@ -18,6 +18,23 @@ As palavras `ajuda`/`help`/`ayuda` e `assunto`/`topic`/`tema` vêm de `src/i18n/
 mesma página no idioma novo. Endereço com o `id` do artigo ou do módulo, ou com o nome em outro idioma
 (ex.: `/en-us/help/criar-rdo`), é corrigido sozinho para o endereço certo.
 
+### Endereço na escrita do idioma
+
+O `slug` do artigo, o nome do assunto e as palavras do cadastro ficam na escrita do próprio idioma, sem
+transliterar (`/ja-jp/ヘルプ/写真を追加`, `/ar-sa/مساعدة/إضافة-صورة`). A regra é uma só (`palavraDeEnderecoValida`
+em `src/i18n/idiomas.js`, a mesma do esquema dos artigos no gestao_obras): letras (minúsculas onde a escrita tem
+maiúscula), as marcas da escrita, números e hífen entre as palavras, sem espaço, pontuação nem barra, em NFC.
+O nome do assunto (`slugDoTexto`) tira só o acento do latim, do grego e do cirílico e os sinais de vogal opcionais
+do árabe e do hebraico; as vogais do hindi e do tailandês e o dakuten do japonês ficam.
+
+| Onde | Como fica |
+| --- | --- |
+| Links do site (`rotas.artigo`, `caminhoArtigo`) e o React Router | As letras como são; o navegador põe os `%XX` |
+| Leitura do endereço (`analisarCaminho`) | Tira os `%XX` e passa para NFC; endereço que chega em NFD vai para o NFC |
+| Páginas prontas (`arquivoDaPagina`) | Pasta e arquivo com o nome em UTF-8 (`pt-br/ajuda/写真を追加.html`) |
+| canonical, hreflang, sitemap.xml, llms.txt, dados estruturados (`absoluto`) | Com os `%XX` (só ASCII), como pedem os padrões de URL e de sitemap |
+| Hostinger | O Apache tira os `%XX` e acha a pasta pelo nome em UTF-8: o `.htaccess` de hoje já serve (conferido com o Apache 2.4 e o próprio `.htaccess`) |
+
 Idiomas dos artigos: `pt-BR`, `pt-PT`, `en-US`, `en-GB`, `en-AU`, `en-CA`, `es-ES`, `es-MX`
 (`src/ajuda/idiomas.js`). Um idioma do site sem artigos próprios mostra os artigos do primeiro idioma
 da cadeia dele que tiver (ex.: francês → inglês), com a tela no idioma do site.
@@ -55,7 +72,7 @@ npm run dev
 | Arquivo | Faz |
 | --- | --- |
 | `src/ajuda/dados.js` | Lê índice e artigo (Firestore ou local), cache e endereço dos prints |
-| `src/ajuda/busca.js` | Busca sem acento e sem maiúscula; título > tag > resumo > texto dos passos |
+| `src/ajuda/busca.js` | Busca sem acento, sem maiúscula e sem os sinais de vogal opcionais do árabe e do hebraico (harakat, tatweel, niqqud); título > tag > resumo > texto dos passos |
 | `src/ajuda/texto.js` | Lê o texto dos passos: só `**negrito**`, lista `- ` e `[texto](artigo:id)`; nunca HTML |
 | `src/ajuda/marcacao.js` | Marcação animada dos prints: leitura conferida do campo `marcacao` e as contas do desenho (iguais às do app) |
 | `src/ajuda/idiomas.js` | Idiomas em que os artigos são publicados e qual usar para cada idioma do site |

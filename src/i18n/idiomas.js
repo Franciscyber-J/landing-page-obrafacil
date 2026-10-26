@@ -156,17 +156,41 @@ export const PAGINAS_ANTIGAS = {
     suporte: { pagina: 'suporte' },
 };
 
-// Nome do assunto no endereço: o nome do módulo no idioma, sem acento ("Financeiro da obra"
-// → financeiro-da-obra). Letras de outros alfabetos ficam como estão.
+// Palavra de endereço na escrita do idioma (o slug dos artigos, o nome do assunto e as palavras do cadastro, como
+// "ajuda"/"help"): letras (minúsculas onde a escrita tem maiúscula), as marcas da escrita (vogais do hindi e do
+// tailandês, dakuten do japonês...) e números, com hífen só entre as palavras; sem espaço, pontuação nem barra;
+// em NFC (um jeito só de escrever a mesma palavra, que é também o nome da pasta da página pronta). Mesmo formato
+// do slug dos artigos no gestao_obras (ajuda/esquema/artigo.schema.json, ferramentas/ajuda/src/validar.mjs).
+export const FORMATO_DE_ENDERECO = /^[\p{Ll}\p{Lm}\p{Lo}\p{N}][\p{Ll}\p{Lm}\p{Lo}\p{M}\p{N}]*(?:-[\p{Ll}\p{Lm}\p{Lo}\p{N}][\p{Ll}\p{Lm}\p{Lo}\p{M}\p{N}]*)*$/u;
+
+export function palavraDeEnderecoValida(palavra) {
+    if (typeof palavra !== 'string') return false;
+    return FORMATO_DE_ENDERECO.test(palavra) && palavra === palavra.normalize('NFC') && palavra === palavra.toLowerCase();
+}
+
+// Sinais de vogal opcionais do árabe e do hebraico (os mesmos que a busca ignora, src/ajuda/busca.js): o nome do
+// assunto no endereço fica sem eles, como se escreve no dia a dia.
+const VOGAIS_OPCIONAIS = /[\u064B-\u065F\u0670\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7\uFB1E\u0640]/g;
+
+// Nome do assunto no endereço: o nome do módulo no idioma, sem acento do latim, do grego e do cirílico
+// ("Financeiro da obra" → financeiro-da-obra, "Ρυθμίσεις" → ρυθμισεις) e sem os sinais de vogal opcionais do
+// árabe e do hebraico. As outras escritas ficam na própria escrita, com as marcas que fazem parte da palavra
+// ("रिपोर्ट", "รายงาน", "ダウンロード"), em NFC e minúsculas.
 export function slugDoTexto(texto) {
     return String(texto ?? '')
         .normalize('NFD')
-        .replace(/\p{M}+/gu, '')
+        .replace(/[\u0300-\u036F]/g, '')
+        .normalize('NFC')
+        .replace(VOGAIS_OPCIONAIS, '')
         .toLowerCase()
-        .replace(/[^\p{L}\p{N}]+/gu, '-')
+        .replace(/[^\p{L}\p{M}\p{N}]+/gu, '-')
+        // Marca solta no começo de uma palavra (sem a letra a que pertence) não fica no endereço.
+        .replace(/(^|-)\p{M}+/gu, '$1')
+        .replace(/-{2,}/g, '-')
         .replace(/^-+|-+$/g, '');
 }
 
+// Pedaço do endereço como texto: o navegador manda "写真" como %E5%86%99%E7%9C%9F. Com % solto, fica como veio.
 function decodificar(parte) {
     try {
         return decodeURIComponent(parte);
@@ -194,7 +218,11 @@ const PALAVRAS_COMPRA = new Map(IDIOMAS.flatMap((i) => COMPRAS.map((c) => [i.rot
 //       canonico: endereço certo quando o pedido veio com outra grafia (/PT-BR/help → /pt-br/ajuda)
 //   { tipo: 'desconhecido' }
 export function analisarCaminho(pathname) {
-    const segs = String(pathname ?? '/').split('/').filter(Boolean).map(decodificar);
+    const crus = String(pathname ?? '/').split('/').filter(Boolean).map(decodificar);
+    // A mesma palavra pode chegar decomposta (NFD, de um link escrito à mão ou copiado de outro sistema): ela é
+    // lida em NFC, a forma dos endereços do site, e a página vai para o endereço em NFC.
+    const segs = crus.map((s) => s.normalize('NFC'));
+    const foraDoNfc = segs.some((s, k) => s !== crus[k]);
     if (segs.length === 0) return { tipo: 'raiz' };
 
     // Object.hasOwn: "/constructor" ou "/toString" não podem ser lidos como endereço antigo.
@@ -218,7 +246,10 @@ export function analisarCaminho(pathname) {
     if (!i) return { tipo: 'desconhecido' };
     const resto = segs.slice(1);
     const r = i.rotas;
-    const pagina = (dados, canonico) => ({ tipo: 'pagina', codigo: i.codigo, ...dados, canonico });
+    const pagina = (dados, canonico) => ({
+        tipo: 'pagina', codigo: i.codigo, ...dados,
+        canonico: canonico ?? (foraDoNfc && dados.pagina !== 'nao-encontrado' ? `/${segs.join('/')}` : null),
+    });
     const prefixoErrado = segs[0] !== i.prefixo;
 
     if (resto.length === 0) return pagina({ pagina: 'inicio' }, prefixoErrado ? caminhoInicio(i.codigo) : null);
@@ -278,7 +309,7 @@ export function consultaQueSegue(lido, search) {
 // Âncora da página inicial (#precos, #pricing...) → seção (precos). Aceita a palavra de
 // qualquer idioma e o nome interno, para links antigos e compartilhados continuarem valendo.
 export function secaoDaAncora(hash) {
-    const palavra = decodificar(String(hash ?? '').replace(/^#/, '')).toLowerCase();
+    const palavra = decodificar(String(hash ?? '').replace(/^#/, '')).normalize('NFC').toLowerCase();
     if (!palavra) return null;
     if (SECOES.includes(palavra)) return palavra;
     for (const i of IDIOMAS) {
