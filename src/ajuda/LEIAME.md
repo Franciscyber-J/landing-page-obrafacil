@@ -34,15 +34,25 @@ desenha o artigo no navegador. Por isso, depois de publicar artigos novos, vale 
 
 ## De onde vem o conteúdo
 
-- **Produção:** `ajuda_indices/{idioma}` e `ajuda_artigos/{id}` pela API REST do Firestore
-  (leitura pública pelas regras; o site não usa chave nem SDK). Prints pelo endereço público do
-  Storage (`ajuda/prints/...`).
-- **Cache:** o índice e os artigos ficam guardados no navegador. O índice aparece na hora e é
-  conferido em segundo plano; o artigo só é baixado de novo quando o hash dele muda.
+- **Produção:** o formato novo, um documento por idioma (desde a `ajuda-por-idioma`, 26/10/2026;
+  `src/ajuda/formato.js`), pela API REST do Firestore (leitura pública pelas regras; o site não usa chave nem
+  SDK). O site lê só o idioma da página:
+  - `ajuda_idiomas/{idioma}`: cabeçalho (hash e versão do índice, ~0,1 KB), conferido uma vez por visita;
+  - `ajuda_idiomas/{idioma}/partes/indice`: o índice completo, só quando o hash do cabeçalho muda;
+  - `ajuda_idiomas/{idioma}/artigos/{id}`: o artigo naquele idioma, com o endereço (slug) dele nos outros idiomas
+    (`slugs`), para o menu de idiomas e o hreflang.
+  O formato antigo (`ajuda_indices/{idioma}` e `ajuda_artigos/{id}` com os idiomas juntos) não é mais lido pelo
+  site; o publicador continua gravando só para o app das lojas e o servidor. Idioma novo só existe no formato novo.
+  Prints pelo endereço público do Storage (`ajuda/prints/...`).
+- **Ordem de publicação:** o site novo só vai ao ar depois de o publicador gravar o formato novo (sem ele, o build
+  para com "Central de Ajuda não lida"). Ver `gestao_obras/docs/PUBLICACAO_PENDENTE.md`, seção `ajuda-por-idioma`.
+- **Cache:** o índice e os artigos ficam guardados no navegador (`ajuda:v2:`; o que o formato antigo guardou em
+  `ajuda:v1:` é apagado). O índice aparece na hora (o da página pronta ou o guardado) e é conferido em segundo
+  plano pelo cabeçalho; o artigo só é baixado de novo quando o hash dele no índice daquele idioma muda.
 - **Desenvolvimento:** sem tocar no Firestore, a partir da saída do publicador:
 
 ```powershell
-# no gestao_obras\ferramentas\ajuda
+# no gestao_obras\ferramentas\ajuda (grava ajuda_idiomas\..., com as mesmas pastas do Firestore)
 node bin/publicar.mjs --saida D:\Projetos\ajuda_saida
 # aqui
 $env:AJUDA_SAIDA = "D:\Projetos\ajuda_saida"
@@ -54,7 +64,8 @@ npm run dev
 
 | Arquivo | Faz |
 | --- | --- |
-| `src/ajuda/dados.js` | Lê índice e artigo (Firestore ou local), cache e endereço dos prints |
+| `src/ajuda/formato.js` | Caminhos do formato novo no Firestore, conferência dos documentos e o artigo do idioma no formato das páginas (`artigoParaPagina`); usado pelo site e pelas páginas prontas |
+| `src/ajuda/dados.js` | Lê cabeçalho, índice e artigo do idioma (Firestore ou local), cache e endereço dos prints |
 | `src/ajuda/busca.js` | Busca sem acento e sem maiúscula; título > tag > resumo > texto dos passos |
 | `src/ajuda/texto.js` | Lê o texto dos passos: só `**negrito**`, lista `- ` e `[texto](artigo:id)`; nunca HTML |
 | `src/ajuda/marcacao.js` | Marcação animada dos prints: leitura conferida do campo `marcacao` e as contas do desenho (iguais às do app) |
