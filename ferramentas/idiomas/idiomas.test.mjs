@@ -9,7 +9,7 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
-const COPIAR = ['ferramentas/idiomas/idiomas.mjs', 'src/i18n/idiomas.js', 'src/i18n/registro.js', 'src/i18n/pricing.js'];
+const COPIAR = ['ferramentas/idiomas/idiomas.mjs', 'src/i18n/idiomas.js', 'src/i18n/registro.js', 'src/i18n/pricing.js', 'src/i18n/formatos.js'];
 
 // Cópia mínima do projeto; mudar(textos) altera os textos (por idioma) antes de rodar. Devolve código, saída e pendências.
 function rodar(mudar = () => {}, args = []) {
