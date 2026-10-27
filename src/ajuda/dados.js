@@ -1,24 +1,35 @@
 // Leitura do conteúdo da Central de Ajuda.
 //
-// Produção: lê o Firestore pela API REST pública (as regras liberam só a leitura de
-// ajuda_artigos e ajuda_indices). Sem SDK do Firebase e sem chave: o site só lê.
+// Produção: lê o Firestore pela API REST pública (as regras liberam só a leitura da Central). Sem SDK do Firebase e
+// sem chave: o site só lê. Formato novo, um documento por idioma (src/ajuda/formato.js): o site lê só o idioma da
+// página (o cabeçalho, o índice quando ele muda e o artigo aberto).
 // Desenvolvimento: com AJUDA_SAIDA definido ao rodar "npm run dev", lê os documentos que o
 // publicador gravou com --saida (ver vite.config.js), sem tocar no Firestore.
 //
-// Cache: o índice de cada idioma e cada artigo ficam guardados no navegador. O índice é
-// mostrado na hora a partir do cache e conferido em segundo plano; o artigo só é baixado de
-// novo quando o hash dele no índice muda.
+// Cache: o índice de cada idioma e cada artigo ficam guardados no navegador. O índice é mostrado na hora (o da
+// página pronta ou o guardado) e conferido em segundo plano pelo cabeçalho do idioma (~0,3 KB): o índice inteiro só
+// é baixado de novo quando o hash muda. O artigo só é baixado de novo quando o hash dele no índice muda.
 
 import { ehIdiomaDaAjuda } from './idiomas.js';
 import { lerMarcacao } from './marcacao.js';
+import {
+    artigoDaPaginaValido, artigoDoIdiomaValido, artigoParaPagina, caminhoDoArtigo, caminhoDoCabecalho, caminhoDoIndice,
+    indiceValido,
+} from './formato.js';
 
 export const PROJETO = 'gestao-obras-app-8342c';
 export const BUCKET = 'gestao-obras-app-8342c.firebasestorage.app';
 const BASE_FIRESTORE = `https://firestore.googleapis.com/v1/projects/${PROJETO}/databases/(default)/documents`;
-const LOCAL = import.meta.env.DEV && import.meta.env.VITE_AJUDA_LOCAL === 'sim';
-const PRINTS_LOCAIS = import.meta.env.DEV && import.meta.env.VITE_AJUDA_PRINTS_LOCAIS === 'sim';
+// Fora do Vite (os testes no Node) não existe import.meta.env. As expressões ficam inteiras de propósito: o Vite troca
+// "import.meta.env.VITE_AJUDA_LOCAL" pelo valor (vite.config.js).
+const VITE = typeof import.meta.env !== 'undefined';
+const LOCAL = VITE && import.meta.env.DEV && import.meta.env.VITE_AJUDA_LOCAL === 'sim';
+const PRINTS_LOCAIS = VITE && import.meta.env.DEV && import.meta.env.VITE_AJUDA_PRINTS_LOCAIS === 'sim';
 const ID_ARTIGO = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-const PREFIXO_CACHE = 'ajuda:v1:';
+// v2: formato novo (um documento por idioma). O que o formato antigo guardou (ajuda:v1:, com os 8 idiomas em cada
+// artigo) é apagado na primeira leitura, para não ocupar o espaço do navegador.
+const PREFIXO_CACHE = 'ajuda:v2:';
+const PREFIXOS_ANTIGOS = ['ajuda:v1:'];
 
 // ---------- Conversão do formato da API REST do Firestore ----------
 
@@ -43,7 +54,26 @@ export function lerCampos(campos) {
 
 // ---------- Cache no navegador (pode não existir: aba anônima, bloqueio etc.) ----------
 
+let antigosApagados = false;
+
+function apagarCacheAntigo() {
+    if (antigosApagados) return;
+    antigosApagados = true;
+    try {
+        const armazenamento = window.localStorage;
+        const chaves = [];
+        for (let i = 0; i < armazenamento.length; i++) {
+            const chave = armazenamento.key(i);
+            if (chave && PREFIXOS_ANTIGOS.some((p) => chave.startsWith(p))) chaves.push(chave);
+        }
+        for (const chave of chaves) armazenamento.removeItem(chave);
+    } catch {
+        // Sem acesso ao armazenamento: nada a apagar.
+    }
+}
+
 function lerCache(chave) {
+    apagarCacheAntigo();
     try {
         const bruto = window.localStorage.getItem(PREFIXO_CACHE + chave);
         return bruto ? JSON.parse(bruto) : null;
@@ -72,24 +102,15 @@ function apagarCache(chave) {
 
 class NaoPublicado extends Error {}
 
-async function buscarDocumento(colecao, id) {
-    const url = LOCAL
-        ? `/__ajuda/${colecao}/${encodeURIComponent(id)}.json`
-        : `${BASE_FIRESTORE}/${colecao}/${encodeURIComponent(id)}`;
+// caminho: "ajuda_idiomas/pt-BR", "ajuda_idiomas/pt-BR/partes/indice"... (formato.js; idioma e id já conferidos).
+async function buscarDocumento(caminho) {
+    const partes = caminho.split('/').map(encodeURIComponent).join('/');
+    const url = LOCAL ? `/__ajuda/${partes}.json` : `${BASE_FIRESTORE}/${partes}`;
     const resposta = await fetch(url, { headers: { Accept: 'application/json' } });
-    if (resposta.status === 404) throw new NaoPublicado(`${colecao}/${id}`);
-    if (!resposta.ok) throw new Error(`HTTP ${resposta.status} ao ler ${colecao}/${id}`);
+    if (resposta.status === 404) throw new NaoPublicado(caminho);
+    if (!resposta.ok) throw new Error(`HTTP ${resposta.status} ao ler ${caminho}`);
     const corpo = await resposta.json();
     return LOCAL ? corpo : lerCampos(corpo.fields);
-}
-
-// Confere o mínimo para a tela não quebrar com um documento estranho.
-function indiceValido(doc, idioma) {
-    return doc && doc.idioma === idioma && Array.isArray(doc.artigos) && Array.isArray(doc.modulos);
-}
-
-function artigoValido(doc, id) {
-    return doc && doc.id === id && doc.conteudo && typeof doc.conteudo === 'object';
 }
 
 // ---------- Índice ----------
@@ -106,15 +127,24 @@ export function indiceGuardado(idioma) {
 
 // Confere o índice no servidor (uma vez por visita) e chama aoAtualizar(indice | null) quando
 // vier algo diferente do que estava guardado (null = nada publicado neste idioma).
+// [conhecido]: o índice que já está na tela (o da página pronta), quando o navegador não tem um guardado.
+// Lê primeiro o cabeçalho do idioma; o índice inteiro só quando o hash dele mudou.
 // Devolve a promessa da conferência.
-export function conferirIndice(idioma, aoAtualizar) {
+export function conferirIndice(idioma, aoAtualizar, conhecido = null) {
     if (!ehIdiomaDaAjuda(idioma)) throw new Error(`Idioma inválido: ${idioma}`);
-    const atual = indiceGuardado(idioma);
+    const atual = indiceGuardado(idioma) ?? (indiceValido(conhecido, idioma) ? conhecido : null);
 
     let conferencia = conferidos.get(idioma);
     if (!conferencia) {
-        conferencia = buscarDocumento('ajuda_indices', idioma)
-            .then((doc) => {
+        conferencia = buscarDocumento(caminhoDoCabecalho(idioma))
+            .then(async (cabecalho) => {
+                const igual = atual && cabecalho?.hash && cabecalho.hash === atual.hash
+                    && (cabecalho.versao ?? atual.versao) === atual.versao;
+                if (igual) {
+                    gravarCache(`indice:${idioma}`, atual); // o da página pronta passa a valer nas próximas visitas
+                    return atual;
+                }
+                const doc = await buscarDocumento(caminhoDoIndice(idioma));
                 if (!indiceValido(doc, idioma)) throw new Error('Índice da Central em formato inesperado');
                 gravarCache(`indice:${idioma}`, doc);
                 return doc;
@@ -140,24 +170,25 @@ export function conferirIndice(idioma, aoAtualizar) {
 // ---------- Artigo ----------
 
 // entrada: o item do artigo no índice do idioma (traz o hash daquele idioma).
+// Devolve o artigo no formato das páginas (formato.js, artigoParaPagina), ou null se não estiver publicado.
 export async function carregarArtigo(entrada, idioma) {
     if (!entrada || !ID_ARTIGO.test(entrada.id)) throw new Error('Artigo inválido');
-    const chave = `artigo:${entrada.id}`;
+    if (!ehIdiomaDaAjuda(idioma)) throw new Error(`Idioma inválido: ${idioma}`);
+    const chave = `artigo:${idioma}:${entrada.id}`;
     const guardado = lerCache(chave);
-    if (guardado && guardado.porIdioma?.[idioma] === entrada.hash && artigoValido(guardado.doc, entrada.id)) {
+    if (guardado && guardado.hash === entrada.hash && artigoDaPaginaValido(guardado.doc, entrada.id, idioma)) {
         return guardado.doc;
     }
-    let doc;
+    let bruto;
     try {
-        doc = await buscarDocumento('ajuda_artigos', entrada.id);
+        bruto = await buscarDocumento(caminhoDoArtigo(idioma, entrada.id));
     } catch (erro) {
         if (erro instanceof NaoPublicado) return null;
         throw erro;
     }
-    if (!artigoValido(doc, entrada.id) || !doc.conteudo[idioma]) throw new Error('Artigo em formato inesperado');
-    const porIdioma = guardado && guardado.doc?.hash === doc.hash ? { ...guardado.porIdioma } : {};
-    porIdioma[idioma] = entrada.hash;
-    gravarCache(chave, { porIdioma, doc });
+    if (!artigoDoIdiomaValido(bruto, entrada.id, idioma)) throw new Error('Artigo em formato inesperado');
+    const doc = artigoParaPagina(bruto);
+    gravarCache(chave, { hash: bruto.hash, doc });
     return doc;
 }
 

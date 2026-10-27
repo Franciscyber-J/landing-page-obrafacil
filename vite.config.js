@@ -34,12 +34,17 @@ function ajudaLocal() {
         const partes = decodeURIComponent((req.url ?? '').split('?')[0]).split('/').filter(Boolean)
         let arquivo = null
         let tipo = 'application/json; charset=utf-8'
-        if (saida && partes.length === 2 && partes[0] === 'ajuda_indices') {
-          const nome = partes[1].replace(/\.json$/, '')
-          if (IDIOMA.test(nome)) arquivo = path.join(saida, 'ajuda_indices', `${nome}.json`)
-        } else if (saida && partes.length === 2 && partes[0] === 'ajuda_artigos') {
-          const nome = partes[1].replace(/\.json$/, '')
-          if (ID.test(nome)) arquivo = path.join(saida, 'ajuda_artigos', `${nome}.json`)
+        // Formato novo da Central (src/ajuda/formato.js), com as mesmas pastas do Firestore:
+        // ajuda_idiomas/<idioma>.json, ajuda_idiomas/<idioma>/partes/indice.json e ajuda_idiomas/<idioma>/artigos/<id>.json
+        const ultimo = (partes[partes.length - 1] ?? '').replace(/\.json$/, '')
+        if (saida && partes[0] === 'ajuda_idiomas' && partes.length === 2) {
+          if (IDIOMA.test(ultimo)) arquivo = path.join(saida, 'ajuda_idiomas', `${ultimo}.json`)
+        } else if (saida && partes[0] === 'ajuda_idiomas' && partes.length === 4 && IDIOMA.test(partes[1])) {
+          if (partes[2] === 'partes' && ['indice', 'manifesto'].includes(ultimo)) {
+            arquivo = path.join(saida, 'ajuda_idiomas', partes[1], 'partes', `${ultimo}.json`)
+          } else if (partes[2] === 'artigos' && ID.test(ultimo)) {
+            arquivo = path.join(saida, 'ajuda_idiomas', partes[1], 'artigos', `${ultimo}.json`)
+          }
         } else if (prints && partes.length === 4 && partes[0] === 'prints') {
           const [, idioma, id, nome] = partes
           if (IDIOMA.test(idioma) && ID.test(id) && ARQUIVO_PRINT.test(nome)) {

@@ -33,13 +33,14 @@ function useIndice(idioma) {
 
     useEffect(() => {
         let vivo = true;
+        // O índice que já está na tela vai junto: com o mesmo hash no cabeçalho do idioma, nada mais é baixado.
         conferirIndice(idioma, (novo) => {
             if (vivo) setEstado(novo ? { chave, tipo: 'pronto', indice: novo } : { chave, tipo: 'vazio', indice: null });
-        }).catch(() => {
+        }, guardado).catch(() => {
             if (vivo) setEstado((e) => (e.chave === chave ? e : { chave, tipo: 'erro', indice: null }));
         });
         return () => { vivo = false; };
-    }, [idioma, chave]);
+    }, [idioma, chave, guardado]);
 
     let atual;
     if (estado.chave === chave && !(estado.tipo === 'erro' && guardado)) atual = estado;
@@ -81,8 +82,9 @@ function useEquivalente(tipo, idioma, moduloAtual, entrada, doc) {
         }
         if (tipo === 'artigo' && entrada) {
             if (conteudo === idioma) return caminhoArtigo(codigo, entrada.slug);
-            // Com o artigo carregado, o slug do outro idioma; antes disso, o id (que leva ao slug certo).
-            if (doc) return doc.conteudo?.[conteudo]?.slug ? caminhoArtigo(codigo, doc.conteudo[conteudo].slug) : caminhoAjuda(codigo);
+            // Com o artigo carregado, o slug do outro idioma; antes disso (ou se o artigo guardado ainda não tem o slug
+            // daquele idioma, como num idioma que acabou de entrar), o id, que leva ao slug certo.
+            if (doc?.conteudo?.[conteudo]?.slug) return caminhoArtigo(codigo, doc.conteudo[conteudo].slug);
             return caminhoArtigo(codigo, entrada.id);
         }
         return caminhoAjuda(codigo);

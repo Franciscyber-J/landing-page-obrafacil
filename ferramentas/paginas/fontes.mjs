@@ -5,6 +5,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { IDIOMAS } from '../../src/i18n/idiomas.js';
 import { IDIOMAS_AJUDA } from '../../src/ajuda/idiomas.js';
+import {
+    artigoDoIdiomaValido, artigoParaPagina, caminhoDoCabecalho, caminhoDoIndice, caminhoDosArtigos, indiceValido,
+} from '../../src/ajuda/formato.js';
 import { DOCUMENTOS, PROJETO, lerCampos, textoDaVersao, versoesDoDocumento } from '../../src/legal/firestore.js';
 import { compararVersoes, versaoValida } from '../../src/legal/escolha.js';
 
@@ -17,59 +20,73 @@ async function lerJson(url) {
 }
 
 // ---------- Central de Ajuda ----------
-// Resultado: { indices: { <idioma>: índice }, artigos: Map(id → artigo), atualizados: Map(id → data),
-//              indicesAtualizados: { <idioma>: data } }
+// Formato novo, um documento por idioma (src/ajuda/formato.js): de cada idioma, o cabeçalho, o índice e os artigos
+// daquele idioma.
+// Resultado: { indices: { <idioma>: índice }, indicesAtualizados: { <idioma>: data },
+//              artigos: { <idioma>: Map(id → artigo no formato das páginas) }, atualizados: { <idioma>: Map(id → data) } }
+// O artigo no formato das páginas tem o conteúdo inteiro no idioma e o endereço (slug) nos outros
+// (formato.js, artigoParaPagina), como o site recebe no navegador.
+
+// Guarda o artigo lido de um idioma, conferido.
+function guardarArtigo(saida, idioma, doc, data) {
+    if (!doc?.id || !artigoDoIdiomaValido(doc, doc.id, idioma)) {
+        console.warn(`  artigo fora do formato em ${caminhoDosArtigos(idioma)} (${doc?.id ?? 'sem id'}): ignorado.`);
+        return;
+    }
+    saida.artigos[idioma].set(doc.id, artigoParaPagina(doc));
+    saida.atualizados[idioma].set(doc.id, data ?? null);
+}
 
 async function ajudaDoFirestore() {
-    const indices = {};
-    const indicesAtualizados = {};
+    const saida = { indices: {}, indicesAtualizados: {}, artigos: {}, atualizados: {} };
     for (const idioma of IDIOMAS_AJUDA) {
-        let corpo;
         try {
-            corpo = await lerJson(`${BASE}/ajuda_indices/${idioma}`);
+            await lerJson(`${BASE}/${caminhoDoCabecalho(idioma)}`);
         } catch (erro) {
             if (/HTTP 404/.test(erro.message)) continue; // nada publicado neste idioma
             throw erro;
         }
-        indices[idioma] = lerCampos(corpo.fields);
-        indicesAtualizados[idioma] = corpo.updateTime ?? null;
+        const corpo = await lerJson(`${BASE}/${caminhoDoIndice(idioma)}`);
+        const indice = lerCampos(corpo.fields);
+        if (!indiceValido(indice, idioma)) throw new Error(`índice da Central em formato inesperado (${idioma})`);
+        saida.indices[idioma] = indice;
+        saida.indicesAtualizados[idioma] = corpo.updateTime ?? null;
+        saida.artigos[idioma] = new Map();
+        saida.atualizados[idioma] = new Map();
+        let pagina = '';
+        do {
+            const lista = await lerJson(`${BASE}/${caminhoDosArtigos(idioma)}?pageSize=100${pagina ? `&pageToken=${encodeURIComponent(pagina)}` : ''}`);
+            for (const d of lista.documents ?? []) guardarArtigo(saida, idioma, lerCampos(d.fields), d.updateTime);
+            pagina = lista.nextPageToken ?? '';
+        } while (pagina);
     }
-    const artigos = new Map();
-    const atualizados = new Map();
-    let pagina = '';
-    do {
-        const corpo = await lerJson(`${BASE}/ajuda_artigos?pageSize=100${pagina ? `&pageToken=${encodeURIComponent(pagina)}` : ''}`);
-        for (const d of corpo.documents ?? []) {
-            const doc = lerCampos(d.fields);
-            artigos.set(doc.id, doc);
-            atualizados.set(doc.id, d.updateTime ?? null);
-        }
-        pagina = corpo.nextPageToken ?? '';
-    } while (pagina);
-    return { indices, artigos, atualizados, indicesAtualizados };
+    return saida;
 }
 
-// Pasta gravada pelo publicador do gestao_obras (node bin/publicar.mjs --saida <pasta>).
+// Pasta gravada pelo publicador do gestao_obras (node bin/publicar.mjs --saida <pasta>), com as mesmas pastas do
+// Firestore: ajuda_idiomas/<idioma>.json, ajuda_idiomas/<idioma>/partes/indice.json e .../artigos/<id>.json.
 function ajudaLocal(pasta) {
     const ler = (arq) => JSON.parse(fs.readFileSync(arq, 'utf8'));
     const data = (arq) => fs.statSync(arq).mtime.toISOString();
-    const indices = {};
-    const indicesAtualizados = {};
+    const arquivo = (caminho) => path.join(pasta, ...`${caminho}.json`.split('/'));
+    const saida = { indices: {}, indicesAtualizados: {}, artigos: {}, atualizados: {} };
     for (const idioma of IDIOMAS_AJUDA) {
-        const arq = path.join(pasta, 'ajuda_indices', `${idioma}.json`);
-        if (!fs.existsSync(arq)) continue;
-        indices[idioma] = ler(arq);
-        indicesAtualizados[idioma] = data(arq);
+        if (!fs.existsSync(arquivo(caminhoDoCabecalho(idioma)))) continue;
+        const arqIndice = arquivo(caminhoDoIndice(idioma));
+        const indice = ler(arqIndice);
+        if (!indiceValido(indice, idioma)) throw new Error(`índice da Central em formato inesperado (${idioma})`);
+        saida.indices[idioma] = indice;
+        saida.indicesAtualizados[idioma] = data(arqIndice);
+        saida.artigos[idioma] = new Map();
+        saida.atualizados[idioma] = new Map();
+        const pastaArtigos = path.join(pasta, ...caminhoDosArtigos(idioma).split('/'));
+        if (!fs.existsSync(pastaArtigos)) continue;
+        for (const nome of fs.readdirSync(pastaArtigos).filter((n) => n.endsWith('.json'))) {
+            const arq = path.join(pastaArtigos, nome);
+            guardarArtigo(saida, idioma, ler(arq), data(arq));
+        }
     }
-    const artigos = new Map();
-    const atualizados = new Map();
-    for (const nome of fs.readdirSync(path.join(pasta, 'ajuda_artigos')).filter((n) => n.endsWith('.json'))) {
-        const arq = path.join(pasta, 'ajuda_artigos', nome);
-        const doc = ler(arq);
-        artigos.set(doc.id, doc);
-        atualizados.set(doc.id, data(arq));
-    }
-    return { indices, artigos, atualizados, indicesAtualizados };
+    return saida;
 }
 
 export async function lerAjuda({ local = null } = {}) {
@@ -135,7 +152,8 @@ export function conferirFontes({ ajuda, erroAjuda = null, legal, erroLegal = nul
     const erros = [];
     const avisos = [];
     const falta = (texto) => (semFirestore ? avisos : erros).push(texto);
-    if (erroAjuda || !ajuda || !Object.keys(ajuda.indices ?? {}).length || !ajuda.artigos?.size) {
+    const temArtigos = Object.values(ajuda?.artigos ?? {}).some((lista) => lista?.size);
+    if (erroAjuda || !ajuda || !Object.keys(ajuda.indices ?? {}).length || !temArtigos) {
         falta(`Central de Ajuda não lida (${erroAjuda?.message ?? 'nada publicado'}): sem páginas prontas dos artigos e fora do sitemap.`);
     }
     if (erroLegal) {
