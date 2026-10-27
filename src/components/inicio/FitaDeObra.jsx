@@ -2,7 +2,7 @@
 // na seção de recursos). Andam sozinhas e aceleram com a rolagem; com "menos movimento", ficam paradas.
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { COM_MOVIMENTO, ScrollTrigger, gsap, useGSAP } from '../../movimento/index.js';
+import { COM_MOVIMENTO, ScrollTrigger, gsap, sentidoDoIdioma, useGSAP } from '../../movimento/index.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import styles from './FitaDeObra.module.css';
 
@@ -32,10 +32,12 @@ export default function FitaDeObra() {
 
     useGSAP(() => {
         const mm = gsap.matchMedia();
+        // Na escrita da direita para a esquerda o trilho começa na direita: as fitas andam ao contrário (sem emenda).
+        const s = sentidoDoIdioma(codigo);
         mm.add(COM_MOVIMENTO, () => {
             const [a, b] = gsap.utils.toArray('[data-m="trilho"]', raiz.current);
-            const ida = gsap.to(a, { xPercent: -50, duration: 38, ease: 'none', repeat: -1 });
-            const volta = gsap.fromTo(b, { xPercent: -50 }, { xPercent: 0, duration: 44, ease: 'none', repeat: -1 });
+            const ida = gsap.to(a, { xPercent: -50 * s, duration: 38, ease: 'none', repeat: -1 });
+            const volta = gsap.fromTo(b, { xPercent: -50 * s }, { xPercent: 0, duration: 44, ease: 'none', repeat: -1 });
             // A velocidade da rolagem dá um empurrão nas fitas, que voltam ao ritmo normal aos poucos.
             const gatilho = ScrollTrigger.create({
                 trigger: raiz.current,

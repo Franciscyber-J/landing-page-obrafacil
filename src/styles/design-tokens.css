@@ -109,6 +109,23 @@
   --color-pro: var(--laranja-texto);
   --transition-fast: var(--tempo) var(--suave);
   --transition-normal: var(--tempo) var(--suave);
+
+  /* Direção da escrita. O <html> já vem com dir="ltr" ou dir="rtl" do build e do App (campo direcao do cadastro).
+     Lados de margem, recuo e posição usam as propriedades lógicas (margin-inline-start, inset-inline-end...), que
+     viram sozinhas; estas variáveis cobrem o que o CSS não tem em versão lógica:
+     --sentido multiplica o deslocamento horizontal das animações (1 ou -1);
+     --inicio e --fim são o lado físico em que a linha começa e termina (transform-origin).
+     Os gradientes das luzes e do destaque são decorativos e não espelham. */
+  --sentido: 1;
+  --inicio: left;
+  --fim: right;
+}
+
+/* Árabe e hebraico (da direita para a esquerda) */
+:root[dir='rtl'] {
+  --sentido: -1;
+  --inicio: right;
+  --fim: left;
 }
 
 /* Medidas no celular */

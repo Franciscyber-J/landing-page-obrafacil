@@ -116,7 +116,7 @@ export function Artigos({ codigo, itens }) {
                 <li key={a.id}>
                     <Link to={caminhoArtigo(codigo, a.id)}>
                         <span>{a.texto}</span>
-                        <ArrowRight size={18} aria-hidden="true" />
+                        <ArrowRight size={18} aria-hidden="true" className="seta" />
                     </Link>
                 </li>
             ))}

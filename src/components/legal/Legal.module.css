@@ -110,7 +110,8 @@
   display: flex;
   align-items: center;
   min-height: 44px;
-  padding: 10px 0 10px 10px;
+  padding-block: 10px;
+  padding-inline: 10px 0;
   border-radius: var(--raio-p);
   color: var(--tinta-2);
   text-decoration: none;
@@ -159,7 +160,7 @@
 
 .lista {
   margin: 0 0 1em;
-  padding-left: 1.25em;
+  padding-inline-start: 1.25em;
   list-style: square;
 }
 

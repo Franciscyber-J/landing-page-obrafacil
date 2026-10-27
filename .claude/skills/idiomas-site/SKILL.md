@@ -10,7 +10,9 @@ Referência completa: `src/i18n/LEIAME.md`. Resumo do que fazer em cada caso.
 ## Texto novo ou alterado
 
 1. Chave nova primeiro em `src/i18n/textos/pt-BR.json` (referência), depois nos idiomas-base (`en-US`, `es-ES`).
-   Plural: `_one`, `_many` e `_other` onde a língua usa (o `npm run idiomas` diz quais faltam).
+   Número que muda (`{{count}}`) é sempre plural: `_one`, `_other` e as formas que a língua usa (`_zero`, `_two`,
+   `_few`, `_many`; o `npm run idiomas` diz quais faltam e `npm run idiomas -- plurais ar-SA` mostra as de um idioma
+   novo). Ver "Plurais" no `src/i18n/LEIAME.md`.
 2. Variante regional (pt-PT, en-GB, en-AU, en-CA, es-MX) só recebe a chave se o texto for diferente da base.
 3. `{{placeholders}}` iguais em todos os idiomas.
 4. `npm run idiomas` sem erros. Ver `src/i18n/textos/PENDENCIAS.md` (o que falta, o que repete a base, o que não é usado).

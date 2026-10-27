@@ -106,7 +106,7 @@
   cursor: pointer;
   color: var(--texto-2);
   font-size: 0.9375rem;
-  text-align: left;
+  text-align: start;
   transition: color var(--tempo) var(--suave);
 }
 
@@ -128,8 +128,7 @@
   content: '';
   position: absolute;
   top: 0;
-  left: var(--margem);
-  right: var(--margem);
+  inset-inline: var(--margem);
   border-top: 1px solid var(--linha);
 }
 

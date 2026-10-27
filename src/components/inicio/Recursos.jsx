@@ -1,4 +1,4 @@
-// O que o app faz, em campos de placa (título à esquerda, explicação à direita), ao lado da tela real.
+// O que o app faz, em campos de placa (título no começo da linha, explicação no fim), ao lado da tela real.
 // Movimento (tela larga): o celular fica parado enquanto a lista rola; o item que passa pelo meio da
 // tela acende e o celular mostra a tela daquela parte, girando um pouco em 3D. Uma linha laranja
 // marca o quanto da lista já foi lido. No celular e com "menos movimento", a lista entra em sequência.
@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { idDaSecao } from '../../i18n/idiomas.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import { enderecoDaTela } from '../../telas.js';
-import { COM_MOVIMENTO, LARGO, ScrollTrigger, entrarEmGrupo, gsap, jaApareceu, useGSAP } from '../../movimento/index.js';
+import { COM_MOVIMENTO, LARGO, ScrollTrigger, entrarEmGrupo, gsap, jaApareceu, sentidoDoIdioma, useGSAP } from '../../movimento/index.js';
 import { comDestaque } from '../../texto.jsx';
 import styles from './Recursos.module.css';
 import { useLinkComecar } from '../../useNavegador.js';
@@ -46,6 +46,7 @@ export default function Recursos() {
     useGSAP(() => {
         const mm = gsap.matchMedia();
         const q = gsap.utils.selector(raiz);
+        const s = sentidoDoIdioma(codigo);
         mm.add(LARGO, () => {
             setHistoria(true);
             const itens = q('[data-m="item"]');
@@ -55,8 +56,8 @@ export default function Recursos() {
                 end: 'bottom 55%',
                 onToggle: (self) => { if (self.isActive) mostrar(i); },
             }));
-            gsap.fromTo(q('[data-m="aparelho"]'), { rotationY: 14, rotationX: 4 }, {
-                rotationY: -14,
+            gsap.fromTo(q('[data-m="aparelho"]'), { rotationY: 14 * s, rotationX: 4 }, {
+                rotationY: -14 * s,
                 rotationX: -2,
                 ease: 'none',
                 scrollTrigger: { trigger: q('[data-m="lista"]')[0], start: 'top 70%', end: 'bottom 40%', scrub: 0.6 },
@@ -78,7 +79,7 @@ export default function Recursos() {
             };
         });
         mm.add(`${COM_MOVIMENTO} and (max-width: 1020px)`, () => {
-            entrarEmGrupo(q('[data-m="item"]'), { gatilho: q('[data-m="lista"]')[0], de: { x: -30, autoAlpha: 0 } });
+            entrarEmGrupo(q('[data-m="item"]'), { gatilho: q('[data-m="lista"]')[0], de: { x: -30 * s, autoAlpha: 0 } });
         });
     }, { scope: raiz, dependencies: [codigo], revertOnUpdate: true });
 

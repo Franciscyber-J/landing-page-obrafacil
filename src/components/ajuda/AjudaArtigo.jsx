@@ -140,13 +140,13 @@ export default function AjudaArtigo({ codigo, idioma, indice, preparado, rotas, 
                         <nav className={styles.anteriorProximo} aria-label={t('ajuda.navegacaoArtigos')}>
                             {anterior ? (
                                 <Link to={rotas.artigo(anterior.slug)} className={styles.cartaoNavegacao}>
-                                    <span className={styles.cartaoNavegacaoRotulo}>← {t('ajuda.anterior')}</span>
+                                    <span className={styles.cartaoNavegacaoRotulo}><span className="seta" aria-hidden="true">←</span> {t('ajuda.anterior')}</span>
                                     <span>{anterior.titulo}</span>
                                 </Link>
                             ) : <span />}
                             {proximo && (
                                 <Link to={rotas.artigo(proximo.slug)} className={`${styles.cartaoNavegacao} ${styles.cartaoNavegacaoProximo}`}>
-                                    <span className={styles.cartaoNavegacaoRotulo}>{t('ajuda.proximo')} →</span>
+                                    <span className={styles.cartaoNavegacaoRotulo}>{t('ajuda.proximo')} <span className="seta" aria-hidden="true">→</span></span>
                                     <span>{proximo.titulo}</span>
                                 </Link>
                             )}

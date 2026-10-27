@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { linkWhatsApp } from '../../links.js';
 import { comDestaque } from '../../texto.jsx';
-import { COM_MOUSE, COM_MOVIMENTO, gsap, jaApareceu, magnetico, tituloSobe, useGSAP } from '../../movimento/index.js';
+import { COM_MOUSE, COM_MOVIMENTO, gsap, jaApareceu, magnetico, sentidoDoIdioma, tituloSobe, useGSAP } from '../../movimento/index.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import styles from './Chamada.module.css';
 import { useLinkComecar } from '../../useNavegador.js';
@@ -17,11 +17,12 @@ export default function Chamada() {
     useGSAP(() => {
         const mm = gsap.matchMedia();
         const q = gsap.utils.selector(raiz);
+        const s = sentidoDoIdioma(codigo);
         mm.add(COM_MOVIMENTO, () => {
             if (jaApareceu(raiz.current)) return;
             const gatilho = { trigger: raiz.current, start: 'top 80%', once: true };
             tituloSobe(q('[data-m="titulo"]')[0], { scrollTrigger: gatilho, stagger: 0.12 });
-            gsap.from(q('[data-m="lado"]'), { x: 40, autoAlpha: 0, duration: 1, delay: 0.3, scrollTrigger: gatilho });
+            gsap.from(q('[data-m="lado"]'), { x: 40 * s, autoAlpha: 0, duration: 1, delay: 0.3, scrollTrigger: gatilho });
         });
         mm.add(COM_MOUSE, () => magnetico(q('[data-m="botao"]')[0], { forca: 0.3 }));
     }, { scope: raiz, dependencies: [codigo], revertOnUpdate: true });

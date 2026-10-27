@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { idDaSecao } from '../../i18n/idiomas.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import { enderecoDaTela } from '../../telas.js';
-import { COM_MOVIMENTO, gsap, jaApareceu, useGSAP } from '../../movimento/index.js';
+import { COM_MOVIMENTO, gsap, inicioDoIdioma, jaApareceu, sentidoDoIdioma, useGSAP } from '../../movimento/index.js';
 import { comDestaque } from '../../texto.jsx';
 import styles from './Cliente.module.css';
 import { useLinkComecar } from '../../useNavegador.js';
@@ -19,6 +19,8 @@ export default function Cliente() {
 
     useGSAP(() => {
         const mm = gsap.matchMedia();
+        const s = sentidoDoIdioma(codigo);
+        const inicio = inicioDoIdioma(codigo);
         mm.add(COM_MOVIMENTO, () => {
             if (jaApareceu(comparacao.current)) return;
             const q = gsap.utils.selector(comparacao);
@@ -33,11 +35,11 @@ export default function Cliente() {
                         .to(digitando, { autoAlpha: 0, duration: 0.15 }, '+=0.5')
                         .set(digitando, { display: 'none' });
                 }
-                tl.from(msg, { y: 14, scale: 0.94, autoAlpha: 0, transformOrigin: 'left bottom', duration: 0.5, ease: 'back.out(1.6)' });
+                tl.from(msg, { y: 14, scale: 0.94, autoAlpha: 0, transformOrigin: `${inicio} bottom`, duration: 0.5, ease: 'back.out(1.6)' });
             });
-            tl.from(q('[data-m="legenda-depois"]'), { scaleX: 0, transformOrigin: 'left center', duration: 0.7, ease: 'power3.inOut' }, '+=0.15')
-                .from(q('[data-m="portal"]'), { x: 80, rotationY: -35, autoAlpha: 0, duration: 1.1 }, '-=0.3')
-                .from(q('[data-m="acesso"]'), { y: 80, rotationZ: 8, autoAlpha: 0, duration: 1 }, '-=0.6');
+            tl.from(q('[data-m="legenda-depois"]'), { scaleX: 0, transformOrigin: `${inicio} center`, duration: 0.7, ease: 'power3.inOut' }, '+=0.15')
+                .from(q('[data-m="portal"]'), { x: 80 * s, rotationY: -35 * s, autoAlpha: 0, duration: 1.1 }, '-=0.3')
+                .from(q('[data-m="acesso"]'), { y: 80, rotationZ: 8 * s, autoAlpha: 0, duration: 1 }, '-=0.6');
         });
     }, { scope: comparacao, dependencies: [codigo], revertOnUpdate: true });
 
