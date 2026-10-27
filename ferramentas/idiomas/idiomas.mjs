@@ -28,12 +28,13 @@ const ARQUIVO_PENDENCIAS = path.join(PASTA_TEXTOS, 'PENDENCIAS.md');
 const PASTA_BANDEIRAS = path.join(RAIZ, 'node_modules', 'flag-icons', 'flags', '4x3');
 
 const importar = (rel) => import(pathToFileURL(path.join(RAIZ, rel)).href);
-const { IDIOMAS, REFERENCIA, INTERNACIONAL, SECOES, cadeia, idioma } = await importar('src/i18n/idiomas.js');
+const { IDIOMAS, REFERENCIA, INTERNACIONAL, SECOES, cadeia, idioma, palavraDeEnderecoValida } = await importar('src/i18n/idiomas.js');
 const { APPLE_PRICES } = await importar('src/i18n/pricing.js');
 
 const CATEGORIAS = ['zero', 'one', 'two', 'few', 'many', 'other'];
 const SUFIXO_PLURAL = new RegExp(`^(.*)_(${CATEGORIAS.join('|')})$`);
-const PALAVRA_ENDERECO = /^[\p{Ll}\p{Lo}\p{N}]+(?:-[\p{Ll}\p{Lo}\p{N}]+)*$/u;
+// Palavras dos endereços (rotas do cadastro): na escrita do idioma, pela mesma regra do slug dos artigos
+// (palavraDeEnderecoValida, em src/i18n/idiomas.js).
 const PARECE_PREFIXO = /^[a-z]{2}(-[a-z]{2})?$/;
 
 // ---------- Utilidades ----------
@@ -283,7 +284,7 @@ function conferirCadastro(erros) {
         const palavras = [['ajuda', i.rotas.ajuda], ['assunto', i.rotas.assunto], ['termos', i.rotas.termos], ['privacidade', i.rotas.privacidade], ...SECOES.map((s) => [`secoes.${s}`, i.rotas.secoes[s]])];
         for (const [campo, valor] of palavras) {
             if (!valor) erros.push(`${onde}: falta rotas.${campo}${i.base ? ' (nem na base)' : ''}`);
-            else if (!PALAVRA_ENDERECO.test(valor)) erros.push(`${onde}: rotas.${campo} "${valor}" só pode ter letras minúsculas, números e hífen`);
+            else if (!palavraDeEnderecoValida(valor)) erros.push(`${onde}: rotas.${campo} "${valor}" só pode ter letras da escrita do idioma (minúsculas onde ela tem maiúscula), as marcas dela, números e hífen entre as palavras, em NFC (sem espaço, pontuação nem barra)`);
             else if (campo === 'ajuda' && PARECE_PREFIXO.test(valor)) erros.push(`${onde}: rotas.ajuda "${valor}" parece código de idioma; use uma palavra maior`);
         }
         if (i.rotas.ajuda && i.rotas.ajuda === i.rotas.assunto) erros.push(`${onde}: rotas.ajuda e rotas.assunto não podem ser iguais`);

@@ -4,10 +4,10 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SITE } from '../../src/seo/paginas.js';
+import { SITE, absoluto, arquivoDaPagina } from '../../src/seo/paginas.js';
 import { spawnSync } from 'node:child_process';
 import os from 'node:os';
-import { conferirDist, conferirLlms, conferirPagina, conferirRobots, conferirSitemap } from './conferir.mjs';
+import { conferirDist, conferirLlms, conferirPagina, conferirRobots, conferirSitemap, enderecoDoArquivo } from './conferir.mjs';
 import { conferirFontes } from './fontes.mjs';
 import { IDIOMAS } from '../../src/i18n/idiomas.js';
 
@@ -48,6 +48,14 @@ test('sitemap: pega endereço repetido, hreflang que não volta e & sem escape',
     const repetido = `${cabeca}${url(a, [['pt-BR', a], ['x-default', a]])}${url(a, [['pt-BR', a], ['x-default', a]])}</urlset>`;
     assert.match(conferirSitemap(repetido).problemas.join(), /repetido/);
     assert.match(conferirSitemap(`${cabeca}${url(`${SITE}/a?b&c`, [])}</urlset>`).problemas.join(), /& sem escape/);
+});
+
+test('endereço na escrita do idioma: o arquivo da página pronta volta ao mesmo endereço do canonical', () => {
+    // Exemplos só de teste (japonês, árabe, hindi, tailandês, coreano), nenhum artigo de verdade.
+    for (const caminho of ['/pt-br/ajuda/写真を追加', '/en-us/help/إضافة-صورة', '/en-us/help/topic/दैनिक-रिपोर्ट', '/pt-br/ajuda/เพิ่มรูปภาพ', '/pt-br/ajuda/사진-추가', '/pt-br/ajuda/criar-rdo', '/pt-br/']) {
+        const arquivo = arquivoDaPagina(caminho);
+        assert.equal(enderecoDoArquivo(path.join(...arquivo.split('/'))), absoluto(caminho), caminho);
+    }
 });
 
 test('robots.txt e llms.txt: pega o que falta', () => {

@@ -53,13 +53,25 @@ function absoluto(caminho) {
     return new URL(caminho, window.location.origin).href;
 }
 
+// O mesmo endereço pode chegar com %E5, com %e5 (o redirecionamento do servidor escreve em minúsculas) ou com as
+// letras cruas: cada pedaço é lido como texto (NFC) e escrito de novo com %XX, igual ao canonical do build.
+function caminhoUniforme(caminho) {
+    return caminho.split('/').map((parte) => {
+        try {
+            return encodeURIComponent(decodeURIComponent(parte).normalize('NFC'));
+        } catch {
+            return parte;
+        }
+    }).join('/');
+}
+
 // A página pronta do build já veio com a cabeça certa (canonical, hreflang, Open Graph, dados estruturados,
 // todos com data-build: src/seo/cabeca.js) para este endereço: nada a trocar.
 function cabecaDoBuildServe(pathname) {
     const canonical = document.head.querySelector('link[rel="canonical"][data-build]');
     if (!canonical) return false;
     try {
-        return new URL(canonical.getAttribute('href')).pathname === pathname;
+        return caminhoUniforme(new URL(canonical.getAttribute('href')).pathname) === caminhoUniforme(pathname);
     } catch {
         return false;
     }
@@ -85,7 +97,7 @@ export function Alternativos() {
             l.setAttribute('data-idiomas', '');
             novos.push(l);
         };
-        add('canonical', absoluto(pathname));
+        add('canonical', absoluto(caminhoUniforme(pathname)));
         for (const i of IDIOMAS) {
             const caminho = gerador ? gerador(i.codigo) : caminhoInicio(i.codigo);
             if (caminho) add('alternate', absoluto(caminho.split('#')[0]), i.codigo);

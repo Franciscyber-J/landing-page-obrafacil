@@ -133,8 +133,9 @@ export function conferirLlms(texto) {
     return problemas;
 }
 
-// Endereço de cada arquivo .html de dist/ (o inverso de arquivoDaPagina).
-function enderecoDoArquivo(relativo) {
+// Endereço de cada arquivo .html de dist/ (o inverso de arquivoDaPagina). O nome do arquivo tem as letras da
+// escrita do idioma (pt-br/ajuda/写真を追加.html); o endereço leva os %XX, como o canonical (absoluto).
+export function enderecoDoArquivo(relativo) {
     const partes = relativo.split(path.sep);
     const nome = partes.pop();
     if (nome === 'index.html') return `${SITE}/${partes.map(encodeURIComponent).join('/')}/`;

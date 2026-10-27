@@ -181,3 +181,45 @@ test('llms.txt: título, resumo, inglês e português, preços de cada idioma e 
     for (const m of texto.matchAll(/\]\(([^)]+)\)/g)) assert.match(m[1], /^https:\/\//);
     for (const { codigo } of IDIOMAS) assert.ok(texto.includes(`${SITE}/${codigo.toLowerCase()}/`), codigo);
 });
+
+// Endereço na escrita do idioma (decisão do Francis, 26/10/2026): um artigo de exemplo só de teste, com o slug em
+// japonês no pt-BR e em árabe no en-US (e na x-default), e um assunto com nome em japonês.
+const JAPONES = '写真を追加';
+const ARABE = 'إضافة-صورة';
+const ARTIGO_OUTRAS = { id: 'exemplo-outras-escritas', slugs: { ...ARTIGO.slugs, 'pt-BR': JAPONES, 'en-US': ARABE, 'en-GB': ARABE } };
+const MODULO_OUTRAS = { ...MODULO, nomes: { ...MODULO.nomes, 'pt-BR': 'デイリーレポート' } };
+const enc = encodeURIComponent;
+
+test('outras escritas: endereço com as letras, arquivo da página pronta em UTF-8 e %XX no Google (canonical, hreflang, sitemap)', () => {
+    assert.equal(caminhoDaPagina({ tipo: 'artigo', codigo: 'pt-BR', artigo: ARTIGO_OUTRAS }), `/pt-br/ajuda/${JAPONES}`);
+    assert.equal(arquivoDaPagina(`/pt-br/ajuda/${JAPONES}`), `pt-br/ajuda/${JAPONES}.html`);
+    assert.equal(arquivoDaPagina(`/en-us/help/topic/${ARABE}`), `en-us/help/topic/${ARABE}.html`);
+    assert.equal(absoluto(`/pt-br/ajuda/${JAPONES}`), `${SITE}/pt-br/ajuda/${enc(JAPONES)}`);
+
+    const c = cabecaDaPagina({ t: tradutor('pt-BR'), pagina: { tipo: 'artigo', codigo: 'pt-BR', artigo: ARTIGO_OUTRAS }, dados: { entrada: { ...ENTRADA, slug: JAPONES }, modulo: MODULO_OUTRAS } });
+    assert.equal(c.caminho, `/pt-br/ajuda/${JAPONES}`);
+    assert.equal(c.url, `${SITE}/pt-br/ajuda/${enc(JAPONES)}`);
+    assert.equal(c.alternativos.find((a) => a.hreflang === 'en-US').href, `${SITE}/en-us/help/${enc(ARABE)}`);
+    assert.equal(c.alternativos.find((a) => a.hreflang === 'x-default').href, `${SITE}/en-us/help/${enc(ARABE)}`);
+    assert.equal(c.alternativos.find((a) => a.hreflang === 'es-MX').href, `${SITE}/es-mx/ayuda/crear-reporte`);
+    // Na cabeça da página e nos dados estruturados, só ASCII nos endereços (o padrão das URLs).
+    for (const e of etiquetasDaCabeca(c).filter((x) => x.startsWith('<link'))) assert.match(e, /^[\x20-\x7e]+$/, e);
+    const trilha = c.jsonld['@graph'].find((n) => n['@type'] === 'BreadcrumbList');
+    assert.deepEqual(trilha.itemListElement.map((i) => i.item), [
+        `${SITE}/pt-br/ajuda`, `${SITE}/pt-br/ajuda/assunto/${enc('デイリーレポート')}`, `${SITE}/pt-br/ajuda/${enc(JAPONES)}`,
+    ]);
+    // O endereço volta ao texto certo.
+    assert.equal(decodeURIComponent(new URL(c.url).pathname), `/pt-br/ajuda/${JAPONES}`);
+
+    const xml = gerarSitemap([{ url: c.url, lastmod: null, alternativos: c.alternativos }]);
+    assert.ok(xml.includes(`<loc>${SITE}/pt-br/ajuda/${enc(JAPONES)}</loc>`));
+    assert.ok(xml.includes(`hreflang="en-US" href="${SITE}/en-us/help/${enc(ARABE)}"`));
+    assert.match(xml, /^[\n\x20-\x7e]+$/, 'sitemap só com ASCII');
+});
+
+test('outras escritas: llms.txt com o link do artigo e do assunto em %XX', () => {
+    const indice = { modulos: [MODULO_OUTRAS], artigos: [{ ...ENTRADA, slug: JAPONES, prioritario: true }] };
+    const texto = gerarLlms({ tradutor, indices: { 'pt-BR': indice } });
+    assert.ok(texto.includes(`](${SITE}/pt-br/ajuda/${enc(JAPONES)})`));
+    assert.ok(texto.includes(`](${SITE}/pt-br/ajuda/assunto/${enc('デイリーレポート')})`));
+});

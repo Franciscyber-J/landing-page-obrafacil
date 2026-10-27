@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
     IDIOMAS, analisarCaminho, cadeia, caminhoAjuda, caminhoArtigo, caminhoAssunto, caminhoInicio, caminhoLegal,
-    escolherIdioma, idDaSecao, secaoDaAncora, slugDoTexto,
+    escolherIdioma, idDaSecao, palavraDeEnderecoValida, secaoDaAncora, slugDoTexto,
 } from './idiomas.js';
 import { acharModulo, criarRotas, slugDoModulo } from '../ajuda/enderecos.js';
 
@@ -123,4 +123,67 @@ test('endereços antigos do WordPress (lojas de aplicativos) continuam valendo',
     assert.deepEqual(analisarCaminho('/termos-de-uso/'), { tipo: 'antigo', codigo: null, pagina: 'legal', documento: 'termos' });
     assert.deepEqual(analisarCaminho('/politicas-de-privacidade'), { tipo: 'antigo', codigo: null, pagina: 'legal', documento: 'privacidade' });
     assert.equal(analisarCaminho('/termos-de-uso/outra').tipo, 'desconhecido');
+});
+
+// Endereço na escrita do idioma (decisão do Francis, 26/10/2026): artigos de exemplo só de teste, em japonês e
+// em árabe, num idioma do site de hoje (o caminho é o mesmo quando o idioma deles entrar).
+const JAPONES = '写真を追加';
+const ARABE = 'إضافة-صورة';
+
+test('palavra de endereço em qualquer escrita: letras, marcas, números e hífen entre as palavras, em NFC', () => {
+    for (const p of ['criar-rdo', JAPONES, ARABE, 'पासवर्ड-बदलें', 'เพิ่มรูปภาพ', '사진-추가', 'добавить-фото', 'προσθήκη-φωτογραφίας', 'הוספת-תמונה', 'ヘルプ', 'مساعدة', 'सहायता', 'ช่วยเหลือ', '도움말', 'βοήθεια', 'помощь', 'עזרה', '帮助', 'ajuda']) {
+        assert.ok(palavraDeEnderecoValida(p), p);
+    }
+    for (const p of ['Ajuda', 'Помощь', 'a b', 'a/b', 'a--b', '-a', 'a-', '', 'ヘルプ。', 'a?b', 'a%2Fb', '\u093Fx', 'cafe\u0301', 'Ⅻ', null]) {
+        assert.ok(!palavraDeEnderecoValida(p), JSON.stringify(p));
+    }
+});
+
+test('nome do assunto em outras escritas: marcas da palavra ficam, acento do latim/grego/cirílico e vogais opcionais saem', () => {
+    // Antes as marcas saíam todas: o hindi e o tailandês perdiam as vogais e o japonês o dakuten (ダ → タ).
+    assert.equal(slugDoTexto('दैनिक रिपोर्ट'), 'दैनिक-रिपोर्ट');
+    assert.equal(slugDoTexto('รายงานประจำวัน'), 'รายงานประจำวัน');
+    assert.equal(slugDoTexto('ダウンロード'), 'ダウンロード');
+    assert.equal(slugDoTexto('일일 보고서'), '일일-보고서');
+    assert.equal(slugDoTexto('Ρυθμίσεις λογαριασμού'), 'ρυθμισεις-λογαριασμου');
+    assert.equal(slugDoTexto('التَّقْرِيرُ اليَوْمِيّ'), 'التقرير-اليومي');
+    assert.equal(slugDoTexto('דּוֹחַ יוֹמִי'), 'דוח-יומי');
+    assert.equal(slugDoTexto('\u095Eोटो'), 'फ\u093Cोटो', 'hindi com nukta já composto: NFC');
+    assert.equal(slugDoTexto('財務 / 工程'), '財務-工程');
+    assert.equal(slugDoTexto('a \u093F b'), 'a-b', 'marca solta sem letra não fica');
+    for (const nome of ['दैनिक रिपोर्ट', 'ダウンロード', 'التَّقْرِيرُ اليَوْمِيّ', 'Diário de obra (RDO)', 'ΡΥΘΜΙΣΕΙΣ']) {
+        assert.ok(palavraDeEnderecoValida(slugDoTexto(nome)), nome);
+    }
+});
+
+test('artigo com endereço em japonês e em árabe: caminho, leitura com %XX e em NFD', () => {
+    assert.equal(caminhoArtigo('pt-BR', JAPONES), `/pt-br/ajuda/${JAPONES}`);
+    assert.equal(caminhoArtigo('en-US', ARABE), `/en-us/help/${ARABE}`);
+    const lido = { tipo: 'pagina', codigo: 'pt-BR', pagina: 'artigo', slug: JAPONES, canonico: null };
+    // O navegador manda o endereço com %XX; o build (páginas prontas) e o React Router podem passar decodificado.
+    assert.deepEqual(analisarCaminho(`/pt-br/ajuda/${encodeURIComponent(JAPONES)}`), lido);
+    assert.deepEqual(analisarCaminho(`/pt-br/ajuda/${JAPONES}`), lido);
+    assert.deepEqual(analisarCaminho(new URL(`/en-us/help/${ARABE}`, 'https://x.com').pathname), { ...lido, codigo: 'en-US', slug: ARABE });
+    // Palavra da Central de outro idioma: vai para o endereço certo, com o slug intacto.
+    assert.equal(analisarCaminho(`/en-us/ajuda/${encodeURIComponent(ARABE)}`).canonico, `/en-us/help/${ARABE}`);
+    // Decomposto (NFD: ジ como シ + ゙): lido em NFC e levado ao endereço em NFC.
+    const nfd = 'ジ'.normalize('NFD');
+    const comNfd = analisarCaminho(`/pt-br/ajuda/${encodeURIComponent(`${nfd}ム`)}`);
+    assert.equal(comNfd.slug, 'ジム');
+    assert.equal(comNfd.canonico, '/pt-br/ajuda/ジム');
+    // % solto não quebra a leitura.
+    assert.equal(analisarCaminho('/pt-br/ajuda/100%').slug, '100%');
+    // Rotas do componente: os links internos levam o slug como está (o navegador põe os %XX).
+    assert.equal(criarRotas('pt-BR').artigo(JAPONES), `/pt-br/ajuda/${JAPONES}`);
+});
+
+test('assunto com nome em outra escrita: endereço e busca pelo pedaço do endereço', () => {
+    const modulo = { id: 'diario', nome: 'Daily report', nomes: { 'pt-BR': 'デイリーレポート', 'en-US': 'التقرير اليومي' } };
+    assert.equal(slugDoModulo(modulo, 'pt-BR'), 'デイリーレポート');
+    assert.equal(slugDoModulo(modulo, 'en-US'), 'التقرير-اليومي');
+    assert.equal(criarRotas('en-US').assunto(modulo), '/en-us/help/topic/التقرير-اليومي');
+    const lido = analisarCaminho(`/en-us/help/topic/${encodeURIComponent('التقرير-اليومي')}`);
+    assert.equal(lido.modulo, 'التقرير-اليومي');
+    assert.equal(acharModulo([modulo], lido.modulo, 'en-US'), modulo);
+    assert.equal(acharModulo([modulo], 'التَّقْرِير-اليَوْمِيّ', 'en-US'), modulo, 'com harakat também');
 });

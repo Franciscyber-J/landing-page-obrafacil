@@ -7,11 +7,10 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
     COMPRAS, IDIOMAS, PAGINAS_ANTIGAS, analisarCaminho, caminhoDoAntigo, caminhoPagamento, caminhoPerfil,
-    caminhoSuporte, consultaQueSegue, escolherIdioma, idioma,
+    caminhoSuporte, consultaQueSegue, escolherIdioma, idioma, palavraDeEnderecoValida,
 } from './idiomas.js';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
-const PALAVRA = /^[\p{Ll}\p{Lo}\p{N}]+(?:-[\p{Ll}\p{Lo}\p{N}]+)*$/u;
 const ANTIGOS = ['/primeiros-passos', '/pagamento-ok', '/pacote-downloads-extras', '/expansao-20gb-ok', '/perfil', '/suporte'];
 
 test('endereços das páginas em cada idioma', () => {
@@ -113,7 +112,7 @@ test('cadastro: palavras dos endereços das páginas completas, válidas e sem r
     const dono = new Map();
     const marcar = (palavra, pagina, onde) => {
         assert.ok(palavra, `${onde}: falta a palavra`);
-        assert.match(palavra, PALAVRA, `${onde}: "${palavra}"`);
+        assert.ok(palavraDeEnderecoValida(palavra), `${onde}: "${palavra}"`);
         assert.ok(!idioma(palavra), `${onde}: "${palavra}" parece código de idioma`);
         const anterior = dono.get(palavra);
         assert.ok(!anterior || anterior === pagina, `${onde}: "${palavra}" já é a palavra de ${anterior}`);
@@ -129,7 +128,7 @@ test('cadastro: palavras dos endereços das páginas completas, válidas e sem r
         assert.deepEqual(Object.keys(i.rotas.compras).sort(), [...COMPRAS].sort(), `${i.codigo}: compras`);
         for (const compra of COMPRAS) {
             const palavra = i.rotas.compras[compra];
-            assert.match(palavra, PALAVRA, `${i.codigo} rotas.compras.${compra}`);
+            assert.ok(palavraDeEnderecoValida(palavra), `${i.codigo} rotas.compras.${compra}: "${palavra}"`);
             const anterior = donoCompra.get(palavra);
             assert.ok(!anterior || anterior === compra, `${i.codigo}: "${palavra}" já é a palavra da compra ${anterior}`);
             donoCompra.set(palavra, compra);

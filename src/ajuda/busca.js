@@ -6,6 +6,15 @@
 
 const PESOS = { titulo: 10, tags: 6, resumo: 3, busca: 1 };
 
+// Sinais de vogal opcionais do árabe e do hebraico: a mesma palavra com e sem eles é a mesma na busca
+// ("صورًا" acha "صورا" e o contrário; "שָׁלוֹם" acha "שלום"). Árabe: tatweel U+0640 (o traço que só alonga a
+// letra), harakat e os outros sinais de vogal U+064B–U+065F e o alef sobrescrito U+0670. Hebraico: niqqud,
+// cantilação e pontos U+0591–U+05C7 (e o ponto varika U+FB1E), menos a pontuação que fica nessa faixa (maqaf
+// U+05BE, paseq U+05C0, sof pasuq U+05C3, nun hafukha U+05C6), que continua separando palavras. Saem depois
+// do NFC: as letras com hamza ou madda (أ إ آ ؤ ئ) são letras próprias e ficam. O tatweel (que não é marca)
+// fica no fim da lista: dentro dos colchetes, nenhuma marca vem logo depois de uma letra.
+const VOGAIS_OPCIONAIS = /[\u064B-\u065F\u0670\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7\uFB1E\u0640]/g;
+
 // Palavras curtas e comuns que não ajudam a achar nada (pt, en, es).
 const PALAVRAS_VAZIAS = new Set([
     'a', 'o', 'as', 'os', 'um', 'uma', 'de', 'do', 'da', 'dos', 'das', 'e', 'em', 'no', 'na', 'nos', 'nas',
@@ -34,13 +43,20 @@ const SEM_ESPACO = [
 // NFD e retirada das marcas U+0300–U+036F: tira o acento do latim, do grego e do cirílico
 // ("é" → "e", "ά" → "α", "й" → "и"). As outras marcas (vogais e sinais das escritas indianas e do
 // tailandês, por exemplo) fazem parte da palavra e ficam. Volta para NFC para o coreano não ficar
-// decomposto. O "ς" (sigma do fim da palavra) vira "σ": a mesma palavra em maiúsculas e em
-// minúsculas fica igual, aqui e no app. Fica só letra, marca e número, de qualquer escrita.
-export function normalizar(texto) {
+// decomposto e tira os sinais de vogal opcionais do árabe e do hebraico (VOGAIS_OPCIONAIS).
+// É o passo que o app (sem NFD/NFC) recebe pronto, caractere a caractere, na tabela gerada.
+export function semMarcas(texto) {
     return String(texto ?? '')
         .normalize('NFD')
         .replace(/[̀-ͯ]/g, '')
         .normalize('NFC')
+        .replace(VOGAIS_OPCIONAIS, '');
+}
+
+// Sem marcas (semMarcas) e em minúsculas. O "ς" (sigma do fim da palavra) vira "σ": a mesma palavra em
+// maiúsculas e em minúsculas fica igual, aqui e no app. Fica só letra, marca e número, de qualquer escrita.
+export function normalizar(texto) {
+    return semMarcas(texto)
         .toLowerCase()
         .replace(/ς/g, 'σ')
         .replace(/[^\p{L}\p{M}\p{N}]+/gu, ' ')

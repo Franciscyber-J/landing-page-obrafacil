@@ -32,6 +32,10 @@ O idioma é o começo do endereço e as palavras vêm do cadastro:
 - Endereço antigo (`/ajuda/pt-BR/...`), âncora de outro idioma (`/en-us/#precos`) ou palavra de outro
   idioma (`/en-us/ajuda`) vai sozinho para o endereço certo. O `?utm_...`/`?gclid=...` dos anúncios é mantido.
 - O idioma do endereço manda: `lang`/`dir` da página, textos, preços e títulos seguem ele.
+- As palavras do cadastro (`rotas`) ficam na escrita do idioma (`ヘルプ`, `مساعدة`, `सहायता`), sem transliterar:
+  letras (minúsculas onde a escrita tem maiúscula), as marcas da escrita, números e hífen entre as palavras, em NFC
+  (`palavraDeEnderecoValida` em `idiomas.js`, a mesma regra do `slug` dos artigos; ver `src/ajuda/LEIAME.md`,
+  "Endereço na escrita do idioma"). O `npm run idiomas` recusa palavra fora da regra.
 
 ## Incluir um idioma
 
