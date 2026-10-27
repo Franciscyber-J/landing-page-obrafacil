@@ -13,6 +13,7 @@
  */
 
 import { idioma } from './idiomas.js';
+import { formatarNumero } from './formatos.js';
 
 // ── Todos os 43 preços (em centavos) espelhados da Apple Store ───────────────
 export const APPLE_PRICES = {
@@ -58,6 +59,18 @@ export const CURRENCY_SYMBOLS = {
 // As outras, mesmo as que no dia a dia não usam centavos (peso colombiano, florim, rupia...), ficam no Stripe em
 // centésimos: 6990000 em COP são 69.900,00. Antes elas estavam aqui por engano e apareceriam 100 vezes maiores.
 const NO_DECIMAL_CURRENCIES = new Set(['clp', 'jpy', 'krw', 'vnd']);
+
+// Moedas que no Stripe e nas lojas têm centavos (a tabela acima está em centésimos), mas que no país se escrevem
+// sem eles: rupia, florim húngaro e dólar de Taiwan (decisão do Francis, 26/10/2026, igual ao app). Só a
+// exibição muda: 24900000 em IDR aparece "249.000", e não "249.000,00". Os preços da tabela nessas moedas são
+// inteiros (o teste confere), então nada é arredondado; só o equivalente mensal do anual, que é uma conta.
+const SEM_CENTAVOS_NA_TELA = new Set(['idr', 'huf', 'twd']);
+
+// Casas decimais com que o site mostra a moeda: 0 nas sem centavos (no Stripe ou só na tela), 2 nas outras.
+export function casasNaTela(moeda) {
+    const m = String(moeda).toLowerCase();
+    return NO_DECIMAL_CURRENCIES.has(m) || SEM_CENTAVOS_NA_TELA.has(m) ? 0 : 2;
+}
 
 // ── Mapa locale → moeda ───────────────────────────────────────────────────────
 // Adicione aqui cada novo idioma que criar. Os preços serão aplicados
@@ -126,18 +139,14 @@ export const STRIPE_LINKS = {
 // Usado em src/components/inicio/Precos.jsx.
 
 /**
- * Converte centavos para string de exibição.
- * Moedas sem decimal (jpy, krw…) ficam como inteiro.
- * Moedas decimais usam separador correto do locale.
+ * Converte centavos para string de exibição, com os separadores do idioma e algarismos 0-9 (src/i18n/formatos.js).
+ * Moedas sem decimal no Stripe (jpy, krw…) já estão em unidades; as outras, em centésimos.
+ * Casas: as de casasNaTela (sem centavos em jpy, krw…, idr, huf, twd; 2 nas outras).
  */
 function formatAmount(cents, currency, locale) {
-    if (NO_DECIMAL_CURRENCIES.has(currency)) {
-        return cents.toLocaleString(locale);
-    }
-    return (cents / 100).toLocaleString(locale, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-    });
+    const valor = NO_DECIMAL_CURRENCIES.has(currency) ? cents : cents / 100;
+    const casas = casasNaTela(currency);
+    return formatarNumero(locale, valor, { minimumFractionDigits: casas, maximumFractionDigits: casas });
 }
 
 // Moeda dos preços de um idioma (minúsculas, como na tabela acima).
@@ -149,10 +158,12 @@ export function moedaDoIdioma(locale) {
 }
 
 // Preços do PRO de um idioma em número com ponto (para os dados estruturados do Google e o llms.txt):
-// { moeda: 'BRL', mensal: '99.90', anual: '899.00' }. Mesma tabela que a página de preços mostra.
+// { moeda: 'BRL', mensal: '99.90', anual: '899.00' }; nas moedas sem centavos na tela, sem casas
+// ({ moeda: 'IDR', mensal: '249000', ... }: o mesmo valor, os preços dessas moedas são inteiros).
+// Mesma tabela que a página de preços mostra.
 export function precosDoIdioma(locale) {
     const moeda = moedaDoIdioma(locale);
-    const numero = (centavos) => (NO_DECIMAL_CURRENCIES.has(moeda) ? String(centavos) : (centavos / 100).toFixed(2));
+    const numero = (centavos) => (NO_DECIMAL_CURRENCIES.has(moeda) ? String(centavos) : (centavos / 100).toFixed(casasNaTela(moeda)));
     return {
         moeda: moeda.toUpperCase(),
         mensal: numero(APPLE_PRICES.monthly[moeda]),
@@ -182,10 +193,8 @@ export function getPricing(locale) {
     // Economia anual vs pagar mensal por 12 meses
     const annualSavings = formatAmount((rawMonthly * 12) - rawAnnual, currency, locale);
 
-    // Equivalente mensal do plano anual
-    const monthlyEquiv = NO_DECIMAL_CURRENCIES.has(currency)
-        ? Math.round(rawAnnual / 12).toLocaleString(locale)
-        : formatAmount(Math.round(rawAnnual / 12), currency, locale);
+    // Equivalente mensal do plano anual (nas moedas sem centavos na tela, arredondado para o inteiro)
+    const monthlyEquiv = formatAmount(Math.round(rawAnnual / 12), currency, locale);
 
 
     return {

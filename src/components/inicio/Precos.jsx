@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Check } from 'lucide-react';
 import { getPricing } from '../../i18n/pricing.js';
+import { partesDoNumero } from '../../i18n/formatos.js';
 import { idDaSecao } from '../../i18n/idiomas.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import { ASSINAR_ANUAL, ASSINAR_MENSAL } from '../../links.js';
@@ -19,7 +20,7 @@ function lista(valor) {
 // O símbolo vem antes ou depois do número conforme o idioma (R$ 99,90 / 17,99 €).
 function simboloDepois(codigo, moeda) {
     try {
-        const partes = new Intl.NumberFormat(codigo, { style: 'currency', currency: moeda.toUpperCase() }).formatToParts(1);
+        const partes = partesDoNumero(codigo, 1, { style: 'currency', currency: moeda.toUpperCase() });
         return partes.findIndex((p) => p.type === 'currency') > partes.findIndex((p) => p.type === 'integer');
     } catch {
         return false;

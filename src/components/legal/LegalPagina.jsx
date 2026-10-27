@@ -8,6 +8,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { conferirTexto, textoDaProxima, textoGuardado } from '../../legal/dados.js';
 import { lerTexto, sumario, tituloDoTexto } from '../../legal/markdown.js';
 import { caminhoLegal } from '../../i18n/idiomas.js';
+import { formatarData } from '../../i18n/formatos.js';
 import { useRotaEquivalente } from '../../i18n/RotaDoIdioma.jsx';
 import { tituloDaPagina } from '../../seo/textos.js';
 import styles from './Legal.module.css';
@@ -33,8 +34,9 @@ function useTexto(documento, codigo) {
     return { ...atual, tentarDeNovo: () => setTentativa((n) => n + 1) };
 }
 
+// No calendário e com os algarismos do idioma (src/i18n/formatos.js): th-TH no ano budista, ar-SA com 0-9.
 function dataPorExtenso(ms, codigo) {
-    return new Intl.DateTimeFormat(codigo, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'America/Sao_Paulo' }).format(ms);
+    return formatarData(codigo, ms, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'America/Sao_Paulo' });
 }
 
 function Trechos({ lista }) {
