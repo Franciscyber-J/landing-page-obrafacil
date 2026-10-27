@@ -18,6 +18,8 @@ import { idiomaPreferido } from './i18n/preferencia.js';
 import { Alternativos, ProvedorDeRota } from './i18n/RotaDoIdioma.jsx';
 import { encerrarChegada } from './movimento/index.js';
 import useCabecaDaPagina from './components/conta/useCabecaDaPagina.js';
+// Fonte da escrita do idioma (japonês, árabe, hindi...), só no idioma que precisa: src/fontes/escritas.js.
+import { usarEscritaDoIdioma } from 'virtual:fontes-das-escritas';
 
 // Mantém o que vem depois do endereço (?utm_..., ?gclid=... dos anúncios) ao redirecionar.
 function comConsulta(caminho, search) {
@@ -61,7 +63,7 @@ function Pagina({ codigo, lido }) {
   return <AjudaPagina key={codigo} codigo={codigo} tipo={lido.pagina === 'ajuda' ? 'inicio' : lido.pagina} modulo={lido.modulo} slug={lido.slug} />;
 }
 
-// O idioma do endereço manda: troca os textos do site e o lang/dir da página.
+// O idioma do endereço manda: troca os textos do site, o lang/dir da página e a fonte da escrita.
 function useIdiomaDoEndereco(codigo) {
   const { i18n } = useTranslation();
   useEffect(() => {
@@ -69,6 +71,7 @@ function useIdiomaDoEndereco(codigo) {
     const dados = idioma(codigo);
     document.documentElement.lang = codigo;
     document.documentElement.dir = dados?.direcao ?? 'ltr';
+    usarEscritaDoIdioma(codigo);
   }, [codigo, i18n]);
 }
 

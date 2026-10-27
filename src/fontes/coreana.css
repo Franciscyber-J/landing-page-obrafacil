@@ -1,0 +1,10 @@
+/* Fonte da escrita: coreano (checklist de idiomas do gestao_obras, A4 do site; regra em src/fontes/escritas.js).
+   Baixado só nas páginas de um idioma dessa escrita. A Manrope (e a Bricolage nos títulos) fica na frente: letras
+   latinas e números iguais aos dos outros idiomas; as letras da escrita vêm da Noto. O CSS do pacote divide a fonte
+   por unicode-range e o navegador baixa só os pedaços das letras que aparecem na página. */
+@import '@fontsource-variable/noto-sans-kr';
+
+:root[data-escrita='coreana'] {
+  --fonte-titulo: 'Bricolage Grotesque', 'Manrope', 'Noto Sans KR Variable', system-ui, sans-serif;
+  --fonte-texto: 'Manrope', 'Noto Sans KR Variable', system-ui, sans-serif;
+}

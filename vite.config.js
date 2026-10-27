@@ -4,6 +4,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 import { IDIOMAS } from './src/i18n/registro.js'
+import { moduloDasFontes } from './src/fontes/escritas.js'
 
 // Central de Ajuda em desenvolvimento, sem tocar no Firestore:
 //   1. No gestao_obras, gere os documentos:  node bin/publicar.mjs --saida D:\Projetos\ajuda_saida
@@ -132,10 +133,31 @@ function bandeiras() {
   }
 }
 
+// Fontes das escritas que a Manrope não cobre (japonês, árabe, hindi...): o módulo "virtual:fontes-das-escritas" tem
+// só as escritas dos idiomas de src/i18n/registro.js (campo "escrita"), cada uma num CSS baixado só no idioma dela
+// (src/fontes/escritas.js). Sem idioma de outra escrita, o módulo é uma função vazia: nada a mais no site.
+function fontesDasEscritas() {
+  const ID = 'virtual:fontes-das-escritas'
+  return {
+    name: 'fontes-das-escritas',
+    resolveId(id) {
+      return id === ID ? `\0${ID}` : null
+    },
+    load(id) {
+      if (id !== `\0${ID}`) return null
+      try {
+        return moduloDasFontes(IDIOMAS)
+      } catch (erro) {
+        this.error(erro.message)
+      }
+    },
+  }
+}
+
 // https://vite.dev/config/
 // Prévia para ver de fora (VITE_PREVIA=sim npx vite build --outDir <pasta>): endereços relativos.
 // O site de verdade continua com base "/".
 export default defineConfig({
   base: process.env.VITE_PREVIA === 'sim' ? './' : '/',
-  plugins: [react(), ajudaLocal(), legalLocal(), bandeiras()],
+  plugins: [react(), ajudaLocal(), legalLocal(), bandeiras(), fontesDasEscritas()],
 })
