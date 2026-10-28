@@ -75,7 +75,7 @@ function antigoDoServidor(cabecalho) {
 
 test('endereços antigos: sem Accept-Language vai para pt-BR; com idioma fora do site, inglês (como a raiz)', () => {
     assert.equal(antigoDoServidor(''), 'pt-BR');
-    assert.equal(antigoDoServidor('de-DE,de;q=0.9'), 'en-US');
+    assert.equal(antigoDoServidor('sv-SE,sv;q=0.9'), 'en-US');
     assert.equal(antigoDoServidor('*'), 'en-US');
     assert.equal(antigoDoServidor('pt-BR,pt;q=0.9'), 'pt-BR');
     assert.equal(antigoDoServidor('es-AR'), 'es-MX');

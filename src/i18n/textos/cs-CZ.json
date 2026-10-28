@@ -1,0 +1,500 @@
+{
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil: aplikace pro řízení staveb se stavebním deníkem",
+            "descricao": "Aplikace pro řízení staveb na telefonu i PC: harmonogram, denní záznamy s fotkami, finance, tým a klientský portál. Začněte zdarma."
+        },
+        "ajuda": {
+            "titulo": "Centrum nápovědy ObraFácil: podrobné návody krok za krokem",
+            "descricao": "Podrobné návody pro aplikaci ObraFácil: stavební deník, harmonogram, finance stavby, tým a klientský portál s reálnými ukázkami."
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · Centrum nápovědy ObraFácil",
+            "descricao": "{{descricao}} Podrobné návody s reálnými obrazovkami aplikace ObraFácil."
+        },
+        "artigo": {
+            "titulo": "{{titulo}} — ObraFácil"
+        },
+        "app": {
+            "descricao": "Aplikace pro řízení staveb pro stavební firmy, inženýry, architekty a stavbyvedoucí: harmonogram po etapách, denní záznamy s fotkami a PDF, finance stavby, mzdová agenda týmu, zásobování a sklad, a klientský portál pro investora. Funguje na Androidu, iPhonu, Windows i webu, včetně offline režimu na stavbě.",
+            "categoria": "Řízení staveb"
+        },
+        "imagemAlt": "Logo ObraFácil, aplikace pro řízení staveb",
+        "llms": {
+            "sobre": "Co je ObraFácil",
+            "paraQuem": "Pro koho je aplikace určena: stavební firmy, stavební inženýři, architekti, dodavatelé a stavbyvedoucí spravující jednu či více staveb, kteří chtějí zaznamenávat každodenní práce, hlídat termíny a náklady a transparentně předkládat postup investorovi.",
+            "plataformas": "Podporované platformy",
+            "recursos": "Funkce",
+            "papeis": "Kdo co dělá na stavbě",
+            "planos": "Plány a ceny",
+            "precosPorIdioma": "Ceny plánu PRO ve všech jazycích a měnách webu",
+            "precoLinha": "{{mensal}} měsíčně nebo {{anual}} ročně",
+            "paginas": "Hlavní stránky",
+            "idiomas": "Web i aplikace jsou k dispozici v těchto jazycích",
+            "todosArtigos": "Všechny články v Centru nápovědy"
+        }
+    },
+    "nav": {
+        "login": "Přihlásit se",
+        "comecar": "Začít zdarma",
+        "recursos": "Funkce",
+        "precos": "Ceny",
+        "ajuda": "Centrum nápovědy",
+        "lightMode": "Světlý motiv",
+        "darkMode": "Tmavý motiv",
+        "language": "Jazyk",
+        "chooseLanguage": "Zvolit jazyk",
+        "themeToggle": "Přepnout světlý a tmavý motiv",
+        "menu": "Otevřít nebo zavřít nabídku",
+        "inicio": "Úvodní stránka ObraFácil",
+        "navegacao": "Hlavní navigace"
+    },
+    "hero": {
+        "plataformas": "Android · iPhone · Windows · Prohlížeč",
+        "titulo": "Celá stavba **na jednom místě**",
+        "subtitulo": "Harmonogram, stavební deník, finance, tým a nákupy v telefonu i počítači. A investor sleduje stavbu v portálu, aniž by vám musel neustále volat.",
+        "comecar": "Začít zdarma",
+        "verPlanos": "Zobrazit plány",
+        "semCartao": "Bezplatný plán bez časového omezení a bez platební karty.",
+        "camposRotulo": "Oblasti stavby v aplikaci",
+        "campos": {
+            "cronograma": {
+                "rotulo": "Harmonogram",
+                "valor": "Etapy, postup prací a termíny"
+            },
+            "diario": {
+                "rotulo": "Stavební deník",
+                "valor": "Fotografie, počasí a pracovníci v PDF"
+            },
+            "financeiro": {
+                "rotulo": "Finance stavby",
+                "valor": "Rozpočet a výdaje, příjmy a platby"
+            },
+            "cliente": {
+                "rotulo": "Klientský portál",
+                "valor": "Průběh stavby sdílený s investorem"
+            }
+        },
+        "legendaTela": "Obrazovka aplikace s ukázkovými daty",
+        "telas": {
+            "cronograma": "Etapy stavby s rozpočtovanými částkami, soupisy prací, platbami a postupem prací",
+            "diario": "Nový denní záznam s počasím, činnostmi a událostmi",
+            "financeiro": "Finance stavby s cenou za metr čtvereční, příjmy, výdaji a zůstatkem",
+            "cliente": "Klientský portál s nejnovějšími aktualitami ze stavby"
+        },
+        "disponivelNo": "K dispozici na",
+        "baixarNa": "Stáhnout na",
+        "baixarPara": "Stáhnout pro"
+    },
+    "pricing": {
+        "title": "Plány a ceny",
+        "toggleMonthly": "Měsíčně",
+        "toggleAnnual": "Ročně",
+        "periodoRotulo": "Zúčtovací období",
+        "economia": "Ušetříte {{simbolo}}{{valor}}",
+        "perMonth": "/měsíc",
+        "periodAnnual": "/rok",
+        "gratis": {
+            "nome": "Zdarma",
+            "desc": "Pro začátek a seznámení se s aplikací.",
+            "cta": "Začít zdarma",
+            "itens": [
+                "1 vaše aktivní stavba současně",
+                "7 PDF reportů měsíčně s vodoznakem",
+                "250 MB pro fotografie a soubory",
+                "Sledování stavby investorem v portálu"
+            ]
+        },
+        "pro": {
+            "nomeMensal": "PRO měsíčně",
+            "nomeAnual": "PRO ročně",
+            "desc": "Pro stavební firmy, inženýry a zhotovitele s více stavbami.",
+            "itens": [
+                "Neomezený počet staveb",
+                "Neomezené PDF reporty bez vodoznaku",
+                "10 GB pro fotografie a soubory",
+                "PDF s logem a zápatím vaší společnosti",
+                "Denní záznamy v ZIP a offline soubory stavby",
+                "Klientský přístup dostupný pro každou stavbu"
+            ],
+            "itensAnual": [
+                "Všechny funkce měsíčního plánu PRO",
+                "Cena garantována na celých 12 měsíců"
+            ],
+            "comparacao": "Při měsíční platbě stojí 12 měsíců {{simbolo}}{{valor}}",
+            "equivale": "Odpovídá {{simbolo}}{{valor}} měsíčně",
+            "ctaMensal": "Předplatit PRO měsíčně",
+            "ctaAnual": "Předplatit PRO ročně"
+        },
+        "renovacao": "Automatické obnovení. Zrušit můžete kdykoliv tam, kde jste předplatné sjednali.",
+        "lojas": "Při sjednání na telefonu se ceny a platby řídí podmínkami Google Play nebo App Store.",
+        "addons": "Pouze pro PRO: +20 GB úložiště (samostatné předplatné) a Klientský přístup pro odemknutí dalších funkcí portálu (jednorázový poplatek za stavbu).",
+        "selo": "Nejvýhodnější",
+        "gratisPreco": "Navždy zdarma"
+    },
+    "popup": {
+        "faixa": "Bezplatný plán bez časového omezení",
+        "title": "Vyzkoušejte aplikaci na své další stavbě, než odejdete",
+        "texto": "Vytvořte si bezplatný účet bez platební karty. Přidejte stavbu a podívejte se, jak funguje harmonogram, fotodokumentace deníku i finance, zatímco investor sleduje postup na portálu.",
+        "cta": "Začít zdarma",
+        "lojas": "Nebo si stáhněte aplikaci",
+        "fechar": "Zavřít"
+    },
+    "whatsapp": {
+        "tooltip": "Kontaktovat podporu",
+        "message": "Dobrý den, píšu z webu a mám dotaz"
+    },
+    "social": {
+        "title": "Co říkají odborníci",
+        "test1": "„Na mé klienty udělala aplikace obrovský dojem. Dodala našemu řízení staveb velkou důvěryhodnost a obhájila cenu mých služeb.“",
+        "author1": "Martin K.",
+        "role1": "Stavební inženýr",
+        "test2": "„Zápis stavebního deníku ve Wordu na konci dne trval dříve hodinu. Teď to zvládnu za 5 minut na mobilu přímo na stavbě.“",
+        "author2": "Pavel N.",
+        "role2": "Zhotovitel staveb",
+        "test3": "„Odesílání soupisů provedených prací je teď naprosto jednoduché. Bez zbytečných dohadů investor vše schválí obratem.“",
+        "author3": "Jiří D.",
+        "role3": "Stavbyvedoucí",
+        "test4": "„Fotogalerie nám ohromně pomohla při řešení detailů dokončovacích prací s architektem, aniž by musel neustále jezdit na stavbu.“",
+        "author4": "Tereza V.",
+        "role4": "Architektka",
+        "test5": "„Dokonce i koncový investor ocenil náš dokonalý pořádek. Konečně působíme stejně profesionálně jako ty největší stavební firmy.“",
+        "author5": "Tomáš S.",
+        "role5": "Generální dodavatel",
+        "aviso": "Hodnocení reálných zákazníků, zveřejněno s jejich souhlasem."
+    },
+    "faq": {
+        "title": "Často kladené dotazy",
+        "q1": "Platí můj klient za sledování stavby?",
+        "a1": "Ne. Klient sleduje stavbu přes portál zcela zdarma. Pokud mu chcete zpřístupnit více informací, jako je stahování fotek a zobrazení kompletního finančního přehledu, Klientský přístup je jednorázový poplatek za stavbu, který hradíte vy v plánu PRO.",
+        "q2": "Mohu aplikaci používat na počítači i na telefonu?",
+        "a2": "Ano. ObraFácil funguje na Androidu, iPhonu, Windows i ve webovém prohlížeči, přičemž na všech zařízeních máte stejná data.",
+        "q3": "Jsou moje data v bezpečí?",
+        "a3": "Data se přenášejí šifrovaně a jsou bezpečně uložena na serverech Google, rovněž v zašifrované podobě. Každý uživatel vidí pouze stavby, na kterých se podílí, a to podle oprávnění své role.",
+        "q4": "Jaké osobní údaje se shromažďují?",
+        "a4": "Pro účet: jméno, e-mail a telefonní číslo; daňové identifikační číslo pouze v případě, že jej sami zadáte. Úplný seznam a účel zpracování jednotlivých údajů najdete v Zásadách ochrany osobních údajů.",
+        "q5": "Funguje aplikace bez internetu?",
+        "a5": "Ano. Bez internetu aplikace ukládá zadané záznamy přímo v zařízení a automaticky je odešle, jakmile se připojení obnoví.",
+        "q6": "Ztratí klient přístup k souborům po dokončení stavby?",
+        "a6": "Pokud je stavba v okamžiku vypršení přístupu dokončena ze 70 % nebo více, má klient ještě 15 dní na to, aby si prohlédl a stáhl nasdílené soubory.",
+        "q7": "Nahrazuje ObraFácil stavbyvedoucího nebo autorizovaného inženýra?",
+        "a7": "Ne. Jedná se o nástroj pro řízení stavby a nenahrazuje autorizovanou osobu odpovědnou za vedení stavby ani zákonná stavební povolení a certifikace.",
+        "q8": "Mohu svůj účet smazat?",
+        "a8": "Ano, v nabídce Profil > Smazat účet. Účet je nejprve na 30 dní pozastaven (lze vzít zpět) a poté jsou vaše stavby a data smazány. Některé záznamy, jako jsou platby a potvrzení Podmínek, se uchovávají po dobu stanovenou v Zásadách ochrany osobních údajů.",
+        "q9": "Mohu plán PRO nebo rozšíření úložiště zrušit?",
+        "a9": "Ano, kdykoliv a na stejném místě, kde jste si jej předplatili. Další obnovení již nebude účtováno a přístup zůstane aktivní až do konce předplaceného období.",
+        "q10": "Co se stane, když se platba za obnovení nezdaří?",
+        "a10": "Účet se vrátí na bezplatný plán. Žádná data se nemažou; pokud překročíte limit bezplatného plánu, zablokuje se pouze nahrávání nových souborů, dokud neuvolníte místo nebo si plán znovu nepředplatíte.",
+        "mais": "Nenašli jste odpověď na to, co hledáte?",
+        "verAjuda": "Přejít do Centra nápovědy"
+    },
+    "ajuda": {
+        "titulo": "Centrum nápovědy",
+        "heroiAntes": "S čím vám můžeme",
+        "heroiDestaque": "pomoci",
+        "heroiDepois": "?",
+        "heroiSubtitulo": "Podrobné návody ObraFácil se snímky obrazovek všech nabídek ve vašem jazyce.",
+        "buscaRotulo": "Hledat v Centru nápovědy",
+        "buscaPlaceholder": "Hledejte deníky, pracovníky, PDF, klienta…",
+        "buscaLimpar": "Vymazat hledání",
+        "buscaResultados": "Výsledky hledání",
+        "buscaSemResultado": "Pro výraz „{{termo}}“ nebyly nalezeny žádné články. Zkuste jiná slova nebo kontaktujte podporu.",
+        "buscasComuns": "Častá hledání:",
+        "sugestao1": "Offline stavební deník",
+        "sugestao2": "Přidat pracovníky",
+        "sugestao3": "PDF stavebního deníku",
+        "sugestao4": "Klientský portál",
+        "comeceTitulo": "Začněte zde",
+        "comeceSubtitulo": "Ucelené návody, které vás provedou od prvního přihlášení až po reálné výsledky na stavbě.",
+        "comecar": "Začít",
+        "tipo_fluxo": "Kompletní průvodce",
+        "tipo_funcao": "Krok za krokem",
+        "tipo_conceito": "Základní pojmy",
+        "assuntosTitulo": "Procházet podle témat",
+        "assuntosPerfil_todos": "Všechna témata v Centru nápovědy.",
+        "assuntosPerfil_gestor": "Témata pro stavbyvedoucí a vedoucí projektů.",
+        "assuntosPerfil_equipe": "Témata pro tým na stavbě.",
+        "assuntosPerfil_cliente": "Témata pro investory a klienty.",
+        "assuntosVazio": "Pro tuto roli zatím nejsou k dispozici žádné články. Prohlédněte si všechna témata nebo kontaktujte podporu.",
+        "perfilGrupo": "Zobrazit témata pro",
+        "perfil_todos": "Vše",
+        "perfil_gestor": "Stavbyvedoucí",
+        "perfil_equipe": "Pracovní tým",
+        "perfil_cliente": "Klient",
+        "artigos_one": "{{count}} návod",
+        "artigos_few": "{{count}} návody",
+        "artigos_many": "{{count}} návodu",
+        "artigos_other": "{{count}} návodů",
+        "essenciaisTitulo": "To nejdůležitější",
+        "essenciaisSubtitulo": "Co by měl každý uživatel vědět během prvních několika dnů.",
+        "suporteTitulo": "Nenašli jste to, co hledáte?",
+        "suporteTexto": "Napište našemu týmu přes WhatsApp nebo zadejte požadavek přímo v aplikaci.",
+        "suporteBotao": "Chatovat přes WhatsApp",
+        "suporteMensagem": "Dobrý den, píšu z Centra nápovědy na webu a mám dotaz.",
+        "carregando": "Načítání Centra nápovědy…",
+        "erroTitulo": "Centrum nápovědy se nepodařilo načíst",
+        "erroTexto": "Zkontrolujte připojení k internetu a zkuste to znovu.",
+        "tentarDeNovo": "Zkusit znovu",
+        "vazioTitulo": "Naše návody se připravují",
+        "vazioTexto": "Články Centra nápovědy se zde objeví velmi brzy. Mezitím je vám náš tým podpory plně k dispozici na WhatsAppu.",
+        "naoEncontradoTitulo": "Článek nebyl nalezen",
+        "naoEncontradoTexto": "Tato adresa nevede k žádnému článku. Možná byl přejmenován; zkuste jej vyhledat.",
+        "assuntoNaoEncontrado": "Téma nebylo nalezeno",
+        "voltarCentral": "Zpět do Centra nápovědy",
+        "trilha": "Nacházíte se zde",
+        "outrosAssuntos": "Další témata",
+        "paraPublico": "Pro: {{lista}}",
+        "publico_gestor": "stavbyvedoucí",
+        "publico_equipe": "členy týmu",
+        "publico_cliente": "klienty",
+        "e": "a",
+        "passos_one": "{{count}} krok",
+        "passos_few": "{{count}} kroky",
+        "passos_many": "{{count}} kroku",
+        "passos_other": "{{count}} kroků",
+        "passoNumero": "{{n}}. krok",
+        "printAlt": "Obrazovka aplikace u {{n}}. kroku: {{titulo}}",
+        "nesteArtigo": "V tomto článku",
+        "antesDeComecar": "Než začnete",
+        "relacionados": "Související články",
+        "navegacaoArtigos": "Další články v tomto tématu",
+        "anterior": "Předchozí",
+        "proximo": "Další",
+        "appTitulo": "Vyzkoušejte si to rovnou v aplikaci",
+        "appTexto": "Otevřete si ObraFácil v jiné záložce a postupujte podle návodu během čtení.",
+        "appBotao": "Otevřít ObraFácil",
+        "tambemEm": "K dispozici také v jazyce:"
+    },
+    "footer": {
+        "ctaTitle": "Jste připraveni udělat si pořádek na své další stavbě?",
+        "ctaBtn": "Začít zdarma",
+        "terms": "Podmínky služby",
+        "privacy": "Zásady ochrany osobních údajů",
+        "help": "Centrum nápovědy",
+        "support": "Podpora",
+        "tagline": "Řízení staveb je nyní jednodušší a profesionálnější.",
+        "rights": "Všechna práva vyhrazena.",
+        "language": "Jazyk webu",
+        "baixar": "Stáhnout aplikaci",
+        "produto": "Produkt",
+        "legal": "Právní informace",
+        "contato": "Kontaktujte nás",
+        "whatsapp": "WhatsApp"
+    },
+    "legal": {
+        "versao": "Verze dokumentu: {{versao}}",
+        "emVigorDesde": "účinné od {{data}}",
+        "valeAPartir": "platí od {{data}}",
+        "novaVersao": "Verze {{versao}} nabývá účinnosti dne {{data}}. Již nyní si můžete přečíst přehled změn.",
+        "lerNova": "Přečíst nové znění",
+        "vendoNova": "Prohlížíte si nové znění. Do data nabytí účinnosti platí stávající verze {{versao}}.",
+        "voltarAtual": "Zpět na aktuální znění",
+        "sumario": "Na této stránce",
+        "carregando": "Načítání textu…",
+        "erro": "Text se právě nepodařilo načíst. Zkontrolujte prosím své připojení k internetu.",
+        "indisponivel": "Text na této adrese zatím není k dispozici. Kontaktujte nás na suporte@appobrafacil.expertbr.com.",
+        "tentarDeNovo": "Zkusit znovu"
+    },
+    "cookies": {
+        "titulo": "Správa souborů cookie",
+        "texto": "Tento web používá nezbytné soubory cookie, které vám umožňují bezpečné přihlášení a uložení vašich předvoleb.",
+        "saibaMais": "Více se dozvíte v Zásadách ochrany osobních údajů.",
+        "aceitar": "Přijmout",
+        "recusar": "Odmítnout",
+        "preferencias": "Nastavení souborů cookie"
+    },
+    "cliente": {
+        "titulo": "Živý přehled o stavbě pro **vašeho klienta**",
+        "texto": "Klienti sledují etapy a fotky prostřednictvím soukromého odkazu bez nutnosti každodenního volání či posílání zpráv. Vaše interní náklady i mzdy týmu zůstávají bezpečně skryty.",
+        "antes": "Dříve: nepřehledná komunikace přes WhatsApp",
+        "depois": "Nyní: přehledný portál stavby",
+        "nome": "Klientský portál",
+        "hoje": "Dnes",
+        "msg1": "Dobrý den! Jak to dnes vypadá na stavbě? Máte nějaké nové fotky?",
+        "msg2": "Stihne se pokládka dlažby dokončit do příštího pátku?",
+        "msg3": "Dobrý den. Požádal jsem stavbyvedoucího, aby právě teď nahrál aktuální fotky.",
+        "conversaAviso": "Příklad komunikace s klientem",
+        "pontos": [
+            "Klient se přihlašuje vlastním účtem prostřednictvím pozvánky, kterou mu zašlete.",
+            "Chcete sdílet více informací? S funkcí Klientský přístup (v plánu PRO, jednorázový poplatek za stavbu) sami určíte, co může klient prohlížet a stahovat: fotky, kompletní finance, detailní harmonogram a záznamy o událostech.",
+            "U staveb dokončených ze 70 % a více má klient po vypršení přístupu ještě 15 dní na stažení nasdílených souborů."
+        ],
+        "telaPortal": "Klientský portál s nejnovějšími aktualitami ze stavby",
+        "telaAcesso": "Obrazovka, kde stavbyvedoucí nastavuje rozsah zobrazení pro klienta"
+    },
+    "recursos": {
+        "titulo": "Vše, co vaše stavba potřebuje, **na jednom místě**",
+        "itens": {
+            "cronograma": {
+                "titulo": "Harmonogram po etapách",
+                "texto": "Sestavte si vlastní etapy nebo vygenerujte 19 standardních etap ze smluvní hodnoty a sledujte postup prací v každé fázi."
+            },
+            "diario": {
+                "titulo": "Stavební deník",
+                "texto": "Počasí, prováděné práce, události, přítomný tým, fotografie a podpisy. Snadný export do PDF připraveného k odeslání."
+            },
+            "financeiro": {
+                "titulo": "Finance stavby",
+                "texto": "Rozpočet, soupisy provedených prací a částky k úhradě v jednotlivých etapách spolu s přehledem příjmů a výdajů."
+            },
+            "equipe": {
+                "titulo": "Tým a mzdy",
+                "texto": "Evidujte pracovníky, zaznamenávejte každodenní docházku v denních záznamech a snadno počítejte výplatní listinu."
+            },
+            "compras": {
+                "titulo": "Zásobování a sklad",
+                "texto": "Zapisujte nákupy s přiloženými fakturami a mějte přehled o stavu materiálů a nářadí na každé stavbě."
+            },
+            "marca": {
+                "titulo": "Reporty s vaší firemní identitou",
+                "texto": "V plánu PRO obsahují všechny generované PDF soubory logo a oficiální zápatí vaší společnosti."
+            },
+            "offline": {
+                "titulo": "Práce bez signálu na stavbě",
+                "texto": "Aplikace bezpečně ukládá data přímo v zařízení a automaticky je synchronizuje, jakmile se signál obnoví."
+            },
+            "aparelhos": {
+                "titulo": "Na všech vašich zařízeních",
+                "texto": "Android, iPhone, Windows i prohlížeč jsou neustále propojeny se stejnými aktuálními daty."
+            }
+        },
+        "tela": "Přehled stavby se smluvní částkou, termínem dokončení a celkovým postupem prací"
+    },
+    "equipe": {
+        "titulo": "Každý vidí jen to, co skutečně potřebuje",
+        "texto": "Pozvěte na stavbu inženýry, pracovníky i klienty. Tvůrce stavby sám určuje, kdo se připojí a jaká oprávnění jednotlivé role mají.",
+        "papeis": {
+            "gestor": {
+                "nome": "Stavbyvedoucí",
+                "desc": "Plný přístup: vytváří a nastavuje stavby, spravuje finance, zve tým a generuje všechny reporty."
+            },
+            "engenheiro": {
+                "nome": "Inženýr",
+                "desc": "Sleduje a aktualizuje stavbu v rozsahu oprávnění, která mu udělíte."
+            },
+            "equipe": {
+                "nome": "Pracovní tým",
+                "desc": "Zaznamenává každodenní rutinu: stavební deník, fotografie ze stavby a docházku pracovníků."
+            },
+            "cliente": {
+                "nome": "Klient",
+                "desc": "Sleduje na Klientském portálu to, co nasdílíte."
+            }
+        },
+        "tela": "Stavební deník se seznamem týmu a zaznamenanou docházkou každého pracovníka"
+    },
+    "chamada": {
+        "titulo": "Začněte na své **další stavbě**",
+        "texto": "Bezplatný plán není časově omezen. Na PRO můžete přejít kdykoliv, jakmile budete potřebovat větší kapacitu.",
+        "acao": "Začít zdarma",
+        "duvida": "Máte dotazy? Napište nám přímo přes WhatsApp.",
+        "whatsapp": "Poslat zprávu přes WhatsApp"
+    },
+    "conta": {
+        "abrirApp": "Otevřít ObraFácil v prohlížeči",
+        "lojasTitulo": "ObraFácil na všech zařízeních",
+        "lojasTexto": "Přihlaste se pod stejným účtem na telefonu, počítači i v prohlížeči: vaše předplatné a funkce platí na všech zařízeních.",
+        "falarSuporte": "Kontaktovat tým podpory"
+    },
+    "pagamento": {
+        "metaTitulo": "Platba potvrzena · ObraFácil",
+        "metaDescricao": "Vaše platba proběhla úspěšně. Podívejte se, kdy se funkce v ObraFácil aktivují a co dělat v případě zpoždění.",
+        "agoraTitulo": "Co se bude dít nyní",
+        "voltarTitulo": "Návrat do ObraFácil",
+        "voltarTexto": "Vraťte se na záložku prohlížeče nebo do aplikace Windows, kde jste nákup prováděli. Pokud jste ji zavřeli, otevřete ObraFácil znovu pod stejným účtem.",
+        "automaticoTitulo": "Aktivace probíhá automaticky",
+        "automaticoTexto": "Stripe okamžitě informuje naše servery a zakoupená funkce se automaticky aktivuje na vašem účtu. Nemusíte dělat nic dalšího.",
+        "conferirTitulo": "Zkontrolovat v aplikaci",
+        "demoraTitulo": "Pokud se nákup nezobrazí ihned",
+        "demoraEsperar": "Počkejte minutu, pak aplikaci zavřete a znovu otevřete. V prohlížeči obnovte stránku ObraFácil.",
+        "demoraSairEntrar": "Stále se zobrazuje bezplatný plán? Odhlaste se a znovu přihlaste e-mailem použitým při platbě: aplikace rozpozná webové předplatné a aktivuje PRO.",
+        "demoraRestaurar": "**Obnovit nákupy** zde neplatí: toto tlačítko vyhledává pouze nákupy provedené přes obchody s aplikacemi v telefonu (Google Play nebo App Store).",
+        "demoraSuporte": "Pokud problém přetrvává, kontaktujte tým podpory a uveďte e-mailovou adresu použitou při platbě.",
+        "compras": {
+            "geral": {
+                "sobretitulo": "Platba potvrzena",
+                "titulo": "Platba byla **potvrzena**",
+                "texto": "Vaše platba byla úspěšně dokončena. Během několika okamžiků ObraFácil obdrží potvrzení a odemkne zakoupenou funkci.",
+                "conferir": "Otevřete ObraFácil pod stejným účtem jako při nákupu: vaše nová funkce se objeví automaticky.",
+                "artigo": "Kde najdete historii plateb"
+            },
+            "pro": {
+                "sobretitulo": "Předplatné potvrzeno",
+                "titulo": "Vítejte v ObraFácil **PRO**",
+                "texto": "Vaše předplatné bylo potvrzeno. Během okamžiku se plán PRO automaticky aktivuje na vašem účtu v telefonu, na počítači i v prohlížeči.",
+                "conferir": "Otevřete **Profil**: odznak na horní kartě se změní na **Člen PRO** a na kartě **Váš plán** se zobrazí **ObraFácil PRO**.",
+                "artigo": "Koupil jsem PRO na webu: jak jej aktivovat"
+            },
+            "acesso": {
+                "sobretitulo": "Platba potvrzena",
+                "titulo": "Platba za **Klientský přístup** potvrzena",
+                "texto": "Poplatek za stavbu byl uhrazen. Během chvíle aplikace odemkne funkce Klientského portálu pro investora této stavby.",
+                "conferir": "Otevřete stavbu: ve spodní části **NABÍDKY STAVBY** se na kartě **Klientský přístup** zobrazí stav **Přístup udělen**. Klepněte na **NASTAVIT** a zvolte, co klient uvidí.",
+                "artigo": "Co je funkce Klientský přístup"
+            },
+            "downloads": {
+                "sobretitulo": "Platba potvrzena",
+                "titulo": "**Dodatečný balíček stažení** pro stavbu potvrzen",
+                "texto": "Během chvíle získá stavba 2 další kompletní stažení celé galerie ve formátu ZIP, která mohou využít všichni členové.",
+                "conferir": "Vraťte se do **Galerie stavby** a klepněte znovu na **Stáhnout vše**.",
+                "artigo": "Jak zakoupit další stažení galerie"
+            },
+            "armazenamento": {
+                "sobretitulo": "Předplatné potvrzeno",
+                "titulo": "Dalších **20 GB** pro vaše stavby",
+                "texto": "Rozšíření úložiště bylo potvrzeno. Aplikace okamžitě přidá 20 GB ke kapacitě vašeho plánu.",
+                "conferir": "Otevřete **Profil**: pod ukazatelem **Úložiště** se na kartě **Váš plán** zobrazí **Rozšíření +20 GB aktivní**.",
+                "artigo": "Jak přidat 20 GB úložiště"
+            }
+        }
+    },
+    "perfil": {
+        "metaTitulo": "Vaše předplatné · ObraFácil",
+        "metaDescricao": "Zjistěte, kde v ObraFácil najdete svůj plán, platební karty a možnost zrušení předplatného.",
+        "sobretitulo": "Vaše předplatné",
+        "titulo": "Předplatné spravujete v nabídce **Profil**",
+        "texto": "Plány, faktury, platební karty i zrušení najdete přímo v aplikaci: v Profilu, na kartě Váš plán. Otevřete ObraFácil a postupujte podle kroků níže.",
+        "artigoBotao": "Jak spravovat nebo zrušit předplatné",
+        "passosTitulo": "Jak se tam dostat",
+        "passo1Titulo": "Otevřete ObraFácil",
+        "passo1Texto": "Přihlaste se svým účtem v telefonu, v aplikaci pro Windows nebo v prohlížeči.",
+        "passo2Titulo": "Otevřete Profil",
+        "passo2Texto": "Na telefonu klepněte na nabídku (tři čárky) v horní části přehledu a poté na kartu profilu. Na počítači klikněte na svou kartu v postranním panelu.",
+        "passo3Titulo": "Použijte kartu Váš plán",
+        "passo3Texto": "Hned pod vaší fotkou zobrazuje karta **Váš plán** aktuální plán, využité místo, stavby a reporty za tento měsíc. Klepněte na **Spravovat**.",
+        "gerenciarTitulo": "Co dělá tlačítko Spravovat",
+        "gerenciarCelular": "**Předplaceno v telefonu**: otevře obrazovku předplatných Google Play nebo App Store pro obnovení, faktury a zrušení.",
+        "gerenciarSite": "**Předplaceno na webu nebo v počítači**: otevře platební portál v prohlížeči pro změnu karty, zobrazení faktur nebo zrušení.",
+        "gerenciarLugar": "Zrušení na jedné platformě nezruší předplatné sjednané na jiné platformě.",
+        "avisoTitulo": "Obdrželi jste oznámení o neúspěšné platbě?",
+        "avisoTexto": "Vaše banka odmítla platbu za předplatné. Klepněte na **Spravovat** a zadejte platnou kartu, abyste nepřišli o funkce PRO. Pokud jste již zaplatili, tuto zprávu ignorujte.",
+        "artigosTitulo": "V Centru nápovědy",
+        "artigoCartao": "Jak se orientovat v kartě Váš plán",
+        "artigoCancelar": "Jak spravovat nebo zrušit předplatné",
+        "artigoPagamentos": "Historie plateb a vrácení peněz"
+    },
+    "suporte": {
+        "metaTitulo": "Podpora · ObraFácil",
+        "metaDescricao": "Kontaktujte podporu ObraFácil přes WhatsApp, e-mail nebo požadavek v aplikaci a projděte si návody v Centru nápovědy.",
+        "sobretitulo": "Podpora",
+        "titulo": "Kontaktujte **tým podpory**",
+        "texto": "Zeptejte se na cokoliv, nahlaste problém v aplikaci nebo požádejte o pomoc s platbami. Naše průměrná doba odpovědi je 24 až 48 pracovních hodin.",
+        "canaisTitulo": "Kde nás zastihnete",
+        "whatsappTitulo": "WhatsApp",
+        "whatsappTexto": "Pro rychlý chat a bezprostřední krátké dotazy.",
+        "whatsappBotao": "Otevřít WhatsApp",
+        "whatsappMensagem": "Dobrý den, obracím se na vás ze stránky podpory na webu a potřebuji pomoc s ObraFácil.",
+        "emailTitulo": "E-mail",
+        "emailTexto": "Pro zaslání podrobností, snímků obrazovky a příloh. Pokud je to možné, pište z e-mailu svého účtu.",
+        "emailBotao": "Napsat e-mail",
+        "chamadoTitulo": "Požadavek v aplikaci",
+        "chamadoTexto": "Je propojen s vaším účtem a slouží jako oficiální cesta k žádosti o vrácení peněz za webové nákupy v sekci **Finanční pomoc**. Odpověď vám přijde na e-mail účtu.",
+        "chamadoBotao": "Jak otevřít požadavek",
+        "centralTitulo": "Centrum nápovědy",
+        "centralTexto": "Podrobné návody pro každou obrazovku aplikace s reálnými ukázkami.",
+        "centralBotao": "Otevřít Centrum nápovědy",
+        "lojasTitulo": "Nakoupili jste přes Google Play nebo App Store?",
+        "lojasTexto": "Vyúčtování a vrácení plateb pro tyto transakce spravuje přímo daný obchod s aplikacemi. Pro zrušení použijte tlačítko **Spravovat** na kartě **Váš plán**.",
+        "perfilLink": "Kde najdete své předplatné"
+    }
+}

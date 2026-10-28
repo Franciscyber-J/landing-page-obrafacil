@@ -1,0 +1,498 @@
+{
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil: app di gestione cantiere e giornale dei lavori",
+            "descricao": "App per la gestione del cantiere da smartphone e PC: cronoprogramma, giornale dei lavori con foto, contabilità, squadra e portale cliente. Inizia gratis."
+        },
+        "ajuda": {
+            "titulo": "Centro assistenza ObraFácil: guide passo dopo passo",
+            "descricao": "Guide pratiche passo dopo passo per ObraFácil: rapportini giornalieri, cronoprogramma, contabilità, squadra e portale cliente con schermate reali dell'app."
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · Centro assistenza ObraFácil",
+            "descricao": "{{descricao}} Guide passo dopo passo con schermate reali dell'app ObraFácil."
+        },
+        "artigo": {
+            "titulo": "{{titulo}} — ObraFácil"
+        },
+        "app": {
+            "descricao": "App di gestione cantiere per imprese edili, artigiani, direttori dei lavori, ingegneri e architetti: cronoprogramma per fasi, rapportini giornalieri (giornale dei lavori) con foto e PDF, contabilità di cantiere, paghe della squadra, acquisti e magazzino, e un portale per far seguire i lavori al committente. Funziona su Android, iPhone, Windows e web, anche offline in cantiere.",
+            "categoria": "Gestione cantiere"
+        },
+        "imagemAlt": "Logo ObraFácil, app di gestione cantiere",
+        "llms": {
+            "sobre": "Che cos'è ObraFácil",
+            "paraQuem": "A chi si rivolge: imprese edili, ingegneri, architetti, geometri e capicantiere che gestiscono uno o più cantieri e vogliono documentare il lavoro quotidiano, tenere sotto controllo tempi e costi e mostrare l'avanzamento al committente.",
+            "plataformas": "Piattaforme",
+            "recursos": "Funzionalità",
+            "papeis": "Chi fa cosa nel cantiere",
+            "planos": "Piani e prezzi",
+            "precosPorIdioma": "Prezzo PRO in ogni lingua e valuta del sito",
+            "precoLinha": "{{mensal}} al mese o {{anual}} all'anno",
+            "paginas": "Pagine principali",
+            "idiomas": "Il sito e l'app sono disponibili in queste lingue",
+            "todosArtigos": "Tutti gli articoli del Centro assistenza"
+        }
+    },
+    "nav": {
+        "login": "Accedi",
+        "comecar": "Inizia gratis",
+        "recursos": "Funzionalità",
+        "precos": "Prezzi",
+        "ajuda": "Centro assistenza",
+        "lightMode": "Tema chiaro",
+        "darkMode": "Tema scuro",
+        "language": "Lingua",
+        "chooseLanguage": "Scegli la lingua",
+        "themeToggle": "Passa dal tema chiaro al tema scuro",
+        "menu": "Apri o chiudi il menu",
+        "inicio": "Home page di ObraFácil",
+        "navegacao": "Navigazione principale"
+    },
+    "hero": {
+        "plataformas": "Android · iPhone · Windows · Browser web",
+        "titulo": "Tutto il cantiere **in un unico posto**",
+        "subtitulo": "Cronoprogramma, giornale dei lavori, contabilità, squadra e acquisti sul tuo smartphone e PC. E il tuo committente segue i lavori dal portale, senza doverti chiamare ogni giorno.",
+        "comecar": "Inizia gratis",
+        "verPlanos": "Vedi i piani",
+        "semCartao": "Piano gratuito senza limiti di tempo e senza carta di credito.",
+        "camposRotulo": "Sezioni del cantiere nell'app",
+        "campos": {
+            "cronograma": {
+                "rotulo": "Cronoprogramma",
+                "valor": "Fasi, avanzamento fisico e date"
+            },
+            "diario": {
+                "rotulo": "Giornale dei lavori",
+                "valor": "Foto, meteo e squadra in PDF"
+            },
+            "financeiro": {
+                "rotulo": "Contabilità di cantiere",
+                "valor": "Preventivato vs speso, entrate e uscite"
+            },
+            "cliente": {
+                "rotulo": "Portale cliente",
+                "valor": "L'avanzamento condiviso con chi paga"
+            }
+        },
+        "legendaTela": "Schermata dell'app con dati di esempio",
+        "telas": {
+            "cronograma": "Fasi del cantiere con preventivato, misurato, importo da pagare e avanzamento fisico",
+            "diario": "Nuovo rapportino giornaliero con meteo, attività svolte e segnalazioni",
+            "financeiro": "Contabilità di cantiere con costo al metro quadro, entrate, uscite e saldo",
+            "cliente": "Portale cliente con gli ultimi aggiornamenti sui lavori"
+        },
+        "disponivelNo": "Disponibile su",
+        "baixarNa": "Scarica da",
+        "baixarPara": "Scarica per"
+    },
+    "pricing": {
+        "title": "Piani e prezzi",
+        "toggleMonthly": "Mensile",
+        "toggleAnnual": "Annuale",
+        "periodoRotulo": "Periodo di fatturazione",
+        "economia": "Risparmia {{simbolo}}{{valor}}",
+        "perMonth": "/mese",
+        "periodAnnual": "/anno",
+        "gratis": {
+            "nome": "Gratuito",
+            "desc": "Per iniziare e scoprire tutte le funzioni dell'app.",
+            "cta": "Inizia gratis",
+            "itens": [
+                "1 cantiere tuo attivo alla volta",
+                "7 report PDF al mese con filigrana",
+                "250 MB per foto e documenti",
+                "Il committente segue i lavori dal portale"
+            ]
+        },
+        "pro": {
+            "nomeMensal": "PRO mensile",
+            "nomeAnual": "PRO annuale",
+            "desc": "Per imprese edili, ingegneri e artigiani con più cantieri.",
+            "itens": [
+                "Cantieri illimitati",
+                "Report PDF illimitati senza filigrana",
+                "10 GB per foto e documenti",
+                "PDF con logo e piè di pagina della tua impresa",
+                "Rapportini in ZIP e file del cantiere utilizzabili offline",
+                "Accesso Cliente attivabile per ciascun cantiere"
+            ],
+            "itensAnual": [
+                "Tutto ciò che include PRO mensile",
+                "Prezzo bloccato per 12 mesi"
+            ],
+            "comparacao": "Pagando mese per mese, 12 mesi costano {{simbolo}}{{valor}}",
+            "equivale": "Equivale a {{simbolo}}{{valor}} al mese",
+            "ctaMensal": "Abbonati a PRO mensile",
+            "ctaAnual": "Abbonati a PRO annuale"
+        },
+        "renovacao": "Rinnovo automatico. Disdici quando vuoi, direttamente dallo stesso store in cui ti sei abbonato.",
+        "lojas": "Se ti abboni da smartphone, il prezzo e la fatturazione sono gestiti da Google Play o App Store.",
+        "addons": "Solo con PRO: +20 GB di spazio (abbonamento a parte) e l'Accesso Cliente per sbloccare più funzioni nel portale (costo una tantum per cantiere).",
+        "selo": "Miglior valore",
+        "gratisPreco": "Gratis per sempre"
+    },
+    "popup": {
+        "faixa": "Piano gratuito senza limiti di tempo",
+        "title": "Prima di andare, provalo nel tuo prossimo cantiere",
+        "texto": "Crea il tuo account gratuito, senza carta di credito. Registra un cantiere e scopri il cronoprogramma, il giornale dei lavori con foto e la contabilità, con il committente che segue tutto dal portale.",
+        "cta": "Inizia gratis",
+        "lojas": "Oppure scarica l'app",
+        "fechar": "Chiudi"
+    },
+    "whatsapp": {
+        "tooltip": "Parla con l'assistenza",
+        "message": "Ciao, ti contatto dal sito e vorrei fare una domanda"
+    },
+    "social": {
+        "title": "Cosa dicono i professionisti dell'edilizia",
+        "test1": "«I miei clienti sono rimasti molto colpiti dall'app. Ha dato molta più credibilità alla nostra gestione e ha giustificato appieno il valore del mio compenso.»",
+        "author1": "Carlo M.",
+        "role1": "Ingegnere civile",
+        "test2": "«Scrivere il giornale dei lavori in Word a fine giornata mi portava via un'ora. Ora lo compilo in 5 minuti sullo smartphone direttamente in cantiere.»",
+        "author2": "Paolo R.",
+        "role2": "Impresario edile",
+        "test3": "«Inviare i SAL e le misurazioni per approvazione è diventato semplicissimo. Senza discussioni inutili, il committente approva tutto al volo.»",
+        "author3": "Roberto S.",
+        "role3": "Capocantiere",
+        "test4": "«La galleria fotografica ci ha aiutato moltissimo nel concordare i dettagli di finitura con l'architetto, senza obbligarlo a venire ogni volta sul posto.»",
+        "author4": "Marianna T.",
+        "role4": "Architetto",
+        "test5": "«Persino il committente finale ha elogiato il nostro ordine impeccabile. Finalmente trasmettiamo la stessa professionalità delle più grandi imprese di costruzione.»",
+        "author5": "Ferdinando B.",
+        "role5": "Costruttore generale",
+        "aviso": "Testimonianze di clienti reali, pubblicate con autorizzazione."
+    },
+    "faq": {
+        "title": "Domande frequenti",
+        "q1": "Il mio cliente paga per seguire il cantiere?",
+        "a1": "No. Il cliente segue il cantiere tramite il portale senza pagare nulla. Se vuoi consentirgli di accedere a più contenuti, come scaricare foto e vedere l'intero quadro economico, l'Accesso Cliente è una tariffa unica per cantiere, a tuo carico con il piano PRO.",
+        "q2": "Posso usare l'app sia su computer che su smartphone?",
+        "a2": "Sì. ObraFácil funziona su Android, iPhone, Windows e nel browser web, mantenendo gli stessi dati sincronizzati su tutti i tuoi dispositivi.",
+        "q3": "I miei dati sono al sicuro?",
+        "a3": "I dati vengono trasmessi in modo crittografato e archiviati in totale sicurezza sui server Google, anch'essi in forma crittografata. Ogni utente visualizza solo i cantieri a cui partecipa, in base alle autorizzazioni del proprio ruolo.",
+        "q4": "Quali dati personali vengono raccolti?",
+        "a4": "Per l'account: nome, email e numero di telefono; il codice fiscale solo se scegli di inserirlo. L'elenco completo e le finalità di ciascun dato sono indicati nell'Informativa sulla privacy.",
+        "q5": "L'app funziona anche senza connessione Internet?",
+        "a5": "Sì. Senza connessione, l'app salva i dati direttamente sul dispositivo e li trasmette automaticamente non appena la connessione viene ripristinata.",
+        "q6": "Il cliente perde l'accesso ai file una volta terminato il cantiere?",
+        "a6": "Se il cantiere ha raggiunto o superato il 70% di avanzamento al momento della scadenza dell'accesso, il cliente ha ulteriori 15 giorni per consultare e scaricare i file condivisi.",
+        "q7": "ObraFácil sostituisce il direttore dei lavori o i titoli abilitativi di legge?",
+        "a7": "No. Si tratta di uno strumento di organizzazione e gestione del cantiere, che non sostituisce il direttore dei lavori o il responsabile tecnico abilitato, né i titoli edilizi e le certificazioni obbligatorie.",
+        "q8": "Posso eliminare il mio account?",
+        "a8": "Sì, da Profilo > Elimina account. L'account viene prima sospeso per 30 giorni (reversibile) e poi i tuoi cantieri e dati vengono rimossi. Alcuni record, come le transazioni e l'accettazione dei Termini, vengono conservati per i tempi previsti dall'Informativa sulla privacy.",
+        "q9": "Posso disdire l'abbonamento PRO o lo spazio aggiuntivo?",
+        "a9": "Sì, in qualsiasi momento e dallo stesso canale da cui ti sei abbonato. Non ci saranno rinnovi futuri e il tuo accesso resterà attivo fino al termine del periodo già pagato.",
+        "q10": "Cosa succede se il pagamento del rinnovo non va a buon fine?",
+        "a10": "L'account torna automaticamente al piano gratuito. Nessun dato viene cancellato; se superi i limiti del piano gratuito, viene bloccato solo il caricamento di nuovi file finché non liberi spazio o riattivi l'abbonamento.",
+        "mais": "Non hai trovato la risposta che cercavi?",
+        "verAjuda": "Visita il Centro assistenza"
+    },
+    "ajuda": {
+        "titulo": "Centro assistenza",
+        "heroiAntes": "Come possiamo",
+        "heroiDestaque": "aiutarti",
+        "heroiDepois": "?",
+        "heroiSubtitulo": "Guide passo dopo passo per ObraFácil con le schermate reali dell'app nella tua lingua.",
+        "buscaRotulo": "Cerca nel Centro assistenza",
+        "buscaPlaceholder": "Cerca per giornale dei lavori, collaboratore, PDF, committente…",
+        "buscaLimpar": "Cancella ricerca",
+        "buscaResultados": "Risultati della ricerca",
+        "buscaSemResultado": "Nessun articolo trovato per “{{termo}}”. Prova con un'altra parola o contatta l'assistenza.",
+        "buscasComuns": "Ricerche frequenti:",
+        "sugestao1": "Rapportino offline",
+        "sugestao2": "Registrare un collaboratore",
+        "sugestao3": "PDF del giornale dei lavori",
+        "sugestao4": "Portale cliente",
+        "comeceTitulo": "Inizia da qui",
+        "comeceSubtitulo": "Guide complete che ti accompagnano dal primo accesso ai risultati concreti in cantiere.",
+        "comecar": "Inizia",
+        "tipo_fluxo": "Guida completa",
+        "tipo_funcao": "Passo dopo passo",
+        "tipo_conceito": "Approfondimento",
+        "assuntosTitulo": "Esplora per argomento",
+        "assuntosPerfil_todos": "Tutti gli argomenti del Centro assistenza.",
+        "assuntosPerfil_gestor": "Argomenti per chi gestisce il cantiere.",
+        "assuntosPerfil_equipe": "Argomenti per chi lavora in cantiere.",
+        "assuntosPerfil_cliente": "Argomenti per il committente dei lavori.",
+        "assuntosVazio": "Non ci sono ancora articoli per questo profilo. Esplora tutti gli argomenti o contatta l'assistenza.",
+        "perfilGrupo": "Mostra argomenti per",
+        "perfil_todos": "Tutti",
+        "perfil_gestor": "Responsabile",
+        "perfil_equipe": "Squadra",
+        "perfil_cliente": "Committenti",
+        "artigos_one": "1 articolo",
+        "artigos_many": "{{count}} articoli",
+        "artigos_other": "{{count}} articoli",
+        "essenciaisTitulo": "Articoli essenziali",
+        "essenciaisSubtitulo": "Le cose fondamentali che ogni utente deve conoscere nei primi giorni.",
+        "suporteTitulo": "Non hai trovato quello che cercavi?",
+        "suporteTexto": "Scrivi all'assistenza su WhatsApp oppure apri una richiesta di supporto direttamente dall'app.",
+        "suporteBotao": "Parla su WhatsApp",
+        "suporteMensagem": "Ciao, ti contatto dal Centro assistenza del sito e ho una domanda.",
+        "carregando": "Caricamento del Centro assistenza in corso…",
+        "erroTitulo": "Impossibile caricare il Centro assistenza",
+        "erroTexto": "Controlla la tua connessione internet e riprova.",
+        "tentarDeNovo": "Riprova",
+        "vazioTitulo": "Le nostre guide sono in preparazione",
+        "vazioTexto": "Gli articoli del Centro assistenza saranno presto disponibili qui. Nel frattempo, l'assistenza può rispondere a ogni tua domanda su WhatsApp.",
+        "naoEncontradoTitulo": "Articolo non trovato",
+        "naoEncontradoTexto": "Questo indirizzo non corrisponde ad alcun articolo. Potrebbe essere stato rinominato; prova a cercarlo con la funzione di ricerca.",
+        "assuntoNaoEncontrado": "Argomento non trovato",
+        "voltarCentral": "Torna al Centro assistenza",
+        "trilha": "Ti trovi in",
+        "outrosAssuntos": "Altri argomenti",
+        "paraPublico": "Per {{lista}}",
+        "publico_gestor": "responsabili",
+        "publico_equipe": "membri della squadra",
+        "publico_cliente": "committenti",
+        "e": "e",
+        "passos_one": "1 passaggio",
+        "passos_many": "{{count}} passaggi",
+        "passos_other": "{{count}} passaggi",
+        "passoNumero": "Passaggio {{n}}",
+        "printAlt": "Schermata dell'app al passaggio {{n}}: {{titulo}}",
+        "nesteArtigo": "In questo articolo",
+        "antesDeComecar": "Da leggere prima",
+        "relacionados": "Articoli correlati",
+        "navegacaoArtigos": "Altri articoli su questo argomento",
+        "anterior": "Precedente",
+        "proximo": "Successivo",
+        "appTitulo": "Segui i passaggi nell'app",
+        "appTexto": "Apri ObraFácil in un'altra scheda e metti in pratica i passaggi mentre leggi.",
+        "appBotao": "Apri ObraFácil",
+        "tambemEm": "Disponibile anche in"
+    },
+    "footer": {
+        "ctaTitle": "Pronto a organizzare il tuo prossimo cantiere?",
+        "ctaBtn": "Inizia gratis",
+        "terms": "Termini di servizio",
+        "privacy": "Informativa sulla privacy",
+        "help": "Centro assistenza",
+        "support": "Assistenza clienti",
+        "tagline": "La gestione del cantiere resa semplice e professionale.",
+        "rights": "Tutti i diritti riservati.",
+        "language": "Lingua del sito",
+        "baixar": "Scarica l'app",
+        "produto": "Prodotto",
+        "legal": "Note legali",
+        "contato": "Contattaci",
+        "whatsapp": "WhatsApp"
+    },
+    "legal": {
+        "versao": "Versione n. {{versao}}",
+        "emVigorDesde": "in vigore dal {{data}}",
+        "valeAPartir": "valida a partire dal {{data}}",
+        "novaVersao": "La versione {{versao}} entrerà in vigore il {{data}}. Puoi già verificare le modifiche apportate.",
+        "lerNova": "Leggi la nuova versione",
+        "vendoNova": "Stai leggendo la nuova versione. Fino alla data indicata, resta applicabile la versione {{versao}}.",
+        "voltarAtual": "Torna alla versione attualmente in vigore",
+        "sumario": "In questa pagina",
+        "carregando": "Caricamento del testo in corso…",
+        "erro": "Impossibile caricare il testo in questo momento. Verifica la tua connessione.",
+        "indisponivel": "Il testo non è ancora disponibile a questo indirizzo. Scrivi a suporte@appobrafacil.expertbr.com.",
+        "tentarDeNovo": "Riprova"
+    },
+    "cookies": {
+        "titulo": "Gestione dei cookie",
+        "texto": "Questo sito utilizza cookie essenziali per consentirti l'accesso e ricordare le tue preferenze in totale sicurezza.",
+        "saibaMais": "Scopri di più nell'Informativa sulla privacy.",
+        "aceitar": "Accetta",
+        "recusar": "Rifiuta",
+        "preferencias": "Preferenze relative ai cookie"
+    },
+    "cliente": {
+        "titulo": "I lavori in tempo reale per il tuo **committente**",
+        "texto": "Il committente segue le fasi di lavoro e le foto tramite un link personale, senza bisogno di telefonarti o scriverti ogni giorno. E non vede le spese del cantiere né le paghe della squadra.",
+        "antes": "Prima: tutto frammentato su WhatsApp",
+        "depois": "Ora: il portale ordinato del cantiere",
+        "nome": "Portale cliente",
+        "hoje": "Oggi",
+        "msg1": "Ciao! Come procedono i lavori in cantiere? Ci sono foto di oggi?",
+        "msg2": "La posa dei pavimenti sarà completata entro venerdì prossimo?",
+        "msg3": "Ciao. Chiedo subito al capocantiere di inviarti le foto aggiornate.",
+        "conversaAviso": "Esempio di conversazione con il committente",
+        "pontos": [
+            "Il committente accede con il proprio account personale tramite l'invito che gli invii.",
+            "Vuoi condividere di più? Con l'Accesso Cliente (su PRO, quota una tantum per cantiere), scegli tu cosa fargli vedere e scaricare: foto in alta risoluzione, contabilità completa, cronoprogramma dettagliato e apertura segnalazioni.",
+            "Nei cantieri con avanzamento al 70% o superiore, al termine dell'accesso il committente ha ancora 15 giorni per scaricare tutti i documenti condivisi."
+        ],
+        "telaPortal": "Portale cliente con gli ultimi aggiornamenti sui lavori",
+        "telaAcesso": "Schermata in cui il responsabile sceglie cosa può vedere il committente"
+    },
+    "recursos": {
+        "titulo": "Tutto ciò di cui ha bisogno il tuo cantiere **in un unico posto**",
+        "itens": {
+            "cronograma": {
+                "titulo": "Cronoprogramma per fasi",
+                "texto": "Organizza le fasi di lavoro o genera 19 fasi standard a partire dall'importo contrattuale, e monitora l'avanzamento fisico di ciascuna."
+            },
+            "diario": {
+                "titulo": "Giornale dei lavori",
+                "texto": "Condizioni meteo, lavorazioni svolte, segnalazioni, presenze in cantiere, foto e firma. Esportazione in PDF pronta da condividere."
+            },
+            "financeiro": {
+                "titulo": "Contabilità di cantiere",
+                "texto": "Preventivato, misurato e importi liquidabili per ogni fase, con entrate, uscite e rendiconto finanziario."
+            },
+            "equipe": {
+                "titulo": "Squadra e paghe",
+                "texto": "Registra i collaboratori, gestisci le presenze giornaliere nei rapportini e calcola la paga con precisione."
+            },
+            "compras": {
+                "titulo": "Acquisti e magazzino",
+                "texto": "Registra gli acquisti con fattura e tieni traccia dei materiali e delle attrezzature di ogni cantiere."
+            },
+            "marca": {
+                "titulo": "Report con il tuo brand",
+                "texto": "Con il piano PRO, tutti i PDF esportati mostrano il logo e l'intestazione personalizzata della tua impresa."
+            },
+            "offline": {
+                "titulo": "Nessun segnale in cantiere",
+                "texto": "L'app salva ogni registrazione sul dispositivo e la invia automaticamente non appena torna la connessione."
+            },
+            "aparelhos": {
+                "titulo": "Su tutti i tuoi dispositivi",
+                "texto": "Android, iPhone, Windows e browser, sempre sincronizzati con gli stessi dati."
+            }
+        },
+        "tela": "Riepilogo del cantiere con valore contrattuale, scadenze e avanzamento fisico complessivo"
+    },
+    "equipe": {
+        "titulo": "Ognuno vede esattamente ciò di cui ha bisogno",
+        "texto": "Invita nel cantiere i tecnici, la squadra e il committente. Chi è responsabile del cantiere decide chi può accedere e quali permessi assegnare a ciascun ruolo.",
+        "papeis": {
+            "gestor": {
+                "nome": "Responsabile",
+                "desc": "Accesso completo: crea e configura i cantieri, gestisce le finanze, invita i collaboratori e genera tutti i report."
+            },
+            "engenheiro": {
+                "nome": "Tecnico",
+                "desc": "Segue e aggiorna lo stato dei lavori in base alle autorizzazioni assegnate."
+            },
+            "equipe": {
+                "nome": "Squadra",
+                "desc": "Documenta la giornata lavorativa: compila i rapportini, scatta foto e registra le presenze."
+            },
+            "cliente": {
+                "nome": "Committente",
+                "desc": "Segue tramite il Portale cliente solo ciò che autorizzi."
+            }
+        },
+        "tela": "Giornale dei lavori con l'elenco della squadra e le presenze giornaliere"
+    },
+    "chamada": {
+        "titulo": "Pronto a organizzare **il tuo cantiere** in modo professionale?",
+        "texto": "Il piano gratuito non ha limiti di tempo. Passa a PRO quando la tua impresa ha bisogno di più spazio e funzioni.",
+        "acao": "Inizia gratis",
+        "duvida": "Hai domande? Parla direttamente con noi su WhatsApp.",
+        "whatsapp": "Scrivici su WhatsApp"
+    },
+    "conta": {
+        "abrirApp": "Apri ObraFácil nel tuo browser",
+        "lojasTitulo": "ObraFácil su tutti i tuoi dispositivi",
+        "lojasTexto": "Accedi con lo stesso account da smartphone, computer o browser: i tuoi acquisti e i tuoi dati sono validi ovunque.",
+        "falarSuporte": "Contatta l'assistenza"
+    },
+    "pagamento": {
+        "metaTitulo": "Pagamento confermato · ObraFácil",
+        "metaDescricao": "Il tuo pagamento è andato a buon fine. Scopri quando viene attivato il tuo acquisto in ObraFácil e cosa fare in caso di attesa.",
+        "agoraTitulo": "Cosa succede adesso",
+        "voltarTitulo": "Torna a ObraFácil",
+        "voltarTexto": "Torna alla scheda del browser o all'applicazione Windows in cui hai effettuato l'acquisto. Se l'avevi già chiusa, apri nuovamente ObraFácil con lo stesso account.",
+        "automaticoTitulo": "L'attivazione è completamente automatica",
+        "automaticoTexto": "Stripe notifica il nostro server dell'avvenuto pagamento e le funzionalità acquistate vengono sbloccate sul tuo account in pochi istanti. Non devi fare nulla.",
+        "conferirTitulo": "Verifica nell'app",
+        "demoraTitulo": "Se l'acquisto non compare ancora",
+        "demoraEsperar": "Attendi un minuto, quindi chiudi e riapri l'applicazione. Se usi il browser, ricarica la pagina di ObraFácil.",
+        "demoraSairEntrar": "Sei ancora sul piano gratuito? Esci dal profilo e accedi di nuovo con la stessa e-mail usata per il pagamento: all'accesso l'app rileva l'abbonamento web e attiva PRO.",
+        "demoraRestaurar": "**Ripristina acquisti** non si applica qui: questa funzione cerca unicamente gli acquisti effettuati tramite gli store mobili (Google Play o App Store).",
+        "demoraSuporte": "Se il problema persiste, contatta la nostra assistenza indicando l'indirizzo e-mail utilizzato per il pagamento.",
+        "compras": {
+            "geral": {
+                "sobretitulo": "Pagamento confermato",
+                "titulo": "Pagamento **confermato**",
+                "texto": "Il tuo pagamento è stato completato con successo. In pochi istanti ObraFácil riceve la conferma e sblocca il servizio acquistato.",
+                "conferir": "Apri ObraFácil con lo stesso account usato per l'acquisto: le funzionalità compaiono automaticamente.",
+                "artigo": "Dove visualizzare la cronologia dei pagamenti"
+            },
+            "pro": {
+                "sobretitulo": "Abbonamento confermato",
+                "titulo": "Benvenuto in ObraFácil **PRO**",
+                "texto": "Il tuo abbonamento è confermato. In pochi istanti il piano PRO si attiva in automatico sul tuo account: su smartphone, computer e browser.",
+                "conferir": "Apri il **Profilo**: il badge in alto diventa **Membro PRO** e la scheda **Il tuo piano** mostra **ObraFácil PRO**.",
+                "artigo": "Ho acquistato PRO dal sito: come attivarlo"
+            },
+            "acesso": {
+                "sobretitulo": "Pagamento confermato",
+                "titulo": "Pagamento di **Accesso Cliente** confermato",
+                "texto": "La quota per il cantiere è stata saldata. In pochi istanti l'app sblocca per il committente di questo cantiere le funzionalità avanzate del Portale cliente.",
+                "conferir": "Apri il cantiere: in fondo al **MENU DEL CANTIERE**, la scheda **Accesso Cliente** mostra **Accesso sbloccato**. Tocca **CONFIGURA** per scegliere cosa può vedere il committente.",
+                "artigo": "Che cos'è l'Accesso Cliente"
+            },
+            "downloads": {
+                "sobretitulo": "Pagamento confermato",
+                "titulo": "**Pacchetto extra** del cantiere confermato",
+                "texto": "In pochi istanti il cantiere ottiene altri 2 download completi in formato ZIP della galleria fotografica, condivisibili con tutti gli invitati.",
+                "conferir": "Torna alla **Galleria del cantiere** e tocca nuovamente **Scarica tutto**.",
+                "artigo": "Come acquistare download extra per la galleria"
+            },
+            "armazenamento": {
+                "sobretitulo": "Abbonamento confermato",
+                "titulo": "Altri **20 GB** di spazio per i tuoi cantieri",
+                "texto": "La tua espansione dello spazio di archiviazione è confermata. L'app aggiunge subito 20 GB allo spazio del tuo piano.",
+                "conferir": "Apri il **Profilo**: sotto la barra **Spazio di archiviazione**, la scheda **Il tuo piano** mostra **Espansione di +20 GB attiva**.",
+                "artigo": "Come acquistare +20 GB di spazio di archiviazione"
+            }
+        }
+    },
+    "perfil": {
+        "metaTitulo": "Il tuo abbonamento · ObraFácil",
+        "metaDescricao": "Scopri dove visualizzare il tuo piano, la carta di credito e le opzioni di disdetta dell'abbonamento in ObraFácil.",
+        "sobretitulo": "Il tuo abbonamento",
+        "titulo": "Il tuo abbonamento è gestito nel **Profilo** dell'app",
+        "texto": "Il piano, le fatture, il metodo di pagamento e la disdetta sono nell'app: nel Profilo, nella scheda Il tuo piano. Apri ObraFácil con il tuo account e segui i passaggi.",
+        "artigoBotao": "Come gestire o disdire l'abbonamento",
+        "passosTitulo": "Come arrivarci",
+        "passo1Titulo": "Apri ObraFácil",
+        "passo1Texto": "Accedi con il tuo account da smartphone, dall'app Windows o direttamente dal browser.",
+        "passo2Titulo": "Apri il Profilo",
+        "passo2Texto": "Da smartphone, tocca il menu (tre linee) in alto nella dashboard e poi tocca la scheda con la tua foto e il tuo nome. Da computer, clicca sulla tua scheda nella barra laterale.",
+        "passo3Titulo": "Usa la scheda Il tuo piano",
+        "passo3Texto": "Subito sotto la tua foto, la scheda **Il tuo piano** mostra il piano attivo, lo spazio utilizzato, i cantieri e i report del mese. Tocca **Gestisci**.",
+        "gerenciarTitulo": "Dove ti porta il pulsante Gestisci",
+        "gerenciarCelular": "**Se ti sei abbonato da smartphone**: all'area abbonamenti di Google Play o App Store per rinnovi, pagamenti e disdetta.",
+        "gerenciarSite": "**Se ti sei abbonato dal sito web o dal PC**: alla pagina pagamenti nel browser per cambiare carta, verificare i pagamenti o disdire.",
+        "gerenciarLugar": "Disdire su una piattaforma non cancella un abbonamento attivato sull'altra.",
+        "avisoTitulo": "Hai ricevuto un avviso di mancato pagamento?",
+        "avisoTexto": "La tua banca ha rifiutato l'addebito dell'abbonamento. Tocca **Gestisci** e inserisci una carta valida per non perdere i vantaggi di PRO. Se hai già saldato, ignora questo messaggio.",
+        "artigosTitulo": "Nel Centro assistenza",
+        "artigoCartao": "Capire la scheda Il tuo piano",
+        "artigoCancelar": "Come gestire o disdire l'abbonamento",
+        "artigoPagamentos": "Cronologia pagamenti e rimborsi"
+    },
+    "suporte": {
+        "metaTitulo": "Assistenza · ObraFácil",
+        "metaDescricao": "Contatta l'assistenza di ObraFácil su WhatsApp, via e-mail o tramite ticket nell'app, e consulta le guide pratiche nel Centro assistenza.",
+        "sobretitulo": "Assistenza",
+        "titulo": "Parla con l'**assistenza clienti**",
+        "texto": "Poni le tue domande, segnala un problema nell'app o richiedi chiarimenti sui pagamenti. Il tempo medio di risposta è di 24-48 ore lavorative.",
+        "canaisTitulo": "Come contattarci",
+        "whatsappTitulo": "WhatsApp",
+        "whatsappTexto": "Per chattare in tempo reale e chiarire ogni dubbio rapidamente.",
+        "whatsappBotao": "Apri WhatsApp",
+        "whatsappMensagem": "Ciao, ti contatto dalla pagina di assistenza del sito e ho bisogno di supporto per ObraFácil.",
+        "emailTitulo": "E-mail",
+        "emailTexto": "Per inviare dettagli, schermate e allegati. Se possibile, scrivi dall'indirizzo e-mail associato al tuo account.",
+        "emailBotao": "Invia un'e-mail",
+        "chamadoTitulo": "Ticket nell'app",
+        "chamadoTexto": "Resta memorizzato sul tuo profilo ed è il canale ufficiale per richiedere rimborsi per gli acquisti web, nella sezione **Aiuto contabile**. Riceverai risposta via e-mail.",
+        "chamadoBotao": "Come aprire una richiesta di assistenza",
+        "centralTitulo": "Centro assistenza",
+        "centralTexto": "Guide dettagliate passo dopo passo per ogni schermata dell'applicazione con immagini reali.",
+        "centralBotao": "Apri il Centro assistenza",
+        "lojasTitulo": "Hai acquistato tramite Google Play o App Store?",
+        "lojasTexto": "Gli addebiti e i rimborsi per questi acquisti sono gestiti direttamente dallo store secondo le sue regole. Per annullare, seleziona **Gestisci** nella scheda **Il tuo piano** nel Profilo.",
+        "perfilLink": "Dove visualizzare il tuo abbonamento"
+    }
+}

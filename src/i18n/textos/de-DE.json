@@ -1,0 +1,496 @@
+{
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil: Bauprojektmanagement-App mit Bautagebuch",
+            "descricao": "Bau-App für Smartphone und PC: Bauzeitenplan, Bautagebuch mit Fotos, Projektfinanzen, Team und Bauherrenportal. Jetzt kostenlos starten."
+        },
+        "ajuda": {
+            "titulo": "ObraFácil Hilfe-Center: Schritt-für-Schritt-Anleitungen",
+            "descricao": "Schritt-für-Schritt-Anleitungen für ObraFácil: Bautagesberichte, Zeitplan, Projektfinanzen, Team und Bauherrenportal mit echten Screenshots."
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · ObraFácil Hilfe-Center",
+            "descricao": "{{descricao}} Schritt-für-Schritt-Anleitungen mit echten Screenshots aus ObraFácil."
+        },
+        "artigo": {
+            "titulo": "{{titulo}} — ObraFácil"
+        },
+        "app": {
+            "descricao": "Bauprojektmanagement-App für Bauunternehmen, Handwerker, Bauleiter, Ingenieure und Architekten: Bauzeitenplan nach Phasen, Bautagesberichte mit Fotos und PDF-Export, Baustellenfinanzen, Lohnabrechnung für das Team, Beschaffung und Lager sowie ein Portal zur Bauherrenbegleitung. Funktioniert auf Android, iPhone, Windows und im Web, auch offline auf der Baustelle.",
+            "categoria": "Bauprojektmanagement"
+        },
+        "imagemAlt": "ObraFácil Logo, Bauprojektmanagement-App",
+        "llms": {
+            "sobre": "Was ObraFácil ist",
+            "paraQuem": "Zielgruppe: Bauunternehmen, Bauingenieure, Architekten, Handwerksbetriebe und Poliere, die ein oder mehrere Bauprojekte leiten, die tägliche Arbeit dokumentieren, Fristen und Kosten im Griff behalten und dem Bauherrn den Fortschritt transparent zeigen möchten.",
+            "plataformas": "Plattformen",
+            "recursos": "Funktionen",
+            "papeis": "Wer macht was im Bauprojekt",
+            "planos": "Pläne und Preise",
+            "precosPorIdioma": "PRO-Preis in jeder Sprache und Währung der Website",
+            "precoLinha": "{{mensal}} pro Monat oder {{anual}} pro Jahr",
+            "paginas": "Hauptseiten",
+            "idiomas": "Die Website und die App sind in diesen Sprachen verfügbar",
+            "todosArtigos": "Alle Artikel des Hilfe-Centers"
+        }
+    },
+    "nav": {
+        "login": "Anmelden",
+        "comecar": "Kostenlos starten",
+        "recursos": "Funktionen",
+        "precos": "Preise",
+        "ajuda": "Hilfe-Center",
+        "lightMode": "Helles Design",
+        "darkMode": "Dunkles Design",
+        "language": "Sprache",
+        "chooseLanguage": "Sprache wählen",
+        "themeToggle": "Zwischen hellem und dunklem Design wechseln",
+        "menu": "Menü öffnen oder schließen",
+        "inicio": "ObraFácil Startseite",
+        "navegacao": "Hauptnavigation"
+    },
+    "hero": {
+        "plataformas": "Android · iPhone · Windows · Web-Browser",
+        "titulo": "Das gesamte Bauprojekt **an einem Ort**",
+        "subtitulo": "Bauzeitenplan, Bautagebuch, Finanzen, Team und Beschaffung auf Ihrem Smartphone und PC. Ihr Bauherr verfolgt das Projekt im Portal mit – ohne Sie ständig anrufen zu müssen.",
+        "comecar": "Kostenlos starten",
+        "verPlanos": "Pläne ansehen",
+        "semCartao": "Dauerhaft kostenloser Plan ohne Kreditkarte.",
+        "camposRotulo": "Projektbereiche in der App",
+        "campos": {
+            "cronograma": {
+                "rotulo": "Zeitplan",
+                "valor": "Phasen, Baufortschritt und Fristen"
+            },
+            "diario": {
+                "rotulo": "Bautagebuch",
+                "valor": "Fotos, Wetter und Team als PDF"
+            },
+            "financeiro": {
+                "rotulo": "Projektfinanzen",
+                "valor": "Budget vs. Ist, Einnahmen und Ausgaben"
+            },
+            "cliente": {
+                "rotulo": "Bauherrenportal",
+                "valor": "Baufortschritt für den Auftraggeber"
+            }
+        },
+        "legendaTela": "App-Bildschirm mit Beispieldaten",
+        "telas": {
+            "cronograma": "Bauphasen mit Budget, Aufmaß, Zahlungsbetrag und Baufortschritt",
+            "diario": "Neuer Bautagesbericht mit Wetter, Aktivitäten und Vorkommnissen",
+            "financeiro": "Projektfinanzen mit Kosten pro Quadratmeter, Einnahmen, Ausgaben und Saldo",
+            "cliente": "Bauherrenportal mit aktuellen Projektneuigkeiten"
+        },
+        "disponivelNo": "Verfügbar bei",
+        "baixarNa": "Laden im",
+        "baixarPara": "Download für"
+    },
+    "pricing": {
+        "title": "Pläne und Preise",
+        "toggleMonthly": "Monatlich",
+        "toggleAnnual": "Jährlich",
+        "periodoRotulo": "Abrechnungszeitraum",
+        "economia": "Sparen Sie {{simbolo}}{{valor}}",
+        "perMonth": "/Monat",
+        "periodAnnual": "/Jahr",
+        "gratis": {
+            "nome": "Gratis",
+            "desc": "Zum Einstieg und Kennenlernen der App.",
+            "cta": "Kostenlos starten",
+            "itens": [
+                "1 eigenes Bauprojekt gleichzeitig",
+                "7 PDF-Berichte pro Monat mit Wasserzeichen",
+                "250 MB für Fotos und Dateien",
+                "Bauherr begleitet das Projekt im Portal"
+            ]
+        },
+        "pro": {
+            "nomeMensal": "PRO monatlich",
+            "nomeAnual": "PRO jährlich",
+            "desc": "Für Bauunternehmen, Ingenieure und Handwerksbetriebe mit mehreren Projekten.",
+            "itens": [
+                "Unbegrenzte Bauprojekte",
+                "Unbegrenzte PDF-Berichte ohne Wasserzeichen",
+                "10 GB für Fotos und Dateien",
+                "PDFs mit Logo und Fußzeile Ihres Unternehmens",
+                "Bautagesberichte als ZIP und Projektdateien offline",
+                "Bauherrenzugang für jedes Projekt verfügbar"
+            ],
+            "itensAnual": [
+                "Alles aus PRO monatlich",
+                "Preisgarantie für 12 Monate"
+            ],
+            "comparacao": "Bei monatlicher Zahlung kosten 12 Monate {{simbolo}}{{valor}}",
+            "equivale": "Entspricht {{simbolo}}{{valor}} pro Monat",
+            "ctaMensal": "PRO monatlich abonnieren",
+            "ctaAnual": "PRO jährlich abonnieren"
+        },
+        "renovacao": "Automatische Verlängerung. Jederzeit kündbar, direkt dort, wo Sie abonniert haben.",
+        "lojas": "Beim Abschluss auf dem Smartphone gelten Preise und Abrechnung von Google Play oder dem App Store.",
+        "addons": "Nur bei PRO: +20 GB Speicherplatz (separates Abo) und der Bauherrenzugang für erweiterte Portalfunktionen (einmalige Gebühr pro Projekt).",
+        "selo": "Bester Wert",
+        "gratisPreco": "Dauerhaft kostenlos"
+    },
+    "popup": {
+        "faixa": "Gratis-Plan ohne zeitliche Begrenzung",
+        "title": "Testen Sie ObraFácil bei Ihrem nächsten Projekt",
+        "texto": "Erstellen Sie Ihr kostenloses Konto ohne Kreditkarte. Legen Sie ein Projekt an und erleben Sie Zeitplan, Bautagebuch mit Fotos und Finanzen im Einsatz – mit Bauherrenbegleitung im Portal.",
+        "cta": "Kostenlos starten",
+        "lojas": "Oder laden Sie die App herunter",
+        "fechar": "Schließen"
+    },
+    "whatsapp": {
+        "tooltip": "Support kontaktieren",
+        "message": "Hallo, ich komme über die Website und habe eine Frage"
+    },
+    "social": {
+        "title": "Das sagen Bauprofis",
+        "test1": "„Meine Kunden waren von der App tief beeindruckt. Sie hat unserem Baumanagement viel mehr Glaubwürdigkeit verliehen und den Wert meiner Betreuung vollauf gerechtfertigt.“",
+        "author1": "Karl M.",
+        "role1": "Bauingenieur",
+        "test2": "„Das Schreiben des Bautagebuchs in Word am Ende des Tages hat mich früher eine Stunde gekostet. Jetzt erledige ich das in 5 Minuten auf dem Smartphone direkt auf der Baustelle.“",
+        "author2": "Paul R.",
+        "role2": "Bauunternehmer",
+        "test3": "„Das Versenden von Aufmaßberichten zur Freigabe ist jetzt denkbar einfach. Ohne lange Diskussionen gibt der Kunde alles zügig frei.“",
+        "author3": "Robert S.",
+        "role3": "Polier",
+        "test4": "„Die Fotogalerie hat uns enorm geholfen, Ausführungsdetails mit der Architektin abzustimmen, ohne dass sie jedes Mal zur Baustelle fahren musste.“",
+        "author4": "Marianne T.",
+        "role4": "Architektin",
+        "test5": "„Sogar der Bauherr hat unsere einwandfreie Organisation ausdrücklich gelobt. Endlich treten wir genauso professionell auf wie die größten Baukonzerne.“",
+        "author5": "Ferdinand B.",
+        "role5": "Generalübernehmer",
+        "aviso": "Kundenberichte, veröffentlicht mit freundlicher Genehmigung."
+    },
+    "faq": {
+        "title": "Häufig gestellte Fragen",
+        "q1": "Zahlt mein Auftraggeber für die Projektverfolgung?",
+        "a1": "Nein. Der Auftraggeber verfolgt das Projekt über das Portal völlig kostenlos. Wenn Sie ihm mehr freischalten möchten, wie das Herunterladen von Fotos und die vollständige Finanzübersicht, ist der Kundenzugang eine einmalige Gebühr pro Projekt, die Sie im PRO-Plan zahlen.",
+        "q2": "Kann ich die App auf dem Computer und auf dem Smartphone nutzen?",
+        "a2": "Ja. ObraFácil funktioniert auf Android, iPhone, Windows und im Webbrowser, wobei Ihre Daten auf allen Geräten synchronisiert bleiben.",
+        "q3": "Sind meine Daten sicher?",
+        "a3": "Die Daten werden verschlüsselt übertragen und sicher auf Google-Servern gespeichert, ebenfalls in verschlüsselter Form. Jeder Benutzer sieht nur die Projekte, an denen er beteiligt ist, gemäß den Berechtigungen seiner Rolle.",
+        "q4": "Welche personenbezogenen Daten werden erfasst?",
+        "a4": "Für das Konto: Name, E-Mail-Adresse und Telefonnummer; eine Steuernummer nur, wenn Sie diese selbst angeben. Die vollständige Liste und der Zweck jedes Datums sind in der Datenschutzerklärung aufgeführt.",
+        "q5": "Funktioniert die App ohne Internet?",
+        "a5": "Ja. Ohne Internet speichert die App Ihre Eingaben direkt auf dem Gerät und überträgt sie automatisch, sobald die Verbindung wiederhergestellt ist.",
+        "q6": "Verliert der Auftraggeber nach Projektabschluss den Zugriff auf die Dateien?",
+        "a6": "Wenn das Projekt beim Ablauf des Zugangs zu 70 % oder mehr fertiggestellt ist, hat der Kunde noch 15 Tage Zeit, um die freigegebenen Dateien einzusehen und herunterzuladen.",
+        "q7": "Ersetzt ObraFácil den Bauleiter oder behördliche Nachweise?",
+        "a7": "Nein. Es handelt sich um ein Werkzeug zur Organisation und Bauverwaltung. Es ersetzt weder die verantwortliche Bauleitung noch gesetzliche Baugenehmigungen und Nachweise.",
+        "q8": "Kann ich mein Konto löschen?",
+        "a8": "Ja, unter Profil > Konto löschen. Das Konto wird zunächst für 30 Tage ausgesetzt (widerrufbar), danach werden Ihre Projekte und Daten gelöscht. Bestimmte Datensätze, wie Zahlungen und die Annahme der AGB, werden gemäß der Datenschutzerklärung aufbewahrt.",
+        "q9": "Kann ich das PRO-Abonnement oder den zusätzlichen Speicherplatz kündigen?",
+        "a9": "Ja, jederzeit und an derselben Stelle, an der Sie es abonniert haben. Es erfolgt keine weitere Verlängerung und Ihr Zugriff bleibt bis zum Ende des bereits bezahlten Zeitraums aktiv.",
+        "q10": "Was passiert, wenn die Verlängerungszahlung fehlschlägt?",
+        "a10": "Das Konto fällt automatisch auf den kostenlosen Plan zurück. Es werden keine Daten gelöscht; wenn Sie das Limit des kostenlosen Plans überschreiten, wird lediglich das Hochladen neuer Dateien gesperrt, bis Sie Speicherplatz freigeben oder erneut abonnieren.",
+        "mais": "War Ihre Frage nicht dabei?",
+        "verAjuda": "Hilfe-Center besuchen"
+    },
+    "ajuda": {
+        "titulo": "Hilfe-Center",
+        "heroiAntes": "Wie können wir Ihnen",
+        "heroiDestaque": "helfen",
+        "heroiDepois": "?",
+        "heroiSubtitulo": "Schritt-für-Schritt-Anleitungen für ObraFácil mit Screenshots jedes Bildschirms in Ihrer Sprache.",
+        "buscaRotulo": "Im Hilfe-Center suchen",
+        "buscaPlaceholder": "Nach Bautagebuch, Mitarbeiter, PDF, Bauherr suchen…",
+        "buscaLimpar": "Suche löschen",
+        "buscaResultados": "Suchergebnisse",
+        "buscaSemResultado": "Keine Artikel für „{{termo}}“ gefunden. Probieren Sie einen anderen Begriff oder kontaktieren Sie den Support.",
+        "buscasComuns": "Häufige Suchbegriffe:",
+        "sugestao1": "Bautagesbericht offline",
+        "sugestao2": "Mitarbeiter anlegen",
+        "sugestao3": "Bautagebuch als PDF",
+        "sugestao4": "Bauherrenportal",
+        "comeceTitulo": "Hier starten",
+        "comeceSubtitulo": "Vollständige Anleitungen, die Sie vom ersten Login bis zu messbaren Ergebnissen begleiten.",
+        "comecar": "Starten",
+        "tipo_fluxo": "Vollständige Anleitung",
+        "tipo_funcao": "Schritt für Schritt",
+        "tipo_conceito": "Grundlagen",
+        "assuntosTitulo": "Nach Thema durchsuchen",
+        "assuntosPerfil_todos": "Alle Themen des Hilfe-Centers.",
+        "assuntosPerfil_gestor": "Themen für die Projektleitung.",
+        "assuntosPerfil_equipe": "Themen für das Baustellenteam.",
+        "assuntosPerfil_cliente": "Themen für Bauherren und Auftraggeber.",
+        "assuntosVazio": "Für dieses Profil sind noch keine Artikel vorhanden. Sehen Sie alle Themen an oder kontaktieren Sie den Support.",
+        "perfilGrupo": "Themen anzeigen für",
+        "perfil_todos": "Alle",
+        "perfil_gestor": "Projektleiter",
+        "perfil_equipe": "Baustellenteam",
+        "perfil_cliente": "Bauherren",
+        "artigos_one": "1 Artikel",
+        "artigos_other": "{{count}} Hilfe-Artikel",
+        "essenciaisTitulo": "Grundausstattung",
+        "essenciaisSubtitulo": "Was jeder in den ersten Tagen wissen sollte.",
+        "suporteTitulo": "Nicht das Passende gefunden?",
+        "suporteTexto": "Schreiben Sie unserem Support auf WhatsApp oder eröffnen Sie direkt ein Ticket in der App.",
+        "suporteBotao": "Per WhatsApp schreiben",
+        "suporteMensagem": "Hallo, ich komme über das Hilfe-Center der Website und habe eine Frage.",
+        "carregando": "Hilfe-Center wird geladen…",
+        "erroTitulo": "Hilfe-Center konnte nicht geladen werden",
+        "erroTexto": "Bitte prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+        "tentarDeNovo": "Erneut versuchen",
+        "vazioTitulo": "Unsere Anleitungen werden vorbereitet",
+        "vazioTexto": "Die Artikel des Hilfe-Centers erscheinen in Kürze hier. In der Zwischenzeit beantwortet der Support Ihre Fragen auf WhatsApp.",
+        "naoEncontradoTitulo": "Artikel nicht gefunden",
+        "naoEncontradoTexto": "Diese Adresse führt zu keinem Artikel. Möglicherweise wurde er umbenannt; nutzen Sie bitte die Suchfunktion.",
+        "assuntoNaoEncontrado": "Thema nicht gefunden",
+        "voltarCentral": "Zurück zum Hilfe-Center",
+        "trilha": "Sie befinden sich hier",
+        "outrosAssuntos": "Weitere Themen",
+        "paraPublico": "Für {{lista}}",
+        "publico_gestor": "Projektleiter",
+        "publico_equipe": "Teammitglieder",
+        "publico_cliente": "Bauherren",
+        "e": "und",
+        "passos_one": "{{count}} Schritt",
+        "passos_other": "{{count}} Schritte",
+        "passoNumero": "Schritt {{n}}",
+        "printAlt": "App-Bildschirm bei Schritt {{n}}: {{titulo}}",
+        "nesteArtigo": "In diesem Artikel",
+        "antesDeComecar": "Vorab lesen",
+        "relacionados": "Verwandte Artikel",
+        "navegacaoArtigos": "Weitere Artikel zu diesem Thema",
+        "anterior": "Zurück",
+        "proximo": "Weiter",
+        "appTitulo": "Direkt in der App mitmachen",
+        "appTexto": "Öffnen Sie ObraFácil in einem weiteren Tab und führen Sie die Schritte parallel aus.",
+        "appBotao": "ObraFácil öffnen",
+        "tambemEm": "Auch verfügbar auf"
+    },
+    "footer": {
+        "ctaTitle": "Bereit, Ihr nächstes Projekt zu organisieren?",
+        "ctaBtn": "Kostenlos starten",
+        "terms": "Nutzungsbedingungen",
+        "privacy": "Datenschutzerklärung",
+        "help": "Hilfe-Center",
+        "support": "Hilfe & Support",
+        "tagline": "Bauprojektmanagement einfach gemacht.",
+        "rights": "Alle Rechte vorbehalten.",
+        "language": "Sprache der Website",
+        "baixar": "App herunterladen",
+        "produto": "Produkt",
+        "legal": "Rechtliches",
+        "contato": "Kontakt aufnehmen",
+        "whatsapp": "WhatsApp"
+    },
+    "legal": {
+        "versao": "Version Nr. {{versao}}",
+        "emVigorDesde": "in Kraft seit {{data}}",
+        "valeAPartir": "gültig ab {{data}}",
+        "novaVersao": "Version {{versao}} gilt ab dem {{data}}. Sie können die Neuerungen bereits jetzt einsehen.",
+        "lerNova": "Neue Version lesen",
+        "vendoNova": "Sie lesen die neue Version. Bis zum Gültigkeitsdatum gilt Version {{versao}}.",
+        "voltarAtual": "Zur aktuell gültigen Version",
+        "sumario": "Auf dieser Seite",
+        "carregando": "Text wird geladen…",
+        "erro": "Der Text konnte nicht geladen werden. Bitte prüfen Sie Ihre Verbindung.",
+        "indisponivel": "Der Text ist an dieser Adresse noch nicht verfügbar. Schreiben Sie an suporte@appobrafacil.expertbr.com.",
+        "tentarDeNovo": "Erneut versuchen"
+    },
+    "cookies": {
+        "titulo": "Cookie-Einstellungen",
+        "texto": "Diese Website verwendet essenzielle Cookies, um Ihre Anmeldung und Einstellungen sicher zu speichern.",
+        "saibaMais": "Mehr erfahren in der Datenschutzerklärung.",
+        "aceitar": "Akzeptieren",
+        "recusar": "Ablehnen",
+        "preferencias": "Cookie-Präferenzen"
+    },
+    "cliente": {
+        "titulo": "Das Bauprojekt transparent für Ihren **Bauherrn**",
+        "texto": "Ihr Bauherr verfolgt Bauphasen und Fotos über seinen eigenen Link – ohne Sie täglich anrufen oder anschreiben zu müssen. Interne Baukosten und Löhne sieht er dabei nicht.",
+        "antes": "Vorher: alles über WhatsApp",
+        "depois": "Jetzt: das Bauherrenportal",
+        "nome": "Bauherrenportal",
+        "hoje": "Heute",
+        "msg1": "Hallo! Wie läuft die Baustelle? Gibt es Fotos von heute?",
+        "msg2": "Werden die Bodenbeläge bis nächsten Freitag fertig?",
+        "msg3": "Hallo. Ich bitte den Polier gleich darum, welche zu senden.",
+        "conversaAviso": "Beispiel-Chat mit dem Auftraggeber",
+        "pontos": [
+            "Ihr Bauherr meldet sich mit eigenem Konto über die von Ihnen gesendete Einladung an.",
+            "Mehr teilen? Mit dem Bauherrenzugang (bei PRO, einmalig pro Projekt) bestimmen Sie, was er einsehen und herunterladen kann: Fotos, Finanzen, detaillierten Zeitplan und Vorkommnisse.",
+            "Bei Projekten mit 70 % oder mehr Baufortschritt hat der Bauherr nach Zugangsende noch 15 Tage Zeit, freigegebene Dokumente herunterzuladen."
+        ],
+        "telaPortal": "Bauherrenportal mit aktuellen Projektneuigkeiten",
+        "telaAcesso": "Ansicht, in der die Projektleitung Freigaben für den Bauherrn festlegt"
+    },
+    "recursos": {
+        "titulo": "Alle Werkzeuge für Ihre Baustelle **an einem Ort**",
+        "itens": {
+            "cronograma": {
+                "titulo": "Bauzeitenplan nach Phasen",
+                "texto": "Erstellen Sie eigene Phasen oder generieren Sie 19 Standard-Bauphasen aus dem Auftragswert und verfolgen Sie den Baufortschritt."
+            },
+            "diario": {
+                "titulo": "Bautagebuch",
+                "texto": "Wetter, Tätigkeiten, Vorkommnisse, anwesendes Team, Fotos und Unterschrift. Export als PDF, sofort versandbereit."
+            },
+            "financeiro": {
+                "titulo": "Projektfinanzen",
+                "texto": "Budget, Aufmaß und fällige Zahlungen je Phase, mit Einnahmen, Ausgaben und Finanzauszug."
+            },
+            "equipe": {
+                "titulo": "Team und Löhne",
+                "texto": "Erfassen Sie Mitarbeiter, führen Sie die Anwesenheit im Bautagebuch und berechnen Sie die Lohnabrechnung."
+            },
+            "compras": {
+                "titulo": "Beschaffung und Lager",
+                "texto": "Erfassen Sie Materialeinkäufe mit Belegen und behalten Sie Werkzeuge und Material je Projekt im Blick."
+            },
+            "marca": {
+                "titulo": "Berichte mit Ihrem Firmenlogo",
+                "texto": "Mit PRO erhalten alle exportierten PDFs das Logo und die Fußzeile Ihres Unternehmens."
+            },
+            "offline": {
+                "titulo": "Kein Netz auf der Baustelle",
+                "texto": "Die App speichert alle Eingaben lokal und überträgt sie automatisch, sobald wieder Empfang da ist."
+            },
+            "aparelhos": {
+                "titulo": "Auf jedem Endgerät",
+                "texto": "Android, iPhone, Windows und Web-Browser – immer mit denselben synchronisierten Daten."
+            }
+        },
+        "tela": "Projektübersicht mit Auftragswert, Fristen und Gesamtbaufortschritt"
+    },
+    "equipe": {
+        "titulo": "Jeder sieht genau das, was er braucht",
+        "texto": "Laden Sie Ingenieure, Mitarbeiter und den Bauherrn zum Projekt ein. Als Projektleiter bestimmen Sie, wer Zugriff erhält und was jede Rolle sehen und bearbeiten darf.",
+        "papeis": {
+            "gestor": {
+                "nome": "Projektleiter",
+                "desc": "Voller Zugriff: erstellt Projekte, verwaltet Finanzen, lädt Teammitglieder ein und generiert alle Berichte."
+            },
+            "engenheiro": {
+                "nome": "Bauleiter",
+                "desc": "Begleitet und pflegt das Projekt mit den von Ihnen vergebenen Berechtigungen."
+            },
+            "equipe": {
+                "nome": "Baustellenteam",
+                "desc": "Dokumentiert den Alltag vor Ort: Bautagesberichte, Baustellenfotos und Anwesenheit."
+            },
+            "cliente": {
+                "nome": "Bauherr",
+                "desc": "Verfolgt über das Bauherrenportal nur das, was Sie freigeben."
+            }
+        },
+        "tela": "Bautagesbericht mit Teamliste und Anwesenheitserfassung"
+    },
+    "chamada": {
+        "titulo": "Bereit, **Ihr Projekt** professionell zu steuern?",
+        "texto": "Der Gratis-Plan ist zeitlich unbegrenzt. Steigen Sie auf PRO um, wenn Ihre Anforderungen wachsen.",
+        "acao": "Kostenlos starten",
+        "duvida": "Haben Sie Fragen? Sprechen Sie mit uns auf WhatsApp.",
+        "whatsapp": "Per WhatsApp schreiben"
+    },
+    "conta": {
+        "abrirApp": "ObraFácil im Browser öffnen",
+        "lojasTitulo": "ObraFácil auf allen Geräten",
+        "lojasTexto": "Melden Sie sich mit demselben Konto auf Smartphone, PC oder im Browser an: Ihre Käufe gelten überall.",
+        "falarSuporte": "Support kontaktieren"
+    },
+    "pagamento": {
+        "metaTitulo": "Zahlung bestätigt · ObraFácil",
+        "metaDescricao": "Ihre Zahlung war erfolgreich. Erfahren Sie, wann Ihr Kauf in ObraFácil erscheint und was bei Verzögerungen hilft.",
+        "agoraTitulo": "So geht es jetzt weiter",
+        "voltarTitulo": "Zurück zu ObraFácil",
+        "voltarTexto": "Kehren Sie zum Browser-Tab oder zur Windows-App zurück, in der Sie den Kauf getätigt haben. Falls geschlossen, öffnen Sie ObraFácil einfach erneut mit demselben Konto.",
+        "automaticoTitulo": "Die Freischaltung erfolgt automatisch",
+        "automaticoTexto": "Stripe übermittelt die Bestätigung an unseren Server und Ihr Kauf wird binnen Momenten auf Ihrem Konto aktiviert. Sie müssen nichts weiter tun.",
+        "conferirTitulo": "In der App überprüfen",
+        "demoraTitulo": "Falls der Kauf noch nicht angezeigt wird",
+        "demoraEsperar": "Warten Sie eine Minute, schließen Sie die App und öffnen Sie sie erneut. Im Browser laden Sie die ObraFácil-Seite neu.",
+        "demoraSairEntrar": "Noch im Gratis-Plan? Melden Sie sich ab und mit derselben E-Mail-Adresse wieder an: Beim Login prüft die App das Web-Abo und aktiviert PRO.",
+        "demoraRestaurar": "**Käufe wiederherstellen** hilft hier nicht: Diese Funktion sucht nur nach Käufen im jeweiligen App Store (Google Play oder Apple App Store).",
+        "demoraSuporte": "Falls das Problem weiterhin besteht, wenden Sie sich bitte mit Ihrer Zahlungs-E-Mail an unseren Support.",
+        "compras": {
+            "geral": {
+                "sobretitulo": "Zahlung bestätigt",
+                "titulo": "Zahlung **bestätigt**",
+                "texto": "Ihre Zahlung war erfolgreich. In wenigen Momenten schaltet ObraFácil Ihre gebuchten Funktionen automatisch frei.",
+                "conferir": "Öffnen Sie ObraFácil mit demselben Konto: Ihre gekauften Funktionen stehen direkt zur Verfügung.",
+                "artigo": "Wo Sie Ihren Zahlungsverlauf einsehen können"
+            },
+            "pro": {
+                "sobretitulo": "Abonnement bestätigt",
+                "titulo": "Willkommen bei ObraFácil **PRO**",
+                "texto": "Ihr Abonnement ist bestätigt. In wenigen Augenblicken schaltet sich PRO auf Ihrem Konto frei – am Smartphone, Computer und im Web.",
+                "conferir": "Öffnen Sie **Profil**: Das Badge oben wechselt zu **PRO-Mitglied** und die Karte **Ihr Plan** zeigt **ObraFácil PRO** an.",
+                "artigo": "PRO im Web gekauft: So aktivieren Sie es"
+            },
+            "acesso": {
+                "sobretitulo": "Zahlung bestätigt",
+                "titulo": "Zahlung für **Bauherrenzugang** bestätigt",
+                "texto": "Die Gebühr für das Projekt wurde beglichen. In wenigen Momenten schaltet die App die erweiterten Portal-Funktionen für den Bauherrn dieses Projekts frei.",
+                "conferir": "Öffnen Sie das Projekt: Unten im **PROJEKTMENÜ** zeigt die Karte **Bauherrenzugang** nun **Zugang freigeschaltet**. Tippen Sie auf **KONFIGURIEREN**.",
+                "artigo": "Was der Bauherrenzugang beinhaltet"
+            },
+            "downloads": {
+                "sobretitulo": "Zahlung bestätigt",
+                "titulo": "**Zusatzpaket** für das Projekt bestätigt",
+                "texto": "Das Projekt erhält 2 weitere vollständige ZIP-Downloads der Fotogalerie, geteilt von allen Projektmitgliedern.",
+                "conferir": "Kehren Sie zur **Projektgalerie** zurück und tippen Sie erneut auf **Alle herunterladen**.",
+                "artigo": "So erwerben Sie zusätzliche Galerie-Downloads"
+            },
+            "armazenamento": {
+                "sobretitulo": "Abonnement bestätigt",
+                "titulo": "Mehr **20 GB** Speicherplatz für Ihre Projekte",
+                "texto": "Ihre Speichererweiterung ist bestätigt. Die App fügt Ihrem Plan in wenigen Augenblicken 20 GB zusätzlichen Speicherplatz hinzu.",
+                "conferir": "Öffnen Sie **Profil**: Unter der Anzeige **Speicherplatz** zeigt die Karte **Ihr Plan** nun **+20-GB-Erweiterung aktiv** an.",
+                "artigo": "So buchen Sie +20 GB zusätzlichen Speicherplatz"
+            }
+        }
+    },
+    "perfil": {
+        "metaTitulo": "Ihr Abonnement · ObraFácil",
+        "metaDescricao": "Erfahren Sie, wo Sie Ihren Plan, Ihre Zahlungsdaten und die Kündigung in ObraFácil verwalten.",
+        "sobretitulo": "Ihr Abonnement",
+        "titulo": "Ihr Abonnement verwalten Sie im App-**Profil**",
+        "texto": "Ihr Plan, Abrechnungen, Zahlungskarte und Kündigung befinden sich in der App: im Profil auf der Karte Ihr Plan. Öffnen Sie ObraFácil und folgen Sie den Schritten.",
+        "artigoBotao": "Abo verwalten oder kündigen",
+        "passosTitulo": "So gelangen Sie dorthin",
+        "passo1Titulo": "ObraFácil öffnen",
+        "passo1Texto": "Melden Sie sich auf Ihrem Smartphone, in der Windows-App oder im Browser mit Ihrem Konto an.",
+        "passo2Titulo": "Profil aufrufen",
+        "passo2Texto": "Auf dem Smartphone tippen Sie auf das Menü (drei Linien) oben im Dashboard und dann auf Ihre Profilkarte. Am PC klicken Sie auf Ihre Karte in der Seitenleiste.",
+        "passo3Titulo": "Karte Ihr Plan nutzen",
+        "passo3Texto": "Direkt unter Ihrem Foto zeigt die Karte **Ihr Plan** Ihren Tarif, belegten Speicherplatz, Projekte und Monatsberichte. Tippen Sie auf **Verwalten**.",
+        "gerenciarTitulo": "Wohin Sie die Schaltfläche Verwalten führt",
+        "gerenciarCelular": "**Auf dem Smartphone abonniert**: Zum Abonnement-Bereich von Google Play oder des App Stores mit Verlängerung, Rechnungen und Kündigung.",
+        "gerenciarSite": "**Auf der Website oder am PC abonniert**: Zur Zahlungsseite im Browser, um Zahlungskarten zu ändern, Rechnungen einzusehen oder zu kündigen.",
+        "gerenciarLugar": "Die Kündigung auf einer Plattform beendet kein Abonnement, das auf der anderen abgeschlossen wurde.",
+        "avisoTitulo": "Zahlung nicht verarbeitet erhalten?",
+        "avisoTexto": "Ihre Bank hat die Abbuchung abgelehnt. Tippen Sie auf **Verwalten** und hinterlegen Sie eine gültige Karte, um PRO zu behalten. Falls beglichen, ignorieren Sie den Hinweis.",
+        "artigosTitulo": "Im Hilfe-Center",
+        "artigoCartao": "Die Karte Ihr Plan verstehen",
+        "artigoCancelar": "Abonnement verwalten oder kündigen",
+        "artigoPagamentos": "Zahlungsverlauf und Rückerstattungen"
+    },
+    "suporte": {
+        "metaTitulo": "Hilfe & Support · ObraFácil",
+        "metaDescricao": "Kontaktieren Sie den ObraFácil-Support per WhatsApp, E-Mail oder App-Ticket und nutzen Sie die Anleitungen im Hilfe-Center.",
+        "sobretitulo": "Hilfe & Support",
+        "titulo": "Den **Support** kontaktieren",
+        "texto": "Stellen Sie Fragen, melden Sie ein Problem in der App oder erhalten Sie Hilfe bei Abrechnungen. Die durchschnittliche Antwortzeit beträgt 24 bis 48 Geschäftsstunden.",
+        "canaisTitulo": "So erreichen Sie uns",
+        "whatsappTitulo": "WhatsApp",
+        "whatsappTexto": "Für schnelle Nachrichten und direkte Fragen.",
+        "whatsappBotao": "WhatsApp öffnen",
+        "whatsappMensagem": "Hallo, ich komme über die Support-Seite der Website und benötige Unterstützung bei ObraFácil.",
+        "emailTitulo": "E-Mail",
+        "emailTexto": "Für Details, Screenshots und Anhänge. Schreiben Sie bitte möglichst von der E-Mail-Adresse Ihres Kontos.",
+        "emailBotao": "E-Mail schreiben",
+        "chamadoTitulo": "Ticket in der App",
+        "chamadoTexto": "Bleibt in Ihrem Konto gespeichert und dient zur Beantragung von Erstattungen für Webkäufe unter **Finanzielle Hilfe**. Die Antwort erhalten Sie per E-Mail.",
+        "chamadoBotao": "So eröffnen Sie ein Ticket",
+        "centralTitulo": "Hilfe-Center",
+        "centralTexto": "Schritt-für-Schritt-Anleitungen für jeden Bereich der App mit echten Screenshots.",
+        "centralBotao": "Hilfe-Center öffnen",
+        "lojasTitulo": "Über Google Play oder den App Store gekauft?",
+        "lojasTexto": "Abrechnung und Erstattungen dieser Käufe erfolgen direkt über den jeweiligen Store. Zum Kündigen wählen Sie **Verwalten** auf der Karte **Ihr Plan** im Profil.",
+        "perfilLink": "Wo Sie Ihr Abonnement einsehen können"
+    }
+}

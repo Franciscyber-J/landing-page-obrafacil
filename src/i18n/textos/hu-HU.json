@@ -1,0 +1,496 @@
+{
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil: építésirányítási szoftver építési naplóval",
+            "descricao": "Építésirányítási alkalmazás mobilon és gépen: ütemterv, napi jelentések fotókkal, pénzügyek, csapat és ügyfélportál. Kezdj ingyen."
+        },
+        "ajuda": {
+            "titulo": "ObraFácil Súgóközpont: részletes, lépésről lépésre szóló útmutatók",
+            "descricao": "Részletes útmutatók az ObraFácil használatához: építési napló, ütemterv, költségvetés, csapat és ügyfélportál valós példákkal."
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · ObraFácil Súgóközpont",
+            "descricao": "{{descricao}} Részletes útmutatók az ObraFácil valós képernyőivel."
+        },
+        "artigo": {
+            "titulo": "{{titulo}} — ObraFácil"
+        },
+        "app": {
+            "descricao": "Építésirányítási alkalmazás kivitelezőknek, mérnököknek, építészeknek és művezetőknek: szakaszos ütemterv, napi jelentések fotókkal és PDF-ben, költségkövetés, bérelszámolás, beszerzés és raktár, valamint ügyfélportál a megrendelőnek. Működik Androidon, iPhone-on, Windowson és böngészőben, a helyszínen offline módban is.",
+            "categoria": "Építésirányítás"
+        },
+        "imagemAlt": "Az ObraFácil építésirányítási szoftver logója",
+        "llms": {
+            "sobre": "Az ObraFácil bemutatása",
+            "paraQuem": "Kiknek készült: kivitelező cégeknek, építőmérnököknek, építészeknek, vállalkozóknak és művezetőknek, akik egy vagy több projektet irányítanak, és szeretnék rögzíteni a napi munkát, követni a határidőket és költségeket, valamint átlátható tájékoztatást adni a megrendelőnek.",
+            "plataformas": "Támogatott felületek",
+            "recursos": "Funkciók",
+            "papeis": "Szerepkörök és jogosultságok az építkezésen",
+            "planos": "Csomagok és árak",
+            "precosPorIdioma": "A PRO csomag árai a webhely minden nyelvén és pénznemében",
+            "precoLinha": "{{mensal}} havonta vagy {{anual}} évente",
+            "paginas": "Fő oldalak",
+            "idiomas": "A webhely és az alkalmazás a következő nyelveken érhető el",
+            "todosArtigos": "A Súgóközpont összes útmutatója"
+        }
+    },
+    "nav": {
+        "login": "Bejelentkezés",
+        "comecar": "Ingyenes kezdés",
+        "recursos": "Funkciók",
+        "precos": "Árak",
+        "ajuda": "Súgóközpont",
+        "lightMode": "Világos téma",
+        "darkMode": "Sötét téma",
+        "language": "Nyelv",
+        "chooseLanguage": "Nyelvválasztás",
+        "themeToggle": "Világos és sötét téma váltása",
+        "menu": "Menü megnyitása vagy bezárása",
+        "inicio": "ObraFácil kezdőlap",
+        "navegacao": "Fő navigáció"
+    },
+    "hero": {
+        "plataformas": "Android · iPhone · Windows · Böngésző",
+        "titulo": "A teljes projekt **egy kézben**",
+        "subtitulo": "Ütemterv, építési napló, költségkövetés, csapat és beszerzés a mobilodon és gépeden. A megrendelő pedig a portálon látja az előrehaladást anélkül, hogy állandóan telefonálnia kellene.",
+        "comecar": "Kezdj ingyen",
+        "verPlanos": "Csomagok megtekintése",
+        "semCartao": "Ingyenes csomag időkorlát és bankkártya nélkül.",
+        "camposRotulo": "A projekt területei az alkalmazásban",
+        "campos": {
+            "cronograma": {
+                "rotulo": "Ütemterv",
+                "valor": "Szakaszok, készültségi fok és határidők"
+            },
+            "diario": {
+                "rotulo": "Építési napló",
+                "valor": "Fotók, időjárás és létszám PDF-ben"
+            },
+            "financeiro": {
+                "rotulo": "Pénzügyek",
+                "valor": "Költségvetés és kiadások, bevételek és kifizetések"
+            },
+            "cliente": {
+                "rotulo": "Ügyfélportál",
+                "valor": "Az építkezés menete megosztva a megrendelővel"
+            }
+        },
+        "legendaTela": "Alkalmazás képernyője mintaadatokkal",
+        "telas": {
+            "cronograma": "Projektszakaszok tervezett összegekkel, felmérésekkel, kifizetésekkel és készültséggel",
+            "diario": "Új napi bejegyzés időjárással, elvégzett tevékenységekkel és eseményekkel",
+            "financeiro": "Pénzügyi kimutatás négyzetméterárral, bevételekkel, kiadásokkal és egyenleggel",
+            "cliente": "Ügyfélportál az építkezés legfrissebb adataival"
+        },
+        "disponivelNo": "Elérhető itt:",
+        "baixarNa": "Letöltés innen:",
+        "baixarPara": "Letöltés erre:"
+    },
+    "pricing": {
+        "title": "Csomagok és árak",
+        "toggleMonthly": "Havi",
+        "toggleAnnual": "Éves",
+        "periodoRotulo": "Számlázási időszak",
+        "economia": "Megtakarítás: {{simbolo}}{{valor}}",
+        "perMonth": "/hó",
+        "periodAnnual": "/év",
+        "gratis": {
+            "nome": "Ingyenes",
+            "desc": "A kezdetekhez és a rendszer megismeréséhez.",
+            "cta": "Kezdj ingyen",
+            "itens": [
+                "1 aktív saját projekt egyidejűleg",
+                "Havi 7 PDF jelentés vízjellel",
+                "250 MB tárhely fotóknak és fájloknak",
+                "A megrendelő nyomon követheti az építkezést a portálon"
+            ]
+        },
+        "pro": {
+            "nomeMensal": "PRO havi",
+            "nomeAnual": "PRO éves",
+            "desc": "Kivitelezőknek, mérnököknek és több projektet kezelő vállalkozóknak.",
+            "itens": [
+                "Korlátlan számú projekt",
+                "Korlátlan PDF jelentés vízjel nélkül",
+                "10 GB tárhely fotóknak és fájloknak",
+                "PDF-ek céged logójával és hivatalos láblécével",
+                "Napi jelentések ZIP-ben és offline projektfájlok",
+                "Ügyfél-hozzáférés minden projekthez elérhető"
+            ],
+            "itensAnual": [
+                "A havi PRO csomag összes funkciója",
+                "Garantált ár a teljes 12 hónapra"
+            ],
+            "comparacao": "Havi fizetéssel 12 hónap {{simbolo}}{{valor}} összegbe kerül",
+            "equivale": "Megfelel havi {{simbolo}}{{valor}} díjnak",
+            "ctaMensal": "Előfizetés havi PRO-ra",
+            "ctaAnual": "Előfizetés éves PRO-ra"
+        },
+        "renovacao": "Automatikus megújulás. Bármikor lemondhatod azon a felületen, ahol előfizettél.",
+        "lojas": "Mobiltelefonos előfizetés esetén az árakra és a számlázásra a Google Play vagy az App Store szabályai vonatkoznak.",
+        "addons": "Kizárólag PRO előfizetőknek: +20 GB extra tárhely (külön előfizetés) és Ügyfél-hozzáférés a portál további funkcióinak feloldásához (projektenkénti egyszeri díj).",
+        "selo": "Legjobb ajánlat",
+        "gratisPreco": "Örökre ingyenes"
+    },
+    "popup": {
+        "faixa": "Ingyenes csomag időkorlát nélkül",
+        "title": "Próbáld ki az alkalmazást a következő projekteden, mielőtt továbblépnél",
+        "texto": "Hozz létre egy ingyenes fiókot bankkártya megadása nélkül. Hozz létre egy projektet, és nézd meg a gyakorlatban az ütemtervet, a napló fotódokumentációját és a pénzügyeket, miközben a megrendelő a portálon követi a munkát.",
+        "cta": "Kezdj ingyen",
+        "lojas": "Vagy töltsd le az alkalmazást",
+        "fechar": "Bezárás"
+    },
+    "whatsapp": {
+        "tooltip": "Kapcsolatfelvétel a támogatással",
+        "message": "Szia! A webhelyről írok, és kérdésem lenne"
+    },
+    "social": {
+        "title": "Mit mondanak a szakemberek",
+        "test1": "„Az ügyfeleim le voltak nyűgözve az alkalmazástól. Sokkal nagyobb hitelességet adott, és igazolta az irányítási díjam értékét.”",
+        "author1": "Kovács M.",
+        "role1": "Építőmérnök",
+        "test2": "„A nap végén az építési napló megírása Wordben régen egy órát vett igénybe. Most 5 perc alatt megvagyok vele a mobilomon közvetlenül a helyszínen.”",
+        "author2": "Nagy P.",
+        "role2": "Kivitelező",
+        "test3": "„A felmérési jelentések elküldése jóváhagyásra rendkívül egyszerűvé vált. Felesleges viták nélkül, a megrendelő azonnal rábólint mindenre.”",
+        "author3": "Szabó R.",
+        "role3": "Művezető",
+        "test4": "„A fotógaléria óriási segítséget jelentett a befejező munkák részleteinek egyeztetésében az építésszel anélkül, hogy folyton ki kellett volna jönnie a helyszínre.”",
+        "author4": "Tóth M.",
+        "role4": "Építészmérnök",
+        "test5": "„Még a végső megrendelő is megdicsérte a hibátlan szervezettségünket. Végre ugyanolyan professzionális szintet képviselünk, mint a legnagyobb építőipari cégek.”",
+        "author5": "Varga F.",
+        "role5": "Fővállalkozó",
+        "aviso": "Valós ügyfelek véleménye, a hozzájárulásukkal közzétéve."
+    },
+    "faq": {
+        "title": "Gyakori kérdések",
+        "q1": "Fizetnie kell a megrendelőmnek a projekt megtekintéséért?",
+        "a1": "Nem. A megrendelő a portálon keresztül teljesen ingyen követheti a munkát. Ha több mindent szeretnél elérhetővé tenni számára, például a fotók letöltését és a teljes pénzügyi áttekintést, az Ügyfél-hozzáférés egy projektenkénti egyszeri díj, amelyet te fizetsz a PRO csomagban.",
+        "q2": "Használhatom az alkalmazást számítógépen és telefonon is?",
+        "a2": "Igen. Az ObraFácil fut Androidon, iPhone-on, Windowson és webböngészőben is, minden eszközödön szinkronizált adatokkal.",
+        "q3": "Biztonságban vannak az adataim?",
+        "a3": "Az adatok továbbítása titkosítva történik, és a Google szerverein tárolódnak biztonságosan, szintén titkosított formában. Minden felhasználó csak azokat a projekteket látja, amelyekben részt vesz, a szerepkörének megfelelő jogosultságok szerint.",
+        "q4": "Milyen személyes adatokat gyűjt a rendszer?",
+        "a4": "A fiókhoz: név, e-mail-cím és telefonszám; adószám csak akkor, ha te magad megadod. A teljes listát és az egyes adatok célját az Adatvédelmi tájékoztató tartalmazza.",
+        "q5": "Működik az alkalmazás internetkapcsolat nélkül?",
+        "a5": "Igen. Internet nélkül az alkalmazás a rögzített adatokat a készüléken tárolja, és automatikusan továbbítja, amint helyreáll a kapcsolat.",
+        "q6": "Elveszíti a megrendelő a fájlokhoz való hozzáférést a projekt befejezése után?",
+        "a6": "Ha a projekt a hozzáférés lejárta idején legalább 70%-os készültségű, a megrendelőnek még 15 napja van a megosztott fájlok megtekintésére és letöltésére.",
+        "q7": "Helyettesíti az ObraFácil a felelős műszaki vezetőt vagy a műszaki ellenőrt?",
+        "a7": "Nem. Ez egy építésirányítási eszköz, és nem helyettesíti a jogszabályban előírt felelős műszaki vezetőt, műszaki ellenőrt, sem a hatósági engedélyeket.",
+        "q8": "Törölhetem a fiókomat?",
+        "a8": "Igen, a Profil > Fiók törlése menüpontban. A fiók először 30 napra felfüggesztésre kerül (visszavonható), ezt követően a projektjeid és adataid törlődnek. Bizonyos nyilvántartásokat, például a fizetéseket és a Feltételek elfogadását az Adatvédelmi tájékoztatóban meghatározott ideig megőrizzük.",
+        "q9": "Lemondhatom a PRO csomagot vagy a tárhelybővítést?",
+        "a9": "Igen, bármikor és ugyanott, ahol előfizettél rá. További megújulási díj nem kerül felszámításra, és a hozzáférésed az előre kifizetett időszak végéig aktív marad.",
+        "q10": "Mi történik, ha a megújítási fizetés sikertelen?",
+        "a10": "A fiók visszatér az ingyenes csomagra. Semmilyen adat nem törlődik; ha túlléped az ingyenes csomag korlátait, csak az új fájlok feltöltése zárolódik mindaddig, amíg helyet nem szabadítasz fel vagy újra elő nem fizetsz.",
+        "mais": "Nem találtad meg a választ a kérdésedre?",
+        "verAjuda": "Ugrás a Súgóközpontba"
+    },
+    "ajuda": {
+        "titulo": "Súgóközpont",
+        "heroiAntes": "Miben segíthetünk",
+        "heroiDestaque": "ma",
+        "heroiDepois": "?",
+        "heroiSubtitulo": "Részletes ObraFácil útmutatók az összes menü képernyőképével a saját nyelveden.",
+        "buscaRotulo": "Keresés a Súgóközpontban",
+        "buscaPlaceholder": "Keress naplókra, munkatársakra, PDF-re, megrendelőre…",
+        "buscaLimpar": "Keresés törlése",
+        "buscaResultados": "Keresési eredmények",
+        "buscaSemResultado": "Nem található cikk a(z) „{{termo}}” kifejezésre. Próbálj más szavakat, vagy fordulj az ügyfélszolgálathoz.",
+        "buscasComuns": "Gyakori keresések:",
+        "sugestao1": "Offline építési napló",
+        "sugestao2": "Munkatársak hozzáadása",
+        "sugestao3": "Építési napló PDF",
+        "sugestao4": "Ügyfélportál",
+        "comeceTitulo": "Kezdd itt",
+        "comeceSubtitulo": "Átfogó útmutatók, amelyek végigvezetnek az első bejelentkezéstől a valós helyszíni eredményekig.",
+        "comecar": "Kezdés",
+        "tipo_fluxo": "Teljes útmutató",
+        "tipo_funcao": "Lépésről lépésre",
+        "tipo_conceito": "Alapfogalmak",
+        "assuntosTitulo": "Böngészés témakörök szerint",
+        "assuntosPerfil_todos": "Minden témakör a Súgóközpontban.",
+        "assuntosPerfil_gestor": "Témakörök projektvezetőknek és irányítóknak.",
+        "assuntosPerfil_equipe": "Témakörök a helyszíni csapatnak és munkatársaknak.",
+        "assuntosPerfil_cliente": "Témakörök megrendelőknek és ügyfeleknek.",
+        "assuntosVazio": "Ehhez a szerepkörhöz még nincsenek cikkek. Böngéssz az összes témakör között, vagy lépj kapcsolatba a támogatással.",
+        "perfilGrupo": "Témakörök megjelenítése erre:",
+        "perfil_todos": "Mindenki",
+        "perfil_gestor": "Projektvezető",
+        "perfil_equipe": "Munkacsapat",
+        "perfil_cliente": "Megrendelő",
+        "artigos_one": "{{count}} útmutató",
+        "artigos_other": "{{count}} útmutató",
+        "essenciaisTitulo": "A legfontosabbak",
+        "essenciaisSubtitulo": "Amit minden felhasználónak tudnia kell az első napokban.",
+        "suporteTitulo": "Nem találtad meg, amit kerestél?",
+        "suporteTexto": "Írj csapatunknak WhatsAppon, vagy nyiss jegyet közvetlenül az alkalmazásban.",
+        "suporteBotao": "Beszélgetés WhatsAppon",
+        "suporteMensagem": "Szia! A webhely Súgóközpontjából írok, és kérdésem lenne.",
+        "carregando": "Súgóközpont betöltése…",
+        "erroTitulo": "A Súgóközpontot nem sikerült betölteni",
+        "erroTexto": "Ellenőrizd az internetkapcsolatodat, és próbáld újra.",
+        "tentarDeNovo": "Újrapróbálkozás",
+        "vazioTitulo": "Útmutatóink készülnek",
+        "vazioTexto": "A Súgóközpont cikkei hamarosan megjelennek itt. Addig is támogató csapatunk rendelkezésedre áll a WhatsAppon.",
+        "naoEncontradoTitulo": "A cikk nem található",
+        "naoEncontradoTexto": "Ez a cím nem vezet egyetlen cikkhez sem. Lehet, hogy átnevezték; próbálj rákeresni.",
+        "assuntoNaoEncontrado": "A témakör nem található",
+        "voltarCentral": "Vissza a Súgóközpontba",
+        "trilha": "Itt állsz",
+        "outrosAssuntos": "További témakörök",
+        "paraPublico": "Célközönség: {{lista}}",
+        "publico_gestor": "projektvezetők",
+        "publico_equipe": "csapattagok",
+        "publico_cliente": "megrendelők",
+        "e": "és",
+        "passos_one": "{{count}} lépés",
+        "passos_other": "{{count}} lépés",
+        "passoNumero": "{{n}}. lépés",
+        "printAlt": "Alkalmazás képernyője a(z) {{n}}. lépésnél: {{titulo}}",
+        "nesteArtigo": "Ebben a cikkben",
+        "antesDeComecar": "Mielőtt elkezdenéd",
+        "relacionados": "Kapcsolódó cikkek",
+        "navegacaoArtigos": "További cikkek ebben a témakörben",
+        "anterior": "Előző",
+        "proximo": "Következő",
+        "appTitulo": "Próbáld ki azonnal az alkalmazásban",
+        "appTexto": "Nyisd meg az ObraFácilt egy másik lapon, és kövesd az útmutatót olvasás közben.",
+        "appBotao": "ObraFácil megnyitása",
+        "tambemEm": "Elérhető még ezen a nyelven:"
+    },
+    "footer": {
+        "ctaTitle": "Készen állsz rendet tenni a következő projekteden?",
+        "ctaBtn": "Kezdj ingyen",
+        "terms": "Felhasználási feltételek",
+        "privacy": "Adatvédelmi tájékoztató",
+        "help": "Súgóközpont",
+        "support": "Ügyfélszolgálat",
+        "tagline": "Az építésirányítás egyszerűvé és profivá vált.",
+        "rights": "Minden jog fenntartva.",
+        "language": "Webhely nyelve",
+        "baixar": "Alkalmazás letöltése",
+        "produto": "Termék",
+        "legal": "Jogi információk",
+        "contato": "Kapcsolat",
+        "whatsapp": "WhatsApp"
+    },
+    "legal": {
+        "versao": "Dokumentum verziója: {{versao}}",
+        "emVigorDesde": "hatályos ekkortól: {{data}}",
+        "valeAPartir": "érvényes ekkortól: {{data}}",
+        "novaVersao": "A(z) {{versao}} verzió {{data}} napján lép hatályba. A módosításokat már most elolvashatod.",
+        "lerNova": "Új változat elolvasása",
+        "vendoNova": "Az új változatot látod. A hatálybalépés napjáig a jelenlegi {{versao}} verzió érvényes.",
+        "voltarAtual": "Vissza a hatályos változathoz",
+        "sumario": "Ezen az oldalon",
+        "carregando": "Szöveg betöltése…",
+        "erro": "A szöveget most nem sikerült betölteni. Kérjük, ellenőrizd az internetkapcsolatodat.",
+        "indisponivel": "A szöveg ezen a címen jelenleg nem érhető el. Írj nekünk a suporte@appobrafacil.expertbr.com címre.",
+        "tentarDeNovo": "Újrapróbálkozás"
+    },
+    "cookies": {
+        "titulo": "Sütik kezelése",
+        "texto": "Ez a webhely elengedhetetlen sütiket használ a biztonságos bejelentkezéshez és a beállításaid megjegyzéséhez.",
+        "saibaMais": "Tudj meg többet az Adatvédelmi tájékoztatóban.",
+        "aceitar": "Elfogadás",
+        "recusar": "Elutasítás",
+        "preferencias": "Süti-beállítások"
+    },
+    "cliente": {
+        "titulo": "Élő projektkövetés a **megrendelődnek**",
+        "texto": "Az ügyfelek egy biztonságos linken keresztül követik a szakaszokat és a fotókat napi telefonálgatás és üzengetés nélkül. A belső költségeid és a csapattagok bérei teljesen rejtve maradnak.",
+        "antes": "Előtte: átláthatatlan üzenetek a WhatsAppon",
+        "depois": "Most: rendezett ügyfélportál",
+        "nome": "Ügyfélportál",
+        "hoje": "Ma",
+        "msg1": "Szia! Hogy áll ma az építkezés? Vannak új fotók?",
+        "msg2": "Elkészül a burkolás jövő péntekig?",
+        "msg3": "Jó reggelt! Megkértem a művezetőt, hogy töltse fel a mai fotókat most azonnal.",
+        "conversaAviso": "Példa ügyfélkommunikációra",
+        "pontos": [
+            "A megrendelő a saját fiókjával jelentkezik be az általad küldött meghívóval.",
+            "Több információt szeretnél megosztani? Az Ügyfél-hozzáféréssel (a PRO csomagban, projektenkénti egyszeri díj) te döntöd el, mit láthat és tölthet le a megrendelő: fotókat, teljes pénzügyi adatokat, részletes ütemtervet és eseményeket.",
+            "A legalább 70%-os készültségű projekteknél a megrendelőnek a hozzáférés lejárta után még 15 napja van a megosztott fájlok letöltésére."
+        ],
+        "telaPortal": "Ügyfélportál az építkezés legfrissebb adataival",
+        "telaAcesso": "Képernyő, ahol a projektvezető beállítja, mit láthat a megrendelő"
+    },
+    "recursos": {
+        "titulo": "Minden, amire a projektednek szüksége van, **egyetlen helyen**",
+        "itens": {
+            "cronograma": {
+                "titulo": "Szakaszos ütemterv",
+                "texto": "Hozz létre egyedi szakaszokat, vagy generáld le a 19 szabványos szakaszt a szerződéses érték alapján, és kövesd a munka előrehaladását lépésről lépésre."
+            },
+            "diario": {
+                "titulo": "Építési napló",
+                "texto": "Időjárás, munkavégzés, események, jelenlévő csapat, fotók és aláírások. Egyszerű exportálás küldésre kész PDF-be."
+            },
+            "financeiro": {
+                "titulo": "Pénzügyek",
+                "texto": "Költségvetés, felmérési jelentések és kifizetendő összegek szakaszonként, a bevételek és kiadások teljes áttekintésével."
+            },
+            "equipe": {
+                "titulo": "Csapat és bérelszámolás",
+                "texto": "Vedd fel a dolgozókat, rögzítsd a napi jelenlétet a naplóban, és számold el könnyedén a béreket."
+            },
+            "compras": {
+                "titulo": "Beszerzés és raktár",
+                "texto": "Rögzítsd a beszerzéseket csatolt bizonylatokkal, és lásd tisztán az anyagok és szerszámok állapotát minden építkezésen."
+            },
+            "marca": {
+                "titulo": "Jelentések a saját márkáddal",
+                "texto": "A PRO csomagban minden generált PDF a céged logóját és hivatalos láblécét tartalmazza."
+            },
+            "offline": {
+                "titulo": "Munkavégzés térerő nélkül a helyszínen",
+                "texto": "Az alkalmazás biztonságosan elmenti az adatokat a készüléken, és automatikusan szinkronizálja őket, amint visszatér a térerő."
+            },
+            "aparelhos": {
+                "titulo": "Minden eszközödön",
+                "texto": "Az Android, az iPhone, a Windows és a böngésző folyamatosan ugyanazokkal a friss adatokkal működik együtt."
+            }
+        },
+        "tela": "Projektösszesítő a szerződéses összeggel, az átadási határidővel és a teljes készültségi fokkal"
+    },
+    "equipe": {
+        "titulo": "Mindenki csak azt látja, amire valóban szüksége van",
+        "texto": "Hívj meg mérnököket, munkatársakat és ügyfeleket a projektbe. A projekt létrehozója határozza meg, ki csatlakozhat, és milyen jogosultságokkal rendelkezik az egyes szerepkörökben.",
+        "papeis": {
+            "gestor": {
+                "nome": "Projektvezető",
+                "desc": "Teljes hozzáférés: projekteket hoz létre és konfigurál, kezeli a pénzügyeket, meghívja a csapatot és generálja az összes jelentést."
+            },
+            "engenheiro": {
+                "nome": "Mérnök",
+                "desc": "Nyomon követi és frissíti a projektet a számára megadott jogosultságok keretein belül."
+            },
+            "equipe": {
+                "nome": "Munkacsapat",
+                "desc": "Rögzíti a napi rutint: építési naplót, helyszíni fotókat és a dolgozók jelenlétét."
+            },
+            "cliente": {
+                "nome": "Ügyfél",
+                "desc": "Az Ügyfélportálon követi mindazt, amit jóváhagysz."
+            }
+        },
+        "tela": "Építési napló a csapat névsorával és az egyes dolgozók rögzített jelenlétével"
+    },
+    "chamada": {
+        "titulo": "Kezdd el a **következő projekteden**",
+        "texto": "Az ingyenes csomagnak nincs időkorlátja. Bármikor átválthatsz PRO-ra, amint nagyobb kapacitásra van szükséged.",
+        "acao": "Kezdj ingyen",
+        "duvida": "Kérdésed van? Írj nekünk közvetlenül a WhatsAppon.",
+        "whatsapp": "Üzenet küldése WhatsAppon"
+    },
+    "conta": {
+        "abrirApp": "ObraFácil megnyitása a böngészőben",
+        "lojasTitulo": "Az ObraFácil minden eszközödön",
+        "lojasTexto": "Jelentkezz be ugyanazzal a fiókkal telefonon, számítógépen és böngészőben: az előfizetésed és funkcióid minden felületen érvényesek.",
+        "falarSuporte": "Kapcsolatfelvétel az ügyfélszolgálattal"
+    },
+    "pagamento": {
+        "metaTitulo": "Sikeres fizetés · ObraFácil",
+        "metaDescricao": "A fizetés sikeresen megtörtént. Nézd meg, mikor aktiválódnak a funkciók az ObraFácilban, és mi a teendő késés esetén.",
+        "agoraTitulo": "Mi történik most",
+        "voltarTitulo": "Visszatérés az ObraFácilba",
+        "voltarTexto": "Térj vissza a böngészőlapra vagy a Windows alkalmazásra, ahol a vásárlást végezted. Ha bezártad, nyisd meg újra az ObraFácilt ugyanazzal a fiókkal.",
+        "automaticoTitulo": "Az aktiválás automatikus",
+        "automaticoTexto": "A Stripe azonnal értesíti szervereinket, és a megvásárolt funkció automatikusan aktiválódik a fiókodban. Nincs más teendőd.",
+        "conferirTitulo": "Ellenőrzés az alkalmazásban",
+        "demoraTitulo": "Ha a vásárlás nem jelenik meg azonnal",
+        "demoraEsperar": "Várj egy percet, zárd be, majd nyisd meg újra az alkalmazást. A böngészőben frissítsd az ObraFácil oldalt.",
+        "demoraSairEntrar": "Még mindig az ingyenes csomag jelenik meg? Jelentkezz ki, majd jelentkezz be újra a fizetéskor használt e-mail-címmel: az alkalmazás felismeri a webes előfizetést, és aktiválja a PRO-t.",
+        "demoraRestaurar": "A **Vásárlások visszaállítása** itt nem érvényes: ez a gomb csak a telefonos alkalmazásboltokon (Google Play vagy App Store) keresztül végzett vásárlásokat keresi.",
+        "demoraSuporte": "Ha a probléma továbbra is fennáll, lépj kapcsolatba ügyfélszolgálatunkkal, megadva a fizetéskor használt e-mail-címet.",
+        "compras": {
+            "geral": {
+                "sobretitulo": "Fizetés megerősítve",
+                "titulo": "A fizetés **megerősítve**",
+                "texto": "A fizetés sikeresen lezajlott. Néhány pillanaton belül az ObraFácil megkapja a megerősítést, és feloldja a megvásárolt funkciót.",
+                "conferir": "Nyisd meg az ObraFácilt ugyanazzal a fiókkal, amellyel a vásárlást végezted: az új funkció automatikusan meg fog jelenni.",
+                "artigo": "Hol találod a fizetési előzményeket"
+            },
+            "pro": {
+                "sobretitulo": "Előfizetés megerősítve",
+                "titulo": "Üdvözlünk az ObraFácil **PRO**-ban",
+                "texto": "Az előfizetésed megerősítésre került. Pillanatokon belül a PRO csomag automatikusan aktiválódik a fiókodban mobilon, számítógépen és böngészőben.",
+                "conferir": "Nyisd meg a **Profil** menüt: a felső kártyán a jelvény **PRO tag**-ra változik, a **Csomagod** lapon pedig megjelenik az **ObraFácil PRO**.",
+                "artigo": "A weben vásároltam a PRO-t: hogyan aktiválhatom"
+            },
+            "acesso": {
+                "sobretitulo": "Fizetés megerősítve",
+                "titulo": "Az **Ügyfél-hozzáférés** díja megerősítve",
+                "texto": "A projekt díja kiegyenlítésre került. Az alkalmazás pillanatokon belül feloldja az Ügyfélportál funkcióit az adott projekt megrendelője számára.",
+                "conferir": "Nyisd meg a projektet: a **PROJEKTMENÜ** alján, az **Ügyfél-hozzáférés** kártyán megjelenik a **Hozzáférés megadva** állapot. Koppints a **BEÁLLÍTÁS** gombra, és válaszd ki, mit láthat a megrendelő.",
+                "artigo": "Mi az az Ügyfél-hozzáférés funkció"
+            },
+            "downloads": {
+                "sobretitulo": "Fizetés megerősítve",
+                "titulo": "Az **extra letöltési csomag** a projekthez megerősítve",
+                "texto": "Pillanatokon belül a projekt 2 további teljes galéria-letöltést kap ZIP formátumban, amelyet minden tag felhasználhat.",
+                "conferir": "Térj vissza a **Projektgalériához**, és koppints újra az **Összes letöltése** gombra.",
+                "artigo": "Hogyan vásárolhatsz további letöltéseket a galériához"
+            },
+            "armazenamento": {
+                "sobretitulo": "Előfizetés megerősítve",
+                "titulo": "További **20 GB** a projektjeidnek",
+                "texto": "A tárhelybővítés megerősítésre került. Az alkalmazás azonnal hozzáad 20 GB-ot a csomagod kapacitásához.",
+                "conferir": "Nyisd meg a **Profil** menüt: a **Tárhely** mutató alatt a **Csomagod** lapon megjelenik a **+20 GB bővítés aktív** felirat.",
+                "artigo": "Hogyan adhatsz hozzá 20 GB tárhelyet"
+            }
+        }
+    },
+    "perfil": {
+        "metaTitulo": "Előfizetésed · ObraFácil",
+        "metaDescricao": "Tudd meg, hol találod meg az ObraFácilban a csomagodat, a bankkártyákat és az előfizetés lemondásának lehetőségét.",
+        "sobretitulo": "Előfizetésed",
+        "titulo": "Kezeld előfizetésedet a **Profil** menüben",
+        "texto": "A csomagok, számlák, bankkártyák és a lemondás közvetlenül az alkalmazásban találhatók: a Profilban, a Csomagod lapon. Nyisd meg az ObraFácilt, és kövesd az alábbi lépéseket.",
+        "artigoBotao": "Hogyan kezelheted vagy mondhatod le az előfizetésedet",
+        "passosTitulo": "Hogyan jutsz el oda",
+        "passo1Titulo": "Nyisd meg az ObraFácilt",
+        "passo1Texto": "Jelentkezz be fiókoddal a telefonodon, a Windows alkalmazásban vagy a böngészőben.",
+        "passo2Titulo": "Nyisd meg a Profilt",
+        "passo2Texto": "Mobilon koppints a menüre (három vonal) az áttekintés tetején, majd a profilkártyádra. Számítógépen kattints a saját kártyádra az oldalsávban.",
+        "passo3Titulo": "Kattints a Csomagod lapra",
+        "passo3Texto": "Közvetlenül a fotód alatt a **Csomagod** lap mutatja az aktuális csomagot, a felhasznált tárhelyet, a projekteket és az e havi jelentéseket. Koppints a **Kezelés** gombra.",
+        "gerenciarTitulo": "Mit csinál a Kezelés gomb",
+        "gerenciarCelular": "**Mobilon előfizetve**: megnyitja a Google Play vagy az App Store előfizetési képernyőjét a megújításhoz, számlákhoz és lemondáshoz.",
+        "gerenciarSite": "**Weben vagy gépen előfizetve**: megnyitja a fizetési portált a böngészőben a kártya módosításához, számlák megtekintéséhez vagy lemondáshoz.",
+        "gerenciarLugar": "A lemondás az egyik platformon nem törli a másik platformon kötött előfizetéseket.",
+        "avisoTitulo": "Értesítést kaptál sikertelen fizetésről?",
+        "avisoTexto": "A bankod elutasította az előfizetési díj kifizetését. Koppints a **Kezelés** gombra, és adj meg egy érvényes kártyát, hogy ne veszítsd el a PRO funkciókat. Ha már fizettél, hagyd figyelmen kívül ezt az üzenetet.",
+        "artigosTitulo": "A Súgóközpontban",
+        "artigoCartao": "Hogyan igazodj el a Csomagod lapon",
+        "artigoCancelar": "Hogyan kezelheted vagy mondhatod le az előfizetést",
+        "artigoPagamentos": "Fizetési előzmények és visszatérítések"
+    },
+    "suporte": {
+        "metaTitulo": "Ügyfélszolgálat · ObraFácil",
+        "metaDescricao": "Lépj kapcsolatba az ObraFácil támogatásával WhatsAppon, e-mailben vagy alkalmazáson belüli jegyben, és böngéssz az útmutatók között a Súgóközpontban.",
+        "sobretitulo": "Ügyfélszolgálat",
+        "titulo": "Lépj kapcsolatba a **támogató csapattal**",
+        "texto": "Tegyél fel bármilyen kérdést, jelents be problémát az alkalmazásban, vagy kérj segítséget a fizetésekhez. Átlagos válaszidőnk 24-48 munkanap óra.",
+        "canaisTitulo": "Ahol elérhetsz minket",
+        "whatsappTitulo": "WhatsApp",
+        "whatsappTexto": "Gyors beszélgetéshez és azonnali rövid kérdésekhez.",
+        "whatsappBotao": "WhatsApp megnyitása",
+        "whatsappMensagem": "Szia! A webhely támogatási oldaláról írok, és segítségre van szükségem az ObraFácilhoz.",
+        "emailTitulo": "E-mail",
+        "emailTexto": "Részletek, képernyőképek és mellékletek küldéséhez. Ha lehetséges, a fiókod e-mail-címéről írj.",
+        "emailBotao": "E-mail írása",
+        "chamadoTitulo": "Alkalmazáson belüli hibajegy",
+        "chamadoTexto": "Közvetlenül a fiókodhoz kapcsolódik, és a webes vásárlások visszatérítési kérelmének hivatalos útja a **Pénzügyi segítség** menüpontban. A választ a fiókod e-mail-címére kapod meg.",
+        "chamadoBotao": "Hogyan nyithatsz jegyet",
+        "centralTitulo": "Súgóközpont",
+        "centralTexto": "Részletes útmutatók az alkalmazás minden képernyőjéhez valós mintákkal.",
+        "centralBotao": "Súgóközpont megnyitása",
+        "lojasTitulo": "A Google Playen vagy az App Store-ban vásároltál?",
+        "lojasTexto": "Ezen tranzakciók számlázását és visszatérítését közvetlenül az adott alkalmazásbolt kezeli. A lemondáshoz használd a **Kezelés** gombot a **Csomagod** lapon.",
+        "perfilLink": "Hol találod meg az előfizetésedet"
+    }
+}

@@ -72,7 +72,8 @@ test('cabeça: título e descrição próprios por página e idioma, canonical a
             const c = cabecaDaPagina({ t, pagina, dados });
             assert.ok(c.titulo && !c.titulo.includes('{{'), `${codigo} ${pagina.tipo}: título`);
             assert.ok(c.descricao && !c.descricao.includes('{{'), `${codigo} ${pagina.tipo}: descrição`);
-            assert.equal(c.url, `${SITE}${caminhoDaPagina(pagina)}`);
+            // Endereço com letras de outra escrita vai com %XX (o href da página e o do Google).
+            assert.equal(c.url, new URL(caminhoDaPagina(pagina), SITE).href);
             assert.ok(c.alternativos.some((a) => a.hreflang === codigo && a.href === c.url));
             if (pagina.tipo === 'inicio') vistos.add(c.titulo);
         }

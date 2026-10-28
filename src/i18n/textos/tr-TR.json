@@ -1,0 +1,496 @@
+{
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil: Şantiye günlüğü ve inşaat yönetim uygulaması",
+            "descricao": "Telefon ve bilgisayar için inşaat yönetimi: iş programı, fotoğraflı şantiye günlüğü, şantiye finansmanı, ekip ve müşteri portalı. Ücretsiz başlayın."
+        },
+        "ajuda": {
+            "titulo": "ObraFácil Yardım Merkezi: Adım adım rehberler",
+            "descricao": "ObraFácil inşaat yönetimi için adım adım kılavuzlar: günlük raporlar, iş programı, finans, ekip ve müşteri portalı gerçek ekran görüntüleriyle."
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · ObraFácil Yardım Merkezi",
+            "descricao": "{{descricao}} Gerçek ObraFácil ekranlarıyla adım adım kılavuzlar."
+        },
+        "artigo": {
+            "titulo": "{{titulo}} — ObraFácil"
+        },
+        "app": {
+            "descricao": "Müteahhitler, inşaat mühendisleri, mimarlar ve şantiye şefleri için inşaat yönetim uygulaması: aşama aşama iş programı, fotoğraflı ve PDF formatında günlük raporlar (şantiye günlüğü), şantiye finansmanı, çalışan bordroları, tedarik ve depo takibi ile müşterinin inşaatı izleyebileceği portal. Android, iPhone, Windows ve web üzerinde, şantiyede internetsiz bile çalışır.",
+            "categoria": "İnşaat yönetimi"
+        },
+        "imagemAlt": "ObraFácil logosu, inşaat yönetim uygulaması",
+        "llms": {
+            "sobre": "ObraFácil nedir",
+            "paraQuem": "Kimin için: Günlük çalışmaları kayıt altına almak, iş programını ve maliyetleri kontrol altında tutmak ve ilerlemeyi müşteriye şeffafça sunmak isteyen inşaat şirketleri, mühendisler, mimarlar ve şantiye yöneticileri.",
+            "plataformas": "Platformlar",
+            "recursos": "Özellikler",
+            "papeis": "Şantiyede kim ne yapar",
+            "planos": "Planlar ve fiyatlar",
+            "precosPorIdioma": "Sitedeki her dil ve para biriminde PRO fiyatı",
+            "precoLinha": "Aylık {{mensal}} veya yıllık {{anual}}",
+            "paginas": "Ana sayfalar",
+            "idiomas": "Site ve uygulama bu dillerde mevcuttur",
+            "todosArtigos": "Tüm Yardım Merkezi makaleleri"
+        }
+    },
+    "nav": {
+        "login": "Giriş yap",
+        "comecar": "Ücretsiz başla",
+        "recursos": "Özellikler",
+        "precos": "Fiyatlar",
+        "ajuda": "Yardım Merkezi",
+        "lightMode": "Açık tema",
+        "darkMode": "Koyu tema",
+        "language": "Dil",
+        "chooseLanguage": "Dil seçin",
+        "themeToggle": "Açık ve koyu tema arasında geçiş yap",
+        "menu": "Menüyü aç veya kapat",
+        "inicio": "ObraFácil ana sayfası",
+        "navegacao": "Ana gezinti"
+    },
+    "hero": {
+        "plataformas": "Android · iPhone · Windows · Tarayıcı",
+        "titulo": "Tüm şantiye **tek bir yerde**",
+        "subtitulo": "İş programı, şantiye günlüğü, finans, ekip ve satın alma telefonunuzda ve bilgisayarınızda. Müşteriniz ise sizi her gün aramak zorunda kalmadan portal üzerinden şantiyeyi takip eder.",
+        "comecar": "Ücretsiz başla",
+        "verPlanos": "Planları gör",
+        "semCartao": "Süre sınırı olmayan ve kredi kartı gerektirmeyen ücretsiz plan.",
+        "camposRotulo": "Uygulamadaki şantiye bölümleri",
+        "campos": {
+            "cronograma": {
+                "rotulo": "İş programı",
+                "valor": "Aşamalar, fiziki ilerleme ve tarihler"
+            },
+            "diario": {
+                "rotulo": "Şantiye günlüğü",
+                "valor": "PDF olarak fotoğraflar, hava durumu ve ekip"
+            },
+            "financeiro": {
+                "rotulo": "Şantiye finansmanı",
+                "valor": "Bütçelenen ve harcanan, gelirler ve giderler"
+            },
+            "cliente": {
+                "rotulo": "Müşteri Portalı",
+                "valor": "Ödeme yapanla paylaşılan ilerleme"
+            }
+        },
+        "legendaTela": "Örnek verilerle uygulama ekranı",
+        "telas": {
+            "cronograma": "Bütçe, ölçülen miktar, ödenecek tutar ve fiziki ilerleme ile şantiye aşamaları",
+            "diario": "Hava durumu, faaliyetler ve sorunlarla yeni günlük rapor",
+            "financeiro": "Metrekare maliyeti, gelirler, giderler ve bakiye ile şantiye finansmanı",
+            "cliente": "En son şantiye güncellemeleriyle Müşteri Portalı"
+        },
+        "disponivelNo": "Kullanılabilir platform:",
+        "baixarNa": "Şuradan indirin:",
+        "baixarPara": "Şunun için indirin:"
+    },
+    "pricing": {
+        "title": "Planlar ve fiyatlandırma",
+        "toggleMonthly": "Aylık",
+        "toggleAnnual": "Yıllık",
+        "periodoRotulo": "Faturalandırma dönemi",
+        "economia": "{{simbolo}}{{valor}} tasarruf edin",
+        "perMonth": "/ay",
+        "periodAnnual": "/yıl",
+        "gratis": {
+            "nome": "Ücretsiz",
+            "desc": "Başlamak ve uygulamayı keşfetmek için.",
+            "cta": "Ücretsiz başla",
+            "itens": [
+                "Aynı anda 1 aktif şantiye",
+                "Ayda filigranlı 7 PDF raporu",
+                "Fotoğraflar ve dosyalar için 250 MB",
+                "Müşterinin portal üzerinden takibi"
+            ]
+        },
+        "pro": {
+            "nomeMensal": "Aylık PRO",
+            "nomeAnual": "Yıllık PRO",
+            "desc": "Birden fazla şantiye yöneten müteahhitler ve mühendisler için.",
+            "itens": [
+                "Sınırsız şantiye",
+                "Filigransız sınırsız PDF raporu",
+                "Fotoğraflar ve dosyalar için 10 GB",
+                "Şirket logonuz ve altbilginizle PDF'ler",
+                "ZIP olarak günlük raporlar ve çevrimdışı şantiye dosyaları",
+                "Her şantiye için kullanılabilir Müşteri Erişimi"
+            ],
+            "itensAnual": [
+                "Aylık PRO kapsamındaki her şey",
+                "12 ay boyunca sabit fiyat garantisi"
+            ],
+            "comparacao": "Aylık ödemede 12 ayın toplamı {{simbolo}}{{valor}}",
+            "equivale": "Aylık {{simbolo}}{{valor}} tutarına denk gelir",
+            "ctaMensal": "Aylık PRO'ya abone ol",
+            "ctaAnual": "Yıllık PRO'ya abone ol"
+        },
+        "renovacao": "Otomatik yenilenir. İstediğiniz zaman abone olduğunuz yerden iptal edebilirsiniz.",
+        "lojas": "Telefondan abone olduğunuzda fiyat ve faturalandırma Google Play veya App Store üzerinden yapılır.",
+        "addons": "Yalnızca PRO'da: +20 GB depolama alanı (ayrı abonelik) ve portalda daha fazlasını açan Müşteri Erişimi (şantiye başına tek seferlik ücret).",
+        "selo": "En iyi fiyat",
+        "gratisPreco": "Sonsuza dek ücretsiz"
+    },
+    "popup": {
+        "faixa": "Zaman sınırlaması olmayan ücretsiz plan",
+        "title": "Ayrılmadan önce bir sonraki şantiyenizde deneyin",
+        "texto": "Kredi kartı gerekmeden ücretsiz hesabınızı açın. Bir şantiye ekleyin; iş programını, fotoğraflı günlüğü ve finansmanı müşterinizin takibiyle birlikte hemen görün.",
+        "cta": "Ücretsiz başla",
+        "lojas": "Veya uygulamayı indirin",
+        "fechar": "Kapat"
+    },
+    "whatsapp": {
+        "tooltip": "Destek ile iletişime geçin",
+        "message": "Merhaba, web sitesi üzerinden ulaşıyorum ve bir sorum var"
+    },
+    "social": {
+        "title": "İnşaat profesyonelleri ne diyor",
+        "test1": "«Müşterilerim uygulamadan çok etkilendi. Yönetimimize büyük bir güvenilirlik kazandırdı ve hizmet bedelimi sonuna kadar haklı çıkardı.»",
+        "author1": "Can M.",
+        "role1": "İnşaat Mühendisi",
+        "test2": "«Günün sonunda Word'de şantiye günlüğü yazmak eskiden bir saatimi alırdı. Şimdi doğrudan şantiyede cep telefonumdan 5 dakikada hallediyorum.»",
+        "author2": "Polat R.",
+        "role2": "Müteahhit",
+        "test3": "«Hakediş raporlarını onaya göndermek artık çok kolay. Gereksiz tartışmalar olmadan müşteri her şeyi hızla onaylıyor.»",
+        "author3": "Rıza S.",
+        "role3": "Şantiye Şefi",
+        "test4": "«Fotoğraf galerisi, mimarın her seferinde şantiyeye gelmesine gerek kalmadan ince işlerin detaylarını çözmemizde bize inanılmaz yardımcı oldu.»",
+        "author4": "Meltem T.",
+        "role4": "Mimar",
+        "test5": "«Son müşteri bile kusursuz düzenimizi özellikle övdü. Sonunda en büyük inşaat şirketleriyle aynı profesyonelliği yansıtıyoruz.»",
+        "author5": "Fikret B.",
+        "role5": "Ana Yüklenici",
+        "aviso": "Müşteri yorumları, izin alınarak yayımlanmıştır."
+    },
+    "faq": {
+        "title": "Sıkça sorulan sorular",
+        "q1": "Müşterim şantiyeyi takip etmek için ücret öder mi?",
+        "a1": "Hayır. Müşteri, portal üzerinden hiçbir ücret ödemeden şantiyeyi takip eder. Fotoğraf indirme ve tüm finansal verileri görme gibi daha fazla erişim vermek isterseniz, Müşteri Erişimi PRO planında sizin tarafınızdan ödenen şantiye başına tek seferlik bir ücrettir.",
+        "q2": "Uygulamayı hem bilgisayarda hem de telefonda kullanabilir miyim?",
+        "a2": "Evet. ObraFácil Android, iPhone, Windows ve web tarayıcısında çalışır ve tüm verileriniz cihazlarınız arasında anında eşitlenir.",
+        "q3": "Verilerim güvende mi?",
+        "a3": "Veriler şifrelenerek aktarılır ve Google sunucularında yine şifreli olarak güvenle saklanır. Her kullanıcı yalnızca kendi rolünün izinlerine göre dahil olduğu şantiyeleri görür.",
+        "q4": "Hangi kişisel veriler toplanır?",
+        "a4": "Hesap için: ad, e-posta ve telefon numarası; vergi kimlik numarası ise yalnızca siz girmeyi tercih ederseniz toplanır. Verilerin tam listesi ve kullanım amaçları Gizlilik Politikası'nda ayrıntılı olarak yer almaktadır.",
+        "q5": "Uygulama internet olmadan çalışır mı?",
+        "a5": "Evet. İnternet olmadığında uygulama kayıtlarınızı cihazda saklar ve bağlantı kurulur kurulmaz otomatik olarak iletir.",
+        "q6": "Şantiye tamamlandığında müşteri dosyalara erişimini kaybeder mi?",
+        "a6": "Erişim süresi dolduğunda şantiye %70 veya daha fazla oranda tamamlanmışsa, müşterinin paylaşılan dosyaları incelemek ve indirmek için 15 günlük ek süresi olur.",
+        "q7": "ObraFácil şantiye şefinin veya yasal teknik sorumluluğun yerine geçer mi?",
+        "a7": "Hayır. Bu bir şantiye yönetimi ve organizasyon aracıdır; yetkili şantiye şefinin, fenni mesulün veya yasal yapı ruhsatı ve belgelerinin yerine geçmez.",
+        "q8": "Hesabımı silebilir miyim?",
+        "a8": "Evet, Profil > Hesabı Sil bölümünden silebilirsiniz. Hesap önce 30 gün boyunca askıya alınır (geri alınabilir), ardından şantiyeleriniz ve verileriniz silinir. Ödemeler ve Şartlar onayı gibi bazı kayıtlar Gizlilik Politikası'nda belirtilen süre boyunca saklanır.",
+        "q9": "PRO aboneliğini veya ek depolama alanını iptal edebilir miyim?",
+        "a9": "Evet, dilediğiniz zaman ve abone olduğunuz aynı platform üzerinden iptal edebilirsiniz. Yeni bir yenileme ücreti alınmaz ve erişiminiz önceden ödenen sürenin sonuna kadar aktif kalır.",
+        "q10": "Yenileme ödemesi başarısız olursa ne olur?",
+        "a10": "Hesap otomatik olarak ücretsiz plana döner. Hiçbir veri silinmez; ücretsiz plan sınırlarını aşıyorsanız, yer açana veya yeniden abone olana kadar yalnızca yeni dosya yüklemeleri engellenir.",
+        "mais": "Cevabınızı bulamadınız mı?",
+        "verAjuda": "Yardım Merkezi'ni ziyaret edin"
+    },
+    "ajuda": {
+        "titulo": "Yardım Merkezi",
+        "heroiAntes": "Size nasıl",
+        "heroiDestaque": "yardımcı",
+        "heroiDepois": "olabiliriz?",
+        "heroiSubtitulo": "Her ekranın kendi dilinizdeki görüntüsüyle hazırlanmış adım adım ObraFácil rehberleri.",
+        "buscaRotulo": "Yardım Merkezi'nde ara",
+        "buscaPlaceholder": "Şantiye günlüğü, çalışan, PDF, müşteri ara…",
+        "buscaLimpar": "Aramayı temizle",
+        "buscaResultados": "Arama sonuçları",
+        "buscaSemResultado": "“{{termo}}” için makale bulunamadı. Başka bir kelime deneyin veya destek ekibiyle iletişime geçin.",
+        "buscasComuns": "Popüler aramalar:",
+        "sugestao1": "İnternetsiz şantiye günlüğü",
+        "sugestao2": "Çalışan kaydetme",
+        "sugestao3": "Günlük rapor PDF",
+        "sugestao4": "Müşteri Portalı",
+        "comeceTitulo": "Buradan başlayın",
+        "comeceSubtitulo": "İlk girişinizden somut sonuçlara kadar size rehberlik eden eksiksiz kılavuzlar.",
+        "comecar": "Başla",
+        "tipo_fluxo": "Kapsamlı kılavuz",
+        "tipo_funcao": "Adım adım",
+        "tipo_conceito": "Açıklama",
+        "assuntosTitulo": "Konuya göre göz atın",
+        "assuntosPerfil_todos": "Yardım Merkezi'ndeki tüm konular.",
+        "assuntosPerfil_gestor": "Şantiyeyi yönetenler için konular.",
+        "assuntosPerfil_equipe": "Şantiyede çalışanlar için konular.",
+        "assuntosPerfil_cliente": "Şantiye müşterisi için konular.",
+        "assuntosVazio": "Bu profil için henüz makale yok. Tüm konuları inceleyin veya destek ekibiyle iletişime geçin.",
+        "perfilGrupo": "Konuları şunun için göster:",
+        "perfil_todos": "Tümü",
+        "perfil_gestor": "Yönetici",
+        "perfil_equipe": "Ekip",
+        "perfil_cliente": "Müşteri",
+        "artigos_one": "1 makale",
+        "artigos_other": "{{count}} makale",
+        "essenciaisTitulo": "Temel Bilgiler",
+        "essenciaisSubtitulo": "İlk günlerde herkesin bilmesi gereken temel noktalar.",
+        "suporteTitulo": "Aradığınızı bulamadınız mı?",
+        "suporteTexto": "WhatsApp üzerinden destek ekibimizle sohbet edin veya doğrudan uygulama içinden destek bileti açın.",
+        "suporteBotao": "WhatsApp'tan yazın",
+        "suporteMensagem": "Merhaba, web sitesindeki Yardım Merkezi'nden geliyorum ve bir sorum var.",
+        "carregando": "Yardım Merkezi yükleniyor…",
+        "erroTitulo": "Yardım Merkezi yüklenemedi",
+        "erroTexto": "İnternet bağlantınızı kontrol edin ve tekrar deneyin.",
+        "tentarDeNovo": "Tekrar dene",
+        "vazioTitulo": "Rehberlerimiz hazırlanıyor",
+        "vazioTexto": "Yardım Merkezi makaleleri çok yakında burada yer alacak. Bu süreçte sorularınızı WhatsApp üzerinden destek ekibimize iletebilirsiniz.",
+        "naoEncontradoTitulo": "Makale bulunamadı",
+        "naoEncontradoTexto": "Bu adres bir makaleye yönlendirmiyor. Makalenin adı değişmiş olabilir; lütfen Yardım Merkezi aramasını kullanın.",
+        "assuntoNaoEncontrado": "Konu bulunamadı",
+        "voltarCentral": "Yardım Merkezi'ne dön",
+        "trilha": "Bulunduğunuz yer:",
+        "outrosAssuntos": "Diğer konular",
+        "paraPublico": "Şunun için: {{lista}}",
+        "publico_gestor": "yöneticiler",
+        "publico_equipe": "ekip üyeleri",
+        "publico_cliente": "müşteriler",
+        "e": "ve",
+        "passos_one": "{{count}} adım",
+        "passos_other": "{{count}} adım",
+        "passoNumero": "Adım {{n}}",
+        "printAlt": "{{n}}. adımda uygulama ekranı: {{titulo}}",
+        "nesteArtigo": "Bu makalede",
+        "antesDeComecar": "Önce okuyun",
+        "relacionados": "İlgili makaleler",
+        "navegacaoArtigos": "Bu konudaki diğer makaleler",
+        "anterior": "Önceki",
+        "proximo": "Sonraki",
+        "appTitulo": "Uygulamayla birlikte uygulayın",
+        "appTexto": "ObraFácil'i başka bir sekmede açın ve okurken adımları aynı anda uygulayın.",
+        "appBotao": "ObraFácil'i aç",
+        "tambemEm": "Ayrıca şu dilde mevcut:"
+    },
+    "footer": {
+        "ctaTitle": "Bir sonraki şantiyenizi organize etmeye hazır mısınız?",
+        "ctaBtn": "Ücretsiz başla",
+        "terms": "Kullanım Koşulları",
+        "privacy": "Gizlilik Politikası",
+        "help": "Yardım Merkezi",
+        "support": "Müşteri Desteği",
+        "tagline": "İnşaat yönetimi artık çok daha kolay ve profesyonel.",
+        "rights": "Tüm hakları saklıdır.",
+        "language": "Site dili",
+        "baixar": "Uygulamayı indir",
+        "produto": "Ürün",
+        "legal": "Yasal",
+        "contato": "Bize Ulaşın",
+        "whatsapp": "WhatsApp"
+    },
+    "legal": {
+        "versao": "Sürüm: {{versao}}",
+        "emVigorDesde": "{{data}} tarihinden beri yürürlüktedir",
+        "valeAPartir": "{{data}} tarihinden itibaren geçerlidir",
+        "novaVersao": "{{versao}} sürümü {{data}} tarihinde yürürlüğe girecektir. Değişiklikleri şimdiden inceleyebilirsiniz.",
+        "lerNova": "Yeni sürümü oku",
+        "vendoNova": "Şu anda yeni sürümü okuyorsunuz. Yürürlük tarihine kadar {{versao}} sürümü geçerlidir.",
+        "voltarAtual": "Yürürlükteki sürüme dön",
+        "sumario": "Bu sayfada",
+        "carregando": "Metin yükleniyor…",
+        "erro": "Metin şu anda yüklenemedi. Lütfen internet bağlantınızı kontrol edin.",
+        "indisponivel": "Metin henüz bu adreste mevcut değil. Lütfen suporte@appobrafacil.expertbr.com adresine yazın.",
+        "tentarDeNovo": "Tekrar dene"
+    },
+    "cookies": {
+        "titulo": "Çerez Yönetimi",
+        "texto": "Bu web sitesi, güvenli oturum açmanızı ve tercihlerinizi hatırlamamızı sağlayan temel çerezleri kullanır.",
+        "saibaMais": "Gizlilik Politikası'nda daha fazla bilgi edinin.",
+        "aceitar": "Kabul et",
+        "recusar": "Reddet",
+        "preferencias": "Çerez tercihleri"
+    },
+    "cliente": {
+        "titulo": "Müşteriniz için şeffaf ve canlı **şantiye takibi**",
+        "texto": "Müşteriniz aşamaları ve fotoğrafları kendi bağlantısından takip eder; sizi her gün aramak zorunda kalmaz. Şantiyenin maliyetlerini ve çalışan bordrolarını göremez.",
+        "antes": "Eski yöntem: WhatsApp üzerinden dağınık yazışmalar",
+        "depois": "Şimdi: düzenli şantiye portalı",
+        "nome": "Müşteri Portalı",
+        "hoje": "Bugün",
+        "msg1": "Merhaba! Şantiye nasıl gidiyor? Bugünden fotoğraflar var mı?",
+        "msg2": "Zemin kaplamaları önümüzdeki cumaya kadar biter mi?",
+        "msg3": "Merhaba. Ustabaşından hemen fotoğrafları göndermesini rica ediyorum.",
+        "conversaAviso": "Müşteriyle örnek yazışma",
+        "pontos": [
+            "Müşteriniz gönderdiğiniz davet bağlantısıyla kendi hesabıyla giriş yapar.",
+            "Daha fazlasını paylaşmak ister misiniz? Müşteri Erişimi ile (PRO planda, şantiye başına tek ücret) neleri görebileceğini ve indirebileceğini seçersiniz: fotoğraflar, finans, detaylı iş programı ve sorun bildirme.",
+            "%70 veya üzeri tamamlanmış şantiyelerde erişim sona erdiğinde müşterinin paylaşılanları indirmek için 15 günlük ek süresi kalır."
+        ],
+        "telaPortal": "En son şantiye güncellemeleriyle Müşteri Portalı",
+        "telaAcesso": "Yöneticinin müşterinin göreceklerini seçtiği ekran"
+    },
+    "recursos": {
+        "titulo": "Şantiyenizin ihtiyaç duyduğu her şey **tek bir yerde**",
+        "itens": {
+            "cronograma": {
+                "titulo": "Aşama aşama iş programı",
+                "texto": "Aşamaları kendiniz belirleyin veya sözleşme bedelinden 19 standart aşama oluşturup her birinin fiziki ilerlemesini takip edin."
+            },
+            "diario": {
+                "titulo": "Şantiye günlüğü",
+                "texto": "Hava durumu, faaliyetler, sorunlar, sahadaki personel, fotoğraflar ve imza. Paylaşıma hazır PDF olarak dışa aktarılır."
+            },
+            "financeiro": {
+                "titulo": "Şantiye finansmanı",
+                "texto": "Bütçelenen, ölçülen ve ödenebilecek tutarlar; gelirler, giderler ve hesap dökümü ile birlikte."
+            },
+            "equipe": {
+                "titulo": "Ekip ve bordro",
+                "texto": "Çalışanları kaydedin, günlük raporda puantajı tutun ve hak ediş bordrolarını hesaplayın."
+            },
+            "compras": {
+                "titulo": "Tedarik ve depo",
+                "texto": "Faturalı malzeme alımlarını kaydedin ve her şantiyenin malzeme ve ekipmanını kontrol edin."
+            },
+            "marca": {
+                "titulo": "Kendi markanızla raporlar",
+                "texto": "PRO planda PDF raporları şirketinizin logosu ve kurumsal altbilgisiyle çıkar."
+            },
+            "offline": {
+                "titulo": "Şantiyede internet olmadığında",
+                "texto": "Uygulama kaydettiklerinizi saklar ve internet bağlantısı sağlandığında otomatik olarak gönderir."
+            },
+            "aparelhos": {
+                "titulo": "Tüm cihazlarınızda",
+                "texto": "Android, iPhone, Windows ve tarayıcıda her zaman aynı güncel verilerle çalışır."
+            }
+        },
+        "tela": "Sözleşme bedeli, tarihler ve genel fiziki ilerleme ile şantiye özeti"
+    },
+    "equipe": {
+        "titulo": "Herkes tam olarak ihtiyacı olanı görür",
+        "texto": "Mühendisleri, ekibinizi ve müşteriyi şantiyeye davet edin. Şantiye sahibi kimin katılacağını ve her rolün neleri görebileceğini belirler.",
+        "papeis": {
+            "gestor": {
+                "nome": "Yönetici",
+                "desc": "Tam erişim: şantiyeleri oluşturur, finansmanı yönetir, ekibi davet eder ve tüm raporları alır."
+            },
+            "engenheiro": {
+                "nome": "Mühendis",
+                "desc": "Belirlediğiniz yetkiler dahilinde şantiyeyi takip eder ve veri girişini sağlar."
+            },
+            "equipe": {
+                "nome": "Saha ekibi",
+                "desc": "Günlük işleri kaydeder: şantiye günlüğü, fotoğraflar ve personel puantajı."
+            },
+            "cliente": {
+                "nome": "Müşteri",
+                "desc": "Müşteri Portalı üzerinden sadece sizin izin verdiğiniz bilgileri takip eder."
+            }
+        },
+        "tela": "Ekip listesi ve günlük personel puantajıyla şantiye günlüğü"
+    },
+    "chamada": {
+        "titulo": "**Şantiyenizi** profesyonelce yönetmeye hazır mısınız?",
+        "texto": "Ücretsiz planın süre sınırı yoktur. Daha fazlasına ihtiyaç duyduğunuzda PRO plana geçebilirsiniz.",
+        "acao": "Ücretsiz başla",
+        "duvida": "Sorunuz mu var? WhatsApp üzerinden bize yazın.",
+        "whatsapp": "WhatsApp'tan yazın"
+    },
+    "conta": {
+        "abrirApp": "ObraFácil'i tarayıcınızda açın",
+        "lojasTitulo": "ObraFácil tüm cihazlarınızda",
+        "lojasTexto": "Telefonunuzda, bilgisayarınızda veya tarayıcınızda aynı hesapla oturum açın: satın aldıklarınız tümünde geçerlidir.",
+        "falarSuporte": "Destek ekibiyle iletişime geçin"
+    },
+    "pagamento": {
+        "metaTitulo": "Ödeme onaylandı · ObraFácil",
+        "metaDescricao": "Ödemeniz başarıyla tamamlandı. Satın alımınızın ObraFácil'de ne zaman görüneceğini ve gecikme durumunda ne yapılması gerektiğini öğrenin.",
+        "agoraTitulo": "Şimdi ne olacak?",
+        "voltarTitulo": "ObraFácil'e geri dönün",
+        "voltarTexto": "Satın alma işlemini gerçekleştirdiğiniz tarayıcı sekmesine veya Windows uygulamasına dönün. Kapattıysanız ObraFácil'i aynı hesapla yeniden açın.",
+        "automaticoTitulo": "Tanımlama otomatik olarak yapılır",
+        "automaticoTexto": "Ödemeyi işleyen Stripe sunucumuza bilgi verir ve satın alımınız birkaç saniye içinde hesabınızda aktif hale gelir. Bir şey yapmanıza gerek yoktur.",
+        "conferirTitulo": "Uygulama içinden kontrol edin",
+        "demoraTitulo": "Henüz görünmediyse",
+        "demoraEsperar": "Bir dakika bekleyin, ardından uygulamayı kapatıp yeniden açın. Tarayıcıda ObraFácil sayfasını yenileyin.",
+        "demoraSairEntrar": "Hâlâ ücretsiz planda mısınız? Çıkış yapıp ödemede kullandığınız e-posta ile tekrar giriş yapın: girişte uygulama web aboneliğini kontrol edip PRO'yu açar.",
+        "demoraRestaurar": "**Satın alımları geri yükle** seçeneği burada geçerli değildir: yalnızca telefon mağazalarından (Google Play veya App Store) yapılan işlemleri bulur.",
+        "demoraSuporte": "Sorun çözülmezse ödemede kullandığınız e-posta adresiyle birlikte destek ekibimize yazın.",
+        "compras": {
+            "geral": {
+                "sobretitulo": "Ödeme onaylandı",
+                "titulo": "Ödeme **onaylandı**",
+                "texto": "Ödemeniz tamamlandı. Birkaç saniye içinde ObraFácil onayı alır ve satın aldığınız özellikleri kullanıma açar.",
+                "conferir": "Satın alma yaptığınız hesapla ObraFácil'i açın: özellikleriniz otomatik olarak görünecektir.",
+                "artigo": "Ödeme geçmişini nereden görebilirsiniz"
+            },
+            "pro": {
+                "sobretitulo": "Abonelik onaylandı",
+                "titulo": "ObraFácil **PRO** dünyasına hoş geldiniz",
+                "texto": "Aboneliğiniz onaylandı. Birkaç saniye içinde PRO plan telefonunuzda, bilgisayarınızda ve tarayıcınızda otomatik olarak aktif hale gelir.",
+                "conferir": "**Profil** bölümünü açın: üst karttaki rozet **PRO üye** olarak değişir ve **Planınız** kartında **ObraFácil PRO** görünür.",
+                "artigo": "Web sitesinden PRO satın aldım: nasıl etkinleştirilir"
+            },
+            "acesso": {
+                "sobretitulo": "Ödeme onaylandı",
+                "titulo": "**Müşteri Erişimi** ödemesi onaylandı",
+                "texto": "Şantiye ücreti ödendi. Kısa bir süre içinde uygulama bu şantiyenin müşterisi için Müşteri Portalı özelliklerini aktif hale getirir.",
+                "conferir": "Şantiyeyi açın: **ŞANTİYE MENÜSÜ** altındaki **Müşteri Erişimi** kartında **Erişim Açık** görünür. **YAPILANDIR** butonuna tıklayın.",
+                "artigo": "Müşteri Erişimi nedir"
+            },
+            "downloads": {
+                "sobretitulo": "Ödeme onaylandı",
+                "titulo": "Şantiyenin **Ek Paketi** onaylandı",
+                "texto": "Şantiye için galeri ZIP dosyasını tüm davetlilerin indirebileceği 2 tam indirme hakkı daha tanımlandı.",
+                "conferir": "**Şantiye galerisi** bölümüne dönün ve tekrar **Tümünü indir** butonuna tıklayın.",
+                "artigo": "Ek galeri indirme hakkı nasıl satın alınır"
+            },
+            "armazenamento": {
+                "sobretitulo": "Abonelik onaylandı",
+                "titulo": "Şantiyeleriniz için ilave **20 GB** depolama alanı",
+                "texto": "Depolama alanı genişletmeniz onaylandı. Uygulama birkaç saniye içinde mevcut planınıza 20 GB ek alan tanımlar.",
+                "conferir": "**Profil** bölümünü açın: **Depolama alanı** çubuğunun altında, **Planınız** kartında **+20 GB genişletme aktif** ibaresi yer alır.",
+                "artigo": "+20 GB depolama alanı aboneliği nasıl başlatılır"
+            }
+        }
+    },
+    "perfil": {
+        "metaTitulo": "Aboneliğiniz · ObraFácil",
+        "metaDescricao": "ObraFácil'de planınızı, kayıtlı kartınızı ve abonelik iptali seçeneklerini nerede bulabileceğinizi görün.",
+        "sobretitulo": "Aboneliğiniz",
+        "titulo": "Aboneliğiniz uygulamanın **Profil** bölümünde yer alır",
+        "texto": "Planınız, faturalarınız, kayıtlı kartınız ve iptal işlemleri uygulama içindedir: Profil bölümünde, Planınız kartında. Aşağıdaki adımları izleyin.",
+        "artigoBotao": "Nasıl yönetilir veya iptal edilir",
+        "passosTitulo": "Oraya nasıl ulaşılır",
+        "passo1Titulo": "ObraFácil'i açın",
+        "passo1Texto": "Telefonunuzdan, Windows uygulamasından veya tarayıcınızdan hesabınızla giriş yapın.",
+        "passo2Titulo": "Profili açın",
+        "passo2Texto": "Telefonda gösterge panelinin üstündeki menüye (üç çizgi) ve ardından adınızın bulunduğu karta dokunun. Bilgisayarda yan çubuktaki kartınıza tıklayın.",
+        "passo3Titulo": "Planınız kartını kullanın",
+        "passo3Texto": "Fotoğrafınızın hemen altındaki **Planınız** kartı paketinizi, kullanılan alanı, şantiyeleri ve raporları gösterir. **Yönet** seçeneğine dokunun.",
+        "gerenciarTitulo": "Yönet butonu sizi nereye yönlendirir",
+        "gerenciarCelular": "**Telefondan abone olduysanız**: Google Play veya App Store abonelikler alanına yönlendirir; yenileme ve iptal buradan yapılır.",
+        "gerenciarSite": "**Web sitesinden veya bilgisayardan abone olduysanız**: Kart değiştirmek, ödemeleri görmek veya iptal etmek için tarayıcıdaki ödeme sayfasına yönlendirir.",
+        "gerenciarLugar": "Bir platformdan yapılan iptal, diğer platformdan yapılan aboneliği iptal etmez.",
+        "avisoTitulo": "Ödeme işlenemedi uyarısı mı aldınız?",
+        "avisoTexto": "Bankanız abonelik ödemesini reddetti. PRO özelliklerini kaybetmemek için **Yönet** seçeneğine dokunup geçerli bir kart girin. Ödediyseniz bildirimi yok sayabilirsiniz.",
+        "artigosTitulo": "Yardım Merkezi'nde",
+        "artigoCartao": "Planınız kartını anlama",
+        "artigoCancelar": "Aboneliği yönetme veya iptal etme",
+        "artigoPagamentos": "Ödeme geçmişi ve geri ödemeler"
+    },
+    "suporte": {
+        "metaTitulo": "Destek · ObraFácil",
+        "metaDescricao": "ObraFácil desteğine WhatsApp, e-posta veya uygulama içinden destek bileti ile ulaşın, Yardım Merkezi'ndeki kılavuzları inceleyin.",
+        "sobretitulo": "Destek",
+        "titulo": "**Destek ekibiyle** iletişime geçin",
+        "texto": "Sorularınızı iletin, uygulamadaki bir sorunu bildirin veya ödemelerle ilgili yardım alın. Ortalama yanıt süresi 24 ila 48 iş saatidir.",
+        "canaisTitulo": "Bize nasıl ulaşabilirsiniz",
+        "whatsappTitulo": "WhatsApp",
+        "whatsappTexto": "Hızlı yazışmak ve anında sorularınızı sormak için.",
+        "whatsappBotao": "WhatsApp'ı aç",
+        "whatsappMensagem": "Merhaba, web sitesindeki destek sayfasından ulaşıyorum ve ObraFácil hakkında yardıma ihtiyacım var.",
+        "emailTitulo": "E-posta",
+        "emailTexto": "Ayrıntıları, ekran görüntülerini ve ekleri iletmek için. Mümkünse hesabınızın e-posta adresinden yazın.",
+        "emailBotao": "E-posta yaz",
+        "chamadoTitulo": "Uygulama içi destek bileti",
+        "chamadoTexto": "Hesabınızda kayıtlı kalır ve web alışverişlerinde para iadesi istemenin resmi yoludur (**Mali Yardım** altında). Yanıt e-postanıza gelir.",
+        "chamadoBotao": "Destek bileti nasıl açılır",
+        "centralTitulo": "Yardım Merkezi",
+        "centralTexto": "Gerçek ekran görüntüleriyle uygulamanın her ekranı için adım adım kılavuzlar.",
+        "centralBotao": "Yardım Merkezi'ni aç",
+        "lojasTitulo": "Google Play veya App Store'dan mı satın aldınız?",
+        "lojasTexto": "Bu alışverişlerin ödeme ve iade süreçleri ilgili mağazanın kurallarına tabidir. İptal etmek için Profil'deki **Planınız** kartında **Yönet** seçeneğini kullanın.",
+        "perfilLink": "Aboneliğinizi nerede görebilirsiniz"
+    }
+}

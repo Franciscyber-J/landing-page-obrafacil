@@ -24,8 +24,9 @@ test('localeDoIntl põe os algarismos 0-9 e o calendário do idioma', () => {
     assert.equal(localeDoIntl('não é código'), 'não é código');
 });
 
-test('os 8 idiomas de hoje: números, datas e preços iguais aos do Intl sem nada', () => {
-    for (const { codigo } of IDIOMAS) {
+test('os 8 idiomas de antes: números, datas e preços iguais aos do Intl sem nada', () => {
+    const OITO = ['pt-BR', 'pt-PT', 'en-US', 'en-GB', 'en-AU', 'en-CA', 'es-ES', 'es-MX'];
+    for (const { codigo } of IDIOMAS.filter((i) => OITO.includes(i.codigo))) {
         assert.equal(formatarNumero(codigo, 1234567.891), (1234567.891).toLocaleString(codigo), codigo);
         assert.equal(
             formatarNumero(codigo, 1499.9, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),

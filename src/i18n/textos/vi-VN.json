@@ -1,0 +1,494 @@
+{
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil: ứng dụng quản lý công trình và nhật ký thi công",
+            "descricao": "Ứng dụng quản lý công trình cho điện thoại và máy tính: tiến độ, nhật ký ảnh, tài chính, đội ngũ và cổng khách hàng. Bắt đầu miễn phí."
+        },
+        "ajuda": {
+            "titulo": "Trung tâm trợ giúp ObraFácil: hướng dẫn từng bước",
+            "descricao": "Hướng dẫn từng bước cho ứng dụng ObraFácil: nhật ký công trình, tiến độ, tài chính, đội ngũ và cổng khách hàng với ảnh chụp màn hình thực tế."
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · Trung tâm trợ giúp ObraFácil",
+            "descricao": "{{descricao}} Hướng dẫn từng bước với màn hình thực tế của ObraFácil."
+        },
+        "artigo": {
+            "titulo": "{{titulo}} — ObraFácil"
+        },
+        "app": {
+            "descricao": "Ứng dụng quản lý công trình dành cho nhà thầu, kỹ sư xây dựng, kiến trúc sư và chỉ huy trưởng: tiến độ theo hạng mục, nhật ký công trình kèm ảnh và PDF, tài chính công trình, bảng lương đội ngũ, vật tư và kho, cùng cổng theo dõi cho khách hàng. Hoạt động trên Android, iPhone, Windows và web, ngay cả khi ngoại tuyến tại công trình.",
+            "categoria": "Quản lý công trình"
+        },
+        "imagemAlt": "Logo ObraFácil, ứng dụng quản lý công trình",
+        "llms": {
+            "sobre": "ObraFácil là gì",
+            "paraQuem": "Dành cho ai: công ty xây dựng, kỹ sư, kiến trúc sư, nhà thầu và chỉ huy trưởng quản lý một hoặc nhiều công trình, muốn ghi chép công việc hằng ngày, kiểm soát thời hạn và chi phí, đồng thời báo cáo tiến độ cho khách hàng.",
+            "plataformas": "Nền tảng hỗ trợ",
+            "recursos": "Tính năng",
+            "papeis": "Phân vai tại công trình",
+            "planos": "Gói dịch vụ và giá cả",
+            "precosPorIdioma": "Giá gói PRO theo từng ngôn ngữ và tiền tệ trên trang web",
+            "precoLinha": "{{mensal}} mỗi tháng hoặc {{anual}} mỗi năm",
+            "paginas": "Các trang chính",
+            "idiomas": "Trang web và ứng dụng hỗ trợ các ngôn ngữ này",
+            "todosArtigos": "Tất cả bài viết trong Trung tâm trợ giúp"
+        }
+    },
+    "nav": {
+        "login": "Đăng nhập",
+        "comecar": "Bắt đầu miễn phí",
+        "recursos": "Tính năng",
+        "precos": "Bảng giá",
+        "ajuda": "Trung tâm trợ giúp",
+        "lightMode": "Giao diện sáng",
+        "darkMode": "Giao diện tối",
+        "language": "Ngôn ngữ",
+        "chooseLanguage": "Chọn ngôn ngữ",
+        "themeToggle": "Chuyển đổi giao diện sáng và tối",
+        "menu": "Mở hoặc đóng menu",
+        "inicio": "Trang chủ ObraFácil",
+        "navegacao": "Điều hướng chính"
+    },
+    "hero": {
+        "plataformas": "Android · iPhone · Windows · Trình duyệt",
+        "titulo": "Toàn bộ công trình **ở cùng một nơi**",
+        "subtitulo": "Tiến độ, nhật ký công trình, tài chính, đội ngũ và vật tư ngay trên điện thoại và máy tính của bạn. Và khách hàng theo dõi tiến độ qua cổng thông tin mà không cần phải gọi điện liên tục.",
+        "comecar": "Bắt đầu miễn phí",
+        "verPlanos": "Xem các gói",
+        "semCartao": "Gói miễn phí không giới hạn thời gian và không cần thẻ tín dụng.",
+        "camposRotulo": "Các phần của công trình trong ứng dụng",
+        "campos": {
+            "cronograma": {
+                "rotulo": "Tiến độ",
+                "valor": "Hạng mục, khối lượng hoàn thành và thời hạn"
+            },
+            "diario": {
+                "rotulo": "Nhật ký công trình",
+                "valor": "Ảnh, thời tiết và nhân lực, xuất file PDF"
+            },
+            "financeiro": {
+                "rotulo": "Tài chính công trình",
+                "valor": "Dự toán và thực chi, các khoản thu và chi"
+            },
+            "cliente": {
+                "rotulo": "Cổng khách hàng",
+                "valor": "Chia sẻ tiến độ với chủ đầu tư"
+            }
+        },
+        "legendaTela": "Màn hình ứng dụng với dữ liệu mẫu",
+        "telas": {
+            "cronograma": "Các hạng mục công trình với giá trị dự toán, nghiệm thu, số tiền phải thanh toán và tiến độ",
+            "diario": "Nhật ký thi công mới với thời tiết, công việc thực hiện và sự cố",
+            "financeiro": "Tài chính công trình với chi phí trên mét vuông, các khoản thu, chi và số dư",
+            "cliente": "Cổng khách hàng với các cập nhật mới nhất về công trình"
+        },
+        "disponivelNo": "Khả dụng trên",
+        "baixarNa": "Tải xuống trên",
+        "baixarPara": "Tải xuống cho"
+    },
+    "pricing": {
+        "title": "Gói dịch vụ và giá cả",
+        "toggleMonthly": "Hằng tháng",
+        "toggleAnnual": "Hằng năm",
+        "periodoRotulo": "Kỳ thanh toán",
+        "economia": "Tiết kiệm {{simbolo}}{{valor}}",
+        "perMonth": "/tháng",
+        "periodAnnual": "/năm",
+        "gratis": {
+            "nome": "Miễn phí",
+            "desc": "Để bắt đầu và làm quen với ứng dụng.",
+            "cta": "Bắt đầu miễn phí",
+            "itens": [
+                "1 công trình đang hoạt động tại một thời điểm",
+                "7 báo cáo PDF mỗi tháng có hình mờ",
+                "250 MB dung lượng cho ảnh và tài liệu",
+                "Khách hàng theo dõi công trình qua cổng thông tin"
+            ]
+        },
+        "pro": {
+            "nomeMensal": "PRO hằng tháng",
+            "nomeAnual": "PRO hằng năm",
+            "desc": "Dành cho nhà thầu, kỹ sư và công ty xây dựng quản lý nhiều công trình.",
+            "itens": [
+                "Không giới hạn số lượng công trình",
+                "Không giới hạn báo cáo PDF không có hình mờ",
+                "10 GB dung lượng cho ảnh và tài liệu",
+                "File PDF kèm logo và chân trang của công ty bạn",
+                "Tải nhật ký định dạng ZIP và tệp công trình ngoại tuyến",
+                "Có sẵn tính năng Truy cập khách hàng cho từng công trình"
+            ],
+            "itensAnual": [
+                "Tất cả tính năng trong gói PRO hằng tháng",
+                "Khóa giá cố định trong suốt 12 tháng"
+            ],
+            "comparacao": "Nếu thanh toán từng tháng, 12 tháng có giá {{simbolo}}{{valor}}",
+            "equivale": "Tương đương {{simbolo}}{{valor}} mỗi tháng",
+            "ctaMensal": "Đăng ký PRO hằng tháng",
+            "ctaAnual": "Đăng ký PRO hằng năm"
+        },
+        "renovacao": "Tự động gia hạn. Hủy bất cứ lúc nào tại nơi bạn đã đăng ký.",
+        "lojas": "Khi đăng ký trên điện thoại, giá và quy trình thanh toán tuân theo quy định của Google Play hoặc App Store.",
+        "addons": "Chỉ dành cho gói PRO: +20 GB dung lượng lưu trữ (gói đăng ký riêng) và Truy cập khách hàng để mở thêm tính năng trên cổng thông tin (phí một lần cho mỗi công trình).",
+        "selo": "Lựa chọn tốt nhất",
+        "gratisPreco": "Miễn phí mãi mãi"
+    },
+    "popup": {
+        "faixa": "Gói miễn phí không giới hạn thời gian",
+        "title": "Trước khi rời đi, hãy thử nghiệm trên công trình tiếp theo của bạn",
+        "texto": "Tạo tài khoản miễn phí không cần thẻ tín dụng. Thêm một công trình và trải nghiệm tiến độ, nhật ký ảnh và tài chính hoạt động đồng bộ với cổng khách hàng.",
+        "cta": "Bắt đầu miễn phí",
+        "lojas": "Hoặc tải ứng dụng",
+        "fechar": "Đóng"
+    },
+    "whatsapp": {
+        "tooltip": "Liên hệ hỗ trợ",
+        "message": "Xin chào, tôi liên hệ từ trang web và có câu hỏi cần giải đáp"
+    },
+    "social": {
+        "title": "Các chuyên gia nói gì",
+        "test1": "“Khách hàng của tôi rất ấn tượng với ứng dụng. Nó mang lại uy tín vượt trội và khẳng định giá trị dịch vụ quản lý của tôi.”",
+        "author1": "Trần Văn Minh",
+        "role1": "Kỹ sư xây dựng",
+        "test2": "“Trước đây làm nhật ký công trình bằng Word vào cuối ngày mất cả tiếng đồng hồ. Giờ tôi hoàn thành chỉ trong 5 phút trên điện thoại ngay tại công trình.”",
+        "author2": "Nguyễn Hoàng Nam",
+        "role2": "Nhà thầu thi công",
+        "test3": "“Gửi nghiệm thu khối lượng trở nên cực kỳ đơn giản. Không hề có hiểu lầm, khách hàng duyệt ngay lập tức.”",
+        "author3": "Lê Quốc Tuấn",
+        "role3": "Chỉ huy trưởng công trình",
+        "test4": "“Thư viện ảnh giúp ích rất nhiều trong việc trao đổi chi tiết hoàn thiện với kiến trúc sư mà không cần họ phải đến công trình liên tục.”",
+        "author4": "Phạm Thu Hương",
+        "role4": "Kiến trúc sư",
+        "test5": "“Ngay cả chủ đầu tư cũng khen ngợi sự chuyên nghiệp và ngăn nắp của chúng tôi. Cuối cùng chúng tôi cũng quản lý bài bản như các tập đoàn lớn.”",
+        "author5": "Vũ Đình Trọng",
+        "role5": "Tổng thầu xây dựng",
+        "aviso": "Đánh giá từ khách hàng thực tế, được công bố với sự đồng ý."
+    },
+    "faq": {
+        "title": "Câu hỏi thường gặp",
+        "q1": "Khách hàng của tôi có phải trả phí để theo dõi công trình không?",
+        "a1": "Không. Khách hàng theo dõi công trình qua cổng thông tin mà không mất phí. Nếu bạn muốn mở thêm quyền cho họ, như tải ảnh và xem toàn bộ tài chính, Truy cập khách hàng là khoản phí một lần cho mỗi công trình, do bạn thanh toán trong gói PRO.",
+        "q2": "Tôi có thể dùng trên máy tính và điện thoại không?",
+        "a2": "Có. ObraFácil hoạt động trên Android, iPhone, Windows và trình duyệt, với cùng một dữ liệu trên tất cả thiết bị.",
+        "q3": "Dữ liệu của tôi có an toàn không?",
+        "a3": "Dữ liệu được truyền mã hóa và lưu trữ trên các máy chủ của Google, cũng được mã hóa. Mỗi người chỉ nhìn thấy các công trình mà họ tham gia, theo đúng quyền hạn của vai trò.",
+        "q4": "Những dữ liệu cá nhân nào được thu thập?",
+        "a4": "Đối với tài khoản: họ tên, email và số điện thoại; mã số thuế chỉ khi bạn cung cấp. Danh sách đầy đủ và mục đích sử dụng từng dữ liệu có trong Chính sách quyền riêng tư.",
+        "q5": "Ứng dụng có hoạt động khi không có internet không?",
+        "a5": "Có. Khi không có mạng, ứng dụng lưu những gì bạn ghi lại trên thiết bị và tự động gửi lên khi có kết nối trở lại.",
+        "q6": "Khách hàng có bị mất quyền truy cập tệp khi công trình kết thúc không?",
+        "a6": "Nếu công trình đạt từ 70% trở lên khi quyền truy cập hết hạn, khách hàng vẫn có 15 ngày để xem và tải xuống những gì đã được chia sẻ.",
+        "q7": "ObraFácil có thay thế kỹ sư công trình không?",
+        "a7": "Không. Đây là công cụ quản lý và không thay thế kỹ sư chuyên môn chịu trách nhiệm kỹ thuật cho công trình, cũng như không thay thế các chứng chỉ hành nghề.",
+        "q8": "Tôi có thể xóa tài khoản của mình không?",
+        "a8": "Có, tại Hồ sơ > Xóa tài khoản. Tài khoản sẽ tạm dừng trong 30 ngày (bạn có thể khôi phục) và sau đó các công trình và dữ liệu của bạn sẽ bị xóa. Một số bản ghi, như thanh toán và chấp thuận Điều khoản, được lưu giữ theo thời hạn trong Chính sách quyền riêng tư.",
+        "q9": "Tôi có thể hủy gói PRO hoặc gói mở rộng dung lượng không?",
+        "a9": "Có, bất cứ lúc nào, tại chính nơi bạn đã đăng ký. Kỳ gia hạn tiếp theo sẽ không bị tính phí và quyền truy cập vẫn duy trì đến hết thời hạn đã thanh toán.",
+        "q10": "Điều gì xảy ra nếu không thanh toán gia hạn?",
+        "a10": "Tài khoản sẽ quay về gói miễn phí. Không có gì bị xóa; nếu vượt quá giới hạn của gói miễn phí, việc tải lên tệp mới sẽ tạm dừng cho đến khi bạn giải phóng dung lượng hoặc đăng ký lại.",
+        "mais": "Bạn chưa tìm thấy nội dung mình cần?",
+        "verAjuda": "Xem Trung tâm trợ giúp"
+    },
+    "ajuda": {
+        "titulo": "Trung tâm trợ giúp",
+        "heroiAntes": "Chúng tôi có thể",
+        "heroiDestaque": "giúp gì",
+        "heroiDepois": "cho bạn?",
+        "heroiSubtitulo": "Hướng dẫn từng bước ObraFácil kèm ảnh chụp màn hình từng menu bằng ngôn ngữ của bạn.",
+        "buscaRotulo": "Tìm kiếm trong Trung tâm trợ giúp",
+        "buscaPlaceholder": "Tìm nhật ký, nhân sự, PDF, khách hàng…",
+        "buscaLimpar": "Xóa tìm kiếm",
+        "buscaResultados": "Kết quả tìm kiếm",
+        "buscaSemResultado": "Không tìm thấy bài viết nào cho “{{termo}}”. Hãy thử từ khóa khác hoặc liên hệ bộ phận hỗ trợ.",
+        "buscasComuns": "Tìm kiếm phổ biến:",
+        "sugestao1": "Nhật ký ngoại tuyến",
+        "sugestao2": "Thêm nhân viên",
+        "sugestao3": "PDF nhật ký công trình",
+        "sugestao4": "Cổng khách hàng",
+        "comeceTitulo": "Bắt đầu từ đây",
+        "comeceSubtitulo": "Các hướng dẫn toàn diện đồng hành cùng bạn từ lần đăng nhập đầu tiên cho đến khi đạt kết quả thực tế.",
+        "comecar": "Bắt đầu",
+        "tipo_fluxo": "Hướng dẫn toàn diện",
+        "tipo_funcao": "Từng bước",
+        "tipo_conceito": "Khái niệm cơ bản",
+        "assuntosTitulo": "Duyệt theo chủ đề",
+        "assuntosPerfil_todos": "Tất cả chủ đề trong Trung tâm trợ giúp.",
+        "assuntosPerfil_gestor": "Chủ đề dành cho người quản lý công trình.",
+        "assuntosPerfil_equipe": "Chủ đề dành cho đội ngũ làm việc tại công trình.",
+        "assuntosPerfil_cliente": "Chủ đề dành cho khách hàng chủ đầu tư.",
+        "assuntosVazio": "Chưa có bài viết nào cho đối tượng này. Xem tất cả chủ đề hoặc liên hệ hỗ trợ.",
+        "perfilGrupo": "Hiển thị chủ đề cho",
+        "perfil_todos": "Tất cả",
+        "perfil_gestor": "Người quản lý",
+        "perfil_equipe": "Đội ngũ",
+        "perfil_cliente": "Khách hàng",
+        "artigos_other": "{{count}} bài viết hướng dẫn",
+        "essenciaisTitulo": "Nội dung thiết yếu",
+        "essenciaisSubtitulo": "Những điều mọi người dùng cần biết trong những ngày đầu tiên.",
+        "suporteTitulo": "Bạn chưa tìm thấy nội dung mình cần?",
+        "suporteTexto": "Liên hệ với đội ngũ của chúng tôi qua WhatsApp hoặc tạo yêu cầu hỗ trợ trực tiếp trong ứng dụng.",
+        "suporteBotao": "Nhắn tin qua WhatsApp",
+        "suporteMensagem": "Xin chào, tôi đến từ Trung tâm trợ giúp trên trang web và có câu hỏi cần giải đáp.",
+        "carregando": "Đang tải Trung tâm trợ giúp…",
+        "erroTitulo": "Không thể tải Trung tâm trợ giúp",
+        "erroTexto": "Kiểm tra kết nối internet của bạn và thử lại.",
+        "tentarDeNovo": "Thử lại",
+        "vazioTitulo": "Các bài hướng dẫn đang được chuẩn bị",
+        "vazioTexto": "Các bài viết trong Trung tâm trợ giúp sẽ sớm có mặt tại đây. Trong thời gian này, đội ngũ hỗ trợ luôn sẵn sàng trả lời câu hỏi của bạn qua WhatsApp.",
+        "naoEncontradoTitulo": "Không tìm thấy bài viết",
+        "naoEncontradoTexto": "Địa chỉ này không dẫn đến bài viết nào. Có thể bài viết đã được đổi tên; vui lòng tìm qua công cụ tìm kiếm.",
+        "assuntoNaoEncontrado": "Không tìm thấy chủ đề",
+        "voltarCentral": "Quay lại Trung tâm trợ giúp",
+        "trilha": "Bạn đang ở",
+        "outrosAssuntos": "Chủ đề khác",
+        "paraPublico": "Dành cho {{lista}}",
+        "publico_gestor": "người quản lý",
+        "publico_equipe": "thành viên đội ngũ",
+        "publico_cliente": "khách hàng",
+        "e": "và",
+        "passos_other": "{{count}} bước",
+        "passoNumero": "Bước {{n}}",
+        "printAlt": "Màn hình ứng dụng ở bước {{n}}: {{titulo}}",
+        "nesteArtigo": "Trong bài viết này",
+        "antesDeComecar": "Đọc trước khi bắt đầu",
+        "relacionados": "Bài viết liên quan",
+        "navegacaoArtigos": "Bài viết khác trong chủ đề này",
+        "anterior": "Trước",
+        "proximo": "Tiếp theo",
+        "appTitulo": "Thực hành trực tiếp trong ứng dụng",
+        "appTexto": "Mở ObraFácil ở tab khác và làm theo các bước trong khi đọc.",
+        "appBotao": "Mở ObraFácil",
+        "tambemEm": "Cũng có sẵn bằng"
+    },
+    "footer": {
+        "ctaTitle": "Bạn đã sẵn sàng quản lý công trình tiếp theo của mình bài bản hơn?",
+        "ctaBtn": "Bắt đầu miễn phí",
+        "terms": "Điều khoản dịch vụ",
+        "privacy": "Chính sách quyền riêng tư",
+        "help": "Trung tâm trợ giúp",
+        "support": "Hỗ trợ",
+        "tagline": "Quản lý công trình xây dựng trở nên dễ dàng và chuyên nghiệp hơn.",
+        "rights": "Đã đăng ký bản quyền.",
+        "language": "Ngôn ngữ trang web",
+        "baixar": "Tải ứng dụng",
+        "produto": "Sản phẩm",
+        "legal": "Pháp lý",
+        "contato": "Liên hệ",
+        "whatsapp": "WhatsApp"
+    },
+    "legal": {
+        "versao": "Phiên bản tài liệu: {{versao}}",
+        "emVigorDesde": "có hiệu lực từ {{data}}",
+        "valeAPartir": "áp dụng từ {{data}}",
+        "novaVersao": "Phiên bản {{versao}} có hiệu lực từ {{data}}. Bạn đã có thể đọc chi tiết các thay đổi.",
+        "lerNova": "Đọc phiên bản mới",
+        "vendoNova": "Bạn đang xem phiên bản mới. Cho đến ngày có hiệu lực, phiên bản {{versao}} vẫn được áp dụng.",
+        "voltarAtual": "Quay lại phiên bản hiện tại",
+        "sumario": "Mục lục trang này",
+        "carregando": "Đang tải nội dung…",
+        "erro": "Không thể tải văn bản vào lúc này. Vui lòng kiểm tra lại kết nối của bạn.",
+        "indisponivel": "Văn bản chưa có sẵn tại địa chỉ này. Vui lòng liên hệ suporte@appobrafacil.expertbr.com.",
+        "tentarDeNovo": "Thử lại"
+    },
+    "cookies": {
+        "titulo": "Quản lý cookie",
+        "texto": "Trang web này sử dụng cookie thiết yếu để cho phép bạn đăng nhập và lưu các tùy chọn một cách an toàn.",
+        "saibaMais": "Tìm hiểu thêm trong Chính sách quyền riêng tư.",
+        "aceitar": "Chấp nhận",
+        "recusar": "Từ chối",
+        "preferencias": "Tùy chọn cookie"
+    },
+    "cliente": {
+        "titulo": "Tiến độ trực tiếp của công trình cho **khách hàng của bạn**",
+        "texto": "Khách hàng theo dõi các hạng mục và hình ảnh qua liên kết riêng tư mà không cần gọi điện hay nhắn tin hằng ngày. Chi phí nội bộ và tiền công đội thầu luôn được bảo mật.",
+        "antes": "Trước đây: tin nhắn lộn xộn qua WhatsApp",
+        "depois": "Hiện tại: cổng công trình ngăn nắp và rõ ràng",
+        "nome": "Cổng khách hàng",
+        "hoje": "Hôm nay",
+        "msg1": "Chào bạn! Tiến độ công trình hôm nay thế nào rồi? Có ảnh mới không?",
+        "msg2": "Hạng mục lát sàn có kịp hoàn thành trước thứ Sáu tuần sau không?",
+        "msg3": "Chào bạn. Tôi vừa bảo chỉ huy trưởng gửi ảnh cập nhật ngay đây.",
+        "conversaAviso": "Ví dụ về cuộc trò chuyện với khách hàng",
+        "pontos": [
+            "Khách hàng đăng nhập bằng tài khoản riêng thông qua lời mời bạn gửi.",
+            "Bạn muốn chia sẻ nhiều hơn? Với Truy cập khách hàng (trong gói PRO, phí một lần cho mỗi công trình), bạn chọn nội dung họ có thể xem và tải xuống: ảnh, tài chính chi tiết, bảng tiến độ và báo cáo sự cố.",
+            "Đối với công trình đạt từ 70% trở lên, khi hết hạn truy cập khách hàng vẫn có 15 ngày để tải xuống các tệp đã được chia sẻ."
+        ],
+        "telaPortal": "Cổng khách hàng với các cập nhật mới nhất về công trình",
+        "telaAcesso": "Màn hình nơi người quản lý phân quyền nội dung khách hàng được xem"
+    },
+    "recursos": {
+        "titulo": "Tất cả những gì công trình cần **ở cùng một nơi**",
+        "itens": {
+            "cronograma": {
+                "titulo": "Tiến độ theo hạng mục",
+                "texto": "Tự tạo hạng mục hoặc tạo 19 hạng mục tiêu chuẩn từ giá trị hợp đồng, và theo dõi tiến độ thi công của từng phần việc."
+            },
+            "diario": {
+                "titulo": "Nhật ký công trình",
+                "texto": "Thời tiết, công việc, sự cố, nhân lực có mặt, hình ảnh và chữ ký. Xuất ra file PDF hoàn chỉnh sẵn sàng gửi đi."
+            },
+            "financeiro": {
+                "titulo": "Tài chính công trình",
+                "texto": "Dự toán, nghiệm thu và các khoản phải trả theo từng hạng mục, cùng các khoản thu, chi và báo cáo tài chính."
+            },
+            "equipe": {
+                "titulo": "Đội ngũ và bảng lương",
+                "texto": "Đăng ký nhân sự, điểm danh hằng ngày trong nhật ký và tính toán bảng lương dễ dàng."
+            },
+            "compras": {
+                "titulo": "Vật tư và kho bãi",
+                "texto": "Ghi nhận mua sắm kèm hóa đơn và kiểm soát lượng vật tư, dụng cụ tại từng công trình."
+            },
+            "marca": {
+                "titulo": "Báo cáo gắn thương hiệu của bạn",
+                "texto": "Trong gói PRO, tất cả các tệp PDF đều có logo và chân trang chính thức của công ty bạn."
+            },
+            "offline": {
+                "titulo": "Không có sóng tại công trình",
+                "texto": "Ứng dụng lưu trữ dữ liệu cục bộ và tự động đồng bộ ngay khi có kết nối trở lại."
+            },
+            "aparelhos": {
+                "titulo": "Trên mọi thiết bị của bạn",
+                "texto": "Android, iPhone, Windows và trình duyệt luôn đồng bộ cùng một nguồn dữ liệu."
+            }
+        },
+        "tela": "Tổng quan công trình với giá trị hợp đồng, thời hạn và tổng tiến độ hoàn thành"
+    },
+    "equipe": {
+        "titulo": "Mỗi người chỉ thấy những gì họ cần",
+        "texto": "Mời kỹ sư, đội ngũ thi công và khách hàng vào công trình. Chủ công trình quyết định ai tham gia và quyền hạn của từng vai trò.",
+        "papeis": {
+            "gestor": {
+                "nome": "Người quản lý",
+                "desc": "Toàn quyền: tạo và thiết lập công trình, quản lý tài chính, mời đội ngũ và xuất tất cả báo cáo."
+            },
+            "engenheiro": {
+                "nome": "Kỹ sư",
+                "desc": "Theo dõi và cập nhật công trình theo các quyền bạn cấp."
+            },
+            "equipe": {
+                "nome": "Đội ngũ",
+                "desc": "Ghi lại công việc hằng ngày: nhật ký công trình, ảnh hiện trường và điểm danh nhân sự."
+            },
+            "cliente": {
+                "nome": "Khách hàng",
+                "desc": "Theo dõi trên Cổng khách hàng những gì bạn chia sẻ."
+            }
+        },
+        "tela": "Nhật ký công trình với danh sách đội ngũ và điểm danh từng người"
+    },
+    "chamada": {
+        "titulo": "Bắt đầu với **công trình tiếp theo** của bạn",
+        "texto": "Gói miễn phí không giới hạn thời gian. Đăng ký PRO bất cứ khi nào bạn cần thêm dung lượng.",
+        "acao": "Bắt đầu miễn phí",
+        "duvida": "Bạn có thắc mắc? Hãy nhắn tin trực tiếp cho chúng tôi qua WhatsApp.",
+        "whatsapp": "Gửi tin nhắn qua WhatsApp"
+    },
+    "conta": {
+        "abrirApp": "Mở ObraFácil trên trình duyệt",
+        "lojasTitulo": "ObraFácil trên mọi thiết bị",
+        "lojasTexto": "Đăng nhập bằng cùng một tài khoản trên điện thoại, máy tính hoặc trình duyệt: những gì bạn mua đều có giá trị trên tất cả thiết bị.",
+        "falarSuporte": "Liên hệ với đội ngũ hỗ trợ"
+    },
+    "pagamento": {
+        "metaTitulo": "Thanh toán đã được xác nhận · ObraFácil",
+        "metaDescricao": "Thanh toán của bạn đã thành công. Xem thời gian kích hoạt tính năng trong ObraFácil và cách xử lý nếu có sự chậm trễ.",
+        "agoraTitulo": "Điều gì diễn ra tiếp theo",
+        "voltarTitulo": "Quay lại ObraFácil",
+        "voltarTexto": "Quay lại tab trình duyệt hoặc ứng dụng Windows nơi bạn đã thực hiện thanh toán. Nếu đã đóng, hãy mở lại ObraFácil bằng cùng tài khoản đó.",
+        "automaticoTitulo": "Kích hoạt hoàn toàn tự động",
+        "automaticoTexto": "Stripe thông báo ngay lập tức cho máy chủ của chúng tôi và tính năng bạn mua sẽ được kích hoạt tự động trên tài khoản. Bạn không cần làm thêm thao tác nào.",
+        "conferirTitulo": "Kiểm tra trong ứng dụng",
+        "demoraTitulo": "Nếu giao dịch mua chưa xuất hiện",
+        "demoraEsperar": "Chờ trong một phút, sau đó đóng và mở lại ứng dụng. Trên trình duyệt, hãy tải lại trang ObraFácil.",
+        "demoraSairEntrar": "Vẫn hiển thị gói miễn phí? Hãy đăng xuất rồi đăng nhập lại bằng email thanh toán: ứng dụng sẽ nhận diện gói đăng ký web và kích hoạt PRO.",
+        "demoraRestaurar": "**Khôi phục giao dịch mua** không áp dụng tại đây: nút này chỉ tìm kiếm các giao dịch thực hiện qua kho ứng dụng trên điện thoại (Google Play hoặc App Store).",
+        "demoraSuporte": "Nếu vấn đề vẫn tiếp diễn, hãy liên hệ với bộ phận hỗ trợ kèm theo email đã sử dụng khi thanh toán.",
+        "compras": {
+            "geral": {
+                "sobretitulo": "Thanh toán đã được xác nhận",
+                "titulo": "Thanh toán **đã được xác nhận**",
+                "texto": "Khoản thanh toán của bạn đã hoàn tất thành công. Trong giây lát ObraFácil sẽ nhận được xác nhận và mở khóa tính năng bạn đã mua.",
+                "conferir": "Mở ObraFácil bằng tài khoản đã dùng khi mua: tính năng mới của bạn sẽ tự động xuất hiện.",
+                "artigo": "Nơi xem lịch sử thanh toán"
+            },
+            "pro": {
+                "sobretitulo": "Gói đăng ký đã được xác nhận",
+                "titulo": "Chào mừng bạn đến với ObraFácil **PRO**",
+                "texto": "Gói đăng ký của bạn đã được xác nhận. Trong giây lát gói PRO sẽ tự động kích hoạt trên tài khoản của bạn trên điện thoại, máy tính và trình duyệt.",
+                "conferir": "Mở **Hồ sơ**: huy hiệu trên thẻ trên cùng chuyển thành **Thành viên PRO** và thẻ **Gói của bạn** hiển thị **ObraFácil PRO**.",
+                "artigo": "Tôi đã mua PRO từ trang web: cách kích hoạt"
+            },
+            "acesso": {
+                "sobretitulo": "Thanh toán đã được xác nhận",
+                "titulo": "Thanh toán **Truy cập khách hàng** đã được xác nhận",
+                "texto": "Phí công trình đã được thanh toán. Trong giây lát ứng dụng sẽ mở khóa các tính năng của Cổng khách hàng cho khách hàng của công trình này.",
+                "conferir": "Mở công trình: ở phía dưới **MENU CÔNG TRÌNH**, thẻ **Truy cập khách hàng** hiển thị trạng thái **Đã cấp quyền truy cập**. Nhấn **CẤU HÌNH** để chọn những gì khách hàng được xem.",
+                "artigo": "Tính năng Truy cập khách hàng là gì"
+            },
+            "downloads": {
+                "sobretitulo": "Thanh toán đã được xác nhận",
+                "titulo": "**Gói tải bổ sung** cho công trình đã được xác nhận",
+                "texto": "Trong giây lát công trình sẽ có thêm 2 lượt tải toàn bộ thư viện ảnh dưới dạng ZIP cho tất cả thành viên sử dụng.",
+                "conferir": "Quay lại **Thư viện ảnh** của công trình và nhấn **Tải xuống tất cả** một lần nữa.",
+                "artigo": "Cách mua thêm lượt tải thư viện ảnh"
+            },
+            "armazenamento": {
+                "sobretitulo": "Gói đăng ký đã được xác nhận",
+                "titulo": "Thêm **20 GB** cho các công trình của bạn",
+                "texto": "Việc mở rộng dung lượng lưu trữ đã được xác nhận. Ứng dụng sẽ cộng thêm 20 GB vào gói của bạn ngay lập tức.",
+                "conferir": "Mở **Hồ sơ**: bên dưới thanh **Dung lượng lưu trữ**, thẻ **Gói của bạn** hiển thị **Đã kích hoạt mở rộng +20 GB**.",
+                "artigo": "Cách thêm 20 GB dung lượng lưu trữ"
+            }
+        }
+    },
+    "perfil": {
+        "metaTitulo": "Gói đăng ký của bạn · ObraFácil",
+        "metaDescricao": "Xem nơi quản lý gói dịch vụ, thẻ thanh toán và cách hủy đăng ký trong ObraFácil.",
+        "sobretitulo": "Gói đăng ký của bạn",
+        "titulo": "Gói đăng ký của bạn được quản lý trong menu **Hồ sơ**",
+        "texto": "Gói dịch vụ, hóa đơn, thẻ thanh toán và tùy chọn hủy đều có trong ứng dụng: tại Hồ sơ, trên thẻ Gói của bạn. Mở ObraFácil và làm theo các bước dưới đây.",
+        "artigoBotao": "Cách quản lý hoặc hủy gói",
+        "passosTitulo": "Cách truy cập",
+        "passo1Titulo": "Mở ObraFácil",
+        "passo1Texto": "Đăng nhập bằng tài khoản của bạn trên điện thoại, ứng dụng Windows hoặc trên trình duyệt.",
+        "passo2Titulo": "Mở Hồ sơ",
+        "passo2Texto": "Trên điện thoại, nhấn vào menu (ba dấu gạch) ở đầu bảng điều khiển rồi nhấn vào thẻ hồ sơ của bạn. Trên máy tính, nhấp vào thẻ của bạn ở thanh bên.",
+        "passo3Titulo": "Sử dụng thẻ Gói của bạn",
+        "passo3Texto": "Ngay dưới ảnh đại diện, thẻ **Gói của bạn** hiển thị gói hiện tại, dung lượng đã dùng, số công trình và số báo cáo trong tháng này. Nhấn **Quản lý**.",
+        "gerenciarTitulo": "Mục đích của nút Quản lý",
+        "gerenciarCelular": "**Đăng ký trên điện thoại**: mở màn hình đăng ký của Google Play hoặc App Store để quản lý gia hạn, hóa đơn và hủy đăng ký.",
+        "gerenciarSite": "**Đăng ký trên trang web hoặc máy tính**: mở cổng thanh toán trên trình duyệt để đổi thẻ, xem hóa đơn hoặc hủy gói.",
+        "gerenciarLugar": "Hủy trên một nền tảng không hủy gói đăng ký được thực hiện trên nền tảng khác.",
+        "avisoTitulo": "Nhận được thông báo thanh toán không thành công?",
+        "avisoTexto": "Ngân hàng của bạn đã từ chối khoản phí đăng ký. Nhấn **Quản lý** và nhập một thẻ hợp lệ để không bị mất gói PRO. Nếu bạn đã thanh toán, vui lòng bỏ qua thông báo này.",
+        "artigosTitulo": "Trong Trung tâm trợ giúp",
+        "artigoCartao": "Tìm hiểu thẻ Gói của bạn",
+        "artigoCancelar": "Cách quản lý hoặc hủy gói đăng ký",
+        "artigoPagamentos": "Lịch sử thanh toán và hoàn tiền"
+    },
+    "suporte": {
+        "metaTitulo": "Hỗ trợ · ObraFácil",
+        "metaDescricao": "Liên hệ với bộ phận hỗ trợ ObraFácil qua WhatsApp, email hoặc yêu cầu hỗ trợ trong ứng dụng, và xem hướng dẫn trong Trung tâm trợ giúp.",
+        "sobretitulo": "Hỗ trợ",
+        "titulo": "Liên hệ với **đội ngũ hỗ trợ**",
+        "texto": "Đặt câu hỏi, báo cáo sự cố ứng dụng hoặc yêu cầu hỗ trợ thanh toán. Thời gian phản hồi trung bình của chúng tôi là từ 24 đến 48 giờ làm việc.",
+        "canaisTitulo": "Các kênh liên hệ",
+        "whatsappTitulo": "WhatsApp",
+        "whatsappTexto": "Để nhắn tin trực tiếp và giải đáp nhanh các thắc mắc.",
+        "whatsappBotao": "Mở WhatsApp",
+        "whatsappMensagem": "Xin chào, tôi liên hệ từ trang hỗ trợ trên website và cần trợ giúp về ObraFácil.",
+        "emailTitulo": "Email",
+        "emailTexto": "Để gửi chi tiết, ảnh chụp màn hình và tài liệu đính kèm. Nếu có thể, hãy gửi từ địa chỉ email tài khoản của bạn.",
+        "emailBotao": "Viết email",
+        "chamadoTitulo": "Yêu cầu hỗ trợ trong ứng dụng",
+        "chamadoTexto": "Được lưu trên tài khoản của bạn và là kênh chính thức để yêu cầu hoàn tiền cho các giao dịch mua trên web, tại mục **Hỗ trợ tài chính**. Phản hồi sẽ được gửi về email tài khoản của bạn.",
+        "chamadoBotao": "Cách mở yêu cầu hỗ trợ",
+        "centralTitulo": "Trung tâm trợ giúp",
+        "centralTexto": "Hướng dẫn từng bước cho từng màn hình ứng dụng kèm ảnh chụp thực tế.",
+        "centralBotao": "Mở Trung tâm trợ giúp",
+        "lojasTitulo": "Đã mua qua Google Play hoặc App Store?",
+        "lojasTexto": "Hóa đơn và hoàn tiền cho các giao dịch này do kho ứng dụng tương ứng xử lý trực tiếp. Để hủy, hãy dùng nút **Quản lý** trên thẻ **Gói của bạn**.",
+        "perfilLink": "Nơi xem gói đăng ký của bạn"
+    }
+}

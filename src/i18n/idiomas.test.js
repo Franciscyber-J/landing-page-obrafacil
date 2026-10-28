@@ -29,8 +29,11 @@ test('navegador: escolhe pelo idioma, pela região e pela ordem de preferência'
     assert.equal(escolherIdioma(['es']), 'es-ES');
     assert.equal(escolherIdioma(['en-NZ']), 'en-AU');
     assert.equal(escolherIdioma(['en-IE']), 'en-GB');
-    assert.equal(escolherIdioma(['de-DE', 'en-GB']), 'en-GB');
-    assert.equal(escolherIdioma(['de-DE']), 'en-US');
+    assert.equal(escolherIdioma(['sv-SE', 'en-GB']), 'en-GB');
+    assert.equal(escolherIdioma(['sv-SE']), 'en-US');
+    // Idiomas novos: pelo idioma e pela região (de-AT cai no alemão da Alemanha; zh-CN não é o chinês tradicional).
+    assert.equal(escolherIdioma(['de-AT']), 'de-DE');
+    assert.equal(escolherIdioma(['ar-EG']), 'ar-SA');
     assert.equal(escolherIdioma([]), 'en-US');
     assert.equal(escolherIdioma(['xx-!!', 'es-CO']), 'es-MX');
     // Valor antigo guardado pelo detector anterior.

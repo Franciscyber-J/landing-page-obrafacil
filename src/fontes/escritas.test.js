@@ -12,10 +12,15 @@ const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '../..');
 const ler = (...partes) => fs.readFileSync(path.join(...partes), 'utf8');
 
-test('os 8 idiomas de hoje são latinos: o módulo do build é uma função vazia (nada a mais no site)', () => {
-    assert.deepEqual(escritasDoCadastro(IDIOMAS), {});
-    assert.equal(moduloDasFontes(IDIOMAS), 'export function usarEscritaDoIdioma() {}\n');
-    for (const i of IDIOMAS) assert.ok(i.escrita === undefined || i.escrita === LATINA, i.codigo);
+test('cadastro de hoje: cada idioma de outra escrita com a dele; os latinos sem fonte a mais', () => {
+    assert.deepEqual(escritasDoCadastro(IDIOMAS), {
+        'ar-SA': 'arabe', 'he-IL': 'hebraica', 'hi-IN': 'devanagari', 'ja-JP': 'japonesa', 'ko-KR': 'coreana',
+        'th-TH': 'tailandesa', 'zh-TW': 'chinesaTradicional',
+    });
+    const latinos = IDIOMAS.filter((i) => !['ar', 'he', 'hi', 'ja', 'ko', 'th', 'zh'].includes(i.codigo.slice(0, 2)));
+    for (const i of latinos) assert.ok(i.escrita === undefined || i.escrita === LATINA, i.codigo);
+    // Só os latinos: o módulo do build é uma função vazia (nada a mais no site).
+    assert.equal(moduloDasFontes(latinos), 'export function usarEscritaDoIdioma() {}\n');
 });
 
 test('idioma de outra escrita: só as escritas usadas entram, e a variante herda a da base', () => {

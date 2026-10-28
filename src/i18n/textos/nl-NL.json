@@ -1,0 +1,496 @@
+{
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil: bouwmanagement-app met bouwdagboek",
+            "descricao": "Bouwmanagement-app voor telefoon en pc: planning, dagrapporten met foto's, financiën, team en klantportaal. Start gratis."
+        },
+        "ajuda": {
+            "titulo": "ObraFácil Helpcentrum: stapsgewijze handleidingen",
+            "descricao": "Stapsgewijze handleidingen voor de ObraFácil-app: dagrapporten, planning, projectfinanciën, team en klantportaal met echte schermen."
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · ObraFácil Helpcentrum",
+            "descricao": "{{descricao}} Stapsgewijze handleidingen met echte schermen van ObraFácil."
+        },
+        "artigo": {
+            "titulo": "{{titulo}} — ObraFácil"
+        },
+        "app": {
+            "descricao": "Bouwmanagement-app voor aannemers, civiel ingenieurs, architecten en uitvoerders: planning in fasen, dagrapporten met foto's en PDF, projectfinanciën, salarisadministratie van teams, inkoop en magazijn, en een portaal voor klantopvolging. Werkt op Android, iPhone, Windows en internet, zelfs offline op de bouwplaats.",
+            "categoria": "Bouwmanagement"
+        },
+        "imagemAlt": "Logo van ObraFácil, app voor bouwmanagement",
+        "llms": {
+            "sobre": "Wat ObraFácil is",
+            "paraQuem": "Voor wie: bouwbedrijven, civiel ingenieurs, architecten, aannemers en uitvoerders die een of meer projecten beheren, dagelijkse werkzaamheden willen vastleggen, controle willen houden over planning en kosten, en voortgang willen tonen aan de klant.",
+            "plataformas": "Platformen",
+            "recursos": "Functies",
+            "papeis": "Wie wat doet op de bouwplaats",
+            "planos": "Abonnementen en prijzen",
+            "precosPorIdioma": "PRO-prijzen in elke taal en valuta van de website",
+            "precoLinha": "{{mensal}} per maand of {{anual}} per jaar",
+            "paginas": "Belangrijkste pagina's",
+            "idiomas": "De website en app zijn beschikbaar in deze talen",
+            "todosArtigos": "Alle artikelen in het Helpcentrum"
+        }
+    },
+    "nav": {
+        "login": "Inloggen",
+        "comecar": "Gratis starten",
+        "recursos": "Functies",
+        "precos": "Prijzen",
+        "ajuda": "Helpcentrum",
+        "lightMode": "Licht thema",
+        "darkMode": "Donker thema",
+        "language": "Taal",
+        "chooseLanguage": "Kies taal",
+        "themeToggle": "Schakelen tussen licht en donker thema",
+        "menu": "Menu openen of sluiten",
+        "inicio": "ObraFácil startpagina",
+        "navegacao": "Hoofdnavigatie"
+    },
+    "hero": {
+        "plataformas": "Android · iPhone · Windows · Web",
+        "titulo": "Het hele project **op één plek**",
+        "subtitulo": "Planning, bouwdagboek, financiën, team en inkoop op je telefoon en computer. En je klant volgt het project via het portaal, zonder steeds te hoeven bellen.",
+        "comecar": "Gratis starten",
+        "verPlanos": "Bekijk abonnementen",
+        "semCartao": "Gratis abonnement zonder tijdslimiet en zonder creditcard.",
+        "camposRotulo": "Onderdelen van het project in de app",
+        "campos": {
+            "cronograma": {
+                "rotulo": "Planning",
+                "valor": "Fasen, fysieke voortgang en data"
+            },
+            "diario": {
+                "rotulo": "Bouwdagboek",
+                "valor": "Foto's, weer en bezetting, in PDF"
+            },
+            "financeiro": {
+                "rotulo": "Projectfinanciën",
+                "valor": "Begroot en besteed, inkomsten en uitgaven"
+            },
+            "cliente": {
+                "rotulo": "Klantportaal",
+                "valor": "Voortgang gedeeld met de opdrachtgever"
+            }
+        },
+        "legendaTela": "App-scherm met voorbeeldgegevens",
+        "telas": {
+            "cronograma": "Projectfasen met begrote bedragen, metingen, te betalen bedragen en fysieke voortgang",
+            "diario": "Nieuw dagrapport met weerbericht, activiteiten en incidenten",
+            "financeiro": "Projectfinanciën met kosten per vierkante meter, inkomsten, uitgaven en saldo",
+            "cliente": "Klantportaal met de nieuwste updates van het project"
+        },
+        "disponivelNo": "Beschikbaar op",
+        "baixarNa": "Downloaden in",
+        "baixarPara": "Downloaden voor"
+    },
+    "pricing": {
+        "title": "Abonnementen en prijzen",
+        "toggleMonthly": "Maandelijks",
+        "toggleAnnual": "Jaarlijks",
+        "periodoRotulo": "Facturatieperiode",
+        "economia": "Bespaar {{simbolo}}{{valor}}",
+        "perMonth": "/maand",
+        "periodAnnual": "/jaar",
+        "gratis": {
+            "nome": "Gratis",
+            "desc": "Om te starten en de app te leren kennen.",
+            "cta": "Gratis starten",
+            "itens": [
+                "1 actief project tegelijk van jezelf",
+                "7 PDF-rapporten per maand met watermerk",
+                "250 MB voor foto's en bestanden",
+                "Klant volgt het project via het portaal"
+            ]
+        },
+        "pro": {
+            "nomeMensal": "PRO maandelijks",
+            "nomeAnual": "PRO jaarlijks",
+            "desc": "Voor aannemers, ingenieurs en bouwbedrijven met meerdere projecten.",
+            "itens": [
+                "Onbeperkt aantal projecten",
+                "Onbeperkt aantal PDF-rapporten zonder watermerk",
+                "10 GB voor foto's en bestanden",
+                "PDF met het logo en de voettekst van jouw bedrijf",
+                "Dagrapporten in ZIP en offline projectbestanden",
+                "Klanttoegang beschikbaar voor elk project"
+            ],
+            "itensAnual": [
+                "Alle functies van PRO maandelijks",
+                "Prijs vastgezet voor 12 maanden"
+            ],
+            "comparacao": "Bij maandelijkse betaling kost 12 maanden {{simbolo}}{{valor}}",
+            "equivale": "Staat gelijk aan {{simbolo}}{{valor}} per maand",
+            "ctaMensal": "Abonneer op PRO maandelijks",
+            "ctaAnual": "Abonneer op PRO jaarlijks"
+        },
+        "renovacao": "Automatische verlenging. Altijd opzegbaar waar je je hebt geabonneerd.",
+        "lojas": "Bij een abonnement via je telefoon lopen prijzen en facturatie volgens de voorwaarden van Google Play of de App Store.",
+        "addons": "Alleen voor PRO: +20 GB opslagruimte (apart abonnement) en Klanttoegang om meer functies in het portaal te ontgrendelen (eenmalige vergoeding per project).",
+        "selo": "Beste keuze",
+        "gratisPreco": "Voor altijd gratis"
+    },
+    "popup": {
+        "faixa": "Gratis abonnement zonder tijdslimiet",
+        "title": "Probeer het op je volgende project voordat je weggaat",
+        "texto": "Maak een gratis account aan zonder creditcard. Voeg een project toe en zie hoe de planning, dagrapporten met foto's en financiën samenwerken terwijl de klant meekijkt via het portaal.",
+        "cta": "Gratis starten",
+        "lojas": "Of download de app",
+        "fechar": "Sluiten"
+    },
+    "whatsapp": {
+        "tooltip": "Contact opnemen met ondersteuning",
+        "message": "Hallo, ik neem contact op via de website en heb een vraag"
+    },
+    "social": {
+        "title": "Wat professionals zeggen",
+        "test1": "“Mijn klanten waren erg onder de indruk van de app. Het straalde veel meer betrouwbaarheid uit en rechtvaardigde de prijs van mijn management.”",
+        "author1": "Daan van Dijk",
+        "role1": "Civiel ingenieur",
+        "test2": "“Aan het einde van de dag een dagrapport maken kostte vroeger 1 uur in Word. Nu doe ik het in 5 minuten op mijn telefoon op de bouwplaats.”",
+        "author2": "Martijn de Vries",
+        "role2": "Aannemer",
+        "test3": "“Voortgangsmetingen versturen is ontzettend eenvoudig geworden. Zonder onduidelijkheid keurt de klant ze direct goed.”",
+        "author3": "Sander Bakker",
+        "role3": "Uitvoerder",
+        "test4": "“De fotogalerij hielp enorm om afwerkingsdetails aan de architect te laten zien zonder dat die steeds naar de bouwplaats hoefde te komen.”",
+        "author4": "Lotte Jansen",
+        "role4": "Bouwkundig architect",
+        "test5": "“Zelfs de eindklant prees de nette organisatie. Eindelijk komen we net zo professioneel over als de grote bouwondernemingen.”",
+        "author5": "Koen Vermeulen",
+        "role5": "Hoofdaannemer",
+        "aviso": "Getuigenissen van echte klanten, gepubliceerd met toestemming."
+    },
+    "faq": {
+        "title": "Veelgestelde vragen",
+        "q1": "Betaalt mijn klant om het project te volgen?",
+        "a1": "Nee. De klant volgt het project via het portaal zonder iets te betalen. Als je meer wilt vrijgeven, zoals foto's downloaden en het volledige financiële overzicht bekijken, is Klanttoegang een eenmalige vergoeding per project, door jou betaald in PRO.",
+        "q2": "Kan ik het op computer en telefoon gebruiken?",
+        "a2": "Ja. ObraFácil werkt op Android, iPhone, Windows en in de browser, met op alle apparaten dezelfde gegevens.",
+        "q3": "Zijn mijn gegevens veilig?",
+        "a3": "Gegevens worden versleuteld verzonden en opgeslagen op Google-servers, eveneens versleuteld. Iedereen ziet alleen de projecten waaraan diegene deelneemt, volgens de rechten van de betreffende rol.",
+        "q4": "Welke persoonsgegevens worden verzameld?",
+        "a4": "Voor het account: naam, e-mailadres en telefoonnummer; btw- of identificatienummer alleen als je dat zelf opgeeft. De volledige lijst en het doel van elk gegeven staan in het Privacybeleid.",
+        "q5": "Werkt het zonder internet?",
+        "a5": "Ja. Zonder internet slaat de app wat je invoert op het apparaat op en verstuurt dit vanzelf zodra de verbinding terug is.",
+        "q6": "Verliest de klant de toegang tot bestanden als het project klaar is?",
+        "a6": "Als het project voor 70% of meer is voltooid wanneer de toegang afloopt, heeft de klant nog 15 dagen om te bekijken en te downloaden wat was vrijgegeven.",
+        "q7": "Vervangt ObraFácil de ingenieur van het project?",
+        "a7": "Nee. Het is een beheertool en vervangt niet de technisch verantwoordelijke voor het bouwproject, noch de wettelijke certificeringen.",
+        "q8": "Kan ik mijn account verwijderen?",
+        "a8": "Ja, via Profiel > Account verwijderen. Het account wordt 30 dagen opgeschort (je kunt je nog bedenken) en daarna worden je projecten en gegevens gewist. Sommige gegevens, zoals betalingen en acceptatie van de Voorwaarden, worden bewaard gedurende de periode uit het Privacybeleid.",
+        "q9": "Kan ik PRO of de opslaguitbreiding opzeggen?",
+        "a9": "Ja, op elk gewenst moment, op dezelfde plek waar je je hebt geabonneerd. De volgende verlenging wordt niet in rekening gebracht en je toegang blijft actief tot het einde van de betaalde periode.",
+        "q10": "En als de verlenging niet wordt betaald?",
+        "a10": "Het account keert terug naar het gratis abonnement. Er wordt niets gewist; als je de limiet van het gratis abonnement overschrijdt, wordt alleen het uploaden van nieuwe bestanden geblokkeerd totdat je ruimte vrijmaakt of je opnieuw abonneert.",
+        "mais": "Heb je niet gevonden wat je zocht?",
+        "verAjuda": "Bekijk het Helpcentrum"
+    },
+    "ajuda": {
+        "titulo": "Helpcentrum",
+        "heroiAntes": "Hoe kunnen we",
+        "heroiDestaque": "je helpen",
+        "heroiDepois": "?",
+        "heroiSubtitulo": "Stapsgewijze ObraFácil-handleidingen met schermafbeeldingen van elk menu in jouw taal.",
+        "buscaRotulo": "Zoeken in het Helpcentrum",
+        "buscaPlaceholder": "Zoek dagrapporten, medewerkers, PDF, klant…",
+        "buscaLimpar": "Zoekopdracht wissen",
+        "buscaResultados": "Zoekresultaten",
+        "buscaSemResultado": "Geen artikelen gevonden voor “{{termo}}”. Probeer andere woorden of neem contact op met ondersteuning.",
+        "buscasComuns": "Veelvoorkomende zoekopdrachten:",
+        "sugestao1": "Offline dagrapport",
+        "sugestao2": "Medewerkers toevoegen",
+        "sugestao3": "PDF-dagrapport",
+        "sugestao4": "Klantportaal",
+        "comeceTitulo": "Begin hier",
+        "comeceSubtitulo": "Complete handleidingen die je begeleiden van de eerste aanmelding tot echte resultaten.",
+        "comecar": "Starten",
+        "tipo_fluxo": "Volledige handleiding",
+        "tipo_funcao": "Stapsgewijs",
+        "tipo_conceito": "Basisconcepten",
+        "assuntosTitulo": "Bladeren op onderwerp",
+        "assuntosPerfil_todos": "Alle onderwerpen in het Helpcentrum.",
+        "assuntosPerfil_gestor": "Onderwerpen voor projectbeheerders.",
+        "assuntosPerfil_equipe": "Onderwerpen voor de bouwploeg op de locatie.",
+        "assuntosPerfil_cliente": "Onderwerpen voor de klant van het project.",
+        "assuntosVazio": "Er zijn nog geen artikelen voor dit profiel. Bekijk alle onderwerpen of neem contact op met ondersteuning.",
+        "perfilGrupo": "Toon onderwerpen voor",
+        "perfil_todos": "Iedereen",
+        "perfil_gestor": "Beheerder",
+        "perfil_equipe": "Bouwploeg",
+        "perfil_cliente": "Klant",
+        "artigos_one": "{{count}} handleiding",
+        "artigos_other": "{{count}} handleidingen",
+        "essenciaisTitulo": "Essentiële zaken",
+        "essenciaisSubtitulo": "Wat elke gebruiker in de eerste paar dagen moet weten.",
+        "suporteTitulo": "Niet gevonden wat je zocht?",
+        "suporteTexto": "Neem contact op met ons team via WhatsApp of open direct een ticket in de app.",
+        "suporteBotao": "Chat via WhatsApp",
+        "suporteMensagem": "Hallo, ik kom vanaf het Helpcentrum op de website en heb een vraag.",
+        "carregando": "Helpcentrum laden…",
+        "erroTitulo": "Kan het Helpcentrum niet laden",
+        "erroTexto": "Controleer je internetverbinding en probeer het opnieuw.",
+        "tentarDeNovo": "Opnieuw proberen",
+        "vazioTitulo": "Onze handleidingen worden voorbereid",
+        "vazioTexto": "Binnenkort verschijnen hier artikelen van het Helpcentrum. In de tussentijd staat de ondersteuning voor je klaar via WhatsApp.",
+        "naoEncontradoTitulo": "Artikel niet gevonden",
+        "naoEncontradoTexto": "Dit adres leidt niet naar een artikel. Misschien is het hernoemd; gebruik de zoekfunctie om het te vinden.",
+        "assuntoNaoEncontrado": "Onderwerp niet gevonden",
+        "voltarCentral": "Terug naar het Helpcentrum",
+        "trilha": "Je bent hier",
+        "outrosAssuntos": "Andere onderwerpen",
+        "paraPublico": "Voor {{lista}}",
+        "publico_gestor": "beheerders",
+        "publico_equipe": "teamleden",
+        "publico_cliente": "klanten",
+        "e": "en",
+        "passos_one": "{{count}} stap",
+        "passos_other": "{{count}} stappen",
+        "passoNumero": "Stap {{n}}",
+        "printAlt": "App-scherm bij stap {{n}}: {{titulo}}",
+        "nesteArtigo": "In dit artikel",
+        "antesDeComecar": "Lees dit eerst",
+        "relacionados": "Gerelateerde artikelen",
+        "navegacaoArtigos": "Andere artikelen in dit onderwerp",
+        "anterior": "Vorige",
+        "proximo": "Volgende",
+        "appTitulo": "Doe meteen mee in de app",
+        "appTexto": "Open ObraFácil in een ander tabblad en volg de stappen tijdens het lezen.",
+        "appBotao": "ObraFácil openen",
+        "tambemEm": "Ook beschikbaar in het"
+    },
+    "footer": {
+        "ctaTitle": "Klaar om je volgende project georganiseerd aan te pakken?",
+        "ctaBtn": "Gratis starten",
+        "terms": "Servicevoorwaarden",
+        "privacy": "Privacybeleid",
+        "help": "Helpcentrum",
+        "support": "Ondersteuning",
+        "tagline": "Bouwmanagement wordt eenvoudiger en professioneler.",
+        "rights": "Alle rechten voorbehouden.",
+        "language": "Taal van de website",
+        "baixar": "App downloaden",
+        "produto": "Software",
+        "legal": "Juridisch",
+        "contato": "Contact opnemen",
+        "whatsapp": "WhatsApp"
+    },
+    "legal": {
+        "versao": "Documentversie: {{versao}}",
+        "emVigorDesde": "van kracht sinds {{data}}",
+        "valeAPartir": "geldig vanaf {{data}}",
+        "novaVersao": "Versie {{versao}} treedt in werking op {{data}}. Je kunt de details van de wijzigingen alvast lezen.",
+        "lerNova": "Lees de nieuwe versie",
+        "vendoNova": "Je bekijkt de nieuwe versie. Tot de ingangsdatum blijft versie {{versao}} van toepassing.",
+        "voltarAtual": "Terug naar de huidige versie",
+        "sumario": "Op deze pagina",
+        "carregando": "Tekst laden…",
+        "erro": "Kan de tekst op dit moment niet laden. Controleer je verbinding.",
+        "indisponivel": "De tekst is nog niet beschikbaar op dit adres. Neem contact op via suporte@appobrafacil.expertbr.com.",
+        "tentarDeNovo": "Opnieuw proberen"
+    },
+    "cookies": {
+        "titulo": "Cookiebeheer",
+        "texto": "Deze website gebruikt essentiële cookies om inloggen mogelijk te maken en voorkeuren veilig op te slaan.",
+        "saibaMais": "Lees meer in het Privacybeleid.",
+        "aceitar": "Accepteren",
+        "recusar": "Weigeren",
+        "preferencias": "Cookievoorkeuren"
+    },
+    "cliente": {
+        "titulo": "Live voortgang van het project voor **jouw klant**",
+        "texto": "Klanten volgen fasen en foto's via een privélink zonder elke dag te hoeven bellen of appen. Interne kosten en teamsalarissen blijven afgeschermd.",
+        "antes": "Vroeger: rommelige berichten via WhatsApp",
+        "depois": "Nu: een overzichtelijk projectportaal",
+        "nome": "Klantportaal",
+        "hoje": "Vandaag",
+        "msg1": "Hallo! Hoe staat het met de werkzaamheden vandaag? Zijn er nieuwe foto's?",
+        "msg2": "Zal het leggen van de vloer voor volgende week vrijdag klaar zijn?",
+        "msg3": "Hallo. Ik vraag de uitvoerder om direct foto's te sturen.",
+        "conversaAviso": "Voorbeeld van een gesprek met een klant",
+        "pontos": [
+            "Je klant logt in met een eigen account via de uitnodiging die jij verstuurt.",
+            "Wil je meer delen? Met Klanttoegang (in het PRO-abonnement, eenmalige vergoeding per project) kies je wat ze kunnen bekijken en downloaden: foto's, volledige financiën, gedetailleerde planning en incidentrapporten.",
+            "Bij projecten die voor 70% of meer voltooid zijn, heeft de klant bij afloop van de toegang nog 15 dagen om te downloaden wat was vrijgegeven."
+        ],
+        "telaPortal": "Klantportaal met de nieuwste projectupdates",
+        "telaAcesso": "Scherm waarop de beheerder instelt wat de klant mag zien"
+    },
+    "recursos": {
+        "titulo": "Alles wat je project nodig heeft **op één plek**",
+        "itens": {
+            "cronograma": {
+                "titulo": "Planning in fasen",
+                "texto": "Stel je eigen fasen samen of maak 19 standaardfasen aan op basis van de opdrachtwaarde, en volg de fysieke voortgang per fase."
+            },
+            "diario": {
+                "titulo": "Bouwdagboek",
+                "texto": "Weer, activiteiten, incidenten, aanwezige bezetting, foto's en handtekeningen. Exporteer naar een verzendklare PDF."
+            },
+            "financeiro": {
+                "titulo": "Projectfinanciën",
+                "texto": "Begroting, voortgangsmetingen en te betalen bedragen in elke fase, met inkomsten, uitgaven en financiële overzichten."
+            },
+            "equipe": {
+                "titulo": "Team en salarisadministratie",
+                "texto": "Registreer medewerkers, houd de dagelijkse aanwezigheid bij in dagrapporten en bereken de lonen moeiteloos."
+            },
+            "compras": {
+                "titulo": "Inkoop en magazijn",
+                "texto": "Registreer aankopen met facturen en beheer de voorraad van materialen en gereedschap op elk project."
+            },
+            "marca": {
+                "titulo": "Rapporten met jouw huisstijl",
+                "texto": "In het PRO-abonnement bevatten alle PDF-bestanden het logo en de officiële voettekst van jouw bedrijf."
+            },
+            "offline": {
+                "titulo": "Geen bereik op de bouwplaats",
+                "texto": "De app slaat je gegevens lokaal op en synchroniseert automatisch zodra de verbinding is hersteld."
+            },
+            "aparelhos": {
+                "titulo": "Op al je apparaten",
+                "texto": "Android, iPhone, Windows en browsers zijn altijd gesynchroniseerd met dezelfde gegevens."
+            }
+        },
+        "tela": "Projectoverzicht met opdrachtwaarde, opleverdatum en totale fysieke voortgang"
+    },
+    "equipe": {
+        "titulo": "Iedereen ziet wat nodig is",
+        "texto": "Nodig ingenieurs, de bouwploeg en klanten uit voor het project. De projecteigenaar bepaalt wie deelneemt en wat de rechten per rol zijn.",
+        "papeis": {
+            "gestor": {
+                "nome": "Beheerder",
+                "desc": "Volledige toegang: projecten aanmaken en inrichten, financiën beheren, het team uitnodigen en alle rapporten genereren."
+            },
+            "engenheiro": {
+                "nome": "Ingenieur",
+                "desc": "Het project volgen en bijwerken volgens de door jou toegekende rechten."
+            },
+            "equipe": {
+                "nome": "Bouwploeg",
+                "desc": "De dagelijkse praktijk vastleggen: dagrapporten, projectfoto's en aanwezigheid van medewerkers."
+            },
+            "cliente": {
+                "nome": "Klant",
+                "desc": "Volgt via het Klantportaal wat jij deelt."
+            }
+        },
+        "tela": "Dagrapport met teamlijst en aanwezigheidsregistratie van elke medewerker"
+    },
+    "chamada": {
+        "titulo": "Begin met je **volgende project**",
+        "texto": "Het gratis abonnement heeft geen tijdslimiet. Neem een PRO-abonnement wanneer je meer capaciteit nodig hebt.",
+        "acao": "Gratis starten",
+        "duvida": "Heb je vragen? Neem direct contact met ons op via WhatsApp.",
+        "whatsapp": "Stuur een bericht via WhatsApp"
+    },
+    "conta": {
+        "abrirApp": "ObraFácil openen in de browser",
+        "lojasTitulo": "ObraFácil op alle apparaten",
+        "lojasTexto": "Log in met hetzelfde account op telefoon, computer of browser: wat je aanschaft geldt op alle apparaten.",
+        "falarSuporte": "Contact opnemen met ondersteuning"
+    },
+    "pagamento": {
+        "metaTitulo": "Betaling bevestigd · ObraFácil",
+        "metaDescricao": "Je betaling is geslaagd. Bekijk wanneer de aankoop actief wordt in ObraFácil en wat je moet doen bij vertraging.",
+        "agoraTitulo": "Wat er nu gebeurt",
+        "voltarTitulo": "Terug naar ObraFácil",
+        "voltarTexto": "Ga terug naar het browsertabblad of de Windows-app waar je de aankoop hebt gedaan. Als je deze hebt gesloten, open ObraFácil dan opnieuw met hetzelfde account.",
+        "automaticoTitulo": "Activering gebeurt automatisch",
+        "automaticoTexto": "Stripe informeert onze servers direct en de aangeschafte functie wordt automatisch geactiveerd op je account. Je hoeft niets te doen.",
+        "conferirTitulo": "Controleren in de app",
+        "demoraTitulo": "Als de aankoop niet direct zichtbaar is",
+        "demoraEsperar": "Wacht een minuutje, sluit de app en open deze opnieuw. Vernieuw in de browser de ObraFácil-pagina.",
+        "demoraSairEntrar": "Zie je nog steeds het gratis abonnement? Log uit en log opnieuw in met het e-mailadres van de betaling: de app herkent het webabonnement en activeert PRO.",
+        "demoraRestaurar": "**Aankopen herstellen** is hier niet van toepassing: die knop zoekt alleen naar aankopen via de appwinkels op telefoons (Google Play of App Store).",
+        "demoraSuporte": "Blijft het probleem bestaan, neem dan contact op met ondersteuning onder vermelding van het e-mailadres dat bij de betaling is gebruikt.",
+        "compras": {
+            "geral": {
+                "sobretitulo": "Betaling bevestigd",
+                "titulo": "Betaling **bevestigd**",
+                "texto": "Je betaling is succesvol afgerond. Binnen enkele ogenblikken ontvangt ObraFácil de bevestiging en wordt je aankoop ontgrendeld.",
+                "conferir": "Open ObraFácil met hetzelfde account als waarmee je hebt gekocht: je nieuwe functie verschijnt automatisch.",
+                "artigo": "Waar je de betalingsgeschiedenis vindt"
+            },
+            "pro": {
+                "sobretitulo": "Abonnement bevestigd",
+                "titulo": "Welkom bij ObraFácil **PRO**",
+                "texto": "Je abonnement is bevestigd. Binnen enkele momenten wordt PRO automatisch actief op je account, op zowel telefoon, computer als in de browser.",
+                "conferir": "Open **Profiel**: de badge op de bovenste kaart verandert in **PRO-lid** en de kaart **Jouw abonnement** toont **ObraFácil PRO**.",
+                "artigo": "Ik heb PRO via de website gekocht: hoe activeer ik het"
+            },
+            "acesso": {
+                "sobretitulo": "Betaling bevestigd",
+                "titulo": "Betaling voor **Klanttoegang** bevestigd",
+                "texto": "De projectkosten zijn voldaan. Binnen enkele momenten ontgrendelt de app de functies van het Klantportaal voor de klant van dit project.",
+                "conferir": "Open het project: onderaan het **PROJECTMENU** toont de kaart **Klanttoegang** de status **Toegang verleend**. Tik op **CONFIGUREREN** om te kiezen wat de klant mag zien.",
+                "artigo": "Wat de functie Klanttoegang inhoudt"
+            },
+            "downloads": {
+                "sobretitulo": "Betaling bevestigd",
+                "titulo": "**Extra downloadpakket** voor het project bevestigd",
+                "texto": "Binnen enkele ogenblikken ontvangt het project 2 extra volledige galerijdownloads in ZIP-formaat die door alle teamleden kunnen worden gebruikt.",
+                "conferir": "Ga terug naar de **Projectgalerij** en tik nogmaals op **Alles downloaden**.",
+                "artigo": "Hoe je extra galerijdownloads koopt"
+            },
+            "armazenamento": {
+                "sobretitulo": "Abonnement bevestigd",
+                "titulo": "Extra **20 GB** voor jouw projecten",
+                "texto": "De opslaguitbreiding is bevestigd. De app voegt direct 20 GB toe aan de capaciteit van je abonnement.",
+                "conferir": "Open **Profiel**: onder de balk **Opslagruimte** toont de kaart **Jouw abonnement** de melding **Uitbreiding +20 GB actief**.",
+                "artigo": "Hoe je 20 GB opslagruimte toevoegt"
+            }
+        }
+    },
+    "perfil": {
+        "metaTitulo": "Jouw abonnement · ObraFácil",
+        "metaDescricao": "Bekijk waar je je abonnement, betaalkaarten en opzegging vindt in ObraFácil.",
+        "sobretitulo": "Jouw abonnement",
+        "titulo": "Je abonnement beheer je in het menu **Profiel**",
+        "texto": "Abonnementen, facturen, betaalkaarten en opzeggen vind je allemaal in de app: in Profiel, op de kaart Jouw abonnement. Open ObraFácil en volg de onderstaande stappen.",
+        "artigoBotao": "Hoe je beheert of opzegt",
+        "passosTitulo": "Hoe je er komt",
+        "passo1Titulo": "ObraFácil openen",
+        "passo1Texto": "Log in met je account op je telefoon, in de Windows-app of in de browser.",
+        "passo2Titulo": "Open Profiel",
+        "passo2Texto": "Tik op de telefoon op het menu (drie streepjes) bovenaan het dashboard en tik vervolgens op je profielkaart. Klik op de computer op je kaart in de zijbalk.",
+        "passo3Titulo": "Gebruik de kaart Jouw abonnement",
+        "passo3Texto": "Vlak onder je foto toont de kaart **Jouw abonnement** je abonnement, gebruikte ruimte, projecten en rapporten van deze maand. Tik op **Beheren**.",
+        "gerenciarTitulo": "Wat de knop Beheren doet",
+        "gerenciarCelular": "**Geabonneerd via de telefoon**: opent het abonnementscherm van Google Play of de App Store voor verlengingen, facturen en opzegging.",
+        "gerenciarSite": "**Geabonneerd via website of computer**: opent het facturatieportaal in de browser om van kaart te wisselen, facturen in te zien of op te zeggen.",
+        "gerenciarLugar": "Opzeggen op het ene platform annuleert niet een abonnement dat op een ander platform is afgesloten.",
+        "avisoTitulo": "Bericht ontvangen over een mislukte betaling?",
+        "avisoTexto": "Je bank heeft de abonnementskosten geweigerd. Tik op **Beheren** en voer een geldige kaart in om PRO te behouden. Als je al hebt betaald, kun je dit bericht negeren.",
+        "artigosTitulo": "In het Helpcentrum",
+        "artigoCartao": "De kaart Jouw abonnement begrijpen",
+        "artigoCancelar": "Hoe je een abonnement beheert of opzegt",
+        "artigoPagamentos": "Betalingsgeschiedenis en terugbetalingen"
+    },
+    "suporte": {
+        "metaTitulo": "Ondersteuning · ObraFácil",
+        "metaDescricao": "Neem contact op met ObraFácil-ondersteuning via WhatsApp, e-mail of in-app tickets, en raadpleeg de handleidingen in het Helpcentrum.",
+        "sobretitulo": "Ondersteuning",
+        "titulo": "Neem contact op met het **ondersteuningsteam**",
+        "texto": "Stel vragen, meld app-problemen of vraag hulp bij facturatie. Onze gemiddelde reactietijd is 24 tot 48 werkuren.",
+        "canaisTitulo": "Kanalen om ons te bereiken",
+        "whatsappTitulo": "WhatsApp",
+        "whatsappTexto": "Om direct te chatten en snel korte vragen te stellen.",
+        "whatsappBotao": "WhatsApp openen",
+        "whatsappMensagem": "Hallo, ik neem contact op via de ondersteuningspagina op de website en heb hulp nodig met ObraFácil.",
+        "emailTitulo": "E-mail",
+        "emailTexto": "Om details, schermafbeeldingen en bijlagen te sturen. Verstuur dit indien mogelijk vanaf het e-mailadres van je account.",
+        "emailBotao": "E-mail opstellen",
+        "chamadoTitulo": "Ticket in de app",
+        "chamadoTexto": "Gekoppeld aan je account en de officiële manier om terugbetaling aan te vragen voor webaankopen, onder **Financiële hulp**. Het antwoord wordt naar het e-mailadres van je account gestuurd.",
+        "chamadoBotao": "Hoe je een ticket opent",
+        "centralTitulo": "Helpcentrum",
+        "centralTexto": "Stapsgewijze handleidingen voor elk app-scherm met echte afbeeldingen.",
+        "centralBotao": "Helpcentrum openen",
+        "lojasTitulo": "Gekocht via Google Play of App Store?",
+        "lojasTexto": "Facturatie en terugbetalingen voor deze transacties worden rechtstreeks door de betreffende appwinkel afgehandeld. Gebruik om op te zeggen de optie **Beheren** op de kaart **Jouw abonnement**.",
+        "perfilLink": "Waar je jouw abonnement vindt"
+    }
+}

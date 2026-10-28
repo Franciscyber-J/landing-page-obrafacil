@@ -70,10 +70,10 @@ test('forma que falta num idioma: pendência por idioma (não para o build)', ()
     assert.match(r.pendencias, /\| es-ES \| .* \| `ajuda\.artigos` \(many\) \|/);
 });
 
-test('plurais de um idioma ainda não cadastrado (árabe, hebraico)', () => {
-    const r = rodar(undefined, ['plurais', 'ar-SA', 'he-IL']);
+test('plurais de um idioma ainda não cadastrado (árabe do Egito, esloveno)', () => {
+    const r = rodar(undefined, ['plurais', 'ar-EG', 'sl-SI']);
     assert.equal(r.codigo, 0, r.saida);
-    assert.match(r.saida, /ar-SA \(não cadastrado\): zero \(0\), one \(1\), two \(2\), few \(3–10/);
+    assert.match(r.saida, /ar-EG \(não cadastrado\): zero \(0\), one \(1\), two \(2\), few \(3–10/);
     assert.match(r.saida, /precisa de: zero, one, two, few, many, other/);
-    assert.match(r.saida, /he-IL \(não cadastrado\): one \(1\), two \(2\), other/);
+    assert.match(r.saida, /sl-SI \(não cadastrado\): one \(1, 101, 201…\), two \(2, 102, 202…\), few/);
 });

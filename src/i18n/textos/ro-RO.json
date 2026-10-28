@@ -1,0 +1,498 @@
+{
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil: aplicație de management de șantier cu jurnal",
+            "descricao": "Aplicație de management de șantier pentru telefon și PC: grafic de execuție, jurnal cu fotografii, finanțe, echipă și portal pentru client. Începeți gratuit."
+        },
+        "ajuda": {
+            "titulo": "Centrul de ajutor ObraFácil: ghiduri pas cu pas",
+            "descricao": "Ghiduri pas cu pas pentru aplicația ObraFácil: jurnale de șantier, grafic de execuție, finanțe, echipă și portal pentru client, cu ecrane reale."
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · Centrul de ajutor ObraFácil",
+            "descricao": "{{descricao}} Ghiduri pas cu pas cu ecrane reale din aplicația ObraFácil."
+        },
+        "artigo": {
+            "titulo": "{{titulo}} — ObraFácil"
+        },
+        "app": {
+            "descricao": "Aplicație de management de șantier pentru constructori, ingineri constructori, arhitecți și diriginți de șantier: grafic de execuție pe etape, jurnale zilnice cu fotografii și PDF, finanțele lucrării, stat de plată pentru echipă, aprovizionare și magazie, plus portal pentru urmărirea lucrărilor de către client. Funcționează pe Android, iPhone, Windows și web, inclusiv offline pe șantier.",
+            "categoria": "Management de șantier"
+        },
+        "imagemAlt": "Sigla ObraFácil, aplicație de management de șantier",
+        "llms": {
+            "sobre": "Ce este ObraFácil",
+            "paraQuem": "Cui se adresează: firme de construcții, ingineri constructori, arhitecți, antreprenori și diriginți de șantier care gestionează una sau mai multe lucrări, doresc să înregistreze activitatea zilnică, să controleze termenele și costurile și să arate progresul clientului.",
+            "plataformas": "Platforme disponibile",
+            "recursos": "Funcționalități",
+            "papeis": "Cine ce face pe șantier",
+            "planos": "Planuri și prețuri",
+            "precosPorIdioma": "Prețurile PRO în fiecare limbă și monedă de pe site",
+            "precoLinha": "{{mensal}} pe lună sau {{anual}} pe an",
+            "paginas": "Paginile principale",
+            "idiomas": "Site-ul și aplicația sunt disponibile în aceste limbi",
+            "todosArtigos": "Toate articolele din Centrul de ajutor"
+        }
+    },
+    "nav": {
+        "login": "Conectați-vă",
+        "comecar": "Începeți gratuit",
+        "recursos": "Funcționalități",
+        "precos": "Prețuri",
+        "ajuda": "Centrul de ajutor",
+        "lightMode": "Temă luminoasă",
+        "darkMode": "Temă întunecată",
+        "language": "Limbă",
+        "chooseLanguage": "Alegeți limba",
+        "themeToggle": "Comutați între tema luminoasă și cea întunecată",
+        "menu": "Deschideți sau închideți meniul",
+        "inicio": "Pagina de pornire ObraFácil",
+        "navegacao": "Navigare principală"
+    },
+    "hero": {
+        "plataformas": "Android · iPhone · Windows · Web",
+        "titulo": "Întreaga lucrare **într-un singur loc**",
+        "subtitulo": "Grafic de execuție, jurnal de șantier, finanțe, echipă și aprovizionare pe telefonul și calculatorul dvs. Iar clientul urmărește lucrarea pe portal, fără a fi nevoie să vă sune mereu.",
+        "comecar": "Începeți gratuit",
+        "verPlanos": "Vedeți planurile",
+        "semCartao": "Plan gratuit fără limită de timp și fără card bancar.",
+        "camposRotulo": "Secțiunile lucrării în aplicație",
+        "campos": {
+            "cronograma": {
+                "rotulo": "Grafic de execuție",
+                "valor": "Etape, progres fizic și termene"
+            },
+            "diario": {
+                "rotulo": "Jurnal de șantier",
+                "valor": "Fotografii, vreme și efectiv, în format PDF"
+            },
+            "financeiro": {
+                "rotulo": "Finanțele lucrării",
+                "valor": "Bugetat și cheltuit, venituri și plăți"
+            },
+            "cliente": {
+                "rotulo": "Portalul clientului",
+                "valor": "Progresul împărtășit cu beneficiarul"
+            }
+        },
+        "legendaTela": "Ecran din aplicație cu date demonstrative",
+        "telas": {
+            "cronograma": "Etapele lucrării cu sume bugetate, situații de lucrări, sume de plată și progres fizic",
+            "diario": "Raport zilnic nou cu vremea, activitățile și incidentele",
+            "financeiro": "Finanțele lucrării cu cost pe metru pătrat, venituri, cheltuieli și sold",
+            "cliente": "Portalul clientului cu cele mai recente actualizări din șantier"
+        },
+        "disponivelNo": "Disponibil pe",
+        "baixarNa": "Descărcați de pe",
+        "baixarPara": "Descărcați pentru"
+    },
+    "pricing": {
+        "title": "Planuri și prețuri",
+        "toggleMonthly": "Lunar",
+        "toggleAnnual": "Anual",
+        "periodoRotulo": "Perioada de facturare",
+        "economia": "Economisiți {{simbolo}}{{valor}}",
+        "perMonth": "/lună",
+        "periodAnnual": "/an",
+        "gratis": {
+            "nome": "Gratuit",
+            "desc": "Pentru a începe și a descoperi aplicația.",
+            "cta": "Începeți gratuit",
+            "itens": [
+                "1 lucrare activă simultan",
+                "7 rapoarte PDF pe lună cu filigran",
+                "250 MB pentru fotografii și fișiere",
+                "Urmărirea lucrării de către client pe portal"
+            ]
+        },
+        "pro": {
+            "nomeMensal": "PRO lunar",
+            "nomeAnual": "PRO anual",
+            "desc": "Pentru constructori, ingineri și antreprenori cu mai multe lucrări.",
+            "itens": [
+                "Număr nelimitat de lucrări",
+                "Rapoarte PDF nelimitate fără filigran",
+                "10 GB pentru fotografii și fișiere",
+                "PDF cu sigla și subsolul firmei dvs.",
+                "Rapoarte zilnice în format ZIP și fișiere de proiect offline",
+                "Acces client disponibil pentru fiecare lucrare"
+            ],
+            "itensAnual": [
+                "Toate funcționalitățile din PRO lunar",
+                "Preț blocat timp de 12 luni"
+            ],
+            "comparacao": "Dacă plătiți lunar, 12 luni costă {{simbolo}}{{valor}}",
+            "equivale": "Echivalentul a {{simbolo}}{{valor}} pe lună",
+            "ctaMensal": "Abonați-vă la PRO lunar",
+            "ctaAnual": "Abonați-vă la PRO anual"
+        },
+        "renovacao": "Reînnoire automată. Puteți anula oricând din platforma unde v-ați abonat.",
+        "lojas": "La abonarea de pe telefon, prețurile și facturarea urmează regulile Google Play sau App Store.",
+        "addons": "Exclusiv pentru PRO: +20 GB spațiu de stocare (abonament separat) și Acces client pentru deblocarea mai multor funcții pe portal (taxă unică per lucrare).",
+        "selo": "Cea mai bună alegere",
+        "gratisPreco": "Gratuit pentru totdeauna"
+    },
+    "popup": {
+        "faixa": "Plan gratuit fără limită de timp",
+        "title": "Înainte de a pleca, încercați aplicația la următoarea lucrare",
+        "texto": "Creați un cont gratuit fără card bancar. Adăugați o lucrare și vedeți cum funcționează graficul de execuție, jurnalele foto și finanțele, cu clientul urmărind totul pe portal.",
+        "cta": "Începeți gratuit",
+        "lojas": "Sau descărcați aplicația",
+        "fechar": "Închideți"
+    },
+    "whatsapp": {
+        "tooltip": "Contactați asistența",
+        "message": "Bună ziua, vă contactez de pe site și am o întrebare"
+    },
+    "social": {
+        "title": "Ce spun profesioniștii",
+        "test1": "„Clienții mei au fost foarte impresionați de aplicație. A oferit mult mai multă credibilitate și a justificat pe deplin valoarea serviciilor mele de management.”",
+        "author1": "Alexandru M.",
+        "role1": "Inginer constructor",
+        "test2": "„Întocmirea jurnalului de șantier în Word la finalul zilei dura o oră. Acum îl finalizez în 5 minute pe telefon, direct pe șantier.”",
+        "author2": "Radu F.",
+        "role2": "Antreprenor în construcții",
+        "test3": "„Situațiile de lucrări au devenit extrem de simplu de trimis. Fără neînțelegeri, clientul le aprobă pe loc.”",
+        "author3": "Sorin P.",
+        "role3": "Diriginte de șantier",
+        "test4": "„Galeria foto a ajutat enorm la prezentarea detaliilor de finisaj către arhitect, fără ca acesta să vină permanent pe șantier.”",
+        "author4": "Ioana T.",
+        "role4": "Arhitect",
+        "test5": "„Chiar și beneficiarul a lăudat organizarea noastră exemplară. În sfârșit arătăm la fel de profesioniști ca marile companii de construcții.”",
+        "author5": "Florin S.",
+        "role5": "Constructor general",
+        "aviso": "Mărturii de la clienți reali, publicate cu acordul acestora."
+    },
+    "faq": {
+        "title": "Întrebări frecvente",
+        "q1": "Clientul meu plătește pentru a urmări lucrarea?",
+        "a1": "Nu. Clientul urmărește lucrarea prin portal fără să plătească nimic. Dacă doriți să îi acordați mai mult acces, cum ar fi descărcarea fotografiilor și vizualizarea situației financiare complete, Acces client este o taxă unică per lucrare, plătită de dvs. în planul PRO.",
+        "q2": "Pot folosi aplicația pe calculator și pe telefon?",
+        "a2": "Da. ObraFácil funcționează pe Android, iPhone, Windows și în browser, cu aceleași date sincronizate pe toate dispozitivele.",
+        "q3": "Datele mele sunt în siguranță?",
+        "a3": "Datele sunt transmise criptat și sunt stocate pe serverele Google, de asemenea criptate. Fiecare persoană vede doar lucrările la care participă, conform permisiunilor rolului său.",
+        "q4": "Ce date cu caracter personal sunt colectate?",
+        "a4": "Pentru cont: nume, e-mail și număr de telefon; codul fiscal doar dacă îl introduceți. Lista completă și scopul fiecărei date se găsesc în Politica de confidențialitate.",
+        "q5": "Funcționează fără conexiune la internet?",
+        "a5": "Da. Fără internet, aplicația salvează datele înregistrate pe dispozitiv și le sincronizează automat când revine conexiunea.",
+        "q6": "Clientul pierde accesul la fișiere când lucrarea se încheie?",
+        "a6": "Dacă lucrarea are un stadiu de 70% sau mai mult când accesul expiră, clientul are la dispoziție încă 15 zile pentru a vedea și descărca fișierele partajate.",
+        "q7": "ObraFácil înlocuiește inginerul sau dirigintele de șantier?",
+        "a7": "Nu. Este un instrument de management și nu înlocuiește specialistul tehnic autorizat responsabil de lucrare și nici cerințele legale de autorizare.",
+        "q8": "Pot să îmi șterg contul?",
+        "a8": "Da, din Profil > Ștergere cont. Contul este suspendat timp de 30 de zile (vă puteți răzgândi), iar apoi lucrările și datele dvs. sunt șterse definitiv. Unele înregistrări, cum ar fi plățile și acceptarea Termenilor, sunt păstrate pe durata prevăzută în Politica de confidențialitate.",
+        "q9": "Pot anula planul PRO sau extinderea spațiului de stocare?",
+        "a9": "Da, în orice moment, din același loc în care v-ați abonat. Următoarea reînnoire nu va mai fi taxată, iar accesul rămâne activ până la sfârșitul perioadei deja achitate.",
+        "q10": "Ce se întâmplă dacă reînnoirea nu este plătită?",
+        "a10": "Contul revine automat la planul gratuit. Nu se șterge nimic; dacă depășiți limita planului gratuit, doar încărcarea de fișiere noi este blocată până eliberați spațiu sau vă abonați din nou.",
+        "mais": "Nu ați găsit răspunsul căutat?",
+        "verAjuda": "Accesați Centrul de ajutor"
+    },
+    "ajuda": {
+        "titulo": "Centrul de ajutor",
+        "heroiAntes": "Cu ce vă putem",
+        "heroiDestaque": "ajuta",
+        "heroiDepois": "?",
+        "heroiSubtitulo": "Ghiduri pas cu pas ObraFácil cu capturi de ecran ale fiecărui meniu în limba dvs.",
+        "buscaRotulo": "Căutați în Centrul de ajutor",
+        "buscaPlaceholder": "Căutați jurnale, lucrători, PDF, client…",
+        "buscaLimpar": "Ștergeți căutarea",
+        "buscaResultados": "Rezultatele căutării",
+        "buscaSemResultado": "Nu s-au găsit articole pentru „{{termo}}”. Încercați alte cuvinte sau contactați asistența.",
+        "buscasComuns": "Căutări frecvente:",
+        "sugestao1": "Jurnal de șantier offline",
+        "sugestao2": "Înregistrare lucrători",
+        "sugestao3": "PDF jurnal de șantier",
+        "sugestao4": "Portalul clientului",
+        "comeceTitulo": "Începeți de aici",
+        "comeceSubtitulo": "Ghiduri complete care vă însoțesc de la prima conectare până la rezultate concrete pe șantier.",
+        "comecar": "Începeți",
+        "tipo_fluxo": "Ghid complet",
+        "tipo_funcao": "Pas cu pas",
+        "tipo_conceito": "Concepte de bază",
+        "assuntosTitulo": "Răsfoiți după subiect",
+        "assuntosPerfil_todos": "Toate subiectele din Centrul de ajutor.",
+        "assuntosPerfil_gestor": "Subiecte pentru managerii de lucrări.",
+        "assuntosPerfil_equipe": "Subiecte pentru echipa de pe șantier.",
+        "assuntosPerfil_cliente": "Subiecte pentru clienți și beneficiari.",
+        "assuntosVazio": "Nu există încă articole pentru acest profil. Vedeți toate subiectele sau contactați asistența.",
+        "perfilGrupo": "Afișați subiecte pentru",
+        "perfil_todos": "Toate",
+        "perfil_gestor": "Manager de lucrare",
+        "perfil_equipe": "Echipă",
+        "perfil_cliente": "Beneficiar",
+        "artigos_one": "{{count}} articol de ghid",
+        "artigos_few": "{{count}} articole de ghid",
+        "artigos_other": "{{count}} de articole de ghid",
+        "essenciaisTitulo": "Ghiduri esențiale",
+        "essenciaisSubtitulo": "Ce trebuie să știe fiecare utilizator în primele câteva zile.",
+        "suporteTitulo": "Nu ați găsit ce căutați?",
+        "suporteTexto": "Contactați echipa noastră pe WhatsApp sau deschideți un tichet direct în aplicație.",
+        "suporteBotao": "Discutați pe WhatsApp",
+        "suporteMensagem": "Bună ziua, vă contactez din Centrul de ajutor de pe site și am o întrebare.",
+        "carregando": "Se încarcă Centrul de ajutor…",
+        "erroTitulo": "Nu s-a putut încărca Centrul de ajutor",
+        "erroTexto": "Verificați conexiunea la internet și încercați din nou.",
+        "tentarDeNovo": "Încercați din nou",
+        "vazioTitulo": "Ghidurile noastre sunt în pregătire",
+        "vazioTexto": "Articolele din Centrul de ajutor vor apărea în curând aici. Între timp, echipa de asistență vă stă la dispoziție pe WhatsApp.",
+        "naoEncontradoTitulo": "Articolul nu a fost găsit",
+        "naoEncontradoTexto": "Această adresă nu duce la niciun articol. Este posibil să fi fost redenumit; vă rugăm să folosiți funcția de căutare.",
+        "assuntoNaoEncontrado": "Subiectul nu a fost găsit",
+        "voltarCentral": "Reveniți la Centrul de ajutor",
+        "trilha": "Vă aflați la",
+        "outrosAssuntos": "Alte subiecte",
+        "paraPublico": "Pentru {{lista}}",
+        "publico_gestor": "manageri",
+        "publico_equipe": "membrii echipei",
+        "publico_cliente": "clienți",
+        "e": "și",
+        "passos_one": "{{count}} pas",
+        "passos_few": "{{count}} pași",
+        "passos_other": "{{count}} de pași",
+        "passoNumero": "Pasul {{n}}",
+        "printAlt": "Ecranul aplicației la pasul {{n}}: {{titulo}}",
+        "nesteArtigo": "În acest articol",
+        "antesDeComecar": "Citiți înainte de a începe",
+        "relacionados": "Articole similare",
+        "navegacaoArtigos": "Alte articole din acest subiect",
+        "anterior": "Anterior",
+        "proximo": "Următor",
+        "appTitulo": "Urmăriți direct în aplicație",
+        "appTexto": "Deschideți ObraFácil într-o altă filă și urmați pașii în timp ce citiți.",
+        "appBotao": "Deschideți ObraFácil",
+        "tambemEm": "Disponibil și în"
+    },
+    "footer": {
+        "ctaTitle": "Sunteți gata să vă organizați mai bine următoarea lucrare?",
+        "ctaBtn": "Începeți gratuit",
+        "terms": "Termeni și condiții",
+        "privacy": "Politica de confidențialitate",
+        "help": "Centrul de ajutor",
+        "support": "Asistență",
+        "tagline": "Managementul de șantier devine mai simplu și mai profesionist.",
+        "rights": "Toate drepturile rezervate.",
+        "language": "Limba site-ului",
+        "baixar": "Descărcați aplicația",
+        "produto": "Produs",
+        "legal": "Termeni legali",
+        "contato": "Contactați-ne",
+        "whatsapp": "WhatsApp"
+    },
+    "legal": {
+        "versao": "Versiunea documentului: {{versao}}",
+        "emVigorDesde": "în vigoare din {{data}}",
+        "valeAPartir": "se aplică începând cu {{data}}",
+        "novaVersao": "Versiunea {{versao}} intră în vigoare la {{data}}. Puteți citi deja detaliile modificărilor.",
+        "lerNova": "Citiți noua versiune",
+        "vendoNova": "Vizualizați versiunea nouă. Până la data intrării în vigoare, se aplică în continuare versiunea {{versao}}.",
+        "voltarAtual": "Reveniți la versiunea curentă",
+        "sumario": "Pe această pagină",
+        "carregando": "Se încarcă textul…",
+        "erro": "Textul nu a putut fi încărcat acum. Vă rugăm să verificați conexiunea la internet.",
+        "indisponivel": "Textul nu este încă disponibil la această adresă. Vă rugăm să contactați suporte@appobrafacil.expertbr.com.",
+        "tentarDeNovo": "Încercați din nou"
+    },
+    "cookies": {
+        "titulo": "Gestionarea modulelor cookie",
+        "texto": "Acest site utilizează module cookie esențiale pentru a vă permite conectarea și salvarea în siguranță a preferințelor.",
+        "saibaMais": "Aflați mai multe în Politica de confidențialitate.",
+        "aceitar": "Acceptați",
+        "recusar": "Refuzați",
+        "preferencias": "Preferințe cookie"
+    },
+    "cliente": {
+        "titulo": "Progresul în timp real al lucrării pentru **clientul dvs.**",
+        "texto": "Clienții urmăresc etapele și fotografiile printr-un link privat, fără a fi nevoie să sune sau să trimită mesaje în fiecare zi. Costurile interne și salariile echipei rămân confidențiale.",
+        "antes": "Înainte: comunicare dezorganizată pe WhatsApp",
+        "depois": "Acum: un portal organizat pentru lucrare",
+        "nome": "Portalul clientului",
+        "hoje": "Astăzi",
+        "msg1": "Bună ziua! Cum a decurs lucrarea astăzi? Aveți fotografii noi?",
+        "msg2": "Se va finaliza montajul gresiei până vinerea viitoare?",
+        "msg3": "Bună ziua. Am rugat dirigintele de șantier să trimită fotografiile chiar acum.",
+        "conversaAviso": "Exemplu de conversație cu clientul",
+        "pontos": [
+            "Clientul dvs. se conectează cu propriul cont prin invitația trimisă de dvs.",
+            "Doriți să partajați mai mult? Cu Acces client (în planul PRO, taxă unică per lucrare), alegeți ce poate vizualiza și descărca: fotografii, situația financiară completă, graficul detaliat și rapoartele de incidente.",
+            "La lucrările finalizate în proporție de 70% sau mai mult, la expirarea accesului clientul are încă 15 zile la dispoziție pentru a descărca fișierele partajate."
+        ],
+        "telaPortal": "Portalul clientului cu cele mai recente actualizări din șantier",
+        "telaAcesso": "Ecranul în care managerul alege ce are dreptul să vadă clientul"
+    },
+    "recursos": {
+        "titulo": "Tot ce are nevoie lucrarea dvs. **într-un singur loc**",
+        "itens": {
+            "cronograma": {
+                "titulo": "Grafic de execuție pe etape",
+                "texto": "Creați propriile etape sau generați 19 etape standard pe baza valorii contractului și urmăriți progresul fizic al fiecărei etape."
+            },
+            "diario": {
+                "titulo": "Jurnal de șantier",
+                "texto": "Vreme, activități, incidente, efectiv prezent, fotografii și semnături. Exportați într-un PDF gata de trimis."
+            },
+            "financeiro": {
+                "titulo": "Finanțele lucrării",
+                "texto": "Buget, situații de lucrări și plăți datorate în fiecare etapă, plus venituri, cheltuieli și rapoarte financiare."
+            },
+            "equipe": {
+                "titulo": "Echipă și salarii",
+                "texto": "Înregistrați lucrătorii, țineți prezența zilnică în jurnale și calculați statul de plată fără bătăi de cap."
+            },
+            "compras": {
+                "titulo": "Aprovizionare și magazie",
+                "texto": "Înregistrați achizițiile cu facturi și controlați stocul de materiale și scule la fiecare lucrare."
+            },
+            "marca": {
+                "titulo": "Rapoarte personalizate cu marca dvs.",
+                "texto": "În planul PRO, toate fișierele PDF includ sigla și subsolul oficial al companiei dvs."
+            },
+            "offline": {
+                "titulo": "Fără semnal pe șantier",
+                "texto": "Aplicația salvează datele local și le sincronizează automat de îndată ce conexiunea revine."
+            },
+            "aparelhos": {
+                "titulo": "Pe toate dispozitivele dvs.",
+                "texto": "Android, iPhone, Windows și browserul sunt mereu sincronizate cu aceleași date."
+            }
+        },
+        "tela": "Rezumatul lucrării cu valoarea contractului, termenul limită și progresul fizic total"
+    },
+    "equipe": {
+        "titulo": "Fiecare vede doar ce este necesar",
+        "texto": "Invitați ingineri, echipa de execuție și clienți în lucrare. Titularul lucrării stabilește cine participă și permisiunile fiecărui rol.",
+        "papeis": {
+            "gestor": {
+                "nome": "Manager de lucrare",
+                "desc": "Acces complet: creează și configurează lucrări, gestionează finanțele, invită echipa și generează toate rapoartele."
+            },
+            "engenheiro": {
+                "nome": "Inginer",
+                "desc": "Urmărește și actualizează lucrarea conform permisiunilor acordate de dvs."
+            },
+            "equipe": {
+                "nome": "Echipă",
+                "desc": "Înregistrează activitatea zilnică: jurnalul de șantier, fotografii și prezența lucrătorilor."
+            },
+            "cliente": {
+                "nome": "Beneficiar",
+                "desc": "Urmărește prin Portalul clientului ceea ce partajați."
+            }
+        },
+        "tela": "Jurnal de șantier cu lista echipei și înregistrarea prezenței fiecărui membru"
+    },
+    "chamada": {
+        "titulo": "Începeți cu **următoarea lucrare**",
+        "texto": "Planul gratuit nu are limită de timp. Treceți la PRO oricând aveți nevoie de mai multă capacitate.",
+        "acao": "Începeți gratuit",
+        "duvida": "Aveți întrebări? Discutați direct cu noi pe WhatsApp.",
+        "whatsapp": "Trimiteți un mesaj pe WhatsApp"
+    },
+    "conta": {
+        "abrirApp": "Deschideți ObraFácil în browser",
+        "lojasTitulo": "ObraFácil pe toate dispozitivele",
+        "lojasTexto": "Conectați-vă cu același cont pe telefon, calculator sau browser: ceea ce cumpărați este valabil pe toate dispozitivele.",
+        "falarSuporte": "Contactați echipa de asistență"
+    },
+    "pagamento": {
+        "metaTitulo": "Plată confirmată · ObraFácil",
+        "metaDescricao": "Plata dvs. a fost finalizată cu succes. Vedeți când devine activă achiziția în ObraFácil și ce trebuie făcut în caz de întârziere.",
+        "agoraTitulo": "Ce se întâmplă acum",
+        "voltarTitulo": "Reveniți în ObraFácil",
+        "voltarTexto": "Reveniți în fila de browser sau în aplicația Windows unde ați efectuat achiziția. Dacă ați închis-o, deschideți din nou ObraFácil cu același cont.",
+        "automaticoTitulo": "Activarea se realizează automat",
+        "automaticoTexto": "Stripe trimite o notificare instantanee către serverele noastre, iar funcționalitatea cumpărată se activează automat în contul dvs. Nu este nevoie să faceți nimic.",
+        "conferirTitulo": "Verificați în aplicație",
+        "demoraTitulo": "Dacă achiziția nu apare imediat",
+        "demoraEsperar": "Așteptați un minut, apoi închideți și redeschideți aplicația. În browser, reîncărcați pagina ObraFácil.",
+        "demoraSairEntrar": "Apare în continuare planul gratuit? Deconectați-vă și conectați-vă din nou cu adresa de e-mail folosită la plată: aplicația va detecta abonamentul web și va activa PRO.",
+        "demoraRestaurar": "**Restaurare achiziții** nu se aplică aici: acel buton caută doar achizițiile realizate prin magazinele de aplicații de pe telefon (Google Play sau App Store).",
+        "demoraSuporte": "Dacă problema persistă, contactați echipa de asistență specificând adresa de e-mail utilizată la efectuarea plății.",
+        "compras": {
+            "geral": {
+                "sobretitulo": "Plată confirmată",
+                "titulo": "Plată **confirmată**",
+                "texto": "Plata dvs. a fost finalizată cu succes. În scurt timp, ObraFácil va primi confirmarea și vă va debloca funcționalitatea achiziționată.",
+                "conferir": "Deschideți ObraFácil cu același cont folosit la cumpărare: noua funcție va apărea automat.",
+                "artigo": "Unde puteți vedea istoricul plăților"
+            },
+            "pro": {
+                "sobretitulo": "Abonament confirmat",
+                "titulo": "Bun venit în ObraFácil **PRO**",
+                "texto": "Abonamentul dvs. a fost confirmat. În câteva momente, planul PRO se activează automat în contul dvs., pe telefon, calculator și în browser.",
+                "conferir": "Deschideți **Profilul**: insigna de pe cardul de sus se schimbă în **Membru PRO**, iar cardul **Planul tău** afișează **ObraFácil PRO**.",
+                "artigo": "Am cumpărat PRO de pe site: cum îl activez"
+            },
+            "acesso": {
+                "sobretitulo": "Plată confirmată",
+                "titulo": "Plată pentru **Acces client** confirmată",
+                "texto": "Taxa pentru lucrare a fost achitată. În scurt timp, aplicația va debloca funcțiile Portalului clientului pentru beneficiarul acestei lucrări.",
+                "conferir": "Deschideți lucrarea: în partea de jos a secțiunii **MENIUL LUCRĂRII**, cardul **Acces client** afișează starea **Acces acordat**. Apăsați pe **CONFIGURARE** pentru a alege ce poate vedea clientul.",
+                "artigo": "Ce reprezintă funcționalitatea Acces client"
+            },
+            "downloads": {
+                "sobretitulo": "Plată confirmată",
+                "titulo": "**Pachet suplimentar de descărcări** confirmat",
+                "texto": "În câteva momente, lucrarea primește 2 descărcări complete suplimentare ale galeriei în format ZIP, care pot fi folosite de toți membrii.",
+                "conferir": "Reveniți la **Galeria lucrării** și apăsați din nou pe **Descărcați tot**.",
+                "artigo": "Cum se cumpără descărcări suplimentare pentru galerie"
+            },
+            "armazenamento": {
+                "sobretitulo": "Abonament confirmat",
+                "titulo": "Încă **20 GB** pentru lucrările dvs.",
+                "texto": "Extinderea spațiului de stocare a fost confirmată. Aplicația adaugă imediat 20 GB la capacitatea planului dvs.",
+                "conferir": "Deschideți **Profilul**: sub bara **Spațiu de stocare**, cardul **Planul tău** afișează **Extindere +20 GB activă**.",
+                "artigo": "Cum adăugați 20 GB de spațiu de stocare"
+            }
+        }
+    },
+    "perfil": {
+        "metaTitulo": "Abonamentul dvs. · ObraFácil",
+        "metaDescricao": "Aflați unde puteți găsi planul dvs., cardurile de plată și opțiunea de anulare a abonamentului în ObraFácil.",
+        "sobretitulo": "Abonamentul dvs.",
+        "titulo": "Vă gestionați abonamentul din meniul **Profil**",
+        "texto": "Planurile, facturile, cardurile bancare și opțiunile de anulare se află în aplicație: în Profil, pe cardul Planul tău. Deschideți ObraFácil și urmați pașii de mai jos.",
+        "artigoBotao": "Cum gestionați sau anulați abonamentul",
+        "passosTitulo": "Cum accesați",
+        "passo1Titulo": "Deschideți ObraFácil",
+        "passo1Texto": "Conectați-vă cu contul dvs. pe telefon, în aplicația Windows sau în browser.",
+        "passo2Titulo": "Deschideți Profilul",
+        "passo2Texto": "Pe telefon, apăsați pe meniul (trei linii) din partea de sus a tabloului de bord și apoi pe cardul de profil. Pe calculator, faceți clic pe cardul dvs. din bara laterală.",
+        "passo3Titulo": "Folosiți cardul Planul tău",
+        "passo3Texto": "Chiar sub fotografia dvs., cardul **Planul tău** afișează planul curent, spațiul utilizat, lucrările și rapoartele din această lună. Apăsați pe **Gestionare**.",
+        "gerenciarTitulo": "Ce face butonul Gestionare",
+        "gerenciarCelular": "**Abonat de pe telefon**: deschide ecranul de abonamente Google Play sau App Store pentru reînnoiri, facturi și anulare.",
+        "gerenciarSite": "**Abonat de pe site sau calculator**: deschide portalul de facturare în browser pentru schimbarea cardului, vizualizarea chitanțelor sau anulare.",
+        "gerenciarLugar": "Anularea pe o platformă nu anulează un abonament realizat pe o altă platformă.",
+        "avisoTitulo": "Ați primit o notificare privind eșecul plății?",
+        "avisoTexto": "Banca dvs. a respins plata abonamentului. Apăsați pe **Gestionare** și introduceți un card valid pentru a nu pierde accesul PRO. Dacă ați plătit deja, ignorați acest mesaj.",
+        "artigosTitulo": "În Centrul de ajutor",
+        "artigoCartao": "Înțelegerea cardului Planul tău",
+        "artigoCancelar": "Cum gestionați sau anulați un abonament",
+        "artigoPagamentos": "Istoricul plăților și rambursările"
+    },
+    "suporte": {
+        "metaTitulo": "Asistență · ObraFácil",
+        "metaDescricao": "Contactați asistența ObraFácil prin WhatsApp, e-mail sau tichete în aplicație și consultați ghidurile din Centrul de ajutor.",
+        "sobretitulo": "Asistență",
+        "titulo": "Contactați **echipa de asistență**",
+        "texto": "Adresați întrebări, semnalați probleme din aplicație sau solicitați ajutor legat de facturare. Timpul nostru mediu de răspuns este între 24 și 48 de ore lucrătoare.",
+        "canaisTitulo": "Canale de contact",
+        "whatsappTitulo": "WhatsApp",
+        "whatsappTexto": "Pentru conversații directe și întrebări rapide.",
+        "whatsappBotao": "Deschideți WhatsApp",
+        "whatsappMensagem": "Bună ziua, vă contactez de pe pagina de asistență a site-ului și am nevoie de ajutor cu ObraFácil.",
+        "emailTitulo": "E-mail",
+        "emailTexto": "Pentru trimiterea de detalii, capturi de ecran și fișiere atașate. Dacă este posibil, trimiteți de pe adresa de e-mail a contului dvs.",
+        "emailBotao": "Trimiteți un e-mail",
+        "chamadoTitulo": "Tichet în aplicație",
+        "chamadoTexto": "Este înregistrat în contul dvs. și reprezintă canalul oficial pentru solicitarea rambursărilor la achizițiile de pe web, la secțiunea **Ajutor financiar**. Răspunsul este trimis pe e-mailul contului.",
+        "chamadoBotao": "Cum deschideți un tichet",
+        "centralTitulo": "Centrul de ajutor",
+        "centralTexto": "Ghiduri pas cu pas pentru fiecare ecran al aplicației, cu capturi reale.",
+        "centralBotao": "Deschideți Centrul de ajutor",
+        "lojasTitulo": "Ați cumpărat prin Google Play sau App Store?",
+        "lojasTexto": "Facturarea și rambursările pentru aceste tranzacții sunt gestionate direct de magazinul respectiv. Pentru anulare, folosiți opțiunea **Gestionare** de pe cardul **Planul tău**.",
+        "perfilLink": "Unde puteți vedea abonamentul dvs."
+    }
+}

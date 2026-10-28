@@ -87,48 +87,216 @@ RewriteRule ^ /%1 [R=301,L,NE]
 RewriteRule ^(?:|termos\-de\-uso|politicas\-de\-privacidade|pagamento\-ok|pacote\-downloads\-extras|primeiros\-passos|expansao\-20gb\-ok|perfil|suporte|ajuda)/?$ - [NC,E=QUER_IDIOMA:1]
 RewriteCond %{ENV:QUER_IDIOMA} =1
 RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
-RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*pt-(?:br)(?![a-z0-9]) [NC]
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*pt-(?:br)(?![a-z0-9]) [NC]
 RewriteRule ^ - [E=IDIOMA_NAVEGADOR:pt-br]
 RewriteCond %{ENV:QUER_IDIOMA} =1
 RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
-RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*pt-(?:pt|ao|mz|cv|gw|st|tl|mo)(?![a-z0-9]) [NC]
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*pt-(?:pt|ao|mz|cv|gw|st|tl|mo)(?![a-z0-9]) [NC]
 RewriteRule ^ - [E=IDIOMA_NAVEGADOR:pt-pt]
 RewriteCond %{ENV:QUER_IDIOMA} =1
 RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
-RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*en-(?:us)(?![a-z0-9]) [NC]
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*en-(?:us)(?![a-z0-9]) [NC]
 RewriteRule ^ - [E=IDIOMA_NAVEGADOR:en-us]
 RewriteCond %{ENV:QUER_IDIOMA} =1
 RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
-RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*en-(?:gb|ie|in|za|sg|hk|ng|ke)(?![a-z0-9]) [NC]
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*en-(?:gb|ie|in|za|sg|hk|ng|ke)(?![a-z0-9]) [NC]
 RewriteRule ^ - [E=IDIOMA_NAVEGADOR:en-gb]
 RewriteCond %{ENV:QUER_IDIOMA} =1
 RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
-RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*en-(?:au|nz)(?![a-z0-9]) [NC]
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*en-(?:au|nz)(?![a-z0-9]) [NC]
 RewriteRule ^ - [E=IDIOMA_NAVEGADOR:en-au]
 RewriteCond %{ENV:QUER_IDIOMA} =1
 RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
-RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*en-(?:ca)(?![a-z0-9]) [NC]
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*en-(?:ca)(?![a-z0-9]) [NC]
 RewriteRule ^ - [E=IDIOMA_NAVEGADOR:en-ca]
 RewriteCond %{ENV:QUER_IDIOMA} =1
 RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
-RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*es-(?:es)(?![a-z0-9]) [NC]
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*es-(?:es)(?![a-z0-9]) [NC]
 RewriteRule ^ - [E=IDIOMA_NAVEGADOR:es-es]
 RewriteCond %{ENV:QUER_IDIOMA} =1
 RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
-RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*es-(?:mx|419|ar|bo|cl|co|cr|cu|do|ec|gt|hn|ni|pa|pe|pr|py|sv|us|uy|ve)(?![a-z0-9]) [NC]
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*es-(?:mx|419|ar|bo|cl|co|cr|cu|do|ec|gt|hn|ni|pa|pe|pr|py|sv|us|uy|ve)(?![a-z0-9]) [NC]
 RewriteRule ^ - [E=IDIOMA_NAVEGADOR:es-mx]
 RewriteCond %{ENV:QUER_IDIOMA} =1
 RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
-RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*pt(?![a-z]) [NC]
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*fr-(?:fr)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:fr-fr]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*de-(?:de)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:de-de]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ar-(?:sa)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:ar-sa]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*it-(?:it)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:it-it]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*tr-(?:tr)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:tr-tr]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*pl-(?:pl)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:pl-pl]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*id-(?:id)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:id-id]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ja-(?:jp)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:ja-jp]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*hi-(?:in)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:hi-in]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*vi-(?:vn)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:vi-vn]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*nl-(?:nl)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:nl-nl]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ko-(?:kr)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:ko-kr]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*zh-(?:tw)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:zh-tw]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ro-(?:ro)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:ro-ro]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*th-(?:th)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:th-th]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*uk-(?:ua)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:uk-ua]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ru-(?:kz)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:ru-kz]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*cs-(?:cz)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:cs-cz]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*el-(?:gr)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:el-gr]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*hu-(?:hu)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:hu-hu]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*he-(?:il)(?![a-z0-9]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:he-il]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*pt(?![a-z]) [NC]
 RewriteRule ^ - [E=IDIOMA_NAVEGADOR:pt-br]
 RewriteCond %{ENV:QUER_IDIOMA} =1
 RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
-RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*en(?![a-z]) [NC]
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*en(?![a-z]) [NC]
 RewriteRule ^ - [E=IDIOMA_NAVEGADOR:en-us]
 RewriteCond %{ENV:QUER_IDIOMA} =1
 RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
-RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es)(?![a-z]))[^,]*,)*\s*es(?![a-z]) [NC]
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*es(?![a-z]) [NC]
 RewriteRule ^ - [E=IDIOMA_NAVEGADOR:es-es]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*fr(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:fr-fr]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*de(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:de-de]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ar(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:ar-sa]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*it(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:it-it]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*tr(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:tr-tr]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*pl(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:pl-pl]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*id(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:id-id]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ja(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:ja-jp]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*hi(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:hi-in]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*vi(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:vi-vn]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*nl(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:nl-nl]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ko(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:ko-kr]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*zh(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:zh-tw]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ro(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:ro-ro]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*th(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:th-th]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*uk(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:uk-ua]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ru(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:ru-kz]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*cs(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:cs-cz]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*el(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:el-gr]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*hu(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:hu-hu]
+RewriteCond %{ENV:QUER_IDIOMA} =1
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*he(?![a-z]) [NC]
+RewriteRule ^ - [E=IDIOMA_NAVEGADOR:he-il]
 
 # 2) Raiz "/": vai para a página inicial no idioma da pessoa; sem língua conhecida, en-US (o mesmo
 #    que o site faz). 302 de propósito: o destino muda conforme quem abre, e a raiz continua sendo a
@@ -136,7 +304,7 @@ RewriteRule ^ - [E=IDIOMA_NAVEGADOR:es-es]
 #    navegadores guardarem um idioma só para todo mundo.
 RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$
 RewriteRule ^$ /en-us/ [R=302,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
-RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^(pt-br|pt-pt|en-us|en-gb|en-au|en-ca|es-es|es-mx)$
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^(pt-br|pt-pt|en-us|en-gb|en-au|en-ca|es-es|es-mx|fr-fr|de-de|ar-sa|it-it|tr-tr|pl-pl|id-id|ja-jp|hi-in|vi-vn|nl-nl|ko-kr|zh-tw|ro-ro|th-th|uk-ua|ru-kz|cs-cz|el-gr|hu-hu|he-il)$
 RewriteRule ^$ /%1/ [R=302,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
 
 # 3) Endereços antigos do WordPress (estão nas lojas, na Stripe, num Payment Link, no app e em e-mails já
@@ -295,6 +463,384 @@ RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-mx
 RewriteRule ^suporte/?$ /es-mx/soporte [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
 RewriteCond %{ENV:IDIOMA_NAVEGADOR} =es-mx
 RewriteRule ^ajuda/?$ /es-mx/ayuda [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =fr-fr
+RewriteRule ^termos\-de\-uso/?$ /fr-fr/conditions-utilisation [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =fr-fr
+RewriteRule ^politicas\-de\-privacidade/?$ /fr-fr/politique-confidentialite [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =fr-fr
+RewriteRule ^pagamento\-ok/?$ /fr-fr/paiement-confirme/acces-client? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =fr-fr
+RewriteRule ^pacote\-downloads\-extras/?$ /fr-fr/paiement-confirme/telechargements-supplementaires? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =fr-fr
+RewriteRule ^primeiros\-passos/?$ /fr-fr/paiement-confirme/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =fr-fr
+RewriteRule ^expansao\-20gb\-ok/?$ /fr-fr/paiement-confirme/plus-20-go? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =fr-fr
+RewriteRule ^perfil/?$ /fr-fr/profil? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =fr-fr
+RewriteRule ^suporte/?$ /fr-fr/assistance [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =fr-fr
+RewriteRule ^ajuda/?$ /fr-fr/aide [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =de-de
+RewriteRule ^termos\-de\-uso/?$ /de-de/nutzungsbedingungen [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =de-de
+RewriteRule ^politicas\-de\-privacidade/?$ /de-de/datenschutz [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =de-de
+RewriteRule ^pagamento\-ok/?$ /de-de/zahlung-bestaetigt/bauherrenzugang? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =de-de
+RewriteRule ^pacote\-downloads\-extras/?$ /de-de/zahlung-bestaetigt/zusatz-downloads? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =de-de
+RewriteRule ^primeiros\-passos/?$ /de-de/zahlung-bestaetigt/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =de-de
+RewriteRule ^expansao\-20gb\-ok/?$ /de-de/zahlung-bestaetigt/plus-20-gb? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =de-de
+RewriteRule ^perfil/?$ /de-de/profil? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =de-de
+RewriteRule ^suporte/?$ /de-de/support [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =de-de
+RewriteRule ^ajuda/?$ /de-de/hilfe [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ar-sa
+RewriteRule ^termos\-de\-uso/?$ /ar-sa/شروط-الاستخدام [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ar-sa
+RewriteRule ^politicas\-de\-privacidade/?$ /ar-sa/سياسة-الخصوصية [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ar-sa
+RewriteRule ^pagamento\-ok/?$ /ar-sa/تأكيد-الدفع/وصول-العميل? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ar-sa
+RewriteRule ^pacote\-downloads\-extras/?$ /ar-sa/تأكيد-الدفع/تنزيلات-إضافية? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ar-sa
+RewriteRule ^primeiros\-passos/?$ /ar-sa/تأكيد-الدفع/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ar-sa
+RewriteRule ^expansao\-20gb\-ok/?$ /ar-sa/تأكيد-الدفع/مساحة-إضافية? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ar-sa
+RewriteRule ^perfil/?$ /ar-sa/الملف-الشخصي? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ar-sa
+RewriteRule ^suporte/?$ /ar-sa/الدعم [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ar-sa
+RewriteRule ^ajuda/?$ /ar-sa/مساعدة [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =it-it
+RewriteRule ^termos\-de\-uso/?$ /it-it/termini-di-servizio [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =it-it
+RewriteRule ^politicas\-de\-privacidade/?$ /it-it/informativa-privacy [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =it-it
+RewriteRule ^pagamento\-ok/?$ /it-it/pagamento-confermato/accesso-cliente? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =it-it
+RewriteRule ^pacote\-downloads\-extras/?$ /it-it/pagamento-confermato/download-extra? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =it-it
+RewriteRule ^primeiros\-passos/?$ /it-it/pagamento-confermato/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =it-it
+RewriteRule ^expansao\-20gb\-ok/?$ /it-it/pagamento-confermato/piu-20-gb? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =it-it
+RewriteRule ^perfil/?$ /it-it/profilo? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =it-it
+RewriteRule ^suporte/?$ /it-it/supporto [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =it-it
+RewriteRule ^ajuda/?$ /it-it/assistenza [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =tr-tr
+RewriteRule ^termos\-de\-uso/?$ /tr-tr/kullanim-kosullari [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =tr-tr
+RewriteRule ^politicas\-de\-privacidade/?$ /tr-tr/gizlilik-politikasi [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =tr-tr
+RewriteRule ^pagamento\-ok/?$ /tr-tr/odeme-onaylandi/musteri-erisimi? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =tr-tr
+RewriteRule ^pacote\-downloads\-extras/?$ /tr-tr/odeme-onaylandi/ek-indirilmeler? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =tr-tr
+RewriteRule ^primeiros\-passos/?$ /tr-tr/odeme-onaylandi/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =tr-tr
+RewriteRule ^expansao\-20gb\-ok/?$ /tr-tr/odeme-onaylandi/arti-20-gb? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =tr-tr
+RewriteRule ^perfil/?$ /tr-tr/profil? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =tr-tr
+RewriteRule ^suporte/?$ /tr-tr/destek [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =tr-tr
+RewriteRule ^ajuda/?$ /tr-tr/yardim [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pl-pl
+RewriteRule ^termos\-de\-uso/?$ /pl-pl/regulamin [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pl-pl
+RewriteRule ^politicas\-de\-privacidade/?$ /pl-pl/polityka-prywatnosci [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pl-pl
+RewriteRule ^pagamento\-ok/?$ /pl-pl/potwierdzenie-platnosci/dostep-klienta? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pl-pl
+RewriteRule ^pacote\-downloads\-extras/?$ /pl-pl/potwierdzenie-platnosci/dodatkowe-pobrania? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pl-pl
+RewriteRule ^primeiros\-passos/?$ /pl-pl/potwierdzenie-platnosci/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pl-pl
+RewriteRule ^expansao\-20gb\-ok/?$ /pl-pl/potwierdzenie-platnosci/plus-20-gb? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pl-pl
+RewriteRule ^perfil/?$ /pl-pl/profil? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pl-pl
+RewriteRule ^suporte/?$ /pl-pl/wsparcie [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =pl-pl
+RewriteRule ^ajuda/?$ /pl-pl/pomoc [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =id-id
+RewriteRule ^termos\-de\-uso/?$ /id-id/ketentuan-layanan [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =id-id
+RewriteRule ^politicas\-de\-privacidade/?$ /id-id/kebijakan-privasi [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =id-id
+RewriteRule ^pagamento\-ok/?$ /id-id/pembayaran-berhasil/akses-klien? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =id-id
+RewriteRule ^pacote\-downloads\-extras/?$ /id-id/pembayaran-berhasil/unduhan-tambahan? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =id-id
+RewriteRule ^primeiros\-passos/?$ /id-id/pembayaran-berhasil/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =id-id
+RewriteRule ^expansao\-20gb\-ok/?$ /id-id/pembayaran-berhasil/tambah-20-gb? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =id-id
+RewriteRule ^perfil/?$ /id-id/profil? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =id-id
+RewriteRule ^suporte/?$ /id-id/dukungan [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =id-id
+RewriteRule ^ajuda/?$ /id-id/bantuan [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ja-jp
+RewriteRule ^termos\-de\-uso/?$ /ja-jp/利用規約 [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ja-jp
+RewriteRule ^politicas\-de\-privacidade/?$ /ja-jp/プライバシーポリシー [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ja-jp
+RewriteRule ^pagamento\-ok/?$ /ja-jp/決済完了/施主アクセス? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ja-jp
+RewriteRule ^pacote\-downloads\-extras/?$ /ja-jp/決済完了/追加ダウンロード? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ja-jp
+RewriteRule ^primeiros\-passos/?$ /ja-jp/決済完了/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ja-jp
+RewriteRule ^expansao\-20gb\-ok/?$ /ja-jp/決済完了/ストレージ追加? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ja-jp
+RewriteRule ^perfil/?$ /ja-jp/プロフィール? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ja-jp
+RewriteRule ^suporte/?$ /ja-jp/サポート [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ja-jp
+RewriteRule ^ajuda/?$ /ja-jp/ヘルプ [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hi-in
+RewriteRule ^termos\-de\-uso/?$ /hi-in/नियम [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hi-in
+RewriteRule ^politicas\-de\-privacidade/?$ /hi-in/गोपनीयता [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hi-in
+RewriteRule ^pagamento\-ok/?$ /hi-in/भुगतान/क्लाइंट-एक्सेस? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hi-in
+RewriteRule ^pacote\-downloads\-extras/?$ /hi-in/भुगतान/डाउनलोड? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hi-in
+RewriteRule ^primeiros\-passos/?$ /hi-in/भुगतान/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hi-in
+RewriteRule ^expansao\-20gb\-ok/?$ /hi-in/भुगतान/स्टोरेज? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hi-in
+RewriteRule ^perfil/?$ /hi-in/प्रोफ़ाइल? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hi-in
+RewriteRule ^suporte/?$ /hi-in/सपोर्ट [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hi-in
+RewriteRule ^ajuda/?$ /hi-in/सहायता [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =vi-vn
+RewriteRule ^termos\-de\-uso/?$ /vi-vn/dieu-khoan [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =vi-vn
+RewriteRule ^politicas\-de\-privacidade/?$ /vi-vn/quyen-rieng-tu [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =vi-vn
+RewriteRule ^pagamento\-ok/?$ /vi-vn/thanh-toan/truy-cap-khach-hang? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =vi-vn
+RewriteRule ^pacote\-downloads\-extras/?$ /vi-vn/thanh-toan/tai-xuong? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =vi-vn
+RewriteRule ^primeiros\-passos/?$ /vi-vn/thanh-toan/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =vi-vn
+RewriteRule ^expansao\-20gb\-ok/?$ /vi-vn/thanh-toan/dung-luong? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =vi-vn
+RewriteRule ^perfil/?$ /vi-vn/ho-so? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =vi-vn
+RewriteRule ^suporte/?$ /vi-vn/ho-tro [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =vi-vn
+RewriteRule ^ajuda/?$ /vi-vn/tro-giup [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =nl-nl
+RewriteRule ^termos\-de\-uso/?$ /nl-nl/voorwaarden [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =nl-nl
+RewriteRule ^politicas\-de\-privacidade/?$ /nl-nl/privacy [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =nl-nl
+RewriteRule ^pagamento\-ok/?$ /nl-nl/betaling/klanttoegang? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =nl-nl
+RewriteRule ^pacote\-downloads\-extras/?$ /nl-nl/betaling/downloads? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =nl-nl
+RewriteRule ^primeiros\-passos/?$ /nl-nl/betaling/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =nl-nl
+RewriteRule ^expansao\-20gb\-ok/?$ /nl-nl/betaling/opslag? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =nl-nl
+RewriteRule ^perfil/?$ /nl-nl/profiel? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =nl-nl
+RewriteRule ^suporte/?$ /nl-nl/ondersteuning [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =nl-nl
+RewriteRule ^ajuda/?$ /nl-nl/help [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ko-kr
+RewriteRule ^termos\-de\-uso/?$ /ko-kr/이용약관 [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ko-kr
+RewriteRule ^politicas\-de\-privacidade/?$ /ko-kr/개인정보처리방침 [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ko-kr
+RewriteRule ^pagamento\-ok/?$ /ko-kr/결제/건축주-액세스? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ko-kr
+RewriteRule ^pacote\-downloads\-extras/?$ /ko-kr/결제/다운로드? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ko-kr
+RewriteRule ^primeiros\-passos/?$ /ko-kr/결제/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ko-kr
+RewriteRule ^expansao\-20gb\-ok/?$ /ko-kr/결제/저장공간? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ko-kr
+RewriteRule ^perfil/?$ /ko-kr/프로필? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ko-kr
+RewriteRule ^suporte/?$ /ko-kr/지원 [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ko-kr
+RewriteRule ^ajuda/?$ /ko-kr/도움말 [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =zh-tw
+RewriteRule ^termos\-de\-uso/?$ /zh-tw/服務條款 [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =zh-tw
+RewriteRule ^politicas\-de\-privacidade/?$ /zh-tw/隱私權政策 [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =zh-tw
+RewriteRule ^pagamento\-ok/?$ /zh-tw/付款/業主存取? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =zh-tw
+RewriteRule ^pacote\-downloads\-extras/?$ /zh-tw/付款/下載? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =zh-tw
+RewriteRule ^primeiros\-passos/?$ /zh-tw/付款/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =zh-tw
+RewriteRule ^expansao\-20gb\-ok/?$ /zh-tw/付款/儲存空間? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =zh-tw
+RewriteRule ^perfil/?$ /zh-tw/個人檔案? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =zh-tw
+RewriteRule ^suporte/?$ /zh-tw/支援 [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =zh-tw
+RewriteRule ^ajuda/?$ /zh-tw/說明 [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ro-ro
+RewriteRule ^termos\-de\-uso/?$ /ro-ro/termeni [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ro-ro
+RewriteRule ^politicas\-de\-privacidade/?$ /ro-ro/confidentialitate [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ro-ro
+RewriteRule ^pagamento\-ok/?$ /ro-ro/plata/acces-client? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ro-ro
+RewriteRule ^pacote\-downloads\-extras/?$ /ro-ro/plata/descarcari? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ro-ro
+RewriteRule ^primeiros\-passos/?$ /ro-ro/plata/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ro-ro
+RewriteRule ^expansao\-20gb\-ok/?$ /ro-ro/plata/stocare? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ro-ro
+RewriteRule ^perfil/?$ /ro-ro/profil? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ro-ro
+RewriteRule ^suporte/?$ /ro-ro/asistenta [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ro-ro
+RewriteRule ^ajuda/?$ /ro-ro/ajutor [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =th-th
+RewriteRule ^termos\-de\-uso/?$ /th-th/ข้อกำหนด [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =th-th
+RewriteRule ^politicas\-de\-privacidade/?$ /th-th/ความเป็นส่วนตัว [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =th-th
+RewriteRule ^pagamento\-ok/?$ /th-th/การชำระเงิน/สิทธิ์ลูกค้า? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =th-th
+RewriteRule ^pacote\-downloads\-extras/?$ /th-th/การชำระเงิน/ดาวน์โหลด? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =th-th
+RewriteRule ^primeiros\-passos/?$ /th-th/การชำระเงิน/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =th-th
+RewriteRule ^expansao\-20gb\-ok/?$ /th-th/การชำระเงิน/พื้นที่จัดเก็บ? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =th-th
+RewriteRule ^perfil/?$ /th-th/โปรไฟล์? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =th-th
+RewriteRule ^suporte/?$ /th-th/ฝ่ายสนับสนุน [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =th-th
+RewriteRule ^ajuda/?$ /th-th/ช่วยเหลือ [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =uk-ua
+RewriteRule ^termos\-de\-uso/?$ /uk-ua/умови [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =uk-ua
+RewriteRule ^politicas\-de\-privacidade/?$ /uk-ua/конфіденційність [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =uk-ua
+RewriteRule ^pagamento\-ok/?$ /uk-ua/оплата/доступ-клієнта? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =uk-ua
+RewriteRule ^pacote\-downloads\-extras/?$ /uk-ua/оплата/завантаження? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =uk-ua
+RewriteRule ^primeiros\-passos/?$ /uk-ua/оплата/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =uk-ua
+RewriteRule ^expansao\-20gb\-ok/?$ /uk-ua/оплата/сховище? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =uk-ua
+RewriteRule ^perfil/?$ /uk-ua/профіль? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =uk-ua
+RewriteRule ^suporte/?$ /uk-ua/підтримка [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =uk-ua
+RewriteRule ^ajuda/?$ /uk-ua/довідка [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ru-kz
+RewriteRule ^termos\-de\-uso/?$ /ru-kz/условия [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ru-kz
+RewriteRule ^politicas\-de\-privacidade/?$ /ru-kz/конфиденциальность [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ru-kz
+RewriteRule ^pagamento\-ok/?$ /ru-kz/оплата/доступ-заказчика? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ru-kz
+RewriteRule ^pacote\-downloads\-extras/?$ /ru-kz/оплата/скачивания? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ru-kz
+RewriteRule ^primeiros\-passos/?$ /ru-kz/оплата/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ru-kz
+RewriteRule ^expansao\-20gb\-ok/?$ /ru-kz/оплата/хранилище? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ru-kz
+RewriteRule ^perfil/?$ /ru-kz/профиль? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ru-kz
+RewriteRule ^suporte/?$ /ru-kz/поддержка [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =ru-kz
+RewriteRule ^ajuda/?$ /ru-kz/справка [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =cs-cz
+RewriteRule ^termos\-de\-uso/?$ /cs-cz/podminky [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =cs-cz
+RewriteRule ^politicas\-de\-privacidade/?$ /cs-cz/soukromi [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =cs-cz
+RewriteRule ^pagamento\-ok/?$ /cs-cz/platba/klientsky-pristup? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =cs-cz
+RewriteRule ^pacote\-downloads\-extras/?$ /cs-cz/platba/stahovani? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =cs-cz
+RewriteRule ^primeiros\-passos/?$ /cs-cz/platba/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =cs-cz
+RewriteRule ^expansao\-20gb\-ok/?$ /cs-cz/platba/uloziste? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =cs-cz
+RewriteRule ^perfil/?$ /cs-cz/profil? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =cs-cz
+RewriteRule ^suporte/?$ /cs-cz/podpora [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =cs-cz
+RewriteRule ^ajuda/?$ /cs-cz/napoveda [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =el-gr
+RewriteRule ^termos\-de\-uso/?$ /el-gr/όροι-χρήσης [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =el-gr
+RewriteRule ^politicas\-de\-privacidade/?$ /el-gr/πολιτική-απορρήτου [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =el-gr
+RewriteRule ^pagamento\-ok/?$ /el-gr/επιβεβαίωση-πληρωμής/πρόσβαση-πελάτη? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =el-gr
+RewriteRule ^pacote\-downloads\-extras/?$ /el-gr/επιβεβαίωση-πληρωμής/πρόσθετες-λήψεις? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =el-gr
+RewriteRule ^primeiros\-passos/?$ /el-gr/επιβεβαίωση-πληρωμής/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =el-gr
+RewriteRule ^expansao\-20gb\-ok/?$ /el-gr/επιβεβαίωση-πληρωμής/επιπλέον-20-gb? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =el-gr
+RewriteRule ^perfil/?$ /el-gr/προφίλ? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =el-gr
+RewriteRule ^suporte/?$ /el-gr/υποστήριξη [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =el-gr
+RewriteRule ^ajuda/?$ /el-gr/βοήθεια [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hu-hu
+RewriteRule ^termos\-de\-uso/?$ /hu-hu/felhasznalasi-feltetelek [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hu-hu
+RewriteRule ^politicas\-de\-privacidade/?$ /hu-hu/adatvedelmi-tajekoztato [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hu-hu
+RewriteRule ^pagamento\-ok/?$ /hu-hu/sikeres-fizetes/ugyfel-hozzaferes? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hu-hu
+RewriteRule ^pacote\-downloads\-extras/?$ /hu-hu/sikeres-fizetes/extra-letoltesek? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hu-hu
+RewriteRule ^primeiros\-passos/?$ /hu-hu/sikeres-fizetes/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hu-hu
+RewriteRule ^expansao\-20gb\-ok/?$ /hu-hu/sikeres-fizetes/plusz-20-gb? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hu-hu
+RewriteRule ^perfil/?$ /hu-hu/profil? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hu-hu
+RewriteRule ^suporte/?$ /hu-hu/ugyfelszolgalat [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =hu-hu
+RewriteRule ^ajuda/?$ /hu-hu/sugo [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =he-il
+RewriteRule ^termos\-de\-uso/?$ /he-il/תנאי-שימוש [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =he-il
+RewriteRule ^politicas\-de\-privacidade/?$ /he-il/מדיניות-פרטיות [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =he-il
+RewriteRule ^pagamento\-ok/?$ /he-il/אישור-תשלום/גישת-לקוח? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =he-il
+RewriteRule ^pacote\-downloads\-extras/?$ /he-il/אישור-תשלום/הורדות-נוספות? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =he-il
+RewriteRule ^primeiros\-passos/?$ /he-il/אישור-תשלום/pro? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =he-il
+RewriteRule ^expansao\-20gb\-ok/?$ /he-il/אישור-תשלום/תוספת-20-gb? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =he-il
+RewriteRule ^perfil/?$ /he-il/פרופיל? [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =he-il
+RewriteRule ^suporte/?$ /he-il/תמיכה [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:IDIOMA_NAVEGADOR} =he-il
+RewriteRule ^ajuda/?$ /he-il/עזרה [NC,R=301,L,E=VARIA_IDIOMA:1,E=Cache-Control:no-cache]
 
 # 4) Endereços antigos da Central com o idioma (/ajuda/pt-BR/criar-rdo) → /pt-br/ajuda/criar-rdo. Sem
 #    idioma (/ajuda/criar-rdo), pt-BR. O site corrige sozinho o resto (nome do assunto no idioma).
@@ -306,6 +852,27 @@ RewriteRule ^ajuda/en-au(/.*)?$ /en-au/help$1 [NC,R=301,L]
 RewriteRule ^ajuda/en-ca(/.*)?$ /en-ca/help$1 [NC,R=301,L]
 RewriteRule ^ajuda/es-es(/.*)?$ /es-es/ayuda$1 [NC,R=301,L]
 RewriteRule ^ajuda/es-mx(/.*)?$ /es-mx/ayuda$1 [NC,R=301,L]
+RewriteRule ^ajuda/fr-fr(/.*)?$ /fr-fr/aide$1 [NC,R=301,L]
+RewriteRule ^ajuda/de-de(/.*)?$ /de-de/hilfe$1 [NC,R=301,L]
+RewriteRule ^ajuda/ar-sa(/.*)?$ /ar-sa/مساعدة$1 [NC,R=301,L]
+RewriteRule ^ajuda/it-it(/.*)?$ /it-it/assistenza$1 [NC,R=301,L]
+RewriteRule ^ajuda/tr-tr(/.*)?$ /tr-tr/yardim$1 [NC,R=301,L]
+RewriteRule ^ajuda/pl-pl(/.*)?$ /pl-pl/pomoc$1 [NC,R=301,L]
+RewriteRule ^ajuda/id-id(/.*)?$ /id-id/bantuan$1 [NC,R=301,L]
+RewriteRule ^ajuda/ja-jp(/.*)?$ /ja-jp/ヘルプ$1 [NC,R=301,L]
+RewriteRule ^ajuda/hi-in(/.*)?$ /hi-in/सहायता$1 [NC,R=301,L]
+RewriteRule ^ajuda/vi-vn(/.*)?$ /vi-vn/tro-giup$1 [NC,R=301,L]
+RewriteRule ^ajuda/nl-nl(/.*)?$ /nl-nl/help$1 [NC,R=301,L]
+RewriteRule ^ajuda/ko-kr(/.*)?$ /ko-kr/도움말$1 [NC,R=301,L]
+RewriteRule ^ajuda/zh-tw(/.*)?$ /zh-tw/說明$1 [NC,R=301,L]
+RewriteRule ^ajuda/ro-ro(/.*)?$ /ro-ro/ajutor$1 [NC,R=301,L]
+RewriteRule ^ajuda/th-th(/.*)?$ /th-th/ช่วยเหลือ$1 [NC,R=301,L]
+RewriteRule ^ajuda/uk-ua(/.*)?$ /uk-ua/довідка$1 [NC,R=301,L]
+RewriteRule ^ajuda/ru-kz(/.*)?$ /ru-kz/справка$1 [NC,R=301,L]
+RewriteRule ^ajuda/cs-cz(/.*)?$ /cs-cz/napoveda$1 [NC,R=301,L]
+RewriteRule ^ajuda/el-gr(/.*)?$ /el-gr/βοήθεια$1 [NC,R=301,L]
+RewriteRule ^ajuda/hu-hu(/.*)?$ /hu-hu/sugo$1 [NC,R=301,L]
+RewriteRule ^ajuda/he-il(/.*)?$ /he-il/עזרה$1 [NC,R=301,L]
 RewriteRule ^ajuda/(.+)$ /pt-br/ajuda/$1 [NC,R=301,L]
 
 # 5) Idioma com maiúsculas (/PT-BR/ajuda) → minúsculas; página inicial sem barra (/pt-br) → com barra.
@@ -325,7 +892,49 @@ RewriteCond %{REQUEST_URI} !^/es-es(?:/|$)
 RewriteRule ^es-es(/.*)?$ /es-es$1 [NC,R=301,L]
 RewriteCond %{REQUEST_URI} !^/es-mx(?:/|$)
 RewriteRule ^es-mx(/.*)?$ /es-mx$1 [NC,R=301,L]
-RewriteRule ^(pt-br|pt-pt|en-us|en-gb|en-au|en-ca|es-es|es-mx)$ /$1/ [R=301,L]
+RewriteCond %{REQUEST_URI} !^/fr-fr(?:/|$)
+RewriteRule ^fr-fr(/.*)?$ /fr-fr$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/de-de(?:/|$)
+RewriteRule ^de-de(/.*)?$ /de-de$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/ar-sa(?:/|$)
+RewriteRule ^ar-sa(/.*)?$ /ar-sa$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/it-it(?:/|$)
+RewriteRule ^it-it(/.*)?$ /it-it$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/tr-tr(?:/|$)
+RewriteRule ^tr-tr(/.*)?$ /tr-tr$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/pl-pl(?:/|$)
+RewriteRule ^pl-pl(/.*)?$ /pl-pl$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/id-id(?:/|$)
+RewriteRule ^id-id(/.*)?$ /id-id$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/ja-jp(?:/|$)
+RewriteRule ^ja-jp(/.*)?$ /ja-jp$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/hi-in(?:/|$)
+RewriteRule ^hi-in(/.*)?$ /hi-in$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/vi-vn(?:/|$)
+RewriteRule ^vi-vn(/.*)?$ /vi-vn$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/nl-nl(?:/|$)
+RewriteRule ^nl-nl(/.*)?$ /nl-nl$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/ko-kr(?:/|$)
+RewriteRule ^ko-kr(/.*)?$ /ko-kr$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/zh-tw(?:/|$)
+RewriteRule ^zh-tw(/.*)?$ /zh-tw$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/ro-ro(?:/|$)
+RewriteRule ^ro-ro(/.*)?$ /ro-ro$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/th-th(?:/|$)
+RewriteRule ^th-th(/.*)?$ /th-th$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/uk-ua(?:/|$)
+RewriteRule ^uk-ua(/.*)?$ /uk-ua$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/ru-kz(?:/|$)
+RewriteRule ^ru-kz(/.*)?$ /ru-kz$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/cs-cz(?:/|$)
+RewriteRule ^cs-cz(/.*)?$ /cs-cz$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/el-gr(?:/|$)
+RewriteRule ^el-gr(/.*)?$ /el-gr$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/hu-hu(?:/|$)
+RewriteRule ^hu-hu(/.*)?$ /hu-hu$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/he-il(?:/|$)
+RewriteRule ^he-il(/.*)?$ /he-il$1 [NC,R=301,L]
+RewriteRule ^(pt-br|pt-pt|en-us|en-gb|en-au|en-ca|es-es|es-mx|fr-fr|de-de|ar-sa|it-it|tr-tr|pl-pl|id-id|ja-jp|hi-in|vi-vn|nl-nl|ko-kr|zh-tw|ro-ro|th-th|uk-ua|ru-kz|cs-cz|el-gr|hu-hu|he-il)$ /$1/ [R=301,L]
 
 # 6) Barra no fim: só a página inicial do idioma tem (/pt-br/). /pt-br/ajuda/ → /pt-br/ajuda (301).
 RewriteRule ^([a-z]{2}-[a-z]{2}/.+)/$ /$1 [R=301,L]

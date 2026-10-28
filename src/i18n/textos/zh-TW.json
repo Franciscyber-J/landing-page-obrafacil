@@ -1,0 +1,494 @@
+{
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil：整合施工日誌的工程管理 App",
+            "descricao": "支援手機與電腦的工程管理 App：進度表、照片施工日誌、財務收支、團隊協作與業主專區。立即免費開始。"
+        },
+        "ajuda": {
+            "titulo": "ObraFácil 說明中心：逐步操作指南",
+            "descricao": "ObraFácil App 逐步操作指南：透過真實畫面解說施工日誌、進度表、工程財務、團隊與業主專區。"
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · ObraFácil 說明中心",
+            "descricao": "{{descricao}} 搭配 ObraFácil 真實畫面的實用操作指南。"
+        },
+        "artigo": {
+            "titulo": "{{titulo}} — ObraFácil"
+        },
+        "app": {
+            "descricao": "專為營造廠、土木工程師、建築師與工地主任設計的工程管理 App：分工項進度管理、照片與 PDF 施工日誌、工程財務、團隊薪資、物料採購與倉庫，以及業主進度追蹤專區。在 Android、iPhone、Windows 及網頁版皆能流暢運作，工地離線也支援。",
+            "categoria": "工程管理"
+        },
+        "imagemAlt": "ObraFácil 工程管理 App 標誌",
+        "llms": {
+            "sobre": "關於 ObraFácil",
+            "paraQuem": "適用對象：管理單一或多個工程案場的營造廠、土木工程師、建築師、承包商與工地主任，協助落實每日工地作業紀錄、嚴格控管工期與預算成本，並向業主展示清晰透明的施工進度。",
+            "plataformas": "支援平台",
+            "recursos": "功能特色",
+            "papeis": "工地角色分工",
+            "planos": "方案與費用",
+            "precosPorIdioma": "網站各語言與幣別之 PRO 方案價格",
+            "precoLinha": "每月 {{mensal}} 或每年 {{anual}}",
+            "paginas": "主要頁面",
+            "idiomas": "網站與 App 支援的語言版本",
+            "todosArtigos": "說明中心所有文章一覽"
+        }
+    },
+    "nav": {
+        "login": "登入",
+        "comecar": "免費開始",
+        "recursos": "功能",
+        "precos": "方案費用",
+        "ajuda": "說明中心",
+        "lightMode": "淺色模式",
+        "darkMode": "深色模式",
+        "language": "語言",
+        "chooseLanguage": "選擇語言",
+        "themeToggle": "切換淺色與深色模式",
+        "menu": "開啟或關閉選單",
+        "inicio": "ObraFácil 首頁",
+        "navegacao": "主要導覽"
+    },
+    "hero": {
+        "plataformas": "Android · iPhone · Windows · 網頁瀏覽器",
+        "titulo": "全案工程管理 **一手掌握**",
+        "subtitulo": "工程進度表、施工日誌、財務收支、團隊與物料採購，隨時在您的手機與電腦上同步掌握。業主可直接透過專區追蹤施工現況，無需頻繁來電詢問。",
+        "comecar": "免費開始",
+        "verPlanos": "查看方案",
+        "semCartao": "無使用期限的免費方案 • 無需信用卡。",
+        "camposRotulo": "App 內工程管理板塊",
+        "campos": {
+            "cronograma": {
+                "rotulo": "工程進度表",
+                "valor": "工項、實際進度與預定日程"
+            },
+            "diario": {
+                "rotulo": "施工日誌",
+                "valor": "現場照片、氣象與出工人員，一鍵匯出 PDF"
+            },
+            "financeiro": {
+                "rotulo": "工程財務",
+                "valor": "預算與實際支出、各項收入與支出"
+            },
+            "cliente": {
+                "rotulo": "業主專區",
+                "valor": "向業主即時分享工程最新進度"
+            }
+        },
+        "legendaTela": "包含範例資料之 App 操作畫面",
+        "telas": {
+            "cronograma": "標註預算金額、估驗款、應付帳款與實際進度的工程工項列表",
+            "diario": "記錄天候、施工作業與現場問題的新增施工日誌畫面",
+            "financeiro": "顯示每坪/每平方公尺成本、收入、支出與結餘之工程財務畫面",
+            "cliente": "呈現工程最新現況之業主專區畫面"
+        },
+        "disponivelNo": "適用平台：",
+        "baixarNa": "下載平台：",
+        "baixarPara": "下載平台："
+    },
+    "pricing": {
+        "title": "方案與費用",
+        "toggleMonthly": "月繳方案",
+        "toggleAnnual": "年繳方案",
+        "periodoRotulo": "計費週期",
+        "economia": "省下 {{simbolo}}{{valor}}",
+        "perMonth": "/月",
+        "periodAnnual": "/年",
+        "gratis": {
+            "nome": "免費方案",
+            "desc": "適合剛入門與體驗 App 功能的使用者。",
+            "cta": "免費開始",
+            "itens": [
+                "同時管理 1 項進行中的個人工程",
+                "每月可匯出 7 份含浮水印之 PDF 報告",
+                "提供 250 MB 照片與檔案儲存空間",
+                "支援業主透過專區查看工程進度"
+            ]
+        },
+        "pro": {
+            "nomeMensal": "PRO 月繳",
+            "nomeAnual": "PRO 年繳",
+            "desc": "專為管理多個工程專案的營造廠、建築師與承包商量身打造。",
+            "itens": [
+                "工程專案數量無上限",
+                "無限制匯出無浮水印之 PDF 報告",
+                "提供 10 GB 照片與檔案儲存空間",
+                "匯出之 PDF 可自訂公司 Logo 與頁尾資訊",
+                "支援 ZIP 批次下載施工日誌與離線工程檔案",
+                "各項工程皆可選配業主存取功能"
+            ],
+            "itensAnual": [
+                "享有 PRO 月繳方案的所有功能",
+                "享 12 個月鎖定優惠價格"
+            ],
+            "comparacao": "若按月計費，12 個月總額為 {{simbolo}}{{valor}}",
+            "equivale": "相當於每月僅需 {{simbolo}}{{valor}}",
+            "ctaMensal": "訂閱 PRO 月繳方案",
+            "ctaAnual": "訂閱 PRO 年繳方案"
+        },
+        "renovacao": "自動續約。您可隨時在原訂閱管道取消訂閱。",
+        "lojas": "在手機上訂閱時，費用與帳單處理均依據 Google Play 或 App Store 之條款辦理。",
+        "addons": "PRO 專屬擴充功能：+20 GB 額外儲存空間（獨立訂閱）以及解鎖業主專區進階權限的「業主存取」（單一工程一次性費用）。",
+        "selo": "熱門首選",
+        "gratisPreco": "永久免費"
+    },
+    "popup": {
+        "faixa": "無使用期限的免費方案",
+        "title": "在離開之前，不妨在下一個工程案場親自體驗",
+        "texto": "無需信用卡即可建立免費帳號。立即新增一項工程，親自感受進度表、照片施工日誌與財務管理完美串聯，並讓業主透過專區同步掌握的便利體驗。",
+        "cta": "免費開始",
+        "lojas": "或下載 App",
+        "fechar": "關閉"
+    },
+    "whatsapp": {
+        "tooltip": "聯絡客服支援",
+        "message": "您好，我瀏覽了官方網站，想詢問一些問題"
+    },
+    "social": {
+        "title": "專業人士的真實回饋",
+        "test1": "「我的業主對這款 App 感到非常驚艷。它大幅提升了案場管理的專業度與信賴感，也充分體現了我的工程管理價值。」",
+        "author1": "陳建銘",
+        "role1": "土木工程師",
+        "test2": "「以前收工後要花 1 個小時在 Word 上整理施工日誌。現在直接在工地用手機 5 分鐘就能輕鬆搞定。」",
+        "author2": "林志宏",
+        "role2": "營造承包商",
+        "test3": "「估驗計價報告的送審變得非常單純明瞭，沒有爭議，業主看過後很快就能確認撥款。」",
+        "author3": "張家豪",
+        "role3": "工地主任",
+        "test4": "「照片庫功能讓我們在討論裝修與收邊細節時非常方便，建築師不必為了小細節頻繁跑工地。」",
+        "author4": "黃雅婷",
+        "role4": "建築師",
+        "test5": "「連業主都稱讚我們的案場管理井井有條。這讓我們具備了不輸大建商的專業形象。」",
+        "author5": "劉冠廷",
+        "role5": "統包工程負責人",
+        "aviso": "真實客戶使用心得，經授權刊登。"
+    },
+    "faq": {
+        "title": "常見問題",
+        "q1": "我的業主查看工程進度需要付費嗎？",
+        "a1": "不用。業主可透過專區免費追蹤工程進度。若您希望向業主開放更多權限，例如下載照片及查看完整財務報表，可透過 PRO 方案支付「業主存取」費用（每項工程僅需支付一次）。",
+        "q2": "我可以在電腦和手機上使用嗎？",
+        "a2": "可以。ObraFácil 支援 Android、iPhone、Windows 以及網頁瀏覽器，所有裝置皆同步相同的資料。",
+        "q3": "我的資料安全嗎？",
+        "a3": "所有資料皆經過加密傳輸，並以加密形式安全儲存於 Google 伺服器中。每個人只能依照其角色權限查看所參與的工程。",
+        "q4": "系統會收集哪些個人資料？",
+        "a4": "帳號註冊需要：姓名、電子郵件和電話號碼；統一編號僅在您主動提供時收集。完整項目及各項資料用途請參閱《隱私權政策》。",
+        "q5": "在沒有網路的環境下也能使用嗎？",
+        "a5": "可以。在沒有網路時，App 會先將您輸入的資料儲存在裝置本機，待連線恢復後自動同步上傳。",
+        "q6": "工程完工後，業主會失去檔案的存取權限嗎？",
+        "a6": "當存取權限到期時，若工程進度已達 70% 或以上，業主仍享有 15 天的寬限期，可繼續查看並下載已公開的檔案。",
+        "q7": "ObraFácil 會取代工程主任或專業技師嗎？",
+        "a7": "不會。本產品為工程管理工具，無法取代負責工程的法定專業技師，亦不具備法定簽證或執照效力。",
+        "q8": "我可以刪除自己的帳號嗎？",
+        "a8": "可以，請前往「個人檔案」>「刪除帳號」。帳號將先停權 30 天（期間內可復原），期滿後您的工程與資料將被永久刪除。部分紀錄（如付款明細及條款同意紀錄）將依《隱私權政策》規定期限留存。",
+        "q9": "我可以隨時取消 PRO 或儲存空間擴充方案嗎？",
+        "a9": "可以，您隨時可在最初訂閱的平台辦理取消。下一期將不再扣款，且在已付費週期結束前仍可繼續享有完整權限。",
+        "q10": "如果續約扣款失敗會怎麼樣？",
+        "a10": "帳號將自動轉為免費方案。原有資料不會被刪除；若超出免費方案上限，系統僅會暫停上傳新檔案，直到您釋出空間或重新訂閱為止。",
+        "mais": "沒有找到您需要的解答？",
+        "verAjuda": "前往說明中心"
+    },
+    "ajuda": {
+        "titulo": "說明中心",
+        "heroiAntes": "我們該如何為您",
+        "heroiDestaque": "提供協助",
+        "heroiDepois": "？",
+        "heroiSubtitulo": "以您的母語呈現、搭配各選單真實螢幕截圖的 ObraFácil 逐步操作指南。",
+        "buscaRotulo": "在說明中心搜尋",
+        "buscaPlaceholder": "搜尋施工日誌、出工人員、PDF、業主專區…",
+        "buscaLimpar": "清除搜尋",
+        "buscaResultados": "搜尋結果",
+        "buscaSemResultado": "找不到符合「{{termo}}」的相關文章。請嘗試其他關鍵字，或直接與客服團隊聯絡。",
+        "buscasComuns": "熱門搜尋詞：",
+        "sugestao1": "離線施工日誌",
+        "sugestao2": "新增出工人員",
+        "sugestao3": "施工日誌 PDF",
+        "sugestao4": "業主專區",
+        "comeceTitulo": "從這裡開始",
+        "comeceSubtitulo": "引導您從首次登入到在案場實際產出成果的完整導覽指南。",
+        "comecar": "開始使用",
+        "tipo_fluxo": "完整流程",
+        "tipo_funcao": "步驟指南",
+        "tipo_conceito": "基本概念",
+        "assuntosTitulo": "依主題瀏覽",
+        "assuntosPerfil_todos": "說明中心內的所有主題。",
+        "assuntosPerfil_gestor": "適合工程管理者的專題文章。",
+        "assuntosPerfil_equipe": "適合案場施工團隊的專題文章。",
+        "assuntosPerfil_cliente": "適合工程業主的專題文章。",
+        "assuntosVazio": "此分類下目前尚無文章。歡迎查看所有主題或與客服支援團隊聯絡。",
+        "perfilGrupo": "顯示主題對象：",
+        "perfil_todos": "全部",
+        "perfil_gestor": "管理者",
+        "perfil_equipe": "施工團隊",
+        "perfil_cliente": "業主",
+        "artigos_other": "{{count}} 篇指南文章",
+        "essenciaisTitulo": "新手必讀指南",
+        "essenciaisSubtitulo": "每位新使用者在剛開始使用的前幾天都應了解的核心概念。",
+        "suporteTitulo": "沒有找到您需要的資訊？",
+        "suporteTexto": "歡迎隨時透過 WhatsApp 聯絡我們的團隊，或直接在 App 中建立客服案件。",
+        "suporteBotao": "透過 WhatsApp 傳訊諮詢",
+        "suporteMensagem": "您好，我瀏覽了網站上的說明中心，想諮詢一些問題。",
+        "carregando": "說明中心載入中…",
+        "erroTitulo": "無法載入說明中心",
+        "erroTexto": "請檢查您的網路連線狀態，然後再試一次。",
+        "tentarDeNovo": "再試一次",
+        "vazioTitulo": "操作指南正在緊鑼密鼓準備中",
+        "vazioTexto": "說明中心的教學文章即將在此上線。在此期間，若有任何問題，客服團隊隨時樂意在 WhatsApp 上為您解答。",
+        "naoEncontradoTitulo": "找不到相關文章",
+        "naoEncontradoTexto": "您所造訪的網址並未對應至任何文章。文章可能已經更名，請嘗試使用搜尋功能尋找。",
+        "assuntoNaoEncontrado": "找不到相關主題",
+        "voltarCentral": "返回說明中心首頁",
+        "trilha": "您目前的位置：",
+        "outrosAssuntos": "其他主題",
+        "paraPublico": "適用對象：{{lista}}",
+        "publico_gestor": "工程管理者",
+        "publico_equipe": "施工團隊成員",
+        "publico_cliente": "工程業主",
+        "e": "與",
+        "passos_other": "{{count}} 個步驟",
+        "passoNumero": "第 {{n}} 步",
+        "printAlt": "第 {{n}} 步 App 畫面：{{titulo}}",
+        "nesteArtigo": "本篇文章內容目錄",
+        "antesDeComecar": "開始前注意事項",
+        "relacionados": "相關文章",
+        "navegacaoArtigos": "此主題下的其他文章",
+        "anterior": "上一篇",
+        "proximo": "下一篇",
+        "appTitulo": "直接在 App 中同步跟著操作",
+        "appTexto": "在另一個分頁中開啟 ObraFácil，邊閱讀說明邊跟著步驟進行實際操作。",
+        "appBotao": "開啟 ObraFácil",
+        "tambemEm": "亦提供其他語言版本："
+    },
+    "footer": {
+        "ctaTitle": "準備好讓下一項工程的管理更加井然有序了嗎？",
+        "ctaBtn": "免費開始",
+        "terms": "服務條款",
+        "privacy": "隱私權政策",
+        "help": "說明中心",
+        "support": "客服支援",
+        "tagline": "讓工地工程管理更簡單、更專業。",
+        "rights": "版權所有，翻印必究。",
+        "language": "網站語言",
+        "baixar": "下載 App",
+        "produto": "產品",
+        "legal": "法規遵循",
+        "contato": "聯絡我們",
+        "whatsapp": "WhatsApp"
+    },
+    "legal": {
+        "versao": "文件版本：{{versao}}",
+        "emVigorDesde": "生效日期：{{data}}",
+        "valeAPartir": "自 {{data}} 起適用",
+        "novaVersao": "版本 {{versao}} 將於 {{data}} 生效。您可預先查閱條款變更內容。",
+        "lerNova": "閱讀新版本條款",
+        "vendoNova": "您正在檢視即將生效的新版本。在生效日期前，現行版本 {{versao}} 依然有效。",
+        "voltarAtual": "返回現行有效版本",
+        "sumario": "本頁目錄",
+        "carregando": "內容載入中…",
+        "erro": "目前無法載入內容，請檢查您的網路連線。",
+        "indisponivel": "此網址目前尚未提供條款內容。如有疑問請聯絡 suporte@appobrafacil.expertbr.com。",
+        "tentarDeNovo": "再試一次"
+    },
+    "cookies": {
+        "titulo": "Cookie 設定管理",
+        "texto": "本網站使用必要的 Cookie 以確保您能夠安全登入並儲存您的個人設定。",
+        "saibaMais": "深入了解請參閱《隱私權政策》。",
+        "aceitar": "接受",
+        "recusar": "拒絕",
+        "preferencias": "Cookie 偏好設定"
+    },
+    "cliente": {
+        "titulo": "讓**您的業主**即時掌握工程最新進度",
+        "texto": "業主可透過專屬私密連結查看各工項進度與施工照片，無需每天來電或傳訊詢問。您的內部成本分析與工班工資等機密資料皆受嚴格保護。",
+        "antes": "導入前：LINE 與通訊軟體上混亂零碎的訊息",
+        "depois": "導入後：井然有序的專案工程專區",
+        "nome": "業主專區",
+        "hoje": "今日",
+        "msg1": "主任您好！請問今天的施工進度如何？有現場照片可以看嗎？",
+        "msg2": "請問地磚鋪設工程可以在下週五之前如期完工嗎？",
+        "msg3": "您好！我剛剛已請現場主任即時上傳最新的施工照片了。",
+        "conversaAviso": "與業主日常對話範例",
+        "pontos": [
+            "業主透過您發送的專屬邀請連結，以個人帳號登入系統。",
+            "想分享更多細節？搭配「業主存取」功能（PRO 方案專屬，每項工程單次付費），您可以自主選擇開放照片、完整財務報表、詳細進度表及問題回報等項目的查看與下載權限。",
+            "針對完成率達 70% 或以上的工程，存取權限到期後業主仍享有 15 天的下載寬限期。"
+        ],
+        "telaPortal": "呈現最新工程現況之業主專區畫面",
+        "telaAcesso": "管理者設定業主檢視權限之操作畫面"
+    },
+    "recursos": {
+        "titulo": "案場所需的一切管理工具 **一手掌握**",
+        "itens": {
+            "cronograma": {
+                "titulo": "分工項進度管理",
+                "texto": "自訂專案工項，或根據合約金額自動生成 19 項標準工程，即時追蹤各工項的實際施工進度。"
+            },
+            "diario": {
+                "titulo": "施工日誌",
+                "texto": "即時記錄天候、施工作業、問題回報、出工人員、照片與簽名，匯出一鍵成型的專業 PDF 報告。"
+            },
+            "financeiro": {
+                "titulo": "工程財務收支",
+                "texto": "管控各工項預算、估驗請款與應付項目，完整掌握各筆收入、支出與財務報表。"
+            },
+            "equipe": {
+                "titulo": "團隊人事與薪資",
+                "texto": "建置工作人員名冊，依據施工日誌每日出勤打卡紀錄，輕鬆計算與發放工資。"
+            },
+            "compras": {
+                "titulo": "物料採購與庫存",
+                "texto": "隨附發票憑證登錄物料採購，精確掌握每個案場的建材與工具庫存流向。"
+            },
+            "marca": {
+                "titulo": "專屬品牌專案報告",
+                "texto": "在 PRO 方案中，匯出的所有 PDF 報告皆會自動加入貴公司的官方 Logo 與頁尾資訊。"
+            },
+            "offline": {
+                "titulo": "工地離線無訊號支援",
+                "texto": "App 會自動將輸入資料暫存於本機裝置，待網路訊號恢復後自動在背景完成同步。"
+            },
+            "aparelhos": {
+                "titulo": "支援您的所有工作裝置",
+                "texto": "Android、iPhone、Windows 與瀏覽器版本隨時保持連線，即時同步最新案場資料。"
+            }
+        },
+        "tela": "顯示合約金額、完工期限與整體實際進度的工程摘要畫面"
+    },
+    "equipe": {
+        "titulo": "讓每位工作夥伴各司其職",
+        "texto": "邀請工程師、施工團隊與業主加入案場。工程管理者可全權決定參與成員與各角色的權限設定。",
+        "papeis": {
+            "gestor": {
+                "nome": "管理者",
+                "desc": "最高存取權限：建立與配置工程、管理收支財務、邀請團隊成員並匯出所有報告。"
+            },
+            "engenheiro": {
+                "nome": "工程師",
+                "desc": "依據您授予的權限，檢視並即時更新工地各項數據與工程現況。"
+            },
+            "equipe": {
+                "nome": "團隊成員",
+                "desc": "記錄日常工地作業：填寫施工日誌、拍攝施工照片及點名出工人員。"
+            },
+            "cliente": {
+                "nome": "業主",
+                "desc": "透過業主專區查看您公開分享的內容。"
+            }
+        },
+        "tela": "施工日誌內包含團隊名單與出勤紀錄之操作畫面"
+    },
+    "chamada": {
+        "titulo": "立即展開您的**下一個工程案場**",
+        "texto": "免費方案無任何使用天數限制。當案場規模擴大時，隨時可彈性升級至 PRO 方案。",
+        "acao": "免費開始",
+        "duvida": "還有任何疑問？歡迎直接透過 WhatsApp 與我們即時洽詢。",
+        "whatsapp": "透過 WhatsApp 發送訊息"
+    },
+    "conta": {
+        "abrirApp": "在瀏覽器中開啟 ObraFácil",
+        "lojasTitulo": "在所有裝置上使用 ObraFácil",
+        "lojasTexto": "在手機、電腦或瀏覽器上以同一組帳號登入：您購買的訂閱與權限將在所有裝置上同步生效。",
+        "falarSuporte": "聯絡客服支援團隊"
+    },
+    "pagamento": {
+        "metaTitulo": "付款已確認 · ObraFácil",
+        "metaDescricao": "您的付款已順利完成。查看 ObraFácil 權限啟用時程與延遲時的因應處置方式。",
+        "agoraTitulo": "後續流程說明",
+        "voltarTitulo": "返回 ObraFácil",
+        "voltarTexto": "請返回您進行購買交易的瀏覽器分頁或 Windows 應用程式。若已關閉，請使用相同帳號重新開啟 ObraFácil。",
+        "automaticoTitulo": "系統將自動開通權限",
+        "automaticoTexto": "Stripe 會即時通知我們的伺服器，您購買的功能將自動在您的帳號中啟用，您無需進行任何額外操作。",
+        "conferirTitulo": "在 App 中確認",
+        "demoraTitulo": "若購買項目未立即顯示",
+        "demoraEsperar": "請稍候約 1 分鐘，然後完全關閉 App 並重新開啟。若使用網頁版，請重新載入 ObraFácil 頁面。",
+        "demoraSairEntrar": "若仍顯示為免費方案，請先登出並使用購買付款時的電子郵件重新登入：系統會自動辨識網頁版訂閱並開通 PRO 權限。",
+        "demoraRestaurar": "**「回復購買」**按鈕在此處不適用：該功能僅限於檢索透過手機應用程式商店（Google Play 或 App Store）完成之交易。",
+        "demoraSuporte": "若問題仍未解決，請附上您付款時所使用的電子郵件信箱並聯絡客服支援團隊。",
+        "compras": {
+            "geral": {
+                "sobretitulo": "付款已確認",
+                "titulo": "付款**已確認完成**",
+                "texto": "您的款項已順利支付完成。ObraFácil 系統稍後即會接收確認並開通您所購買的功能。",
+                "conferir": "使用購買時的相同帳號開啟 ObraFácil：您的新權限將自動呈現於介面中。",
+                "artigo": "如何查詢歷史付款紀錄"
+            },
+            "pro": {
+                "sobretitulo": "訂閱已確認",
+                "titulo": "歡迎加入 ObraFácil **PRO**",
+                "texto": "您的訂閱申請已確認完成。稍後 PRO 進階功能將在您的手機、電腦與瀏覽器端全面自動啟用。",
+                "conferir": "開啟**「個人檔案」**：頂部資訊卡上的徽章將變更為**「PRO 會員」**，且**「您的方案」**資訊卡會顯示為 **ObraFácil PRO**。",
+                "artigo": "透過網站購買 PRO 方案後的帳號開通說明"
+            },
+            "acesso": {
+                "sobretitulo": "付款已確認",
+                "titulo": "**「業主存取」**款項已確認完成",
+                "texto": "該工程的專屬存取費用已順利支付。系統稍後將為該工程的業主解鎖業主專區進階權限。",
+                "conferir": "開啟該工程專案：在**「工程選單」**下方，**「業主存取」**卡片將變更為**「已授權存取」**。點擊**「設定」**即可勾選開放業主檢視之項目。",
+                "artigo": "什麼是「業主存取」功能"
+            },
+            "downloads": {
+                "sobretitulo": "付款已確認",
+                "titulo": "工程專案**「額外下載包」**已確認完成",
+                "texto": "系統稍後將為該專案額外增加 2 次照片庫 ZIP 完整下載額度，所有專案成員皆可共享使用。",
+                "conferir": "返回該工程專案的**「照片庫」**，再次點擊**「全部下載」**即可。",
+                "artigo": "如何購買額外的照片庫下載額度"
+            },
+            "armazenamento": {
+                "sobretitulo": "訂閱已確認",
+                "titulo": "為您的工程案場新增 **+20 GB** 儲存空間",
+                "texto": "儲存空間擴充方案已確認。系統稍後將立即在您現有方案額度上增加 20 GB 空間。",
+                "conferir": "開啟**「個人檔案」**：在**「儲存空間」**進度條下方，**「您的方案」**卡片將顯示**「已啟用 +20 GB 擴充」**。",
+                "artigo": "如何為帳號新增 20 GB 儲存空間"
+            }
+        }
+    },
+    "perfil": {
+        "metaTitulo": "您的訂閱方案 · ObraFácil",
+        "metaDescricao": "了解如何在 ObraFácil 中查詢您的方案內容、管理信用卡資訊及辦理取消訂閱。",
+        "sobretitulo": "訂閱方案管理",
+        "titulo": "您可以在**「個人檔案」**選單中管理所有訂閱",
+        "texto": "方案內容、帳單收據、付款信用卡與取消訂閱功能皆整合於 App 中：請至「個人檔案」內的「您的方案」卡片。開啟 ObraFácil 並依照下列步驟操作。",
+        "artigoBotao": "查看管理與取消訂閱步驟",
+        "passosTitulo": "操作路徑說明",
+        "passo1Titulo": "開啟 ObraFácil",
+        "passo1Texto": "在手機、Windows 應用程式或瀏覽器端登入您的個人帳號。",
+        "passo2Titulo": "開啟個人檔案",
+        "passo2Texto": "若使用手機，請點擊儀表板頂端的選單圖示（三條橫線），然後點擊您的個人檔案卡片；若使用電腦，請點擊側邊欄中您的名片。",
+        "passo3Titulo": "檢視「您的方案」卡片",
+        "passo3Texto": "在您的照片正下方，**「您的方案」**卡片會詳細顯示目前方案、已使用容量、工程專案數以及本月匯出報告總數。請點擊**「管理」**。",
+        "gerenciarTitulo": "「管理」按鈕功能說明",
+        "gerenciarCelular": "**透過手機訂閱**：將開啟 Google Play 或 App Store 的訂閱管理介面，供您辦理續約、查詢收據及取消訂閱。",
+        "gerenciarSite": "**透過網站或電腦端訂閱**：將在瀏覽器中開啟付款管理後台，供您更換信用卡、檢視發票收據或取消訂閱。",
+        "gerenciarLugar": "在單一平台辦理取消，不會自動取消在其他平台上成立之訂閱項目。",
+        "avisoTitulo": "收到扣款失敗通知嗎？",
+        "avisoTexto": "發卡銀行拒絕了您的訂閱扣款。請點擊**「管理」**並綁定有效的信用卡，以維持 PRO 方案資格。若您已完成補繳，請略過此通知。",
+        "artigosTitulo": "說明中心相關指南",
+        "artigoCartao": "認識「您的方案」資訊卡",
+        "artigoCancelar": "如何管理或取消方案訂閱",
+        "artigoPagamentos": "歷史交易紀錄與退款處理說明"
+    },
+    "suporte": {
+        "metaTitulo": "客服支援 · ObraFácil",
+        "metaDescricao": "透過 WhatsApp、電子郵件或 App 內客服案件聯絡 ObraFácil 支援團隊，並隨時查閱說明中心的圖文指南。",
+        "sobretitulo": "客服支援",
+        "titulo": "聯絡**客服支援團隊**",
+        "texto": "歡迎提出任何產品疑問、回報 App 異常問題或尋求帳務協助。我們的平均回覆時間為 24 至 48 個工作小時。",
+        "canaisTitulo": "聯絡管道",
+        "whatsappTitulo": "WhatsApp",
+        "whatsappTexto": "適合即時線上對話與快速諮詢簡短問題。",
+        "whatsappBotao": "開啟 WhatsApp",
+        "whatsappMensagem": "您好，我瀏覽了官方網站的客服支援頁面，需要 ObraFácil 的協助。",
+        "emailTitulo": "電子郵件",
+        "emailTexto": "適合發送詳細狀況描述、螢幕截圖與專案附件。若情況許可，請務必使用您註冊帳號的電子郵件發信。",
+        "emailBotao": "撰寫電子郵件",
+        "chamadoTitulo": "App 內客服案件",
+        "chamadoTexto": "該管道與您的帳號完全連動，亦為官方受理網站購買退款申請之正式管道（位於**「財務協助」**選單內）。客服回覆將發送至您的註冊信箱。",
+        "chamadoBotao": "如何建立客服案件",
+        "centralTitulo": "說明中心",
+        "centralTexto": "搭配真實操作畫面，逐一解說 App 每個介面功能的完整指南。",
+        "centralBotao": "前往說明中心",
+        "lojasTitulo": "透過 Google Play 或 App Store 購買？",
+        "lojasTexto": "由各手機應用程式商店成立之交易，其帳務收據與退款均由各該商店直接受理。如需取消，請利用**「您的方案」**資訊卡上的**「管理」**按鈕進行操作。",
+        "perfilLink": "查詢您的訂閱內容位置"
+    }
+}

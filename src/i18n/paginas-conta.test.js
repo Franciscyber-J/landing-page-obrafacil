@@ -91,7 +91,8 @@ test('endereço antigo abre a página no idioma do navegador', () => {
     assert.equal(destino('/pacote-downloads-extras/', ['es-AR', 'es']), '/es-mx/pago-confirmado/descargas-extra');
     assert.equal(destino('/expansao-20gb-ok/', ['es']), '/es-es/pago-confirmado/mas-20-gb');
     assert.equal(destino('/perfil', ['en-GB']), '/en-gb/profile');
-    assert.equal(destino('/perfil', ['de-DE']), '/en-us/profile');
+    assert.equal(destino('/perfil', ['sv-SE']), '/en-us/profile');
+    assert.equal(destino('/perfil', ['de-DE']), '/de-de/profil');
     assert.equal(destino('/suporte/', ['pt-AO']), '/pt-pt/apoio');
     assert.equal(destino('/suporte/', []), '/en-us/support');
     // Os endereços antigos de antes continuam iguais.

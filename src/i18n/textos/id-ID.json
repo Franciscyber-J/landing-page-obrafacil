@@ -1,0 +1,494 @@
+{
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil: aplikasi manajemen proyek konstruksi dan laporan",
+            "descricao": "Aplikasi manajemen proyek untuk ponsel dan PC: jadwal proyek, laporan harian foto, keuangan, tim dan portal klien. Mulai gratis sekarang."
+        },
+        "ajuda": {
+            "titulo": "Pusat Bantuan ObraFácil: panduan langkah demi langkah",
+            "descricao": "Panduan langkah demi langkah aplikasi ObraFácil: laporan harian, jadwal, keuangan proyek, tim dan portal klien dengan tangkapan layar nyata."
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · Pusat Bantuan ObraFácil",
+            "descricao": "{{descricao}} Panduan langkah demi langkah dengan layar asli ObraFácil."
+        },
+        "artigo": {
+            "titulo": "{{titulo}} — ObraFácil"
+        },
+        "app": {
+            "descricao": "Aplikasi manajemen proyek konstruksi untuk kontraktor, insinyur sipil, arsitek dan mandor: jadwal bertahap, laporan harian dengan foto dan PDF, keuangan proyek, penggajian tim, pengadaan dan gudang, serta portal pemantauan klien. Berfungsi di Android, iPhone, Windows dan web, bahkan offline di lokasi proyek.",
+            "categoria": "Manajemen konstruksi"
+        },
+        "imagemAlt": "Logo ObraFácil, aplikasi manajemen proyek konstruksi",
+        "llms": {
+            "sobre": "Apa itu ObraFácil",
+            "paraQuem": "Untuk siapa: Perusahaan konstruksi, insinyur sipil, arsitek, kontraktor, dan mandor yang mengelola satu atau banyak proyek, yang ingin mencatat pekerjaan harian, mengendalikan jadwal dan biaya, serta menunjukkan progres kepada klien.",
+            "plataformas": "Platform",
+            "recursos": "Fitur",
+            "papeis": "Siapa melakukan apa di proyek",
+            "planos": "Paket dan harga",
+            "precosPorIdioma": "Harga PRO dalam setiap bahasa dan mata uang situs",
+            "precoLinha": "{{mensal}} per bulan atau {{anual}} per tahun",
+            "paginas": "Halaman utama",
+            "idiomas": "Situs dan aplikasi tersedia dalam bahasa-bahasa ini",
+            "todosArtigos": "Semua artikel Pusat Bantuan"
+        }
+    },
+    "nav": {
+        "login": "Masuk",
+        "comecar": "Mulai gratis",
+        "recursos": "Fitur",
+        "precos": "Harga",
+        "ajuda": "Pusat Bantuan",
+        "lightMode": "Tema terang",
+        "darkMode": "Tema gelap",
+        "language": "Bahasa",
+        "chooseLanguage": "Pilih bahasa",
+        "themeToggle": "Beralih antara tema terang dan gelap",
+        "menu": "Buka atau tutup menu",
+        "inicio": "Beranda ObraFácil",
+        "navegacao": "Navigasi utama"
+    },
+    "hero": {
+        "plataformas": "Android · iPhone · Windows · Peramban",
+        "titulo": "Seluruh proyek **dalam satu tempat**",
+        "subtitulo": "Jadwal, laporan harian, keuangan, tim, dan pengadaan di ponsel serta komputer Anda. Dan klien Anda memantau progres lewat portal tanpa perlu terus menelepon Anda.",
+        "comecar": "Mulai gratis",
+        "verPlanos": "Lihat paket",
+        "semCartao": "Paket gratis tanpa batas waktu dan tanpa kartu kredit.",
+        "camposRotulo": "Bagian proyek dalam aplikasi",
+        "campos": {
+            "cronograma": {
+                "rotulo": "Jadwal",
+                "valor": "Tahapan, progres fisik dan tanggal"
+            },
+            "diario": {
+                "rotulo": "Laporan harian",
+                "valor": "Foto, cuaca dan tim dalam format PDF"
+            },
+            "financeiro": {
+                "rotulo": "Keuangan proyek",
+                "valor": "Anggaran vs realisasi, pemasukan dan pengeluaran"
+            },
+            "cliente": {
+                "rotulo": "Portal Klien",
+                "valor": "Progres dibagikan kepada pemilik proyek"
+            }
+        },
+        "legendaTela": "Tampilan aplikasi dengan data contoh",
+        "telas": {
+            "cronograma": "Tahap proyek dengan anggaran, opname, jumlah terutang, dan progres fisik",
+            "diario": "Laporan harian baru dengan cuaca, aktivitas, dan kejadian",
+            "financeiro": "Keuangan proyek dengan biaya per meter persegi, pemasukan, pengeluaran, dan saldo",
+            "cliente": "Portal Klien dengan pembaruan proyek terbaru"
+        },
+        "disponivelNo": "Tersedia di",
+        "baixarNa": "Unduh di",
+        "baixarPara": "Unduh untuk"
+    },
+    "pricing": {
+        "title": "Paket dan harga",
+        "toggleMonthly": "Bulanan",
+        "toggleAnnual": "Tahunan",
+        "periodoRotulo": "Periode penagihan",
+        "economia": "Hemat {{simbolo}}{{valor}}",
+        "perMonth": "/bulan",
+        "periodAnnual": "/tahun",
+        "gratis": {
+            "nome": "Gratis",
+            "desc": "Untuk memulai dan mengenal aplikasi.",
+            "cta": "Mulai gratis",
+            "itens": [
+                "1 proyek aktif Anda dalam satu waktu",
+                "7 laporan PDF per bulan dengan watermark",
+                "250 MB untuk foto dan dokumen",
+                "Klien mengikuti progres lewat portal"
+            ]
+        },
+        "pro": {
+            "nomeMensal": "PRO bulanan",
+            "nomeAnual": "PRO tahunan",
+            "desc": "Untuk kontraktor, insinyur, dan pengembang dengan banyak proyek.",
+            "itens": [
+                "Jumlah proyek tanpa batas",
+                "Laporan PDF tanpa batas tanpa watermark",
+                "10 GB untuk foto dan dokumen",
+                "PDF dengan logo dan catatan kaki perusahaan Anda",
+                "Laporan harian format ZIP dan file proyek offline",
+                "Akses Klien tersedia untuk setiap proyek"
+            ],
+            "itensAnual": [
+                "Semua fitur dalam PRO bulanan",
+                "Harga terkunci selama 12 bulan"
+            ],
+            "comparacao": "Jika membayar bulanan, 12 bulan berbiaya {{simbolo}}{{valor}}",
+            "equivale": "Setara dengan {{simbolo}}{{valor}} per bulan",
+            "ctaMensal": "Berlangganan PRO bulanan",
+            "ctaAnual": "Berlangganan PRO tahunan"
+        },
+        "renovacao": "Pembaruan otomatis. Batalkan kapan saja di tempat Anda berlangganan.",
+        "lojas": "Saat berlangganan di ponsel, harga dan penagihan mengikuti ketentuan Google Play atau App Store.",
+        "addons": "Khusus PRO: +20 GB penyimpanan (langganan terpisah) dan Akses Klien untuk membuka lebih banyak fitur di portal (biaya sekali bayar per proyek).",
+        "selo": "Nilai terbaik",
+        "gratisPreco": "Gratis selamanya"
+    },
+    "popup": {
+        "faixa": "Paket gratis tanpa batas waktu",
+        "title": "Sebelum keluar, coba di proyek Anda berikutnya",
+        "texto": "Buat akun gratis tanpa kartu kredit. Tambahkan proyek dan lihat jadwal, laporan harian foto, serta keuangan bekerja dengan klien yang memantau lewat portal.",
+        "cta": "Mulai gratis",
+        "lojas": "Atau unduh aplikasinya",
+        "fechar": "Tutup"
+    },
+    "whatsapp": {
+        "tooltip": "Hubungi Dukungan",
+        "message": "Halo, saya menghubungi dari situs web dan memiliki pertanyaan"
+    },
+    "social": {
+        "title": "Apa kata para profesional",
+        "test1": "«Klien saya sangat terkesan dengan aplikasi ini. Hal ini memberi kredibilitas lebih tinggi pada manajemen kami dan membuktikan nilai layanan saya.»",
+        "author1": "Budi M.",
+        "role1": "Insinyur Sipil",
+        "test2": "«Menulis laporan harian di Word pada akhir hari dulu menyita waktu satu jam. Sekarang saya menyelesaikannya dalam 5 menit di ponsel langsung di lokasi proyek.»",
+        "author2": "Rudi R.",
+        "role2": "Kontraktor Bangunan",
+        "test3": "«Mengirimkan laporan opname untuk persetujuan kini menjadi sangat praktis. Tanpa perdebatan yang tidak perlu, klien menyetujui semuanya dengan cepat.»",
+        "author3": "Slamet S.",
+        "role3": "Mandor Proyek",
+        "test4": "«Galeri foto sangat membantu kami dalam menyelaraskan detail penyelesaian pekerjaan dengan arsitek tanpa mengharuskannya datang ke lokasi setiap saat.»",
+        "author4": "Dewi T.",
+        "role4": "Arsitek",
+        "test5": "«Bahkan klien akhir memuji kerapian dan keteraturan sistem kami. Akhirnya kami menunjukkan profesionalisme yang sama dengan perusahaan konstruksi terbesar.»",
+        "author5": "Hendra B.",
+        "role5": "Kontraktor Utama",
+        "aviso": "Testimoni pengguna nyata, dipublikasikan dengan izin."
+    },
+    "faq": {
+        "title": "Pertanyaan yang sering diajukan",
+        "q1": "Apakah klien saya perlu membayar untuk memantau proyek?",
+        "a1": "Tidak. Klien memantau proyek melalui portal secara gratis. Jika Anda ingin memberikan akses lebih, seperti mengunduh foto dan melihat rincian keuangan lengkap, Akses Klien adalah biaya satu kali per proyek, yang Anda bayarkan di paket PRO.",
+        "q2": "Dapatkah saya menggunakan aplikasi di komputer dan ponsel?",
+        "a2": "Ya. ObraFácil berfungsi di Android, iPhone, Windows, dan peramban web, dengan data yang selalu tersinkronisasi di semua perangkat Anda.",
+        "q3": "Apakah data saya aman?",
+        "a3": "Data dikirimkan secara terenkripsi dan disimpan dengan aman di server Google, juga dalam bentuk terenkripsi. Setiap pengguna hanya melihat proyek yang diikutinya, sesuai izin peran masing-masing.",
+        "q4": "Data pribadi apa saja yang dikumpulkan?",
+        "a4": "Untuk akun: nama, email, dan nomor telepon; nomor NPWP hanya jika Anda memilih untuk mengisinya. Daftar lengkap dan tujuan penggunaan setiap data tercantum dalam Kebijakan Privasi.",
+        "q5": "Apakah aplikasi berfungsi tanpa koneksi internet?",
+        "a5": "Ya. Tanpa internet, aplikasi menyimpan data yang Anda masukkan langsung di perangkat dan mengirimkannya secara otomatis begitu koneksi pulih.",
+        "q6": "Apakah klien kehilangan akses ke file setelah proyek selesai?",
+        "a6": "Jika proyek telah mencapai penyelesaian 70% atau lebih saat masa akses berakhir, klien memiliki tambahan 15 hari untuk melihat dan mengunduh file yang dibagikan.",
+        "q7": "Apakah ObraFácil menggantikan penanggung jawab teknis atau izin resmi?",
+        "a7": "Tidak. Ini adalah alat bantu organisasi dan manajemen proyek, serta tidak menggantikan penanggung jawab teknis resmi maupun izin dan sertifikasi konstruksi yang diwajibkan hukum.",
+        "q8": "Dapatkah saya menghapus akun saya?",
+        "a8": "Ya, melalui Profil > Hapus Akun. Akun akan ditangguhkan terlebih dahulu selama 30 hari (dapat dibatalkan), kemudian proyek dan data Anda akan dihapus. Beberapa catatan, seperti riwayat pembayaran dan persetujuan Ketentuan, disimpan sesuai ketentuan Kebijakan Privasi.",
+        "q9": "Dapatkah saya membatalkan langganan PRO atau ruang penyimpanan tambahan?",
+        "a9": "Ya, kapan saja dan di platform yang sama tempat Anda berlangganan. Tidak akan ada tagihan perpanjangan berikutnya dan akses Anda tetap aktif hingga akhir periode yang telah dibayar.",
+        "q10": "Apa yang terjadi jika pembayaran perpanjangan gagal?",
+        "a10": "Akun akan otomatis kembali ke paket gratis. Tidak ada data yang dihapus; jika Anda melebihi batas paket gratis, hanya pengunggahan file baru yang akan dibatasi hingga Anda mengosongkan ruang atau berlangganan kembali.",
+        "mais": "Belum menemukan jawaban yang Anda cari?",
+        "verAjuda": "Kunjungi Pusat Bantuan"
+    },
+    "ajuda": {
+        "titulo": "Pusat Bantuan",
+        "heroiAntes": "Bagaimana kami dapat",
+        "heroiDestaque": "membantu",
+        "heroiDepois": "Anda?",
+        "heroiSubtitulo": "Panduan langkah demi langkah ObraFácil dengan tangkapan layar setiap menu dalam bahasa Anda.",
+        "buscaRotulo": "Cari di Pusat Bantuan",
+        "buscaPlaceholder": "Cari laporan harian, pekerja, PDF, klien…",
+        "buscaLimpar": "Hapus pencarian",
+        "buscaResultados": "Hasil pencarian",
+        "buscaSemResultado": "Tidak ada artikel yang ditemukan untuk “{{termo}}”. Coba kata lain atau hubungi dukungan.",
+        "buscasComuns": "Pencarian populer:",
+        "sugestao1": "Laporan harian offline",
+        "sugestao2": "Daftarkan pekerja",
+        "sugestao3": "PDF laporan harian",
+        "sugestao4": "Portal Klien",
+        "comeceTitulo": "Mulai dari sini",
+        "comeceSubtitulo": "Panduan lengkap yang memandu Anda dari login pertama hingga mendapatkan hasil nyata.",
+        "comecar": "Mulai",
+        "tipo_fluxo": "Panduan lengkap",
+        "tipo_funcao": "Langkah demi langkah",
+        "tipo_conceito": "Konsep dasar",
+        "assuntosTitulo": "Jelajahi berdasarkan topik",
+        "assuntosPerfil_todos": "Semua topik di Pusat Bantuan.",
+        "assuntosPerfil_gestor": "Topik untuk pengelola proyek.",
+        "assuntosPerfil_equipe": "Topik untuk tim yang bekerja di lokasi.",
+        "assuntosPerfil_cliente": "Topik untuk klien pemilik proyek.",
+        "assuntosVazio": "Belum ada artikel untuk profil ini. Lihat semua topik atau hubungi dukungan.",
+        "perfilGrupo": "Tampilkan topik untuk",
+        "perfil_todos": "Semua",
+        "perfil_gestor": "Pengelola",
+        "perfil_equipe": "Tim",
+        "perfil_cliente": "Klien",
+        "artigos_other": "{{count}} artikel panduan",
+        "essenciaisTitulo": "Hal penting",
+        "essenciaisSubtitulo": "Yang perlu diketahui setiap pengguna dalam beberapa hari pertama.",
+        "suporteTitulo": "Belum menemukan yang Anda cari?",
+        "suporteTexto": "Hubungi tim bantuan lewat WhatsApp atau buka tiket langsung di aplikasi.",
+        "suporteBotao": "Chat di WhatsApp",
+        "suporteMensagem": "Halo, saya datang dari Pusat Bantuan di situs web dan memiliki pertanyaan.",
+        "carregando": "Memuat Pusat Bantuan…",
+        "erroTitulo": "Tidak dapat memuat Pusat Bantuan",
+        "erroTexto": "Periksa koneksi internet Anda dan coba lagi.",
+        "tentarDeNovo": "Coba lagi",
+        "vazioTitulo": "Panduan kami sedang disiapkan",
+        "vazioTexto": "Artikel Pusat Bantuan akan segera hadir di sini. Sementara itu, tim dukungan siap menjawab pertanyaan Anda di WhatsApp.",
+        "naoEncontradoTitulo": "Artikel tidak ditemukan",
+        "naoEncontradoTexto": "Alamat ini tidak mengarah ke artikel mana pun. Mungkin telah diubah namanya; silakan cari melalui fitur pencarian.",
+        "assuntoNaoEncontrado": "Topik tidak ditemukan",
+        "voltarCentral": "Kembali ke Pusat Bantuan",
+        "trilha": "Anda berada di",
+        "outrosAssuntos": "Topik lainnya",
+        "paraPublico": "Untuk {{lista}}",
+        "publico_gestor": "pengelola",
+        "publico_equipe": "anggota tim",
+        "publico_cliente": "klien proyek",
+        "e": "dan",
+        "passos_other": "{{count}} langkah",
+        "passoNumero": "Langkah {{n}}",
+        "printAlt": "Layar aplikasi pada langkah {{n}}: {{titulo}}",
+        "nesteArtigo": "Dalam artikel ini",
+        "antesDeComecar": "Baca terlebih dahulu",
+        "relacionados": "Artikel terkait",
+        "navegacaoArtigos": "Artikel lain dalam topik ini",
+        "anterior": "Sebelumnya",
+        "proximo": "Berikutnya",
+        "appTitulo": "Ikuti langsung di aplikasi",
+        "appTexto": "Buka ObraFácil di tab lain dan ikuti langkah-langkahnya sambil membaca.",
+        "appBotao": "Buka ObraFácil",
+        "tambemEm": "Juga tersedia dalam"
+    },
+    "footer": {
+        "ctaTitle": "Siap merapikan manajemen proyek Anda berikutnya?",
+        "ctaBtn": "Mulai gratis",
+        "terms": "Ketentuan Layanan",
+        "privacy": "Kebijakan Privasi",
+        "help": "Pusat Bantuan",
+        "support": "Dukungan",
+        "tagline": "Manajemen proyek konstruksi jadi lebih mudah dan profesional.",
+        "rights": "Hak cipta dilindungi undang-undang.",
+        "language": "Bahasa situs",
+        "baixar": "Unduh aplikasi",
+        "produto": "Produk",
+        "legal": "Hukum",
+        "contato": "Hubungi kami",
+        "whatsapp": "WhatsApp"
+    },
+    "legal": {
+        "versao": "Versi dokumen: {{versao}}",
+        "emVigorDesde": "berlaku sejak {{data}}",
+        "valeAPartir": "mulai berlaku pada {{data}}",
+        "novaVersao": "Versi {{versao}} mulai berlaku pada {{data}}. Anda sudah dapat membaca rincian perubahannya.",
+        "lerNova": "Baca versi terbaru",
+        "vendoNova": "Anda sedang membaca versi baru. Hingga tanggal berlakunya, versi {{versao}} tetap diterapkan.",
+        "voltarAtual": "Kembali ke versi yang berlaku saat ini",
+        "sumario": "Di halaman ini",
+        "carregando": "Memuat teks…",
+        "erro": "Tidak dapat memuat teks saat ini. Silakan periksa koneksi Anda.",
+        "indisponivel": "Teks belum tersedia di alamat ini. Silakan hubungi suporte@appobrafacil.expertbr.com.",
+        "tentarDeNovo": "Coba lagi"
+    },
+    "cookies": {
+        "titulo": "Pengelolaan cookie",
+        "texto": "Situs ini menggunakan cookie esensial untuk memungkinkan Anda masuk dan menyimpan preferensi dengan aman.",
+        "saibaMais": "Pelajari selengkapnya di Kebijakan Privasi.",
+        "aceitar": "Setujui",
+        "recusar": "Tolak",
+        "preferencias": "Preferensi cookie"
+    },
+    "cliente": {
+        "titulo": "Progres langsung proyek untuk **klien Anda**",
+        "texto": "Klien mengikuti tahapan dan foto lewat tautan pribadi tanpa perlu menelepon atau mengirim pesan setiap hari. Biaya internal proyek dan upah tim tetap tersembunyi.",
+        "antes": "Sebelumnya: komunikasi berantakan di WhatsApp",
+        "depois": "Sekarang: portal proyek yang rapi",
+        "nome": "Portal Klien",
+        "hoje": "Hari ini",
+        "msg1": "Halo! Bagaimana perkembangan proyek hari ini? Ada foto terbaru?",
+        "msg2": "Apakah pemasangan lantai akan selesai sebelum Jumat depan?",
+        "msg3": "Halo. Saya minta mandor untuk segera mengirimkan fotonya sekarang.",
+        "conversaAviso": "Contoh percakapan dengan klien",
+        "pontos": [
+            "Klien Anda masuk dengan akun mereka sendiri melalui undangan yang Anda kirimkan.",
+            "Ingin berbagi lebih banyak? Dengan Akses Klien (di paket PRO, biaya satu kali per proyek), Anda memilih apa yang dapat mereka lihat dan unduh: foto, keuangan lengkap, jadwal rinci, dan membuka laporan kejadian.",
+            "Pada proyek yang selesai 70% atau lebih, saat akses berakhir klien masih memiliki waktu 15 hari untuk mengunduh apa yang telah dibagikan."
+        ],
+        "telaPortal": "Portal Klien dengan pembaruan proyek terbaru",
+        "telaAcesso": "Layar saat pengelola menentukan apa yang dapat dilihat klien"
+    },
+    "recursos": {
+        "titulo": "Semua yang dibutuhkan proyek Anda **dalam satu tempat**",
+        "itens": {
+            "cronograma": {
+                "titulo": "Jadwal bertahap",
+                "texto": "Susun tahapan sendiri atau buat 19 tahapan standar dari nilai kontrak, dan pantau progres fisik setiap tahap."
+            },
+            "diario": {
+                "titulo": "Laporan harian",
+                "texto": "Cuaca, aktivitas, kejadian, tim yang hadir, foto, dan tanda tangan. Diekspor dalam format PDF siap kirim."
+            },
+            "financeiro": {
+                "titulo": "Keuangan proyek",
+                "texto": "Anggaran, opname, dan tagihan yang dapat dibayarkan di setiap tahap, dilengkapi pemasukan, pengeluaran, dan laporan keuangan."
+            },
+            "equipe": {
+                "titulo": "Tim dan penggajian",
+                "texto": "Daftarkan pekerja, catat kehadiran harian dalam laporan, dan hitung daftar gaji dengan mudah."
+            },
+            "compras": {
+                "titulo": "Pengadaan dan gudang",
+                "texto": "Catat pembelian disertai faktur dan kendalikan stok material serta alat di setiap proyek."
+            },
+            "marca": {
+                "titulo": "Laporan dengan merek Anda",
+                "texto": "Pada paket PRO, semua file PDF menyertakan logo dan catatan kaki resmi perusahaan Anda."
+            },
+            "offline": {
+                "titulo": "Tanpa sinyal di lokasi",
+                "texto": "Aplikasi menyimpan catatan Anda secara lokal dan otomatis mengirimkannya saat koneksi pulih."
+            },
+            "aparelhos": {
+                "titulo": "Di semua perangkat Anda",
+                "texto": "Android, iPhone, Windows, dan browser selalu terhubung dengan data yang sama."
+            }
+        },
+        "tela": "Ringkasan proyek dengan nilai kontrak, batas waktu, dan progres fisik keseluruhan"
+    },
+    "equipe": {
+        "titulo": "Setiap orang melihat apa yang dibutuhkan",
+        "texto": "Undang insinyur, tim lapangan, dan klien ke dalam proyek. Pemilik proyek menentukan siapa yang bergabung dan hak akses masing-masing peran.",
+        "papeis": {
+            "gestor": {
+                "nome": "Pengelola",
+                "desc": "Akses penuh: membuat dan mengatur proyek, mengelola keuangan, mengundang tim, dan menghasilkan semua laporan."
+            },
+            "engenheiro": {
+                "nome": "Insinyur",
+                "desc": "Memantau dan memperbarui proyek sesuai izin yang Anda berikan."
+            },
+            "equipe": {
+                "nome": "Tim lapangan",
+                "desc": "Mencatat rutinitas lapangan: laporan harian, foto proyek, dan kehadiran pekerja."
+            },
+            "cliente": {
+                "nome": "Klien",
+                "desc": "Memantau melalui Portal Klien apa yang Anda izinkan."
+            }
+        },
+        "tela": "Laporan harian dengan daftar tim dan pencatatan kehadiran masing-masing"
+    },
+    "chamada": {
+        "titulo": "Siap mengelola **proyek Anda** dengan lebih rapi?",
+        "texto": "Paket gratis tidak memiliki batas waktu. Berlangganan PRO kapan pun Anda membutuhkan kapasitas lebih besar.",
+        "acao": "Mulai gratis",
+        "duvida": "Ada pertanyaan? Hubungi kami langsung di WhatsApp.",
+        "whatsapp": "Kirim pesan di WhatsApp"
+    },
+    "conta": {
+        "abrirApp": "Buka ObraFácil di peramban",
+        "lojasTitulo": "ObraFácil di semua perangkat",
+        "lojasTexto": "Masuk dengan akun yang sama di ponsel, komputer, atau browser: apa yang Anda beli berlaku di semuanya.",
+        "falarSuporte": "Hubungi tim dukungan"
+    },
+    "pagamento": {
+        "metaTitulo": "Pembayaran dikonfirmasi · ObraFácil",
+        "metaDescricao": "Pembayaran Anda berhasil. Lihat kapan pembelian aktif di ObraFácil dan apa yang perlu dilakukan jika tertunda.",
+        "agoraTitulo": "Apa yang terjadi sekarang",
+        "voltarTitulo": "Kembali ke ObraFácil",
+        "voltarTexto": "Kembali ke tab browser atau aplikasi Windows tempat Anda melakukan pembelian. Jika sudah ditutup, buka kembali ObraFácil dengan akun yang sama.",
+        "automaticoTitulo": "Pengaktifan berjalan otomatis",
+        "automaticoTexto": "Stripe memberitahu server kami secara instan, dan fitur yang Anda beli akan langsung aktif di akun Anda. Anda tidak perlu melakukan apa pun.",
+        "conferirTitulo": "Periksa di aplikasi",
+        "demoraTitulo": "Jika pembelian belum muncul",
+        "demoraEsperar": "Tunggu satu menit, lalu tutup dan buka kembali aplikasi. Di browser, muat ulang halaman ObraFácil.",
+        "demoraSairEntrar": "Masih di paket gratis? Keluar akun lalu masuk kembali dengan email pembayaran: aplikasi akan mendeteksi langganan web dan mengaktifkan PRO.",
+        "demoraRestaurar": "**Pulihkan pembelian** tidak berlaku di sini: fitur tersebut hanya mencari pembelian yang dilakukan lewat toko aplikasi ponsel (Google Play atau App Store).",
+        "demoraSuporte": "Jika masalah berlanjut, hubungi tim dukungan dan cantumkan email yang digunakan saat membayar.",
+        "compras": {
+            "geral": {
+                "sobretitulo": "Pembayaran dikonfirmasi",
+                "titulo": "Pembayaran **dikonfirmasi**",
+                "texto": "Pembayaran Anda berhasil diselesaikan. Dalam beberapa saat ObraFácil akan menerima konfirmasi dan membuka fitur yang Anda beli.",
+                "conferir": "Buka ObraFácil dengan akun yang sama saat membeli: fitur baru Anda akan muncul otomatis.",
+                "artigo": "Di mana melihat riwayat pembayaran"
+            },
+            "pro": {
+                "sobretitulo": "Langganan dikonfirmasi",
+                "titulo": "Selamat datang di ObraFácil **PRO**",
+                "texto": "Langganan Anda telah dikonfirmasi. Dalam beberapa saat PRO aktif otomatis di akun Anda, baik di ponsel, komputer, maupun browser.",
+                "conferir": "Buka **Profil**: lencana di kartu atas berubah menjadi **Anggota PRO** dan kartu **Paket Anda** menampilkan **ObraFácil PRO**.",
+                "artigo": "Saya membeli PRO dari situs web: cara mengaktifkannya"
+            },
+            "acesso": {
+                "sobretitulo": "Pembayaran dikonfirmasi",
+                "titulo": "Pembayaran **Akses Klien** dikonfirmasi",
+                "texto": "Biaya proyek telah dibayar. Dalam beberapa saat aplikasi membuka fitur berbayar Portal Klien untuk klien proyek ini.",
+                "conferir": "Buka proyek: di bagian bawah **MENU PROYEK**, kartu **Akses Klien** menampilkan status **Akses Diberikan**. Ketuk **ATUR** untuk memilih yang dapat dilihat klien.",
+                "artigo": "Apa itu fitur Akses Klien"
+            },
+            "downloads": {
+                "sobretitulo": "Pembayaran dikonfirmasi",
+                "titulo": "**Paket Tambahan** proyek dikonfirmasi",
+                "texto": "Dalam beberapa saat proyek mendapatkan tambahan 2 kali unduhan penuh ZIP galeri yang dapat digunakan oleh semua anggota.",
+                "conferir": "Kembali ke **Galeri proyek** dan ketuk **Unduh semua** sekali lagi.",
+                "artigo": "Cara membeli unduhan galeri tambahan"
+            },
+            "armazenamento": {
+                "sobretitulo": "Langganan dikonfirmasi",
+                "titulo": "Tambahan **20 GB** untuk proyek Anda",
+                "texto": "Penambahan ruang penyimpanan telah dikonfirmasi. Aplikasi akan menambahkan 20 GB ke kapasitas paket Anda dalam sekejap.",
+                "conferir": "Buka **Profil**: di bawah bilah **Penyimpanan**, kartu **Paket Anda** menampilkan **Ekspansi +20 GB aktif**.",
+                "artigo": "Cara menambah 20 GB penyimpanan"
+            }
+        }
+    },
+    "perfil": {
+        "metaTitulo": "Langganan Anda · ObraFácil",
+        "metaDescricao": "Lihat tempat untuk menemukan paket Anda, kartu pembayaran, dan pembatalan langganan di ObraFácil.",
+        "sobretitulo": "Langganan Anda",
+        "titulo": "Langganan Anda dikelola di menu **Profil**",
+        "texto": "Paket, tagihan, kartu, dan pembatalan ada di dalam aplikasi: di Profil, pada kartu Paket Anda. Buka ObraFácil dan ikuti langkah di bawah.",
+        "artigoBotao": "Cara mengelola atau membatalkan",
+        "passosTitulo": "Cara mengaksesnya",
+        "passo1Titulo": "Buka ObraFácil",
+        "passo1Texto": "Masuk dengan akun Anda di ponsel, di aplikasi Windows, atau di browser.",
+        "passo2Titulo": "Buka Profil",
+        "passo2Texto": "Di ponsel, ketuk menu (tiga garis) di bagian atas dasbor lalu ketuk kartu profil Anda. Di komputer, klik kartu Anda di bilah sisi.",
+        "passo3Titulo": "Gunakan kartu Paket Anda",
+        "passo3Texto": "Tepat di bawah foto Anda, kartu **Paket Anda** menampilkan paket, ruang terpakai, proyek, dan laporan bulan ini. Ketuk **Kelola**.",
+        "gerenciarTitulo": "Tujuan tombol Kelola",
+        "gerenciarCelular": "**Berlangganan di ponsel**: membuka menu langganan Google Play atau App Store untuk pembaruan, tagihan, dan pembatalan.",
+        "gerenciarSite": "**Berlangganan di situs web atau komputer**: membuka halaman pembayaran di browser untuk mengganti kartu, melihat tagihan, atau membatalkan.",
+        "gerenciarLugar": "Membatalkan di satu platform tidak membatalkan langganan yang dibuat di platform lainnya.",
+        "avisoTitulo": "Menerima pemberitahuan pembayaran gagal diproses?",
+        "avisoTexto": "Bank Anda menolak tagihan langganan. Ketuk **Kelola** dan masukkan kartu yang valid agar tidak kehilangan PRO. Jika sudah membayar, abaikan pesan ini.",
+        "artigosTitulo": "Di Pusat Bantuan",
+        "artigoCartao": "Memahami kartu Paket Anda",
+        "artigoCancelar": "Cara mengelola atau membatalkan langganan",
+        "artigoPagamentos": "Riwayat pembayaran dan pengembalian dana"
+    },
+    "suporte": {
+        "metaTitulo": "Dukungan · ObraFácil",
+        "metaDescricao": "Hubungi dukungan ObraFácil lewat WhatsApp, email, atau tiket bantuan aplikasi, dan pelajari panduannya di Pusat Bantuan.",
+        "sobretitulo": "Dukungan",
+        "titulo": "Hubungi **tim dukungan**",
+        "texto": "Ajukan pertanyaan, laporkan kendala aplikasi, atau minta bantuan terkait tagihan. Rata-rata waktu respons kami adalah 24 hingga 48 jam kerja.",
+        "canaisTitulo": "Cara menghubungi kami",
+        "whatsappTitulo": "WhatsApp",
+        "whatsappTexto": "Untuk mengobrol langsung dan bertanya secara cepat.",
+        "whatsappBotao": "Buka WhatsApp",
+        "whatsappMensagem": "Halo, saya menghubungi dari halaman dukungan di situs web dan butuh bantuan terkait ObraFácil.",
+        "emailTitulo": "Email",
+        "emailTexto": "Untuk mengirimkan rincian, tangkapan layar, dan lampiran. Jika memungkinkan, kirim dari alamat email akun Anda.",
+        "emailBotao": "Tulis email",
+        "chamadoTitulo": "Tiket bantuan di aplikasi",
+        "chamadoTexto": "Tercatat di akun Anda dan merupakan jalur resmi untuk meminta pengembalian dana pembelian web di menu **Bantuan Keuangan**. Balasan dikirim ke email akun.",
+        "chamadoBotao": "Cara membuka tiket bantuan",
+        "centralTitulo": "Pusat Bantuan",
+        "centralTexto": "Panduan langkah demi langkah untuk setiap tampilan aplikasi dengan tangkapan layar nyata.",
+        "centralBotao": "Buka Pusat Bantuan",
+        "lojasTitulo": "Membeli lewat Google Play atau App Store?",
+        "lojasTexto": "Penagihan dan pengembalian dana untuk transaksi ini dikelola langsung oleh toko aplikasi terkait. Untuk membatalkan, gunakan **Kelola** di kartu **Paket Anda**.",
+        "perfilLink": "Di mana melihat langganan Anda"
+    }
+}

@@ -2,6 +2,7 @@
 // precisar interpretar o visual, o que é o ObraFácil, quem publica, quanto custa em cada país e onde a página
 // fica no site. Tudo sai dos mesmos textos e preços que a página mostra (nada inventado: sem nota de avaliação).
 
+import { idiomaDasTelas } from '../telas.js';
 import { IDIOMAS, caminhoAjuda, caminhoInicio, caminhoSuporte } from '../i18n/idiomas.js';
 import { precosDoIdioma } from '../i18n/pricing.js';
 import { EMAIL_SUPORTE, WINDOWS, appStore, googlePlay } from '../links.js';
@@ -79,7 +80,7 @@ function aplicativo(t, codigo) {
         url: absoluto(caminhoInicio(codigo)),
         inLanguage: codigo,
         image: absoluto(IMAGEM.caminho),
-        screenshot: ['etapas', 'rdo', 'financeiro', 'portal'].map((tela) => absoluto(`/telas/${codigo}/${tela}.webp`)),
+        screenshot: ['etapas', 'rdo', 'financeiro', 'portal'].map((tela) => absoluto(`/telas/${idiomaDasTelas(codigo)}/${tela}.webp`)),
         downloadUrl: [googlePlay(codigo), appStore(), WINDOWS],
         featureList: RECURSOS.map((id) => t(`recursos.itens.${id}.titulo`)),
         offers: [

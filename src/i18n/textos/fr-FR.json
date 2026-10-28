@@ -1,0 +1,498 @@
+{
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil : application de gestion de chantier avec journal",
+            "descricao": "Gestion de chantier sur mobile et PC : planning, journal avec photos, finances, équipe et portail client. Commencez gratuitement."
+        },
+        "ajuda": {
+            "titulo": "Centre d'aide ObraFácil : guides pas à pas",
+            "descricao": "Guides pas à pas pour l'application ObraFácil : rapports journaliers, planning, finances, équipe et portail client, avec vrais écrans."
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · Centre d'aide ObraFácil",
+            "descricao": "{{descricao}} Guides pas à pas avec de vrais écrans d'ObraFácil."
+        },
+        "artigo": {
+            "titulo": "{{titulo}} — ObraFácil"
+        },
+        "app": {
+            "descricao": "Application de gestion de chantier pour constructeurs, artisans, maîtres d'œuvre, ingénieurs et architectes : planning par étapes, rapports journaliers avec photos et PDF, finances du chantier, paie des équipes, achats et stock, et portail pour le suivi client. Fonctionne sur Android, iPhone, Windows et le web, même hors ligne sur le chantier.",
+            "categoria": "Gestion de chantier"
+        },
+        "imagemAlt": "Logo ObraFácil, application de gestion de chantier",
+        "llms": {
+            "sobre": "Ce qu'est ObraFácil",
+            "paraQuem": "À qui s'adresse l'application : entreprises du BTP, ingénieurs civils, architectes, artisans et chefs de chantier gérant un ou plusieurs chantiers, qui souhaitent consigner le travail quotidien, garder le contrôle des délais et des coûts et montrer l'avancement au client.",
+            "plataformas": "Plateformes",
+            "recursos": "Fonctionnalités",
+            "papeis": "Qui fait quoi sur un chantier",
+            "planos": "Offres et tarifs",
+            "precosPorIdioma": "Prix PRO dans chaque langue et devise du site",
+            "precoLinha": "{{mensal}} par mois ou {{anual}} par an",
+            "paginas": "Pages principales",
+            "idiomas": "Le site et l'application sont disponibles dans ces langues",
+            "todosArtigos": "Tous les articles du Centre d'aide"
+        }
+    },
+    "nav": {
+        "login": "Se connecter",
+        "comecar": "Commencer gratuitement",
+        "recursos": "Fonctionnalités",
+        "precos": "Tarifs",
+        "ajuda": "Centre d'aide",
+        "lightMode": "Thème clair",
+        "darkMode": "Thème sombre",
+        "language": "Langue",
+        "chooseLanguage": "Choisir la langue",
+        "themeToggle": "Basculer entre le thème clair et le thème sombre",
+        "menu": "Ouvrir ou fermer le menu",
+        "inicio": "Page d'accueil d'ObraFácil",
+        "navegacao": "Navigation principale"
+    },
+    "hero": {
+        "plataformas": "Android · iPhone · Windows · Navigateur",
+        "titulo": "Tout le chantier **au même endroit**",
+        "subtitulo": "Planning, journal de chantier, finances, équipe et achats sur votre téléphone et votre ordinateur. Et votre client suit le chantier sur le portail, sans avoir besoin de vous appeler.",
+        "comecar": "Commencer gratuitement",
+        "verPlanos": "Voir les offres",
+        "semCartao": "Offre gratuite sans limite de temps et sans carte bancaire.",
+        "camposRotulo": "Parties du chantier dans l'application",
+        "campos": {
+            "cronograma": {
+                "rotulo": "Planning",
+                "valor": "Étapes, avancement physique et dates"
+            },
+            "diario": {
+                "rotulo": "Journal de chantier",
+                "valor": "Photos, météo et effectif, en PDF"
+            },
+            "financeiro": {
+                "rotulo": "Finances du chantier",
+                "valor": "Budgété et dépensé, entrées et sorties"
+            },
+            "cliente": {
+                "rotulo": "Portail client",
+                "valor": "L'avancement partagé avec qui paie"
+            }
+        },
+        "legendaTela": "Écran de l'application, avec données d'exemple",
+        "telas": {
+            "cronograma": "Étapes du chantier avec montants budgétés, métrés, montants à payer et avancement physique",
+            "diario": "Nouveau rapport journalier avec météo, activités et incidents",
+            "financeiro": "Finances du chantier avec coût au mètre carré, entrées, sorties et solde",
+            "cliente": "Portail client avec les dernières actualités du chantier"
+        },
+        "disponivelNo": "Disponible sur",
+        "baixarNa": "Télécharger sur",
+        "baixarPara": "Télécharger pour"
+    },
+    "pricing": {
+        "title": "Offres et tarifs",
+        "toggleMonthly": "Mensuel",
+        "toggleAnnual": "Annuel",
+        "periodoRotulo": "Mode de facturation",
+        "economia": "Économisez {{simbolo}}{{valor}}",
+        "perMonth": "/mois",
+        "periodAnnual": "/an",
+        "gratis": {
+            "nome": "Gratuit",
+            "desc": "Pour démarrer et découvrir l'application.",
+            "cta": "Commencer gratuitement",
+            "itens": [
+                "1 chantier à vous à la fois",
+                "7 rapports PDF par mois avec filigrane",
+                "250 Mo pour photos et fichiers",
+                "Suivi du chantier par le client sur le portail"
+            ]
+        },
+        "pro": {
+            "nomeMensal": "PRO mensuel",
+            "nomeAnual": "PRO annuel",
+            "desc": "Pour les constructeurs, ingénieurs et artisans gérant plusieurs chantiers.",
+            "itens": [
+                "Chantiers illimités",
+                "Rapports PDF illimités sans filigrane",
+                "10 Go pour photos et fichiers",
+                "PDF avec le logo et le pied de page de votre entreprise",
+                "Rapports journaliers en ZIP et fichiers du chantier hors ligne",
+                "Accès client disponible pour chaque chantier"
+            ],
+            "itensAnual": [
+                "Tout ce que contient le PRO mensuel",
+                "Prix bloqué pendant 12 mois"
+            ],
+            "comparacao": "En payant au mois, 12 mois reviennent à {{simbolo}}{{valor}}",
+            "equivale": "Revient à {{simbolo}}{{valor}} par mois",
+            "ctaMensal": "S'abonner à PRO mensuel",
+            "ctaAnual": "S'abonner à PRO annuel"
+        },
+        "renovacao": "Renouvellement automatique. Résiliez quand vous voulez, au même endroit où vous avez souscrit.",
+        "lojas": "En vous abonnant sur mobile, le prix et la facturation sont ceux de Google Play ou de l'App Store.",
+        "addons": "Réservé au PRO : +20 Go de stockage (abonnement séparé) et l'Accès client, qui débloque plus de fonctionnalités sur le portail (forfait unique par chantier).",
+        "selo": "Meilleure offre",
+        "gratisPreco": "Gratuit pour toujours"
+    },
+    "popup": {
+        "faixa": "Offre gratuite sans limite de temps",
+        "title": "Avant de partir, testez sur votre prochain chantier",
+        "texto": "Créez votre compte gratuit, sans carte bancaire. Ajoutez un chantier et voyez le planning, le journal avec photos et les finances fonctionner, avec votre client qui suit tout sur le portail.",
+        "cta": "Commencer gratuitement",
+        "lojas": "Ou téléchargez l'application",
+        "fechar": "Fermer"
+    },
+    "whatsapp": {
+        "tooltip": "Contacter l'assistance",
+        "message": "Bonjour, je viens du site internet et j'ai une question"
+    },
+    "social": {
+        "title": "Ce que disent les professionnels",
+        "test1": "« Mes clients ont été très impressionnés par l'application. Elle a apporté beaucoup plus de crédibilité et a justifié la valeur de ma gestion. »",
+        "author1": "Charles M.",
+        "role1": "Ingénieur civil",
+        "test2": "« Rédiger le journal de chantier sous Word à la fin de la journée me prenait une heure. Maintenant, je le fais en 5 minutes sur mon téléphone directement sur le chantier. »",
+        "author2": "Paulo R.",
+        "role2": "Entrepreneur en bâtiment",
+        "test3": "« L'envoi des situations de travaux pour validation est devenu très simple. Sans discussions inutiles, le client valide tout rapidement. »",
+        "author3": "Roberto S.",
+        "role3": "Conducteur de travaux",
+        "test4": "« La galerie photos nous a énormément aidés pour régler les détails de finition avec l'architecte, sans qu'elle ait besoin de se déplacer sur le chantier à chaque fois. »",
+        "author4": "Mariana T.",
+        "role4": "Architecte",
+        "test5": "« Même le client final a loué notre organisation impeccable. Nous renvoyons enfin le même professionnalisme que les plus grandes entreprises du secteur. »",
+        "author5": "Fernando B.",
+        "role5": "Constructeur général",
+        "aviso": "Témoignages de clients, publiés avec leur accord."
+    },
+    "faq": {
+        "title": "Questions fréquentes",
+        "q1": "Mon client paie-t-il pour suivre le chantier ?",
+        "a1": "Non. Le client suit le chantier via le portail sans rien payer. Si vous souhaitez lui donner plus d'accès, comme télécharger des photos et voir l'ensemble des finances, l'Accès Client est un forfait unique par chantier, payé par vous avec l'abonnement PRO.",
+        "q2": "Puis-je l'utiliser sur ordinateur et sur mobile ?",
+        "a2": "Oui. ObraFácil fonctionne sur Android, iPhone, Windows et dans le navigateur web, avec les mêmes données synchronisées sur tous vos appareils.",
+        "q3": "Mes données sont-elles en sécurité ?",
+        "a3": "Les données sont transmises de façon chiffrée et stockées en toute sécurité sur les serveurs de Google, également sous forme chiffrée. Chaque utilisateur ne voit que les chantiers auxquels il participe, selon les autorisations de son rôle.",
+        "q4": "Quelles données personnelles sont collectées ?",
+        "a4": "Pour le compte : nom, e-mail et numéro de téléphone ; le numéro d'identification fiscale uniquement si vous choisissez de le renseigner. La liste complète et la finalité de chaque donnée figurent dans la Politique de confidentialité.",
+        "q5": "L'application fonctionne-t-elle sans connexion Internet ?",
+        "a5": "Oui. Sans Internet, l'application enregistre vos saisies sur votre appareil et les transmet automatiquement dès que la connexion est rétablie.",
+        "q6": "Le client perd-il l'accès aux fichiers une fois le chantier terminé ?",
+        "a6": "Si le chantier est achevé à 70 % ou plus à l'expiration de l'accès, le client dispose de 15 jours supplémentaires pour consulter et télécharger les fichiers partagés.",
+        "q7": "ObraFácil remplace-t-il le maître d'œuvre ou l'attestation légale ?",
+        "a7": "Non. C'est un outil d'organisation et de gestion de chantier, il ne remplace pas le responsable technique qualifié ni les autorisations légales obligatoires.",
+        "q8": "Puis-je supprimer mon compte ?",
+        "a8": "Oui, depuis Profil > Supprimer le compte. Le compte est d'abord suspendu pendant 30 jours (réversible), puis vos chantiers et données sont supprimés. Certains enregistrements, comme les paiements et l'acceptation des Conditions, sont conservés conformément à la Politique de confidentialité.",
+        "q9": "Puis-je résilier l'abonnement PRO ou l'extension de stockage ?",
+        "a9": "Oui, à tout moment et au même endroit où vous avez souscrit. Aucun nouveau prélèvement de renouvellement n'aura lieu et votre accès reste actif jusqu'à la fin de la période déjà réglée.",
+        "q10": "Que se passe-t-il en cas d'échec du paiement de renouvellement ?",
+        "a10": "Le compte repasse automatiquement à l'offre gratuite. Aucune donnée n'est supprimée ; si vous dépassez la limite de l'offre gratuite, seul l'envoi de nouveaux fichiers est bloqué jusqu'à ce que vous libériez de l'espace ou renouveliez votre abonnement.",
+        "mais": "Vous n'avez pas trouvé votre réponse ?",
+        "verAjuda": "Consulter le Centre d'aide"
+    },
+    "ajuda": {
+        "titulo": "Centre d'aide",
+        "heroiAntes": "Comment pouvons-nous vous",
+        "heroiDestaque": "aider",
+        "heroiDepois": " ?",
+        "heroiSubtitulo": "Guides pas à pas d'ObraFácil, avec une capture de chaque écran dans votre langue.",
+        "buscaRotulo": "Rechercher dans le Centre d'aide",
+        "buscaPlaceholder": "Rechercher un rapport journalier, collaborateur, PDF, client…",
+        "buscaLimpar": "Effacer la recherche",
+        "buscaResultados": "Résultats de recherche",
+        "buscaSemResultado": "Aucun article trouvé pour « {{termo}} ». Essayez un autre mot ou contactez l'assistance.",
+        "buscasComuns": "Recherches fréquentes :",
+        "sugestao1": "Rapport journalier hors ligne",
+        "sugestao2": "Ajouter un collaborateur",
+        "sugestao3": "Rapport PDF",
+        "sugestao4": "Portail client",
+        "comeceTitulo": "Commencez par ici",
+        "comeceSubtitulo": "Des guides complets pour vous accompagner de votre première connexion aux résultats concrets.",
+        "comecar": "Commencer",
+        "tipo_fluxo": "Guide complet",
+        "tipo_funcao": "Pas à pas",
+        "tipo_conceito": "Comprendre",
+        "assuntosTitulo": "Parcourir par thème",
+        "assuntosPerfil_todos": "Tous les thèmes du Centre d'aide.",
+        "assuntosPerfil_gestor": "Thèmes pour qui gère le chantier.",
+        "assuntosPerfil_equipe": "Thèmes pour qui travaille sur le chantier.",
+        "assuntosPerfil_cliente": "Thèmes pour le client du chantier.",
+        "assuntosVazio": "Il n'y a pas encore d'article pour ce profil. Consultez tous les thèmes ou contactez l'assistance.",
+        "perfilGrupo": "Afficher les thèmes pour",
+        "perfil_todos": "Tous",
+        "perfil_gestor": "Gestionnaire",
+        "perfil_equipe": "Équipe",
+        "perfil_cliente": "Client final",
+        "artigos_one": "{{count}} article d'aide",
+        "artigos_many": "{{count}} articles d'aide",
+        "artigos_other": "{{count}} articles d'aide",
+        "essenciaisTitulo": "Essentiels",
+        "essenciaisSubtitulo": "Ce que tout le monde doit savoir dès les premiers jours.",
+        "suporteTitulo": "Vous n'avez pas trouvé ce que vous cherchiez ?",
+        "suporteTexto": "Discutez avec l'assistance sur WhatsApp ou ouvrez un ticket directement dans l'application.",
+        "suporteBotao": "Discuter sur WhatsApp",
+        "suporteMensagem": "Bonjour, je viens du Centre d'aide du site et j'ai une question.",
+        "carregando": "Chargement du Centre d'aide…",
+        "erroTitulo": "Impossible de charger le Centre d'aide",
+        "erroTexto": "Vérifiez votre connexion internet et réessayez.",
+        "tentarDeNovo": "Réessayer",
+        "vazioTitulo": "Nos guides sont en préparation",
+        "vazioTexto": "Les articles du Centre d'aide apparaîtront bientôt ici. En attendant, l'assistance répond à vos questions sur WhatsApp.",
+        "naoEncontradoTitulo": "Article non trouvé",
+        "naoEncontradoTexto": "Cette adresse ne mène à aucun article. Il a peut-être été renommé ; effectuez une recherche dans le Centre d'aide.",
+        "assuntoNaoEncontrado": "Thème non trouvé",
+        "voltarCentral": "Retour au Centre d'aide",
+        "trilha": "Vous êtes ici",
+        "outrosAssuntos": "Autres thèmes",
+        "paraPublico": "Pour {{lista}}",
+        "publico_gestor": "gestionnaires",
+        "publico_equipe": "membres de l'équipe",
+        "publico_cliente": "clients finaux",
+        "e": "et",
+        "passos_one": "{{count}} étape",
+        "passos_many": "{{count}} étapes",
+        "passos_other": "{{count}} étapes",
+        "passoNumero": "Étape {{n}}",
+        "printAlt": "Écran de l'app à l'étape {{n}} : {{titulo}}",
+        "nesteArtigo": "Dans cet article",
+        "antesDeComecar": "À lire avant",
+        "relacionados": "Articles associés",
+        "navegacaoArtigos": "Autres articles sur ce thème",
+        "anterior": "Précédent",
+        "proximo": "Suivant",
+        "appTitulo": "Pratiquez dans l'application",
+        "appTexto": "Ouvrez ObraFácil dans un autre onglet et suivez les étapes au fil de votre lecture.",
+        "appBotao": "Ouvrir ObraFácil",
+        "tambemEm": "Également disponible en"
+    },
+    "footer": {
+        "ctaTitle": "Prêt à organiser votre prochain chantier ?",
+        "ctaBtn": "Commencer gratuitement",
+        "terms": "Conditions d'utilisation",
+        "privacy": "Politique de confidentialité",
+        "help": "Centre d'aide",
+        "support": "Assistance",
+        "tagline": "La gestion de chantier en toute simplicité.",
+        "rights": "Tous droits réservés.",
+        "language": "Langue du site",
+        "baixar": "Télécharger l'application",
+        "produto": "Produit",
+        "legal": "Mentions légales",
+        "contato": "Nous contacter",
+        "whatsapp": "WhatsApp"
+    },
+    "legal": {
+        "versao": "Version n° {{versao}}",
+        "emVigorDesde": "en vigueur depuis le {{data}}",
+        "valeAPartir": "applicable à partir du {{data}}",
+        "novaVersao": "La version {{versao}} prendra effet le {{data}}. Vous pouvez déjà consulter les changements.",
+        "lerNova": "Lire la nouvelle version",
+        "vendoNova": "Vous consultez la nouvelle version. Jusqu'à son entrée en vigueur, la version {{versao}} reste applicable.",
+        "voltarAtual": "Revenir à la version en vigueur",
+        "sumario": "Sur cette page",
+        "carregando": "Chargement du texte…",
+        "erro": "Impossible de charger le texte pour le moment. Veuillez vérifier votre connexion.",
+        "indisponivel": "Le texte n'est pas encore disponible à cette adresse. Écrivez à suporte@appobrafacil.expertbr.com.",
+        "tentarDeNovo": "Réessayer"
+    },
+    "cookies": {
+        "titulo": "Gestion des cookies",
+        "texto": "Ce site utilise des cookies essentiels pour vous permettre de vous connecter et de mémoriser vos préférences.",
+        "saibaMais": "En savoir plus dans notre Politique de confidentialité.",
+        "aceitar": "Accepter",
+        "recusar": "Refuser",
+        "preferencias": "Préférences relatives aux cookies"
+    },
+    "cliente": {
+        "titulo": "Le chantier en direct pour votre **client**",
+        "texto": "Votre client suit les étapes et les photos via son propre lien, sans avoir besoin de vous appeler ou de vous envoyer un message tous les jours. Et il ne voit ni les coûts du chantier ni la paie.",
+        "antes": "Avant : tout par WhatsApp",
+        "depois": "Maintenant : le portail du chantier",
+        "nome": "Portail client",
+        "hoje": "Aujourd'hui",
+        "msg1": "Bonjour ! Comment avance le chantier ? Des photos d'aujourd'hui ?",
+        "msg2": "Les sols seront-ils terminés d'ici vendredi prochain ?",
+        "msg3": "Bonjour. Je vais demander au chef de chantier d'en envoyer.",
+        "conversaAviso": "Exemple d'échange avec le client",
+        "pontos": [
+            "Votre client se connecte avec son propre compte, à partir de l'invitation que vous lui envoyez.",
+            "Vous souhaitez partager davantage ? Avec l'Accès client (sur l'offre PRO, forfait unique par chantier), vous choisissez ce qu'il peut consulter et télécharger : photos, finances complètes, planning détaillé et ouverture d'incidents.",
+            "Sur les chantiers achevés à 70 % ou plus, lorsque l'accès prend fin, le client dispose encore de 15 jours pour télécharger les éléments partagés."
+        ],
+        "telaPortal": "Portail client avec les dernières actualités du chantier",
+        "telaAcesso": "Écran où le gestionnaire choisit ce que le client peut consulter"
+    },
+    "recursos": {
+        "titulo": "Tout ce dont votre chantier a besoin **au même endroit**",
+        "itens": {
+            "cronograma": {
+                "titulo": "Planning par étapes",
+                "texto": "Créez les étapes ou générez 19 étapes standard à partir du montant du contrat, et suivez l'avancement physique de chacune."
+            },
+            "diario": {
+                "titulo": "Journal de chantier",
+                "texto": "Météo, activités, incidents, effectif présent, photos et signature. Exporté en PDF, prêt à envoyer."
+            },
+            "financeiro": {
+                "titulo": "Finances du chantier",
+                "texto": "Budgété, mesuré et montants payables à chaque étape, avec entrées, sorties et relevé financier."
+            },
+            "equipe": {
+                "titulo": "Équipe et paie",
+                "texto": "Enregistrez vos collaborateurs, pointez les présences dans le journal et calculez la paie."
+            },
+            "compras": {
+                "titulo": "Achats et stock",
+                "texto": "Enregistrez vos achats avec factures et contrôlez les matériaux et outils de chaque chantier."
+            },
+            "marca": {
+                "titulo": "Rapports à votre marque",
+                "texto": "Avec l'offre PRO, vos PDF intègrent le logo et le pied de page de votre entreprise."
+            },
+            "offline": {
+                "titulo": "Sans internet sur le chantier",
+                "texto": "L'application enregistre vos saisies et synchronise automatiquement dès que la connexion revient."
+            },
+            "aparelhos": {
+                "titulo": "Sur tous vos appareils",
+                "texto": "Android, iPhone, Windows et navigateur, toujours avec les mêmes données."
+            }
+        },
+        "tela": "Vue d'ensemble du chantier avec montant du contrat, délais et avancement physique global"
+    },
+    "equipe": {
+        "titulo": "Chacun voit ce dont il a besoin",
+        "texto": "Invitez les ingénieurs, l'équipe et le client sur le chantier. Le propriétaire du chantier décide qui accède et ce que chaque rôle peut voir et faire.",
+        "papeis": {
+            "gestor": {
+                "nome": "Gestionnaire",
+                "desc": "Accès complet : crée et configure les chantiers, gère les finances, invite l'équipe et génère tous les rapports."
+            },
+            "engenheiro": {
+                "nome": "Ingénieur",
+                "desc": "Suit et met à jour le chantier selon les autorisations que vous lui attribuez."
+            },
+            "equipe": {
+                "nome": "Équipe",
+                "desc": "Enregistre le quotidien : rapports journaliers, photos et présences."
+            },
+            "cliente": {
+                "nome": "Client final",
+                "desc": "Suit via le Portail Client ce que vous autorisez."
+            }
+        },
+        "tela": "Rapport journalier avec la liste de l'équipe et les présences de chacun"
+    },
+    "chamada": {
+        "titulo": "Prêt à organiser **votre chantier** ?",
+        "texto": "L'offre gratuite n'a pas de limite de temps. Passez à l'offre PRO quand vous avez besoin de plus.",
+        "acao": "Commencer gratuitement",
+        "duvida": "Une question ? Discutez avec nous sur WhatsApp.",
+        "whatsapp": "Écrivez-nous sur WhatsApp"
+    },
+    "conta": {
+        "abrirApp": "Ouvrir ObraFácil dans votre navigateur",
+        "lojasTitulo": "ObraFácil sur tous vos appareils",
+        "lojasTexto": "Connectez-vous avec le même compte sur mobile, ordinateur ou navigateur : vos achats sont valables partout.",
+        "falarSuporte": "Contacter l'assistance"
+    },
+    "pagamento": {
+        "metaTitulo": "Paiement confirmé · ObraFácil",
+        "metaDescricao": "Votre paiement a été validé. Découvrez quand votre achat apparaît dans ObraFácil et que faire si cela tarde.",
+        "agoraTitulo": "Ce qui se passe maintenant",
+        "voltarTitulo": "Retournez sur ObraFácil",
+        "voltarTexto": "Retournez à l'onglet du navigateur ou à l'application Windows où vous avez effectué l'achat. Si vous l'avez déjà fermé, rouvrez ObraFácil avec le même compte.",
+        "automaticoTitulo": "L'activation est automatique",
+        "automaticoTexto": "Stripe, qui traite le paiement, prévient notre serveur et votre achat est débloqué sur votre compte en quelques instants. Vous n'avez rien à faire.",
+        "conferirTitulo": "Vérifiez dans l'application",
+        "demoraTitulo": "Si cela n'apparaît pas encore",
+        "demoraEsperar": "Attendez une minute, puis fermez et rouvrez l'application. Dans le navigateur, rechargez la page d'ObraFácil.",
+        "demoraSairEntrar": "Toujours sur l'offre gratuite ? Déconnectez-vous et reconnectez-vous avec l'e-mail utilisé lors du paiement : à la connexion, l'application recherche l'abonnement souscrit sur le site et active le PRO.",
+        "demoraRestaurar": "**Restaurer les achats** n'a aucun effet ici : cette fonction ne recherche que les achats effectués dans le store mobile (Google Play ou App Store).",
+        "demoraSuporte": "Si rien ne fonctionne, contactez l'assistance en indiquant l'e-mail utilisé lors du paiement.",
+        "compras": {
+            "geral": {
+                "sobretitulo": "Paiement confirmé",
+                "titulo": "Paiement **confirmé**",
+                "texto": "Votre paiement a été validé. Dans un instant, ObraFácil reçoit la confirmation et débloque votre achat.",
+                "conferir": "Ouvrez ObraFácil avec le compte utilisé lors de l'achat : votre commande apparaît automatiquement.",
+                "artigo": "Où consulter l'historique des paiements"
+            },
+            "pro": {
+                "sobretitulo": "Abonnement confirmé",
+                "titulo": "Bienvenue dans ObraFácil **PRO**",
+                "texto": "Votre abonnement est confirmé. En quelques instants, le PRO s'active automatiquement sur votre compte, sur mobile, ordinateur et navigateur.",
+                "conferir": "Ouvrez le **Profil** : le badge en haut devient **Membre PRO** et la carte **Votre offre** affiche **ObraFácil PRO**.",
+                "artigo": "J'ai souscrit au PRO sur le site : comment l'activer"
+            },
+            "acesso": {
+                "sobretitulo": "Paiement confirmé",
+                "titulo": "Paiement de l'**Accès client** confirmé",
+                "texto": "Le forfait pour le chantier a été réglé. En quelques instants, l'application débloque pour le client de ce chantier les fonctionnalités payantes du Portail client.",
+                "conferir": "Ouvrez le chantier : au bas du **MENU DU CHANTIER**, la carte **Accès client** affiche **Accès débloqué**. Appuyez sur **CONFIGURER** et choisissez ce que le client peut voir et télécharger.",
+                "artigo": "Qu'est-ce que l'Accès client"
+            },
+            "downloads": {
+                "sobretitulo": "Paiement confirmé",
+                "titulo": "**Pack supplémentaire** du chantier confirmé",
+                "texto": "En quelques instants, le chantier bénéficie de 2 téléchargements complets supplémentaires du ZIP de la galerie, partagés entre tous les invités.",
+                "conferir": "Retournez à la **Galerie du chantier** et appuyez de nouveau sur **Tout télécharger**.",
+                "artigo": "Comment acheter des téléchargements supplémentaires pour la galerie"
+            },
+            "armazenamento": {
+                "sobretitulo": "Abonnement confirmé",
+                "titulo": "**20 Go** supplémentaires pour vos chantiers",
+                "texto": "Votre extension de stockage est confirmée. En quelques instants, l'application ajoute 20 Go à l'espace de votre offre.",
+                "conferir": "Ouvrez le **Profil** : sous la barre **Stockage**, la carte **Votre offre** affiche **Extension de +20 Go active**.",
+                "artigo": "Comment souscrire à +20 Go de stockage"
+            }
+        }
+    },
+    "perfil": {
+        "metaTitulo": "Votre abonnement · ObraFácil",
+        "metaDescricao": "Découvrez où trouver votre offre, votre carte bancaire et la gestion de votre abonnement dans ObraFácil.",
+        "sobretitulo": "Votre abonnement",
+        "titulo": "Votre abonnement se trouve dans le **Profil** de l'app",
+        "texto": "L'offre, les factures, la carte et la résiliation sont dans l'application : dans Profil, sur la carte Votre offre. Ouvrez ObraFácil avec votre compte et suivez les étapes ci-dessous.",
+        "artigoBotao": "Comment gérer ou résilier",
+        "passosTitulo": "Comment y accéder",
+        "passo1Titulo": "Ouvrez ObraFácil",
+        "passo1Texto": "Sur votre téléphone, dans l'application Windows ou dans votre navigateur, connectez-vous avec votre compte.",
+        "passo2Titulo": "Ouvrez le Profil",
+        "passo2Texto": "Sur mobile, touchez le menu (trois lignes) en haut du tableau de bord puis votre carte, avec votre photo et votre nom. Sur ordinateur, cliquez sur votre carte dans la barre latérale.",
+        "passo3Titulo": "Utilisez la carte Votre offre",
+        "passo3Texto": "Juste sous votre photo, la carte **Votre offre** affiche votre formule, l'espace utilisé, les chantiers et les rapports du mois. Pour un abonnement, touchez **Gérer**.",
+        "gerenciarTitulo": "Où vous mène le bouton Gérer",
+        "gerenciarCelular": "**Abonnement souscrit sur mobile** : l'espace d'abonnements de Google Play ou de l'App Store, avec renouvellement, factures et résiliation.",
+        "gerenciarSite": "**Abonnement souscrit sur le site ou sur ordinateur** : la page de paiement dans le navigateur, pour changer de carte, voir les factures ou résilier.",
+        "gerenciarLugar": "Résilier sur une plateforme ne résilie pas un abonnement souscrit sur l'autre.",
+        "avisoTitulo": "Vous avez reçu un avis de paiement non traité ?",
+        "avisoTexto": "Votre banque a refusé le prélèvement de l'abonnement. Touchez **Gérer** et ajoutez une carte valide pour conserver le PRO. Si vous avez déjà régularisé, vous pouvez ignorer cet avis.",
+        "artigosTitulo": "Dans le Centre d'aide",
+        "artigoCartao": "Comprendre la carte Votre offre",
+        "artigoCancelar": "Comment gérer ou résilier votre abonnement",
+        "artigoPagamentos": "Historique des paiements et remboursements"
+    },
+    "suporte": {
+        "metaTitulo": "Assistance · ObraFácil",
+        "metaDescricao": "Contactez l'assistance d'ObraFácil par WhatsApp, e-mail ou ticket dans l'app, et consultez les guides pas à pas dans le Centre d'aide.",
+        "sobretitulo": "Assistance",
+        "titulo": "Contacter l'**assistance**",
+        "texto": "Posez une question, signalez un problème dans l'app ou demandez de l'aide pour vos factures. Le délai moyen de réponse est de 24 à 48 heures ouvrées.",
+        "canaisTitulo": "Comment nous contacter",
+        "whatsappTitulo": "WhatsApp",
+        "whatsappTexto": "Pour échanger rapidement et poser vos questions.",
+        "whatsappBotao": "Ouvrir WhatsApp",
+        "whatsappMensagem": "Bonjour, je viens de la page d'assistance du site et j'ai besoin d'aide pour ObraFácil.",
+        "emailTitulo": "E-mail",
+        "emailTexto": "Pour envoyer des détails, des captures d'écran et des pièces jointes. Écrivez de préférence depuis l'e-mail de votre compte.",
+        "emailBotao": "Écrire un e-mail",
+        "chamadoTitulo": "Ticket dans l'application",
+        "chamadoTexto": "Il reste enregistré sur votre compte et constitue la voie officielle pour demander un remboursement d'achats faits sur le site, dans **Aide financière**. La réponse arrive sur l'e-mail du compte.",
+        "chamadoBotao": "Comment ouvrir un ticket",
+        "centralTitulo": "Centre d'aide",
+        "centralTexto": "Les guides pas à pas pour chaque écran de l'application, avec les véritables captures d'écran.",
+        "centralBotao": "Ouvrir le Centre d'aide",
+        "lojasTitulo": "Achat effectué sur Google Play ou l'App Store ?",
+        "lojasTexto": "Les prélèvements et remboursements de ces achats sont gérés directement par le store selon ses règles. Pour résilier, utilisez **Gérer** sur la carte **Votre offre** dans Profil.",
+        "perfilLink": "Où consulter votre abonnement"
+    }
+}

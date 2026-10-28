@@ -1,0 +1,500 @@
+{
+    "seo": {
+        "inicio": {
+            "titulo": "ObraFácil: aplikacja do zarządzania budową i dziennik prac",
+            "descricao": "Zarządzanie budową na telefonie i komputerze: harmonogram, dziennik prac ze zdjęciami, finanse, zespół i portal klienta. Zacznij za darmo."
+        },
+        "ajuda": {
+            "titulo": "Centrum pomocy ObraFácil: przewodniki krok po kroku",
+            "descricao": "Przewodniki krok po kroku po aplikacji ObraFácil: raporty dzienne, harmonogram, finanse budowy, zespół i portal klienta z prawdziwymi ekranami."
+        },
+        "assunto": {
+            "titulo": "{{assunto}} · Centrum pomocy ObraFácil",
+            "descricao": "{{descricao}} Przewodniki krok po kroku z prawdziwymi zrzutami ekranu z aplikacji ObraFácil."
+        },
+        "artigo": {
+            "titulo": "{{titulo}} — ObraFácil"
+        },
+        "app": {
+            "descricao": "Aplikacja do zarządzania budową dla wykonawców, inżynierów budownictwa, architektów i kierowników robót: harmonogram etapów, raporty dzienne ze zdjęciami i PDF, finanse budowy, lista płac zespołu, zaopatrzenie i magazyn oraz portal do śledzenia postępów przez inwestora. Działa na Androidzie, iPhonie, Windowsie i w przeglądarce, także bez internetu na budowie.",
+            "categoria": "Zarządzanie budową"
+        },
+        "imagemAlt": "Logo ObraFácil, aplikacja do zarządzania budową",
+        "llms": {
+            "sobre": "Czym jest ObraFácil",
+            "paraQuem": "Dla kogo: firmy budowlane, inżynierowie budownictwa, architekci, wykonawcy i majstrowie prowadzący jedną lub wiele budów, którzy chcą rejestrować codzienne prace, kontrolować terminy i koszty oraz przejrzyście prezentować postępy inwestorowi.",
+            "plataformas": "Platformy",
+            "recursos": "Funkcje",
+            "papeis": "Kto co robi na budowie",
+            "planos": "Plany i cennik",
+            "precosPorIdioma": "Cena PRO w każdym języku i walucie serwisu",
+            "precoLinha": "{{mensal}} miesięcznie lub {{anual}} rocznie",
+            "paginas": "Główne strony",
+            "idiomas": "Strona i aplikacja są dostępne w następujących językach",
+            "todosArtigos": "Wszystkie artykuły Centrum pomocy"
+        }
+    },
+    "nav": {
+        "login": "Zaloguj się",
+        "comecar": "Zacznij za darmo",
+        "recursos": "Funkcje",
+        "precos": "Cennik",
+        "ajuda": "Centrum pomocy",
+        "lightMode": "Jasny motyw",
+        "darkMode": "Ciemny motyw",
+        "language": "Język",
+        "chooseLanguage": "Wybierz język",
+        "themeToggle": "Przełącz między jasnym a ciemnym motywem",
+        "menu": "Otwórz lub zamknij menu",
+        "inicio": "Strona główna ObraFácil",
+        "navegacao": "Główna nawigacja"
+    },
+    "hero": {
+        "plataformas": "Android · iPhone · Windows · Przeglądarka",
+        "titulo": "Cała budowa **w jednym miejscu**",
+        "subtitulo": "Harmonogram, dziennik prac, finanse, zespół i zakupy w Twoim telefonie i na komputerze. Twój inwestor śledzi postępy w dedykowanym portalu, bez konieczności codziennych telefonów.",
+        "comecar": "Zacznij za darmo",
+        "verPlanos": "Zobacz plany",
+        "semCartao": "Bezpłatny plan bez limitu czasowego i bez karty płatniczej.",
+        "camposRotulo": "Obszary budowy w aplikacji",
+        "campos": {
+            "cronograma": {
+                "rotulo": "Harmonogram",
+                "valor": "Etapy, postęp prac i terminy"
+            },
+            "diario": {
+                "rotulo": "Dziennik prac",
+                "valor": "Zdjęcia, pogoda i obecność w PDF"
+            },
+            "financeiro": {
+                "rotulo": "Finanse budowy",
+                "valor": "Budżet a wydatki, przychody i koszty"
+            },
+            "cliente": {
+                "rotulo": "Portal klienta",
+                "valor": "Postępy udostępniane inwestorowi"
+            }
+        },
+        "legendaTela": "Ekran aplikacji z przykładowymi danymi",
+        "telas": {
+            "cronograma": "Etapy budowy z budżetem, obmiarem, kwotą do zapłaty i postępem prac",
+            "diario": "Nowy raport dzienny z pogodą, czynnościami i zdarzeniami",
+            "financeiro": "Finanse budowy z kosztem metra kwadratowego, przychodami, wydatkami i saldem",
+            "cliente": "Portal klienta z bieżącymi aktualnościami z budowy"
+        },
+        "disponivelNo": "Dostępne w",
+        "baixarNa": "Pobierz z",
+        "baixarPara": "Pobierz na"
+    },
+    "pricing": {
+        "title": "Plany i cennik",
+        "toggleMonthly": "Miesięcznie",
+        "toggleAnnual": "Rocznie",
+        "periodoRotulo": "Okres rozliczeniowy",
+        "economia": "Oszczędzasz {{simbolo}}{{valor}}",
+        "perMonth": "/mies.",
+        "periodAnnual": "/rok",
+        "gratis": {
+            "nome": "Bezpłatny",
+            "desc": "Na start i do poznania możliwości aplikacji.",
+            "cta": "Zacznij za darmo",
+            "itens": [
+                "1 własna budowa aktywna jednocześnie",
+                "7 raportów PDF miesięcznie ze znakiem wodnym",
+                "250 MB na zdjęcia i pliki",
+                "Inwestor śledzi postępy w portalu"
+            ]
+        },
+        "pro": {
+            "nomeMensal": "PRO miesięczny",
+            "nomeAnual": "PRO roczny",
+            "desc": "Dla firm budowlanych, inżynierów i wykonawców z wieloma budowami.",
+            "itens": [
+                "Nielimitowana liczba budów",
+                "Nielimitowane raporty PDF bez znaku wodnego",
+                "10 GB na zdjęcia i pliki",
+                "Raporty PDF z logo i stopką Twojej firmy",
+                "Raporty dzienne w formacie ZIP i pliki budowy offline",
+                "Dostęp klienta do włączenia dla każdej budowy"
+            ],
+            "itensAnual": [
+                "Wszystko z planu PRO miesięcznego",
+                "Gwarancja stałej ceny przez 12 miesięcy"
+            ],
+            "comparacao": "Płacąc co miesiąc, 12 miesięcy kosztuje {{simbolo}}{{valor}}",
+            "equivale": "Odpowiednik {{simbolo}}{{valor}} miesięcznie",
+            "ctaMensal": "Wybierz PRO miesięczny",
+            "ctaAnual": "Wybierz PRO roczny"
+        },
+        "renovacao": "Automatyczne odnawianie. Możesz zrezygnować w każdej chwili w miejscu zakupu.",
+        "lojas": "Przy zakupie na telefonie cena i rozliczenie podlegają zasadom Google Play lub App Store.",
+        "addons": "Tylko w PRO: +20 GB miejsca na dane (oddzielna subskrypcja) oraz Dostęp klienta z dodatkowymi funkcjami portalu (jednorazowa opłata za budowę).",
+        "selo": "Najlepsza oferta",
+        "gratisPreco": "Zawsze za darmo"
+    },
+    "popup": {
+        "faixa": "Plan bezpłatny bez limitu czasowego",
+        "title": "Zanim wyjdziesz, przetestuj aplikację na kolejnej budowie",
+        "texto": "Załóż darmowe konto bez podawania karty. Dodaj budowę i sprawdź harmonogram, dziennik prac ze zdjęciami oraz finanse, z podglądem dla inwestora w portalu.",
+        "cta": "Zacznij za darmo",
+        "lojas": "Lub pobierz aplikację",
+        "fechar": "Zamknij"
+    },
+    "whatsapp": {
+        "tooltip": "Napisz do wsparcia",
+        "message": "Dzień dobry, piszę ze strony internetowej i mam pytanie"
+    },
+    "social": {
+        "title": "Opinie profesjonalistów z branży",
+        "test1": "„Moi klienci byli pod ogromnym wrażeniem aplikacji. Dodała naszemu zarządzaniu budową ogromnej wiarygodności i w pełni uzasadniła wysokość mojego wynagrodzenia.”",
+        "author1": "Karol M.",
+        "role1": "Inżynier budownictwa",
+        "test2": "„Pisanie dziennika budowy w Wordzie na koniec dnia zajmowało mi kiedyś godzinę. Teraz robię to w 5 minut na telefonie bezpośrednio na budowie.”",
+        "author2": "Paweł R.",
+        "role2": "Wykonawca budowlany",
+        "test3": "„Wysyłanie raportów z obmiarów do zatwierdzenia stało się niezwykle proste. Bez zbędnych dyskusji inwestor zatwierdza wszystko od ręki.”",
+        "author3": "Robert S.",
+        "role3": "Majster budowy",
+        "test4": "„Galeria zdjęć niesamowicie pomogła nam w uzgadnianiu szczegółów wykończenia z architektem, bez konieczności ciągłego przyjeżdżania na budowę.”",
+        "author4": "Marianna T.",
+        "role4": "Architekt",
+        "test5": "„Nawet inwestor końcowy pochwalił nasz nienaganny porządek i organizację. Wreszcie prezentujemy taki sam profesjonalizm jak największe firmy budowlane.”",
+        "author5": "Franciszek B.",
+        "role5": "Generalny wykonawca",
+        "aviso": "Opinie klientów opublikowane za ich zgodą."
+    },
+    "faq": {
+        "title": "Często zadawane pytania",
+        "q1": "Czy mój klient płaci za śledzenie budowy?",
+        "a1": "Nie. Klient śledzi postęp budowy przez portal całkowicie za darmo. Jeśli chcesz udostępnić mu więcej funkcji, np. pobieranie zdjęć i pełny wgląd w finanse, Dostęp klienta to jednorazowa opłata za budowę, którą opłacasz w planie PRO.",
+        "q2": "Czy mogę korzystać z aplikacji na komputerze i telefonie?",
+        "a2": "Tak. ObraFácil działa na Androidzie, iPhonie, Windowsie oraz w przeglądarce internetowej, z pełną synchronizacją danych między wszystkimi urządzeniami.",
+        "q3": "Czy moje dane są bezpieczne?",
+        "a3": "Dane są przesyłane w formie zaszyfrowanej i bezpiecznie przechowywane na serwerach Google, również w postaci zaszyfrowanej. Każdy użytkownik widzi wyłącznie budowy, do których został przypisany, zgodnie z uprawnieniami swojej roli.",
+        "q4": "Jakie dane osobowe są gromadzone?",
+        "a4": "W przypadku konta: imię, adres e-mail i numer telefonu; numer NIP tylko wtedy, gdy zdecydujesz się go podać. Pełną listę oraz cel przetwarzania poszczególnych danych określa Polityka prywatności.",
+        "q5": "Czy aplikacja działa bez dostępu do Internetu?",
+        "a5": "Tak. Bez połączenia z Internetem aplikacja zapisuje wpisy bezpośrednio na urządzeniu i przesyła je automatycznie po przywróceniu łączności.",
+        "q6": "Czy klient traci dostęp do plików po zakończeniu budowy?",
+        "a6": "Jeśli budowa w chwili wygaśnięcia dostępu jest ukończona w co najmniej 70%, klient ma dodatkowe 15 dni na przeglądanie i pobieranie udostępnionych plików.",
+        "q7": "Czy ObraFácil zastępuje kierownika budowy lub uprawnienia budowlane?",
+        "a7": "Nie. Jest to narzędzie do organizacji i zarządzania budową. Nie zastępuje uprawnionego kierownika budowy ani wymaganych prawem pozwoleń i certyfikatów.",
+        "q8": "Czy mogę usunąć swoje konto?",
+        "a8": "Tak, w sekcji Profil > Usuń konto. Konto zostaje najpierw zawieszone na 30 dni (możliwość przywrócenia), a następnie Twoje budowy i dane zostają usunięte. Niektóre zapisy, takie jak płatności i akceptacja Regulaminu, są przechowywane przez okres określony w Polityce prywatności.",
+        "q9": "Czy mogę anulować plan PRO lub dodatkową przestrzeń dyskową?",
+        "a9": "Tak, w dowolnym momencie i w tym samym miejscu, w którym subskrypcja została wykupiona. Nie nastąpi żadne kolejne odnowienie, a dostęp pozostanie aktywny do końca opłaconego okresu.",
+        "q10": "Co się stanie, jeśli płatność za odnowienie się nie powiedzie?",
+        "a10": "Konto powraca automatycznie do planu darmowego. Żadne dane nie są usuwane; w przypadku przekroczenia limitu planu darmowego blokowane jest jedynie dodawanie nowych plików do czasu zwolnienia miejsca lub odnowienia subskrypcji.",
+        "mais": "Nie znajdujesz odpowiedzi na swoje pytanie?",
+        "verAjuda": "Przejdź do Centrum pomocy"
+    },
+    "ajuda": {
+        "titulo": "Centrum pomocy",
+        "heroiAntes": "Jak możemy Ci",
+        "heroiDestaque": "pomóc",
+        "heroiDepois": "?",
+        "heroiSubtitulo": "Przewodniki krok po kroku po ObraFácil ze zrzutami każdego ekranu w Twoim języku.",
+        "buscaRotulo": "Szukaj w Centrum pomocy",
+        "buscaPlaceholder": "Szukaj raportu, pracownika, PDF, klienta…",
+        "buscaLimpar": "Wyczyść wyszukiwanie",
+        "buscaResultados": "Wyniki wyszukiwania",
+        "buscaSemResultado": "Nie znaleziono artykułów dla „{{termo}}”. Spróbuj innego słowa lub skontaktuj się ze wsparciem.",
+        "buscasComuns": "Często wyszukiwane:",
+        "sugestao1": "Raport dzienny offline",
+        "sugestao2": "Dodawanie pracownika",
+        "sugestao3": "Raport dzienny w PDF",
+        "sugestao4": "Portal klienta",
+        "comeceTitulo": "Zacznij tutaj",
+        "comeceSubtitulo": "Kompletne poradniki, które przeprowadzą Cię od pierwszego logowania do realnych rezultatów.",
+        "comecar": "Rozpocznij",
+        "tipo_fluxo": "Pełny przewodnik",
+        "tipo_funcao": "Krok po kroku",
+        "tipo_conceito": "Wyjaśnienie",
+        "assuntosTitulo": "Przeglądaj według tematów",
+        "assuntosPerfil_todos": "Wszystkie tematy w Centrum pomocy.",
+        "assuntosPerfil_gestor": "Tematy dla osób zarządzających budową.",
+        "assuntosPerfil_equipe": "Tematy dla pracowników na budowie.",
+        "assuntosPerfil_cliente": "Tematy dla inwestora budowy.",
+        "assuntosVazio": "Brak artykułów dla tego profilu. Zobacz wszystkie tematy lub skontaktuj się ze wsparciem.",
+        "perfilGrupo": "Pokaż tematy dla:",
+        "perfil_todos": "Wszyscy",
+        "perfil_gestor": "Kierownik",
+        "perfil_equipe": "Zespół",
+        "perfil_cliente": "Inwestorzy",
+        "artigos_one": "1 artykuł",
+        "artigos_few": "{{count}} artykuły",
+        "artigos_many": "{{count}} artykułów",
+        "artigos_other": "{{count}} artykułu",
+        "essenciaisTitulo": "Niezbędnik",
+        "essenciaisSubtitulo": "To, co każdy użytkownik powinien wiedzieć w pierwszych dniach pracy.",
+        "suporteTitulo": "Nie znalazłeś tego, czego szukasz?",
+        "suporteTexto": "Napisz do wsparcia na WhatsAppie lub otwórz zgłoszenie bezpośrednio w aplikacji.",
+        "suporteBotao": "Porozmawiaj na WhatsAppie",
+        "suporteMensagem": "Dzień dobry, piszę z Centrum pomocy na stronie i mam pytanie.",
+        "carregando": "Wczytywanie Centrum pomocy…",
+        "erroTitulo": "Nie udało się załadować Centrum pomocy",
+        "erroTexto": "Sprawdź połączenie z internetem i spróbuj ponownie.",
+        "tentarDeNovo": "Spróbuj ponownie",
+        "vazioTitulo": "Nasze poradniki są w przygotowaniu",
+        "vazioTexto": "Artykuły Centrum pomocy pojawią się tutaj wkrótce. W międzyczasie zespół wsparcia chętnie odpowie na Twoje pytania na WhatsAppie.",
+        "naoEncontradoTitulo": "Nie znaleziono artykułu",
+        "naoEncontradoTexto": "Ten adres nie prowadzi do żadnego artykułu. Być może zmieniono jego nazwę; spróbuj wyszukać w Centrum pomocy.",
+        "assuntoNaoEncontrado": "Nie znaleziono tematu",
+        "voltarCentral": "Wróć do Centrum pomocy",
+        "trilha": "Jesteś tutaj",
+        "outrosAssuntos": "Pozostałe tematy",
+        "paraPublico": "Dla: {{lista}}",
+        "publico_gestor": "kierowników",
+        "publico_equipe": "członków zespołu",
+        "publico_cliente": "inwestorów",
+        "e": "i",
+        "passos_one": "{{count}} krok",
+        "passos_few": "{{count}} kroki",
+        "passos_many": "{{count}} kroków",
+        "passos_other": "{{count}} kroku",
+        "passoNumero": "Krok {{n}}",
+        "printAlt": "Ekran aplikacji w kroku {{n}}: {{titulo}}",
+        "nesteArtigo": "W tym artykule",
+        "antesDeComecar": "Przeczytaj najpierw",
+        "relacionados": "Powiązane artykuły",
+        "navegacaoArtigos": "Inne artykuły z tej kategorii",
+        "anterior": "Poprzedni",
+        "proximo": "Następny",
+        "appTitulo": "Wykonaj to w aplikacji",
+        "appTexto": "Otwórz ObraFácil w nowej karcie i wykonuj kroki na bieżąco podczas czytania.",
+        "appBotao": "Otwórz ObraFácil",
+        "tambemEm": "Dostępne również w języku:"
+    },
+    "footer": {
+        "ctaTitle": "Gotowy uporządkować swoją kolejną budowę?",
+        "ctaBtn": "Zacznij za darmo",
+        "terms": "Regulamin",
+        "privacy": "Polityka prywatności",
+        "help": "Centrum pomocy",
+        "support": "Wsparcie techniczne",
+        "tagline": "Zarządzanie budową proste i profesjonalne.",
+        "rights": "Wszelkie prawa zastrzeżone.",
+        "language": "Język strony",
+        "baixar": "Pobierz aplikację",
+        "produto": "Produkt",
+        "legal": "Informacje prawne",
+        "contato": "Skontaktuj się z nami",
+        "whatsapp": "WhatsApp"
+    },
+    "legal": {
+        "versao": "Wersja dokumentu: {{versao}}",
+        "emVigorDesde": "obowiązuje od {{data}}",
+        "valeAPartir": "wchodzi w życie z dniem {{data}}",
+        "novaVersao": "Wersja {{versao}} wejdzie w życie {{data}}. Już teraz możesz zapoznać się ze zmianami.",
+        "lerNova": "Przeczytaj nową wersję",
+        "vendoNova": "Przeglądasz nową wersję dokumentu. Do dnia jej wejścia w życie obowiązuje wersja {{versao}}.",
+        "voltarAtual": "Wróć do aktualnie obowiązującej wersji",
+        "sumario": "Na tej stronie",
+        "carregando": "Wczytywanie tekstu…",
+        "erro": "Nie udało się wczytać tekstu. Sprawdź połączenie z internetem.",
+        "indisponivel": "Treść pod tym adresem nie jest jeszcze dostępna. Napisz na adres suporte@appobrafacil.expertbr.com.",
+        "tentarDeNovo": "Spróbuj ponownie"
+    },
+    "cookies": {
+        "titulo": "Zarządzanie plikami cookie",
+        "texto": "Ta strona używa niezbędnych plików cookie, aby umożliwić bezpieczne logowanie i zapamiętanie Twoich ustawień.",
+        "saibaMais": "Dowiedz się więcej w Polityce prywatności.",
+        "aceitar": "Zaakceptuj",
+        "recusar": "Odrzuć",
+        "preferencias": "Preferencje plików cookie"
+    },
+    "cliente": {
+        "titulo": "Przejrzysty podgląd prac dla Twojego **inwestora**",
+        "texto": "Inwestor śledzi etapy i zdjęcia przez dedykowany link, bez konieczności codziennych telefonów czy wiadomości. Nie ma wglądu w koszty budowy ani stawki pracowników.",
+        "antes": "Kiedyś: chaos wiadomości na WhatsAppie",
+        "depois": "Teraz: uporządkowany portal budowy",
+        "nome": "Portal klienta",
+        "hoje": "Dzisiaj",
+        "msg1": "Dzień dobry! Jak idą prace na budowie? Są jakieś zdjęcia z dzisiaj?",
+        "msg2": "Czy posadzki będą gotowe do przyszłego piątku?",
+        "msg3": "Dzień dobry. Już proszę kierownika o przesłanie aktualnych zdjęć.",
+        "conversaAviso": "Przykładowa rozmowa z inwestorem",
+        "pontos": [
+            "Inwestor loguje się na własne konto za pomocą wysłanego przez Ciebie zaproszenia.",
+            "Chcesz udostępnić więcej? Dzięki funkcji Dostęp klienta (w planie PRO, jednorazowa opłata za budowę) wybierasz, co może zobaczyć i pobrać: zdjęcia, pełne finanse, szczegółowy harmonogram i zgłaszanie uwag.",
+            "Na budowach o zaawansowaniu 70% lub większym, po wygaśnięciu dostępu inwestor ma jeszcze 15 dni na pobranie udostępnionych materiałów."
+        ],
+        "telaPortal": "Portal klienta z bieżącymi aktualnościami z budowy",
+        "telaAcesso": "Ekran, na którym kierownik wybiera uprawnienia dla klienta"
+    },
+    "recursos": {
+        "titulo": "Wszystko, czego potrzebuje Twoja budowa **w jednym miejscu**",
+        "itens": {
+            "cronograma": {
+                "titulo": "Harmonogram etapów",
+                "texto": "Twórz własne etapy lub wygeneruj 19 standardowych etapów na podstawie wartości umowy i śledź postęp prac każdego z nich."
+            },
+            "diario": {
+                "titulo": "Dziennik prac",
+                "texto": "Pogoda, wykonane prace, zdarzenia, obecność ekipy, zdjęcia i podpis. Gotowy do wysłania raport w formacie PDF."
+            },
+            "financeiro": {
+                "titulo": "Finanse budowy",
+                "texto": "Budżet, obmiar i kwoty do zapłaty na każdym etapie, wraz z przychodami, wydatkami i zestawieniem."
+            },
+            "equipe": {
+                "titulo": "Zespół i lista płac",
+                "texto": "Rejestruj pracowników, odznaczaj obecność w dzienniku i łatwo rozliczaj listę płac."
+            },
+            "compras": {
+                "titulo": "Zaopatrzenie i magazyn",
+                "texto": "Wprowadzaj zakupy z fakturami i kontroluj stan materiałów oraz narzędzi na każdej budowie."
+            },
+            "marca": {
+                "titulo": "Raporty z Twoim logo",
+                "texto": "W planie PRO generowane pliki PDF zawierają logo i stopkę Twojej firmy."
+            },
+            "offline": {
+                "titulo": "Brak zasięgu na budowie",
+                "texto": "Aplikacja zapisuje wszystkie wpisy lokalnie i wysyła je automatycznie po odzyskaniu połączenia."
+            },
+            "aparelhos": {
+                "titulo": "Na każdym urządzeniu",
+                "texto": "Android, iPhone, Windows i przeglądarka – zawsze te same zsynchronizowane dane."
+            }
+        },
+        "tela": "Podsumowanie budowy z wartością umowy, terminami i ogólnym postępem prac"
+    },
+    "equipe": {
+        "titulo": "Każdy widzi dokładnie to, czego potrzebuje",
+        "texto": "Zaproś na budowę inżynierów, pracowników i inwestora. Właściciel budowy decyduje, kto ma dostęp i jakie uprawnienia posiada dana rola.",
+        "papeis": {
+            "gestor": {
+                "nome": "Kierownik",
+                "desc": "Pełny dostęp: tworzy i konfiguruje budowy, zarządza finansami, zaprasza zespół i pobiera wszystkie raporty."
+            },
+            "engenheiro": {
+                "nome": "Inżynier",
+                "desc": "Śledzi stan budowy i wprowadza dane zgodnie z przydzielonymi uprawnieniami."
+            },
+            "equipe": {
+                "nome": "Zespół",
+                "desc": "Rejestruje codzienną pracę: raporty dzienne, zdjęcia z budowy i obecność pracowników."
+            },
+            "cliente": {
+                "nome": "Inwestor",
+                "desc": "Śledzi w Portalu klienta to, co udostępnisz."
+            }
+        },
+        "tela": "Dziennik prac z listą pracowników i ewidencją obecności"
+    },
+    "chamada": {
+        "titulo": "Gotowy profesjonalnie **uporządkować budowę**?",
+        "texto": "Plan bezpłatny nie ma limitu czasowego. Przejdź na plan PRO, gdy Twoja firma będzie potrzebować więcej.",
+        "acao": "Zacznij za darmo",
+        "duvida": "Masz pytania? Porozmawiaj z nami na WhatsAppie.",
+        "whatsapp": "Napisz na WhatsAppie"
+    },
+    "conta": {
+        "abrirApp": "Otwórz ObraFácil w przeglądarce",
+        "lojasTitulo": "ObraFácil na wszystkich urządzeniach",
+        "lojasTexto": "Zaloguj się tym samym kontem na telefonie, komputerze lub w przeglądarce: Twoje zakupy działają wszędzie.",
+        "falarSuporte": "Skontaktuj się ze wsparciem"
+    },
+    "pagamento": {
+        "metaTitulo": "Płatność potwierdzona · ObraFácil",
+        "metaDescricao": "Płatność została zrealizowana pomyślnie. Zobacz, kiedy zakup pojawi się na koncie i co zrobić w razie opóźnienia.",
+        "agoraTitulo": "Co dzieje się teraz",
+        "voltarTitulo": "Wróć do aplikacji ObraFácil",
+        "voltarTexto": "Wróć do karty w przeglądarce lub aplikacji Windows, w której dokonano zakupu. Jeśli została zamknięta, otwórz ObraFácil ponownie na tym samym koncie.",
+        "automaticoTitulo": "Aktywacja następuje automatycznie",
+        "automaticoTexto": "System Stripe powiadamia nasz serwer o płatności, a zakupione funkcje są odblokowywane na Twoim koncie w kilka chwil. Nie musisz nic robić.",
+        "conferirTitulo": "Sprawdź w aplikacji",
+        "demoraTitulo": "Jeśli zakup jeszcze się nie pojawił",
+        "demoraEsperar": "Odczekaj minutę, a następnie zamknij i otwórz aplikację ponownie. W przeglądarce odśwież stronę ObraFácil.",
+        "demoraSairEntrar": "Nadal widzisz plan darmowy? Wyloguj się i zaloguj ponownie adresem e-mail użytym przy płatności: przy logowaniu aplikacja aktywuje plan PRO.",
+        "demoraRestaurar": "Opcja **Przywróć zakupy** tutaj nie zadziała: służy ona wyłącznie do zakupów ze sklepów mobilnych (Google Play lub App Store).",
+        "demoraSuporte": "Jeśli to nie pomoże, skontaktuj się ze wsparciem, podając adres e-mail użyty przy opłaceniu zamówienia.",
+        "compras": {
+            "geral": {
+                "sobretitulo": "Płatność potwierdzona",
+                "titulo": "Płatność **potwierdzona**",
+                "texto": "Płatność została pomyślnie zrealizowana. Za chwilę aplikacja ObraFácil otrzyma potwierdzenie i odblokuje zakupione opcje.",
+                "conferir": "Otwórz ObraFácil na tym samym koncie: zakupione funkcje pojawią się automatycznie.",
+                "artigo": "Gdzie sprawdzić historię płatności"
+            },
+            "pro": {
+                "sobretitulo": "Subskrypcja potwierdzona",
+                "titulo": "Witaj w ObraFácil **PRO**",
+                "texto": "Twoja subskrypcja została potwierdzona. Za moment plan PRO włączy się automatycznie na Twoim koncie na telefonie, komputerze i w przeglądarce.",
+                "conferir": "Otwórz **Profil**: plakietka na górnej karcie zmieni się na **Członek PRO**, a karta **Twój plan** wskaże **ObraFácil PRO**.",
+                "artigo": "Kupiłem PRO przez stronę: jak aktywować"
+            },
+            "acesso": {
+                "sobretitulo": "Płatność potwierdzona",
+                "titulo": "Płatność za **Dostęp klienta** potwierdzona",
+                "texto": "Opłata za budowę została uiszczona. Za moment aplikacja odblokuje dla inwestora tej budowy płatne funkcje Portalu klienta.",
+                "conferir": "Otwórz budowę: na dole **MENU BUDOWY** karta **Dostęp klienta** pokaże **Dostęp odblokowany**. Kliknij **KONFIGURUJ**.",
+                "artigo": "Czym jest Dostęp klienta"
+            },
+            "downloads": {
+                "sobretitulo": "Płatność potwierdzona",
+                "titulo": "**Pakiet dodatkowy** dla budowy potwierdzony",
+                "texto": "Budowa zyskuje 2 kolejne pełne pobrania archiwum ZIP galerii, dzielone między wszystkich członków projektu.",
+                "conferir": "Wróć do sekcji **Galeria budowy** i kliknij ponownie **Pobierz wszystko**.",
+                "artigo": "Jak kupić dodatkowe pobrania galerii"
+            },
+            "armazenamento": {
+                "sobretitulo": "Subskrypcja potwierdzona",
+                "titulo": "Dodatkowe **20 GB** miejsca na Twoje budowy",
+                "texto": "Zwiększenie przestrzeni na dane zostało potwierdzone. Za chwilę aplikacja doda 20 GB do limitu Twojego planu.",
+                "conferir": "Otwórz **Profil**: pod paskiem **Miejsce na dane** karta **Twój plan** pokaże status **Aktywne powiększenie o +20 GB**.",
+                "artigo": "Jak dokupić +20 GB miejsca na dane"
+            }
+        }
+    },
+    "perfil": {
+        "metaTitulo": "Twoja subskrypcja · ObraFácil",
+        "metaDescricao": "Sprawdź, gdzie w aplikacji ObraFácil znajdziesz informacje o planie, karcie płatniczej i opcji anulowania subskrypcji.",
+        "sobretitulo": "Twoja subskrypcja",
+        "titulo": "Subskrypcją zarządzasz w zakładce **Profil**",
+        "texto": "Twój plan, rozliczenia, karta i rezygnacja znajdują się w aplikacji: w Profilu, na karcie Twój plan. Postępuj zgodnie z poniższymi krokami.",
+        "artigoBotao": "Jak zarządzać lub anulować",
+        "passosTitulo": "Jak tam trafić",
+        "passo1Titulo": "Otwórz ObraFácil",
+        "passo1Texto": "Zaloguj się na swoje konto na telefonie, w aplikacji Windows lub w przeglądarce.",
+        "passo2Titulo": "Otwórz Profil",
+        "passo2Texto": "Na telefonie dotknij menu (trzy kreski) u góry pulpitu, a następnie swojej karty ze zdjęciem i nazwiskiem. Na komputerze kliknij swoją kartę na pasku bocznym.",
+        "passo3Titulo": "Użyj karty Twój plan",
+        "passo3Texto": "Tuż pod Twoim zdjęciem karta **Twój plan** wyświetla aktywny pakiet, wykorzystane miejsce, budowy i raporty w tym miesiącu. Kliknij **Zarządzaj**.",
+        "gerenciarTitulo": "Dokąd prowadzi przycisk Zarządzaj",
+        "gerenciarCelular": "**Subskrypcja z telefonu**: sekcja subskrypcji Google Play lub App Store z opcjami odnowienia, płatności i rezygnacji.",
+        "gerenciarSite": "**Subskrypcja ze strony lub komputera**: strona płatności w przeglądarce, gdzie możesz zmienić kartę, sprawdzić faktury lub zrezygnować.",
+        "gerenciarLugar": "Anulowanie na jednej platformie nie anuluje subskrypcji uruchomionej na drugiej.",
+        "avisoTitulo": "Pojawił się komunikat o nieudanej płatności?",
+        "avisoTexto": "Bank odrzucił opłatę za subskrypcję. Kliknij **Zarządzaj** i podaj ważną kartę, aby nie stracić funkcji PRO. Jeśli opłata została już uiszczona, zignoruj komunikat.",
+        "artigosTitulo": "W Centrum pomocy",
+        "artigoCartao": "Jak czytać kartę Twój plan",
+        "artigoCancelar": "Jak zarządzać subskrypcją lub zrezygnować",
+        "artigoPagamentos": "Historia płatności i zwroty środków"
+    },
+    "suporte": {
+        "metaTitulo": "Wsparcie techniczne · ObraFácil",
+        "metaDescricao": "Skontaktuj się ze wsparciem ObraFácil na WhatsAppie, przez e-mail lub zgłoszenie w aplikacji i zobacz instrukcje w Centrum pomocy.",
+        "sobretitulo": "Wsparcie techniczne",
+        "titulo": "Porozmawiaj ze **wsparciem technicznym**",
+        "texto": "Zadaj pytanie, zgłoś problem w aplikacji lub uzyskaj pomoc w sprawach rozliczeń. Średni czas odpowiedzi wynosi od 24 do 48 godzin roboczych.",
+        "canaisTitulo": "Dostępne kanały kontaktu",
+        "whatsappTitulo": "WhatsApp",
+        "whatsappTexto": "Do szybkiej rozmowy i bezpośrednich pytań.",
+        "whatsappBotao": "Otwórz WhatsApp",
+        "whatsappMensagem": "Dzień dobry, piszę ze strony pomocy i potrzebuję wsparcia w aplikacji ObraFácil.",
+        "emailTitulo": "E-mail",
+        "emailTexto": "Do przesłania szczegółów, zrzutów ekranu i załączników. W miarę możliwości napisz z adresu e-mail powiązanego z Twoim kontem.",
+        "emailBotao": "Napisz wiadomość e-mail",
+        "chamadoTitulo": "Zgłoszenie w aplikacji",
+        "chamadoTexto": "Pozostaje zapisane na Twoim koncie i jest oficjalną ścieżką do ubiegania się o zwrot za zakupy na stronie w sekcji **Pomoc finansowa**. Odpowiedź otrzymasz na e-mail.",
+        "chamadoBotao": "Jak otworzyć zgłoszenie",
+        "centralTitulo": "Centrum pomocy",
+        "centralTexto": "Przewodniki krok po kroku po każdym ekranie aplikacji z prawdziwymi zrzutami ekranu.",
+        "centralBotao": "Otwórz Centrum pomocy",
+        "lojasTitulo": "Zakup przez Google Play lub App Store?",
+        "lojasTexto": "Płatności i zwroty za te zakupy są obsługiwane bezpośrednio przez dany sklep zgodnie z jego regulaminem. Aby zrezygnować, użyj opcji **Zarządzaj** w karcie **Twój plan**.",
+        "perfilLink": "Gdzie sprawdzić subskrypcję"
+    }
+}
