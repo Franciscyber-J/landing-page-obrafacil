@@ -289,6 +289,7 @@
         "carregando": "Metin yükleniyor…",
         "erro": "Metin şu anda yüklenemedi. Lütfen internet bağlantınızı kontrol edin.",
         "indisponivel": "Metin henüz bu adreste mevcut değil. Lütfen suporte@appobrafacil.expertbr.com adresine yazın.",
+        "outroIdioma": "Bu metin henüz dilinizde mevcut değil. Aşağıda yürürlükteki sürümü {{idioma}} dilinde bulabilirsiniz.",
         "tentarDeNovo": "Tekrar dene"
     },
     "cookies": {

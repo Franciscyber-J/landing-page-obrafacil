@@ -287,6 +287,7 @@
         "carregando": "內容載入中…",
         "erro": "目前無法載入內容，請檢查您的網路連線。",
         "indisponivel": "此網址目前尚未提供條款內容。如有疑問請聯絡 suporte@appobrafacil.expertbr.com。",
+        "outroIdioma": "此文件尚未提供您的語言版本。以下是目前有效的{{idioma}}版本。",
         "tentarDeNovo": "再試一次"
     },
     "cookies": {

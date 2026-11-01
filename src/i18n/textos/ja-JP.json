@@ -287,6 +287,7 @@
         "carregando": "本文を読み込み中…",
         "erro": "本文を読み込めませんでした。通信環境をご確認ください。",
         "indisponivel": "このページは現在利用できません。suporte@appobrafacil.expertbr.com までお問い合わせください。",
+        "outroIdioma": "この文書はまだご利用の言語に対応していません。以下は現在有効な{{idioma}}版です。",
         "tentarDeNovo": "再試行"
     },
     "cookies": {

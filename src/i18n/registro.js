@@ -25,6 +25,9 @@
 //   pais     código do país da bandeira (ISO 3166, 2 letras).
 //   moeda    moeda dos preços (tem de existir em pricing.js).
 //   direcao  'ltr' (padrão) ou 'rtl' (árabe, hebraico).
+//   escrita  só nos idiomas fora do alfabeto latino: a família de fontes da escrita (src/fontes/escritas.js:
+//            'japonesa', 'coreana', 'chinesaTradicional', 'arabe', 'hebraica', 'devanagari', 'tailandesa'). Sem o
+//            campo, a escrita é latina (cirílico, grego e vietnamita também, pela Manrope); a variante herda da base.
 //   base     só nas variantes regionais: o idioma base de onde vêm os textos que não mudam.
 //   regioes  outras regiões que devem cair neste idioma quando o navegador pedir
 //            (ex.: navegador em es-AR abre o espanhol do México, não o da Espanha).

@@ -293,6 +293,7 @@
         "carregando": "Načítání textu…",
         "erro": "Text se právě nepodařilo načíst. Zkontrolujte prosím své připojení k internetu.",
         "indisponivel": "Text na této adrese zatím není k dispozici. Kontaktujte nás na suporte@appobrafacil.expertbr.com.",
+        "outroIdioma": "Tento text zatím není ve vašem jazyce k dispozici. Níže najdete platné znění v jazyce {{idioma}}.",
         "tentarDeNovo": "Zkusit znovu"
     },
     "cookies": {

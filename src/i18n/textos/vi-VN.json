@@ -287,6 +287,7 @@
         "carregando": "Đang tải nội dung…",
         "erro": "Không thể tải văn bản vào lúc này. Vui lòng kiểm tra lại kết nối của bạn.",
         "indisponivel": "Văn bản chưa có sẵn tại địa chỉ này. Vui lòng liên hệ suporte@appobrafacil.expertbr.com.",
+        "outroIdioma": "Văn bản này chưa có bằng ngôn ngữ của bạn. Dưới đây là phiên bản đang có hiệu lực bằng {{idioma}}.",
         "tentarDeNovo": "Thử lại"
     },
     "cookies": {

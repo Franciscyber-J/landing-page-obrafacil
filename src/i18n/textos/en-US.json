@@ -289,6 +289,7 @@
         "carregando": "Loading the text…",
         "erro": "We couldn't load the text right now. Please check your connection.",
         "indisponivel": "The text isn't available at this address yet. Write to suporte@appobrafacil.expertbr.com.",
+        "outroIdioma": "This text is not available in your language yet. Below is the version in force in {{idioma}}.",
         "tentarDeNovo": "Try again"
     },
     "cookies": {

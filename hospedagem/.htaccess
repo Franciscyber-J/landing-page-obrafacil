@@ -56,6 +56,19 @@ AddDefaultCharset UTF-8
     <FilesMatch "\.[0-9a-f]{12}\.json$">
         Header set Cache-Control "public, max-age=31536000, immutable"
     </FilesMatch>
+
+    # Fontes dos PDFs do app (fontes/pdf/<Nome>.<código>.ttf): o app web fica em outro endereço e só consegue
+    # baixar com a liberação de origem (CORS); o nome muda quando o arquivo muda, então pode ficar guardado.
+    # Nunca apagar nem trocar um arquivo publicado: versão antiga do app busca o dela.
+    <FilesMatch "\.[0-9a-f]{12}\.ttf$">
+        Header set Access-Control-Allow-Origin "*"
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+</IfModule>
+
+# Fontes dos PDFs comprimidas no envio (as de japonês, coreano e chinês caem de 5–7 MB para 3–4 MB).
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE font/ttf font/sfnt application/x-font-ttf application/font-sfnt
 </IfModule>
 
 <IfModule mod_rewrite.c>

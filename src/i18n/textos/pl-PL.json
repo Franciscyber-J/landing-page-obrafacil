@@ -293,6 +293,7 @@
         "carregando": "Wczytywanie tekstu…",
         "erro": "Nie udało się wczytać tekstu. Sprawdź połączenie z internetem.",
         "indisponivel": "Treść pod tym adresem nie jest jeszcze dostępna. Napisz na adres suporte@appobrafacil.expertbr.com.",
+        "outroIdioma": "Ten tekst nie jest jeszcze dostępny w Twoim języku. Poniżej znajduje się obowiązująca wersja w języku: {{idioma}}.",
         "tentarDeNovo": "Spróbuj ponownie"
     },
     "cookies": {

@@ -289,6 +289,7 @@
         "carregando": "Szöveg betöltése…",
         "erro": "A szöveget most nem sikerült betölteni. Kérjük, ellenőrizd az internetkapcsolatodat.",
         "indisponivel": "A szöveg ezen a címen jelenleg nem érhető el. Írj nekünk a suporte@appobrafacil.expertbr.com címre.",
+        "outroIdioma": "Ez a szöveg még nem érhető el az Ön nyelvén. Alább a hatályos változat olvasható a következő nyelven: {{idioma}}.",
         "tentarDeNovo": "Újrapróbálkozás"
     },
     "cookies": {

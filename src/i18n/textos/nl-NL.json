@@ -289,6 +289,7 @@
         "carregando": "Tekst laden…",
         "erro": "Kan de tekst op dit moment niet laden. Controleer je verbinding.",
         "indisponivel": "De tekst is nog niet beschikbaar op dit adres. Neem contact op via suporte@appobrafacil.expertbr.com.",
+        "outroIdioma": "Deze tekst is nog niet beschikbaar in uw taal. Hieronder staat de geldende versie in deze taal: {{idioma}}.",
         "tentarDeNovo": "Opnieuw proberen"
     },
     "cookies": {

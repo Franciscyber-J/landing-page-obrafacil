@@ -291,6 +291,7 @@
         "carregando": "Se încarcă textul…",
         "erro": "Textul nu a putut fi încărcat acum. Vă rugăm să verificați conexiunea la internet.",
         "indisponivel": "Textul nu este încă disponibil la această adresă. Vă rugăm să contactați suporte@appobrafacil.expertbr.com.",
+        "outroIdioma": "Acest text nu este încă disponibil în limba dumneavoastră. Mai jos găsiți versiunea în vigoare în {{idioma}}.",
         "tentarDeNovo": "Încercați din nou"
     },
     "cookies": {

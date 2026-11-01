@@ -8,7 +8,8 @@ import { IDIOMAS_AJUDA } from '../../src/ajuda/idiomas.js';
 import {
     artigoDoIdiomaValido, artigoParaPagina, caminhoDoCabecalho, caminhoDoIndice, caminhoDosArtigos, indiceValido,
 } from '../../src/ajuda/formato.js';
-import { DOCUMENTOS, PROJETO, lerCampos, textoDaVersao, versoesDoDocumento } from '../../src/legal/firestore.js';
+import { DOCUMENTOS, PROJETO, lerCampos, textoNaCadeia, versoesDoDocumento } from '../../src/legal/firestore.js';
+import { cadeia } from '../../src/i18n/idiomas.js';
 import { compararVersoes, versaoValida } from '../../src/legal/escolha.js';
 
 const BASE = `https://firestore.googleapis.com/v1/projects/${PROJETO}/databases/(default)/documents`;
@@ -105,12 +106,13 @@ async function legalDoFirestore() {
         const escolha = await versoesDoDocumento(documento);
         if (!escolha) continue;
         for (const { codigo } of IDIOMAS) {
-            const lido = await textoDaVersao(documento, escolha.atual.versao, codigo);
+            // Idioma que a versão em vigor ainda não traz: o texto do primeiro idioma da cadeia (a página avisa).
+            const lido = await textoNaCadeia(documento, escolha.atual.versao, codigo);
             if (!lido) continue;
             saida[documento][codigo] = {
                 documento,
                 idioma: codigo,
-                atual: { versao: lido.versao, texto: lido.texto, vigenteDesde: escolha.atual.vigenteDesde },
+                atual: { versao: lido.versao, texto: lido.texto, vigenteDesde: escolha.atual.vigenteDesde, idioma: lido.idioma },
                 proxima: escolha.proxima,
             };
         }
@@ -128,12 +130,12 @@ function legalLocal(pasta) {
         const versao = fs.readdirSync(dir).filter(versaoValida).sort(compararVersoes).pop();
         if (!versao) continue;
         for (const { codigo } of IDIOMAS) {
-            const arq = path.join(dir, versao, `${codigo}.md`);
-            if (!fs.existsSync(arq)) continue;
+            const doTexto = cadeia(codigo).find((c) => fs.existsSync(path.join(dir, versao, `${c}.md`)));
+            if (!doTexto) continue;
             saida[documento][codigo] = {
                 documento,
                 idioma: codigo,
-                atual: { versao, texto: fs.readFileSync(arq, 'utf8'), vigenteDesde: null },
+                atual: { versao, texto: fs.readFileSync(path.join(dir, versao, `${doTexto}.md`), 'utf8'), vigenteDesde: null, idioma: doTexto },
                 proxima: null,
             };
         }
@@ -165,6 +167,8 @@ export function conferirFontes({ ajuda, erroAjuda = null, legal, erroLegal = nul
             else {
                 const faltam = IDIOMAS.map((i) => i.codigo).filter((c) => !idiomas.includes(c));
                 if (faltam.length) avisos.push(`${documento}: sem texto em ${faltam.join(', ')}; essas páginas não ficam prontas.`);
+                const emOutro = idiomas.filter((c) => legal[documento][c]?.atual?.idioma && legal[documento][c].atual.idioma !== c);
+                if (emOutro.length) avisos.push(`${documento}: a versão em vigor ainda não tem ${emOutro.join(', ')}; essas páginas mostram o texto de outro idioma da cadeia, com aviso.`);
             }
         }
     }

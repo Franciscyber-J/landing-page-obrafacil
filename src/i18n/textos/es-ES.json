@@ -291,6 +291,7 @@
         "carregando": "Cargando el texto…",
         "erro": "No se ha podido cargar el texto ahora. Compruebe su conexión.",
         "indisponivel": "El texto todavía no está disponible en esta dirección. Escriba a suporte@appobrafacil.expertbr.com.",
+        "outroIdioma": "Este texto todavía no está disponible en su idioma. A continuación se muestra la versión vigente en {{idioma}}.",
         "tentarDeNovo": "Intentar de nuevo"
     },
     "cookies": {

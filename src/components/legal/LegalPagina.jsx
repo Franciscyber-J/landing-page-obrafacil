@@ -5,9 +5,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
-import { conferirTexto, textoDaProxima, textoGuardado } from '../../legal/dados.js';
+import { conferirTexto, idiomaDoTexto, textoDaProxima, textoGuardado } from '../../legal/dados.js';
 import { lerTexto, sumario, tituloDoTexto } from '../../legal/markdown.js';
-import { caminhoLegal } from '../../i18n/idiomas.js';
+import { caminhoLegal, idioma as dadosDoIdioma } from '../../i18n/idiomas.js';
 import { formatarData } from '../../i18n/formatos.js';
 import { useRotaEquivalente } from '../../i18n/RotaDoIdioma.jsx';
 import { tituloDaPagina } from '../../seo/textos.js';
@@ -112,16 +112,24 @@ export default function LegalPagina({ codigo, documento }) {
 
     const { atual, proxima: infoProxima } = estado.dados;
     const vigencia = mostrado?.vigenteDesde;
+    // Idioma novo antes da versão que o traz: o texto em vigor vem no primeiro idioma da cadeia (o inglês).
+    const doTexto = dadosDoIdioma(idiomaDoTexto(mostrado, codigo));
+    const outroIdioma = doTexto && doTexto.codigo !== codigo ? doTexto : null;
 
     return (
         <main className={styles.pagina}>
             <header className={styles.cabecalho}>
-                <h1 className={styles.titulo}>{titulo}</h1>
+                <h1 className={styles.titulo} lang={outroIdioma?.codigo} dir={outroIdioma?.direcao}>{titulo}</h1>
                 {/* A data de hoje do navegador pode ser outra que a do build (aviso de diferença dispensado). */}
                 <p className={styles.versao} suppressHydrationWarning>
                     {t('legal.versao', { versao: mostrado.versao })}
                     {vigencia ? ` · ${t(vigencia > agora ? 'legal.valeAPartir' : 'legal.emVigorDesde', { data: dataPorExtenso(vigencia, codigo) })}` : ''}
                 </p>
+                {outroIdioma && (
+                    <div className={styles.aviso} role="note">
+                        <p>{t('legal.outroIdioma', { idioma: outroIdioma.nome })}</p>
+                    </div>
+                )}
                 {infoProxima && !vendoProxima && (
                     <div className={styles.aviso} role="note">
                         <p>{t('legal.novaVersao', { versao: infoProxima.versao, data: dataPorExtenso(infoProxima.vigenteDesde, codigo) })}</p>
@@ -143,14 +151,14 @@ export default function LegalPagina({ codigo, documento }) {
 
             <div className={styles.corpo}>
                 {secoes.length > 2 && (
-                    <nav className={styles.sumario} aria-label={t('legal.sumario')}>
+                    <nav className={styles.sumario} aria-label={t('legal.sumario')} lang={outroIdioma?.codigo} dir={outroIdioma?.direcao}>
                         <p className={styles.sumarioTitulo}>{t('legal.sumario')}</p>
                         <ol>
                             {secoes.map((s) => <li key={s.id}><a href={`#${s.id}`}>{s.texto}</a></li>)}
                         </ol>
                     </nav>
                 )}
-                <article className={styles.texto}>
+                <article className={styles.texto} lang={outroIdioma?.codigo} dir={outroIdioma?.direcao}>
                     {blocos.filter((b) => b.tipo !== 'titulo').map((b, i) => <Bloco key={i} bloco={b} />)}
                     <p className={styles.outro}>
                         <Link to={caminhoLegal(codigo, outroDocumento)}>{t(outroDocumento === 'termos' ? 'footer.terms' : 'footer.privacy')}</Link>

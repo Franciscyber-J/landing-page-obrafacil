@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { compararVersoes, escolherVersao } from './escolha.js';
 import { blocosEmHtml, lerTexto, sumario, tituloDoTexto, trechos } from './markdown.js';
-import { textoDaVersao, versoesDoDocumento } from './firestore.js';
+import { textoDaVersao, textoNaCadeia, versoesDoDocumento } from './firestore.js';
 
 const DIA = 24 * 60 * 60 * 1000;
 const AGORA = Date.parse('2026-11-20T12:00:00Z');
@@ -103,4 +103,24 @@ test('Firestore: sem nada liberado lista as versões; o texto vem só no idioma 
 test('Firestore: pedido inválido é recusado antes de ir à rede', async () => {
     await assert.rejects(() => textoDaVersao('termos', '../x', 'pt-BR', { fetchFn: async () => { throw new Error('não devia'); } }));
     await assert.rejects(() => versoesDoDocumento('outro'));
+});
+
+test('idioma que a versão ainda não traz: o texto vem do primeiro idioma da cadeia (a base e depois o inglês)', async () => {
+    const versao = {
+        fields: {
+            versao: { stringValue: '1.0' }, estado: { stringValue: 'liberada' },
+            textos: { mapValue: { fields: {
+                'pt-BR': { stringValue: '# Termos de Uso\n\nOi.' },
+                'en-US': { stringValue: '# Terms of Use\n\nHi.' },
+            } } },
+        },
+    };
+    const { fetchFn } = respostas({ 'documentos_legais/termos/versoes/1.0?': versao });
+    const fr = await textoNaCadeia('termos', '1.0', 'fr-FR', { fetchFn });
+    assert.equal(fr.idioma, 'en-US');
+    assert.ok(fr.texto.startsWith('# Terms of Use'));
+    // Variante sem texto próprio: a base vem antes do inglês.
+    assert.equal((await textoNaCadeia('termos', '1.0', 'pt-PT', { fetchFn })).idioma, 'pt-BR');
+    // Idioma com texto: o próprio.
+    assert.equal((await textoNaCadeia('termos', '1.0', 'pt-BR', { fetchFn })).idioma, 'pt-BR');
 });

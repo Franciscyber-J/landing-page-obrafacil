@@ -3,7 +3,7 @@
 // A página pronta do build já traz o texto (src/dadosIniciais.js): quem abre direto não espera.
 
 import { dadosIniciais } from '../dadosIniciais.js';
-import { textoDaVersao, versoesDoDocumento } from './firestore.js';
+import { textoNaCadeia, versoesDoDocumento } from './firestore.js';
 
 const PREFIXO = 'legal:v1:';
 const conferencias = new Map();
@@ -60,9 +60,9 @@ export function conferirTexto(documento, idioma) {
         if (guardado && guardado.atual.versao === escolha.atual.versao) {
             atual = { ...guardado.atual, vigenteDesde: escolha.atual.vigenteDesde };
         } else {
-            const lido = await textoDaVersao(documento, escolha.atual.versao, idioma);
+            const lido = await textoNaCadeia(documento, escolha.atual.versao, idioma);
             if (!lido) return null;
-            atual = { versao: lido.versao, texto: lido.texto, vigenteDesde: escolha.atual.vigenteDesde };
+            atual = { versao: lido.versao, texto: lido.texto, vigenteDesde: escolha.atual.vigenteDesde, idioma: lido.idioma };
         }
         const resultado = { atual, proxima: escolha.proxima };
         gravarCache(chave, resultado);
@@ -75,8 +75,13 @@ export function conferirTexto(documento, idioma) {
     return promessa;
 }
 
+// Idioma do texto mostrado (o pedido, se o texto guardado é de antes deste campo existir).
+export function idiomaDoTexto(atual, idioma) {
+    return atual?.idioma ?? idioma;
+}
+
 // Texto da próxima versão (aviso de 30 dias), só quando a pessoa pede para ler.
 export async function textoDaProxima(documento, idioma, proxima) {
-    const lido = await textoDaVersao(documento, proxima.versao, idioma);
-    return lido ? { versao: lido.versao, texto: lido.texto, vigenteDesde: proxima.vigenteDesde } : null;
+    const lido = await textoNaCadeia(documento, proxima.versao, idioma);
+    return lido ? { versao: lido.versao, texto: lido.texto, vigenteDesde: proxima.vigenteDesde, idioma: lido.idioma } : null;
 }

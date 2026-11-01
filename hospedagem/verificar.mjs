@@ -5,7 +5,12 @@
 //   node hospedagem/verificar.mjs https://outro-endereco.exemplo   (para testar outra cópia)
 // Sai com código 1 se alguma conferência falhar.
 
+import { IDIOMAS, caminhoInicio, caminhoLegal } from '../src/i18n/idiomas.js';
+
 const SITE = 'https://appobrafacil.expertbr.com';
+// Os idiomas de antes da 2.0 têm conferências próprias abaixo; os outros, a página inicial e os Termos de cada um.
+const IDIOMAS_DE_ANTES = ['pt-BR', 'pt-PT', 'en-US', 'en-GB', 'en-AU', 'en-CA', 'es-ES', 'es-MX'];
+const NOVOS = IDIOMAS.map((i) => i.codigo).filter((c) => !IDIOMAS_DE_ANTES.includes(c));
 const BASE = (process.argv[2] ?? SITE).replace(/\/$/, '');
 const PRONTA = '<div id="root" data-pronta>';
 const CASCA = '<div id="root"></div>';
@@ -97,7 +102,8 @@ console.log(`Conferindo ${BASE}\n`);
 console.log('Raiz: 302 para o idioma do navegador (sem idioma conhecido, inglês)');
 await redireciona('raiz, navegador pt-BR', '/', 302, '/pt-br/', 'pt-BR,pt;q=0.9');
 await redireciona('raiz, navegador es-AR', '/', 302, '/es-mx/', 'es-AR,es;q=0.9');
-await redireciona('raiz, navegador de-DE com português depois', '/', 302, '/pt-br/', 'de-DE,de;q=0.9,pt;q=0.8');
+await redireciona('raiz, navegador de-DE (idioma do site)', '/', 302, '/de-de/', 'de-DE,de;q=0.9,pt;q=0.8');
+await redireciona('raiz, navegador sv-SE com português depois', '/', 302, '/pt-br/', 'sv-SE,sv;q=0.9,pt;q=0.8');
 await redireciona('raiz, navegador pt-AO', '/', 302, '/pt-pt/', 'pt-AO');
 await redireciona('raiz, navegador en-NZ', '/', 302, '/en-au/', 'en-NZ,en;q=0.9');
 await redireciona('raiz, sem idioma (robôs)', '/', 302, '/en-us/');
@@ -127,6 +133,7 @@ for (const [nome, caminho] of [
   ['Terms en-US', '/en-us/terms-of-use'], ['Termos pt-PT', '/pt-pt/termos-de-utilizacao'],
   ['Política es-MX', '/es-mx/politica-de-privacidad'],
   ['Suporte pt-BR', '/pt-br/suporte'], ['Suporte es-ES', '/es-es/soporte'],
+  ...NOVOS.flatMap((c) => [[`início ${c}`, caminhoInicio(c)], [`Termos ${c}`, encodeURI(caminhoLegal(c, 'termos'))]]),
 ]) await paginaPronta(nome, caminho);
 await paginaPronta('volta do pagamento (noindex)', '/pt-br/pagamento-confirmado/pro', { semIndexar: true });
 await paginaPronta('Perfil (noindex)', '/en-us/profile', { semIndexar: true });
@@ -156,9 +163,10 @@ await redireciona('termos antigo, navegador es-AR', '/termos-de-uso', 301, '/es-
 await redireciona('termos antigo, navegador es', '/termos-de-uso/', 301, '/es-es/terminos-de-uso', 'es');
 await redireciona('privacidade antiga, navegador en-GB', '/politicas-de-privacidade/', 301, '/en-gb/privacy-policy', 'en-GB,en;q=0.9');
 await redireciona('privacidade antiga, sem idioma (robôs)', '/politicas-de-privacidade/', 301, '/pt-br/politica-de-privacidade');
-await redireciona('privacidade antiga, navegador de-DE', '/politicas-de-privacidade/', 301, '/en-us/privacy-policy', 'de-DE,de;q=0.9');
+await redireciona('privacidade antiga, navegador de-DE', '/politicas-de-privacidade/', 301, '/de-de/datenschutz', 'de-DE,de;q=0.9');
+await redireciona('privacidade antiga, navegador sv-SE (sem o idioma no site)', '/politicas-de-privacidade/', 301, '/en-us/privacy-policy', 'sv-SE,sv;q=0.9');
 await redireciona('termos antigo, navegador "*"', '/termos-de-uso/', 301, '/en-us/terms-of-use', '*');
-await redireciona('Perfil, navegador fr-FR', '/perfil', 301, '/en-us/profile', 'fr-FR');
+await redireciona('Perfil, navegador fr-FR', '/perfil', 301, '/fr-fr/profil', 'fr-FR');
 await redireciona('termos antigo em maiúsculas', '/Termos-De-Uso/', 301, '/pt-br/termos-de-uso');
 const PAGAMENTO = [
   ['volta do PRO pago pelo site', '/primeiros-passos', '/pt-br/pagamento-confirmado/pro'],
@@ -244,6 +252,16 @@ for (const [pagina, caminho] of [['início', '/pt-br/'], ['artigo', '/pt-br/ajud
   const cspNossa = [cspAplicada, cspRelatorio].find((valor) => /default-src 'self'/.test(valor));
   const situacaoCsp = !cspNossa ? 'ausente' : cspNossa === cspAplicada ? 'aplicada' : 'em modo de relatório';
   linha(Boolean(cspNossa), `política de conteúdo (CSP)                     (${pagina}): ${situacaoCsp}`);
+}
+
+// Fontes dos PDFs do app: o app web (outro endereço) só baixa com a liberação de origem.
+console.log('\nFontes dos PDFs do app');
+{
+  const fonte = '/fontes/pdf/NotoSansArabic-Regular.ec12005718f7.ttf';
+  const r = await pedir(fonte, { metodo: 'HEAD' });
+  linha(r.status === 200, `fonte publicada: HTTP ${r.status}`);
+  linha(r.cabecalhos.get('access-control-allow-origin') === '*', `liberação de origem (CORS): ${r.cabecalhos.get('access-control-allow-origin') ?? 'ausente'}`);
+  linha(/immutable/.test(r.cabecalhos.get('cache-control') ?? ''), `cache longo: ${r.cabecalhos.get('cache-control') ?? 'ausente'}`);
 }
 
 console.log(`\n${falhas ? `${falhas} conferência(s) falharam.` : 'Tudo certo.'}`);

@@ -3,6 +3,7 @@
 // porque só usa fetch.
 
 import { escolherVersao, versaoValida } from './escolha.js';
+import { cadeia } from '../i18n/idiomas.js';
 
 // Formato da API REST do Firestore → valores comuns (o mesmo de src/ajuda/dados.js, aqui sem
 // depender do Vite, porque o build também usa este arquivo no Node).
@@ -96,4 +97,15 @@ export async function textoDaVersao(documento, versao, idioma, { fetchFn = fetch
         hash: doc.hashes?.[idioma] ?? null,
         vigenteDesde: doc.estado === 'preparada' ? null : (doc.vigente_desde ? Date.parse(doc.vigente_desde) : null),
     };
+}
+
+// Texto de uma versão no idioma ou, se a versão não tem esse idioma (idioma novo antes da versão que o traz), no
+// primeiro idioma da cadeia dele (a base e depois o inglês): a página avisa que o texto está em outro idioma.
+// O "idioma" do resultado é o do texto.
+export async function textoNaCadeia(documento, versao, idioma, opcoes) {
+    for (const codigo of cadeia(idioma)) {
+        const lido = await textoDaVersao(documento, versao, codigo, opcoes);
+        if (lido) return { ...lido, idioma: codigo };
+    }
+    return null;
 }
