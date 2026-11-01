@@ -6,7 +6,7 @@ import { Check, ChevronDown, Menu, Moon, Sun, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { IDIOMAS, caminhoAjuda, caminhoInicio, idioma } from '../i18n/idiomas.js';
 import { useIdioma, useTrocarIdioma } from '../i18n/RotaDoIdioma.jsx';
-import { LOGIN } from '../links.js';
+import { login } from '../links.js';
 import { publico } from '../publico.js';
 import styles from './Navbar.module.css';
 import { useLinkComecar } from '../useNavegador.js';
@@ -196,7 +196,7 @@ export default function Navbar() {
                     <button type="button" className={styles.icone} onClick={trocarTema} aria-label={t('nav.themeToggle')}>
                         <IconeTema />
                     </button>
-                    <a href={LOGIN} className={styles.entrar}>{t('nav.login')}</a>
+                    <a href={login(codigo)} className={styles.entrar}>{t('nav.login')}</a>
                     <a {...comecar} className="acao">{t('nav.comecar')}</a>
                 </div>
 
@@ -240,7 +240,7 @@ export default function Navbar() {
                         {tema === 'escuro' ? t('nav.lightMode') : t('nav.darkMode')}
                     </button>
                     <div className={styles.menuAcoes}>
-                        <a href={LOGIN} className="acao-contorno">{t('nav.login')}</a>
+                        <a href={login(codigo)} className="acao-contorno">{t('nav.login')}</a>
                         <a {...comecar} className="acao">{t('nav.comecar')}</a>
                     </div>
                 </div>

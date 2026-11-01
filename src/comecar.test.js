@@ -2,7 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { aparelho, linkComecar } from './comecar.js';
-import { CADASTRO, appStore, googlePlay } from './links.js';
+import { appStore, assinarAnual, assinarMensal, cadastro, googlePlay, login } from './links.js';
 import { getPricing } from './i18n/pricing.js';
 
 const ANDROID = { userAgent: 'Mozilla/5.0 (Linux; Android 14; SM-A546E) AppleWebKit/537.36 Chrome/129 Mobile Safari/537.36', maxTouchPoints: 5 };
@@ -23,7 +23,14 @@ test('aparelho: Android, iPhone, iPad (que se apresenta como Mac) e computador',
 test('Começar grátis: loja do celular, cadastro no computador, com o nome da conversão', () => {
     assert.deepEqual(linkComecar('pt-BR', ANDROID), { href: googlePlay('pt-BR'), 'data-conversao': 'loja_android' });
     assert.deepEqual(linkComecar('en-US', IPHONE), { href: appStore(), 'data-conversao': 'loja_ios' });
-    assert.deepEqual(linkComecar('es-ES', WINDOWS), { href: CADASTRO, 'data-conversao': 'cadastro' });
+    assert.deepEqual(linkComecar('es-ES', WINDOWS), { href: cadastro('es-ES'), 'data-conversao': 'cadastro' });
+});
+
+test('links do app web levam o idioma da página', () => {
+    assert.equal(cadastro('fr-FR'), 'https://obrafacilapp.expertbr.com/cadastro?idioma=fr-FR');
+    assert.equal(login('ja-JP'), 'https://obrafacilapp.expertbr.com/login?idioma=ja-JP');
+    assert.equal(assinarMensal('pt-BR'), 'https://obrafacilapp.expertbr.com/cadastro?checkout=true&idioma=pt-BR');
+    assert.equal(assinarAnual('pt-BR'), 'https://obrafacilapp.expertbr.com/cadastro?checkout=anual&idioma=pt-BR');
 });
 
 test('preços: moeda com centavos no Stripe não sai 100 vezes maior', () => {

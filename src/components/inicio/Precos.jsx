@@ -7,7 +7,7 @@ import { getPricing } from '../../i18n/pricing.js';
 import { partesDoNumero } from '../../i18n/formatos.js';
 import { idDaSecao } from '../../i18n/idiomas.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
-import { ASSINAR_ANUAL, ASSINAR_MENSAL } from '../../links.js';
+import { assinarAnual, assinarMensal } from '../../links.js';
 import { COM_MOUSE, gsap, inclinarComPonteiro, magnetico, useGSAP } from '../../movimento/index.js';
 import styles from './Precos.module.css';
 import { useLinkComecar } from '../../useNavegador.js';
@@ -138,7 +138,7 @@ export default function Precos() {
                             )}
                             <Lista itens={itensPro} clara />
                             <a
-                                href={anual ? ASSINAR_ANUAL : ASSINAR_MENSAL}
+                                href={anual ? assinarAnual(codigo) : assinarMensal(codigo)}
                                 className={`acao-clara ${styles.botao}`}
                                 data-m="assinar"
                                 data-conversao={anual ? 'assinar_anual' : 'assinar_mensal'}

@@ -1,9 +1,12 @@
 // Endereços de fora do site (app, lojas, WhatsApp). Num lugar só para não ficarem espalhados.
 export const APP = 'https://obrafacilapp.expertbr.com';
-export const CADASTRO = `${APP}/cadastro`;
-export const LOGIN = `${APP}/login`;
-export const ASSINAR_MENSAL = `${APP}/cadastro?checkout=true`;
-export const ASSINAR_ANUAL = `${APP}/cadastro?checkout=anual`;
+// Os links do app web levam o idioma da página (?idioma=fr-FR): o app abre nele, se a pessoa ainda não escolheu
+// outro no aparelho (lib/utils/idioma_do_endereco.dart no gestao_obras).
+const comIdioma = (caminho, codigo) => `${APP}${caminho}${caminho.includes('?') ? '&' : '?'}idioma=${encodeURIComponent(codigo)}`;
+export const cadastro = (codigo) => comIdioma('/cadastro', codigo);
+export const login = (codigo) => comIdioma('/login', codigo);
+export const assinarMensal = (codigo) => comIdioma('/cadastro?checkout=true', codigo);
+export const assinarAnual = (codigo) => comIdioma('/cadastro?checkout=anual', codigo);
 export const WINDOWS = 'https://appobrafacil.expertbr.com/download/Instalador_ObraFacil_Windows.exe';
 export const WHATSAPP = '5562992666759';
 // E-mail oficial do suporte (o mesmo da tela Sobre o App do aplicativo).
