@@ -10,6 +10,9 @@ O que este script faz, para cada Noto Sans (variável, do repositório google/fo
   2. subset do fontTools com TODOS os caracteres da fonte, tirando o que o pacote pdf não usa: GSUB, GPOS, GDEF,
      BASE, vhea/vmtx, gasp, STAT, as instruções de hinting e os glifos que só o GSUB alcança. O pacote pdf lê
      só head, hhea, maxp, OS/2, hmtx, cmap, loca, glyf, name e post (ttf_parser.dart/ttf_writer.dart).
+     Exceção: devanágari e tailandês (COM_FORMACAO) guardam GSUB, GPOS e GDEF com todas as regras e os glifos que
+     só elas alcançam (conjuntos, reph, sinais empilhados). O app forma esse texto com o HarfBuzz antes de escrever
+     o PDF (gestao_obras: docs/idiomas/MOTOR_DE_TEXTO_DO_PDF.md), e o HarfBuzz precisa dessas três tabelas.
   3. Grava <Família>-<Estilo>.<12 primeiros caracteres do SHA-256>.ttf, o OFL de cada família e lista.json.
 
 Reproduzível: a data gravada na fonte é a da fonte de origem (não a de hoje), então o mesmo google/fonts gera os
@@ -44,6 +47,9 @@ FONTES = {
 }
 PESOS = {'Regular': 400, 'Bold': 700}
 TABELAS_DO_PACOTE_PDF = {'head', 'hhea', 'maxp', 'OS/2', 'hmtx', 'cmap', 'loca', 'glyf', 'name', 'post'}
+# Escritas cujas letras mudam de forma e de lugar conforme as vizinhas: a fonte leva as tabelas de formação.
+COM_FORMACAO = {'NotoSansDevanagari', 'NotoSansThai'}
+TABELAS_DE_FORMACAO = {'GSUB', 'GPOS', 'GDEF'}
 
 
 def salvar(fonte):
@@ -64,13 +70,20 @@ def estatica(caminho_variavel, peso):
     return TTFont(io.BytesIO(salvar(fonte)), recalcTimestamp=False), data
 
 
-def reduzida(fonte, data):
+def reduzida(fonte, data, com_formacao):
     unicodes = list(fonte.getBestCmap().keys())
     opcoes = subset.Options()
-    opcoes.layout_features = []
-    opcoes.layout_closure = False
-    opcoes.drop_tables += ['GSUB', 'GPOS', 'GDEF', 'BASE', 'vhea', 'vmtx', 'gasp', 'STAT', 'MVAR', 'HVAR', 'VVAR',
-                           'DSIG', 'meta', 'JSTF', 'MATH', 'kern', 'hdmx', 'LTSH', 'VDMX', 'PCLT']
+    tiradas = ['BASE', 'vhea', 'vmtx', 'gasp', 'STAT', 'MVAR', 'HVAR', 'VVAR', 'DSIG', 'meta', 'JSTF', 'MATH', 'kern',
+               'hdmx', 'LTSH', 'VDMX', 'PCLT']
+    if com_formacao:
+        opcoes.layout_features = ['*']          # todas as regras de formação da fonte
+        opcoes.layout_closure = True            # e os glifos que só elas alcançam
+        opcoes.layout_scripts = ['*']
+        opcoes.drop_tables = [t for t in opcoes.drop_tables if t not in TABELAS_DE_FORMACAO] + tiradas
+    else:
+        opcoes.layout_features = []
+        opcoes.layout_closure = False
+        opcoes.drop_tables += ['GSUB', 'GPOS', 'GDEF'] + tiradas
     opcoes.hinting = False
     opcoes.glyph_names = False
     opcoes.notdef_outline = True
@@ -83,8 +96,12 @@ def reduzida(fonte, data):
     sub.populate(unicodes=unicodes)
     sub.subset(fonte)
     assert set(fonte.getBestCmap().keys()) == set(unicodes), 'o subset perdeu caractere'
-    sobra = set(fonte.keys()) - TABELAS_DO_PACOTE_PDF - {'GlyphOrder'}
+    esperadas = TABELAS_DO_PACOTE_PDF | (TABELAS_DE_FORMACAO if com_formacao else set())
+    sobra = set(fonte.keys()) - esperadas - {'GlyphOrder'}
     assert not sobra, f'tabela a mais: {sobra}'
+    if com_formacao:
+        falta = TABELAS_DE_FORMACAO - set(fonte.keys())
+        assert not falta, f'tabela de formação faltando: {falta}'
     fonte['head'].created, fonte['head'].modified = data
     return salvar(fonte), len(unicodes)
 
@@ -107,13 +124,14 @@ def principal(origem, destino):
             f.write(ofl)
         for estilo, peso in PESOS.items():
             fonte, data = estatica(os.path.join(origem, 'ofl', pasta, arquivo), peso)
-            dados, caracteres = reduzida(fonte, data)
+            dados, caracteres = reduzida(fonte, data, familia in COM_FORMACAO)
             sha = hashlib.sha256(dados).hexdigest()
             nome = f'{familia}-{estilo}.{sha[:12]}.ttf'
             with open(os.path.join(destino, nome), 'wb') as f:
                 f.write(dados)
             lista['arquivos'].append({'arquivo': nome, 'familia': familia, 'peso': peso, 'bytes': len(dados),
-                                      'sha256': sha, 'caracteres': caracteres, 'origem': f'ofl/{pasta}/{arquivo}'})
+                                      'sha256': sha, 'caracteres': caracteres, 'formacao': familia in COM_FORMACAO,
+                                      'origem': f'ofl/{pasta}/{arquivo}'})
             print(f'{nome:48} {len(dados):>10,} bytes  {caracteres:>6} caracteres  {sha}')
     with open(os.path.join(destino, 'lista.json'), 'w', encoding='utf-8') as f:
         json.dump(lista, f, ensure_ascii=False, indent=2)
