@@ -7,9 +7,10 @@ import { fileURLToPath } from 'node:url';
 import { SITE, absoluto, arquivoDaPagina } from '../../src/seo/paginas.js';
 import { spawnSync } from 'node:child_process';
 import os from 'node:os';
-import { conferirDist, conferirLlms, conferirPagina, conferirRobots, conferirSitemap, enderecoDoArquivo } from './conferir.mjs';
+import { conferirDist, conferirIndiceDeSitemaps, conferirLlms, conferirPagina, conferirRobots, conferirSitemap, conferirSitemaps, enderecoDoArquivo } from './conferir.mjs';
 import { conferirFontes, lerAjuda } from './fontes.mjs';
 import { IDIOMAS } from '../../src/i18n/idiomas.js';
+import { IDIOMAS_AJUDA } from '../../src/ajuda/idiomas.js';
 
 const URL_ARTIGO = `${SITE}/pt-br/ajuda/criar-rdo`;
 const TEXTO = 'Texto do artigo, visível sem JavaScript. '.repeat(10);
@@ -50,6 +51,43 @@ test('sitemap: pega endereço repetido, hreflang que não volta e & sem escape',
     assert.match(conferirSitemap(`${cabeca}${url(`${SITE}/a?b&c`, [])}</urlset>`).problemas.join(), /& sem escape/);
 });
 
+test('sitemaps no dist: índice, um arquivo por idioma e hreflang recíproco entre os arquivos', () => {
+    const pasta = fs.mkdtempSync(path.join(os.tmpdir(), 'sitemaps-'));
+    const url = (loc, alternativos) => `<url><loc>${loc}</loc>${alternativos.map(([h, href]) => `<xhtml:link rel="alternate" hreflang="${h}" href="${href}" />`).join('')}</url>`;
+    const cabeca = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">';
+    const a = `${SITE}/pt-br/`;
+    const b = `${SITE}/en-us/`;
+    const alt = [['pt-BR', a], ['en-US', b], ['x-default', `${SITE}/`]];
+    const indice = (nomes) => `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${nomes.map((n) => `<sitemap><loc>${SITE}/${n}</loc></sitemap>`).join('')}</sitemapindex>`;
+    const gravar = (nome, texto) => fs.writeFileSync(path.join(pasta, nome), texto);
+    try {
+        gravar('sitemap.xml', indice(['sitemap-pt-br.xml', 'sitemap-en-us.xml']));
+        gravar('sitemap-pt-br.xml', `${cabeca}${url(a, alt)}</urlset>`);
+        gravar('sitemap-en-us.xml', `${cabeca}${url(b, alt)}</urlset>`);
+        const certo = conferirSitemaps(pasta);
+        assert.deepEqual(certo.problemas, []);
+        assert.equal(certo.entradas.length, 2);
+        assert.equal(certo.sitemaps, 2);
+        // hreflang que não volta, entre arquivos diferentes.
+        gravar('sitemap-en-us.xml', `${cabeca}${url(b, [['en-US', b], ['x-default', `${SITE}/`]])}</urlset>`);
+        assert.match(conferirSitemaps(pasta).problemas.join(), /não aponta de volta/);
+        // Endereço no arquivo de outro idioma; arquivo fora do índice; índice apontando arquivo que não existe.
+        gravar('sitemap-en-us.xml', `${cabeca}${url(b, alt)}${url(`${SITE}/pt-br/ajuda`, [['pt-BR', `${SITE}/pt-br/ajuda`], ['x-default', `${SITE}/pt-br/ajuda`]])}</urlset>`);
+        assert.match(conferirSitemaps(pasta).problemas.join(), /sitemap-en-us\.xml: .*pt-br\/ajuda é de outro idioma/);
+        gravar('sitemap-en-us.xml', `${cabeca}${url(b, alt)}</urlset>`);
+        gravar('sitemap-fr-fr.xml', `${cabeca}</urlset>`);
+        assert.match(conferirSitemaps(pasta).problemas.join(), /sitemap-fr-fr\.xml fora do sitemap\.xml/);
+        fs.rmSync(path.join(pasta, 'sitemap-fr-fr.xml'));
+        gravar('sitemap.xml', indice(['sitemap-pt-br.xml', 'sitemap-en-us.xml', 'sitemap-de-de.xml']));
+        assert.match(conferirSitemaps(pasta).problemas.join(), /aponta sitemap-de-de\.xml, que não existe/);
+        // sitemap.xml no formato antigo (os endereços nele) não vale mais.
+        gravar('sitemap.xml', `${cabeca}${url(a, alt)}</urlset>`);
+        assert.match(conferirIndiceDeSitemaps(fs.readFileSync(path.join(pasta, 'sitemap.xml'), 'utf8')).problemas.join(), /não é um índice/);
+    } finally {
+        fs.rmSync(pasta, { recursive: true });
+    }
+});
+
 test('endereço na escrita do idioma: o arquivo da página pronta volta ao mesmo endereço do canonical', () => {
     // Exemplos só de teste (japonês, árabe, hindi, tailandês, coreano), nenhum artigo de verdade.
     for (const caminho of ['/pt-br/ajuda/写真を追加', '/en-us/help/إضافة-صورة', '/en-us/help/topic/दैनिक-रिपोर्ट', '/pt-br/ajuda/เพิ่มรูปภาพ', '/pt-br/ajuda/사진-추가', '/pt-br/ajuda/criar-rdo', '/pt-br/']) {
@@ -66,8 +104,18 @@ test('robots.txt e llms.txt: pega o que falta', () => {
 test('fontes: sem a Central ou os Termos o build para; com --sem-firestore só avisa', () => {
     const textos = Object.fromEntries(IDIOMAS.map((i) => [i.codigo, { atual: {} }]));
     const legal = { termos: textos, privacidade: textos };
-    const ajuda = { indices: { 'pt-BR': {} }, artigos: { 'pt-BR': new Map([['a', {}]]) } };
+    const ajuda = {
+        indices: Object.fromEntries(IDIOMAS_AJUDA.map((i) => [i, {}])),
+        artigos: Object.fromEntries(IDIOMAS_AJUDA.map((i) => [i, new Map([['a', {}]])])),
+    };
     assert.deepEqual(conferirFontes({ ajuda, legal }), { erros: [], avisos: [] });
+    // Idioma da Central sem nada publicado (o site gerado antes do publicador gravar os idiomas novos): para.
+    const semFrances = { indices: { ...ajuda.indices }, artigos: { ...ajuda.artigos, 'he-IL': new Map() } };
+    delete semFrances.indices['fr-FR'];
+    const faltando = conferirFontes({ ajuda: semFrances, legal });
+    assert.equal(faltando.erros.length, 1);
+    assert.match(faltando.erros[0], /sem 2 idioma\(s\) publicado\(s\) \(fr-FR, he-IL\)/);
+    assert.equal(conferirFontes({ ajuda: semFrances, legal, semFirestore: true }).erros.length, 0);
     assert.equal(conferirFontes({ ajuda: null, erroAjuda: new Error('fetch failed'), legal }).erros.length, 1);
     assert.equal(conferirFontes({ ajuda: { indices: {}, artigos: {} }, legal }).erros.length, 1);
     assert.equal(conferirFontes({ ajuda: { indices: { 'pt-BR': {} }, artigos: { 'pt-BR': new Map() } }, legal }).erros.length, 1);

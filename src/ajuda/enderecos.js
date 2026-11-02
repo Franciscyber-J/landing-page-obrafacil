@@ -6,6 +6,7 @@
 
 import { caminhoAjuda, caminhoArtigo, caminhoAssunto, slugDoTexto } from '../i18n/idiomas.js';
 import { idiomaDoConteudo } from './idiomas.js';
+import { assuntoRenomeado } from './antigos.js';
 
 // Nome do módulo no endereço, no idioma pedido. Sem "nomes" (índice publicado antes dele
 // existir) usa o nome do próprio índice; sem nome, o id (que também é aceito).
@@ -13,12 +14,15 @@ export function slugDoModulo(modulo, idiomaConteudo) {
     return slugDoTexto(modulo.nomes?.[idiomaConteudo] ?? modulo.nome) || modulo.id;
 }
 
-// Módulo pelo pedaço do endereço: o nome no idioma, o id, ou o nome em outro idioma
-// (quem trocou só o começo do endereço). O chamador redireciona para o endereço certo.
+// Módulo pelo pedaço do endereço: o nome no idioma, o id, o nome antigo do assunto neste idioma (src/ajuda/antigos.js;
+// no servidor é um 301) ou o nome em outro idioma (quem trocou só o começo do endereço). O chamador redireciona para
+// o endereço certo.
 export function acharModulo(modulos, parte, idiomaConteudo) {
     const procurado = slugDoTexto(parte);
+    const renomeado = assuntoRenomeado(idiomaConteudo, procurado);
     return modulos.find((m) => slugDoModulo(m, idiomaConteudo) === procurado)
         ?? modulos.find((m) => m.id === parte)
+        ?? (renomeado ? modulos.find((m) => m.id === renomeado.modulo) : null)
         ?? modulos.find((m) => Object.values(m.nomes ?? {}).some((n) => slugDoTexto(n) === procurado))
         ?? null;
 }

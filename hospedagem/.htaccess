@@ -13,6 +13,9 @@
 
 DirectoryIndex index.html
 Options -Indexes -MultiViews
+# Endereço removido de vez (410: artigo da Central que saiu de um idioma, regra 7 do bloco ENDEREÇOS POR IDIOMA):
+# o Google recebe o 410 e tira o endereço do índice; quem abre vê o site, que leva ao início da Central do idioma.
+ErrorDocument 410 /index.html
 # Sem a barra automática nas pastas: /pt-br/ajuda é a página pronta pt-br/ajuda.html, mesmo existindo a pasta
 # pt-br/ajuda/ (a dos artigos). A página inicial do idioma (/pt-br → /pt-br/) tem regra própria, abaixo.
 <IfModule mod_dir.c>
@@ -46,8 +49,9 @@ AddDefaultCharset UTF-8
         Header set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; connect-src 'self' https://firestore.googleapis.com https://firebasestorage.googleapis.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.doubleclick.net https://*.googleadservices.com https://*.google.com https://pagead2.googlesyndication.com; frame-src https://td.doubleclick.net https://bid.g.doubleclick.net https://www.googletagmanager.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
     </FilesMatch>
 
-    # robots.txt, sitemap.xml e llms.txt mudam a cada build: sem cache longo.
-    <FilesMatch "^(robots\.txt|sitemap\.xml|llms\.txt)$">
+    # robots.txt, sitemap.xml (índice), os sitemaps de cada idioma (sitemap-pt-br.xml...) e llms.txt mudam a cada
+    # build: sem cache longo.
+    <FilesMatch "^(robots\.txt|sitemap(-[a-z]{2}-[a-z]{2})?\.xml|llms\.txt)$">
         Header set Cache-Control "no-cache"
     </FilesMatch>
 
@@ -952,7 +956,27 @@ RewriteRule ^(pt-br|pt-pt|en-us|en-gb|en-au|en-ca|es-es|es-mx|fr-fr|de-de|ar-sa|
 # 6) Barra no fim: só a página inicial do idioma tem (/pt-br/). /pt-br/ajuda/ → /pt-br/ajuda (301).
 RewriteRule ^([a-z]{2}-[a-z]{2}/.+)/$ /$1 [R=301,L]
 
-# 7) Páginas prontas do build (texto já no HTML, para o Google e os buscadores com IA): /pt-br/ajuda/criar-rdo
+# 7) Central de Ajuda: endereços que estiveram no ar e mudaram (src/ajuda/antigos.js; o build confere a lista
+#    contra o que foi publicado). Assunto com nome novo: 301 para o endereço novo do mesmo assunto. Artigo que
+#    saiu do idioma (ferramenta só do Brasil): 410, removido de vez; o corpo é o site (ErrorDocument 410, no
+#    começo deste arquivo), que leva ao início da Central do idioma.
+RewriteRule ^pt\-pt/ajuda/assunto/calculadoras\-e\-estimativas$ /pt-pt/ajuda/assunto/calculadoras [R=301,L,NE]
+RewriteRule ^es\-es/ayuda/tema/calculadoras\-y\-estimaciones$ /es-es/ayuda/tema/calculadoras [R=301,L,NE]
+RewriteRule ^es\-mx/ayuda/tema/calculadoras\-y\-estimaciones$ /es-mx/ayuda/tema/calculadoras [R=301,L,NE]
+RewriteRule ^en\-us/help/topic/calculators\-and\-estimates$ /en-us/help/topic/calculators [R=301,L,NE]
+RewriteRule ^en\-gb/help/topic/calculators\-and\-estimates$ /en-gb/help/topic/calculators [R=301,L,NE]
+RewriteRule ^en\-au/help/topic/calculators\-and\-estimates$ /en-au/help/topic/calculators [R=301,L,NE]
+RewriteRule ^en\-ca/help/topic/calculators\-and\-estimates$ /en-ca/help/topic/calculators [R=301,L,NE]
+RewriteRule ^es\-es/ayuda/tema/reportes\-diarios$ /es-es/ayuda/tema/partes-diarios [R=301,L,NE]
+RewriteRule ^pt\-pt/ajuda/(?:estimativa\-cub|o\-que\-e\-o\-cub|detalhamento\-de\-custos|pdf\-da\-estimativa\-cub|pdf\-da\-estimativa|cronograma\-automatico|da\-estimativa\-cub\-a\-obra|da\-estimativa\-a\-obra|cub\-nao\-aparece)$ - [G]
+RewriteRule ^en\-us/help/(?:cub\-cost\-estimate|estimativa\-cub|what\-is\-cub|o\-que\-e\-o\-cub|cub\-cost\-breakdown|detalhamento\-de\-custos|cub\-estimate\-pdf|pdf\-da\-estimativa|automatic\-schedule|cronograma\-automatico|from\-cub\-estimate\-to\-project|da\-estimativa\-a\-obra|cub\-calculator\-missing|cub\-nao\-aparece)$ - [G]
+RewriteRule ^en\-gb/help/(?:cub\-cost\-estimate|estimativa\-cub|what\-is\-cub|o\-que\-e\-o\-cub|cub\-cost\-breakdown|detalhamento\-de\-custos|cub\-estimate\-pdf|pdf\-da\-estimativa|automatic\-schedule|cronograma\-automatico|from\-cub\-estimate\-to\-project|da\-estimativa\-a\-obra|cub\-calculator\-missing|cub\-nao\-aparece)$ - [G]
+RewriteRule ^en\-au/help/(?:cub\-cost\-estimate|estimativa\-cub|what\-is\-cub|o\-que\-e\-o\-cub|cub\-cost\-breakdown|detalhamento\-de\-custos|cub\-estimate\-pdf|pdf\-da\-estimativa|automatic\-schedule|cronograma\-automatico|from\-cub\-estimate\-to\-project|da\-estimativa\-a\-obra|cub\-calculator\-missing|cub\-nao\-aparece)$ - [G]
+RewriteRule ^en\-ca/help/(?:cub\-cost\-estimate|estimativa\-cub|what\-is\-cub|o\-que\-e\-o\-cub|cub\-cost\-breakdown|detalhamento\-de\-custos|cub\-estimate\-pdf|pdf\-da\-estimativa|automatic\-schedule|cronograma\-automatico|from\-cub\-estimate\-to\-project|da\-estimativa\-a\-obra|cub\-calculator\-missing|cub\-nao\-aparece)$ - [G]
+RewriteRule ^es\-es/ayuda/(?:estimacion\-cub|estimativa\-cub|que\-es\-el\-cub|o\-que\-e\-o\-cub|detalle\-de\-costos|detalhamento\-de\-custos|pdf\-de\-la\-estimacion\-cub|pdf\-da\-estimativa|cronograma\-automatico|de\-la\-estimacion\-cub\-a\-la\-obra|da\-estimativa\-a\-obra|calculadora\-cub\-no\-aparece|cub\-nao\-aparece)$ - [G]
+RewriteRule ^es\-mx/ayuda/(?:estimacion\-cub|estimativa\-cub|que\-es\-el\-cub|o\-que\-e\-o\-cub|detalle\-de\-costos|detalhamento\-de\-custos|pdf\-de\-la\-estimacion\-cub|pdf\-da\-estimativa|cronograma\-automatico|de\-la\-estimacion\-cub\-a\-la\-obra|da\-estimativa\-a\-obra|calculadora\-cub\-no\-aparece|cub\-nao\-aparece)$ - [G]
+
+# 8) Páginas prontas do build (texto já no HTML, para o Google e os buscadores com IA): /pt-br/ajuda/criar-rdo
 #    é entregue a partir de pt-br/ajuda/criar-rdo.html, sem mudar o endereço. Quando o endereço é uma pasta
 #    (/pt-br/ajuda é também a pasta dos artigos), o servidor pode pôr uma barra no fim do nome do arquivo
 #    pedido: a primeira condição tira essa barra.
@@ -960,7 +984,7 @@ RewriteCond %{REQUEST_FILENAME} ^(.*?)/?$
 RewriteCond %1.html -f
 RewriteRule ^([a-z]{2}-[a-z]{2}/.+)$ /$1.html [L]
 
-# 8) Os outros endereços do site abrem o index.html e o site desenha a página no navegador (artigo publicado
+# 9) Os outros endereços do site abrem o index.html e o site desenha a página no navegador (artigo publicado
 #    depois do último build, endereço com o nome antigo de um artigo...). Arquivos de verdade são servidos
 #    direto. Pasta com index.html só quando pedida com a barra (/pt-br/ → pt-br/index.html); pedida sem a
 #    barra (pasta velha de um build antigo, com a barra automática desligada), abre o site, sem 404 nem vaivém.

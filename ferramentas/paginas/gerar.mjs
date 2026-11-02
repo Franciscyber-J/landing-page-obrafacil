@@ -20,13 +20,16 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { COMPRAS, DOCUMENTOS_LEGAIS, IDIOMAS } from '../../src/i18n/idiomas.js';
 import { idiomaDoConteudo } from '../../src/ajuda/idiomas.js';
+import { slugDoModulo } from '../../src/ajuda/enderecos.js';
+import { conferirEnderecosAntigos } from '../../src/ajuda/antigos.js';
 import { lerTexto, tituloDoTexto } from '../../src/legal/markdown.js';
-import { arquivoDaPagina, indexavel } from '../../src/seo/paginas.js';
+import { absoluto, arquivoDaPagina, indexavel } from '../../src/seo/paginas.js';
 import { cabecaDaPagina, montarPagina } from '../../src/seo/cabeca.js';
-import { gerarRobots, gerarSitemap } from '../../src/seo/sitemap.js';
+import { arquivoDoSitemap, gerarIndiceDeSitemaps, gerarRobots, gerarSitemap } from '../../src/seo/sitemap.js';
 import { gerarLlms } from '../../src/seo/llms.js';
 import { conferirFontes, lerAjuda, lerLegal } from './fontes.mjs';
 import { conferirDist } from './conferir.mjs';
+import { ORIGEM } from './origem.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -46,6 +49,14 @@ function dataDoCodigo() {
     }
 }
 
+function commitAtual() {
+    try {
+        return execFileSync('git', ['rev-parse', 'HEAD'], { cwd: RAIZ, encoding: 'utf8' }).trim() || null;
+    } catch {
+        return null;
+    }
+}
+
 // Artigo como a página precisa dele: o conteúdo inteiro no idioma da página e só o endereço (slug) nos outros.
 function artigoResumido(doc, idiomaConteudo) {
     const conteudo = {};
@@ -60,6 +71,10 @@ function slugsDoArtigo(doc) {
     return Object.fromEntries(Object.entries(doc.conteudo ?? {}).filter(([, c]) => c?.slug).map(([idioma, c]) => [idioma, c.slug]));
 }
 
+function existentesPorCaminho(paginas) {
+    return new Set(paginas.map((p) => p.cabeca.caminho));
+}
+
 function maisRecente(datas) {
     const ms = datas.map((d) => Date.parse(d ?? '')).filter(Number.isFinite);
     return ms.length ? new Date(Math.max(...ms)).toISOString() : null;
@@ -69,6 +84,7 @@ async function principal() {
     const modeloArquivo = path.join(DIST, 'index.html');
     if (!fs.existsSync(modeloArquivo)) throw new Error('dist/index.html não existe: rode o vite build antes.');
     if (!fs.existsSync(SSR)) throw new Error('dist-ssr/entrada.js não existe: rode o build SSR antes (npm run build faz os dois).');
+    fs.rmSync(ORIGEM, { force: true });
     const modelo = fs.readFileSync(modeloArquivo, 'utf8');
     const { renderizar, tradutor } = await import(pathToFileURL(SSR).href);
 
@@ -97,7 +113,7 @@ async function principal() {
     for (const aviso of avisos) console.warn(`AVISO: ${aviso}`);
     if (erros.length) {
         for (const erro of erros) console.error(`ERRO: ${erro}`);
-        throw new Error('o conteúdo do Firestore não foi lido; confira a internet e rode o build de novo (nada foi gravado)');
+        throw new Error('o conteúdo do Firestore não foi lido ou está incompleto (lista acima); nada foi gravado');
     }
 
     // ---------- Lista das páginas ----------
@@ -171,6 +187,17 @@ async function principal() {
         }
     }
 
+    // ---------- Endereços antigos da Central (src/ajuda/antigos.js, regras no .htaccess) ----------
+    // A lista tem de bater com o que foi publicado: senão o .htaccess mandaria para um endereço que não existe ou
+    // tiraria do ar (410) uma página que existe.
+    if (ajuda) {
+        const antigos = conferirEnderecosAntigos({ indices: ajuda.indices, caminhos: existentesPorCaminho(paginas), slugDoModulo });
+        if (antigos.length) {
+            for (const problema of antigos) console.error(`ERRO: ${problema}`);
+            throw new Error('endereços antigos da Central fora do que foi publicado (lista acima; nada foi gravado)');
+        }
+    }
+
     // ---------- Gravação ----------
     const gravados = new Set();
     for (const p of paginas) {
@@ -193,17 +220,28 @@ async function principal() {
         fs.writeFileSync(destino, JSON.stringify(indice));
     }
 
+    // Um sitemap por idioma e o índice deles em sitemap.xml (src/seo/sitemap.js). Arquivos de um build antigo que não
+    // existem mais (idioma retirado) saem do dist.
     const noSitemap = paginas.filter((p) => indexavel(p.pagina));
-    fs.writeFileSync(path.join(DIST, 'sitemap.xml'), gerarSitemap(noSitemap.map((p) => ({
-        url: p.cabeca.url, lastmod: p.lastmod ?? null, alternativos: p.cabeca.alternativos,
-    }))));
+    for (const nome of fs.readdirSync(DIST)) if (/^sitemap-.*\.xml$/.test(nome)) fs.rmSync(path.join(DIST, nome));
+    const sitemaps = [];
+    for (const { codigo } of IDIOMAS) {
+        const doIdioma = noSitemap.filter((p) => p.pagina.codigo === codigo);
+        if (!doIdioma.length) continue;
+        const arquivo = arquivoDoSitemap(codigo);
+        fs.writeFileSync(path.join(DIST, arquivo), gerarSitemap(doIdioma.map((p) => ({
+            url: p.cabeca.url, lastmod: p.lastmod ?? null, alternativos: p.cabeca.alternativos,
+        }))));
+        sitemaps.push({ url: absoluto(`/${arquivo}`), lastmod: maisRecente(doIdioma.map((p) => p.lastmod)) });
+    }
+    fs.writeFileSync(path.join(DIST, 'sitemap.xml'), gerarIndiceDeSitemaps(sitemaps));
     fs.writeFileSync(path.join(DIST, 'robots.txt'), gerarRobots());
     fs.writeFileSync(path.join(DIST, 'llms.txt'), gerarLlms({ tradutor, indices: ajuda?.indices ?? {} }));
 
     const porTipo = {};
     for (const p of paginas) porTipo[p.pagina.tipo] = (porTipo[p.pagina.tipo] ?? 0) + 1;
     console.log(`Páginas prontas: ${paginas.length} (${Object.entries(porTipo).map(([k, v]) => `${k} ${v}`).join(', ')}).`);
-    console.log(`sitemap.xml: ${noSitemap.length} endereço(s); robots.txt e llms.txt gravados.`);
+    console.log(`sitemap.xml: índice de ${sitemaps.length} sitemap(s), um por idioma, com ${noSitemap.length} endereço(s); robots.txt e llms.txt gravados.`);
 
     // Conferência de tudo o que foi gravado: título, descrição, canonical, hreflang recíproco, dados estruturados,
     // texto visível, sitemap, robots.txt e llms.txt. Qualquer problema para o build.
@@ -213,6 +251,16 @@ async function principal() {
         throw new Error(`${conferencia.problemas.length} problema(s) nas páginas prontas (lista acima)`);
     }
     console.log(`Conferência: ${conferencia.paginas} página(s) pronta(s) sem problema.`);
+
+    // De onde veio o conteúdo deste dist, para o pacote da Hostinger (npm run pacote) recusar um dist de teste.
+    // Fica em dist-ssr (não vai para o servidor) e é refeito a cada build.
+    fs.writeFileSync(ORIGEM, JSON.stringify({
+        conteudo: ajudaLocal || legalLocal || semFirestore ? 'teste' : 'firestore',
+        geradoEm: new Date().toISOString(),
+        commit: commitAtual(),
+        paginas: paginas.length,
+        idiomasDaCentral: Object.keys(ajuda?.indices ?? {}),
+    }, null, 2));
 }
 
 principal().catch((erro) => {

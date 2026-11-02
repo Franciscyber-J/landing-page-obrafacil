@@ -1,7 +1,8 @@
 # Hospedagem (Hostinger) — appobrafacil.expertbr.com
 
 A pasta `public_html/appobrafacil` tem só o **site**: o conteúdo de `dist/` que o `npm run build` gera (páginas
-prontas de cada idioma, `index.html`, `assets/`, imagens, `robots.txt`, `sitemap.xml`, `llms.txt`), mais a pasta
+prontas de cada idioma, `index.html`, `assets/`, imagens, `fontes/`, `robots.txt`, `sitemap.xml` e os
+`sitemap-<idioma>.xml`, `llms.txt`), mais a pasta
 `download/` (instalador do Windows, enviado à parte) e o `.htaccess` desta pasta. O WordPress foi desligado: as
 páginas que ele servia estão no site, em cada idioma, e os endereços antigos levam a elas.
 
@@ -16,7 +17,7 @@ O build grava uma página de verdade para cada endereço público, em cada idiom
 (`ferramentas/paginas/gerar.mjs`): início, Central de Ajuda (início, assuntos e artigos), Termos, Política,
 Suporte, Perfil e volta do pagamento. Robôs que não rodam JavaScript (GPTBot, ClaudeBot, PerplexityBot) leem
 tudo; o Google lê na hora, sem esperar a fila de renderização. Cada página tem título, descrição, `canonical`,
-`hreflang` dos 8 idiomas e `x-default`, Open Graph e dados estruturados (aplicativo com os preços do país,
+`hreflang` dos 29 idiomas e `x-default`, Open Graph e dados estruturados (aplicativo com os preços do país,
 empresa, site, perguntas frequentes, trilha nos artigos). O site, ao abrir, "hidrata" a página (liga os botões)
 sem desenhar de novo.
 
@@ -75,6 +76,19 @@ As regras de endereço (idiomas, antigos, barra no fim, páginas prontas e o sit
 vaivém de redirecionamento). Idioma novo: rode `npm run htaccess` e envie o `.htaccess` (o `npm test` avisa se o bloco
 estiver desatualizado).
 
+## Central de Ajuda: endereços que mudaram na 2.0 (02/11/2026)
+
+Gerados de `src/ajuda/antigos.js` (o build confere a lista contra o que foi publicado; o verificador, no ar).
+
+| Antes | Agora | Por quê |
+| --- | --- | --- |
+| `/<idioma>/help/topic/calculators-and-estimates` (en-US, en-GB, en-AU, en-CA) | 301 para `.../topic/calculators` | o módulo passou a se chamar "Calculators" (sem a estimativa pelo CUB) |
+| `/pt-pt/ajuda/assunto/calculadoras-e-estimativas`, `/es-es/` e `/es-mx/ayuda/tema/calculadoras-y-estimaciones` | 301 para `.../calculadoras` | idem |
+| `/es-es/ayuda/tema/reportes-diarios` | 301 para `/es-es/ayuda/tema/partes-diarios` | o diário passou a "Partes diarios" no espanhol da Espanha |
+| Os 7 artigos do CUB e do cronograma automático nos 7 idiomas de antes (ex.: `/en-us/help/cub-cost-estimate`, `/es-mx/ayuda/estimacion-cub`, `/pt-pt/ajuda/o-que-e-o-cub`), pelo endereço e pelo id | 410 (o site leva ao início da Central do idioma) | a ferramenta só existe no Brasil; os artigos ficaram só no pt-BR |
+
+O pt-BR não muda: os 7 artigos e o assunto "Calculadoras e estimativas" continuam lá.
+
 ## robots.txt, sitemap.xml e llms.txt
 
 Gerados no build, na raiz do site:
@@ -83,8 +97,11 @@ Gerados no build, na raiz do site:
   OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, Claude-User, PerplexityBot e Perplexity-User, e aponta
   o sitemap. Nada é bloqueado: as páginas que não devem aparecer (pagamento, Perfil) têm `noindex` na própria
   página, e o robô precisa abri-las para ver o aviso.
-- `sitemap.xml`: todas as páginas públicas dos 8 idiomas, com as versões de cada idioma (`hreflang`) e a data da
-  última mudança (artigos: data da publicação no Firestore).
+- `sitemap.xml`: o índice dos sitemaps, um por idioma (`sitemap-pt-br.xml`, `sitemap-ja-jp.xml`...), com todas as
+  páginas públicas, as versões de cada idioma (`hreflang`) e a data da última mudança (artigos: data da publicação
+  no Firestore). Um arquivo só passaria de 28 MB com os 29 idiomas (cada endereço lista as 29 versões) e chegaria ao
+  limite do Google (50 MB) com uns 300 artigos; por idioma, cada um fica perto de 1 MB. O endereço no Search Console
+  e no `robots.txt` continua `/sitemap.xml`.
 - `llms.txt`: resumo do ObraFácil para os assistentes de IA (o que é, para quem, recursos, plataformas, planos e
   preços de cada idioma, páginas principais, Central, Termos, Política e contato), em inglês e português.
 
@@ -97,7 +114,10 @@ Gerados no build, na raiz do site:
 - **Política de conteúdo (CSP) em modo de teste**: só avisa no console do navegador, não bloqueia nada. Depois de
   conferir que o site, o Google Ads e a Central funcionam sem aviso, troque `Content-Security-Policy-Report-Only`
   por `Content-Security-Policy`.
-- Páginas `.html`, `robots.txt`, `sitemap.xml` e `llms.txt` sem cache longo, para cada build aparecer na hora.
+- Páginas `.html`, `robots.txt`, os sitemaps e `llms.txt` sem cache longo, para cada build aparecer na hora.
+- **Central de Ajuda, endereços que mudaram** (`src/ajuda/antigos.js`): assunto com nome novo responde 301 para o
+  endereço novo; artigo que saiu de um idioma (ferramenta só do Brasil) responde 410, com o site no corpo
+  (`ErrorDocument 410 /index.html`), que leva ao início da Central do idioma. Tabela abaixo.
 - Bloqueia arquivos de backup e de log; sem lista de pastas e sem "adivinhar" arquivo parecido (`-Indexes -MultiViews`).
 - O verificador também confere o logo dos e-mails, o instalador do Windows, a política de conteúdo e que o
   WordPress não responde mais (`/wp-login.php` 404).
@@ -108,7 +128,8 @@ Passo a passo completo na skill `publicar-site` (`.claude/skills/publicar-site/S
 
 1. Baixe o `.htaccess` atual de `public_html/appobrafacil` para o seu computador (fora da pasta do projeto). É a
    volta: se algo der errado, é só subir ele de volta.
-2. Apague as 8 pastas dos idiomas e a pasta `dados` (se existir) e envie o conteúdo do `dist`.
+2. Apague as pastas dos idiomas e a pasta `dados` (se existir) e envie o conteúdo do `dist` (o zip do
+   `npm run pacote`).
 3. **Por último**, suba o `.htaccess` desta pasta, substituindo o atual.
 4. No computador, na pasta `landing_page`: `node hospedagem/verificar.mjs`. Tem que terminar com "Tudo certo.".
 

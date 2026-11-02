@@ -5,7 +5,10 @@
 //   node hospedagem/verificar.mjs https://outro-endereco.exemplo   (para testar outra cópia)
 // Sai com código 1 se alguma conferência falhar.
 
-import { IDIOMAS, caminhoInicio, caminhoLegal } from '../src/i18n/idiomas.js';
+import { IDIOMAS, caminhoAjuda, caminhoInicio, caminhoLegal, caminhoPagamento, caminhoPerfil } from '../src/i18n/idiomas.js';
+import {
+  ARTIGOS_RETIRADOS, ASSUNTOS_RENOMEADOS, caminhoDoAssuntoAntigo, caminhoDoAssuntoNovo, caminhosDoArtigoRetirado,
+} from '../src/ajuda/antigos.js';
 
 const SITE = 'https://appobrafacil.expertbr.com';
 // Os idiomas de antes da 2.0 têm conferências próprias abaixo; os outros, a página inicial e os Termos de cada um.
@@ -133,8 +136,20 @@ for (const [nome, caminho] of [
   ['Terms en-US', '/en-us/terms-of-use'], ['Termos pt-PT', '/pt-pt/termos-de-utilizacao'],
   ['Política es-MX', '/es-mx/politica-de-privacidad'],
   ['Suporte pt-BR', '/pt-br/suporte'], ['Suporte es-ES', '/es-es/soporte'],
-  ...NOVOS.flatMap((c) => [[`início ${c}`, caminhoInicio(c)], [`Termos ${c}`, encodeURI(caminhoLegal(c, 'termos'))]]),
+  ...NOVOS.flatMap((c) => [
+    [`início ${c}`, caminhoInicio(c)], [`Termos ${c}`, encodeURI(caminhoLegal(c, 'termos'))], [`Central ${c}`, encodeURI(caminhoAjuda(c))],
+  ]),
 ]) await paginaPronta(nome, caminho);
+// Direção da escrita na Central de cada idioma (árabe e hebraico da direita para a esquerda).
+for (const { codigo, direcao = 'ltr' } of IDIOMAS) {
+  try {
+    const r = await pedir(encodeURI(caminhoAjuda(codigo)));
+    const dir = /<html[^>]*\bdir="(rtl|ltr)"/.exec(r.corpo)?.[1] ?? 'ltr';
+    linha(dir === direcao, `direção da escrita ${codigo.padEnd(25)} ${caminhoAjuda(codigo)}  (dir=${dir}; esperado ${direcao})`);
+  } catch (e) {
+    linha(false, `direção da escrita ${codigo}  (erro: ${e.message})`);
+  }
+}
 await paginaPronta('volta do pagamento (noindex)', '/pt-br/pagamento-confirmado/pro', { semIndexar: true });
 await paginaPronta('Perfil (noindex)', '/en-us/profile', { semIndexar: true });
 await abre('artigo publicado depois do build abre o site', '/pt-br/ajuda/artigo-publicado-depois-do-build', CASCA);
@@ -193,6 +208,34 @@ await redireciona('Central antiga, navegador en-GB', '/ajuda', 301, '/en-gb/help
 await redireciona('artigo antigo com idioma', '/ajuda/pt-BR/criar-rdo', 301, '/pt-br/ajuda/criar-rdo');
 await redireciona('artigo antigo em inglês', '/ajuda/en-US/create-daily-report', 301, '/en-us/help/create-daily-report');
 
+// Removido de vez: 410, com o site no corpo (ErrorDocument 410), que leva ao início da Central do idioma.
+async function removido(nome, caminho) {
+  try {
+    const r = await pedir(caminho);
+    linha(r.status === 410 && r.corpo.includes(CASCA), `${nome.padEnd(44)} ${caminho}  (HTTP ${r.status}${r.corpo.includes(CASCA) ? ', abre o site' : ', sem o site no corpo'}; esperado 410 com o site)`);
+  } catch (e) {
+    linha(false, `${nome.padEnd(44)} ${caminho}  (erro: ${e.message})`);
+  }
+}
+
+console.log('\nCentral: assunto com nome novo (301) e artigos que ficaram só no pt-BR (410), src/ajuda/antigos.js');
+for (const a of ASSUNTOS_RENOMEADOS) {
+  await redireciona(`assunto renomeado ${a.idioma}`, encodeURI(caminhoDoAssuntoAntigo(a)), 301, encodeURI(caminhoDoAssuntoNovo(a)));
+  await paginaPronta(`assunto novo ${a.idioma}`, encodeURI(caminhoDoAssuntoNovo(a)));
+}
+for (const a of ARTIGOS_RETIRADOS) {
+  for (const c of caminhosDoArtigoRetirado(a)) await removido(`só no pt-BR: ${a.id} (${a.idioma})`, encodeURI(c));
+}
+// No pt-BR os artigos continuam (pelo id, o site leva ao endereço do artigo): nada de 410 ali.
+for (const id of [...new Set(ARTIGOS_RETIRADOS.map((a) => a.id))]) {
+  try {
+    const r = await pedir(`/pt-br/ajuda/${id}`);
+    linha(r.status === 200, `${`continua no pt-BR: ${id}`.padEnd(44)} /pt-br/ajuda/${id}  (HTTP ${r.status}; esperado 200)`);
+  } catch (e) {
+    linha(false, `continua no pt-BR: ${id}  (erro: ${e.message})`);
+  }
+}
+
 console.log('\nrobots.txt, sitemap.xml e llms.txt');
 const robots = await pedir('/robots.txt');
 linha(robots.status === 200 && /text\/plain/.test(robots.cabecalhos.get('content-type') ?? ''), `robots.txt abre como texto                    (HTTP ${robots.status})`);
@@ -202,14 +245,37 @@ for (const robo of ['Googlebot', 'Google-Extended', 'Bingbot', 'GPTBot', 'OAI-Se
 }
 linha(!/^Disallow: \/\s*$/m.test(robots.corpo), 'robots.txt não bloqueia o site inteiro');
 
+// sitemap.xml é o índice; os endereços ficam num sitemap por idioma (sitemap-pt-br.xml...).
 const sitemap = await pedir('/sitemap.xml');
-const locs = [...sitemap.corpo.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(/&amp;/g, '&'));
 linha(sitemap.status === 200 && /xml/.test(sitemap.cabecalhos.get('content-type') ?? ''), `sitemap.xml abre como XML                     (HTTP ${sitemap.status})`);
-linha(locs.length >= 8 * 5, `sitemap.xml tem as páginas dos 8 idiomas       (${locs.length} endereços)`);
-linha(new Set(locs).size === locs.length, 'sitemap.xml sem endereço repetido');
-linha(/hreflang="x-default"/.test(sitemap.corpo) && /xmlns:xhtml=/.test(sitemap.corpo), 'sitemap.xml com as versões de cada idioma (hreflang)');
-linha(locs.some((l) => /\/ajuda\/[^/]+$/.test(l)), 'sitemap.xml com os artigos da Central');
-linha(!locs.some((l) => /pagamento-confirmado|payment-confirmed|pago-confirmado|\/perfil$|\/profile$/.test(l)), 'sitemap.xml sem a volta do pagamento e o Perfil');
+linha(/<sitemapindex /.test(sitemap.corpo), 'sitemap.xml é o índice dos sitemaps de cada idioma');
+const filhos = [...sitemap.corpo.matchAll(/<sitemap>\s*<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(/&amp;/g, '&'));
+linha(filhos.length === IDIOMAS.length, `sitemap.xml aponta um sitemap por idioma      (${filhos.length} de ${IDIOMAS.length})`);
+const locs = [];
+let comHreflang = 0;
+for (const filho of filhos) {
+  const caminho = caminhoDe(naCopia(filho));
+  try {
+    const r = await pedir(caminho);
+    const doFilho = [...r.corpo.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(/&amp;/g, '&'));
+    locs.push(...doFilho);
+    if (/hreflang="x-default"/.test(r.corpo) && /xmlns:xhtml=/.test(r.corpo)) comHreflang++;
+    const prefixo = /sitemap-([a-z]{2}-[a-z]{2})\.xml$/.exec(filho)?.[1];
+    const ok = r.status === 200 && /xml/.test(r.cabecalhos.get('content-type') ?? '') && /no-cache/.test(r.cabecalhos.get('cache-control') ?? '')
+      && doFilho.length > 0 && doFilho.every((l) => l.startsWith(`${SITE}/${prefixo}/`));
+    linha(ok, `${caminho.padEnd(44)} (HTTP ${r.status}, ${doFilho.length} endereços, ${r.cabecalhos.get('cache-control') ?? 'sem Cache-Control'})`);
+  } catch (e) {
+    linha(false, `${caminho}  (erro: ${e.message})`);
+  }
+}
+linha(locs.length >= IDIOMAS.length * 5, `sitemaps com as páginas dos ${IDIOMAS.length} idiomas      (${locs.length} endereços)`);
+linha(new Set(locs).size === locs.length, 'sitemaps sem endereço repetido');
+linha(comHreflang === filhos.length, `sitemaps com as versões de cada idioma (hreflang)  (${comHreflang} de ${filhos.length})`);
+const removidos = new Set(ARTIGOS_RETIRADOS.flatMap((a) => caminhosDoArtigoRetirado(a)).concat(ASSUNTOS_RENOMEADOS.map(caminhoDoAssuntoAntigo)).map((c) => `${SITE}${encodeURI(c)}`));
+linha(!locs.some((l) => removidos.has(l)), 'sitemaps sem os endereços antigos da Central (301 e 410)');
+linha(locs.some((l) => /\/ajuda\/[^/]+$/.test(l)), 'sitemaps com os artigos da Central');
+const semIndexar = IDIOMAS.flatMap(({ codigo }) => [caminhoPagamento(codigo, null), caminhoPerfil(codigo)]).map((c) => `${SITE}${encodeURI(c)}`);
+linha(!locs.some((l) => semIndexar.some((c) => l === c || l.startsWith(`${c}/`))), 'sitemaps sem a volta do pagamento e o Perfil');
 // Amostra: endereços espalhados pelo sitemap abrem prontos, com o canonical igual ao endereço.
 const passo = Math.max(1, Math.floor(locs.length / 12));
 for (let i = 0; i < locs.length; i += passo) {

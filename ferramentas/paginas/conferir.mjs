@@ -8,7 +8,7 @@ import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 import { IDIOMAS } from '../../src/i18n/idiomas.js';
 import { SITE } from '../../src/seo/paginas.js';
-import { ROBOS } from '../../src/seo/sitemap.js';
+import { ROBOS, SITEMAP_DE_IDIOMA } from '../../src/seo/sitemap.js';
 
 const decodificar = (texto) => texto
     .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
@@ -83,7 +83,8 @@ export function lerSitemap(xml) {
     }));
 }
 
-export function conferirSitemap(xml) {
+// Formato de um arquivo de sitemap (<urlset>).
+export function conferirFormatoDoSitemap(xml) {
     const problemas = [];
     if (!xml.startsWith('<?xml version="1.0" encoding="UTF-8"?>')) problemas.push('sitemap sem a declaração XML');
     if (!/<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9" xmlns:xhtml="http:\/\/www\.w3\.org\/1999\/xhtml">/.test(xml)) problemas.push('sitemap sem os namespaces');
@@ -91,7 +92,15 @@ export function conferirSitemap(xml) {
     const fechadas = (xml.match(/<\/url>/g) ?? []).length;
     if (abertas !== fechadas) problemas.push('sitemap com <url> sem fechar');
     if (/&(?!amp;|lt;|gt;|quot;|apos;)/.test(xml)) problemas.push('sitemap com & sem escape');
-    const entradas = lerSitemap(xml);
+    return problemas;
+}
+
+// Endereços de um ou mais sitemaps juntos: repetição, endereço absoluto, data, x-default e hreflang recíproco.
+export function conferirSitemap(xml) {
+    return conferirEntradas(lerSitemap(xml), conferirFormatoDoSitemap(xml));
+}
+
+export function conferirEntradas(entradas, problemas = []) {
     const porLoc = new Map();
     for (const e of entradas) {
         if (porLoc.has(e.loc)) problemas.push(`endereço repetido: ${e.loc}`);
@@ -111,6 +120,62 @@ export function conferirSitemap(xml) {
         }
     }
     return { problemas, entradas };
+}
+
+// Índice de sitemaps (sitemap.xml): [{ loc, lastmod }] e os problemas do próprio índice.
+export function conferirIndiceDeSitemaps(xml) {
+    const problemas = [];
+    if (!xml.startsWith('<?xml version="1.0" encoding="UTF-8"?>')) problemas.push('sitemap.xml sem a declaração XML');
+    if (!/<sitemapindex xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/.test(xml)) problemas.push('sitemap.xml não é um índice de sitemaps');
+    if (/<urlset/.test(xml)) problemas.push('sitemap.xml com <urlset> (os endereços ficam nos sitemaps de cada idioma)');
+    const sitemaps = [...xml.matchAll(/<sitemap>([\s\S]*?)<\/sitemap>/g)].map((m) => ({
+        loc: decodificar(/<loc>([^<]+)<\/loc>/.exec(m[1])?.[1] ?? ''),
+        lastmod: /<lastmod>([^<]+)<\/lastmod>/.exec(m[1])?.[1] ?? null,
+    }));
+    if (!sitemaps.length) problemas.push('sitemap.xml sem nenhum sitemap');
+    const vistos = new Set();
+    for (const s of sitemaps) {
+        if (vistos.has(s.loc)) problemas.push(`sitemap.xml: ${s.loc} repetido`);
+        vistos.add(s.loc);
+        const nome = s.loc.startsWith(`${SITE}/`) ? s.loc.slice(SITE.length + 1) : null;
+        if (!nome || !SITEMAP_DE_IDIOMA.test(nome)) problemas.push(`sitemap.xml: ${s.loc} não é um sitemap de idioma do site`);
+        if (s.lastmod && Number.isNaN(Date.parse(s.lastmod))) problemas.push(`sitemap.xml: lastmod inválido em ${s.loc}`);
+    }
+    return { problemas, sitemaps };
+}
+
+// Os sitemaps de dist/ (índice e um por idioma) como se fossem um só: os problemas de cada arquivo e as entradas
+// juntas (o hreflang recíproco é conferido entre todos os idiomas). Limites do Google por arquivo: 50 MB e 50.000
+// endereços.
+export function conferirSitemaps(dist) {
+    const problemas = [];
+    const indice = conferirIndiceDeSitemaps(fs.readFileSync(path.join(dist, 'sitemap.xml'), 'utf8'));
+    problemas.push(...indice.problemas);
+    const todas = [];
+    const nomesNoIndice = new Set();
+    for (const s of indice.sitemaps) {
+        const nome = s.loc.slice(SITE.length + 1);
+        const idioma = SITEMAP_DE_IDIOMA.exec(nome)?.[1];
+        if (!idioma) continue;
+        nomesNoIndice.add(nome);
+        const arquivo = path.join(dist, nome);
+        if (!fs.existsSync(arquivo)) {
+            problemas.push(`sitemap.xml aponta ${nome}, que não existe`);
+            continue;
+        }
+        const xml = fs.readFileSync(arquivo, 'utf8');
+        if (Buffer.byteLength(xml) > 50 * 1024 * 1024) problemas.push(`${nome}: passa de 50 MB`);
+        for (const p of conferirFormatoDoSitemap(xml)) problemas.push(`${nome}: ${p}`);
+        const entradas = lerSitemap(xml);
+        if (entradas.length > 50000) problemas.push(`${nome}: passa de 50.000 endereços`);
+        for (const e of entradas) if (!e.loc.startsWith(`${SITE}/${idioma}/`)) problemas.push(`${nome}: ${e.loc} é de outro idioma`);
+        todas.push(...entradas);
+    }
+    for (const nome of fs.readdirSync(dist)) if (SITEMAP_DE_IDIOMA.test(nome) && !nomesNoIndice.has(nome)) problemas.push(`${nome} fora do sitemap.xml`);
+    // Os idiomas juntos: o hreflang de um idioma aponta páginas dos outros.
+    const conjunto = conferirEntradas(todas);
+    problemas.push(...conjunto.problemas);
+    return { problemas, entradas: conjunto.entradas, sitemaps: indice.sitemaps.length };
 }
 
 export function conferirRobots(texto) {
@@ -169,7 +234,7 @@ export function conferirDist(dist) {
             paginas.set(url, lerPagina(html));
         }
     }
-    const { problemas: doSitemap, entradas } = conferirSitemap(fs.readFileSync(path.join(dist, 'sitemap.xml'), 'utf8'));
+    const { problemas: doSitemap, entradas } = conferirSitemaps(dist);
     problemas.push(...doSitemap);
     for (const e of entradas) {
         const pagina = paginas.get(e.loc);

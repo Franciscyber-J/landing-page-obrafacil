@@ -16,6 +16,9 @@ import {
     COMPRAS, IDIOMAS, INTERNACIONAL, REFERENCIA, caminhoAjuda, caminhoLegal, caminhoPagamento, caminhoPerfil,
     caminhoSuporte, PAGINAS_ANTIGAS,
 } from '../../src/i18n/idiomas.js';
+import {
+    ASSUNTOS_RENOMEADOS, ARTIGOS_RETIRADOS, caminhoDoAssuntoAntigo, caminhoDoAssuntoNovo, caminhosDoArtigoRetirado,
+} from '../../src/ajuda/antigos.js';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 export const ARQUIVO = path.join(RAIZ, 'hospedagem', '.htaccess');
@@ -65,6 +68,31 @@ function antigos() {
 }
 
 const escaparPadrao = (texto) => texto.replace(/[.^$*+?()[\]{}|\\-]/g, '\\$&');
+
+// Regras da Central para os endereços antigos: [301 de cada assunto renomeado], [410 dos artigos retirados, uma regra
+// por idioma]. O endereço vai no .htaccess como está (UTF-8, o servidor compara com o endereço já sem os %XX); o
+// destino do 301 vai com os %XX (só ASCII no cabeçalho Location) e NE (o servidor não codifica de novo).
+export function regrasDosAntigos() {
+    const regras = [];
+    for (const a of ASSUNTOS_RENOMEADOS) {
+        regras.push(`RewriteRule ^${escaparPadrao(caminhoDoAssuntoAntigo(a).slice(1))}$ ${encodeURI(caminhoDoAssuntoNovo(a))} [R=301,L,NE]`);
+    }
+    const porIdioma = new Map();
+    for (const a of ARTIGOS_RETIRADOS) {
+        const lista = porIdioma.get(a.idioma) ?? [];
+        for (const c of caminhosDoArtigoRetirado(a)) if (!lista.includes(c)) lista.push(c);
+        porIdioma.set(a.idioma, lista);
+    }
+    for (const [idioma, caminhos] of porIdioma) {
+        const base = caminhoAjuda(idioma).slice(1);
+        const finais = caminhos.map((c) => {
+            if (!c.startsWith(`/${base}/`)) throw new Error(`artigo retirado fora da Central: ${c}`);
+            return escaparPadrao(c.slice(base.length + 2));
+        });
+        regras.push(`RewriteRule ^${escaparPadrao(base)}/(?:${finais.join('|')})$ - [G]`);
+    }
+    return regras;
+}
 
 export function gerarBloco() {
     const codigos = IDIOMAS.map((i) => prefixo(i.codigo));
@@ -129,7 +157,13 @@ export function gerarBloco() {
     l.push('# 6) Barra no fim: só a página inicial do idioma tem (/pt-br/). /pt-br/ajuda/ → /pt-br/ajuda (301).');
     l.push('RewriteRule ^([a-z]{2}-[a-z]{2}/.+)/$ /$1 [R=301,L]');
     l.push('');
-    l.push('# 7) Páginas prontas do build (texto já no HTML, para o Google e os buscadores com IA): /pt-br/ajuda/criar-rdo');
+    l.push('# 7) Central de Ajuda: endereços que estiveram no ar e mudaram (src/ajuda/antigos.js; o build confere a lista');
+    l.push('#    contra o que foi publicado). Assunto com nome novo: 301 para o endereço novo do mesmo assunto. Artigo que');
+    l.push('#    saiu do idioma (ferramenta só do Brasil): 410, removido de vez; o corpo é o site (ErrorDocument 410, no');
+    l.push('#    começo deste arquivo), que leva ao início da Central do idioma.');
+    for (const r of regrasDosAntigos()) l.push(r);
+    l.push('');
+    l.push('# 8) Páginas prontas do build (texto já no HTML, para o Google e os buscadores com IA): /pt-br/ajuda/criar-rdo');
     l.push('#    é entregue a partir de pt-br/ajuda/criar-rdo.html, sem mudar o endereço. Quando o endereço é uma pasta');
     l.push('#    (/pt-br/ajuda é também a pasta dos artigos), o servidor pode pôr uma barra no fim do nome do arquivo');
     l.push('#    pedido: a primeira condição tira essa barra.');
@@ -137,7 +171,7 @@ export function gerarBloco() {
     l.push('RewriteCond %1.html -f');
     l.push('RewriteRule ^([a-z]{2}-[a-z]{2}/.+)$ /$1.html [L]');
     l.push('');
-    l.push('# 8) Os outros endereços do site abrem o index.html e o site desenha a página no navegador (artigo publicado');
+    l.push('# 9) Os outros endereços do site abrem o index.html e o site desenha a página no navegador (artigo publicado');
     l.push('#    depois do último build, endereço com o nome antigo de um artigo...). Arquivos de verdade são servidos');
     l.push('#    direto. Pasta com index.html só quando pedida com a barra (/pt-br/ → pt-br/index.html); pedida sem a');
     l.push('#    barra (pasta velha de um build antigo, com a barra automática desligada), abre o site, sem 404 nem vaivém.');

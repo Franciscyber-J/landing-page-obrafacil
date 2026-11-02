@@ -1,4 +1,9 @@
-// sitemap.xml (com as versões em cada idioma, xhtml:link hreflang) e robots.txt, gerados no build.
+// Sitemaps (com as versões em cada idioma, xhtml:link hreflang) e robots.txt, gerados no build.
+//
+// /sitemap.xml é um índice de sitemaps (o endereço que está no Search Console e no robots.txt) que aponta um sitemap
+// por idioma (/sitemap-pt-br.xml, /sitemap-ja-jp.xml...). Com 29 idiomas, cada endereço lista as 29 versões
+// (hreflang): num arquivo só, o sitemap passaria de 28 MB e chegaria ao limite do Google (50 MB ou 50.000 endereços
+// por arquivo) com uns 300 artigos. Por idioma, cada arquivo fica perto de 1 MB.
 
 import { SITE, absoluto } from './paginas.js';
 
@@ -32,6 +37,29 @@ export function gerarSitemap(entradas) {
         linhas.push('  </url>');
     }
     linhas.push('</urlset>', '');
+    return linhas.join('\n');
+}
+
+// Arquivo do sitemap de um idioma, na raiz do site.
+export const arquivoDoSitemap = (codigo) => `sitemap-${codigo.toLowerCase()}.xml`;
+export const SITEMAP_DE_IDIOMA = /^sitemap-([a-z]{2}-[a-z]{2})\.xml$/;
+
+// sitemaps: [{ url (absoluto), lastmod }] → o índice (sitemap.xml).
+export function gerarIndiceDeSitemaps(sitemaps) {
+    const vistos = new Set();
+    const linhas = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ];
+    for (const s of sitemaps) {
+        if (vistos.has(s.url)) throw new Error(`Sitemap repetido no índice: ${s.url}`);
+        vistos.add(s.url);
+        linhas.push('  <sitemap>', `    <loc>${escaparXml(s.url)}</loc>`);
+        const data = dataDoSitemap(s.lastmod);
+        if (data) linhas.push(`    <lastmod>${data}</lastmod>`);
+        linhas.push('  </sitemap>');
+    }
+    linhas.push('</sitemapindex>', '');
     return linhas.join('\n');
 }
 

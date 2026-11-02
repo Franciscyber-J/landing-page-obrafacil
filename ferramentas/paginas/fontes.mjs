@@ -157,6 +157,14 @@ export function conferirFontes({ ajuda, erroAjuda = null, legal, erroLegal = nul
     const temArtigos = Object.values(ajuda?.artigos ?? {}).some((lista) => lista?.size);
     if (erroAjuda || !ajuda || !Object.keys(ajuda.indices ?? {}).length || !temArtigos) {
         falta(`Central de Ajuda não lida (${erroAjuda?.message ?? 'nada publicado'}): sem páginas prontas dos artigos e fora do sitemap.`);
+    } else {
+        // Cada idioma da Central (src/ajuda/idiomas.js) tem de estar publicado: sem ele, as páginas da Central daquele
+        // idioma ficariam fora do pacote e o site mostraria "nada publicado". É o caso de gerar o site antes de o
+        // publicador gravar os idiomas novos.
+        const faltam = IDIOMAS_AJUDA.filter((i) => !ajuda.indices[i] || !ajuda.artigos[i]?.size);
+        if (faltam.length) {
+            falta(`Central de Ajuda sem ${faltam.length} idioma(s) publicado(s) (${faltam.join(', ')}): publique os artigos (gestao_obras, publicador) antes de gerar o site.`);
+        }
     }
     if (erroLegal) {
         falta(`Termos e Política não lidos (${erroLegal.message}): sem páginas prontas.`);

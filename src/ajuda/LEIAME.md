@@ -35,9 +35,32 @@ do árabe e do hebraico; as vogais do hindi e do tailandês e o dakuten do japon
 | canonical, hreflang, sitemap.xml, llms.txt, dados estruturados (`absoluto`) | Com os `%XX` (só ASCII), como pedem os padrões de URL e de sitemap |
 | Hostinger | O Apache tira os `%XX` e acha a pasta pelo nome em UTF-8: o `.htaccess` de hoje já serve (conferido com o Apache 2.4 e o próprio `.htaccess`) |
 
-Idiomas dos artigos: `pt-BR`, `pt-PT`, `en-US`, `en-GB`, `en-AU`, `en-CA`, `es-ES`, `es-MX`
-(`src/ajuda/idiomas.js`). Um idioma do site sem artigos próprios mostra os artigos do primeiro idioma
-da cadeia dele que tiver (ex.: francês → inglês), com a tela no idioma do site.
+Idiomas dos artigos: os 29 do site, os mesmos do publicador (`src/ajuda/idiomas.js`, desde a 2.0). Um idioma do
+site sem artigos próprios mostraria os artigos do primeiro idioma da cadeia dele que tiver (ex.: um idioma futuro →
+inglês), com a tela no idioma do site; hoje todos têm os próprios.
+
+Artigo de ferramenta só do Brasil (CUB, cronograma automático; regra no publicador, `traducoes.mjs`) existe só no
+índice do pt-BR: nos outros idiomas ele não tem página, não aparece na busca nem no "Também em", e os relacionados
+e pré-requisitos de cada idioma já vêm sem ele.
+
+### Endereços que mudaram
+
+Endereço da Central que já esteve no ar e deixou de existir fica em `src/ajuda/antigos.js`:
+
+| Caso | Servidor (`.htaccess`, `npm run htaccess`) | Site no navegador |
+| --- | --- | --- |
+| Assunto com nome novo (ex.: `/en-us/help/topic/calculators-and-estimates`) | 301 para o endereço novo (`.../calculators`) | `acharModulo` acha pelo nome antigo e troca o endereço |
+| Artigo que saiu do idioma (ex.: `/en-us/help/cub-cost-estimate`) | 410 (removido de vez), com o site no corpo | leva ao início da Central do idioma |
+
+Por que 410 e não 301 para o início da Central: o artigo não tem equivalente no idioma (a ferramenta não existe fora
+do Brasil). Um 301 para uma página que não fala do mesmo assunto o Google trata como "soft 404" e demora a tirar do
+índice; o 410 diz "removido de vez", o endereço sai mais depressa e não fica marcado como erro do site. A pessoa que
+abre o link antigo não vê página de erro: o servidor entrega o site com o 410 e o site a leva ao início da Central.
+
+O build confere a lista contra o que foi publicado e para se ela não bater (nome novo do assunto diferente do da
+lista, artigo retirado que voltou ao idioma, endereço antigo que virou página de novo). Ao renomear um assunto ou
+tirar um artigo de um idioma já publicado: acrescente em `antigos.js`, rode `npm run htaccess` e envie o `.htaccess`
+junto com o site. O verificador (`hospedagem/verificar.mjs`) confere cada endereço da lista no ar.
 
 ## Páginas prontas
 
@@ -61,8 +84,9 @@ desenha o artigo no navegador. Por isso, depois de publicar artigos novos, vale 
   O formato antigo (`ajuda_indices/{idioma}` e `ajuda_artigos/{id}` com os idiomas juntos) não é mais lido pelo
   site; o publicador continua gravando só para o app das lojas e o servidor. Idioma novo só existe no formato novo.
   Prints pelo endereço público do Storage (`ajuda/prints/...`).
-- **Ordem de publicação:** o site novo só vai ao ar depois de o publicador gravar o formato novo (sem ele, o build
-  para com "Central de Ajuda não lida"). Ver `gestao_obras/docs/PUBLICACAO_PENDENTE.md`, seção `ajuda-por-idioma`.
+- **Ordem de publicação:** o site novo só vai ao ar depois de o publicador gravar o formato novo em todos os idiomas
+  de `IDIOMAS_AJUDA` (sem eles, o build para com "Central de Ajuda não lida" ou "Central de Ajuda sem N idioma(s)
+  publicado(s)"). Ver `gestao_obras/docs/PUBLICACAO_PENDENTE.md`.
 - **Cache:** o índice e os artigos ficam guardados no navegador (`ajuda:v2:`; o que o formato antigo guardou em
   `ajuda:v1:` é apagado). O índice aparece na hora (o da página pronta ou o guardado) e é conferido em segundo
   plano pelo cabeçalho; o artigo só é baixado de novo quando o hash dele no índice daquele idioma muda.
@@ -77,6 +101,13 @@ $env:AJUDA_PRINTS = "D:\Projetos\ajuda_prints"   # opcional: <idioma>\<id>\<arqu
 npm run dev
 ```
 
+  Para conferir as páginas prontas com essa saída (o `dist` fica marcado como teste e o `npm run pacote` o recusa):
+
+```powershell
+npx vite build; npx vite build --ssr src/ssr/entrada.jsx --outDir dist-ssr
+node ferramentas/paginas/gerar.mjs --ajuda-local D:\Projetos\ajuda_saida --legal-local D:\Projetos\gestao_obras\legal
+```
+
 ## Arquivos
 
 | Arquivo | Faz |
@@ -87,6 +118,7 @@ npm run dev
 | `src/ajuda/texto.js` | Lê o texto dos passos: só `**negrito**`, lista `- ` e `[texto](artigo:id)`; nunca HTML |
 | `src/ajuda/marcacao.js` | Marcação animada dos prints: leitura conferida do campo `marcacao` e as contas do desenho (iguais às do app) |
 | `src/ajuda/idiomas.js` | Idiomas em que os artigos são publicados e qual usar para cada idioma do site |
+| `src/ajuda/antigos.js` | Endereços que mudaram (assunto renomeado: 301; artigo que saiu do idioma: 410) e a conferência do build |
 | `src/ajuda/enderecos.js` | Endereços da Central no idioma do site (assunto pelo nome do módulo) |
 | `src/components/ajuda/` | Páginas (início, assunto, artigo), busca e estados (carregando, erro, vazio) |
 

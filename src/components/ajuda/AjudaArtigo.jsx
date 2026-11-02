@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ExternalLink, Smartphone, Users, ListOrdered } from 'lucide-react';
 import { printDoPasso } from '../../ajuda/dados.js';
 import { idiomaDoConteudo } from '../../ajuda/idiomas.js';
+import { artigoRetirado } from '../../ajuda/antigos.js';
 import { IDIOMAS, caminhoArtigo } from '../../i18n/idiomas.js';
 import AjudaBusca from './AjudaBusca.jsx';
 import IconeModulo from './IconeModulo.jsx';
@@ -33,6 +34,9 @@ export default function AjudaArtigo({ codigo, idioma, indice, preparado, rotas, 
         entrada ? descricaoDaPagina(t, { tipo: 'artigo' }, { entrada }) : null,
     );
 
+    // Artigo que saiu deste idioma (só do Brasil; src/ajuda/antigos.js): o servidor responde 410 e o site leva ao início
+    // da Central do idioma.
+    if (!entrada && artigoRetirado(idioma, slug)) return <Navigate to={rotas.inicio} replace />;
     if (!entrada) return <NaoEncontrado para={rotas.inicio} titulo={t('ajuda.naoEncontradoTitulo')} />;
     // Endereço pelo id ou com o nome antigo: troca pelo endereço certo deste idioma.
     if (slug !== entrada.slug) return <Navigate to={rotas.artigo(entrada.slug)} replace />;

@@ -4,7 +4,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { IDIOMAS, INTERNACIONAL, PAGINAS_ANTIGAS, escolherIdioma } from '../../src/i18n/idiomas.js';
-import { ARQUIVO, blocoAtual, gerarBloco, regrasDoNavegador } from './htaccess.mjs';
+import { ARQUIVO, blocoAtual, gerarBloco, regrasDoNavegador, regrasDosAntigos } from './htaccess.mjs';
+import {
+    ARTIGOS_RETIRADOS, ASSUNTOS_RENOMEADOS, caminhoDoAssuntoAntigo, caminhoDoAssuntoNovo, caminhosDoArtigoRetirado,
+} from '../../src/ajuda/antigos.js';
 
 const htaccess = fs.readFileSync(ARQUIVO, 'utf8');
 
@@ -82,4 +85,47 @@ test('endereços antigos: sem Accept-Language vai para pt-BR; com idioma fora do
     const bloco = gerarBloco();
     assert.ok(bloco.includes('RewriteCond %{HTTP:Accept-Language} ^\\s*$\nRewriteRule ^.+$ - [E=IDIOMA_NAVEGADOR:pt-br]'));
     assert.ok(bloco.includes('RewriteCond %{ENV:IDIOMA_NAVEGADOR} ^$\nRewriteRule ^.+$ - [E=IDIOMA_NAVEGADOR:en-us]'));
+});
+
+// Central: endereços que estiveram no ar e mudaram (src/ajuda/antigos.js). O servidor compara o endereço sem a barra
+// do começo; as regras são testadas com as expressões do próprio .htaccess.
+function regrasDaCentral() {
+    return regrasDosAntigos().map((r) => {
+        const [, padrao, destino, opcoes] = /^RewriteRule (\S+) (\S+) \[([^\]]+)\]$/.exec(r);
+        return { padrao: new RegExp(padrao), destino, opcoes };
+    });
+}
+function respostaDaCentral(caminho) {
+    const regra = regrasDaCentral().find((r) => r.padrao.test(caminho.slice(1)));
+    if (!regra) return null;
+    return regra.opcoes === 'G' ? { status: 410 } : { status: 301, destino: regra.destino };
+}
+
+test('Central: assunto renomeado vai com 301 para o endereço novo; artigo retirado responde 410', () => {
+    for (const a of ASSUNTOS_RENOMEADOS) {
+        assert.deepEqual(respostaDaCentral(caminhoDoAssuntoAntigo(a)), { status: 301, destino: caminhoDoAssuntoNovo(a) }, a.antigo);
+        assert.equal(respostaDaCentral(caminhoDoAssuntoNovo(a)), null, 'o endereço novo não é tocado');
+    }
+    for (const a of ARTIGOS_RETIRADOS) {
+        for (const c of caminhosDoArtigoRetirado(a)) assert.deepEqual(respostaDaCentral(c), { status: 410 }, c);
+    }
+    assert.deepEqual(respostaDaCentral('/en-us/help/topic/calculators-and-estimates'), { status: 301, destino: '/en-us/help/topic/calculators' });
+    assert.deepEqual(respostaDaCentral('/es-mx/ayuda/estimacion-cub'), { status: 410 });
+    // O pt-BR continua com os artigos e com o nome do assunto; os outros endereços não são tocados.
+    for (const caminho of [
+        '/pt-br/ajuda/estimativa-cub', '/pt-br/ajuda/o-que-e-o-cub', '/pt-br/ajuda/assunto/calculadoras-e-estimativas',
+        '/es-mx/ayuda/tema/reportes-diarios', '/en-us/help/create-daily-report', '/en-us/help/cub-cost-estimate-2',
+        '/en-us/help/topic/calculators', '/fr-fr/aide/estimativa-cub', '/en-us/help/x/cub-cost-estimate',
+    ]) assert.equal(respostaDaCentral(caminho), null, caminho);
+});
+
+test('Central: regras dos endereços antigos depois da barra no fim e antes das páginas prontas; 410 abre o site', () => {
+    const bloco = gerarBloco();
+    for (const r of regrasDosAntigos()) assert.ok(bloco.includes(`\n${r}\n`), r);
+    const barra = bloco.indexOf('RewriteRule ^([a-z]{2}-[a-z]{2}/.+)/$');
+    const prontas = bloco.indexOf('RewriteCond %1.html -f');
+    const primeira = bloco.indexOf(regrasDosAntigos()[0]);
+    const ultima = bloco.indexOf(regrasDosAntigos().at(-1));
+    assert.ok(barra >= 0 && barra < primeira && ultima < prontas, JSON.stringify({ barra, primeira, ultima, prontas }));
+    assert.match(htaccess, /^ErrorDocument 410 \/index\.html$/m);
 });

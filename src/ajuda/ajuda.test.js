@@ -5,6 +5,7 @@ import assert from 'node:assert/strict';
 import { buscar, normalizar, prepararBusca, termosDaConsulta } from './busca.js';
 import { lerLinha, lerTexto } from './texto.js';
 import { idiomaDoConteudo, IDIOMAS_AJUDA } from './idiomas.js';
+import { CODIGOS } from '../i18n/idiomas.js';
 
 const ARTIGOS = [
     { id: 'cadastrar-colaborador', titulo: 'Como cadastrar um colaborador na sua equipe', resumo: 'Cadastre quem trabalha na obra.', tags: ['funcionário', 'pedreiro'], busca: 'Abra Equipe e toque em Novo colaborador.', prioritario: true },
@@ -192,6 +193,14 @@ test('texto: "**" sem par aparece como texto', () => {
 
 test('idiomas: idioma dos artigos para cada idioma do site', () => {
     for (const i of IDIOMAS_AJUDA) assert.equal(idiomaDoConteudo(i), i);
-    assert.equal(idiomaDoConteudo('fr-FR'), 'en-US');
+    // Idioma que o site ainda não tem (ou endereço estranho): inglês.
+    assert.equal(idiomaDoConteudo('sv-SE'), 'en-US');
     assert.equal(idiomaDoConteudo(undefined), 'en-US');
+});
+
+test('idiomas: os 29 idiomas do site têm os artigos próprios (nenhum cai em outro idioma)', () => {
+    assert.equal(IDIOMAS_AJUDA.length, 29);
+    assert.equal(new Set(IDIOMAS_AJUDA).size, IDIOMAS_AJUDA.length);
+    assert.deepEqual([...IDIOMAS_AJUDA].sort(), [...CODIGOS].sort());
+    for (const c of CODIGOS) assert.equal(idiomaDoConteudo(c), c, c);
 });

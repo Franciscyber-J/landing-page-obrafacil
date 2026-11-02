@@ -8,7 +8,7 @@ import { CODIGOS, IDIOMAS, REFERENCIA, cadeia } from '../i18n/idiomas.js';
 import { precosDoIdioma } from '../i18n/pricing.js';
 import { SITE, absoluto, alternativosDaPagina, arquivoDaPagina, caminhoDaPagina, indexavel } from './paginas.js';
 import { cabecaDaPagina, etiquetasDaCabeca, jsonNoHtml, montarPagina, separarPreloads } from './cabeca.js';
-import { gerarRobots, gerarSitemap, ROBOS } from './sitemap.js';
+import { SITEMAP_DE_IDIOMA, arquivoDoSitemap, gerarIndiceDeSitemaps, gerarRobots, gerarSitemap, ROBOS } from './sitemap.js';
 import { gerarLlms } from './llms.js';
 
 const resources = {};
@@ -24,11 +24,16 @@ const tradutor = (codigo) => i18n.getFixedT(codigo);
 
 const MODULO = {
     id: 'diario-de-obra', nome: 'Diário de Obra (RDO)', descricao: 'Registrar o dia da obra.',
-    nomes: { 'pt-BR': 'Diário de Obra (RDO)', 'pt-PT': 'Diário de obra', 'en-US': 'Daily reports', 'en-GB': 'Daily reports', 'en-AU': 'Daily reports', 'en-CA': 'Daily reports', 'es-ES': 'Partes diarios', 'es-MX': 'Reportes diarios' },
+    nomes: { 'pt-BR': 'Diário de Obra (RDO)', 'pt-PT': 'Diário de obra', 'en-US': 'Daily reports', 'en-GB': 'Daily reports', 'en-AU': 'Daily reports', 'en-CA': 'Daily reports', 'es-ES': 'Partes diarios', 'es-MX': 'Reportes diarios',
+        // Os idiomas da 2.0 (nomes de verdade do índice publicado).
+        'fr-FR': 'Journal de chantier', 'de-DE': 'Bautagebuch', 'ar-SA': 'التقارير اليومية', 'it-IT': 'Giornale dei lavori', 'tr-TR': 'Şantiye günlüğü', 'pl-PL': 'Dziennik budowy', 'id-ID': 'Laporan harian', 'ja-JP': '工事日報', 'hi-IN': 'दैनिक साइट रिपोर्ट', 'vi-VN': 'Nhật ký công trình', 'nl-NL': 'Bouwdagboek', 'ko-KR': '공사일보', 'zh-TW': '施工日誌', 'ro-RO': 'Jurnal de șantier', 'th-TH': 'รายงานประจำวัน', 'uk-UA': 'Журнал робіт', 'ru-KZ': 'Журнал работ', 'cs-CZ': 'Stavební deník', 'el-GR': 'Ημερολόγιο έργου', 'hu-HU': 'Építési napló', 'he-IL': 'יומני עבודה',
+    },
 };
 const ARTIGO = {
     id: 'criar-rdo',
-    slugs: { 'pt-BR': 'criar-rdo', 'pt-PT': 'criar-diario', 'en-US': 'create-daily-report', 'en-GB': 'create-daily-report', 'en-AU': 'create-daily-report', 'en-CA': 'create-daily-report', 'es-ES': 'crear-parte', 'es-MX': 'crear-reporte' },
+    slugs: { 'pt-BR': 'criar-rdo', 'pt-PT': 'criar-diario', 'en-US': 'create-daily-report', 'en-GB': 'create-daily-report', 'en-AU': 'create-daily-report', 'en-CA': 'create-daily-report', 'es-ES': 'crear-parte', 'es-MX': 'crear-reporte',
+        'fr-FR': 'creer-rapport-journalier', 'de-DE': 'bautagesbericht-erstellen', 'ar-SA': 'إنشاء-تقرير-يومي', 'it-IT': 'creare-un-rapportino', 'tr-TR': 'günlük-rapor-oluşturma', 'pl-PL': 'utworz-raport-dzienny', 'id-ID': 'buat-laporan-harian', 'ja-JP': '日報を作成', 'hi-IN': 'दैनिक-रिपोर्ट-कैसे-बनाएं', 'vi-VN': 'tao-nhat-ky-cong-trinh', 'nl-NL': 'dagrapport-aanmaken', 'ko-KR': '공사일보-작성', 'zh-TW': '建立施工日誌', 'ro-RO': 'creare-raport-zilnic', 'th-TH': 'สร้างรายงานประจำวัน', 'uk-UA': 'створити-щоденний-звіт', 'ru-KZ': 'создать-ежедневный-отчёт', 'cs-CZ': 'vytvořit-denní-záznam', 'el-GR': 'δημιουργία-ημερήσιας-αναφοράς', 'hu-HU': 'napi-jelentés-létrehozása', 'he-IL': 'יצירת-יומן-עבודה',
+    },
 };
 const ENTRADA = { id: 'criar-rdo', titulo: 'Como criar um RDO', resumo: 'Registre o dia da obra & fotos.', slug: 'criar-rdo', modulo: 'diario-de-obra' };
 
@@ -149,6 +154,19 @@ test('sitemap: XML com hreflang e x-default, data válida, & escapado e sem ende
     assert.match(gerarSitemap([{ url: `${SITE}/a?b=1&c=2`, alternativos: [] }]), /a\?b=1&amp;c=2/);
     assert.throws(() => gerarSitemap([entradas[0], entradas[0]]), /repetido/);
     assert.ok(!gerarSitemap([{ url: `${SITE}/x`, lastmod: 'não é data', alternativos: [] }]).includes('<lastmod>'));
+});
+
+test('sitemap.xml: índice com um sitemap por idioma (sitemap-pt-br.xml...), data válida e sem repetição', () => {
+    assert.equal(arquivoDoSitemap('ja-JP'), 'sitemap-ja-jp.xml');
+    assert.ok(IDIOMAS.every(({ codigo }) => SITEMAP_DE_IDIOMA.test(arquivoDoSitemap(codigo))));
+    const sitemaps = IDIOMAS.map(({ codigo }) => ({ url: `${SITE}/${arquivoDoSitemap(codigo)}`, lastmod: '2026-11-02T10:00:00Z' }));
+    const xml = gerarIndiceDeSitemaps(sitemaps);
+    assert.ok(xml.startsWith('<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'));
+    assert.equal((xml.match(/<sitemap>/g) ?? []).length, IDIOMAS.length);
+    assert.ok(xml.includes(`<loc>${SITE}/sitemap-he-il.xml</loc>`));
+    assert.match(xml, /<lastmod>2026-11-02T10:00:00\.000Z<\/lastmod>/);
+    assert.doesNotMatch(xml, /<urlset|<url>/);
+    assert.throws(() => gerarIndiceDeSitemaps([sitemaps[0], sitemaps[0]]), /repetido/);
 });
 
 test('robots.txt: libera Google, Bing e os buscadores com IA, aponta o sitemap absoluto e não bloqueia nada', () => {
