@@ -154,6 +154,21 @@
   padding: 8px;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  /* 29 idiomas: a lista tem altura de menu comum (uns 7 idiomas à vista) e rola por dentro, sem passar da tela. */
+  max-height: min(400px, calc(100dvh - 120px));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--vidro-borda) transparent;
+}
+
+.idiomaLista::-webkit-scrollbar {
+  width: 8px;
+}
+
+.idiomaLista::-webkit-scrollbar-thumb {
+  background: var(--vidro-borda);
+  border-radius: var(--pilula);
 }
 
 .idiomaOpcao {

@@ -25,3 +25,4 @@ dist-ssr
 
 # Pacotes de deploy e backups ficam fora do projeto
 *.zip
+src/i18n/textos/PENDENCIAS.md

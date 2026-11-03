@@ -70,7 +70,16 @@ function SeletorDeIdioma({ codigo, aoEscolher }) {
     const { t } = useTranslation();
     const [aberto, setAberto] = useState(false);
     const caixa = useRef(null);
+    const lista = useRef(null);
     const atual = idioma(codigo) ?? IDIOMAS[0];
+
+    // A lista rola por dentro (29 idiomas): ao abrir, o idioma atual aparece já à vista, no meio da lista.
+    useEffect(() => {
+        if (!aberto || !lista.current) return;
+        const marcado = lista.current.querySelector('[aria-current="true"]');
+        // Só a lista rola (scrollIntoView rolaria também a página).
+        if (marcado) lista.current.scrollTop = marcado.offsetTop - (lista.current.clientHeight - marcado.offsetHeight) / 2;
+    }, [aberto]);
 
     useEffect(() => {
         if (!aberto) return undefined;
@@ -99,7 +108,7 @@ function SeletorDeIdioma({ codigo, aoEscolher }) {
                 <ChevronDown size={14} aria-hidden="true" className={aberto ? styles.girado : ''} />
             </button>
             {aberto && (
-                <ul id="lista-idiomas" className={styles.idiomaLista}>
+                <ul id="lista-idiomas" className={styles.idiomaLista} ref={lista}>
                     {IDIOMAS.map((i) => (
                         <li key={i.codigo}>
                             <button
