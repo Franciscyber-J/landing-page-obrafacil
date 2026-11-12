@@ -13,6 +13,15 @@
 // Recusa: dist/ que não veio de um "npm run build" completo, dist de teste (conteúdo de pasta local ou sem o
 // Firestore), pasta de destino dentro do projeto, e a branch diferente da main (para testar: --fora-da-main).
 // O .htaccess não entra no zip: ele vai por último, à parte (skill publicar-site).
+//
+// Junto do zip sai <nome do zip>_apagar.txt: as páginas que estão no servidor e não existem mais neste pacote
+// (artigo que saiu da Central, endereço que mudou de nome). O zip é extraído POR CIMA do que está no servidor, sem
+// apagar as pastas dos idiomas antes (apagar antes deixava o site alguns minutos sem nenhuma página pronta; um
+// robô de busca que passasse nesse intervalo leria os endereços sem o texto no HTML); depois de extrair, apaga-se
+// só o que a lista manda. A lista sai da
+// comparação com o site no ar (os sitemaps dele) e com o pacote anterior da mesma pasta.
+//   --sem-comparar   não lê o site no ar (sem internet, ou para voltar a uma versão antiga); compara só com o
+//                    pacote anterior da pasta e avisa.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -21,7 +30,9 @@ import zlib from 'node:zlib';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { ORIGEM, RAIZ } from '../paginas/origem.mjs';
-import { conferirDist } from '../paginas/conferir.mjs';
+import { conferirDist, conferirIndiceDeSitemaps, lerSitemap } from '../paginas/conferir.mjs';
+import { SITE, arquivoDaPagina } from '../../src/seo/paginas.js';
+import { SITEMAP_DE_IDIOMA } from '../../src/seo/sitemap.js';
 
 const DIST = path.join(RAIZ, 'dist');
 
@@ -194,6 +205,109 @@ export function conferirZip(arquivo, itens) {
     return problemas;
 }
 
+// Nomes dos arquivos (não das pastas) de um zip, lidos do diretório central.
+export function nomesDoZip(arquivo) {
+    const zip = fs.readFileSync(arquivo);
+    const fim = zip.lastIndexOf(Buffer.from([0x50, 0x4b, 0x05, 0x06]));
+    if (fim < 0) throw new Error(`${path.basename(arquivo)}: zip sem o fim do diretório central`);
+    const total = zip.readUInt16LE(fim + 10);
+    let p = zip.readUInt32LE(fim + 16);
+    const nomes = [];
+    for (let n = 0; n < total; n++) {
+        if (zip.readUInt32LE(p) !== 0x02014b50) throw new Error(`${path.basename(arquivo)}: diretório central quebrado`);
+        const lNome = zip.readUInt16LE(p + 28);
+        const nome = zip.subarray(p + 46, p + 46 + lNome).toString('utf8');
+        p += 46 + lNome + zip.readUInt16LE(p + 30) + zip.readUInt16LE(p + 32);
+        if (!nome.endsWith('/')) nomes.push(nome);
+    }
+    return nomes;
+}
+
+// Arquivo, dentro do servidor, da página de um endereço do site (o inverso de enderecoDoArquivo): o endereço vem
+// com %XX e o arquivo tem as letras da escrita do idioma, em NFC. null se o endereço não é deste site.
+export function arquivoDoEndereco(url) {
+    if (!url.startsWith(`${SITE}/`)) return null;
+    let caminho;
+    try {
+        caminho = decodeURIComponent(new URL(url).pathname).normalize('NFC');
+    } catch {
+        return null;
+    }
+    return caminho === '/' ? null : arquivoDaPagina(caminho);
+}
+
+// O que o pacote gera e pode sobrar no servidor de uma publicação para a outra: as páginas (pastas dos idiomas) e
+// os sitemaps de cada idioma. O resto (assets/, dados/, imagens...) tem o nome trocado a cada mudança e não
+// atrapalha se ficar; download/, email/ e fontes/ nunca são apagados.
+const PAGINA_GERADA = /^[a-z]{2}-[a-z]{2}\/.+\.html$/;
+const eGerado = (nome) => PAGINA_GERADA.test(nome) || SITEMAP_DE_IDIOMA.test(nome);
+
+// Arquivos gerados que estão (ou estavam) no servidor e não vêm neste pacote: apagar depois de extrair o zip.
+// noServidor: nomes de arquivo (com "/"); doPacote: nomes dos arquivos do pacote novo.
+export function sobrasNoServidor(noServidor, doPacote) {
+    const novos = new Set(doPacote.map((n) => n.normalize('NFC')));
+    const sobras = new Set();
+    for (const nome of noServidor) {
+        const n = nome.normalize('NFC');
+        if (eGerado(n) && !novos.has(n)) sobras.add(n);
+    }
+    return [...sobras].sort();
+}
+
+async function lerTexto(url) {
+    const resposta = await fetch(url, { headers: { 'Cache-Control': 'no-cache' } });
+    if (!resposta.ok) throw new Error(`HTTP ${resposta.status} em ${url}`);
+    return resposta.text();
+}
+
+// Arquivos das páginas que o site no ar publica hoje, pelos sitemaps dele (índice e um por idioma), mais os
+// próprios arquivos dos sitemaps. ler: (url) → texto (os testes trocam).
+export async function arquivosNoAr(ler = lerTexto) {
+    const indice = conferirIndiceDeSitemaps(await ler(`${SITE}/sitemap.xml`));
+    const arquivos = [];
+    if (!indice.sitemaps.length) throw new Error('o sitemap.xml do site no ar não lista nenhum sitemap de idioma');
+    for (const s of indice.sitemaps) {
+        const nome = s.loc.startsWith(`${SITE}/`) ? s.loc.slice(SITE.length + 1) : null;
+        if (!nome || !SITEMAP_DE_IDIOMA.test(nome)) continue;
+        arquivos.push(nome);
+        for (const entrada of lerSitemap(await ler(s.loc))) {
+            const arquivo = arquivoDoEndereco(entrada.loc);
+            if (arquivo) arquivos.push(arquivo);
+        }
+    }
+    return arquivos;
+}
+
+// O pacote anterior da pasta (o mais novo que não é o que está sendo gravado), se houver.
+export function pacoteAnterior(pasta, atual) {
+    if (!fs.existsSync(pasta)) return null;
+    const outros = fs.readdirSync(pasta)
+        .filter((n) => /^site_obrafacil_.*\.zip$/.test(n) && path.join(pasta, n) !== atual)
+        .map((n) => ({ nome: n, quando: fs.statSync(path.join(pasta, n)).mtimeMs }))
+        .sort((a, b) => b.quando - a.quando);
+    return outros.length ? path.join(pasta, outros[0].nome) : null;
+}
+
+// Texto do arquivo <zip>_apagar.txt.
+export function textoDasSobras({ zip, sobras, fontes, avisos = [] }) {
+    const linhas = [
+        `O que apagar no servidor DEPOIS de extrair ${zip}`,
+        `(Gerenciador de Arquivos da Hostinger, pasta public_html/appobrafacil)`,
+        '',
+        `Comparado com: ${fontes.join(' e ')}.`,
+        ...avisos.map((a) => `ATENÇÃO: ${a}`),
+        '',
+    ];
+    if (!sobras.length) {
+        linhas.push('Nada a apagar: todas as páginas que estão no servidor vêm neste pacote.');
+    } else {
+        linhas.push(`${sobras.length} arquivo(s) que não existem mais no site. Apague cada um (se algum não estiver lá, siga):`, '');
+        for (const nome of sobras) linhas.push(`  ${nome}`);
+        linhas.push('', 'Não apague mais nada: as pastas dos idiomas, dados/, assets/, download/, email/ e fontes/ ficam.');
+    }
+    return `${linhas.join('\r\n')}\r\n`;
+}
+
 function git(...args) {
     try {
         return execFileSync('git', args, { cwd: RAIZ, encoding: 'utf8' }).trim();
@@ -207,9 +321,10 @@ export function dentroDoProjeto(destino) {
     return rel === '' || (!rel.startsWith('..') && !path.isAbsolute(rel));
 }
 
-function principal() {
+async function principal() {
     const args = process.argv.slice(2);
     const foraDaMain = args.includes('--fora-da-main');
+    const semComparar = args.includes('--sem-comparar');
     const pasta = args.find((a) => !a.startsWith('--'));
     if (!pasta) throw new Error('diga a pasta do pacote, fora do projeto. Ex.: npm run pacote -- D:\\Projetos\\pacotes_site');
     if (dentroDoProjeto(pasta)) throw new Error('a pasta do pacote tem de ficar fora da pasta do projeto');
@@ -250,19 +365,49 @@ function principal() {
         fs.rmSync(destino, { force: true });
         throw new Error('o zip saiu diferente do dist/ e foi apagado');
     }
+    // O que sobra no servidor depois de extrair este zip por cima do que está lá.
+    const doPacote = itens.filter((i) => !i.pasta).map((i) => i.nome);
+    const noServidor = [];
+    const fontes = [];
+    const avisos = [];
+    if (semComparar) {
+        avisos.push('o site no ar não foi lido (--sem-comparar); a lista pode estar incompleta.');
+    } else {
+        console.log('Lendo os sitemaps do site no ar (para listar o que apagar depois de extrair)...');
+        try {
+            noServidor.push(...await arquivosNoAr());
+            fontes.push('o site no ar (sitemaps)');
+        } catch (erro) {
+            fs.rmSync(destino, { force: true });
+            throw new Error(`não consegui ler os sitemaps do site no ar (${erro.message}); o zip foi apagado. Com internet, rode de novo; para gerar sem essa comparação, acrescente --sem-comparar`, { cause: erro });
+        }
+    }
+    const anterior = pacoteAnterior(path.resolve(pasta), destino);
+    if (anterior) {
+        noServidor.push(...nomesDoZip(anterior));
+        fontes.push(`o pacote anterior (${path.basename(anterior)})`);
+    }
+    if (!fontes.length) fontes.push('nada (sem o site no ar e sem pacote anterior na pasta)');
+    const sobras = sobrasNoServidor(noServidor, doPacote);
+    const listaDeSobras = destino.replace(/\.zip$/, '_apagar.txt');
+    fs.writeFileSync(listaDeSobras, textoDasSobras({ zip: path.basename(destino), sobras, fontes, avisos }));
+
     const mb = (b) => (b / 1024 / 1024).toFixed(1).replace('.', ',');
     console.log(`\nPacote pronto: ${destino}`);
     console.log(`  ${resumo.itens} itens, ${mb(resumo.bytesOriginais)} MB no dist, ${mb(resumo.bytesDoZip)} MB no zip`);
     console.log(`  conteúdo do Firestore lido em ${origem.geradoEm}; idiomas da Central: ${origem.idiomasDaCentral.length}`);
     console.log(`  commit ${commit?.slice(0, 7) ?? '?'} (${branch ?? '?'}); zip relido e conferido arquivo por arquivo.`);
+    console.log(sobras.length
+        ? `A apagar no servidor depois de extrair: ${sobras.length} arquivo(s), na lista ${listaDeSobras}`
+        : `Nada a apagar no servidor depois de extrair (${listaDeSobras}).`);
+    for (const aviso of avisos) console.log(`ATENÇÃO: ${aviso}`);
+    console.log('Extraia o zip por cima do que está no servidor, sem apagar as pastas dos idiomas antes.');
     console.log('O .htaccess (hospedagem/.htaccess) vai à parte, por último.');
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-    try {
-        principal();
-    } catch (erro) {
+    principal().catch((erro) => {
         console.error(`\nERRO no pacote: ${erro.message}`);
         process.exit(1);
-    }
+    });
 }

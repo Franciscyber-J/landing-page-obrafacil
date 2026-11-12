@@ -128,8 +128,9 @@ Passo a passo completo na skill `publicar-site` (`.claude/skills/publicar-site/S
 
 1. Baixe o `.htaccess` atual de `public_html/appobrafacil` para o seu computador (fora da pasta do projeto). É a
    volta: se algo der errado, é só subir ele de volta.
-2. Apague as pastas dos idiomas e a pasta `dados` (se existir) e envie o conteúdo do `dist` (o zip do
-   `npm run pacote`).
+2. Envie o zip do `npm run pacote` e extraia **por cima** do que está lá, sem apagar as pastas dos idiomas antes
+   (apagar antes deixa o site minutos sem páginas prontas, e o Google lê o site vazio). Depois apague só os arquivos
+   listados em `site_obrafacil_<data>_<commit>_apagar.txt` (gravado ao lado do zip; quase sempre "Nada a apagar").
 3. **Por último**, suba o `.htaccess` desta pasta, substituindo o atual.
 4. No computador, na pasta `landing_page`: `node hospedagem/verificar.mjs`. Tem que terminar com "Tudo certo.".
 

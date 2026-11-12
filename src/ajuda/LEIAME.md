@@ -77,7 +77,8 @@ Regras que mantêm o Google lendo certo (achados no Search Console em 11/11/2026
 - **Página pronta nunca vira tela de erro.** Se os textos do idioma ou o índice não baixarem, o `src/main.jsx` deixa
   na tela o que veio no HTML e tenta de novo (2, 6 e 15 segundos, e quando a internet volta); ele não desenha do zero.
   Antes, a falha levava a "Não foi possível carregar a Central" no lugar do artigo, igual em todos os endereços do
-  idioma, e o Google tratava um artigo como cópia de outro.
+  idioma: é a causa mais provável de o Google ter tratado 13 artigos como cópia de outro artigo do mesmo idioma
+  (ex.: `/fr-fr/aide/deplacer-supprimer-fichier` com a canônica escolhida `/fr-fr/aide/materiaux-calcules`).
 - **Tela de erro, Central vazia e endereço que não existe levam `noindex`** (`src/components/ajuda/Estados.jsx`).
 - **Link do site para um artigo sai com o endereço do idioma.** As páginas Suporte, Perfil e volta do pagamento
   apontam artigos pelo id; o build entrega a cada uma o endereço do artigo no idioma dela
