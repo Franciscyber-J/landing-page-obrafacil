@@ -992,7 +992,9 @@
     align-items: center;
     justify-content: space-between;
     height: 10.5cqw;
-    padding: 0 7.5cqw 0 8.5cqw;
+    /* A faixa é sempre da esquerda para a direita (dir="ltr" no componente): início = esquerda. */
+    padding-block: 0;
+    padding-inline: 8.5cqw 7.5cqw;
     font-size: 5.1cqw;
     font-weight: 600;
     line-height: 1;
@@ -1014,7 +1016,7 @@
 .celularCamera {
     position: absolute;
     top: 50%;
-    left: 50%;
+    inset-inline-start: 50%;
     width: 4.6cqw;
     height: 4.6cqw;
     border-radius: 999px;
@@ -1025,7 +1027,7 @@
 
 .celular[data-moldura='pilula'] .celularTopo {
     height: 13.5cqw;
-    padding: 0 8cqw 0 10cqw;
+    padding-inline: 10cqw 8cqw;
 }
 
 .celular[data-moldura='pilula'] .celularCamera {
