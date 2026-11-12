@@ -11,6 +11,7 @@ import { conferirDist, conferirIndiceDeSitemaps, conferirLinks, conferirLlms, co
 import { conferirFontes, lerAjuda } from './fontes.mjs';
 import { IDIOMAS } from '../../src/i18n/idiomas.js';
 import { IDIOMAS_AJUDA } from '../../src/ajuda/idiomas.js';
+import { ORIGEM, RAIZ } from './origem.mjs';
 
 const URL_ARTIGO = `${SITE}/pt-br/ajuda/criar-rdo`;
 const TEXTO = 'Texto do artigo, visível sem JavaScript. '.repeat(10);
@@ -241,7 +242,22 @@ test('gerador sai com erro (sem gravar nada) quando a Central não é lida', { s
 // Depois do "npm run build" (ou do gerador com as pastas locais), confere o dist/ inteiro.
 const DIST = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'dist');
 const temDist = fs.existsSync(path.join(DIST, 'sitemap.xml'));
-test('dist/ gerado: todas as páginas prontas, sitemap, robots.txt e llms.txt sem problema', { skip: temDist ? false : 'dist/ sem páginas prontas (rode npm run build)' }, () => {
+// O dist/ de um build antigo não é conferido com as regras de hoje (o "npm test" roda antes do "npm run build" no
+// passo a passo da publicação): só o dist/ gerado neste commit. O "npm run build" confere o dele de qualquer jeito.
+function motivoParaPular() {
+    if (!temDist) return 'dist/ sem páginas prontas (rode npm run build)';
+    let origem = null;
+    try {
+        origem = JSON.parse(fs.readFileSync(ORIGEM, 'utf8'));
+    } catch {
+        return 'dist/ sem o registro do build (rode npm run build)';
+    }
+    const atual = spawnSync('git', ['rev-parse', 'HEAD'], { cwd: RAIZ, encoding: 'utf8' });
+    const commit = atual.status === 0 ? atual.stdout.trim() : null;
+    if (commit && origem.commit && origem.commit !== commit) return `dist/ é do commit ${origem.commit.slice(0, 7)} e a pasta está no ${commit.slice(0, 7)} (rode npm run build)`;
+    return false;
+}
+test('dist/ gerado: todas as páginas prontas, sitemap, robots.txt e llms.txt sem problema', { skip: motivoParaPular() }, () => {
     const { problemas, paginas } = conferirDist(DIST);
     assert.deepEqual(problemas.slice(0, 20), []);
     assert.ok(paginas >= 8 * 4, `${paginas} páginas`);
