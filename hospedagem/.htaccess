@@ -56,9 +56,11 @@ AddDefaultCharset UTF-8
     </FilesMatch>
 
     # Índice da Central de cada idioma (dados/ajuda/<idioma>.<código>.json): o nome muda quando o conteúdo
-    # muda, então pode ficar guardado no navegador.
+    # muda, então pode ficar guardado no navegador. É dado para o site, não página: fora do Google
+    # (X-Robots-Tag; o Search Console listava esses arquivos em "Rastreada, mas não indexada").
     <FilesMatch "\.[0-9a-f]{12}\.json$">
         Header set Cache-Control "public, max-age=31536000, immutable"
+        Header set X-Robots-Tag "noindex"
     </FilesMatch>
 
     # Fontes dos PDFs do app (fontes/pdf/<Nome>.<código>.ttf): o app web fica em outro endereço e só consegue

@@ -330,5 +330,19 @@ console.log('\nFontes dos PDFs do app');
   linha(/immutable/.test(r.cabecalhos.get('cache-control') ?? ''), `cache longo: ${r.cabecalhos.get('cache-control') ?? 'ausente'}`);
 }
 
+// Índice da Central (dados/ajuda/<idioma>.<código>.json): o site lê ao abrir uma página pronta; não é página.
+console.log('\nÍndice da Central (arquivo de dados)');
+{
+  const pagina = await pedir('/pt-br/ajuda');
+  const endereco = /"indice":"(\/dados\/ajuda\/[^"]+\.json)"/.exec(pagina.corpo ?? '')?.[1] ?? null;
+  linha(Boolean(endereco), `a página /pt-br/ajuda aponta o índice: ${endereco ?? 'não achado'}`);
+  if (endereco) {
+    const r = await pedir(endereco, { metodo: 'HEAD' });
+    linha(r.status === 200, `índice publicado: HTTP ${r.status}`);
+    linha(/immutable/.test(r.cabecalhos.get('cache-control') ?? ''), `cache longo: ${r.cabecalhos.get('cache-control') ?? 'ausente'}`);
+    linha(/noindex/.test(r.cabecalhos.get('x-robots-tag') ?? ''), `fora do Google (X-Robots-Tag): ${r.cabecalhos.get('x-robots-tag') ?? 'ausente'}`);
+  }
+}
+
 console.log(`\n${falhas ? `${falhas} conferência(s) falharam.` : 'Tudo certo.'}`);
 process.exit(falhas ? 1 : 0);
