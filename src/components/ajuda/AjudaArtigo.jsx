@@ -10,6 +10,7 @@ import AjudaBusca from './AjudaBusca.jsx';
 import IconeModulo from './IconeModulo.jsx';
 import TextoDoPasso from './TextoDoPasso.jsx';
 import PrintComMarcacao from './PrintComMarcacao.jsx';
+import MolduraDoCelular from './MolduraDoCelular.jsx';
 import { BandaSuporte, Carregando, ErroAoCarregar, NaoEncontrado, Trilha } from './Estados.jsx';
 import useTituloDaPagina from './useTituloDaPagina.js';
 import { descricaoDaPagina, tituloDaPagina } from '../../seo/textos.js';
@@ -111,14 +112,14 @@ export default function AjudaArtigo({ codigo, idioma, indice, preparado, rotas, 
                                             />
                                         </div>
                                         {print && (
-                                            <figure className={styles.celular}>
+                                            <MolduraDoCelular>
                                                 <PrintComMarcacao
                                                     key={print.endereco}
                                                     src={print.endereco}
                                                     alt={t('ajuda.printAlt', { n: i + 1, titulo: p.titulo })}
                                                     marcacao={print.marcacao}
                                                 />
-                                            </figure>
+                                            </MolduraDoCelular>
                                         )}
                                     </div>
                                 </li>

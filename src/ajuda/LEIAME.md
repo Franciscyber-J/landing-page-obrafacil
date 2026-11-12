@@ -122,6 +122,23 @@ node ferramentas/paginas/gerar.mjs --ajuda-local D:\Projetos\ajuda_saida --legal
 | `src/ajuda/enderecos.js` | Endereços da Central no idioma do site (assunto pelo nome do módulo) |
 | `src/components/ajuda/` | Páginas (início, assunto, artigo), busca e estados (carregando, erro, vazio) |
 
+## Moldura de celular dos prints
+
+Os prints novos (bateria da 2.0.1) trazem só a tela do app, sem a barra do sistema: a Apple recusou os prints com a
+barra do Android dentro do app do iPhone (regra 2.3.10). A "cara de celular" é desenhada pelo site e pelo app em volta
+do print (decisão do Francis, 11/11/2026): corpo do aparelho, faixa de status (hora fixa `12:00`, câmera e ícones) e
+barra de gestos. O print fica inteiro entre as duas faixas; a moldura nunca cobre a tela do app.
+
+- Dois estilos, pelo aparelho de quem abre (`src/ajuda/moldura.js`): `pilula` (recorte em pílula) no iPhone, iPad e
+  Mac; `furo` (furo redondo no centro) no Android e nos outros. Nenhum copia um modelo de marca.
+- A página pronta do build sai sempre com `furo`; o estilo do aparelho entra depois da hidratação.
+- Tudo da moldura é enfeite (`aria-hidden`); a faixa de status fica sempre da esquerda para a direita.
+- Componente: `src/components/ajuda/MolduraDoCelular.jsx`; medidas em `cqw` (seguem a largura da moldura) e cores
+  `--aj-celular*` em `Ajuda.module.css`. O app desenha a mesma moldura
+  (`gestao_obras/lib/ajuda/widgets/moldura_do_celular.dart`): mudou lá, muda aqui.
+- **Ordem de publicação:** só publicar o site com a moldura depois de a Central estar sem os prints antigos (que têm a
+  barra do Android dentro da imagem); senão o print antigo aparece com duas barras de status.
+
 ## Marcação animada nos prints
 
 Cada passo publicado traz, além do print limpo, o campo `marcacao`: onde fica o alvo, em proporção do print

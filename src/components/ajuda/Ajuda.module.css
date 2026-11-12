@@ -16,6 +16,10 @@
     --aj-icone: var(--laranja-texto);
     --aj-nota: var(--bg-tertiary);
     --aj-celular: #0b0b0b;
+    /* Tela da moldura do celular: faixas de status e de gestos pretas, como num aparelho de verdade, nos dois temas. */
+    --aj-celular-tela: #000;
+    --aj-celular-status: #f4f4f5;
+    --aj-celular-camera: #16181c;
 
     min-height: 100vh;
     padding-bottom: 24px;
@@ -961,6 +965,9 @@
     text-underline-offset: 3px;
 }
 
+/* Moldura de celular do print (MolduraDoCelular.jsx, src/ajuda/moldura.js): corpo do aparelho, faixa de status
+   desenhada, o print e a barra de gestos. As medidas da faixa seguem a largura da moldura (cqw), para a moldura
+   ficar igual em qualquer tamanho. Dois estilos, por data-moldura: "furo" (padrão) e "pilula". */
 .celular {
     flex: none;
     width: 220px;
@@ -969,15 +976,84 @@
     background: var(--aj-celular);
     border: 1px solid rgba(255, 255, 255, 0.14);
     box-shadow: var(--aj-sombra);
+    container-type: inline-size;
+}
+
+.celularTela {
+    overflow: hidden;
+    border-radius: 23px;
+    background: var(--aj-celular-tela);
+    color: var(--aj-celular-status);
+}
+
+.celularTopo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10.5cqw;
+    padding: 0 7.5cqw 0 8.5cqw;
+    font-size: 5.1cqw;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    font-variant-numeric: tabular-nums;
+}
+
+.celularHora {
+    font-family: var(--fonte-texto, inherit);
+}
+
+.celularIcones {
+    width: 19cqw;
+    height: auto;
+    fill: currentColor;
+}
+
+/* Câmera: furo redondo no centro (padrão) ou recorte em pílula. */
+.celularCamera {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4.6cqw;
+    height: 4.6cqw;
+    border-radius: 999px;
+    background: var(--aj-celular-camera);
+    box-shadow: inset 0 0 0 0.5cqw rgba(255, 255, 255, 0.07);
+    transform: translate(-50%, -50%);
+}
+
+.celular[data-moldura='pilula'] .celularTopo {
+    height: 13.5cqw;
+    padding: 0 8cqw 0 10cqw;
+}
+
+.celular[data-moldura='pilula'] .celularCamera {
+    width: 30cqw;
+    height: 8.4cqw;
+    box-shadow: none;
+}
+
+.celularBase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7cqw;
+}
+
+.celularGestos {
+    width: 33cqw;
+    height: 1.7cqw;
+    border-radius: 999px;
+    background: currentColor;
+    opacity: 0.85;
 }
 
 /* Print do passo (PrintComMarcacao.jsx): o espaço já tem a proporção do print antes de a imagem chegar.
-   O recorte arredondado também prende o zoom e o véu da marcação. */
+   O recorte prende o zoom e o véu da marcação; os cantos arredondados são os da tela da moldura. */
 .print {
     position: relative;
     overflow: hidden;
-    border-radius: 23px;
-    clip-path: inset(0 round 23px);
 }
 
 .print img {
