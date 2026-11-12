@@ -41,6 +41,9 @@ function Aviso({ icone, titulo, texto, children }) {
 export function ErroAoCarregar({ aoTentarDeNovo }) {
     const { t } = useTranslation();
     useTituloDaPagina(`${t('ajuda.titulo')} · ObraFácil`);
+    // Tela de erro não é conteúdo: fora do Google (noindex). Sem isso, um robô que não consegue ler a Central vê a
+    // mesma tela em endereços diferentes e os trata como cópias uns dos outros.
+    useCabecaDaPagina({ semIndexar: true });
     return (
         <Aviso icone={<RefreshCw size={28} aria-hidden="true" />} titulo={t('ajuda.erroTitulo')} texto={t('ajuda.erroTexto')}>
             <button type="button" className={styles.botao} onClick={aoTentarDeNovo}>{t('ajuda.tentarDeNovo')}</button>
@@ -52,6 +55,7 @@ export function ErroAoCarregar({ aoTentarDeNovo }) {
 export function NadaPublicado() {
     const { t } = useTranslation();
     useTituloDaPagina(`${t('ajuda.titulo')} · ObraFácil`);
+    useCabecaDaPagina({ semIndexar: true }); // sem conteúdo: fora do Google, como a tela de erro
     return (
         <Aviso icone={<Hourglass size={28} aria-hidden="true" />} titulo={t('ajuda.vazioTitulo')} texto={t('ajuda.vazioTexto')}>
             <LinkWhatsApp classe={styles.botao} />

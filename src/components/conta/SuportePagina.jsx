@@ -3,7 +3,8 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { BookOpen, LifeBuoy, Mail, MessageCircle, Store, Ticket } from 'lucide-react';
-import { caminhoAjuda, caminhoArtigo, caminhoPerfil, caminhoSuporte } from '../../i18n/idiomas.js';
+import { caminhoAjuda, caminhoPerfil, caminhoSuporte } from '../../i18n/idiomas.js';
+import { caminhoDoArtigoDoSite } from '../../ajuda/artigosDoSite.js';
 import { useRotaEquivalente } from '../../i18n/RotaDoIdioma.jsx';
 import { EMAIL_SUPORTE, linkWhatsApp } from '../../links.js';
 import { comNegrito } from '../../texto.jsx';
@@ -45,7 +46,7 @@ export default function SuportePagina({ codigo }) {
                         <a href={`mailto:${EMAIL_SUPORTE}`} className={`acao-contorno ${styles.botao}`}>{t('suporte.emailBotao')}</a>
                     </Canal>
                     <Canal icone={Ticket} titulo={t('suporte.chamadoTitulo')} texto={t('suporte.chamadoTexto')}>
-                        <Link to={caminhoArtigo(codigo, 'abrir-chamado')} className={`acao-contorno ${styles.botao}`}>{t('suporte.chamadoBotao')}</Link>
+                        <Link to={caminhoDoArtigoDoSite(codigo, 'abrir-chamado')} className={`acao-contorno ${styles.botao}`}>{t('suporte.chamadoBotao')}</Link>
                     </Canal>
                     <Canal icone={BookOpen} titulo={t('suporte.centralTitulo')} texto={t('suporte.centralTexto')}>
                         <Link to={caminhoAjuda(codigo)} className={`acao-contorno ${styles.botao}`}>{t('suporte.centralBotao')}</Link>

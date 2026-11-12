@@ -3,7 +3,8 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { CreditCard, UserRound } from 'lucide-react';
-import { caminhoArtigo, caminhoPerfil } from '../../i18n/idiomas.js';
+import { caminhoPerfil } from '../../i18n/idiomas.js';
+import { caminhoDoArtigoDoSite } from '../../ajuda/artigosDoSite.js';
 import { useRotaEquivalente } from '../../i18n/RotaDoIdioma.jsx';
 import { AbrirApp, Artigos, Cabeca, Cartao, Lista, Lojas, Pagina, Paragrafo, Passos } from './partes.jsx';
 import useCabecaDaPagina from './useCabecaDaPagina.js';
@@ -19,7 +20,7 @@ export default function PerfilPagina({ codigo }) {
         <Pagina>
             <Cabeca icone={UserRound} sobretitulo={t('perfil.sobretitulo')} titulo={t('perfil.titulo')} texto={t('perfil.texto')}>
                 <AbrirApp />
-                <Link to={caminhoArtigo(codigo, 'cancelar-assinatura')} className={`acao-clara ${styles.botao}`}>{t('perfil.artigoBotao')}</Link>
+                <Link to={caminhoDoArtigoDoSite(codigo, 'cancelar-assinatura')} className={`acao-clara ${styles.botao}`}>{t('perfil.artigoBotao')}</Link>
             </Cabeca>
 
             <div className={styles.grade}>

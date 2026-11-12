@@ -45,7 +45,36 @@ export function lerPagina(html) {
         jsonld,
         h1: /<h1[\s>]/.test(html.slice(html.indexOf('<div id="root"'))),
         texto: textoVisivel(html),
+        links: linksInternos(html),
     };
+}
+
+// Links do corpo da página (<a href>) para páginas do próprio site (/pt-br/..., /en-us/help/...), como endereço
+// absoluto no formato do canonical (sem #seção e sem ?consulta; letras de outras escritas com %XX).
+const LINK_DE_PAGINA = /^\/[a-z]{2}-[a-z]{2}(?:\/|$)/;
+
+export function enderecoDoLink(href) {
+    const caminho = href.split('#')[0].split('?')[0];
+    if (!LINK_DE_PAGINA.test(caminho)) return null;
+    const partes = caminho.split('/').map((parte) => {
+        try {
+            return encodeURIComponent(decodeURIComponent(parte).normalize('NFC'));
+        } catch {
+            return parte;
+        }
+    });
+    return `${SITE}${partes.join('/')}`;
+}
+
+function linksInternos(html) {
+    const raiz = html.indexOf('<div id="root"');
+    if (raiz < 0) return [];
+    const vistos = new Set();
+    for (const m of html.slice(raiz).matchAll(/<a\s[^>]*?href="([^"]*)"/g)) {
+        const url = enderecoDoLink(decodificar(m[1]));
+        if (url) vistos.add(url);
+    }
+    return [...vistos];
 }
 
 // Problemas de uma página pronta servida no endereço url (absoluto). Lista vazia = tudo certo.
@@ -217,6 +246,19 @@ function htmls(pasta, base = pasta) {
     return lista;
 }
 
+// Todo link de uma página pronta para outra página do site leva a uma página pronta. Link para endereço sem
+// página (pelo id do artigo, com o nome antigo...) abre o site vazio para o Google: ele lê como cópia ou "soft 404".
+// paginas: Map(endereço absoluto → página lida por lerPagina).
+export function conferirLinks(paginas) {
+    const problemas = [];
+    for (const [url, p] of paginas) {
+        for (const link of p.links ?? []) {
+            if (!paginas.has(link)) problemas.push(`${decodeURI(url)}: link para ${decodeURI(link)}, que não tem página pronta`);
+        }
+    }
+    return problemas;
+}
+
 // Tudo o que o build gravou. Devolve a lista de problemas (vazia = tudo certo) e quantas páginas conferiu.
 export function conferirDist(dist) {
     const problemas = [];
@@ -242,6 +284,7 @@ export function conferirDist(dist) {
         else if (pagina.noindex) problemas.push(`sitemap: ${e.loc} tem noindex`);
         else if (JSON.stringify(pagina.alternativos) !== JSON.stringify(e.alternativos)) problemas.push(`sitemap: hreflang de ${e.loc} diferente do da página`);
     }
+    problemas.push(...conferirLinks(paginas));
     const noSitemap = new Set(entradas.map((e) => e.loc));
     for (const [url, p] of paginas) if (!p.noindex && !noSitemap.has(url)) problemas.push(`${url} pode ir para o Google mas não está no sitemap`);
     problemas.push(...conferirRobots(fs.readFileSync(path.join(dist, 'robots.txt'), 'utf8')));

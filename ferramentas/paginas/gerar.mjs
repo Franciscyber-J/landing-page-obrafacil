@@ -22,6 +22,7 @@ import { COMPRAS, DOCUMENTOS_LEGAIS, IDIOMAS } from '../../src/i18n/idiomas.js';
 import { idiomaDoConteudo } from '../../src/ajuda/idiomas.js';
 import { slugDoModulo } from '../../src/ajuda/enderecos.js';
 import { conferirEnderecosAntigos } from '../../src/ajuda/antigos.js';
+import { enderecosDosArtigosDoSite } from '../../src/ajuda/artigosDoSite.js';
 import { lerTexto, tituloDoTexto } from '../../src/legal/markdown.js';
 import { absoluto, arquivoDaPagina, indexavel } from '../../src/seo/paginas.js';
 import { cabecaDaPagina, montarPagina } from '../../src/seo/cabeca.js';
@@ -120,11 +121,22 @@ async function principal() {
     const dataCodigo = dataDoCodigo();
     const paginas = [];
     const indicesGravados = {};
+    const artigosDoSiteFaltando = [];
     for (const { codigo } of IDIOMAS) {
+        const idiomaConteudo = idiomaDoConteudo(codigo);
+        const indice = ajuda?.indices[idiomaConteudo];
+        // Suporte, Perfil e volta do pagamento apontam artigos da Central: cada página recebe o endereço deles no
+        // idioma dela (src/ajuda/artigosDoSite.js), para o link já sair no HTML com o endereço final.
+        let daConta = null;
+        if (indice) {
+            const { enderecos, faltando } = enderecosDosArtigosDoSite(indice, idiomaConteudo);
+            for (const id of faltando) artigosDoSiteFaltando.push(`artigo ${id} (usado pelas páginas Suporte, Perfil ou volta do pagamento) não está publicado em ${idiomaConteudo}`);
+            daConta = { ajuda: { enderecos } };
+        }
         paginas.push({ pagina: { tipo: 'inicio', codigo }, lastmod: dataCodigo });
-        paginas.push({ pagina: { tipo: 'suporte', codigo }, lastmod: dataCodigo });
-        paginas.push({ pagina: { tipo: 'perfil', codigo } });
-        for (const compra of [null, ...COMPRAS]) paginas.push({ pagina: { tipo: 'pagamento', codigo, compra } });
+        paginas.push({ pagina: { tipo: 'suporte', codigo }, dados: daConta, lastmod: dataCodigo });
+        paginas.push({ pagina: { tipo: 'perfil', codigo }, dados: daConta });
+        for (const compra of [null, ...COMPRAS]) paginas.push({ pagina: { tipo: 'pagamento', codigo, compra }, dados: daConta });
 
         for (const documento of DOCUMENTOS_LEGAIS) {
             const dados = legal[documento]?.[codigo];
@@ -138,8 +150,6 @@ async function principal() {
             });
         }
 
-        const idiomaConteudo = idiomaDoConteudo(codigo);
-        const indice = ajuda?.indices[idiomaConteudo];
         if (!indice) continue;
         const endereco = `/dados/ajuda/${idiomaConteudo}.${String(indice.hash ?? indice.versao).slice(0, 12)}.json`;
         indicesGravados[idiomaConteudo] = { endereco, indice };
@@ -174,6 +184,11 @@ async function principal() {
                 lastmod: ajuda.atualizados[idiomaConteudo]?.get(doc.id),
             });
         }
+    }
+
+    if (artigosDoSiteFaltando.length) {
+        for (const problema of [...new Set(artigosDoSiteFaltando)]) console.error(`ERRO: ${problema}`);
+        throw new Error('artigos da Central que o site aponta não estão publicados (lista acima; nada foi gravado)');
     }
 
     // ---------- Cabeças (e hreflang só para as versões que existem de verdade) ----------

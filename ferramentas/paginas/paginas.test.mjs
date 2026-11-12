@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { SITE, absoluto, arquivoDaPagina } from '../../src/seo/paginas.js';
 import { spawnSync } from 'node:child_process';
 import os from 'node:os';
-import { conferirDist, conferirIndiceDeSitemaps, conferirLlms, conferirPagina, conferirRobots, conferirSitemap, conferirSitemaps, enderecoDoArquivo } from './conferir.mjs';
+import { conferirDist, conferirIndiceDeSitemaps, conferirLinks, conferirLlms, conferirPagina, conferirRobots, conferirSitemap, conferirSitemaps, enderecoDoArquivo, enderecoDoLink, lerPagina } from './conferir.mjs';
 import { conferirFontes, lerAjuda } from './fontes.mjs';
 import { IDIOMAS } from '../../src/i18n/idiomas.js';
 import { IDIOMAS_AJUDA } from '../../src/ajuda/idiomas.js';
@@ -94,6 +94,26 @@ test('endereço na escrita do idioma: o arquivo da página pronta volta ao mesmo
         const arquivo = arquivoDaPagina(caminho);
         assert.equal(enderecoDoArquivo(path.join(...arquivo.split('/'))), absoluto(caminho), caminho);
     }
+});
+
+test('links entre páginas: só os do próprio site, no formato do canonical (sem #seção e sem ?consulta)', () => {
+    assert.equal(enderecoDoLink('/pt-br/ajuda/criar-rdo'), `${SITE}/pt-br/ajuda/criar-rdo`);
+    assert.equal(enderecoDoLink('/pt-br/#precos'), `${SITE}/pt-br/`);
+    assert.equal(enderecoDoLink('/en-us/help?busca=rdo'), `${SITE}/en-us/help`);
+    assert.equal(enderecoDoLink('/ja-jp/ヘルプ/写真を追加'), absoluto('/ja-jp/ヘルプ/写真を追加'));
+    assert.equal(enderecoDoLink('/ja-jp/%E3%83%98%E3%83%AB%E3%83%97'), absoluto('/ja-jp/ヘルプ'));
+    for (const fora of ['https://wa.me/55', 'mailto:a@b.c', '#topo', '/download/ObraFacil.exe', '/assets/x.js', '/']) assert.equal(enderecoDoLink(fora), null, fora);
+    const p = lerPagina(pagina({ corpo: `<main><h1>Criar RDO</h1><p>${TEXTO}</p><a class="x" href="/pt-br/ajuda/pdf-do-rdo">a</a><a href="/pt-br/ajuda/pdf-do-rdo#passo-2">b</a><a href="https://obrafacilapp.expertbr.com">app</a><a href="/pt-br/ajuda/assunto/rdo?x=1&amp;y=2">c</a></main>` }));
+    assert.deepEqual(p.links, [`${SITE}/pt-br/ajuda/pdf-do-rdo`, `${SITE}/pt-br/ajuda/assunto/rdo`]);
+});
+
+test('links entre páginas: pega o link para endereço sem página pronta (artigo pelo id em outro idioma)', () => {
+    const fr = `${SITE}/fr-fr/profil`;
+    const artigo = `${SITE}/fr-fr/aide/gerer-resilier-abonnement`;
+    const certo = new Map([[fr, { links: [artigo] }], [artigo, { links: [fr, `${SITE}/fr-fr/`] }], [`${SITE}/fr-fr/`, { links: [] }]]);
+    assert.deepEqual(conferirLinks(certo), []);
+    const peloId = new Map([[fr, { links: [`${SITE}/fr-fr/aide/cancelar-assinatura`] }], [artigo, { links: [] }]]);
+    assert.match(conferirLinks(peloId).join(), /fr-fr\/profil: link para .*\/fr-fr\/aide\/cancelar-assinatura, que não tem página pronta/);
 });
 
 test('robots.txt e llms.txt: pega o que falta', () => {
