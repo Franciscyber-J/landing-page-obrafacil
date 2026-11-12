@@ -7,10 +7,11 @@ import { fileURLToPath } from 'node:url';
 import { SITE, absoluto, arquivoDaPagina } from '../../src/seo/paginas.js';
 import { spawnSync } from 'node:child_process';
 import os from 'node:os';
-import { conferirDist, conferirIndiceDeSitemaps, conferirLlms, conferirPagina, conferirRobots, conferirSitemap, conferirSitemaps, enderecoDoArquivo } from './conferir.mjs';
+import { conferirDist, conferirIndiceDeSitemaps, conferirLinks, conferirLlms, conferirPagina, conferirRobots, conferirSitemap, conferirSitemaps, enderecoDoArquivo, enderecoDoLink, lerPagina } from './conferir.mjs';
 import { conferirFontes, lerAjuda } from './fontes.mjs';
 import { IDIOMAS } from '../../src/i18n/idiomas.js';
 import { IDIOMAS_AJUDA } from '../../src/ajuda/idiomas.js';
+import { ORIGEM, RAIZ } from './origem.mjs';
 
 const URL_ARTIGO = `${SITE}/pt-br/ajuda/criar-rdo`;
 const TEXTO = 'Texto do artigo, visível sem JavaScript. '.repeat(10);
@@ -94,6 +95,26 @@ test('endereço na escrita do idioma: o arquivo da página pronta volta ao mesmo
         const arquivo = arquivoDaPagina(caminho);
         assert.equal(enderecoDoArquivo(path.join(...arquivo.split('/'))), absoluto(caminho), caminho);
     }
+});
+
+test('links entre páginas: só os do próprio site, no formato do canonical (sem #seção e sem ?consulta)', () => {
+    assert.equal(enderecoDoLink('/pt-br/ajuda/criar-rdo'), `${SITE}/pt-br/ajuda/criar-rdo`);
+    assert.equal(enderecoDoLink('/pt-br/#precos'), `${SITE}/pt-br/`);
+    assert.equal(enderecoDoLink('/en-us/help?busca=rdo'), `${SITE}/en-us/help`);
+    assert.equal(enderecoDoLink('/ja-jp/ヘルプ/写真を追加'), absoluto('/ja-jp/ヘルプ/写真を追加'));
+    assert.equal(enderecoDoLink('/ja-jp/%E3%83%98%E3%83%AB%E3%83%97'), absoluto('/ja-jp/ヘルプ'));
+    for (const fora of ['https://wa.me/55', 'mailto:a@b.c', '#topo', '/download/ObraFacil.exe', '/assets/x.js', '/']) assert.equal(enderecoDoLink(fora), null, fora);
+    const p = lerPagina(pagina({ corpo: `<main><h1>Criar RDO</h1><p>${TEXTO}</p><a class="x" href="/pt-br/ajuda/pdf-do-rdo">a</a><a href="/pt-br/ajuda/pdf-do-rdo#passo-2">b</a><a href="https://obrafacilapp.expertbr.com">app</a><a href="/pt-br/ajuda/assunto/rdo?x=1&amp;y=2">c</a></main>` }));
+    assert.deepEqual(p.links, [`${SITE}/pt-br/ajuda/pdf-do-rdo`, `${SITE}/pt-br/ajuda/assunto/rdo`]);
+});
+
+test('links entre páginas: pega o link para endereço sem página pronta (artigo pelo id em outro idioma)', () => {
+    const fr = `${SITE}/fr-fr/profil`;
+    const artigo = `${SITE}/fr-fr/aide/gerer-resilier-abonnement`;
+    const certo = new Map([[fr, { links: [artigo] }], [artigo, { links: [fr, `${SITE}/fr-fr/`] }], [`${SITE}/fr-fr/`, { links: [] }]]);
+    assert.deepEqual(conferirLinks(certo), []);
+    const peloId = new Map([[fr, { links: [`${SITE}/fr-fr/aide/cancelar-assinatura`] }], [artigo, { links: [] }]]);
+    assert.match(conferirLinks(peloId).join(), /fr-fr\/profil: link para .*\/fr-fr\/aide\/cancelar-assinatura, que não tem página pronta/);
 });
 
 test('robots.txt e llms.txt: pega o que falta', () => {
@@ -221,7 +242,22 @@ test('gerador sai com erro (sem gravar nada) quando a Central não é lida', { s
 // Depois do "npm run build" (ou do gerador com as pastas locais), confere o dist/ inteiro.
 const DIST = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'dist');
 const temDist = fs.existsSync(path.join(DIST, 'sitemap.xml'));
-test('dist/ gerado: todas as páginas prontas, sitemap, robots.txt e llms.txt sem problema', { skip: temDist ? false : 'dist/ sem páginas prontas (rode npm run build)' }, () => {
+// O dist/ de um build antigo não é conferido com as regras de hoje (o "npm test" roda antes do "npm run build" no
+// passo a passo da publicação): só o dist/ gerado neste commit. O "npm run build" confere o dele de qualquer jeito.
+function motivoParaPular() {
+    if (!temDist) return 'dist/ sem páginas prontas (rode npm run build)';
+    let origem = null;
+    try {
+        origem = JSON.parse(fs.readFileSync(ORIGEM, 'utf8'));
+    } catch {
+        return 'dist/ sem o registro do build (rode npm run build)';
+    }
+    const atual = spawnSync('git', ['rev-parse', 'HEAD'], { cwd: RAIZ, encoding: 'utf8' });
+    const commit = atual.status === 0 ? atual.stdout.trim() : null;
+    if (commit && origem.commit && origem.commit !== commit) return `dist/ é do commit ${origem.commit.slice(0, 7)} e a pasta está no ${commit.slice(0, 7)} (rode npm run build)`;
+    return false;
+}
+test('dist/ gerado: todas as páginas prontas, sitemap, robots.txt e llms.txt sem problema', { skip: motivoParaPular() }, () => {
     const { problemas, paginas } = conferirDist(DIST);
     assert.deepEqual(problemas.slice(0, 20), []);
     assert.ok(paginas >= 8 * 4, `${paginas} páginas`);

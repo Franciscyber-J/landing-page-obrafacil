@@ -4,7 +4,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { caminhoArtigo } from '../../i18n/idiomas.js';
+import { caminhoDoArtigoDoSite } from '../../ajuda/artigosDoSite.js';
 import { APP, WINDOWS, appStore, googlePlay } from '../../links.js';
 import { comDestaque, comNegrito } from '../../texto.jsx';
 import styles from './Conta.module.css';
@@ -107,14 +107,15 @@ export function Lojas({ codigo, classe = '' }) {
     );
 }
 
-// Links para artigos da Central pelo id do artigo: a Central leva ao endereço com o nome do artigo no idioma.
+// Links para artigos da Central pelo id do artigo (ids de ARTIGOS_DO_SITE): na página pronta o link já sai com o
+// endereço do artigo no idioma (src/ajuda/artigosDoSite.js).
 // itens: [{ id, texto }]
 export function Artigos({ codigo, itens }) {
     return (
         <ul className={styles.artigos}>
             {itens.map((a) => (
                 <li key={a.id}>
-                    <Link to={caminhoArtigo(codigo, a.id)}>
+                    <Link to={caminhoDoArtigoDoSite(codigo, a.id)}>
                         <span>{a.texto}</span>
                         <ArrowRight size={18} aria-hidden="true" className="seta" />
                     </Link>

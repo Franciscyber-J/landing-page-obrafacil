@@ -63,19 +63,24 @@ pacote grava os nomes em UTF-8 com `/` (conferido extraindo no Linux, como no se
 
 ## Enviar (Gerenciador de Arquivos da Hostinger, em `public_html/appobrafacil`, nesta ordem)
 
+O zip é extraído **por cima** do que está no servidor. **Não apague as pastas dos idiomas antes**: sem elas o site
+fica alguns minutos sem nenhuma página pronta, e o Google, se passar nessa hora, lê cada endereço sem o texto no
+HTML (decisão de 11/2026, na arrumação do Search Console).
+
 1. Baixar o `.htaccess` atual para `D:\Projetos\pacotes_site` (fora do projeto). É a volta.
-2. Apagar no servidor as pastas dos idiomas que existirem lá (na primeira publicação com os 29 idiomas, as 8 de antes:
-   `pt-br`, `pt-pt`, `en-us`, `en-gb`, `en-au`, `en-ca`, `es-es`, `es-mx`; depois, as 29), a pasta `dados` e os
-   arquivos `sitemap-*.xml`, se existirem. Elas só têm páginas geradas e o pacote traz todas de novo; assim não sobra
-   página velha (artigo que saiu da Central, assunto com o nome antigo). Nunca apagar `download/` (instalador do
-   Windows), `email/`, `fontes/` (versões antigas do app baixam as fontes dos PDFs de lá) nem o `.htaccess`.
-   Enquanto isso o site continua abrindo (o `index.html` desenha as páginas no navegador).
-3. Enviar o zip para `public_html/appobrafacil`, clicar nele com o botão direito → **Extract** (extrair ali mesmo,
-   substituindo) e, depois de extraído, apagar o zip do servidor.
-4. **Por último**, só se `hospedagem/.htaccess` mudou (na publicação dos 29 idiomas, mudou): enviar o `.htaccess`
-   novo, substituindo o atual. Com o `.htaccess` antigo e o `dist` novo o site já funciona (desenhando no navegador);
-   o novo liga as páginas prontas e os redirecionamentos (301 dos assuntos renomeados, 410 dos artigos que ficaram
-   só no pt-BR). Se der erro 500, suba de volta o `.htaccess` do passo 1.
+2. Enviar o zip para `public_html/appobrafacil`, clicar nele com o botão direito → **Extract** (extrair ali mesmo,
+   substituindo os arquivos que já existem) e, depois de extraído, apagar o zip do servidor.
+3. Abrir o arquivo `site_obrafacil_<data>_<commit>_apagar.txt`, gravado ao lado do zip pelo `npm run pacote`. Ele
+   lista as páginas que estão no servidor e não existem mais no site (artigo que saiu da Central, endereço que mudou
+   de nome), comparando com o site no ar e com o pacote anterior. Quase sempre diz "Nada a apagar". Se listar
+   arquivos, apague só esses, um por um. Nunca apagar `download/` (instalador do Windows), `email/`, `fontes/`
+   (versões antigas do app baixam as fontes dos PDFs de lá), `assets/`, `dados/` nem o `.htaccess`.
+4. **Por último**, só se `hospedagem/.htaccess` mudou: enviar o `.htaccess` novo, substituindo o atual. Se der erro
+   500, suba de volta o `.htaccess` do passo 1.
+
+O `npm run pacote` lê os sitemaps do site no ar para montar a lista do passo 3; sem internet ele para (o zip não fica
+gravado). Só para voltar a uma versão antiga ou gerar sem internet: `npm run pacote -- D:\Projetos\pacotes_site
+--sem-comparar` (a lista sai só da comparação com o pacote anterior da pasta, com aviso).
 
 ## Conferir no ar
 
@@ -100,8 +105,10 @@ não precisa validar.
    → Enviar. Em alguns minutos o status fica "Processado com sucesso", com o número de páginas encontradas.
 2. **Páginas** (Indexação) → abrir o motivo "Cópia, o Google e o usuário selecionaram uma página canônica
    diferente" → **Validar correção**. A validação leva dias ou semanas; o Search Console avisa por e-mail.
-   Faça o mesmo nos outros motivos que citam endereços antigos ("Página com redirecionamento" é normal e esperado
-   para `/`, `/termos-de-uso/`, `/perfil` etc.: não precisa validar).
+   Faça o mesmo em "Erro soft 404". "Página com redirecionamento" é normal e esperado para `/`, `/termos-de-uso/`,
+   `/perfil` etc.: não precisa validar. O que é esperado nessa lista de "cópia" e **não é erro**: os artigos em
+   en-GB, en-AU e en-CA (o texto é quase igual ao en-US; o Google guarda um só e, pelo hreflang, mostra a cada país o
+   endereço dele). A validação desse motivo pode terminar em "Falha" só por causa deles.
 3. **Inspeção de URL** (barra do topo) em 2 ou 3 endereços, um de cada vez:
    `https://appobrafacil.expertbr.com/pt-br/`, `https://appobrafacil.expertbr.com/en-us/help` e um artigo
    (ex.: `https://appobrafacil.expertbr.com/pt-br/ajuda/criar-rdo`). Clique em **Testar URL publicado** e confira:
@@ -113,5 +120,5 @@ não precisa validar.
 ## Voltar atrás
 
 Enviar o `.htaccess` guardado e reenviar o `dist` do commit anterior (`git switch --detach <commit>`, `npm ci`,
-`npm run build`, `npm run pacote -- D:\Projetos\pacotes_site --fora-da-main`), na mesma ordem do envio normal (pastas
-dos idiomas, `dados` e `sitemap-*.xml` apagados antes). Depois, `git switch main`.
+`npm run build`, `npm run pacote -- D:\Projetos\pacotes_site --fora-da-main`), na mesma ordem do envio normal (extrair
+por cima e apagar só o que a lista `_apagar.txt` mandar). Depois, `git switch main`.

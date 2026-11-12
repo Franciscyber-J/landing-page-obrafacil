@@ -5,13 +5,14 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { CircleCheckBig } from 'lucide-react';
-import { caminhoArtigo, caminhoPagamento, caminhoSuporte } from '../../i18n/idiomas.js';
+import { caminhoPagamento, caminhoSuporte } from '../../i18n/idiomas.js';
+import { caminhoDoArtigoDoSite } from '../../ajuda/artigosDoSite.js';
 import { useRotaEquivalente } from '../../i18n/RotaDoIdioma.jsx';
 import { AbrirApp, Cabeca, Cartao, Lista, Lojas, Pagina, Passos } from './partes.jsx';
 import useCabecaDaPagina from './useCabecaDaPagina.js';
 import styles from './Conta.module.css';
 
-// Artigo da Central (id) com o passo a passo de cada compra.
+// Artigo da Central (id) com o passo a passo de cada compra (todos em ARTIGOS_DO_SITE, src/ajuda/artigosDoSite.js).
 const ARTIGO = {
     geral: 'pagamentos-e-reembolso',
     pro: 'ativar-pro-do-site',
@@ -39,7 +40,7 @@ export default function PagamentoPagina({ codigo, compra }) {
         <Pagina>
             <Cabeca icone={CircleCheckBig} sobretitulo={texto('sobretitulo')} titulo={texto('titulo')} texto={texto('texto')}>
                 <AbrirApp />
-                <Link to={caminhoArtigo(codigo, ARTIGO[tipo])} className={`acao-clara ${styles.botao}`}>{texto('artigo')}</Link>
+                <Link to={caminhoDoArtigoDoSite(codigo, ARTIGO[tipo])} className={`acao-clara ${styles.botao}`}>{texto('artigo')}</Link>
             </Cabeca>
 
             {/* Os dois cartões lado a lado com a mesma altura e as lojas na largura toda embaixo (antes as lojas

@@ -72,6 +72,24 @@ Artigo publicado depois do último build não tem página pronta: o `.htaccess` 
 desenha o artigo no navegador. Por isso, depois de publicar artigos novos, vale gerar e publicar o site de novo
 (skill `publicar-site`).
 
+Regras que mantêm o Google lendo certo (achados no Search Console em 11/11/2026):
+
+- **Página pronta nunca vira tela de erro.** Se os textos do idioma ou o índice não baixarem, o `src/main.jsx` deixa
+  na tela o que veio no HTML e tenta de novo (2, 6 e 15 segundos, e quando a internet volta); ele não desenha do zero.
+  Antes, a falha levava a "Não foi possível carregar a Central" no lugar do artigo, igual em todos os endereços do
+  idioma: é a causa mais provável de o Google ter tratado 13 artigos como cópia de outro artigo do mesmo idioma
+  (ex.: `/fr-fr/aide/deplacer-supprimer-fichier` com a canônica escolhida `/fr-fr/aide/materiaux-calcules`).
+- **Tela de erro, Central vazia e endereço que não existe levam `noindex`** (`src/components/ajuda/Estados.jsx`).
+- **Link do site para um artigo sai com o endereço do idioma.** As páginas Suporte, Perfil e volta do pagamento
+  apontam artigos pelo id; o build entrega a cada uma o endereço do artigo no idioma dela
+  (`src/ajuda/artigosDoSite.js`, lista `ARTIGOS_DO_SITE`; id novo entra na lista e o build para se o artigo não
+  estiver publicado em algum idioma). Antes o link ia para `/fr-fr/aide/cancelar-assinatura` (id em português), que
+  não tem página pronta.
+- **O build confere todos os links** entre páginas prontas (`conferirLinks`, em `ferramentas/paginas/conferir.mjs`):
+  link para endereço sem página pronta para o build.
+- Endereço pelo id continua funcionando para as pessoas (o site troca pelo endereço certo no navegador), mas não
+  pode aparecer em link nem em sitemap.
+
 ## De onde vem o conteúdo
 
 - **Produção:** o formato novo, um documento por idioma (desde a `ajuda-por-idioma`, 26/10/2026;
@@ -120,6 +138,7 @@ node ferramentas/paginas/gerar.mjs --ajuda-local D:\Projetos\ajuda_saida --legal
 | `src/ajuda/idiomas.js` | Idiomas em que os artigos são publicados e qual usar para cada idioma do site |
 | `src/ajuda/antigos.js` | Endereços que mudaram (assunto renomeado: 301; artigo que saiu do idioma: 410) e a conferência do build |
 | `src/ajuda/enderecos.js` | Endereços da Central no idioma do site (assunto pelo nome do módulo) |
+| `src/ajuda/artigosDoSite.js` | Artigos que as páginas Suporte, Perfil e volta do pagamento apontam, com o endereço de cada um no idioma (vem do build) |
 | `src/components/ajuda/` | Páginas (início, assunto, artigo), busca e estados (carregando, erro, vazio) |
 
 ## Marcação animada nos prints
