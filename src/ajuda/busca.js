@@ -36,7 +36,9 @@ const VOGAIS_OPCIONAIS = /[\u064B-\u065F\u0670\u0591-\u05BD\u05BF\u05C1\u05C2\u0
 // Palavras vazias por idioma (o código base: "pt" vale para pt-BR e pt-PT, "zh" para zh-TW): artigos,
 // preposições, conjunções, pronomes, verbos auxiliares e as palavras de pergunta ("como", "why"). Escritas
 // como a pessoa digita; a busca normaliza. Ficam de fora as que, sem acento, viram outra palavra que importa
-// no idioma ("pro" é o plano PRO; no vietnamita, "tải" e "tai", "bản" e "ban", "chờ" e "cho", "tối" e "toi", "sao lưu" e "sao").
+// no idioma ("pro" é o plano PRO; no vietnamita, onde tirar o acento junta muitas palavras: "ảnh" e "anh", "độ" e
+// "đó", "tư" e "từ", "đăng" e "đang", "vẽ" e "về", "thi" e "thì", "thẻ" e "thế", "tải" e "tai", "bản" e "ban",
+// "chờ" e "cho", "chi" e "chị", "đề" e "để", "cố" e "có", "hôm nay" e "này", "vôi" e "với").
 // Japonês, chinês e tailandês não têm espaço entre as palavras: a lista deles é recortada de dentro do texto
 // (ver cortar), e não comparada palavra a palavra.
 export const PALAVRAS_VAZIAS_POR_IDIOMA = {
@@ -139,9 +141,8 @@ export const PALAVRAS_VAZIAS_POR_IDIOMA = {
         'aku', 'kamu', 'anda', 'kami', 'kita', 'mereka', 'bagaimana', 'gimana', 'cara', 'apa', 'mengapa', 'kenapa', 'dimana',
         'mana', 'kapan', 'siapa', 'adalah', 'ada', 'tidak', 'tak', 'bukan', 'belum', 'sudah', 'bisa', 'dapat', 'mau', 'ingin',
         'harus', 'akan', 'juga', 'saja', 'lagi', 'sih', 'ya', 'tolong', 'sangat'],
-    vi: ['của', 'và', 'là', 'có', 'không', 'được', 'trong', 'với', 'các', 'những', 'một', 'mình', 'làm', 'thế', 'nào', 'như',
-        'gì', 'ở', 'đâu', 'khi', 'bị', 'để', 'đã', 'đang', 'thì', 'mà', 'hoặc', 'cũng', 'rồi', 'vào', 'từ', 'đến', 'về', 'này',
-        'đó', 'em', 'anh', 'chị', 'ạ', 'vậy'],
+    vi: ['của', 'và', 'là', 'không', 'được', 'trong', 'các', 'những', 'một', 'làm', 'nào', 'như', 'gì', 'ở', 'khi', 'bị',
+        'hoặc', 'vào', 'đến', 'em', 'ạ', 'vậy'],
     ko: ['어떻게', '왜', '무엇', '뭐', '어디', '어디서', '어디에', '언제', '어느', '그리고', '또는', '및', '이', '그', '저', '제', '내',
         '나', '저는', '제가', '나는', '내가', '우리', '좀', '것', '거', '수', '방법', '방법은', '방법을', '있나요', '있어요', '없어요',
         '없나요', '하나요', '해요', '합니다', '해야', '하는', '하려면', '되나요', '돼요', '안', '못', '안돼요', '주세요'],
