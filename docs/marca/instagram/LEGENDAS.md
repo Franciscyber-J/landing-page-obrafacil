@@ -1,4 +1,4 @@
-# Legendas dos primeiros posts do Instagram (16/11/2026, aguardando o "sim" do Francis)
+# Legendas dos primeiros posts do Instagram (aprovadas pelo Francis em 16/11/2026, 18h26; hashtags reduzidas a 5 pela regra atual do Instagram)
 
 Imagens em `posts/` (exportadas do Canva). Tom formal e profissional; só o que o app tem de verdade.
 
@@ -18,7 +18,7 @@ Plano grátis, sem prazo e sem cartão de crédito. O link está na bio.
 
 Salve este post e envie para quem toca obra com você.
 
-#gestaodeobras #diariodeobra #rdo #construcaocivil #engenhariacivil #construtora #obra
+#gestaodeobras #diariodeobra #rdo #construcaocivil #engenhariacivil
 
 ## 2. RDO em 30 segundos (`posts/obrafacil_rdo.jpg`)
 
@@ -30,7 +30,7 @@ Sem internet na obra? O RDO fica guardado no aparelho e sobe sozinho quando a co
 
 Funciona no Android, no iPhone e no computador. Comece grátis pelo link na bio.
 
-#diariodeobra #rdo #gestaodeobras #construcaocivil #engenhariacivil #obra
+#diariodeobra #rdo #gestaodeobras #construcaocivil #engenhariacivil
 
 ## 3. Portal do Cliente (`posts/obrafacil_portal.jpg`)
 
@@ -40,4 +40,4 @@ Pelo Portal do Cliente, ele vê as fotos da obra, os diários de obra, o cronogr
 
 Mais transparência para quem contratou e menos tempo seu no telefone. Comece grátis pelo link na bio.
 
-#gestaodeobras #portaldocliente #construcaocivil #construtora #obra #engenhariacivil
+#gestaodeobras #construcaocivil #construtora #engenhariacivil #obra
