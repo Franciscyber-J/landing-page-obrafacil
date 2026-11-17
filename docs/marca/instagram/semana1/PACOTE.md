@@ -82,3 +82,40 @@ Cada tela entra no destaque como um story comum (publicar e depois "Adicionar ao
 14. Sem internet? — O RDO funciona do mesmo jeito — Sem sinal na obra, o RDO fica salvo no aparelho. No celular, as fotos sobem sozinhas quando a conexão voltar.
 15. Teste grátis — Faça o seu primeiro RDO hoje — Plano grátis, sem prazo e sem cartão de crédito. O link está na bio.
     Adesivo: **Link** "Fazer meu primeiro RDO" (link do site).
+
+### Cliente (páginas 16 a 20)
+
+16. Foto. PORTAL DO CLIENTE — "Chega de **“como está a obra?”**" — O seu cliente acompanha a obra pelo Portal do Cliente.
+17. 01 · O que o cliente vê — Fotos da obra, diários de obra, cronograma e o resumo do financeiro. (tela real do Portal)
+18. Convite — O cliente entra pelo seu convite — Você convida pelo e-mail do cliente, na Equipe da obra, e pode avisar pelo WhatsApp. Ele cria a conta com o mesmo e-mail e já entra no Portal do Cliente.
+19. 02 · O que ele pode ver — Com o Acesso Cliente (no PRO, taxa única por obra), você liga o que o cliente pode ver e baixar. (tela real "Acesso Liberado")
+20. Para o cliente — Acompanhar não custa nada — O cliente acompanha a obra pelo Portal sem pagar. E você começa no plano grátis, sem prazo e sem cartão. O link está na bio.
+    Adesivo: **Link** "Convidar meu cliente" (link do site).
+
+### Financeiro (páginas 21 a 25)
+
+21. Foto. FINANCEIRO DA OBRA — "Quanto a obra **já gastou?**" — O financeiro de cada obra no ObraFácil.
+22. 01 · Entradas e saídas — Lance cada receita e cada despesa com descrição e valor. Se quiser, ligue a despesa a uma etapa. (tela real do Financeiro)
+23. Saldo — O saldo da obra na mesma tela — O painel do Financeiro soma as entradas e as saídas e mostra o saldo. Toque nos ícones de informação para entender cada número.
+24. Custo por m² — Todas as despesas pela área — O ObraFácil divide as despesas pela área da obra. Sem a área cadastrada, aparece “Área não informada”.
+25. Quem vê — O cliente vê um resumo — O painel completo é de quem gerencia a obra. No Portal, o cliente vê o avanço físico, o valor do contrato e o total pago.
+    Adesivo: **Link** "Testar grátis" (link do site).
+
+### Planos (páginas 26 a 29) — exatamente o que o site mostra
+
+26. Planos — Grátis ou PRO — Comece no plano grátis, sem prazo e sem cartão de crédito. Assine o PRO quando precisar de mais.
+27. Plano grátis — Grátis para sempre — 1 obra sua por vez · 7 relatórios PDF por mês, com marca d’água · 250 MB para fotos e arquivos · Cliente acompanhando pelo portal. Sem prazo e sem cartão de crédito.
+28. Plano PRO — Para quem tem várias obras — Obras ilimitadas · Relatórios PDF ilimitados, sem marca d’água · 10 GB para fotos e arquivos · PDFs com o logotipo e o rodapé da sua empresa · RDOs em ZIP e arquivos da obra sem internet · Acesso Cliente disponível para cada obra.
+29. Preço do PRO — R$ 99,90 por mês — Ou R$ 899,00 por ano: equivale a R$ 74,92 por mês, com o preço travado por 12 meses. Assinando pelo celular, o preço e a cobrança são os da Google Play ou da App Store. Cancele quando quiser, no mesmo lugar em que assinou.
+    Adesivo: **Link** "Ver os planos" (link do site, seção de preços).
+    Fonte dos valores: `src/i18n/pricing.js` (BRL 9990 e 89900; economia e equivalente calculados pelo site).
+    **Se o preço mudar no site, estas duas telas precisam ser refeitas antes de ir ao ar.**
+
+### Dúvidas (páginas 30 a 34) — perguntas frequentes do site, respondidas com o texto do site
+
+30. O meu cliente paga para acompanhar a obra? — Não. O cliente acompanha a obra pelo portal sem pagar nada.
+31. Funciona sem internet? — Sim. Sem internet, o app guarda o que você registra no aparelho e envia sozinho quando a conexão volta.
+32. Posso usar no computador e no celular? — Sim. O ObraFácil funciona no Android, no iPhone, no Windows e no navegador, com os mesmos dados em todos.
+33. Os meus dados estão seguros? — Os dados viajam criptografados e ficam guardados nos servidores do Google, também criptografados. Cada pessoa só vê as obras de que participa, com as permissões do papel dela.
+34. O ObraFácil substitui o engenheiro da obra? — Não. É uma ferramenta de gestão e não substitui o profissional técnico responsável pela obra, nem a ART ou o RRT.
+    Este destaque cresce: as boas perguntas recebidas nos stories e no direct entram aqui.
