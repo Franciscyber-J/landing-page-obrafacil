@@ -16,7 +16,7 @@
             "titulo": "{{titulo}} — ObraFácil"
         },
         "app": {
-            "descricao": "Aplicație de management de șantier pentru constructori, ingineri constructori, arhitecți și diriginți de șantier: grafic de execuție pe etape, jurnale zilnice cu fotografii și PDF, finanțele lucrării, stat de plată pentru echipă, aprovizionare și magazie, plus portal pentru urmărirea lucrărilor de către client. Funcționează pe Android, iPhone, Windows și web, inclusiv offline pe șantier.",
+            "descricao": "Aplicație de management de șantier pentru constructori, ingineri constructori, arhitecți și diriginți de șantier: grafic de execuție pe etape, jurnale zilnice cu fotografii și PDF, liste de verificare a calității cu semnătură, finanțele lucrării, stat de plată pentru echipă, aprovizionare și magazie, plus portal pentru urmărirea lucrărilor de către client. Funcționează pe Android, iPhone, Windows și web, inclusiv offline pe șantier.",
             "categoria": "Management de șantier"
         },
         "imagemAlt": "Sigla ObraFácil, aplicație de management de șantier",
@@ -102,6 +102,7 @@
                 "1 lucrare activă simultan",
                 "7 rapoarte PDF pe lună cu filigran",
                 "250 MB pentru fotografii și fișiere",
+                "Liste de verificare cu cele 27 de modele gata făcute și 1 model propriu",
                 "Urmărirea lucrării de către client pe portal"
             ]
         },
@@ -115,6 +116,7 @@
                 "10 GB pentru fotografii și fișiere",
                 "PDF cu sigla și subsolul firmei dvs.",
                 "Rapoarte zilnice în format ZIP și fișiere de proiect offline",
+                "Modele proprii nelimitate și mai multe liste de verificare într-un singur PDF",
                 "Acces client disponibil pentru fiecare lucrare"
             ],
             "itensAnual": [
@@ -185,6 +187,8 @@
         "a9": "Da, în orice moment, din același loc în care v-ați abonat. Următoarea reînnoire nu va mai fi taxată, iar accesul rămâne activ până la sfârșitul perioadei deja achitate.",
         "q10": "Ce se întâmplă dacă reînnoirea nu este plătită?",
         "a10": "Contul revine automat la planul gratuit. Nu se șterge nimic; dacă depășiți limita planului gratuit, doar încărcarea de fișiere noi este blocată până eliberați spațiu sau vă abonați din nou.",
+        "q11": "Aplicația are liste de verificare pentru controlul calității lucrărilor?",
+        "a11": "Da. Cu Listele de verificare a calității controlați fiecare lucrare punct cu punct, cu fotografie, înregistrați neconformitatea cu acțiune corectivă și reverificare și aprobați execuția cu semnătură. Pe telefon merge și fără semnal: ce completați se trimite când revine conexiunea. Aplicația are 27 de modele gata făcute, iar dumneavoastră puteți crea modelele firmei: 1 în planul gratuit și oricâte în PRO. Modelele gata făcute sunt exemple de verificat și adaptat: nu înlocuiesc specialistul tehnic autorizat responsabil de lucrare și nu certifică respectarea vreunei norme sau a vreunui program de calitate.",
         "mais": "Nu ați găsit răspunsul căutat?",
         "verAjuda": "Accesați Centrul de ajutor"
     },
@@ -331,6 +335,11 @@
             "diario": {
                 "titulo": "Jurnal de șantier",
                 "texto": "Vreme, activități, incidente, efectiv prezent, fotografii și semnături. Exportați într-un PDF gata de trimis."
+            },
+            "checklists": {
+                "titulo": "Liste de verificare a calității",
+                "texto": "27 de modele gata făcute sau modelele firmei dumneavoastră. Conform, neconform sau nu se aplică la fiecare punct, cu fotografie, și reverificarea neconformităților. Aprobare cu semnătură, PDF și clientul care vede totul în portal.",
+                "tela": "Listă de verificare în curs de completare, cu progresul și punctele rămase"
             },
             "financeiro": {
                 "titulo": "Finanțele lucrării",

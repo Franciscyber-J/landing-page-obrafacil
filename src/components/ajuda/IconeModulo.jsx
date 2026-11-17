@@ -1,9 +1,11 @@
 import {
-    Rocket, Building2, ChartGantt, ClipboardList, Camera, TriangleAlert, Users,
+    Rocket, Building2, ChartGantt, ClipboardList, ClipboardCheck, Camera, TriangleAlert, Users,
     Banknote, Wallet, Package, Calculator, Eye, UserCog, Route, BookOpen,
 } from 'lucide-react';
 
-// Os módulos guardam o nome do ícone do app (Material). Aqui vira o ícone equivalente do site.
+// Os módulos guardam o nome do ícone do app (Material), o mesmo de gestao_obras/ajuda/listas/modulos.json. Aqui vira o
+// ícone equivalente do site; ícone que não está aqui cai no livro (BookOpen). Módulo novo no app com ícone novo entra
+// aqui antes de a Central dele ser publicada.
 const ICONES = {
     rocket: Rocket,
     home_work: Building2,
@@ -11,6 +13,7 @@ const ICONES = {
     assignment: ClipboardList,
     photo_library: Camera,
     report_problem: TriangleAlert,
+    fact_check: ClipboardCheck,
     groups: Users,
     payments: Banknote,
     account_balance_wallet: Wallet,

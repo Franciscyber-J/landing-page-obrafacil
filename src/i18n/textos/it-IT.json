@@ -16,7 +16,7 @@
             "titulo": "{{titulo}} — ObraFácil"
         },
         "app": {
-            "descricao": "App di gestione cantiere per imprese edili, artigiani, direttori dei lavori, ingegneri e architetti: cronoprogramma per fasi, rapportini giornalieri (giornale dei lavori) con foto e PDF, contabilità di cantiere, paghe della squadra, acquisti e magazzino, e un portale per far seguire i lavori al committente. Funziona su Android, iPhone, Windows e web, anche offline in cantiere.",
+            "descricao": "App di gestione cantiere per imprese edili, artigiani, direttori dei lavori, ingegneri e architetti: cronoprogramma per fasi, rapportini giornalieri (giornale dei lavori) con foto e PDF, checklist di qualità con firma, contabilità di cantiere, paghe della squadra, acquisti e magazzino, e un portale per far seguire i lavori al committente. Funziona su Android, iPhone, Windows e web, anche offline in cantiere.",
             "categoria": "Gestione cantiere"
         },
         "imagemAlt": "Logo ObraFácil, app di gestione cantiere",
@@ -102,6 +102,7 @@
                 "1 cantiere tuo attivo alla volta",
                 "7 report PDF al mese con filigrana",
                 "250 MB per foto e documenti",
+                "Checklist con i 27 modelli pronti e 1 modello tuo",
                 "Il committente segue i lavori dal portale"
             ]
         },
@@ -115,6 +116,7 @@
                 "10 GB per foto e documenti",
                 "PDF con logo e piè di pagina della tua impresa",
                 "Rapportini in ZIP e file del cantiere utilizzabili offline",
+                "Modelli di checklist illimitati e più checklist in un unico PDF",
                 "Accesso Cliente attivabile per ciascun cantiere"
             ],
             "itensAnual": [
@@ -185,6 +187,8 @@
         "a9": "Sì, in qualsiasi momento e dallo stesso canale da cui ti sei abbonato. Non ci saranno rinnovi futuri e il tuo accesso resterà attivo fino al termine del periodo già pagato.",
         "q10": "Cosa succede se il pagamento del rinnovo non va a buon fine?",
         "a10": "L'account torna automaticamente al piano gratuito. Nessun dato viene cancellato; se superi i limiti del piano gratuito, viene bloccato solo il caricamento di nuovi file finché non liberi spazio o riattivi l'abbonamento.",
+        "q11": "L’app ha le checklist per il controllo qualità delle lavorazioni?",
+        "a11": "Sì. Con le Checklist di qualità controlli ogni lavorazione voce per voce, con foto, registri la non conformità con azione correttiva e ricontrollo e approvi la lavorazione con firma. Sul telefono funzionano anche senza campo: quello che registri viene inviato quando torna la connessione. Ci sono 27 modelli pronti e puoi creare quelli della tua impresa: 1 con il piano gratuito e quanti vuoi con PRO. I modelli pronti sono esempi da verificare e adattare: non sostituiscono il direttore dei lavori o il responsabile tecnico abilitato, né certificano il rispetto di norme o di programmi di qualità.",
         "mais": "Non hai trovato la risposta che cercavi?",
         "verAjuda": "Visita il Centro assistenza"
     },
@@ -331,6 +335,11 @@
             "diario": {
                 "titulo": "Giornale dei lavori",
                 "texto": "Condizioni meteo, lavorazioni svolte, segnalazioni, presenze in cantiere, foto e firma. Esportazione in PDF pronta da condividere."
+            },
+            "checklists": {
+                "titulo": "Checklist di qualità",
+                "texto": "27 modelli pronti o quelli della tua impresa. Conforme, non conforme o non applicabile per ogni voce, con foto, e ricontrollo di ciò che non va. Approvazione con firma, PDF e il committente che vede tutto nel portale.",
+                "tela": "Checklist in compilazione, con l’avanzamento e le voci da compilare"
             },
             "financeiro": {
                 "titulo": "Contabilità di cantiere",

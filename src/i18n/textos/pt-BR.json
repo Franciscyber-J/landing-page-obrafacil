@@ -16,7 +16,7 @@
             "titulo": "{{titulo}} · ObraFácil"
         },
         "app": {
-            "descricao": "Aplicativo de gestão de obras para construtoras, engenheiros, arquitetos e empreiteiros: cronograma por etapas, diário de obra (RDO) com fotos e PDF, financeiro da obra, equipe e folha de pagamento, compras e almoxarifado, e portal para o cliente acompanhar a obra. Funciona no Android, no iPhone, no Windows e no navegador, inclusive sem internet no canteiro.",
+            "descricao": "Aplicativo de gestão de obras para construtoras, engenheiros, arquitetos e empreiteiros: cronograma por etapas, diário de obra (RDO) com fotos e PDF, checklists de qualidade (FVS) com assinatura, financeiro da obra, equipe e folha de pagamento, compras e almoxarifado, e portal para o cliente acompanhar a obra. Funciona no Android, no iPhone, no Windows e no navegador, inclusive sem internet no canteiro.",
             "categoria": "Gestão de obras"
         },
         "imagemAlt": "Logotipo do ObraFácil, aplicativo de gestão de obras",
@@ -102,6 +102,7 @@
                 "1 obra sua por vez",
                 "7 relatórios PDF por mês, com marca d’água",
                 "250 MB para fotos e arquivos",
+                "Checklists com os 27 modelos prontos e 1 modelo seu",
                 "Cliente acompanhando pelo portal"
             ]
         },
@@ -115,6 +116,7 @@
                 "10 GB para fotos e arquivos",
                 "PDFs com o logotipo e o rodapé da sua empresa",
                 "RDOs em ZIP e arquivos da obra sem internet",
+                "Modelos de checklist ilimitados e vários checklists num PDF só",
                 "Acesso Cliente disponível para cada obra"
             ],
             "itensAnual": [
@@ -185,6 +187,8 @@
         "a9": "Sim, a qualquer momento, no mesmo lugar em que assinou. A renovação seguinte não é cobrada e o acesso continua até o fim do período pago.",
         "q10": "E se a renovação não for paga?",
         "a10": "A conta volta ao plano grátis. Nada é apagado; se passar do limite do plano grátis, só o envio de arquivos novos fica bloqueado até você liberar espaço ou assinar de novo.",
+        "q11": "Dá para fazer a FVS (checklist de qualidade) no app?",
+        "a11": "Sim. Nos Checklists de qualidade você confere cada serviço item por item, com foto, registra a não conformidade com ação corretiva e reinspeção e libera o serviço com assinatura. No celular, funciona até sem internet: o que você marca sobe quando a conexão volta. Vêm 27 modelos prontos, e você cria os da sua empresa: 1 no plano grátis e quantos quiser no PRO. Os modelos prontos são exemplos para conferir e adaptar: não substituem o responsável técnico da obra nem certificam o cumprimento de norma ou de programa de qualidade, como o PBQP-H.",
         "mais": "Não achou a sua resposta?",
         "verAjuda": "Ver a Central de Ajuda"
     },
@@ -331,6 +335,11 @@
             "diario": {
                 "titulo": "Diário de obra (RDO)",
                 "texto": "Clima, atividades, ocorrências, equipe presente, fotos e assinatura. Sai em PDF, pronto para enviar."
+            },
+            "checklists": {
+                "titulo": "Checklists de qualidade (FVS)",
+                "texto": "27 modelos prontos ou os da sua empresa. Cada item conforme, não conforme ou não se aplica, com foto, e reinspeção do que não passou. Liberação com assinatura, PDF da ficha e o cliente vendo no portal.",
+                "tela": "Checklist em preenchimento, com o andamento e os itens para responder"
             },
             "financeiro": {
                 "titulo": "Financeiro da obra",

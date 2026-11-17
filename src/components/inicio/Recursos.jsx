@@ -2,32 +2,23 @@
 // Movimento (tela larga): o celular fica parado enquanto a lista rola; o item que passa pelo meio da
 // tela acende e o celular mostra a tela daquela parte, girando um pouco em 3D. Uma linha laranja
 // marca o quanto da lista já foi lido. No celular e com "menos movimento", a lista entra em sequência.
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { idDaSecao } from '../../i18n/idiomas.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
-import { enderecoDaTela } from '../../telas.js';
+import { enderecoDaTela, telaDoIdioma } from '../../telas.js';
+import { RECURSOS } from '../../inicio.js';
 import { COM_MOVIMENTO, LARGO, ScrollTrigger, entrarEmGrupo, gsap, jaApareceu, sentidoDoIdioma, useGSAP } from '../../movimento/index.js';
 import { comDestaque } from '../../texto.jsx';
 import styles from './Recursos.module.css';
 import { useLinkComecar } from '../../useNavegador.js';
 
-// Cada parte e a tela real que a mostra (com o texto alternativo da tela).
-const ITENS = [
-    { id: 'cronograma', tela: 'etapas', alt: 'hero.telas.cronograma' },
-    { id: 'diario', tela: 'rdo', alt: 'hero.telas.diario' },
-    { id: 'financeiro', tela: 'financeiro', alt: 'hero.telas.financeiro' },
-    { id: 'equipe', tela: 'equipe', alt: 'equipe.tela' },
-    { id: 'compras', tela: 'obra', alt: 'recursos.tela' },
-    { id: 'marca', tela: 'obra', alt: 'recursos.tela' },
-    { id: 'offline', tela: 'obra', alt: 'recursos.tela' },
-    { id: 'aparelhos', tela: 'obra', alt: 'recursos.tela' },
-];
-
 export default function Recursos() {
     const { t } = useTranslation();
     const codigo = useIdioma();
     const comecar = useLinkComecar(codigo);
+    // Cada parte e a tela real que a mostra no idioma (src/inicio.js; tela nova sem print no idioma: a do lugar).
+    const itens = useMemo(() => RECURSOS.map((r) => ({ ...r, ...telaDoIdioma(codigo, r.tela, r.alt) })), [codigo]);
     const raiz = useRef(null);
     const [ativo, setAtivo] = useState(null);
     const [anterior, setAnterior] = useState(null);
@@ -36,12 +27,12 @@ export default function Recursos() {
 
     const mostrar = useCallback((indice) => {
         setAtivo(indice);
-        const nova = ITENS[indice].tela;
+        const nova = itens[indice].tela;
         if (nova !== telaAgora.current) {
             setAnterior(telaAgora.current);
             telaAgora.current = nova;
         }
-    }, []);
+    }, [itens]);
 
     useGSAP(() => {
         const mm = gsap.matchMedia();
@@ -83,7 +74,7 @@ export default function Recursos() {
         });
     }, { scope: raiz, dependencies: [codigo], revertOnUpdate: true });
 
-    const item = ativo === null ? null : ITENS[ativo];
+    const item = ativo === null ? null : itens[ativo];
     const tela = item ? item.tela : 'obra';
     const alt = item ? t(item.alt) : t('recursos.tela');
 
@@ -125,7 +116,7 @@ export default function Recursos() {
                     <div className={styles.listaCaixa}>
                         <span className={styles.progresso} data-m="progresso" aria-hidden="true" />
                         <dl className={`${styles.itens} ${historia ? styles.historia : ''}`} data-m="lista">
-                            {ITENS.map((i, n) => (
+                            {itens.map((i, n) => (
                                 <div key={i.id} className={`${styles.item} ${ativo === n ? styles.itemAtivo : ''}`} data-m="item">
                                     <dt>{t(`recursos.itens.${i.id}.titulo`)}</dt>
                                     <dd>{t(`recursos.itens.${i.id}.texto`)}</dd>

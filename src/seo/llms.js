@@ -10,10 +10,9 @@ import { EMAIL_SUPORTE, WINDOWS, appStore, googlePlay, linkWhatsApp } from '../l
 import { idiomaDoConteudo } from '../ajuda/idiomas.js';
 import { criarRotas } from '../ajuda/enderecos.js';
 import { NOME, absoluto } from './paginas.js';
+import { PERGUNTAS, RECURSOS } from '../inicio.js';
 
-const RECURSOS = ['cronograma', 'diario', 'financeiro', 'equipe', 'compras', 'marca', 'offline', 'aparelhos'];
 const PAPEIS = ['gestor', 'engenheiro', 'equipe', 'cliente'];
-const PERGUNTAS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // Uma linha só (o formato é Markdown: nada de quebra no meio de um item) e sem os ** de destaque dos títulos.
 const limpo = (texto) => String(texto ?? '').replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
@@ -43,7 +42,7 @@ function secaoDoIdioma(t, codigo, indice) {
     s.push(`- Google Play: ${googlePlay(codigo)}`, `- App Store: ${appStore()}`, `- Windows: ${WINDOWS}`);
 
     titulo(t('seo.llms.recursos'));
-    for (const id of RECURSOS) s.push(`- **${limpo(t(`recursos.itens.${id}.titulo`))}**: ${limpo(t(`recursos.itens.${id}.texto`))}`);
+    for (const { id } of RECURSOS) s.push(`- **${limpo(t(`recursos.itens.${id}.titulo`))}**: ${limpo(t(`recursos.itens.${id}.texto`))}`);
     s.push(`- **${limpo(t('cliente.titulo'))}** ${limpo(t('cliente.texto'))}`);
 
     titulo(t('seo.llms.papeis'));

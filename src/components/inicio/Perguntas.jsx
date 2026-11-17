@@ -5,9 +5,8 @@ import { Plus } from 'lucide-react';
 import { caminhoAjuda, idDaSecao } from '../../i18n/idiomas.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
 import { linkWhatsApp } from '../../links.js';
+import { PERGUNTAS } from '../../inicio.js';
 import styles from './Perguntas.module.css';
-
-const NUMEROS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 export default function Perguntas() {
     const { t } = useTranslation();
@@ -29,7 +28,7 @@ export default function Perguntas() {
                 </div>
 
                 <div className={styles.lista} data-grupo>
-                    {NUMEROS.map((n) => (
+                    {PERGUNTAS.map((n) => (
                         <details key={n} className={styles.pergunta} data-item>
                             <summary>
                                 <span>{t(`faq.q${n}`)}</span>

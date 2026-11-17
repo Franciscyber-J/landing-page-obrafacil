@@ -16,7 +16,7 @@
             "titulo": "{{titulo}} — ObraFácil"
         },
         "app": {
-            "descricao": "Bauprojektmanagement-App für Bauunternehmen, Handwerker, Bauleiter, Ingenieure und Architekten: Bauzeitenplan nach Phasen, Bautagesberichte mit Fotos und PDF-Export, Baustellenfinanzen, Lohnabrechnung für das Team, Beschaffung und Lager sowie ein Portal zur Bauherrenbegleitung. Funktioniert auf Android, iPhone, Windows und im Web, auch offline auf der Baustelle.",
+            "descricao": "Bauprojektmanagement-App für Bauunternehmen, Handwerker, Bauleiter, Ingenieure und Architekten: Bauzeitenplan nach Phasen, Bautagesberichte mit Fotos und PDF-Export, Qualitäts-Checklisten mit Unterschrift, Baustellenfinanzen, Lohnabrechnung für das Team, Beschaffung und Lager sowie ein Portal zur Bauherrenbegleitung. Funktioniert auf Android, iPhone, Windows und im Web, auch offline auf der Baustelle.",
             "categoria": "Bauprojektmanagement"
         },
         "imagemAlt": "ObraFácil Logo, Bauprojektmanagement-App",
@@ -102,6 +102,7 @@
                 "1 eigenes Bauprojekt gleichzeitig",
                 "7 PDF-Berichte pro Monat mit Wasserzeichen",
                 "250 MB für Fotos und Dateien",
+                "Checklisten mit den 27 fertigen Vorlagen und 1 eigenen Vorlage",
                 "Bauherr begleitet das Projekt im Portal"
             ]
         },
@@ -115,6 +116,7 @@
                 "10 GB für Fotos und Dateien",
                 "PDFs mit Logo und Fußzeile Ihres Unternehmens",
                 "Bautagesberichte als ZIP und Projektdateien offline",
+                "Unbegrenzt eigene Checklisten-Vorlagen und mehrere Checklisten in einem PDF",
                 "Bauherrenzugang für jedes Projekt verfügbar"
             ],
             "itensAnual": [
@@ -185,6 +187,8 @@
         "a9": "Ja, jederzeit und an derselben Stelle, an der Sie es abonniert haben. Es erfolgt keine weitere Verlängerung und Ihr Zugriff bleibt bis zum Ende des bereits bezahlten Zeitraums aktiv.",
         "q10": "Was passiert, wenn die Verlängerungszahlung fehlschlägt?",
         "a10": "Das Konto fällt automatisch auf den kostenlosen Plan zurück. Es werden keine Daten gelöscht; wenn Sie das Limit des kostenlosen Plans überschreiten, wird lediglich das Hochladen neuer Dateien gesperrt, bis Sie Speicherplatz freigeben oder erneut abonnieren.",
+        "q11": "Kann ich mit der App Leistungen per Checkliste prüfen und freigeben?",
+        "a11": "Ja. Mit den Qualitäts-Checklisten prüfen Sie jede Leistung Punkt für Punkt mit Foto, erfassen Mängel mit Maßnahme und Nachprüfung und geben die Leistung mit Unterschrift frei. Auf dem Handy funktioniert das auch ohne Netz: Ihre Eingaben werden übertragen, sobald wieder Empfang da ist. Dabei sind 27 fertige Vorlagen, und Sie können die Vorlagen Ihres Unternehmens anlegen: 1 im Gratis-Plan, beliebig viele mit PRO. Die fertigen Vorlagen sind Beispiele zum Prüfen und Anpassen: Sie ersetzen weder die verantwortliche Bauleitung, noch bescheinigen sie die Einhaltung einer Norm oder eines Qualitätsprogramms.",
         "mais": "War Ihre Frage nicht dabei?",
         "verAjuda": "Hilfe-Center besuchen"
     },
@@ -329,6 +333,11 @@
             "diario": {
                 "titulo": "Bautagebuch",
                 "texto": "Wetter, Tätigkeiten, Vorkommnisse, anwesendes Team, Fotos und Unterschrift. Export als PDF, sofort versandbereit."
+            },
+            "checklists": {
+                "titulo": "Qualitäts-Checklisten",
+                "texto": "27 fertige Vorlagen oder Ihre eigenen. Jeder Prüfpunkt in Ordnung, nicht in Ordnung oder nicht zutreffend, mit Foto, und Nachprüfung bei Mängeln. Freigabe mit Unterschrift, PDF, und der Bauherr sieht es im Portal.",
+                "tela": "Checkliste in Bearbeitung mit Fortschritt und offenen Prüfpunkten"
             },
             "financeiro": {
                 "titulo": "Projektfinanzen",

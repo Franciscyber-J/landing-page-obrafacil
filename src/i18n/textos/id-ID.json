@@ -16,7 +16,7 @@
             "titulo": "{{titulo}} — ObraFácil"
         },
         "app": {
-            "descricao": "Aplikasi manajemen proyek konstruksi untuk kontraktor, insinyur sipil, arsitek dan mandor: jadwal bertahap, laporan harian dengan foto dan PDF, keuangan proyek, penggajian tim, pengadaan dan gudang, serta portal pemantauan klien. Berfungsi di Android, iPhone, Windows dan web, bahkan offline di lokasi proyek.",
+            "descricao": "Aplikasi manajemen proyek konstruksi untuk kontraktor, insinyur sipil, arsitek dan mandor: jadwal bertahap, laporan harian dengan foto dan PDF, daftar periksa mutu dengan tanda tangan, keuangan proyek, penggajian tim, pengadaan dan gudang, serta portal pemantauan klien. Berfungsi di Android, iPhone, Windows dan web, bahkan offline di lokasi proyek.",
             "categoria": "Manajemen konstruksi"
         },
         "imagemAlt": "Logo ObraFácil, aplikasi manajemen proyek konstruksi",
@@ -102,6 +102,7 @@
                 "1 proyek aktif Anda dalam satu waktu",
                 "7 laporan PDF per bulan dengan watermark",
                 "250 MB untuk foto dan dokumen",
+                "Daftar periksa dengan 27 templat siap pakai dan 1 templat sendiri",
                 "Klien mengikuti progres lewat portal"
             ]
         },
@@ -115,6 +116,7 @@
                 "10 GB untuk foto dan dokumen",
                 "PDF dengan logo dan catatan kaki perusahaan Anda",
                 "Laporan harian format ZIP dan file proyek offline",
+                "Templat daftar periksa tanpa batas dan beberapa daftar dalam satu PDF",
                 "Akses Klien tersedia untuk setiap proyek"
             ],
             "itensAnual": [
@@ -185,6 +187,8 @@
         "a9": "Ya, kapan saja dan di platform yang sama tempat Anda berlangganan. Tidak akan ada tagihan perpanjangan berikutnya dan akses Anda tetap aktif hingga akhir periode yang telah dibayar.",
         "q10": "Apa yang terjadi jika pembayaran perpanjangan gagal?",
         "a10": "Akun akan otomatis kembali ke paket gratis. Tidak ada data yang dihapus; jika Anda melebihi batas paket gratis, hanya pengunggahan file baru yang akan dibatasi hingga Anda mengosongkan ruang atau berlangganan kembali.",
+        "q11": "Apakah aplikasi ini punya daftar periksa mutu pekerjaan?",
+        "a11": "Ya. Dengan Daftar periksa mutu, Anda memeriksa setiap pekerjaan butir demi butir dengan foto, mencatat ketidaksesuaian beserta tindakan perbaikan dan pemeriksaan ulang, lalu menyetujui pekerjaan dengan tanda tangan. Di ponsel tetap jalan tanpa sinyal: catatan Anda terkirim saat koneksi kembali. Tersedia 27 templat siap pakai, dan Anda bisa membuat templat perusahaan sendiri: 1 di paket gratis dan sebanyak yang Anda mau di PRO. Templat siap pakai adalah contoh untuk diperiksa dan disesuaikan: tidak menggantikan penanggung jawab teknis resmi dan tidak menyatakan kepatuhan pada standar atau program mutu apa pun.",
         "mais": "Belum menemukan jawaban yang Anda cari?",
         "verAjuda": "Kunjungi Pusat Bantuan"
     },
@@ -327,6 +331,11 @@
             "diario": {
                 "titulo": "Laporan harian",
                 "texto": "Cuaca, aktivitas, kejadian, tim yang hadir, foto, dan tanda tangan. Diekspor dalam format PDF siap kirim."
+            },
+            "checklists": {
+                "titulo": "Daftar periksa mutu",
+                "texto": "27 templat siap pakai atau templat perusahaan Anda. Tiap butir sesuai, tidak sesuai, atau tidak berlaku, dengan foto, plus pemeriksaan ulang untuk yang tidak sesuai. Persetujuan dengan tanda tangan, PDF, dan klien melihatnya di portal.",
+                "tela": "Daftar periksa yang sedang diisi, dengan progres dan butir yang belum dijawab"
             },
             "financeiro": {
                 "titulo": "Keuangan proyek",
