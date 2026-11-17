@@ -339,3 +339,120 @@ Capa do Reels no perfil: a página 24 (o recorte do perfil mostra o meio da tela
 - Ligar a resposta automática do Orbit para RDO, CLIENTE e TESTE antes da terça às 12h.
 - Fixar o carrossel de terça assim que publicar.
 - Pendência já registrada: o site e o app guardarem a origem `utm_source=instagram` até o cadastro.
+
+---
+
+## Agendado em 17/11/2026
+
+Agente: Claude, pelo Meta Business Suite (navegador do app do Claude), com o "sim" do Francis ao pacote (17/11, 8h46)
+e a ordem dele de começar no mesmo dia (17/11, 8h55). **Tudo sai no Instagram @oficial.obrafacil e na página do
+Facebook "Obra Fácil: Gestão de Obras"**, horário de Brasília. Nada foi impulsionado nem pago. Conferido no Planner e na
+lista de conteúdo programado no fim (cada story aparece duas vezes: uma no Instagram e outra no Facebook). Os stories das
+9h45 de 17/11 já estavam no ar às 9h45.
+
+**Ordem dos dias (pacote de segunda a sábado → datas novas):** dia 1 (cronograma) terça 17/11 · dia 2 (RDO) quarta
+18/11 · dia 3 (financeiro) quinta 19/11 · dia 4 (Portal do Cliente) sexta 20/11 · bloco de sábado no sábado 21/11 · dia 5
+(equipe) segunda 23/11.
+
+**Telas usadas:** cópias dos stories com os nomes de dia corrigidos (os designs originais ficaram como estavam):
+`DAHbK7FmzUE` (cópia de `DAHbIn93zGQ`, dias 1 a 3) e `DAHbK8kFd5g` (cópia de `DAHbIkmIK-A`, dias 4, sábado e dia 5).
+Exportadas em PNG 1080 × 1920; o feed em 1080 × 1350 a partir de `DAHbIqVmbqA` e `DAHbIuScWYA`.
+
+**Adesivos no agendamento:** o editor de story do Business Suite só tem a figurinha de **link** (com texto próprio) e
+emojis. Enquete, teste, caixa de perguntas e controle deslizante **não existem** no agendamento. O botão "Adicionar link"
+fora do editor é o "deslizar para cima" só do Facebook e não foi usado. Os links usam
+`https://appobrafacil.expertbr.com/pt-br/?utm_source=instagram&utm_medium=story&utm_campaign=semana1` e ficam no espaço
+livre entre o texto e a logo (cerca de 1200 px de altura).
+
+### O que ficou agendado
+
+| Data | Hora | Tipo | Telas (página da cópia) | Adesivo |
+| --- | --- | --- | --- | --- |
+| Ter 17/11 | 9h45 (bloco das 6h30, adiantado a pedido) | 2 stories | `DAHbK7FmzUE` p1, p3 | nenhum |
+| Ter 17/11 | 12h00 | 3 stories | p4, p5, p7 | nenhum |
+| Ter 17/11 | 19h30 | 3 stories | p8, p9, p10 | Link "Começar grátis" na p10 |
+| Qua 18/11 | 6h30 | 2 stories | p12, p13 | nenhum |
+| Qua 18/11 | 12h00 | carrossel 7 imagens 4:5 | `DAHbIqVmbqA` p1 a p7, legenda do pacote (5 hashtags) | — |
+| Qua 18/11 | 12h05 | 3 stories | p14, p15, p17 | nenhum |
+| Qua 18/11 | 19h30 | 3 stories | p18, p19, p20 | Link "Fazer meu primeiro RDO" na p20 |
+| Qui 19/11 | 6h30 | 2 stories | p21, p23 | nenhum |
+| Qui 19/11 | 12h00 | 3 stories | p24, p25, p27 | nenhum |
+| Qui 19/11 | 18h00 | post 4:5 | `DAHbIuScWYA`, legenda do pacote (5 hashtags) | — |
+| Qui 19/11 | 19h30 | 3 stories | p28, p29, p30 | Link "Testar grátis" na p30 |
+| Sex 20/11 | 6h30 | 1 story | `DAHbK8kFd5g` p3 | nenhum |
+| Sex 20/11 | 12h00 | 3 stories | p4, p5, p7 | nenhum |
+| Sex 20/11 | 19h30 | 3 stories | p8, p9, p10 | Link "Convidar meu cliente" na p10 |
+| Sáb 21/11 | 8h00 | 1 story | p21 | nenhum |
+| Seg 23/11 | 6h30 | 2 stories | p11, p13 | nenhum |
+| Seg 23/11 | 12h00 | 3 stories | p14, p15, p17 | nenhum |
+| Seg 23/11 | 19h30 | 2 stories | p19, p20 | Link "Começar grátis" na p20 |
+
+Total: 39 stories, 1 carrossel e 1 post, cada um no Instagram e no Facebook.
+
+- Os stories de quarta ao meio-dia foram para **12h05**, 5 minutos depois do carrossel, para manter a ordem do pacote
+  (o story p17 pede "Comente RDO no post fixado").
+- Prévias conferidas com captura de tela antes do primeiro de cada tipo (story, carrossel, post): conta
+  @oficial.obrafacil, imagem sem corte. Impulsionamento recusado ("Talvez mais tarde") nos dois posts.
+- As imagens passam pela conta de anúncios `1150714832589200` e chegam ao Business Suite em JPG (mesmo caminho de 16/11).
+
+### O que ficou de fora e por quê
+
+**Reels "Cliente ligou de novo?" (sex 20/11, 19h): não agendado.** Dois motivos que mudam o que foi aprovado:
+1. A única cópia do vídeo que a página do Business Suite aceita (pela conta de anúncios) é **720 × 1280** (a Meta converte
+   e entrega só 720p; o MP4 aprovado é 1080 × 1920). A página bloqueia baixar o arquivo do GitHub ou do Canva.
+2. O pacote diz que a música entra pela biblioteca de áudios do Instagram; o editor de Reels do Business Suite tem uma
+   biblioteca de músicas da Meta, mas nenhuma música foi escolhida no pacote. Sem escolher, o Reels sairia mudo.
+   O vídeo já está na conta de anúncios (id `1118454714345376`) se o Francis aprovar 720p e uma música.
+
+**Telas com adesivo que o agendamento não aceita** (não agendadas; o texto da tela pede o adesivo):
+
+| Data e bloco | Tela | Adesivo e texto |
+| --- | --- | --- |
+| Ter 17/11, 9h45 | `DAHbK7FmzUE` p2 | Enquete "Aí também é assim?" · "Toda segunda" / "Aqui não" (a tela agora diz "Terça-feira"; a opção "Toda segunda" pode virar "Toda terça") |
+| Ter 17/11, 12h | p6 | Teste "O que faz uma etapa ficar 'Atrasada' no ObraFácil?" · "Passar do fim previsto antes dos 100%" (certa) / "Ficar uma semana sem RDO" / "Gastar mais que o orçamento" |
+| Qua 18/11, 6h30 | p11 | Enquete "Como está o céu aí?" · "Sol" / "Chuva" |
+| Qua 18/11, 12h05 | p16 | Teste "Quantas fotos cabem em um RDO do ObraFácil?" · "10" / "20" (certa) / "50" |
+| Qui 19/11, 6h30 | p22 | Controle deslizante 😅 "Já aconteceu aí?" |
+| Qui 19/11, 12h | p26 | Teste "Como o ObraFácil calcula o custo por m²?" · "Todas as despesas divididas pela área da obra" (certa) / "O orçamento dividido pelas etapas" / "Só a mão de obra dividida pela área" |
+| Sex 20/11, 6h30 | `DAHbK8kFd5g` p1 | Enquete "Vai dar para concretar?" · "Sol" / "Chuva" (a tela agora diz "Sexta-feira") |
+| Sex 20/11, 6h30 | p2 | Enquete · "Preto" / "Com leite" |
+| Sex 20/11, 12h | p6 | Teste "Quanto o cliente paga para acompanhar a obra pelo portal?" · "Nada" (certa) / "Uma mensalidade" / "Uma taxa por foto" |
+| Sáb 21/11, 8h | p22 | Controle deslizante 😅 "Quem nunca?" |
+| Sáb 21/11, 8h | p23 | Enquete "Hoje, como você faz o diário de obra?" · "Papel" / "WhatsApp" / "Aplicativo" / "Ainda não faço" |
+| Seg 23/11, 6h30 | p12 | Enquete · "Garrafa térmica" / "Cafeteira" |
+| Seg 23/11, 12h | p16 | Teste "No ObraFácil, quem convida as pessoas para a obra?" · "O dono da obra" (certa) / "Qualquer pessoa da equipe" / "O engenheiro" |
+| Seg 23/11, 19h30 | p18 | Caixa de perguntas "O que deu certo na sua obra na semana passada?" (texto ajustado para segunda) |
+
+Telas agendadas que vinham depois de uma tela com adesivo e fazem sentido sozinhas: `DAHbK7FmzUE` p3, p12, p23 e
+`DAHbK8kFd5g` p3, p13. Nenhuma tela agendada pede adesivo que não está nela.
+
+### O que mudou no Canva (só nas cópias)
+
+- `DAHbK7FmzUE` p1: "Segunda-feira: a semana da obra começa agora." → "Terça-feira: a semana da obra segue firme."
+- `DAHbK7FmzUE` p2: "Segunda-feira: quem veio, …" → "Terça-feira: quem veio, …" (tela fora do agendamento)
+- `DAHbK7FmzUE` p21: "Quarta de obra." → "Quinta de obra."; "Metade da semana: hora de olhar as contas." → "Reta final da
+  semana: hora de olhar as contas."
+- `DAHbK8kFd5g` p1: "Quinta-feira:" → "Sexta-feira:" (tela fora do agendamento)
+- `DAHbK8kFd5g` p11: "Sexta-feira: fechando a semana." → "Segunda-feira: começando a semana."; "Hoje é dia de conferir o
+  que a equipe fez." → "Hoje é dia de combinar o que a equipe vai fazer."
+- `DAHbK8kFd5g` p18: "Sexta da obra" → "Segunda da obra"; "O que deu certo na sua obra esta semana?" → "O que deu certo na
+  sua obra na semana passada?" (traço e legenda descidos para caber) (tela fora do agendamento)
+- `DAHbK8kFd5g` p20: "Bom fim de semana" → "Boa semana"; "Comece a próxima semana organizada" → "Comece a semana
+  organizada"
+- Mantido: `DAHbK7FmzUE` p4 "Antes de segunda, veja o que precisa avançar em cada etapa." (conselho geral; não diz que
+  hoje é segunda).
+- Todas as trocas foram feitas no próprio elemento de texto (mesma fonte, mesmo tamanho e mesma cor); nada com a fonte
+  padrão.
+
+### O que o Francis precisa fazer
+
+1. **Quarta 18/11, logo depois das 12h00:** fixar o carrossel "5 erros no diário de obra" no perfil (o story das 12h05
+   pede "Comente RDO no post fixado").
+2. **Reels de sexta 20/11, 19h:** decidir entre (a) publicar pelo celular às 19h com o MP4 de
+   `D:\Downloads\000_claude\marca_obrafacil\semana1\` e a música do Instagram, ou (b) aprovar a versão 720p e uma música
+   da biblioteca do Business Suite para o Claude agendar.
+3. **Adesivos interativos:** para cada tela da tabela acima, publicar pelo celular na hora do bloco, com o adesivo, ou
+   deixar a tela de fora.
+4. **Destaques:** o Business Suite não cria destaques. Faltam os 6 destaques (Comece aqui, RDO, Cliente, Financeiro,
+   Planos, Dúvidas), com as capas de `DAHbIm15hAA` e as 34 telas de `DAHbIun3dFQ` (adesivos de link nas páginas 8, 15,
+   20, 25 e 29), publicados pelo app do Instagram como descrito na seção B.
