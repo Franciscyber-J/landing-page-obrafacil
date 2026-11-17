@@ -456,3 +456,85 @@ Telas agendadas que vinham depois de uma tela com adesivo e fazem sentido sozinh
 4. **Destaques:** o Business Suite não cria destaques. Faltam os 6 destaques (Comece aqui, RDO, Cliente, Financeiro,
    Planos, Dúvidas), com as capas de `DAHbIm15hAA` e as 34 telas de `DAHbIun3dFQ` (adesivos de link nas páginas 8, 15,
    20, 25 e 29), publicados pelo app do Instagram como descrito na seção B.
+
+## 17/11/2026, tarde: destaques, telas com direct e Reels
+
+Decisão do Francis (17/11, 10h12): soltar de uma vez os stories dos destaques para deixar o perfil arrumado.
+
+### A) Destaques (publicados agora, só no Instagram)
+
+- 40 stories publicados em 17/11, por volta de 10h44–10h45, pelo Business Suite: as 6 capas de `DAHbIm15hAA` e as 34
+  telas de `DAHbIun3dFQ`. **Facebook desmarcado:** a página do Facebook não tem destaques, e 40 stories de uma vez lá
+  só encheriam a página.
+- Figurinha de link (Editar → Mais figurinhas → Link) nas páginas 8, 15, 20, 25 e 29, com
+  `https://appobrafacil.expertbr.com/pt-br/?utm_source=instagram&utm_medium=destaque&utm_campaign=perfil`
+  (na página 29, o mesmo endereço terminado em `#precos`, a seção de preços do site). Textos: "Criar conta grátis",
+  "Fazer meu primeiro RDO", "Convidar meu cliente", "Testar grátis" e "Ver os planos". As figurinhas ficam no espaço livre
+  entre o texto e a logo (cerca de 1170 a 1430 px de altura, longe dos 250 px de cima e de baixo).
+- Destaques criados no Business Suite (Conteúdo → Stories → Destaques do Instagram → Novo), na ordem do pacote:
+
+| Destaque | Itens (na ordem) | Link |
+| --- | --- | --- |
+| Comece aqui | capa + telas 1 a 8 | "Criar conta grátis" na 8 |
+| RDO | capa + telas 9 a 15 | "Fazer meu primeiro RDO" na 15 |
+| Cliente | capa + telas 16 a 20 | "Convidar meu cliente" na 20 |
+| Financeiro | capa + telas 21 a 25 | "Testar grátis" na 25 |
+| Planos | capa + telas 26 a 29 | "Ver os planos" na 29 |
+| Dúvidas | capa + telas 30 a 34 | sem link |
+
+- **A capa entra como primeiro item de cada destaque**: no Business Suite, a capa do destaque só pode ser escolhida
+  entre os stories selecionados. Ela abre o destaque como uma tela de título.
+- Os 3 posts fixados não foram mexidos.
+
+### B) As 14 telas com adesivo, trocadas por "Responda no direct"
+
+O agendamento não tem enquete, teste, caixa de perguntas nem controle deslizante. Só a chamada mudou, sempre em cópia:
+`DAHbLfxISbg` (cópia das páginas 6, 11, 16, 22 e 26 de `DAHbK7FmzUE`, com 3 telas de resposta) e `DAHbLbNX8lY` (cópia
+das páginas 1, 2, 6, 12, 16, 18, 22 e 23 de `DAHbK8kFd5g`, com 2 telas de resposta). Fonte copiada dos elementos
+aprovados (títulos YAFcfr0ZwUA, texto YAFdJjbTu24), nada nos 250 px de cima e de baixo, cada tela exportada conferida.
+
+- Enquete: "Responda no direct: X ou Y?". Teste: opções numeradas + "Responda no direct com o número.", seguido de uma
+  tela de resposta. Controle deslizante: "Já aconteceu aí? Conta no direct." / "Quem nunca? Conta no direct.". Caixa de
+  perguntas: "Me conta no direct." (o título já faz a pergunta). Enquete do diário: opções 1 a 4 + "Não tem resposta
+  certa."
+
+| Data | Hora | Tela | Depois dela |
+| --- | --- | --- | --- |
+| Ter 17/11 | 9h45 | p2 enquete "Aí também é assim?" | **não feita**: o horário já tinha passado |
+| Ter 17/11 | 12h01 | teste "etapa Atrasada" + resposta (1) | p7 ficou às 12h00, antes do teste (não deu para reprogramar a tempo) |
+| Qua 18/11 | 6h29 | enquete do céu (SOL ou CHUVA) | p12, p13 às 6h30 |
+| Qua 18/11 | 12h06 | teste das fotos + resposta (2 · 20 fotos) | p17 movido de 12h05 para **12h08** |
+| Qui 19/11 | 6h31 | deslizante "Já aconteceu aí?" | p23 movido para **6h32** |
+| Qui 19/11 | 12h01 | teste do custo por m² + resposta (1) | p27 movido para **12h02** |
+| Sex 20/11 | 6h29 | enquete "Sexta-feira: vai dar para concretar?" + enquete do café | p3 às 6h30 |
+| Sex 20/11 | 12h01 | teste do portal + resposta (1 · Nada) | p7 movido para **12h02** |
+| Sáb 21/11 | 8h01 | deslizante "Quem nunca?" + enquete do diário | depois do p21 (8h00) |
+| Seg 23/11 | 6h31 | enquete da garrafa | p13 movido para **6h32** |
+| Seg 23/11 | 12h01 | teste "quem convida" + resposta (1 · O dono da obra) | p17 movido para **12h02** |
+| Seg 23/11 | 19h29 | caixa "Segunda da obra: me conta no direct" | p19, p20 às 19h30 |
+
+Todas no Instagram e no Facebook. Telas do mesmo horário foram num lote só, que mantém a ordem. As que vinham depois
+foram reprogramadas pela lista de programados (Conteúdo → Stories → Programado → story → "…" → Reprogramar story),
+filtrando por posicionamento (Feed do Instagram / Feed do Facebook) para a lista carregar todos os dias. Conferido
+depois, nos dois filtros: a ordem bate com o pacote.
+
+### C) Orbit (canal ObraFácil, "Regras de atendimento / FAQ")
+
+Acrescentado ao fim do texto (o resto ficou igual; modo continua "Modo Fácil — IA Nativa"; conferido recarregando):
+quem responde a uma enquete, a um teste ou conta uma história recebe uma resposta curta e simpática; enquete não tem
+resposta certa; nos testes, só o gabarito da semana (Atrasada = 1; fotos = 2, 20 fotos; custo por m² = 1; portal = 1,
+nada; quem convida = 1, o dono da obra), perguntando qual teste se não der para saber; depois, o convite para a conta
+grátis.
+
+### D) Reels "Cliente ligou de novo?" (sex 20/11, 19h): agendado em 720p e **sem música**
+
+- Agendado no editor de Reels do Business Suite, Instagram e Facebook, com a legenda do pacote.
+- **1080p não deu:** o seletor de arquivos do Windows abre dentro do app do Claude, que o computer-use não pode
+  controlar; a página não baixa arquivo de fora do Facebook; e a área de transferência não passa para o editor. A única
+  cópia que a página aceita é a da conta de anúncios (720 × 1280, id `1118454714345376`).
+- **Música não deu:** a música da biblioteca da Meta transforma o Reels em "editado", e o Business Suite avisa que
+  Reels editado só sai no Facebook e não pode ser programado. Para não deixar o Reels sem sair, ele foi agendado sem
+  música (o vídeo original não tem som).
+- Se o Francis preferir a versão com música e em 1080p: até sexta, 19h, excluir o Reels agendado (Planner, sexta 19h)
+  e publicar pelo app do Instagram no celular com o MP4 de `D:\Downloads\000_claude\marca_obrafacil\semana1\` e uma
+  música da biblioteca do Instagram.
