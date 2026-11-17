@@ -308,12 +308,10 @@ Comente TESTE que eu te mando o link.
 3. ACESSO CLIENTE (PRO) · 02 — "Você decide o que o cliente vê" — Downloads, efetivo do RDO e Financeiro completo: você libera obra por obra. (tela real "Acesso Liberado")
 4. Para o cliente, é grátis — "Comente CLIENTE e receba o link" — O cliente acompanha a obra pelo Portal sem pagar nada. E você começa no plano grátis.
 
-**Como gerar o vídeo:** o Canva exporta essas 4 páginas direto em MP4 (conferido em 16/11/2026). No design, abra
-Compartilhar → Baixar → MP4, escolha só as páginas 24 a 27 e ajuste o tempo de cada página (sugestão: 4 s na
-primeira, 5 s nas duas do meio e 5 s na última, cerca de 19 s no total). A música entra no Instagram, pela
-biblioteca de áudios dele (assim não há problema de direitos). O MP4 não foi salvo no repositório porque o ambiente
-do Claude não consegue baixar arquivos do Canva. Não usei geração de vídeo por IA (pediria liberação à parte e foge
-do "sem cara de IA").
+**Vídeo:** `obrafacil_reels_semana1.mp4` nesta pasta (e no computador do Francis em
+`D:\Downloads\000_claude\marca_obrafacil\semana1`), exportado pelo Claude em 17/11/2026 das páginas 24 a 27 do
+Canva: 1080 × 1920, 20 s (5 s por página), sem som. A música entra no Instagram, pela biblioteca de áudios dele
+(assim não há problema de direitos). Não usei geração de vídeo por IA.
 
 Legenda:
 
