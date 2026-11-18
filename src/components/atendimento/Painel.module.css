@@ -353,3 +353,23 @@ ol.lista {
     max-width: 92%;
   }
 }
+
+/* Aviso do reCAPTCHA (no lugar do selo flutuante, que o Google permite esconder com este aviso visível). */
+.recaptcha {
+  padding-block: 0 8px;
+  padding-inline: 16px;
+  background: var(--superficie);
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  color: var(--texto-2);
+}
+
+.recaptcha a {
+  color: var(--texto-2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+:global(.grecaptcha-badge) {
+  visibility: hidden;
+}

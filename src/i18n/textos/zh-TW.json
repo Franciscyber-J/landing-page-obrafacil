@@ -524,6 +524,9 @@
         "motivoDesligado": "與 Max 的對話目前暫停服務，請寄信至 {{email}}，我們會盡快回覆。",
         "motivoTeto": "目前詢問 Max 的人很多，請稍後再試，或寄信至 {{email}}。",
         "motivoOcupada": "Max 還在回覆你上一則訊息，請稍等一下再送出。",
-        "motivoWhatsapp": "你所在的國家是透過 WhatsApp 提供客服。訊息仍保留在輸入框中，開啟 WhatsApp 時會一併帶過去。"
+        "motivoWhatsapp": "你所在的國家是透過 WhatsApp 提供客服。訊息仍保留在輸入框中，開啟 WhatsApp 時會一併帶過去。",
+        "recaptcha": "本服務受 reCAPTCHA 保護，並適用 Google 的規範：",
+        "recaptchaPrivacidade": "隱私權",
+        "recaptchaTermos": "服務條款"
     }
 }

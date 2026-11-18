@@ -528,6 +528,9 @@
         "motivoDesligado": "A conversa com o Max está fora do ar no momento. Escreva para {{email}} que a gente responde.",
         "motivoTeto": "O Max está com muita procura agora. Tente de novo daqui a pouco ou escreva para {{email}}.",
         "motivoOcupada": "O Max ainda está respondendo a mensagem anterior. Espere um instante e envie de novo.",
-        "motivoWhatsapp": "No seu país, o atendimento é pelo WhatsApp. Sua mensagem continua no campo e vai junto quando você abrir o WhatsApp."
+        "motivoWhatsapp": "No seu país, o atendimento é pelo WhatsApp. Sua mensagem continua no campo e vai junto quando você abrir o WhatsApp.",
+        "recaptcha": "Protegido pelo reCAPTCHA. Valem as regras do Google:",
+        "recaptchaPrivacidade": "Privacidade",
+        "recaptchaTermos": "Termos"
     }
 }

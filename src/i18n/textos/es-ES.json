@@ -528,6 +528,9 @@
         "motivoDesligado": "El chat con Max no está disponible ahora mismo. Escribe a {{email}} y te responderemos.",
         "motivoTeto": "Max tiene mucha demanda ahora mismo. Vuelve a intentarlo dentro de un rato o escribe a {{email}}.",
         "motivoOcupada": "Max todavía está respondiendo a tu mensaje anterior. Espera un momento y vuelve a enviarlo.",
-        "motivoWhatsapp": "En tu país, la atención es por WhatsApp. Tu mensaje sigue en el cuadro y se envía contigo al abrir WhatsApp."
+        "motivoWhatsapp": "En tu país, la atención es por WhatsApp. Tu mensaje sigue en el cuadro y se envía contigo al abrir WhatsApp.",
+        "recaptcha": "Protegido por reCAPTCHA. Se aplican las condiciones de Google:",
+        "recaptchaPrivacidade": "Privacidad",
+        "recaptchaTermos": "Términos"
     }
 }

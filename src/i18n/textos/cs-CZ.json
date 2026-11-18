@@ -530,6 +530,9 @@
         "motivoDesligado": "Chat s Maxem teď není dostupný. Napište na {{email}} a my se vám ozveme.",
         "motivoTeto": "Max má teď hodně dotazů. Zkuste to za chvíli, nebo napište na {{email}}.",
         "motivoOcupada": "Max ještě odpovídá na vaši předchozí zprávu. Chvíli počkejte a odešlete ji znovu.",
-        "motivoWhatsapp": "Ve vaší zemi probíhá podpora přes WhatsApp. Zpráva zůstala v poli a při otevření WhatsAppu se přenese."
+        "motivoWhatsapp": "Ve vaší zemi probíhá podpora přes WhatsApp. Zpráva zůstala v poli a při otevření WhatsAppu se přenese.",
+        "recaptcha": "Chráněno službou reCAPTCHA. Platí zásady společnosti Google:",
+        "recaptchaPrivacidade": "Ochrana soukromí",
+        "recaptchaTermos": "Smluvní podmínky"
     }
 }

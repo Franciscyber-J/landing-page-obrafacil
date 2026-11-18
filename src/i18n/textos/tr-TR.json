@@ -526,6 +526,9 @@
         "motivoDesligado": "Max ile sohbet şu anda kullanılamıyor. {{email}} adresine yazın, size dönüş yapalım.",
         "motivoTeto": "Max şu anda çok yoğun. Biraz sonra tekrar deneyin veya {{email}} adresine yazın.",
         "motivoOcupada": "Max hâlâ önceki mesajınızı yanıtlıyor. Biraz bekleyip tekrar gönderin.",
-        "motivoWhatsapp": "Ülkenizde destek WhatsApp üzerinden verilir. Mesajınız kutuda duruyor ve WhatsApp'ı açtığınızda oraya aktarılır."
+        "motivoWhatsapp": "Ülkenizde destek WhatsApp üzerinden verilir. Mesajınız kutuda duruyor ve WhatsApp'ı açtığınızda oraya aktarılır.",
+        "recaptcha": "reCAPTCHA ile korunmaktadır. Google'ın kuralları geçerlidir:",
+        "recaptchaPrivacidade": "Gizlilik",
+        "recaptchaTermos": "Şartlar"
     }
 }

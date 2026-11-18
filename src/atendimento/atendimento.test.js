@@ -261,3 +261,38 @@ test('resposta vazia do servidor conta como erro', async () => {
     assert.equal((await c.enviar('oi')).enviado, false);
     assert.equal(c.estado().erro, 'geral');
 });
+
+// ---------- App Check: sem a chave do site, a conversa fica desligada e o servidor nunca é chamado ----------
+
+test('conversa só com o appId e a chave do reCAPTCHA Enterprise do site', async () => {
+    const { SITE_NO_FIREBASE, conversaLigada } = await import('./configuracao.js');
+    assert.equal(conversaLigada({ appId: '', recaptchaEnterprise: '' }), false);
+    assert.equal(conversaLigada({ appId: '1:1:web:x', recaptchaEnterprise: '' }), false);
+    assert.equal(conversaLigada({ appId: '', recaptchaEnterprise: '6Lchave' }), false);
+    assert.equal(conversaLigada({ appId: '1:1:web:x', recaptchaEnterprise: '6Lchave' }), true);
+    assert.equal(conversaLigada(SITE_NO_FIREBASE), Boolean(SITE_NO_FIREBASE.appId && SITE_NO_FIREBASE.recaptchaEnterprise));
+});
+
+test('sem o App Check configurado, o envio para antes do Firebase (nem login, nem function)', async (t) => {
+    const { SITE_NO_FIREBASE } = await import('./configuracao.js');
+    if (SITE_NO_FIREBASE.appId && SITE_NO_FIREBASE.recaptchaEnterprise) return t.skip('App Check do site já preenchido');
+    const pedidos = [];
+    const original = globalThis.fetch;
+    globalThis.fetch = async (...args) => { pedidos.push(String(args[0])); throw new Error('rede proibida no teste'); };
+    try {
+        const { criarServidor } = await import('./servidor.js');
+        await assert.rejects(criarServidor().enviar({ texto: 'oi', idioma: 'pt-BR', pais: 'JP' }), { code: 'app-check/nao-configurado' });
+        assert.deepEqual(pedidos, []);
+    } finally {
+        globalThis.fetch = original;
+    }
+});
+
+test('servidor: App Check antes do login e da function; renovação automática desligada', () => {
+    const fonte = readFileSync(new URL('./servidor.js', import.meta.url), 'utf8');
+    assert.match(fonte, /isTokenAutoRefreshEnabled: false/);
+    assert.match(fonte, /ReCaptchaEnterpriseProvider/);
+    const corpo = fonte.slice(fonte.indexOf('async function prontoParaChamar'));
+    assert.ok(corpo.indexOf('getToken(appCheck') < corpo.indexOf('signInAnonymously('), 'token do App Check antes do login');
+    assert.doesNotMatch(fonte, /preparar/, 'nada acontece ao escrever');
+});

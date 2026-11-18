@@ -526,6 +526,9 @@
         "motivoDesligado": "A csevegés Maxszel most nem érhető el. Írj a(z) {{email}} címre, és válaszolunk.",
         "motivoTeto": "Max most nagyon elfoglalt. Próbáld újra kicsit később, vagy írj a(z) {{email}} címre.",
         "motivoOcupada": "Max még az előző üzenetedre válaszol. Várj egy kicsit, és küldd el újra.",
-        "motivoWhatsapp": "Az országodban a támogatás WhatsAppon zajlik. Az üzeneted a mezőben maradt, és a WhatsApp megnyitásakor átkerül oda."
+        "motivoWhatsapp": "Az országodban a támogatás WhatsAppon zajlik. Az üzeneted a mezőben maradt, és a WhatsApp megnyitásakor átkerül oda.",
+        "recaptcha": "A reCAPTCHA védi. A Google szabályai érvényesek:",
+        "recaptchaPrivacidade": "Adatvédelem",
+        "recaptchaTermos": "Feltételek"
     }
 }

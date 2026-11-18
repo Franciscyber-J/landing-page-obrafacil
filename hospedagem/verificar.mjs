@@ -318,11 +318,16 @@ for (const [pagina, caminho] of [['início', '/pt-br/'], ['artigo', '/pt-br/ajud
   const cspNossa = [cspAplicada, cspRelatorio].find((valor) => /default-src 'self'/.test(valor));
   const situacaoCsp = !cspNossa ? 'ausente' : cspNossa === cspAplicada ? 'aplicada' : 'em modo de relatório';
   linha(Boolean(cspNossa), `política de conteúdo (CSP)                     (${pagina}): ${situacaoCsp}`);
-  // Conversa com o Max: o login anônimo e a function precisam estar liberados (senão, com a política ativada, a
-  // conversa para de funcionar).
-  const liberados = ['https://identitytoolkit.googleapis.com', 'https://securetoken.googleapis.com', 'https://us-central1-gestao-obras-app-8342c.cloudfunctions.net'];
-  const conexoes = /connect-src ([^;]+)/.exec(cspNossa ?? '')?.[1].split(/\s+/) ?? [];
-  const faltam = liberados.filter((x) => !conexoes.includes(x));
+  // Conversa com o Max: o App Check (reCAPTCHA), o login anônimo e a function precisam estar liberados (senão, com a
+  // política ativada, a conversa para de funcionar).
+  const diretiva = (nome) => new RegExp(`${nome} ([^;]+)`).exec(cspNossa ?? '')?.[1].split(/\s+/) ?? [];
+  const liberados = [
+    ['connect-src', 'https://identitytoolkit.googleapis.com'], ['connect-src', 'https://securetoken.googleapis.com'],
+    ['connect-src', 'https://us-central1-gestao-obras-app-8342c.cloudfunctions.net'],
+    ['connect-src', 'https://content-firebaseappcheck.googleapis.com'], ['script-src', 'https://www.gstatic.com/recaptcha/'],
+    ['frame-src', 'https://www.google.com/recaptcha/'], ['frame-src', 'https://recaptcha.google.com/recaptcha/'],
+  ];
+  const faltam = liberados.filter(([nome, x]) => !diretiva(nome).includes(x)).map(([nome, x]) => `${nome} ${x}`);
   linha(faltam.length === 0, `CSP libera a conversa com o Max                (${pagina}): ${faltam.length ? `falta ${faltam.join(', ')}` : 'sim'}`);
 }
 

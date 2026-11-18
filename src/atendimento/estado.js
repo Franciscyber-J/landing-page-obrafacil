@@ -6,7 +6,7 @@
 // (grupoDaPagina), pelos valores iniciais; só depois de a página abrir o site lê o fuso do navegador, o documento dos
 // grupos e o número do WhatsApp, e ajusta. Os dois primeiros desenhos saem iguais (sem erro de hidratação).
 //
-// Custo: os dois documentos (configuracoes/atendimento_paises e configuracoes/suporte) são lidos pela API pública do
+// Custo: os dois documentos (configuracoes/atendimento_paises e configuracoes/suporte_publico) são lidos pela API pública do
 // Firestore, sem SDK, quando o navegador está livre, e ficam guardados no navegador por 12 horas: no máximo duas
 // leituras por visitante a cada 12 horas. Nada da conversa é guardado aqui.
 
@@ -16,9 +16,14 @@ import { fusoDoNavegador } from '../i18n/formatos.js';
 import { idioma } from '../i18n/idiomas.js';
 import { lerCampos, PROJETO } from '../legal/firestore.js';
 import { CONFIG_INICIAL, grupoDaPagina, lerConfiguracao, visitante, whatsappValido } from './grupos.js';
+import { conversaLigada } from './configuracao.js';
+
+// Conversa desligada (App Check do site ainda não preenchido em configuracao.js): todos os grupos ficam com o
+// WhatsApp, como o site era antes. Valor fixo do build: a página pronta e o navegador concordam.
+const CONVERSA = conversaLigada();
 
 const BASE = `https://firestore.googleapis.com/v1/projects/${PROJETO}/databases/(default)/documents/configuracoes`;
-const CACHE = 'atendimento:v1:configuracao';
+const CACHE = 'atendimento:v2:configuracao';
 const VALIDADE_MS = 12 * 60 * 60 * 1000;
 
 const INICIAL = Object.freeze({ calculado: false, pais: null, grupo: null, whatsapp: WHATSAPP, aberto: false, origem: null });
@@ -38,7 +43,7 @@ function assinar(ouvir) {
 // { grupo, pais, whatsapp, aberto }. codigo: o idioma da página (para o grupo antes de o navegador dizer o país).
 export function useAtendimento(codigo) {
     const s = useSyncExternalStore(assinar, () => estado, () => INICIAL);
-    const grupo = s.grupo ?? grupoDaPagina(idioma(codigo)?.pais);
+    const grupo = !CONVERSA ? 'so_whatsapp' : s.grupo ?? grupoDaPagina(idioma(codigo)?.pais);
     return { grupo, pais: s.pais, whatsapp: s.whatsapp, aberto: s.aberto, origem: s.origem };
 }
 
@@ -112,19 +117,40 @@ export function iniciarAtendimento() {
     const fuso = fusoDoNavegador();
     const idiomas = Array.isArray(navigator.languages) && navigator.languages.length ? [...navigator.languages] : [navigator.language];
 
+    const guardado = lerCache();
+    // O guardado só vale se foi lido com a conversa no mesmo estado (ligada ou desligada) deste build.
+    const valido = guardado && guardado.comConversa === CONVERSA ? guardado : null;
+
+    // Conversa desligada: só o número do WhatsApp interessa (nem o mapa dos fusos nem os grupos são baixados).
+    if (!CONVERSA) {
+        if (valido) {
+            mudar({ calculado: true, whatsapp: whatsappValido(valido.whatsapp) ?? WHATSAPP });
+            return;
+        }
+        quandoLivre(async () => {
+            try {
+                const numero = whatsappValido((await lerDocumento('suporte_publico'))?.whatsapp);
+                gravarCache({ comConversa: false, paises: null, whatsapp: numero });
+                mudar({ calculado: true, whatsapp: numero ?? WHATSAPP });
+            } catch {
+                // Sem internet ou Firestore fora: continua o número de src/links.js.
+            }
+        });
+        return;
+    }
+
     import('./fusos.js').then(({ paisDoFuso }) => {
         const aplicar = (config, numero) => {
             const { pais, grupo } = visitante({ fuso, idiomas }, paisDoFuso, config);
             mudar({ calculado: true, pais, grupo, whatsapp: numero ?? WHATSAPP });
         };
-        const guardado = lerCache();
-        aplicar(guardado ? lerConfiguracao(guardado.paises) : CONFIG_INICIAL, whatsappValido(guardado?.whatsapp));
-        if (guardado) return;
+        aplicar(valido ? lerConfiguracao(valido.paises) : CONFIG_INICIAL, whatsappValido(valido?.whatsapp));
+        if (valido) return;
         quandoLivre(async () => {
             try {
-                const [paises, suporte] = await Promise.all([lerDocumento('atendimento_paises'), lerDocumento('suporte')]);
+                const [paises, suporte] = await Promise.all([lerDocumento('atendimento_paises'), lerDocumento('suporte_publico')]);
                 const numero = whatsappValido(suporte?.whatsapp);
-                gravarCache({ paises: paises ?? null, whatsapp: numero });
+                gravarCache({ comConversa: true, paises: paises ?? null, whatsapp: numero });
                 aplicar(lerConfiguracao(paises), numero);
             } catch {
                 // Sem internet ou Firestore fora: continuam os valores iniciais.

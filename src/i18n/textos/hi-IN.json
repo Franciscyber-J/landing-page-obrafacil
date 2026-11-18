@@ -526,6 +526,9 @@
         "motivoDesligado": "Max से चैट अभी उपलब्ध नहीं है। {{email}} पर लिखें, हम जवाब देंगे।",
         "motivoTeto": "अभी Max के पास बहुत ज़्यादा सवाल हैं। थोड़ी देर बाद कोशिश करें या {{email}} पर लिखें।",
         "motivoOcupada": "Max अभी आपके पिछले मैसेज का जवाब दे रहे हैं। थोड़ा रुककर फिर से भेजें।",
-        "motivoWhatsapp": "आपके देश में सहायता WhatsApp पर मिलती है। आपका मैसेज बॉक्स में ही है और WhatsApp खोलने पर साथ चला जाएगा।"
+        "motivoWhatsapp": "आपके देश में सहायता WhatsApp पर मिलती है। आपका मैसेज बॉक्स में ही है और WhatsApp खोलने पर साथ चला जाएगा।",
+        "recaptcha": "reCAPTCHA से सुरक्षित। Google के नियम लागू होते हैं:",
+        "recaptchaPrivacidade": "निजता",
+        "recaptchaTermos": "शर्तें"
     }
 }

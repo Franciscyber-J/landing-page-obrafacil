@@ -526,6 +526,9 @@
         "motivoDesligado": "De chat met Max is nu niet beschikbaar. Mail naar {{email}}, dan nemen we contact met je op.",
         "motivoTeto": "Het is nu erg druk bij Max. Probeer het zo opnieuw of mail naar {{email}}.",
         "motivoOcupada": "Max is nog bezig met je vorige bericht. Wacht even en verstuur het opnieuw.",
-        "motivoWhatsapp": "In jouw land loopt de ondersteuning via WhatsApp. Je bericht staat nog in het veld en gaat mee als je WhatsApp opent."
+        "motivoWhatsapp": "In jouw land loopt de ondersteuning via WhatsApp. Je bericht staat nog in het veld en gaat mee als je WhatsApp opent.",
+        "recaptcha": "Beveiligd met reCAPTCHA. De voorwaarden van Google zijn van toepassing:",
+        "recaptchaPrivacidade": "Privacy",
+        "recaptchaTermos": "Voorwaarden"
     }
 }

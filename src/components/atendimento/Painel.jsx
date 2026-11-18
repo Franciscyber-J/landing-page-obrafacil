@@ -14,11 +14,11 @@ import { formatarNumero } from '../../i18n/formatos.js';
 import { TEXTO_MAXIMO, criarConversa, textoParaEnviar } from '../../atendimento/conversa.js';
 import { fecharConversa, paisDoVisitante, useAtendimento } from '../../atendimento/estado.js';
 import { lerResposta } from '../../atendimento/resposta.js';
+import { SIMULADO } from '../../atendimento/configuracao.js';
 import styles from './Painel.module.css';
 
-// Servidor de verdade no site; o simulado só no "npm run dev" com VITE_ATENDIMENTO_SIMULADO=sim (a expressão
-// inteira é trocada pelo Vite, e no build o simulado nem entra no pacote).
-const SIMULADO = import.meta.env.DEV && import.meta.env.VITE_ATENDIMENTO_SIMULADO === 'sim';
+// Servidor de verdade no site; o simulado só no "npm run dev" com VITE_ATENDIMENTO_SIMULADO=sim (no build o simulado
+// nem entra no pacote: SIMULADO vira false).
 function carregarServidor() {
     if (SIMULADO) return import('../../atendimento/simulado.js').then((m) => m.criarServidorSimulado());
     return import('../../atendimento/servidor.js').then((m) => m.criarServidor());
@@ -128,9 +128,11 @@ export default function Painel({ codigo }) {
     const aoEscrever = (evento) => {
         setTexto(evento.target.value.slice(0, TEXTO_MAXIMO));
         if (erro === 'repetida') c.limparAviso();
+        // Ao começar a escrever, só o CÓDIGO da conversa é baixado (o SDK do Firebase). Nada é chamado: o App Check, o
+        // login anônimo e o servidor só acontecem no envio da primeira mensagem (servidor.js).
         if (!preparado.current) {
             preparado.current = true;
-            servidorPronto().then((s) => s.preparar?.()).catch(() => {});
+            servidorPronto().catch(() => {});
         }
     };
 
@@ -266,6 +268,15 @@ export default function Painel({ codigo }) {
                     {t('atendimento.contador', { usados: formatarNumero(codigo, usados), limite: formatarNumero(codigo, TEXTO_MAXIMO) })}
                 </p>
             </form>
+
+            {/* O selo flutuante do reCAPTCHA fica escondido (cobriria o botão de enviar); no lugar dele, o aviso que o
+                Google pede, com os links das regras dele. */}
+            <p className={styles.recaptcha}>
+                {t('atendimento.recaptcha')}{' '}
+                <a href={`https://policies.google.com/privacy?hl=${encodeURIComponent(codigo)}`} target="_blank" rel="noopener noreferrer">{t('atendimento.recaptchaPrivacidade')}</a>
+                {' · '}
+                <a href={`https://policies.google.com/terms?hl=${encodeURIComponent(codigo)}`} target="_blank" rel="noopener noreferrer">{t('atendimento.recaptchaTermos')}</a>
+            </p>
         </section>
     );
 }

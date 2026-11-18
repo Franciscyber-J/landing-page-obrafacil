@@ -526,6 +526,9 @@
         "motivoDesligado": "Chat with Max is unavailable right now. Email {{email}} and we'll get back to you.",
         "motivoTeto": "Max is very busy right now. Please try again in a bit or email {{email}}.",
         "motivoOcupada": "Max is still answering your previous message. Wait a moment and send it again.",
-        "motivoWhatsapp": "In your country, support is on WhatsApp. Your message is still in the box and goes with you when you open WhatsApp."
+        "motivoWhatsapp": "In your country, support is on WhatsApp. Your message is still in the box and goes with you when you open WhatsApp.",
+        "recaptcha": "Protected by reCAPTCHA. Google's policies apply:",
+        "recaptchaPrivacidade": "Privacy",
+        "recaptchaTermos": "Terms"
     }
 }

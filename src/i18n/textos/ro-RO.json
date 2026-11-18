@@ -528,6 +528,9 @@
         "motivoDesligado": "Conversația cu Max nu este disponibilă acum. Scrieți la {{email}} și vă răspundem.",
         "motivoTeto": "Max este foarte solicitat acum. Încercați din nou puțin mai târziu sau scrieți la {{email}}.",
         "motivoOcupada": "Max încă răspunde la mesajul anterior. Așteptați puțin și trimiteți din nou.",
-        "motivoWhatsapp": "În țara dumneavoastră, asistența se face pe WhatsApp. Mesajul rămâne în câmp și este preluat când deschideți WhatsApp."
+        "motivoWhatsapp": "În țara dumneavoastră, asistența se face pe WhatsApp. Mesajul rămâne în câmp și este preluat când deschideți WhatsApp.",
+        "recaptcha": "Protejat de reCAPTCHA. Se aplică regulile Google:",
+        "recaptchaPrivacidade": "Confidențialitate",
+        "recaptchaTermos": "Termeni"
     }
 }

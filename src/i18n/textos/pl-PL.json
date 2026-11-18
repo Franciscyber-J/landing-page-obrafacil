@@ -530,6 +530,9 @@
         "motivoDesligado": "Czat z Maxem jest teraz niedostępny. Napisz na {{email}}, a odpowiemy.",
         "motivoTeto": "Max ma teraz bardzo dużo rozmów. Spróbuj ponownie za chwilę albo napisz na {{email}}.",
         "motivoOcupada": "Max jeszcze odpowiada na poprzednią wiadomość. Poczekaj chwilę i wyślij ponownie.",
-        "motivoWhatsapp": "W Twoim kraju pomoc działa przez WhatsAppa. Wiadomość zostaje w polu i trafi do WhatsAppa, gdy go otworzysz."
+        "motivoWhatsapp": "W Twoim kraju pomoc działa przez WhatsAppa. Wiadomość zostaje w polu i trafi do WhatsAppa, gdy go otworzysz.",
+        "recaptcha": "Chronione przez reCAPTCHA. Obowiązują zasady Google:",
+        "recaptchaPrivacidade": "Prywatność",
+        "recaptchaTermos": "Warunki"
     }
 }

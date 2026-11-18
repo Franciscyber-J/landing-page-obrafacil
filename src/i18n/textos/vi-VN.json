@@ -524,6 +524,9 @@
         "motivoDesligado": "Hiện chưa thể trò chuyện với Max. Hãy gửi email đến {{email}}, chúng tôi sẽ phản hồi.",
         "motivoTeto": "Hiện có rất nhiều người đang hỏi Max. Hãy thử lại sau ít phút hoặc gửi email đến {{email}}.",
         "motivoOcupada": "Max vẫn đang trả lời tin nhắn trước của bạn. Hãy đợi một chút rồi gửi lại.",
-        "motivoWhatsapp": "Ở quốc gia của bạn, hỗ trợ được thực hiện qua WhatsApp. Tin nhắn vẫn còn trong ô nhập và sẽ được chuyển sang khi bạn mở WhatsApp."
+        "motivoWhatsapp": "Ở quốc gia của bạn, hỗ trợ được thực hiện qua WhatsApp. Tin nhắn vẫn còn trong ô nhập và sẽ được chuyển sang khi bạn mở WhatsApp.",
+        "recaptcha": "Được bảo vệ bởi reCAPTCHA. Áp dụng quy định của Google:",
+        "recaptchaPrivacidade": "Quyền riêng tư",
+        "recaptchaTermos": "Điều khoản"
     }
 }

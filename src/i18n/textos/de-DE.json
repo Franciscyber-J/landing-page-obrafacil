@@ -526,6 +526,9 @@
         "motivoDesligado": "Der Chat mit Max ist gerade nicht verfügbar. Schreiben Sie an {{email}}, wir melden uns.",
         "motivoTeto": "Max ist gerade stark gefragt. Versuchen Sie es gleich noch einmal oder schreiben Sie an {{email}}.",
         "motivoOcupada": "Max beantwortet noch Ihre vorherige Nachricht. Warten Sie kurz und senden Sie erneut.",
-        "motivoWhatsapp": "In Ihrem Land läuft der Support über WhatsApp. Ihre Nachricht steht noch im Feld und wird beim Öffnen von WhatsApp übernommen."
+        "motivoWhatsapp": "In Ihrem Land läuft der Support über WhatsApp. Ihre Nachricht steht noch im Feld und wird beim Öffnen von WhatsApp übernommen.",
+        "recaptcha": "Geschützt durch reCAPTCHA. Es gelten die Bestimmungen von Google:",
+        "recaptchaPrivacidade": "Datenschutz",
+        "recaptchaTermos": "Nutzungsbedingungen"
     }
 }

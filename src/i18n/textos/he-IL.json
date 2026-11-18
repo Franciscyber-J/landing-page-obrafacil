@@ -528,6 +528,9 @@
         "motivoDesligado": "הצ'אט עם מקס לא זמין כרגע. כתבו אל {{email}} ונחזור אליכם.",
         "motivoTeto": "יש עומס גדול על מקס כרגע. נסו שוב בעוד רגע או כתבו אל {{email}}.",
         "motivoOcupada": "מקס עדיין עונה על ההודעה הקודמת. חכו רגע ושלחו שוב.",
-        "motivoWhatsapp": "במדינה שלכם השירות ניתן ב-WhatsApp. ההודעה נשארה בשדה ותעבור איתכם כשתפתחו את WhatsApp."
+        "motivoWhatsapp": "במדינה שלכם השירות ניתן ב-WhatsApp. ההודעה נשארה בשדה ותעבור איתכם כשתפתחו את WhatsApp.",
+        "recaptcha": "מוגן על ידי reCAPTCHA. חלים התנאים של Google:",
+        "recaptchaPrivacidade": "פרטיות",
+        "recaptchaTermos": "תנאים"
     }
 }

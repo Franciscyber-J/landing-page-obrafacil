@@ -534,6 +534,9 @@
         "motivoDesligado": "المحادثة مع ماكس غير متاحة حاليًا. راسلنا على {{email}} وسنرد عليك.",
         "motivoTeto": "ماكس عليه ضغط كبير الآن. حاول بعد قليل أو راسلنا على {{email}}.",
         "motivoOcupada": "ما زال ماكس يرد على رسالتك السابقة. انتظر لحظة ثم أرسلها مرة أخرى.",
-        "motivoWhatsapp": "في بلدك تتم خدمة العملاء عبر WhatsApp. رسالتك ما زالت في الخانة وستنتقل معك عند فتح WhatsApp."
+        "motivoWhatsapp": "في بلدك تتم خدمة العملاء عبر WhatsApp. رسالتك ما زالت في الخانة وستنتقل معك عند فتح WhatsApp.",
+        "recaptcha": "محمي بواسطة reCAPTCHA، وتسري سياسات Google:",
+        "recaptchaPrivacidade": "الخصوصية",
+        "recaptchaTermos": "الشروط"
     }
 }

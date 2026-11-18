@@ -524,6 +524,9 @@
         "motivoDesligado": "지금은 Max와 채팅할 수 없어요. {{email}}로 메일을 보내 주시면 답변드릴게요.",
         "motivoTeto": "지금 Max에게 문의가 많이 몰리고 있어요. 잠시 후 다시 시도하거나 {{email}}로 메일을 보내 주세요.",
         "motivoOcupada": "Max가 아직 이전 메시지에 답하고 있어요. 잠시 기다린 뒤 다시 보내 주세요.",
-        "motivoWhatsapp": "계신 국가에서는 WhatsApp으로 상담해 드려요. 메시지는 입력창에 그대로 있고 WhatsApp을 열면 함께 옮겨져요."
+        "motivoWhatsapp": "계신 국가에서는 WhatsApp으로 상담해 드려요. 메시지는 입력창에 그대로 있고 WhatsApp을 열면 함께 옮겨져요.",
+        "recaptcha": "reCAPTCHA로 보호돼요. Google 정책이 적용돼요:",
+        "recaptchaPrivacidade": "개인정보처리방침",
+        "recaptchaTermos": "서비스 약관"
     }
 }

@@ -114,10 +114,13 @@ Gerados no build, na raiz do site:
 - **Política de conteúdo (CSP) em modo de teste**: só avisa no console do navegador, não bloqueia nada. Depois de
   conferir que o site, o Google Ads e a Central funcionam sem aviso, troque `Content-Security-Policy-Report-Only`
   por `Content-Security-Policy`.
-  A conversa com o Max (`src/atendimento/LEIAME.md`) precisa só de três endereços a mais no `connect-src`:
-  `identitytoolkit.googleapis.com` (criar e conferir o login anônimo), `securetoken.googleapis.com` (renovar o login)
-  e `us-central1-gestao-obras-app-8342c.cloudfunctions.net` (a function `maxChatSite`). Os grupos de países e o número
-  do WhatsApp vêm do `firestore.googleapis.com`, que já era liberado. O verificador confere os três.
+  A conversa com o Max (`src/atendimento/LEIAME.md`) acrescenta só o necessário: no `connect-src`,
+  `identitytoolkit.googleapis.com` e `securetoken.googleapis.com` (login anônimo), a function
+  (`us-central1-gestao-obras-app-8342c.cloudfunctions.net`) e o App Check (`content-firebaseappcheck.googleapis.com`);
+  no `script-src`, `www.gstatic.com/recaptcha/` (o `enterprise.js` vem de `www.google.com`, já liberado); no
+  `frame-src`, `www.google.com/recaptcha/` e `recaptcha.google.com/recaptcha/` (o quadro invisível do reCAPTCHA). Os
+  grupos de países e o número do WhatsApp vêm do `firestore.googleapis.com`, que já era liberado. O verificador
+  confere cada um.
 - Páginas `.html`, `robots.txt`, os sitemaps e `llms.txt` sem cache longo, para cada build aparecer na hora.
 - **Central de Ajuda, endereços que mudaram** (`src/ajuda/antigos.js`): assunto com nome novo responde 301 para o
   endereço novo; artigo que saiu de um idioma (ferramenta só do Brasil) responde 410, com o site no corpo

@@ -105,7 +105,7 @@ export function grupoDaPagina(paisDaBandeira) {
     return grupoDoPais(paisDaBandeira, CONFIG_INICIAL);
 }
 
-// Número do WhatsApp do documento configuracoes/suporte: só algarismos, com o código do país (8 a 15, como no
+// Número do WhatsApp do documento configuracoes/suporte_publico: só algarismos, com o código do país (8 a 15, como no
 // padrão E.164). Inválido: null (o site segue com o número de src/links.js).
 export function whatsappValido(valor) {
     if (typeof valor !== 'string' && typeof valor !== 'number') return null;

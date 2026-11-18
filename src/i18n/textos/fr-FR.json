@@ -528,6 +528,9 @@
         "motivoDesligado": "La discussion avec Max est indisponible pour le moment. Écrivez à {{email}}, nous vous répondrons.",
         "motivoTeto": "Max est très sollicité en ce moment. Réessayez dans un instant ou écrivez à {{email}}.",
         "motivoOcupada": "Max répond encore à votre message précédent. Patientez un instant puis renvoyez-le.",
-        "motivoWhatsapp": "Dans votre pays, l'assistance se fait sur WhatsApp. Votre message reste dans le champ et vous suit à l'ouverture de WhatsApp."
+        "motivoWhatsapp": "Dans votre pays, l'assistance se fait sur WhatsApp. Votre message reste dans le champ et vous suit à l'ouverture de WhatsApp.",
+        "recaptcha": "Protégé par reCAPTCHA. Les règles de Google s'appliquent :",
+        "recaptchaPrivacidade": "Confidentialité",
+        "recaptchaTermos": "Conditions"
     }
 }

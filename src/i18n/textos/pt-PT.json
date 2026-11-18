@@ -320,6 +320,7 @@
         "motivoDesligado": "A conversa com o Max está indisponível de momento. Escreva para {{email}} e nós respondemos.",
         "motivoTeto": "O Max está com muita procura neste momento. Tente novamente daqui a pouco ou escreva para {{email}}.",
         "motivoOcupada": "O Max ainda está a responder à mensagem anterior. Aguarde um instante e envie novamente.",
-        "motivoWhatsapp": "No seu país, o atendimento é feito pelo WhatsApp. A sua mensagem continua no campo e segue junto quando abrir o WhatsApp."
+        "motivoWhatsapp": "No seu país, o atendimento é feito pelo WhatsApp. A sua mensagem continua no campo e segue junto quando abrir o WhatsApp.",
+        "recaptcha": "Protegido pelo reCAPTCHA. Aplicam-se as regras da Google:"
     }
 }

@@ -524,6 +524,9 @@
         "motivoDesligado": "Chat dengan Max sedang tidak tersedia. Kirim email ke {{email}}, nanti kami balas.",
         "motivoTeto": "Max sedang sangat sibuk. Coba lagi sebentar lagi atau kirim email ke {{email}}.",
         "motivoOcupada": "Max masih menjawab pesanmu sebelumnya. Tunggu sebentar, lalu kirim lagi.",
-        "motivoWhatsapp": "Di negaramu, layanan bantuan lewat WhatsApp. Pesanmu masih ada di kolom dan ikut terbawa saat kamu membuka WhatsApp."
+        "motivoWhatsapp": "Di negaramu, layanan bantuan lewat WhatsApp. Pesanmu masih ada di kolom dan ikut terbawa saat kamu membuka WhatsApp.",
+        "recaptcha": "Dilindungi reCAPTCHA. Berlaku ketentuan Google:",
+        "recaptchaPrivacidade": "Privasi",
+        "recaptchaTermos": "Persyaratan"
     }
 }

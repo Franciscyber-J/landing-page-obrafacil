@@ -524,6 +524,9 @@
         "motivoDesligado": "現在、Maxとのチャットはご利用いただけません。{{email}} までメールでお問い合わせください。折り返しご連絡します。",
         "motivoTeto": "ただいまMaxへのお問い合わせが集中しています。しばらくしてからお試しいただくか、{{email}} までメールでお問い合わせください。",
         "motivoOcupada": "Maxは前のメッセージに回答中です。少しお待ちいただいてから、もう一度送信してください。",
-        "motivoWhatsapp": "お住まいの国ではWhatsAppでサポートしています。メッセージは入力欄に残っており、WhatsAppを開くと引き継がれます。"
+        "motivoWhatsapp": "お住まいの国ではWhatsAppでサポートしています。メッセージは入力欄に残っており、WhatsAppを開くと引き継がれます。",
+        "recaptcha": "reCAPTCHAで保護されています。Googleの規約が適用されます：",
+        "recaptchaPrivacidade": "プライバシー",
+        "recaptchaTermos": "利用規約"
     }
 }

@@ -8,7 +8,7 @@ export const login = (codigo) => comIdioma('/login', codigo);
 export const assinarMensal = (codigo) => comIdioma('/cadastro?checkout=true', codigo);
 export const assinarAnual = (codigo) => comIdioma('/cadastro?checkout=anual', codigo);
 export const WINDOWS = 'https://appobrafacil.expertbr.com/download/Instalador_ObraFacil_Windows.exe';
-// Número do WhatsApp do suporte. O site lê também o documento configuracoes/suporte (src/atendimento/estado.js): se o
+// Número do WhatsApp do suporte. O site lê também o documento configuracoes/suporte_publico (src/atendimento/estado.js): se o
 // Francis trocar o número no painel, o site segue o novo sem versão nova; este é o que vale até a leitura.
 export const WHATSAPP = '5562992666759';
 export const ID_GOOGLE_PLAY = 'com.expertbr.obrafacil';
@@ -26,7 +26,7 @@ export function appStore() {
 }
 
 // Conversa no WhatsApp do ObraFácil já com a primeira mensagem escrita.
-// numero: o do documento configuracoes/suporte, quando já lido (useAtendimento); sem ele, o daqui.
+// numero: o do documento configuracoes/suporte_publico, quando já lido (useAtendimento); sem ele, o daqui.
 export function linkWhatsApp(mensagem, numero = WHATSAPP) {
     return `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
 }
