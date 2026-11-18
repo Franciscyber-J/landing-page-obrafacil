@@ -234,10 +234,6 @@ ol.lista {
   }
 }
 
-.alertaLugar:empty {
-  display: none;
-}
-
 .alerta {
   display: flex;
   flex-direction: column;

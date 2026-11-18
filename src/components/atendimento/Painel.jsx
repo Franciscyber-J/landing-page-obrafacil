@@ -84,7 +84,8 @@ function TextoDoMax({ texto }) {
 
 function Mensagem({ autor, nome, children }) {
     return (
-        <div className={styles.mensagem} data-autor={autor}>
+        // dir="auto": cada mensagem segue a direção do próprio texto (árabe na página em inglês, ou o contrário).
+        <div className={styles.mensagem} data-autor={autor} dir="auto">
             <span className="somente-leitor">{nome}: </span>
             {children}
         </div>
@@ -253,6 +254,7 @@ export default function Painel({ codigo }) {
                     onKeyDown={aoTeclar}
                     placeholder={t('atendimento.campoDica')}
                     aria-describedby={`${ids.dica} ${ids.contador}`}
+                    dir="auto"
                     autoComplete="off"
                     enterKeyHint="send"
                 />

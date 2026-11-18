@@ -12,14 +12,16 @@ export const TEXTO_MAXIMO = 1000;
 export const REPETIDA_MS = 10 * 60 * 1000;
 export const MOTIVOS = ['limite', 'desligado', 'teto', 'ocupada', 'pais_whatsapp'];
 
-// Caracteres de controle (menos quebra de linha e tabulação) saem, como no servidor.
+// A mesma limpeza do servidor (textoDoChat em functions/src/ia/maxAtendimentoRegras.ts): saem os caracteres de
+// controle (menos a quebra de linha e o tab), os invisíveis de direção do texto e os de largura zero; o tab vira
+// espaço e mais de duas quebras de linha seguidas viram duas. O tamanho conta depois da limpeza, como lá.
 // eslint-disable-next-line no-control-regex
-const CONTROLE = /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g;
+const CONTROLE = /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F\u200B-\u200F\u202A-\u202E\u2060-\u2064\u2066-\u2069\uFEFF]/g;
 
 // O texto que pode ir para o servidor, ou null (vazio ou longo demais).
 export function textoParaEnviar(bruto) {
     if (typeof bruto !== 'string') return null;
-    const texto = bruto.replace(CONTROLE, '').trim();
+    const texto = bruto.replace(/\r\n?/g, '\n').replace(CONTROLE, '').replace(/\t/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
     if (texto.length < 1 || texto.length > TEXTO_MAXIMO) return null;
     return texto;
 }
@@ -32,7 +34,7 @@ export function resumoDaMensagem(texto) {
 // Erro do servidor → o aviso que a pessoa vê. Os códigos são os do protocolo das functions chamáveis (onCall).
 export function tipoDoErro(erro) {
     const codigo = String(erro?.code ?? '').replace(/^functions\//, '');
-    if (codigo === 'unavailable' || codigo === 'deadline-exceeded' || erro?.semInternet) return 'rede';
+    if (codigo === 'unavailable' || erro?.semInternet) return 'rede';
     if (codigo === 'resource-exhausted') return 'limite';
     return 'geral';
 }

@@ -180,6 +180,10 @@ test('texto: 1 a 1000 caracteres depois de tirar os espaços', () => {
     assert.equal(textoParaEnviar('a'.repeat(TEXTO_MAXIMO)), 'a'.repeat(TEXTO_MAXIMO));
     assert.equal(textoParaEnviar('a'.repeat(TEXTO_MAXIMO + 1)), null);
     assert.equal(textoParaEnviar(undefined), null);
+    // Como no servidor: invisíveis de direção e de largura zero saem; tab vira espaço; 3+ quebras viram 2.
+    assert.equal(textoParaEnviar('\u202Eabc\u200B\uFEFF'), 'abc');
+    assert.equal(textoParaEnviar('\u2066\u2069\u200F'), null);
+    assert.equal(textoParaEnviar('a\tb\r\n\n\n\nc'), 'a b\n\nc');
 });
 
 function conversa(opcoes = {}) {
