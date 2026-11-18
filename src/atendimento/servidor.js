@@ -26,6 +26,18 @@ import { REGIAO, SITE_NO_FIREBASE, conversaLigada } from './configuracao.js';
 // function (timeoutSeconds: 180 em maxChatSite), mais a folga da rede: desistir antes deixaria a resposta "ocupada".
 const TEMPO_MAXIMO_MS = 185_000;
 
+// Prazo do App Check e do login anônimo juntos. O reCAPTCHA que não carrega (bloqueador, rede) deixaria o token
+// esperando para sempre; passado o prazo, a mensagem volta para o campo com o aviso de erro.
+const PRAZO_DA_PREPARACAO_MS = 20_000;
+
+function comPrazo(promessa, ms) {
+    let relogio;
+    const prazo = new Promise((_, falhar) => {
+        relogio = setTimeout(() => falhar(Object.assign(new Error('prazo esgotado'), { code: 'app-check/prazo' })), ms);
+    });
+    return Promise.race([promessa, prazo]).finally(() => clearTimeout(relogio));
+}
+
 let pronto = null;
 
 function iniciar() {
@@ -56,7 +68,11 @@ const LOGIN_INVALIDO = new Set(['auth/user-token-expired', 'auth/user-not-found'
 
 // App Check, depois o login anônimo pronto (e válido). O servidor apaga o login de quem ficou 30 dias sem usar a
 // conversa: o login guardado no navegador deixa de valer e é trocado por um novo, sem a pessoa perceber.
-async function prontoParaChamar({ novo = false } = {}) {
+function prontoParaChamar(opcoes) {
+    return comPrazo(preparar(opcoes), PRAZO_DA_PREPARACAO_MS);
+}
+
+async function preparar({ novo = false } = {}) {
     const { appCheck, auth, chamar } = await iniciar();
     // getToken lança o erro quando não consegue o token (reCAPTCHA bloqueado, chave errada, robô): nada segue.
     await getToken(appCheck, false);

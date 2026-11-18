@@ -292,7 +292,8 @@ test('servidor: App Check antes do login e da function; renovação automática 
     const fonte = readFileSync(new URL('./servidor.js', import.meta.url), 'utf8');
     assert.match(fonte, /isTokenAutoRefreshEnabled: false/);
     assert.match(fonte, /ReCaptchaEnterpriseProvider/);
-    const corpo = fonte.slice(fonte.indexOf('async function prontoParaChamar'));
+    const corpo = fonte.slice(fonte.indexOf('async function preparar('));
     assert.ok(corpo.indexOf('getToken(appCheck') < corpo.indexOf('signInAnonymously('), 'token do App Check antes do login');
-    assert.doesNotMatch(fonte, /preparar/, 'nada acontece ao escrever');
+    assert.doesNotMatch(fonte, /preparar\(\) \{|s\.preparar/, 'nada acontece ao escrever');
+    assert.match(fonte, /comPrazo\(preparar\(opcoes\), PRAZO_DA_PREPARACAO_MS\)/, 'reCAPTCHA que não carrega não prende a conversa');
 });
