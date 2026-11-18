@@ -37,5 +37,9 @@
         "metaDescricao": "Contact ObraFácil support on WhatsApp, by email or with a ticket in the app, and see step-by-step guides in the Help Centre.",
         "centralTitulo": "Help Centre",
         "centralBotao": "Open the Help Centre"
+    },
+    "atendimento": {
+        "ajudaTextoChat": "Chat with Max, the ObraFácil assistant, right here on the site, or raise a ticket in the app.",
+        "ajudaTextoDois": "Chat with Max right here on the site, message support on WhatsApp, or raise a ticket in the app."
     }
 }

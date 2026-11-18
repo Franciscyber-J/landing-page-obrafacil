@@ -38,7 +38,7 @@
   }
 }
 
-/* Enquanto o aviso de cookies está aberto, o botão sai do caminho. */
+/* Botão flutuante do atendimento (WhatsApp ou conversa com o Max, Atendimento.jsx). Enquanto o aviso de cookies está aberto, ele sai do caminho. */
 :global(:root[data-cookies='aberto']) .flutuante {
   display: none;
 }
@@ -57,4 +57,9 @@
     clip: rect(0 0 0 0);
     white-space: nowrap;
   }
+}
+
+/* Com o painel da conversa aberto, o botão sai (o painel ocupa o canto). */
+.flutuante[hidden] {
+  display: none;
 }

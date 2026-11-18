@@ -49,3 +49,14 @@ export function anoNoIdioma(codigo, data) {
     const partes = new Intl.DateTimeFormat(localeDoIntl(codigo), { year: 'numeric' }).formatToParts(data);
     return partes.find((p) => p.type === 'year')?.value ?? String(new Date(data).getFullYear());
 }
+
+// Fuso horário do navegador ("America/Sao_Paulo"), ou null. Não formata nada: fica aqui porque é o ponto único do
+// Intl.DateTimeFormat no site. Só no navegador, depois de a página abrir (src/atendimento/estado.js: o país do
+// visitante para o grupo de atendimento, sem localizar pela internet).
+export function fusoDoNavegador() {
+    try {
+        return new Intl.DateTimeFormat().resolvedOptions().timeZone || null;
+    } catch {
+        return null;
+    }
+}

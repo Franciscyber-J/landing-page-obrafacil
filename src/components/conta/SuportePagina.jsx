@@ -1,12 +1,13 @@
-// Contato do suporte (endereço antigo /suporte/, que era do WordPress): WhatsApp, e-mail, chamado pelo app e
-// Central de Ajuda. Esta página pode aparecer no Google.
+// Contato do suporte (endereço antigo /suporte/, que era do WordPress): WhatsApp e/ou conversa com o Max (pelo país do
+// visitante, useContato), e-mail, chamado pelo app e Central de Ajuda. Esta página pode aparecer no Google.
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { BookOpen, LifeBuoy, Mail, MessageCircle, Store, Ticket } from 'lucide-react';
+import { BookOpen, LifeBuoy, Mail, MessageCircle, MessagesSquare, Store, Ticket } from 'lucide-react';
 import { caminhoAjuda, caminhoPerfil, caminhoSuporte } from '../../i18n/idiomas.js';
 import { caminhoDoArtigoDoSite } from '../../ajuda/artigosDoSite.js';
 import { useRotaEquivalente } from '../../i18n/RotaDoIdioma.jsx';
-import { EMAIL_SUPORTE, linkWhatsApp } from '../../links.js';
+import { EMAIL_SUPORTE } from '../../links.js';
+import { useContato } from '../atendimento/useContato.js';
 import { comNegrito } from '../../texto.jsx';
 import { Cabeca, Cartao, Pagina, Paragrafo } from './partes.jsx';
 import useCabecaDaPagina from './useCabecaDaPagina.js';
@@ -25,6 +26,7 @@ function Canal({ icone: Icone, titulo, texto, children }) {
 
 export default function SuportePagina({ codigo }) {
     const { t } = useTranslation();
+    const contato = useContato('suporte');
 
     useRotaEquivalente((outro) => caminhoSuporte(outro), []);
     useCabecaDaPagina({ titulo: t('suporte.metaTitulo'), descricao: t('suporte.metaDescricao') });
@@ -36,11 +38,20 @@ export default function SuportePagina({ codigo }) {
             <section className={styles.canais} aria-labelledby="suporte-canais">
                 <h2 id="suporte-canais" className={styles.secaoTitulo}>{t('suporte.canaisTitulo')}</h2>
                 <ul className={styles.gradeCanais}>
-                    <Canal icone={MessageCircle} titulo={t('suporte.whatsappTitulo')} texto={t('suporte.whatsappTexto')}>
-                        <a href={linkWhatsApp(t('suporte.whatsappMensagem'))} target="_blank" rel="noopener noreferrer" className={`acao ${styles.botao}`}>
-                            {t('suporte.whatsappBotao')}
-                        </a>
-                    </Canal>
+                    {contato.conversa && (
+                        <Canal icone={MessagesSquare} titulo={t('atendimento.suporteTitulo')} texto={t('atendimento.suporteTexto')}>
+                            <button type="button" onClick={contato.abrir} aria-haspopup="dialog" className={`acao ${styles.botao}`}>
+                                {t('atendimento.conversar')}
+                            </button>
+                        </Canal>
+                    )}
+                    {contato.whatsapp && (
+                        <Canal icone={MessageCircle} titulo={t('suporte.whatsappTitulo')} texto={t('suporte.whatsappTexto')}>
+                            <a href={contato.linkWhatsApp(t('suporte.whatsappMensagem'))} target="_blank" rel="noopener noreferrer" className={`acao${contato.conversa ? '-contorno' : ''} ${styles.botao}`}>
+                                {t('suporte.whatsappBotao')}
+                            </a>
+                        </Canal>
+                    )}
                     <Canal icone={Mail} titulo={t('suporte.emailTitulo')} texto={t('suporte.emailTexto')}>
                         <p className={styles.endereco}>{EMAIL_SUPORTE}</p>
                         <a href={`mailto:${EMAIL_SUPORTE}`} className={`acao-contorno ${styles.botao}`}>{t('suporte.emailBotao')}</a>

@@ -298,5 +298,28 @@
         "centralBotao": "Abrir o Centro de Ajuda",
         "lojasTexto": "As cobranças e os reembolsos dessas compras são feitos pela própria loja, segundo as regras dela. Para cancelar, use **Gerir** no cartão **O seu plano** do Perfil.",
         "perfilLink": "Onde ver a subscrição"
+    },
+    "atendimento": {
+        "abrir": "Fale connosco",
+        "conversar": "Falar com o Max",
+        "chamadaDuvida": "Ficou com dúvidas? Fale com o Max, o assistente do ObraFácil.",
+        "ajudaTextoChat": "Fale com o Max, o assistente do ObraFácil, aqui no site, ou abra um pedido diretamente na aplicação.",
+        "ajudaTextoDois": "Fale com o Max aqui no site, contacte o apoio pelo WhatsApp ou abra um pedido diretamente na aplicação.",
+        "suporteTexto": "O assistente de IA do ObraFácil responde de imediato, a qualquer hora, aqui no site.",
+        "painelSubtitulo": "Assistente de IA · responde de imediato",
+        "boasVindas": "Olá! Sou o Max, o assistente do ObraFácil. Pergunte o que quiser sobre a aplicação: funcionalidades, planos, preços ou como começar.",
+        "aviso": "Atendimento feito por inteligência artificial. A conversa fica guardada durante 90 dias. Não envie palavras-passe nem dados do cartão ou de pagamento.",
+        "campoRotulo": "A sua mensagem para o Max",
+        "campoDica": "Escreva a sua dúvida",
+        "dicaTeclado": "Enter envia. Shift + Enter muda de linha.",
+        "digitando": "O Max está a escrever…",
+        "erroGeral": "Não foi possível enviar agora. A sua mensagem continua no campo: basta tentar novamente.",
+        "erroRede": "Sem ligação à internet. A sua mensagem continua no campo: envie quando a ligação voltar.",
+        "erroRepetida": "Acabou de enviar essa mensagem. Se quiser, escreva-a por outras palavras.",
+        "motivoLimite": "Atingiu o limite de mensagens por agora. Tente novamente mais tarde ou escreva para {{email}}.",
+        "motivoDesligado": "A conversa com o Max está indisponível de momento. Escreva para {{email}} e nós respondemos.",
+        "motivoTeto": "O Max está com muita procura neste momento. Tente novamente daqui a pouco ou escreva para {{email}}.",
+        "motivoOcupada": "O Max ainda está a responder à mensagem anterior. Aguarde um instante e envie novamente.",
+        "motivoWhatsapp": "No seu país, o atendimento é feito pelo WhatsApp. A sua mensagem continua no campo e segue junto quando abrir o WhatsApp."
     }
 }

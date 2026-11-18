@@ -25,7 +25,12 @@
   color: var(--tinta-2);
 }
 
-.whatsapp {
+/* WhatsApp ou conversa com o Max (link ou botão, pelo país: useContato). */
+.contato {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
   color: var(--azul-vivo);
   display: inline-flex;
   align-items: center;

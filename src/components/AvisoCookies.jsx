@@ -23,7 +23,7 @@ export default function AvisoCookies() {
         return () => window.removeEventListener(EVENTO_ABRIR, abrir);
     }, []);
 
-    // Enquanto o aviso está aberto, o botão do WhatsApp sai do caminho (ver FloatingWhatsApp.module.css)
+    // Enquanto o aviso está aberto, o botão flutuante do atendimento sai do caminho (ver components/atendimento/Flutuante.module.css)
     // e a janela de saída espera a escolha.
     useEffect(() => {
         if (aberto) document.documentElement.dataset.cookies = 'aberto';
