@@ -3,6 +3,7 @@
 // fica no site. Tudo sai dos mesmos textos e preços que a página mostra (nada inventado: sem nota de avaliação).
 
 import { idiomaDasTelas } from '../telas.js';
+import { PERGUNTAS, RECURSOS } from '../inicio.js';
 import { IDIOMAS, caminhoAjuda, caminhoInicio, caminhoSuporte } from '../i18n/idiomas.js';
 import { precosDoIdioma } from '../i18n/pricing.js';
 import { EMAIL_SUPORTE, WINDOWS, appStore, googlePlay } from '../links.js';
@@ -11,8 +12,6 @@ import { NOME, SITE, absoluto, caminhoDaPagina } from './paginas.js';
 const ORGANIZACAO = `${SITE}/#organizacao`;
 const SITE_ID = `${SITE}/#site`;
 export const IMAGEM = { caminho: '/logo.png', largura: 1298, altura: 708 };
-const RECURSOS = ['cronograma', 'diario', 'financeiro', 'equipe', 'compras', 'marca', 'offline', 'aparelhos'];
-const PERGUNTAS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function organizacao(codigo) {
     return {
@@ -82,7 +81,7 @@ function aplicativo(t, codigo) {
         image: absoluto(IMAGEM.caminho),
         screenshot: ['etapas', 'rdo', 'financeiro', 'portal'].map((tela) => absoluto(`/telas/${idiomaDasTelas(codigo)}/${tela}.webp`)),
         downloadUrl: [googlePlay(codigo), appStore(), WINDOWS],
-        featureList: RECURSOS.map((id) => t(`recursos.itens.${id}.titulo`)),
+        featureList: RECURSOS.map(({ id }) => t(`recursos.itens.${id}.titulo`)),
         offers: [
             oferta(t('pricing.gratis.nome'), '0', precos.moeda, urlPrecos, null),
             oferta(t('pricing.pro.nomeMensal'), precos.mensal, precos.moeda, urlPrecos, 'P1M'),

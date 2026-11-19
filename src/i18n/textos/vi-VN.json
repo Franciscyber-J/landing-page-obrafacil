@@ -16,7 +16,7 @@
             "titulo": "{{titulo}} — ObraFácil"
         },
         "app": {
-            "descricao": "Ứng dụng quản lý công trình dành cho nhà thầu, kỹ sư xây dựng, kiến trúc sư và chỉ huy trưởng: tiến độ theo hạng mục, nhật ký công trình kèm ảnh và PDF, tài chính công trình, bảng lương đội ngũ, vật tư và kho, cùng cổng theo dõi cho khách hàng. Hoạt động trên Android, iPhone, Windows và web, ngay cả khi ngoại tuyến tại công trình.",
+            "descricao": "Ứng dụng quản lý công trình dành cho nhà thầu, kỹ sư xây dựng, kiến trúc sư và chỉ huy trưởng: tiến độ theo hạng mục, nhật ký công trình kèm ảnh và PDF, phiếu kiểm tra chất lượng có chữ ký, tài chính công trình, bảng lương đội ngũ, vật tư và kho, cùng cổng theo dõi cho khách hàng. Hoạt động trên Android, iPhone, Windows và web, ngay cả khi ngoại tuyến tại công trình.",
             "categoria": "Quản lý công trình"
         },
         "imagemAlt": "Logo ObraFácil, ứng dụng quản lý công trình",
@@ -102,6 +102,7 @@
                 "1 công trình đang hoạt động tại một thời điểm",
                 "7 báo cáo PDF mỗi tháng có hình mờ",
                 "250 MB dung lượng cho ảnh và tài liệu",
+                "Phiếu kiểm tra với 27 mẫu có sẵn và 1 mẫu riêng",
                 "Khách hàng theo dõi công trình qua cổng thông tin"
             ]
         },
@@ -115,6 +116,7 @@
                 "10 GB dung lượng cho ảnh và tài liệu",
                 "File PDF kèm logo và chân trang của công ty bạn",
                 "Tải nhật ký định dạng ZIP và tệp công trình ngoại tuyến",
+                "Không giới hạn mẫu phiếu kiểm tra, gộp nhiều phiếu vào một PDF",
                 "Có sẵn tính năng Truy cập khách hàng cho từng công trình"
             ],
             "itensAnual": [
@@ -185,6 +187,8 @@
         "a9": "Có, bất cứ lúc nào, tại chính nơi bạn đã đăng ký. Kỳ gia hạn tiếp theo sẽ không bị tính phí và quyền truy cập vẫn duy trì đến hết thời hạn đã thanh toán.",
         "q10": "Điều gì xảy ra nếu không thanh toán gia hạn?",
         "a10": "Tài khoản sẽ quay về gói miễn phí. Không có gì bị xóa; nếu vượt quá giới hạn của gói miễn phí, việc tải lên tệp mới sẽ tạm dừng cho đến khi bạn giải phóng dung lượng hoặc đăng ký lại.",
+        "q11": "Ứng dụng có phiếu kiểm tra chất lượng công việc không?",
+        "a11": "Có. Với Phiếu kiểm tra chất lượng, bạn kiểm tra từng công việc theo từng mục, kèm ảnh, ghi nhận điểm không đạt cùng biện pháp khắc phục và kiểm tra lại, rồi nghiệm thu kèm chữ ký. Trên điện thoại, mất sóng vẫn dùng được: dữ liệu sẽ được gửi khi có kết nối lại. Có sẵn 27 mẫu, và bạn có thể tạo mẫu riêng của công ty: 1 mẫu ở gói miễn phí và không giới hạn ở gói PRO. Các mẫu có sẵn là ví dụ để bạn xem lại và điều chỉnh: chúng không thay thế kỹ sư chịu trách nhiệm kỹ thuật cho công trình và không chứng nhận việc tuân thủ bất kỳ tiêu chuẩn hay chương trình chất lượng nào.",
         "mais": "Bạn chưa tìm thấy nội dung mình cần?",
         "verAjuda": "Xem Trung tâm trợ giúp"
     },
@@ -327,6 +331,11 @@
             "diario": {
                 "titulo": "Nhật ký công trình",
                 "texto": "Thời tiết, công việc, sự cố, nhân lực có mặt, hình ảnh và chữ ký. Xuất ra file PDF hoàn chỉnh sẵn sàng gửi đi."
+            },
+            "checklists": {
+                "titulo": "Phiếu kiểm tra chất lượng",
+                "texto": "27 mẫu có sẵn hoặc mẫu riêng của công ty bạn. Mỗi mục đạt, không đạt hoặc không áp dụng, kèm ảnh, và kiểm tra lại điểm không đạt. Nghiệm thu có chữ ký, xuất PDF và khách hàng xem trên cổng thông tin.",
+                "tela": "Phiếu kiểm tra đang điền, với tiến độ và các mục chưa trả lời"
             },
             "financeiro": {
                 "titulo": "Tài chính công trình",

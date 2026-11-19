@@ -10,6 +10,7 @@ import { SITE, absoluto, alternativosDaPagina, arquivoDaPagina, caminhoDaPagina,
 import { cabecaDaPagina, etiquetasDaCabeca, jsonNoHtml, montarPagina, separarPreloads } from './cabeca.js';
 import { SITEMAP_DE_IDIOMA, arquivoDoSitemap, gerarIndiceDeSitemaps, gerarRobots, gerarSitemap, ROBOS } from './sitemap.js';
 import { gerarLlms } from './llms.js';
+import { PERGUNTAS } from '../inicio.js';
 
 const resources = {};
 for (const { codigo } of IDIOMAS) {
@@ -105,7 +106,7 @@ test('dados estruturados: aplicativo com os preços reais do país, perguntas fr
         assert.deepEqual(app.offers.map((o) => [o.price, o.priceCurrency]), [['0', precos.moeda], [precos.mensal, precos.moeda], [precos.anual, precos.moeda]]);
         assert.match(app.offers[1].price, /^\d+(\.\d{2})?$/);
         const faq = grafo.find((n) => n['@type'] === 'FAQPage');
-        assert.equal(faq.mainEntity.length, 10);
+        assert.equal(faq.mainEntity.length, PERGUNTAS.length);
         assert.ok(faq.mainEntity.every((q) => q.name && q.acceptedAnswer.text));
         assert.ok(grafo.some((n) => n['@type'] === 'Organization'));
         assert.ok(grafo.some((n) => n['@type'] === 'WebSite'));

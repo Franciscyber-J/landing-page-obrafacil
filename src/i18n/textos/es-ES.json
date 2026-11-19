@@ -16,7 +16,7 @@
             "titulo": "{{titulo}} · ObraFácil"
         },
         "app": {
-            "descricao": "Aplicación de gestión de obras para constructoras, ingenieros, arquitectos y contratistas: cronograma por etapas, parte diario de obra con fotos y PDF, finanzas de la obra, equipo y nóminas, compras y almacén, y un portal para que el cliente siga la obra. Funciona en Android, iPhone, Windows y navegador, incluso sin conexión en la obra.",
+            "descricao": "Aplicación de gestión de obras para constructoras, ingenieros, arquitectos y contratistas: cronograma por etapas, parte diario de obra con fotos y PDF, checklists de calidad con firma, finanzas de la obra, equipo y nóminas, compras y almacén, y un portal para que el cliente siga la obra. Funciona en Android, iPhone, Windows y navegador, incluso sin conexión en la obra.",
             "categoria": "Gestión de obras"
         },
         "imagemAlt": "Logotipo de ObraFácil, aplicación de gestión de obras",
@@ -102,6 +102,7 @@
                 "1 obra propia a la vez",
                 "7 informes PDF al mes, con marca de agua",
                 "250 MB para fotos y archivos",
+                "Checklists con las 27 plantillas listas y 1 plantilla propia",
                 "Tu cliente siguiendo la obra en el portal"
             ]
         },
@@ -115,6 +116,7 @@
                 "10 GB para fotos y archivos",
                 "PDF con el logotipo y el pie de página de tu empresa",
                 "Partes diarios en ZIP y archivos de la obra sin conexión",
+                "Plantillas de checklist ilimitadas y varios checklists en un solo PDF",
                 "Acceso Cliente disponible para cada obra"
             ],
             "itensAnual": [
@@ -185,6 +187,8 @@
         "a9": "Sí, en cualquier momento, en el mismo lugar donde te suscribiste. La siguiente renovación no se cobra y el acceso sigue hasta el final del periodo pagado.",
         "q10": "¿Y si la renovación no se paga?",
         "a10": "La cuenta vuelve al plan gratuito. No se elimina nada; si superas el límite del plan gratuito, solo se bloquea la subida de archivos nuevos hasta que liberes espacio o te vuelvas a suscribir.",
+        "q11": "¿La app tiene checklists de calidad para revisar los trabajos?",
+        "a11": "Sí. En los Checklists de calidad revisas cada trabajo punto por punto, con foto, registras la no conformidad con acción correctiva y reinspección, y apruebas el trabajo con firma. En el móvil funciona incluso sin cobertura: lo que marcas se envía cuando vuelve la conexión. Trae 27 plantillas listas y puedes crear las de tu empresa: 1 en el plan gratuito y todas las que quieras en el PRO. Las plantillas listas son ejemplos para revisar y adaptar: no sustituyen al técnico competente responsable de la obra ni certifican el cumplimiento de ninguna norma ni programa de calidad.",
         "mais": "¿No encuentras tu respuesta?",
         "verAjuda": "Ver el Centro de Ayuda"
     },
@@ -331,6 +335,11 @@
             "diario": {
                 "titulo": "Parte diario de obra",
                 "texto": "Clima, actividades, incidencias, equipo presente, fotos y firma. Sale en PDF, listo para enviar."
+            },
+            "checklists": {
+                "titulo": "Checklists de calidad",
+                "texto": "27 plantillas listas o las de tu empresa. Conforme, no conforme o no aplica en cada punto, con foto, y reinspección de lo que no pasa. Aprobación con firma, PDF y el cliente viéndolo en el portal.",
+                "tela": "Checklist en curso, con el avance y los puntos por responder"
             },
             "financeiro": {
                 "titulo": "Finanzas de la obra",

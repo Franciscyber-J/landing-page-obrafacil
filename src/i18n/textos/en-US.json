@@ -16,7 +16,7 @@
             "titulo": "{{titulo}} · ObraFácil"
         },
         "app": {
-            "descricao": "Construction management app for builders, contractors, civil engineers and architects: stage-by-stage project schedule, daily reports (daily logs) with photos and PDF, project finances, crew and payroll, purchases and inventory, and a portal where the client follows the project. Works on Android, iPhone, Windows and the web, even offline on the job site.",
+            "descricao": "Construction management app for builders, contractors, civil engineers and architects: stage-by-stage project schedule, daily reports (daily logs) with photos and PDF, quality inspection checklists with signatures, project finances, crew and payroll, purchases and inventory, and a portal where the client follows the project. Works on Android, iPhone, Windows and the web, even offline on the job site.",
             "categoria": "Construction management"
         },
         "imagemAlt": "ObraFácil logo, construction management app",
@@ -102,6 +102,7 @@
                 "1 project of your own at a time",
                 "7 PDF reports a month, watermarked",
                 "250 MB for photos and files",
+                "Quality checklists with the 27 ready-made templates and 1 of your own",
                 "Your client following along in the portal"
             ]
         },
@@ -115,6 +116,7 @@
                 "10 GB for photos and files",
                 "PDFs with your company logo and footer",
                 "Daily reports as ZIP and project files offline",
+                "Unlimited checklist templates and several checklists in one PDF",
                 "Client Access available for each project"
             ],
             "itensAnual": [
@@ -185,6 +187,8 @@
         "a9": "Yes, at any time, in the same place you subscribed. The next renewal is not charged and access continues until the end of the paid period.",
         "q10": "What if a renewal is not paid?",
         "a10": "The account goes back to the free plan. Nothing is deleted; if you are over the free plan limit, only uploading new files is blocked until you free up space or subscribe again.",
+        "q11": "Does the app have quality inspection checklists?",
+        "a11": "Yes. With Quality checklists you inspect each piece of work item by item, with photos, log any nonconformance with a corrective action and reinspection, and approve the work with a signature. On your phone it works even with no signal: what you record syncs when you're back online. It comes with 27 ready-made templates, and you can create your company's own: 1 on the free plan and as many as you like on PRO. The ready-made templates are examples to review and adapt: they don't replace the qualified professional responsible for the works, and they don't certify compliance with any code or quality program.",
         "mais": "Didn’t find your answer?",
         "verAjuda": "Visit the Help Center"
     },
@@ -329,6 +333,11 @@
             "diario": {
                 "titulo": "Daily report",
                 "texto": "Weather, activities, incidents, crew on site, photos and signature. Exported as a PDF, ready to send."
+            },
+            "checklists": {
+                "titulo": "Quality checklists",
+                "texto": "27 ready-made templates or your company's own. Pass, Fail or N/A on each item, with photos, and reinspection of anything that fails. Approval with a signature, a PDF and the client seeing it in the portal.",
+                "tela": "Checklist being filled in, with the progress and the items still to answer"
             },
             "financeiro": {
                 "titulo": "Project finances",

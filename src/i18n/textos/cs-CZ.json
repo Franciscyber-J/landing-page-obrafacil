@@ -16,7 +16,7 @@
             "titulo": "{{titulo}} — ObraFácil"
         },
         "app": {
-            "descricao": "Aplikace pro řízení staveb pro stavební firmy, inženýry, architekty a stavbyvedoucí: harmonogram po etapách, denní záznamy s fotkami a PDF, finance stavby, mzdová agenda týmu, zásobování a sklad, a klientský portál pro investora. Funguje na Androidu, iPhonu, Windows i webu, včetně offline režimu na stavbě.",
+            "descricao": "Aplikace pro řízení staveb pro stavební firmy, inženýry, architekty a stavbyvedoucí: harmonogram po etapách, denní záznamy s fotkami a PDF, kontrolní listy kvality s podpisem, finance stavby, mzdová agenda týmu, zásobování a sklad, a klientský portál pro investora. Funguje na Androidu, iPhonu, Windows i webu, včetně offline režimu na stavbě.",
             "categoria": "Řízení staveb"
         },
         "imagemAlt": "Logo ObraFácil, aplikace pro řízení staveb",
@@ -102,6 +102,7 @@
                 "1 vaše aktivní stavba současně",
                 "7 PDF reportů měsíčně s vodoznakem",
                 "250 MB pro fotografie a soubory",
+                "Kontrolní listy s 27 hotovými šablonami a 1 vlastní",
                 "Sledování stavby investorem v portálu"
             ]
         },
@@ -115,6 +116,7 @@
                 "10 GB pro fotografie a soubory",
                 "PDF s logem a zápatím vaší společnosti",
                 "Denní záznamy v ZIP a offline soubory stavby",
+                "Neomezené vlastní šablony kontrolních listů a více listů v jednom PDF",
                 "Klientský přístup dostupný pro každou stavbu"
             ],
             "itensAnual": [
@@ -185,6 +187,8 @@
         "a9": "Ano, kdykoliv a na stejném místě, kde jste si jej předplatili. Další obnovení již nebude účtováno a přístup zůstane aktivní až do konce předplaceného období.",
         "q10": "Co se stane, když se platba za obnovení nezdaří?",
         "a10": "Účet se vrátí na bezplatný plán. Žádná data se nemažou; pokud překročíte limit bezplatného plánu, zablokuje se pouze nahrávání nových souborů, dokud neuvolníte místo nebo si plán znovu nepředplatíte.",
+        "q11": "Umí aplikace kontrolní listy pro kontrolu kvality prací?",
+        "a11": "Ano. V Kontrolních listech kvality kontrolujete každou práci bod po bodu s fotkou, zapisujete neshody s nápravným opatřením a opakovanou kontrolou a práci převezmete s podpisem. V mobilu funguje i bez signálu: zápisy se odešlou, jakmile se připojení obnoví. K dispozici je 27 hotových šablon a můžete si vytvořit šablony své firmy: 1 v bezplatném plánu a kolik chcete v PRO. Hotové šablony jsou příklady ke kontrole a úpravě: nenahrazují autorizovanou osobu odpovědnou za vedení stavby a nepotvrzují splnění žádné normy ani programu kvality.",
         "mais": "Nenašli jste odpověď na to, co hledáte?",
         "verAjuda": "Přejít do Centra nápovědy"
     },
@@ -333,6 +337,11 @@
             "diario": {
                 "titulo": "Stavební deník",
                 "texto": "Počasí, prováděné práce, události, přítomný tým, fotografie a podpisy. Snadný export do PDF připraveného k odeslání."
+            },
+            "checklists": {
+                "titulo": "Kontrolní listy kvality",
+                "texto": "27 hotových šablon nebo vlastní šablony vaší firmy. U každého bodu vyhovuje, nevyhovuje nebo netýká se, s fotkou, a opakovaná kontrola neshod. Převzetí s podpisem, PDF a investor vidí vše v portálu.",
+                "tela": "Rozpracovaný kontrolní list s postupem a body bez odpovědi"
             },
             "financeiro": {
                 "titulo": "Finance stavby",
