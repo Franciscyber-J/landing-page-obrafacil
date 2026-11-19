@@ -132,7 +132,7 @@ node ferramentas/paginas/gerar.mjs --ajuda-local D:\Projetos\ajuda_saida --legal
 | --- | --- |
 | `src/ajuda/formato.js` | Caminhos do formato novo no Firestore, conferência dos documentos e o artigo do idioma no formato das páginas (`artigoParaPagina`); usado pelo site e pelas páginas prontas |
 | `src/ajuda/dados.js` | Lê cabeçalho, índice e artigo do idioma (Firestore ou local), cache e endereço dos prints |
-| `src/ajuda/busca.js` | Busca sem acento, sem maiúscula e sem os sinais de vogal opcionais do árabe e do hebraico (harakat, tatweel, niqqud); título > tag > resumo > texto dos passos |
+| `src/ajuda/busca.js` | Busca sem acento, sem maiúscula e sem os sinais de vogal opcionais do árabe e do hebraico (harakat, tatweel, niqqud); título > tag > resumo > texto dos passos. Tolerante: não exige todas as palavras, ordena por relevância (mais palavras do assunto, as mais raras e no título primeiro) e ignora as palavras vazias do idioma do índice (29 idiomas). Cópia exata da referência do gestao_obras (`ferramentas/ajuda/src/busca.mjs`); os casos `src/ajuda/busca_casos.json` vêm de lá (`ajuda/testes/busca_site.json`) |
 | `src/ajuda/texto.js` | Lê o texto dos passos: só `**negrito**`, lista `- ` e `[texto](artigo:id)`; nunca HTML |
 | `src/ajuda/marcacao.js` | Marcação animada dos prints: leitura conferida do campo `marcacao` e as contas do desenho (iguais às do app) |
 | `src/ajuda/idiomas.js` | Idiomas em que os artigos são publicados e qual usar para cada idioma do site |
