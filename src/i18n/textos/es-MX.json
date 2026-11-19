@@ -86,7 +86,7 @@
                 "1 obra propia a la vez",
                 "7 reportes PDF al mes, con marca de agua",
                 "250 MB para fotos y archivos",
-                "Checklists con las 27 plantillas listas y 1 plantilla propia",
+                "Checklists: 3 en total, con las 27 plantillas listas",
                 "Tu cliente siguiendo la obra en el portal"
             ]
         },
@@ -97,7 +97,7 @@
                 "10 GB para fotos y archivos",
                 "PDF con el logotipo y el pie de página de tu empresa",
                 "Reportes diarios en ZIP y archivos de la obra sin conexión",
-                "Plantillas de checklist ilimitadas y varios checklists en un solo PDF",
+                "Checklists ilimitados, plantillas propias y varios checklists en un solo PDF",
                 "Acceso Cliente disponible para cada obra"
             ],
             "comparacao": "Pagando mes a mes, 12 meses cuestan {{simbolo}}{{valor}}",
@@ -112,7 +112,7 @@
         "a4": "Para la cuenta: nombre, correo electrónico y teléfono; tu identificación fiscal (por ejemplo, el RFC) solo si la indicas. La lista completa, y para qué sirve cada dato, está en la Política de Privacidad.",
         "q7": "¿ObraFácil sustituye al responsable técnico de la obra?",
         "a7": "No. Es una herramienta de gestión y no sustituye al profesional responsable de la obra.",
-        "a11": "Sí. En los Checklists de calidad revisas cada trabajo punto por punto, con foto, registras la no conformidad con acción correctiva y reinspección, y apruebas el trabajo con firma. En el celular funciona aunque no haya señal: lo que marcas se envía cuando vuelve la conexión. Trae 27 plantillas listas y puedes crear las de tu empresa: 1 en el plan gratuito y todas las que quieras en el PRO. Las plantillas listas son ejemplos para revisar y adaptar: no sustituyen al profesional responsable de la obra ni certifican el cumplimiento de ninguna norma ni programa de calidad."
+        "a11": "Sí. En los Checklists de calidad revisas cada trabajo punto por punto, con foto, registras la no conformidad con acción correctiva y reinspección, y apruebas el trabajo con firma. En el celular funciona aunque no haya señal: lo que marcas se envía cuando vuelve la conexión. En el plan gratuito aplicas 3 checklists en total con las 27 plantillas listas, para conocer la función; en el PRO, los checklists son ilimitados y puedes crear las plantillas de tu empresa. Las plantillas listas son ejemplos para revisar y adaptar: no sustituyen al profesional responsable de la obra ni certifican el cumplimiento de ninguna norma ni programa de calidad."
     },
     "conta": {
         "lojasTexto": "Entra con la misma cuenta en el celular, en la computadora o en el navegador: lo que compraste vale en todos."

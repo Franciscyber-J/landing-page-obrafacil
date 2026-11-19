@@ -102,7 +102,7 @@
                 "1 obra propia a la vez",
                 "7 informes PDF al mes, con marca de agua",
                 "250 MB para fotos y archivos",
-                "Checklists con las 27 plantillas listas y 1 plantilla propia",
+                "Checklists: 3 en total, con las 27 plantillas listas",
                 "Tu cliente siguiendo la obra en el portal"
             ]
         },
@@ -116,7 +116,7 @@
                 "10 GB para fotos y archivos",
                 "PDF con el logotipo y el pie de página de tu empresa",
                 "Partes diarios en ZIP y archivos de la obra sin conexión",
-                "Plantillas de checklist ilimitadas y varios checklists en un solo PDF",
+                "Checklists ilimitados, plantillas propias y varios checklists en un solo PDF",
                 "Acceso Cliente disponible para cada obra"
             ],
             "itensAnual": [
@@ -188,7 +188,7 @@
         "q10": "¿Y si la renovación no se paga?",
         "a10": "La cuenta vuelve al plan gratuito. No se elimina nada; si superas el límite del plan gratuito, solo se bloquea la subida de archivos nuevos hasta que liberes espacio o te vuelvas a suscribir.",
         "q11": "¿La app tiene checklists de calidad para revisar los trabajos?",
-        "a11": "Sí. En los Checklists de calidad revisas cada trabajo punto por punto, con foto, registras la no conformidad con acción correctiva y reinspección, y apruebas el trabajo con firma. En el móvil funciona incluso sin cobertura: lo que marcas se envía cuando vuelve la conexión. Trae 27 plantillas listas y puedes crear las de tu empresa: 1 en el plan gratuito y todas las que quieras en el PRO. Las plantillas listas son ejemplos para revisar y adaptar: no sustituyen al técnico competente responsable de la obra ni certifican el cumplimiento de ninguna norma ni programa de calidad.",
+        "a11": "Sí. En los Checklists de calidad revisas cada trabajo punto por punto, con foto, registras la no conformidad con acción correctiva y reinspección, y apruebas el trabajo con firma. En el móvil funciona incluso sin cobertura: lo que marcas se envía cuando vuelve la conexión. En el plan gratuito aplicas 3 checklists en total con las 27 plantillas listas, para conocer la función; en el PRO, los checklists son ilimitados y puedes crear las plantillas de tu empresa. Las plantillas listas son ejemplos para revisar y adaptar: no sustituyen al técnico competente responsable de la obra ni certifican el cumplimiento de ninguna norma ni programa de calidad.",
         "mais": "¿No encuentras tu respuesta?",
         "verAjuda": "Ver el Centro de Ayuda"
     },

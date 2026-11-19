@@ -102,7 +102,7 @@
                 "1 cantiere tuo attivo alla volta",
                 "7 report PDF al mese con filigrana",
                 "250 MB per foto e documenti",
-                "Checklist con i 27 modelli pronti e 1 modello tuo",
+                "Checklist: 3 in tutto, con i 27 modelli pronti",
                 "Il committente segue i lavori dal portale"
             ]
         },
@@ -116,7 +116,7 @@
                 "10 GB per foto e documenti",
                 "PDF con logo e piè di pagina della tua impresa",
                 "Rapportini in ZIP e file del cantiere utilizzabili offline",
-                "Modelli di checklist illimitati e più checklist in un unico PDF",
+                "Checklist illimitate, modelli personali e più checklist in un unico PDF",
                 "Accesso Cliente attivabile per ciascun cantiere"
             ],
             "itensAnual": [
@@ -188,7 +188,7 @@
         "q10": "Cosa succede se il pagamento del rinnovo non va a buon fine?",
         "a10": "L'account torna automaticamente al piano gratuito. Nessun dato viene cancellato; se superi i limiti del piano gratuito, viene bloccato solo il caricamento di nuovi file finché non liberi spazio o riattivi l'abbonamento.",
         "q11": "L’app ha le checklist per il controllo qualità delle lavorazioni?",
-        "a11": "Sì. Con le Checklist di qualità controlli ogni lavorazione voce per voce, con foto, registri la non conformità con azione correttiva e ricontrollo e approvi la lavorazione con firma. Sul telefono funzionano anche senza campo: quello che registri viene inviato quando torna la connessione. Ci sono 27 modelli pronti e puoi creare quelli della tua impresa: 1 con il piano gratuito e quanti vuoi con PRO. I modelli pronti sono esempi da verificare e adattare: non sostituiscono il direttore dei lavori o il responsabile tecnico abilitato, né certificano il rispetto di norme o di programmi di qualità.",
+        "a11": "Sì. Con le Checklist di qualità controlli ogni lavorazione voce per voce, con foto, registri la non conformità con azione correttiva e ricontrollo e approvi la lavorazione con firma. Sul telefono funzionano anche senza campo: quello che registri viene inviato quando torna la connessione. Con il piano gratuito avvii 3 checklist in tutto con i 27 modelli pronti, per provare la funzione; con PRO le checklist sono illimitate e crei i modelli della tua impresa. I modelli pronti sono esempi da verificare e adattare: non sostituiscono il direttore dei lavori o il responsabile tecnico abilitato, né certificano il rispetto di norme o di programmi di qualità.",
         "mais": "Non hai trovato la risposta che cercavi?",
         "verAjuda": "Visita il Centro assistenza"
     },

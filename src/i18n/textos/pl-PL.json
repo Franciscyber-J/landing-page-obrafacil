@@ -102,7 +102,7 @@
                 "1 własna budowa aktywna jednocześnie",
                 "7 raportów PDF miesięcznie ze znakiem wodnym",
                 "250 MB na zdjęcia i pliki",
-                "Listy kontrolne z 27 gotowymi szablonami i 1 własnym",
+                "Listy kontrolne: łącznie 3, z 27 gotowymi szablonami",
                 "Inwestor śledzi postępy w portalu"
             ]
         },
@@ -116,7 +116,7 @@
                 "10 GB na zdjęcia i pliki",
                 "Raporty PDF z logo i stopką Twojej firmy",
                 "Raporty dzienne w formacie ZIP i pliki budowy offline",
-                "Nielimitowane szablony list kontrolnych i kilka list w jednym PDF",
+                "Listy kontrolne bez limitu, własne szablony i kilka list w jednym PDF",
                 "Dostęp klienta do włączenia dla każdej budowy"
             ],
             "itensAnual": [
@@ -188,7 +188,7 @@
         "q10": "Co się stanie, jeśli płatność za odnowienie się nie powiedzie?",
         "a10": "Konto powraca automatycznie do planu darmowego. Żadne dane nie są usuwane; w przypadku przekroczenia limitu planu darmowego blokowane jest jedynie dodawanie nowych plików do czasu zwolnienia miejsca lub odnowienia subskrypcji.",
         "q11": "Czy aplikacja ma listy kontrolne do sprawdzania jakości robót?",
-        "a11": "Tak. W listach kontrolnych jakości sprawdzasz każdą robotę punkt po punkcie, ze zdjęciem, zapisujesz niezgodność z działaniem korygującym i ponowną kontrolą, a potem odbierasz roboty z podpisem. W telefonie działa nawet bez zasięgu: wpisy wysyłają się po odzyskaniu połączenia. Jest 27 gotowych szablonów, a szablony swojej firmy możesz tworzyć sam: 1 w planie bezpłatnym i dowolnie wiele w PRO. Gotowe szablony to przykłady do sprawdzenia i dostosowania: nie zastępują uprawnionego kierownika budowy i nie potwierdzają zgodności z żadną normą ani programem jakości.",
+        "a11": "Tak. W listach kontrolnych jakości sprawdzasz każdą robotę punkt po punkcie, ze zdjęciem, zapisujesz niezgodność z działaniem korygującym i ponowną kontrolą, a potem odbierasz roboty z podpisem. W telefonie działa nawet bez zasięgu: wpisy wysyłają się po odzyskaniu połączenia. W planie bezpłatnym dodasz łącznie 3 listy kontrolne z 27 gotowymi szablonami, żeby poznać funkcję; w PRO list kontrolnych jest bez limitu i tworzysz szablony swojej firmy. Gotowe szablony to przykłady do sprawdzenia i dostosowania: nie zastępują uprawnionego kierownika budowy i nie potwierdzają zgodności z żadną normą ani programem jakości.",
         "mais": "Nie znajdujesz odpowiedzi na swoje pytanie?",
         "verAjuda": "Przejdź do Centrum pomocy"
     },

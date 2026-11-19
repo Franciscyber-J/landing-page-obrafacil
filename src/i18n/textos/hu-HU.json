@@ -102,7 +102,7 @@
                 "1 aktív saját projekt egyidejűleg",
                 "Havi 7 PDF jelentés vízjellel",
                 "250 MB tárhely fotóknak és fájloknak",
-                "Ellenőrzőlisták a 27 kész sablonnal és 1 saját sablonnal",
+                "Ellenőrzőlisták: összesen 3, a 27 kész sablonnal",
                 "A megrendelő nyomon követheti az építkezést a portálon"
             ]
         },
@@ -116,7 +116,7 @@
                 "10 GB tárhely fotóknak és fájloknak",
                 "PDF-ek céged logójával és hivatalos láblécével",
                 "Napi jelentések ZIP-ben és offline projektfájlok",
-                "Korlátlan saját ellenőrzőlista-sablon és több lista egyetlen PDF-ben",
+                "Korlátlan ellenőrzőlista, saját sablonok és több lista egyetlen PDF-ben",
                 "Ügyfél-hozzáférés minden projekthez elérhető"
             ],
             "itensAnual": [
@@ -188,7 +188,7 @@
         "q10": "Mi történik, ha a megújítási fizetés sikertelen?",
         "a10": "A fiók visszatér az ingyenes csomagra. Semmilyen adat nem törlődik; ha túlléped az ingyenes csomag korlátait, csak az új fájlok feltöltése zárolódik mindaddig, amíg helyet nem szabadítasz fel vagy újra elő nem fizetsz.",
         "q11": "Van az alkalmazásban ellenőrzőlista a munkák minőségének ellenőrzéséhez?",
-        "a11": "Igen. A Minőségi ellenőrzőlistákkal minden munkát pontról pontra, fotóval ellenőrzöl, a nemmegfelelőséget helyesbítő intézkedéssel és újraellenőrzéssel rögzíted, majd aláírással átveszed a munkát. Telefonon térerő nélkül is működik: amit rögzítesz, elküldi, amint visszajön a kapcsolat. 27 kész sablon jár hozzá, és a céged saját sablonjait is elkészítheted: az ingyenes csomagban 1-et, PRO-ban korlátlanul. A kész sablonok példák, amelyeket átnézel és a sajátodra szabsz: nem helyettesítik a felelős műszaki vezetőt, és nem igazolják semmilyen szabvány vagy minőségügyi program teljesítését.",
+        "a11": "Igen. A Minőségi ellenőrzőlistákkal minden munkát pontról pontra, fotóval ellenőrzöl, a nemmegfelelőséget helyesbítő intézkedéssel és újraellenőrzéssel rögzíted, majd aláírással átveszed a munkát. Telefonon térerő nélkül is működik: amit rögzítesz, elküldi, amint visszajön a kapcsolat. Az ingyenes csomagban a 27 kész sablonnal összesen 3 ellenőrzőlistát indíthatsz, hogy megismerd a funkciót; PRO-ban korlátlan az ellenőrzőlisták száma, és a céged saját sablonjait is elkészítheted. A kész sablonok példák, amelyeket átnézel és a sajátodra szabsz: nem helyettesítik a felelős műszaki vezetőt, és nem igazolják semmilyen szabvány vagy minőségügyi program teljesítését.",
         "mais": "Nem találtad meg a választ a kérdésedre?",
         "verAjuda": "Ugrás a Súgóközpontba"
     },

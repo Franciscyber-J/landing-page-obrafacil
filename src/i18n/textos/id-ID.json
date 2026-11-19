@@ -102,7 +102,7 @@
                 "1 proyek aktif Anda dalam satu waktu",
                 "7 laporan PDF per bulan dengan watermark",
                 "250 MB untuk foto dan dokumen",
-                "Daftar periksa dengan 27 templat siap pakai dan 1 templat sendiri",
+                "Daftar periksa: total 3, dengan 27 templat siap pakai",
                 "Klien mengikuti progres lewat portal"
             ]
         },
@@ -116,7 +116,7 @@
                 "10 GB untuk foto dan dokumen",
                 "PDF dengan logo dan catatan kaki perusahaan Anda",
                 "Laporan harian format ZIP dan file proyek offline",
-                "Templat daftar periksa tanpa batas dan beberapa daftar dalam satu PDF",
+                "Daftar periksa tanpa batas, templat sendiri, dan beberapa daftar dalam satu PDF",
                 "Akses Klien tersedia untuk setiap proyek"
             ],
             "itensAnual": [
@@ -188,7 +188,7 @@
         "q10": "Apa yang terjadi jika pembayaran perpanjangan gagal?",
         "a10": "Akun akan otomatis kembali ke paket gratis. Tidak ada data yang dihapus; jika Anda melebihi batas paket gratis, hanya pengunggahan file baru yang akan dibatasi hingga Anda mengosongkan ruang atau berlangganan kembali.",
         "q11": "Apakah aplikasi ini punya daftar periksa mutu pekerjaan?",
-        "a11": "Ya. Dengan Daftar periksa mutu, Anda memeriksa setiap pekerjaan butir demi butir dengan foto, mencatat ketidaksesuaian beserta tindakan perbaikan dan pemeriksaan ulang, lalu menyetujui pekerjaan dengan tanda tangan. Di ponsel tetap jalan tanpa sinyal: catatan Anda terkirim saat koneksi kembali. Tersedia 27 templat siap pakai, dan Anda bisa membuat templat perusahaan sendiri: 1 di paket gratis dan sebanyak yang Anda mau di PRO. Templat siap pakai adalah contoh untuk diperiksa dan disesuaikan: tidak menggantikan penanggung jawab teknis resmi dan tidak menyatakan kepatuhan pada standar atau program mutu apa pun.",
+        "a11": "Ya. Dengan Daftar periksa mutu, Anda memeriksa setiap pekerjaan butir demi butir dengan foto, mencatat ketidaksesuaian beserta tindakan perbaikan dan pemeriksaan ulang, lalu menyetujui pekerjaan dengan tanda tangan. Di ponsel tetap jalan tanpa sinyal: catatan Anda terkirim saat koneksi kembali. Di paket gratis, Anda membuat total 3 daftar periksa dengan 27 templat siap pakai untuk mencoba fiturnya; di PRO, daftar periksa tanpa batas dan Anda bisa membuat templat perusahaan sendiri. Templat siap pakai adalah contoh untuk diperiksa dan disesuaikan: tidak menggantikan penanggung jawab teknis resmi dan tidak menyatakan kepatuhan pada standar atau program mutu apa pun.",
         "mais": "Belum menemukan jawaban yang Anda cari?",
         "verAjuda": "Kunjungi Pusat Bantuan"
     },

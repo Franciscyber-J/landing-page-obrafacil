@@ -102,7 +102,7 @@
                 "1 obra sua por vez",
                 "7 relatórios PDF por mês, com marca d’água",
                 "250 MB para fotos e arquivos",
-                "Checklists com os 27 modelos prontos e 1 modelo seu",
+                "Checklists: 3 no total, com os 27 modelos prontos",
                 "Cliente acompanhando pelo portal"
             ]
         },
@@ -116,7 +116,7 @@
                 "10 GB para fotos e arquivos",
                 "PDFs com o logotipo e o rodapé da sua empresa",
                 "RDOs em ZIP e arquivos da obra sem internet",
-                "Modelos de checklist ilimitados e vários checklists num PDF só",
+                "Checklists ilimitados, modelos próprios e vários checklists num PDF só",
                 "Acesso Cliente disponível para cada obra"
             ],
             "itensAnual": [
@@ -188,7 +188,7 @@
         "q10": "E se a renovação não for paga?",
         "a10": "A conta volta ao plano grátis. Nada é apagado; se passar do limite do plano grátis, só o envio de arquivos novos fica bloqueado até você liberar espaço ou assinar de novo.",
         "q11": "Dá para fazer a FVS (checklist de qualidade) no app?",
-        "a11": "Sim. Nos Checklists de qualidade você confere cada serviço item por item, com foto, registra a não conformidade com ação corretiva e reinspeção e libera o serviço com assinatura. No celular, funciona até sem internet: o que você marca sobe quando a conexão volta. Vêm 27 modelos prontos, e você cria os da sua empresa: 1 no plano grátis e quantos quiser no PRO. Os modelos prontos são exemplos para conferir e adaptar: não substituem o responsável técnico da obra nem certificam o cumprimento de norma ou de programa de qualidade, como o PBQP-H.",
+        "a11": "Sim. Nos Checklists de qualidade você confere cada serviço item por item, com foto, registra a não conformidade com ação corretiva e reinspeção e libera o serviço com assinatura. No celular, funciona até sem internet: o que você marca sobe quando a conexão volta. No plano grátis, você aplica 3 checklists no total com os 27 modelos prontos, para conhecer a função; no PRO, os checklists são ilimitados e você cria os modelos da sua empresa. Os modelos prontos são exemplos para conferir e adaptar: não substituem o responsável técnico da obra nem certificam o cumprimento de norma ou de programa de qualidade, como o PBQP-H.",
         "mais": "Não achou a sua resposta?",
         "verAjuda": "Ver a Central de Ajuda"
     },

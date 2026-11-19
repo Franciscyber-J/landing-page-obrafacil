@@ -102,7 +102,7 @@
                 "1 vaše aktivní stavba současně",
                 "7 PDF reportů měsíčně s vodoznakem",
                 "250 MB pro fotografie a soubory",
-                "Kontrolní listy s 27 hotovými šablonami a 1 vlastní",
+                "Kontrolní listy: celkem 3, s 27 hotovými šablonami",
                 "Sledování stavby investorem v portálu"
             ]
         },
@@ -116,7 +116,7 @@
                 "10 GB pro fotografie a soubory",
                 "PDF s logem a zápatím vaší společnosti",
                 "Denní záznamy v ZIP a offline soubory stavby",
-                "Neomezené vlastní šablony kontrolních listů a více listů v jednom PDF",
+                "Kontrolní listy bez omezení, vlastní šablony a více listů v jednom PDF",
                 "Klientský přístup dostupný pro každou stavbu"
             ],
             "itensAnual": [
@@ -188,7 +188,7 @@
         "q10": "Co se stane, když se platba za obnovení nezdaří?",
         "a10": "Účet se vrátí na bezplatný plán. Žádná data se nemažou; pokud překročíte limit bezplatného plánu, zablokuje se pouze nahrávání nových souborů, dokud neuvolníte místo nebo si plán znovu nepředplatíte.",
         "q11": "Umí aplikace kontrolní listy pro kontrolu kvality prací?",
-        "a11": "Ano. V Kontrolních listech kvality kontrolujete každou práci bod po bodu s fotkou, zapisujete neshody s nápravným opatřením a opakovanou kontrolou a práci převezmete s podpisem. V mobilu funguje i bez signálu: zápisy se odešlou, jakmile se připojení obnoví. K dispozici je 27 hotových šablon a můžete si vytvořit šablony své firmy: 1 v bezplatném plánu a kolik chcete v PRO. Hotové šablony jsou příklady ke kontrole a úpravě: nenahrazují autorizovanou osobu odpovědnou za vedení stavby a nepotvrzují splnění žádné normy ani programu kvality.",
+        "a11": "Ano. V Kontrolních listech kvality kontrolujete každou práci bod po bodu s fotkou, zapisujete neshody s nápravným opatřením a opakovanou kontrolou a práci převezmete s podpisem. V mobilu funguje i bez signálu: zápisy se odešlou, jakmile se připojení obnoví. V bezplatném plánu založíte celkem 3 kontrolní listy s 27 hotovými šablonami, abyste funkci poznali; v PRO jsou kontrolní listy bez omezení a vytvoříte si šablony své firmy. Hotové šablony jsou příklady ke kontrole a úpravě: nenahrazují autorizovanou osobu odpovědnou za vedení stavby a nepotvrzují splnění žádné normy ani programu kvality.",
         "mais": "Nenašli jste odpověď na to, co hledáte?",
         "verAjuda": "Přejít do Centra nápovědy"
     },
