@@ -9,6 +9,7 @@ import LegalPagina from './components/legal/LegalPagina';
 import PagamentoPagina from './components/conta/PagamentoPagina';
 import PerfilPagina from './components/conta/PerfilPagina';
 import SuportePagina from './components/conta/SuportePagina';
+import InfluenciadoresPagina from './components/programas/InfluenciadoresPagina.jsx';
 import Atendimento from './components/atendimento/Atendimento.jsx';
 import AvisoCookies from './components/AvisoCookies';
 import {
@@ -60,6 +61,9 @@ function Pagina({ codigo, lido }) {
   if (lido.pagina === 'pagamento') return <PagamentoPagina codigo={codigo} compra={lido.compra} />;
   if (lido.pagina === 'perfil') return <PerfilPagina codigo={codigo} />;
   if (lido.pagina === 'suporte') return <SuportePagina codigo={codigo} />;
+  if (lido.pagina === 'programa' || lido.pagina === 'regulamento-programa') {
+    return <InfluenciadoresPagina key={`${codigo}:${lido.pagina}`} codigo={codigo} parte={lido.pagina === 'programa' ? 'programa' : 'regulamento'} />;
+  }
   return <AjudaPagina key={codigo} codigo={codigo} tipo={lido.pagina === 'ajuda' ? 'inicio' : lido.pagina} modulo={lido.modulo} slug={lido.slug} />;
 }
 

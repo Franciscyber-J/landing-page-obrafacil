@@ -137,3 +137,19 @@ O `.htaccess` (`hospedagem/.htaccess`) entrega as páginas prontas e o `index.ht
 os endereços antigos escolhem o idioma pelo navegador com a mesma regra de `escolherIdioma` (bloco gerado por
 `npm run htaccess`); o idioma escolhido no menu vale para a navegação dentro do site. As bandeiras são servidas pelo próprio site
 (`/bandeiras/<país>.svg`, copiadas do pacote `flag-icons` no build), sem CDN de terceiros.
+
+## Páginas de programa de um país só (Influenciadores, piloto no Brasil)
+
+O programa Influenciadores ObraFácil (`src/programas/`, página em `src/components/programas/`) existe só no pt-BR:
+`/pt-br/influenciadores` e `/pt-br/influenciadores/regulamento`.
+
+- A palavra do endereço fica em `rotas.programas` do idioma que tem o programa (e `rotas.regulamento`). Ela **não passa
+  da base para a variante** (pt-PT não tem o programa). Nos outros idiomas o endereço é página inexistente e trocar o
+  idioma no menu leva à página inicial do idioma novo.
+- Os textos ficam só no `pt-BR.json`, na chave `influenciadores.*`. O `npm run idiomas` não pede essas chaves nos
+  outros idiomas e acusa erro se alguma aparecer neles (`doProgramaAusente` em `ferramentas/idiomas/idiomas.mjs`).
+- O regulamento é a cópia exata do `gestao_obras/legal/programas/influenciadores/1.0/pt-BR.md` (o teste confere a
+  impressão digital, `HASH` em `src/programas/influenciadores.js`). Versão nova: arquivo novo e `VERSAO`/`HASH` novos.
+- Abrir para outro país (item `site:` do `CHECKLIST_IDIOMAS_NOVOS.md` do gestao_obras): a palavra em `rotas.programas`
+  daquele idioma, os textos `influenciadores.*` nativos, o regulamento do país (com as regras de publicidade de lá) e a
+  cópia dele aqui.

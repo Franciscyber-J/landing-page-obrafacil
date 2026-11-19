@@ -102,8 +102,11 @@ export function Alternativos() {
             const caminho = gerador ? gerador(i.codigo) : caminhoInicio(i.codigo);
             if (caminho) add('alternate', absoluto(caminho.split('#')[0]), i.codigo);
         }
+        // Página que não existe em inglês (programa só de um país, artigo sem versão em inglês): a x-default é ela
+        // mesma, como nas páginas prontas do build (ferramentas/paginas/gerar.mjs).
         const padrao = gerador ? gerador(INTERNACIONAL) : null;
-        add('alternate', absoluto(padrao ? padrao.split('#')[0] : '/'), 'x-default');
+        const semIngles = gerador && !padrao ? caminhoUniforme(pathname) : '/';
+        add('alternate', absoluto(padrao ? padrao.split('#')[0] : semIngles), 'x-default');
         novos.forEach((l) => head.appendChild(l));
         return () => novos.forEach((l) => l.remove());
     }, [gerador, pathname, hash]);

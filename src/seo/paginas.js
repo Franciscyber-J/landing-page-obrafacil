@@ -7,10 +7,11 @@
 //   pagamento  + compra (null = texto geral)
 //   assunto    + modulo (o módulo do índice da Central, com "nomes" em todos os idiomas)
 //   artigo     + artigo ({ id, slugs: { <idioma dos artigos>: slug } })
+//   programa | regulamento-programa + programa ('influenciadores'): só nos idiomas em que o programa existe
 
 import {
     IDIOMAS, INTERNACIONAL, caminhoAjuda, caminhoArtigo, caminhoAssunto, caminhoInicio, caminhoLegal,
-    caminhoPagamento, caminhoPerfil, caminhoSuporte,
+    caminhoPagamento, caminhoPerfil, caminhoPrograma, caminhoRegulamentoDoPrograma, caminhoSuporte,
 } from '../i18n/idiomas.js';
 import { idiomaDoConteudo } from '../ajuda/idiomas.js';
 import { slugDoModulo } from '../ajuda/enderecos.js';
@@ -39,6 +40,8 @@ export function caminhoDaPagina(pagina, codigo = pagina.codigo) {
         case 'perfil': return caminhoPerfil(codigo);
         case 'legal': return caminhoLegal(codigo, pagina.documento);
         case 'pagamento': return caminhoPagamento(codigo, pagina.compra ?? null);
+        case 'programa': return caminhoPrograma(codigo, pagina.programa);
+        case 'regulamento-programa': return caminhoRegulamentoDoPrograma(codigo, pagina.programa);
         case 'assunto': return caminhoAssunto(codigo, slugDoModulo(pagina.modulo, idiomaDoConteudo(codigo)));
         case 'artigo': {
             const slug = pagina.artigo.slugs?.[idiomaDoConteudo(codigo)];

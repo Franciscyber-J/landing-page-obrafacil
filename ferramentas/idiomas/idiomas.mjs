@@ -28,7 +28,7 @@ const ARQUIVO_PENDENCIAS = path.join(PASTA_TEXTOS, 'PENDENCIAS.md');
 const PASTA_BANDEIRAS = path.join(RAIZ, 'node_modules', 'flag-icons', 'flags', '4x3');
 
 const importar = (rel) => import(pathToFileURL(path.join(RAIZ, rel)).href);
-const { IDIOMAS, REFERENCIA, INTERNACIONAL, SECOES, cadeia, idioma, palavraDeEnderecoValida } = await importar('src/i18n/idiomas.js');
+const { IDIOMAS, REFERENCIA, INTERNACIONAL, SECOES, PROGRAMAS_DO_SITE, cadeia, idioma, palavraDeEnderecoValida } = await importar('src/i18n/idiomas.js');
 const { APPLE_PRICES } = await importar('src/i18n/pricing.js');
 
 const CATEGORIAS = ['zero', 'one', 'two', 'few', 'many', 'other'];
@@ -171,11 +171,20 @@ function pluraisDaReferencia(ref) {
 }
 
 // Chaves que o idioma precisa ter: as do pt-BR, trocando cada plural pelas categorias do idioma.
+// Textos de um programa de parceria (chaves "<programa>.*", src/programas/) só existem nos idiomas em que o programa
+// existe (rotas.programas no registro; o piloto de Influenciadores, só no pt-BR): nos outros não são pedidos e, se
+// aparecerem, são erro (texto de um programa que o idioma não tem).
+function doProgramaAusente(chave, codigo) {
+    const i = idioma(codigo);
+    return PROGRAMAS_DO_SITE.some((p) => chave.startsWith(`${p}.`) && !i?.rotas.programas[p]);
+}
+
 function chavesNecessarias(ref, plurais, codigo) {
     const cats = categoriasDe(codigo);
     const lista = [];
     const feitos = new Set();
     for (const chave of ref.keys()) {
+        if (doProgramaAusente(chave, codigo)) continue;
         const m = chave.match(SUFIXO_PLURAL);
         if (m && plurais.has(m[1])) {
             if (feitos.has(m[1])) continue;
@@ -300,6 +309,16 @@ function conferirCadastro(erros) {
         }
         const secoes = SECOES.map((s) => i.rotas.secoes[s]).filter(Boolean);
         if (new Set(secoes).size !== secoes.length) erros.push(`${onde}: duas seções com a mesma palavra`);
+        // Programas (só nos idiomas em que existem): palavra válida, conhecida e diferente das outras do começo do
+        // endereço (Central, Termos, Política, pagamento, Perfil, Suporte) de qualquer idioma.
+        const doComeco = new Set(IDIOMAS.flatMap((o) => [o.rotas.ajuda, o.rotas.termos, o.rotas.privacidade, o.rotas.pagamento, o.rotas.perfil, o.rotas.suporte]).filter(Boolean));
+        for (const [p, valor] of Object.entries(i.rotas.programas ?? {})) {
+            if (!PROGRAMAS_DO_SITE.includes(p)) erros.push(`${onde}: rotas.programas.${p} não é um programa do site (PROGRAMAS_DO_SITE)`);
+            else if (!palavraDeEnderecoValida(valor)) erros.push(`${onde}: rotas.programas.${p} "${valor}" fora da regra das palavras dos endereços`);
+            else if (doComeco.has(valor)) erros.push(`${onde}: rotas.programas.${p} "${valor}" é igual a outra palavra do começo do endereço`);
+            if (!i.rotas.regulamento) erros.push(`${onde}: o programa ${p} precisa de rotas.regulamento`);
+            else if (!palavraDeEnderecoValida(i.rotas.regulamento)) erros.push(`${onde}: rotas.regulamento "${i.rotas.regulamento}" fora da regra das palavras dos endereços`);
+        }
     }
     if (!idioma(REFERENCIA) || idioma(REFERENCIA).base) erros.push(`registro.js: REFERENCIA (${REFERENCIA}) tem de ser um idioma-base cadastrado`);
     if (!idioma(INTERNACIONAL) || idioma(INTERNACIONAL).base) erros.push(`registro.js: INTERNACIONAL (${INTERNACIONAL}) tem de ser um idioma-base cadastrado`);
@@ -345,7 +364,8 @@ function conferir() {
             const m = chave.match(SUFIXO_PLURAL);
             const ehPlural = m && plurais.has(m[1]);
             if (!aceitas.has(chave) && !(ehPlural && (m[2] === 'zero' || cats.includes(m[2])))) {
-                if (ehPlural) avisos.push(`${nomeArq}: ${chave} não é usada em ${i.codigo} (categorias: ${cats.join(', ')})`);
+                if (doProgramaAusente(chave, i.codigo)) erros.push(`${nomeArq}: ${chave} é texto de um programa que não existe em ${i.codigo} (rotas.programas no registro)`);
+                else if (ehPlural) avisos.push(`${nomeArq}: ${chave} não é usada em ${i.codigo} (categorias: ${cats.join(', ')})`);
                 else erros.push(`${nomeArq}: ${chave} não existe no ${REFERENCIA} (crie no ${REFERENCIA} primeiro ou apague)`);
                 continue;
             }

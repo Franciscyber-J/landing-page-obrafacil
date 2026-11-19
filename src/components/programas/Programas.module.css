@@ -1,0 +1,246 @@
+/* Programa Influenciadores: o que a página tem além das peças das páginas de conta (Conta.module.css) e do modo
+   leitura dos Termos (Legal.module.css). Cores só dos tokens (src/styles/design-tokens.css): claro e escuro. */
+
+.grade {
+  margin-top: var(--respiro-cabeca);
+}
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--vao-botoes);
+  margin-top: var(--respiro-grupo);
+}
+
+/* Na cabeça azul, o botão de contorno ganha as cores do painel. */
+.botoesNaCabeca {
+  margin-top: 0;
+}
+
+.botoesNaCabeca :global(.acao-contorno) {
+  color: var(--painel-texto);
+  border-color: var(--painel-linha);
+  background: var(--painel-vidro);
+}
+
+.linkClaro {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--painel-texto-2);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.linkClaro:hover {
+  color: var(--painel-texto);
+}
+
+/* A palavra que a pessoa manda no direct. */
+.palavra {
+  margin-top: var(--respiro-grupo);
+  padding: var(--respiro-cartao);
+  border-radius: var(--raio);
+  background: var(--fundo-2);
+  border: 1px dashed var(--vidro-borda);
+}
+
+.palavraTexto {
+  color: var(--texto-2);
+  line-height: 1.6;
+}
+
+.palavraTexto strong {
+  color: var(--texto);
+}
+
+.palavraLinha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--vao-botoes);
+  margin-top: 14px;
+}
+
+.palavraCodigo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 6px 16px;
+  border-radius: var(--raio-p);
+  background: var(--superficie);
+  color: var(--laranja-texto);
+  border: 1px solid var(--vidro-borda);
+}
+
+.copiar {
+  min-height: 44px;
+}
+
+.palavraNota {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: var(--texto-2);
+  line-height: 1.5;
+}
+
+/* Tabela de pontos: no celular estreito ela cabe sem rolar para o lado (texto quebra dentro das células). */
+.tabelaCaixa {
+  margin-top: 18px;
+  border-radius: var(--raio);
+  border: 1px solid var(--vidro-borda);
+  overflow: hidden;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.legenda {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.tabela th,
+.tabela td {
+  padding: 14px 16px;
+  text-align: start;
+  vertical-align: top;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.tabela thead th {
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--texto-2);
+  background: var(--fundo-2);
+}
+
+.tabela thead th:first-child {
+  width: 46%;
+}
+
+.tabela tbody tr + tr {
+  border-top: 1px solid var(--linha);
+}
+
+.tabela td {
+  color: var(--texto-2);
+}
+
+.tipo {
+  display: block;
+  font-weight: 800;
+  color: var(--texto);
+}
+
+.tipoNota {
+  display: block;
+  margin-top: 4px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--texto-2);
+}
+
+.tabela td.numero {
+  font-family: var(--fonte-titulo);
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: var(--laranja-texto);
+}
+
+.subtitulo {
+  font-size: 1.1875rem;
+  margin: var(--respiro-grupo) 0 14px;
+}
+
+/* Níveis: três cartões lado a lado; um embaixo do outro no cartão estreito. */
+.niveis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--vao-cartoes);
+}
+
+.nivel {
+  padding: 18px 20px;
+  border-radius: var(--raio);
+  background: var(--vidro-forte);
+  border: 1px solid var(--vidro-borda);
+}
+
+.nivelNome {
+  font-weight: 800;
+}
+
+.nivelFaixa {
+  margin-top: 4px;
+  font-size: 0.9375rem;
+  color: var(--texto-2);
+}
+
+.nivelTeto {
+  margin-top: 10px;
+  color: var(--texto-2);
+}
+
+.nivelTeto strong {
+  color: var(--texto);
+}
+
+@container (max-width: 599.98px) {
+  .niveis {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tabela th,
+  .tabela td {
+    padding: 12px;
+  }
+}
+
+.nota {
+  margin-top: 16px;
+  font-size: 0.875rem;
+  color: var(--texto-2);
+  line-height: 1.55;
+}
+
+.nota a {
+  color: var(--azul-vivo);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Fim do regulamento: o convite para participar. */
+.fimDoRegulamento {
+  margin-top: 48px;
+  padding: var(--respiro-cartao-g);
+  border-radius: var(--raio-g);
+  background: var(--vidro);
+  border: 1px solid var(--laranja);
+  color: var(--texto-2);
+}
+
+.fimDoRegulamento svg {
+  color: var(--laranja-texto);
+}
+
+.fimDoRegulamento p {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.fimDoRegulamento strong {
+  color: var(--texto);
+}

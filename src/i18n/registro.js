@@ -43,6 +43,10 @@
 //            perfil      → /pt-br/perfil (onde ver a assinatura no app; link dos e-mails de cobrança)
 //            suporte     → /pt-br/suporte (contato do suporte)
 //            secoes  → âncoras da página inicial (/pt-br/#precos)
+//            programas   → página de cada programa de parceria que existe NESTE idioma (piloto de um país só):
+//                          influenciadores → /pt-br/influenciadores. Não passa da base para a variante (o piloto
+//                          de Influenciadores é só do Brasil: pt-PT não tem). Idioma sem a palavra = sem a página.
+//            regulamento → /pt-br/influenciadores/regulamento (o regulamento do programa)
 
 export const REFERENCIA = 'pt-BR';
 export const INTERNACIONAL = 'en-US';
@@ -56,6 +60,7 @@ export const IDIOMAS = [
             compras: { pro: 'pro', acesso: 'acesso-cliente', downloads: 'downloads-extras', armazenamento: 'mais-20-gb' },
             perfil: 'perfil', suporte: 'suporte',
             secoes: { sobre: 'sobre', recursos: 'recursos', equipe: 'equipe', precos: 'precos', faq: 'perguntas-frequentes' },
+            programas: { influenciadores: 'influenciadores' }, regulamento: 'regulamento',
         },
     },
     {

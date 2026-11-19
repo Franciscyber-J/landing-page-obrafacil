@@ -541,5 +541,126 @@
         "recaptcha": "Protegido pelo reCAPTCHA. Valem as regras do Google:",
         "recaptchaPrivacidade": "Privacidade",
         "recaptchaTermos": "Termos"
+    },
+    "influenciadores": {
+        "rodape": "Programa de Influenciadores",
+        "metaTitulo": "Influenciadores ObraFácil: ganhe meses do PRO",
+        "metaDescricao": "Crie conteúdo de obra mostrando o ObraFácil, marque a @oficial.obrafacil e troque 300 pontos por 1 mês do PRO. Piloto no Brasil com 50 vagas.",
+        "regulamentoMetaDescricao": "Regulamento do programa Influenciadores ObraFácil: quem pode participar, o que conta, tabela de pontos, troca por meses do PRO e seus dados.",
+        "sobretitulo": "Programa de parceiros · piloto no Brasil · {{vagas}} vagas",
+        "titulo": "Mostre a obra com o app e ganhe **meses do PRO**",
+        "texto": "Para quem cria conteúdo de obra, reforma, engenharia ou arquitetura no Instagram: cada Reels, post ou story que mostra o ObraFácil de verdade vale pontos, e **{{pontosPorMes}} pontos viram 1 mês do PRO**. Sem dinheiro, sem pagar nada para entrar.",
+        "quero": "Quero participar",
+        "perfil": "Abrir o perfil no Instagram",
+        "lerRegulamento": "Ler o regulamento (versão {{versao}})",
+        "comoTitulo": "Como funciona",
+        "passos": {
+            "chamar": {
+                "titulo": "Chame no direct",
+                "texto": "Mande a palavra **{{palavra}}** no direct da {{conta}}, pela conta do Instagram que vai participar."
+            },
+            "aceitar": {
+                "titulo": "Leia e aceite",
+                "texto": "O Max manda o regulamento. Leu e topou? Responda numa mensagem só: **{{aceite}}**, o seu @ e o e-mail da sua conta do ObraFácil (crie grátis se ainda não tiver)."
+            },
+            "esperar": {
+                "titulo": "Espere a confirmação",
+                "texto": "Uma pessoa da equipe confere o seu perfil e responde em até 7 dias. A participação conta desde a hora do seu aceite."
+            },
+            "publicar": {
+                "titulo": "Publique e junte pontos",
+                "texto": "Mostre o app em uso na obra, marque a {{conta}} e identifique como publicidade. A cada **{{pontosPorMes}} pontos**, peça 1 mês do PRO pelo direct."
+            }
+        },
+        "palavraTexto": "No celular, o botão **Quero participar** abre o direct da {{conta}}. Lá, mande:",
+        "copiar": "Copiar a palavra",
+        "copiado": "Copiado!",
+        "computador": "No computador o Instagram não abre o direct por link: toque em Abrir o perfil no Instagram e depois em Enviar mensagem.",
+        "quemTitulo": "Quem pode participar",
+        "requisitos": [
+            "**18 anos ou mais** e morar no Brasil.",
+            "Conta do ObraFácil de **qualquer plano**, inclusive o grátis, com o e-mail confirmado.",
+            "Instagram **profissional** (Comercial ou Criador de conteúdo) e **público**.",
+            "**{{seguidores}} seguidores ou mais** e **{{publicacoes}} publicações ou mais**.",
+            "Conteúdo sobre construção, reforma, engenharia, arquitetura, materiais, ferramentas ou ensino da área.",
+            "**Seguir a {{conta}}** enquanto participa. Seguir é condição para entrar e não vale ponto."
+        ],
+        "contaTitulo": "Para a publicação contar",
+        "regrasDaPublicacao": [
+            "Feita pela conta inscrita, **depois do seu aceite**.",
+            "No Reels e no post, a {{conta}} **marcada** (Marcar pessoas). No story, a **menção**. Só escrever o @ na legenda não conta.",
+            "O app **em uso de verdade**: tela gravada, print ou na obra, com uma função que ele tem.",
+            "Identificada como publicidade: **Parceria paga** do Instagram ou **#publi** logo no começo da legenda.",
+            "Reels e post **{{diasNoAr}} dias no ar**, públicos. Apagou antes, deixa de contar."
+        ],
+        "pontosTitulo": "Tabela de pontos",
+        "pontosTexto": "Cada ciclo tem {{dias}} dias, contados do início da sua participação, e o piloto tem {{ciclos}} ciclos. Os pontos valem **{{validade}} meses** e **nunca viram dinheiro**.",
+        "tabelaLegenda": "Pontos de cada publicação válida e limite por ciclo",
+        "colunaPublicacao": "Publicação",
+        "colunaPontos": "Pontos",
+        "colunaLimite": "Limite por ciclo",
+        "tipos": {
+            "reels": {
+                "nome": "Reels",
+                "nota": "marcando a @oficial.obrafacil"
+            },
+            "post": {
+                "nome": "Post no feed",
+                "nota": "foto ou carrossel, marcando"
+            },
+            "story": {
+                "nome": "Story",
+                "nota": "com a menção"
+            },
+            "meta": {
+                "nome": "Meta do ciclo",
+                "nota": "2 Reels e 4 stories no mesmo ciclo"
+            },
+            "indicacao": {
+                "nome": "Indicação",
+                "nota": "quem assinou por você e pagou a 2ª mensalidade"
+            },
+            "repost": {
+                "nome": "Vídeo repostado",
+                "nota": "escolhido por nós, com a sua licença"
+            }
+        },
+        "limitePorNivel": "{{a}}, {{b}} ou {{c}}, conforme o nível",
+        "limite_one": "{{count}} vez",
+        "limite_many": "{{count}} vezes",
+        "limite_other": "{{count}} vezes",
+        "niveisTitulo": "Níveis e teto de cada ciclo",
+        "niveis": {
+            "influenciador": "Influenciador",
+            "pro": "Influenciador Pro",
+            "embaixador": "Embaixador"
+        },
+        "faixa": "de {{de}} a {{ate}} seguidores",
+        "faixaAberta": "{{de}} seguidores ou mais",
+        "teto": "até **{{teto}} pontos** por ciclo",
+        "niveisNota": "O teto soma tudo, menos as indicações. O que passar não entra nem vai para o ciclo seguinte. O nível é revisto no fim de cada ciclo.",
+        "mesTitulo": "Como o mês do PRO chega",
+        "entrega": [
+            "**No plano grátis:** 30 dias de Cortesia PRO na sua conta. No fim, volta ao grátis sozinha, sem cobrança.",
+            "**Mensal pelo site:** 100% de desconto na próxima mensalidade.",
+            "**Pela Google Play:** a próxima cobrança é adiada em 30 dias.",
+            "**Mensal pela App Store:** código de oferta oficial da Apple de 1 mês grátis.",
+            "**Anual pelo site ou pela App Store:** Acesso Cliente grátis numa obra sua.",
+            "No máximo **12 meses do PRO a cada 12 meses**. O mês prometido nunca é cobrado."
+        ],
+        "saberTitulo": "Bom saber",
+        "bomSaber": [
+            "Piloto com **{{vagas}} vagas**. Depois delas, as inscrições vão para uma lista de espera.",
+            "No piloto, o programa **não aparece no app do iPhone**. Quem usa iPhone participa pelo direct e por esta página.",
+            "Comprar seguidores, pedir avaliação nas lojas ou publicar sem a identificação de publicidade tira pontos ou desclassifica.",
+            "Para repostar um vídeo seu, pedimos uma licença à parte. Não dar a licença não tira nada de você.",
+            "Os dados que tratamos e os seus direitos estão na seção 13 do regulamento."
+        ],
+        "fimTitulo": "Bora mostrar a obra?",
+        "fimTexto": "Mande **{{palavra}}** no direct da {{conta}}. O Max explica tudo e manda o regulamento.",
+        "regulamentoVersao": "Versão {{versao}} · piloto no Brasil",
+        "regulamentoResumo": "Resumo: mostre o ObraFácil em uso nas suas publicações, marcando a {{conta}}, e troque {{pontosPorMes}} pontos por 1 mês do PRO. Para entrar, mande {{palavra}} no direct e responda {{aceite}}.",
+        "voltarAoPrograma": "Ver o resumo do programa",
+        "regulamentoFim": "Leu e quer participar? Mande **{{palavra}}** no direct da {{conta}} e responda **{{aceite}}** com o seu @ e o e-mail da sua conta do ObraFácil."
     }
 }

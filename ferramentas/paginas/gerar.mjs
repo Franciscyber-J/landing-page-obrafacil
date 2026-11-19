@@ -3,7 +3,7 @@
 //
 // Para cada idioma, grava em dist/ uma página de verdade, com o texto já dentro do HTML, título, descrição,
 // canonical, hreflang, Open Graph e dados estruturados: página inicial, Central de Ajuda (início, assuntos e
-// artigos), Termos, Política, Suporte, Perfil e volta do pagamento. Robôs (Google, buscadores com IA) e
+// artigos), Termos, Política, Suporte, Perfil, volta do pagamento e as páginas dos programas (Influenciadores, só pt-BR). Robôs (Google, buscadores com IA) e
 // navegadores sem JavaScript leem tudo; o site, ao abrir, "hidrata" a página (liga os botões) sem redesenhar.
 // Grava também sitemap.xml, robots.txt, llms.txt e o índice da Central de cada idioma em dados/ajuda/.
 //
@@ -18,12 +18,13 @@ import path from 'node:path';
 import process from 'node:process';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { COMPRAS, DOCUMENTOS_LEGAIS, IDIOMAS } from '../../src/i18n/idiomas.js';
+import { COMPRAS, DOCUMENTOS_LEGAIS, IDIOMAS, PROGRAMAS_DO_SITE, caminhoPrograma } from '../../src/i18n/idiomas.js';
 import { idiomaDoConteudo } from '../../src/ajuda/idiomas.js';
 import { slugDoModulo } from '../../src/ajuda/enderecos.js';
 import { conferirEnderecosAntigos } from '../../src/ajuda/antigos.js';
 import { enderecosDosArtigosDoSite } from '../../src/ajuda/artigosDoSite.js';
 import { lerTexto, tituloDoTexto } from '../../src/legal/markdown.js';
+import { ARQUIVO_DO_REGULAMENTO } from '../../src/programas/influenciadores.js';
 import { absoluto, arquivoDaPagina, indexavel } from '../../src/seo/paginas.js';
 import { cabecaDaPagina, montarPagina } from '../../src/seo/cabeca.js';
 import { arquivoDoSitemap, gerarIndiceDeSitemaps, gerarRobots, gerarSitemap } from '../../src/seo/sitemap.js';
@@ -70,6 +71,13 @@ function artigoResumido(doc, idiomaConteudo) {
 
 function slugsDoArtigo(doc) {
     return Object.fromEntries(Object.entries(doc.conteudo ?? {}).filter(([, c]) => c?.slug).map(([idioma, c]) => [idioma, c.slug]));
+}
+
+// Título do regulamento do programa (primeira linha do texto copiado em src/programas/).
+const ARQUIVOS_DOS_REGULAMENTOS = { influenciadores: ARQUIVO_DO_REGULAMENTO };
+function tituloDoRegulamento(programa) {
+    const texto = fs.readFileSync(path.join(RAIZ, 'src', 'programas', ARQUIVOS_DOS_REGULAMENTOS[programa]), 'utf8');
+    return tituloDoTexto(lerTexto(texto));
 }
 
 function existentesPorCaminho(paginas) {
@@ -137,6 +145,13 @@ async function principal() {
         paginas.push({ pagina: { tipo: 'suporte', codigo }, dados: daConta, lastmod: dataCodigo });
         paginas.push({ pagina: { tipo: 'perfil', codigo }, dados: daConta });
         for (const compra of [null, ...COMPRAS]) paginas.push({ pagina: { tipo: 'pagamento', codigo, compra }, dados: daConta });
+        // Programas de parceria (src/programas/): só nos idiomas em que existem (o de Influenciadores, só no pt-BR). O
+        // texto do regulamento vai no próprio código do site (cópia conferida do gestao_obras): não depende do Firestore.
+        for (const programa of PROGRAMAS_DO_SITE) {
+            if (!caminhoPrograma(codigo, programa)) continue;
+            paginas.push({ pagina: { tipo: 'programa', codigo, programa }, lastmod: dataCodigo });
+            paginas.push({ pagina: { tipo: 'regulamento-programa', codigo, programa }, dadosCabeca: { titulo: tituloDoRegulamento(programa) }, lastmod: dataCodigo });
+        }
 
         for (const documento of DOCUMENTOS_LEGAIS) {
             const dados = legal[documento]?.[codigo];

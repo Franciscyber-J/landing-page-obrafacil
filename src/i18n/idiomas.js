@@ -30,6 +30,9 @@ function completar(entrada, porCodigo) {
             perfil: rotas.perfil ?? rotasBase.perfil,
             suporte: rotas.suporte ?? rotasBase.suporte,
             secoes: { ...(rotasBase.secoes ?? {}), ...(rotas.secoes ?? {}) },
+            // Só os programas do próprio idioma: o piloto vale para um país (não vem da base).
+            programas: { ...(rotas.programas ?? {}) },
+            regulamento: rotas.regulamento ?? rotasBase.regulamento ?? null,
         },
     };
 }
@@ -141,6 +144,27 @@ export function caminhoSuporte(codigo) {
     return `/${i.prefixo}/${i.rotas.suporte}`;
 }
 
+// Programas de parceria com página no site (src/programas/). Cada um existe só nos idiomas que têm a palavra dele em
+// rotas.programas (o piloto de Influenciadores, só no pt-BR). Sem a palavra: null (a página não existe no idioma).
+export const PROGRAMAS_DO_SITE = ['influenciadores'];
+
+export function caminhoPrograma(codigo, programa) {
+    if (!PROGRAMAS_DO_SITE.includes(programa)) throw new Error(`Programa desconhecido: ${programa}`);
+    const i = idioma(codigo);
+    const palavra = i?.rotas.programas[programa];
+    return palavra ? `/${i.prefixo}/${palavra}` : null;
+}
+
+export function caminhoRegulamentoDoPrograma(codigo, programa) {
+    const base = caminhoPrograma(codigo, programa);
+    return base && idioma(codigo).rotas.regulamento ? `${base}/${idioma(codigo).rotas.regulamento}` : null;
+}
+
+// Idiomas em que o programa existe.
+export function idiomasDoPrograma(programa) {
+    return IDIOMAS.filter((i) => i.rotas.programas[programa]).map((i) => i.codigo);
+}
+
 // Endereços que o WordPress usava (e que estão nas lojas de aplicativos): continuam valendo.
 const LEGAIS_ANTIGOS = { 'termos-de-uso': 'termos', 'politicas-de-privacidade': 'privacidade' };
 
@@ -206,6 +230,8 @@ const PALAVRAS_ASSUNTO = new Set(IDIOMAS.map((i) => i.rotas.assunto.toLowerCase(
 // Palavra do endereço (de qualquer idioma) → página de conta (pagamento, perfil, suporte) e compra.
 const PALAVRAS_CONTA = new Map(IDIOMAS.flatMap((i) => ['pagamento', 'perfil', 'suporte'].map((p) => [i.rotas[p].toLowerCase(), p])));
 const PALAVRAS_COMPRA = new Map(IDIOMAS.flatMap((i) => COMPRAS.map((c) => [i.rotas.compras[c].toLowerCase(), c])));
+// Palavra do endereço (de qualquer idioma) → programa.
+const PALAVRAS_PROGRAMA = new Map(IDIOMAS.flatMap((i) => Object.entries(i.rotas.programas).map(([p, palavra]) => [palavra.toLowerCase(), p])));
 
 // Lê um endereço do site. Resultado:
 //   { tipo: 'raiz' }                                   → /
@@ -214,7 +240,8 @@ const PALAVRAS_COMPRA = new Map(IDIOMAS.flatMap((i) => COMPRAS.map((c) => [i.rot
 //   { tipo: 'antigo', codigo: null, pagina: 'pagamento' (com compra) | 'perfil' | 'suporte' } → PAGINAS_ANTIGAS
 //   { tipo: 'pagina', codigo, pagina, modulo, slug, canonico }
 //       pagina: inicio | ajuda | assunto | artigo | legal (com documento) | pagamento (com compra, ou null)
-//               | perfil | suporte | nao-encontrado
+//               | perfil | suporte | programa (com programa) | regulamento-programa (com programa) | nao-encontrado
+//       (programa num idioma em que ele não existe: nao-encontrado)
 //       canonico: endereço certo quando o pedido veio com outra grafia (/PT-BR/help → /pt-br/ajuda)
 //   { tipo: 'desconhecido' }
 export function analisarCaminho(pathname) {
@@ -273,6 +300,18 @@ export function analisarCaminho(pathname) {
         if (resto.length !== 1) return pagina({ pagina: 'nao-encontrado' }, null);
         const certo = conta === 'perfil' ? caminhoPerfil(i.codigo) : caminhoSuporte(i.codigo);
         return pagina({ pagina: conta }, prefixoErrado || resto[0] !== r[conta] ? certo : null);
+    }
+    const programa = PALAVRAS_PROGRAMA.get(palavra);
+    if (programa) {
+        const certo = caminhoPrograma(i.codigo, programa);
+        if (!certo) return pagina({ pagina: 'nao-encontrado' }, null);
+        const errado = prefixoErrado || resto[0] !== r.programas[programa];
+        if (resto.length === 1) return pagina({ pagina: 'programa', programa }, errado ? certo : null);
+        if (resto.length === 2 && r.regulamento && resto[1].toLowerCase() === r.regulamento) {
+            const doRegulamento = caminhoRegulamentoDoPrograma(i.codigo, programa);
+            return pagina({ pagina: 'regulamento-programa', programa }, errado || resto[1] !== r.regulamento ? doRegulamento : null);
+        }
+        return pagina({ pagina: 'nao-encontrado' }, null);
     }
     if (!PALAVRAS_AJUDA.has(palavra)) return pagina({ pagina: 'nao-encontrado' }, null);
     const ajudaErrada = prefixoErrado || resto[0] !== r.ajuda;

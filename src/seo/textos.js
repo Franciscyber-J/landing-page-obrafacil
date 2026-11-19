@@ -4,6 +4,16 @@
 
 import { NOME } from './paginas.js';
 
+// Chaves do título e da descrição de cada programa (escritas por inteiro: a conferência dos idiomas procura as chaves
+// no código).
+const TEXTOS_DOS_PROGRAMAS = {
+    influenciadores: {
+        titulo: 'influenciadores.metaTitulo',
+        descricao: 'influenciadores.metaDescricao',
+        regulamento: 'influenciadores.regulamentoMetaDescricao',
+    },
+};
+
 // Primeiro parágrafo dos Termos/Política, cortado numa palavra (até 160 letras).
 function primeiroParagrafo(blocos) {
     const p = (blocos ?? []).find((b) => b.tipo === 'paragrafo');
@@ -11,7 +21,8 @@ function primeiroParagrafo(blocos) {
     return texto.length > 160 ? `${texto.slice(0, 157).replace(/\s+\S*$/, '')}...` : texto;
 }
 
-// dados: { modulo } no assunto, { entrada } (item do índice) no artigo, { titulo, blocos } nos Termos/Política.
+// dados: { modulo } no assunto, { entrada } (item do índice) no artigo, { titulo, blocos } nos Termos/Política,
+// { titulo } no regulamento de um programa. Os textos de cada programa ficam na chave com o nome dele (influenciadores.*).
 export function tituloDaPagina(t, pagina, dados = {}) {
     switch (pagina.tipo) {
         case 'inicio': return t('seo.inicio.titulo');
@@ -22,6 +33,8 @@ export function tituloDaPagina(t, pagina, dados = {}) {
         case 'suporte': return t('suporte.metaTitulo');
         case 'perfil': return t('perfil.metaTitulo');
         case 'pagamento': return t('pagamento.metaTitulo');
+        case 'programa': return t(TEXTOS_DOS_PROGRAMAS[pagina.programa].titulo);
+        case 'regulamento-programa': return `${dados.titulo} · ${NOME}`;
         default: return NOME;
     }
 }
@@ -38,6 +51,8 @@ export function descricaoDaPagina(t, pagina, dados = {}) {
         case 'suporte': return t('suporte.metaDescricao');
         case 'perfil': return t('perfil.metaDescricao');
         case 'pagamento': return t('pagamento.metaDescricao');
+        case 'programa': return t(TEXTOS_DOS_PROGRAMAS[pagina.programa].descricao);
+        case 'regulamento-programa': return t(TEXTOS_DOS_PROGRAMAS[pagina.programa].regulamento);
         default: return t('seo.inicio.descricao');
     }
 }

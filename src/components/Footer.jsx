@@ -1,7 +1,7 @@
 // Rodapé: chamada curta (fora da página inicial, que já tem a dela), colunas de links e o idioma.
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { IDIOMAS, caminhoAjuda, caminhoInicio, caminhoLegal, caminhoSuporte } from '../i18n/idiomas.js';
+import { IDIOMAS, caminhoAjuda, caminhoInicio, caminhoLegal, caminhoPrograma, caminhoSuporte } from '../i18n/idiomas.js';
 import { anoNoIdioma } from '../i18n/formatos.js';
 import { useIdioma, useTrocarIdioma } from '../i18n/RotaDoIdioma.jsx';
 import { abrirAvisoCookies } from '../legal/cookies.js';
@@ -17,6 +17,8 @@ export default function Footer({ comChamada = true }) {
     const comecar = useLinkComecar(codigo);
     const trocarIdioma = useTrocarIdioma();
     const contato = useContato('rodape');
+    // Programa de Influenciadores: só nos idiomas em que ele existe (piloto no Brasil).
+    const influenciadores = caminhoPrograma(codigo, 'influenciadores');
 
     return (
         <footer className={styles.rodape}>
@@ -51,6 +53,7 @@ export default function Footer({ comChamada = true }) {
                         <li><Link to={caminhoInicio(codigo, 'recursos')}>{t('nav.recursos')}</Link></li>
                         <li><Link to={caminhoInicio(codigo, 'precos')}>{t('nav.precos')}</Link></li>
                         <li><Link to={caminhoAjuda(codigo)}>{t('footer.help')}</Link></li>
+                        {influenciadores && <li><Link to={influenciadores}>{t('influenciadores.rodape')}</Link></li>}
                     </ul>
                 </nav>
 
