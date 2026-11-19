@@ -102,7 +102,7 @@
                 "Aynı anda 1 aktif şantiye",
                 "Ayda filigranlı 7 PDF raporu",
                 "Fotoğraflar ve dosyalar için 250 MB",
-                "27 hazır şablon ve 1 kendi şablonunuzla kontrol listeleri",
+                "Kontrol listeleri: 27 hazır şablonla toplam 3",
                 "Müşterinin portal üzerinden takibi"
             ]
         },
@@ -116,7 +116,7 @@
                 "Fotoğraflar ve dosyalar için 10 GB",
                 "Şirket logonuz ve altbilginizle PDF'ler",
                 "ZIP olarak günlük raporlar ve çevrimdışı şantiye dosyaları",
-                "Sınırsız kontrol listesi şablonu ve birden fazla listeyi tek PDF’te toplama",
+                "Sınırsız kontrol listesi, kendi şablonlarınız ve birden fazla listeyi tek PDF’te toplama",
                 "Her şantiye için kullanılabilir Müşteri Erişimi"
             ],
             "itensAnual": [
@@ -188,7 +188,7 @@
         "q10": "Yenileme ödemesi başarısız olursa ne olur?",
         "a10": "Hesap otomatik olarak ücretsiz plana döner. Hiçbir veri silinmez; ücretsiz plan sınırlarını aşıyorsanız, yer açana veya yeniden abone olana kadar yalnızca yeni dosya yüklemeleri engellenir.",
         "q11": "Uygulamada kalite kontrol listesi var mı?",
-        "a11": "Evet. Kalite kontrol listeleriyle her imalatı madde madde, fotoğrafla kontrol eder, uygunsuzluğu düzeltici faaliyet ve yeniden kontrolle kaydeder, işi imzayla onaylarsınız. Telefonda çekmeyen yerde bile çalışır; girdikleriniz bağlantı gelince gönderilir. 27 hazır şablon gelir; firmanızın şablonlarını da oluşturabilirsiniz: ücretsiz planda 1, PRO’da istediğiniz kadar. Hazır şablonlar kontrol edip uyarlamanız için örnektir: yetkili şantiye şefinin ya da fenni mesulün yerine geçmez ve herhangi bir standarda ya da kalite programına uygunluğu belgelemez.",
+        "a11": "Evet. Kalite kontrol listeleriyle her imalatı madde madde, fotoğrafla kontrol eder, uygunsuzluğu düzeltici faaliyet ve yeniden kontrolle kaydeder, işi imzayla onaylarsınız. Telefonda çekmeyen yerde bile çalışır; girdikleriniz bağlantı gelince gönderilir. Ücretsiz planda özelliği tanımak için 27 hazır şablonla toplam 3 kontrol listesi uygularsınız; PRO’da kontrol listeleri sınırsızdır ve firmanızın şablonlarını oluşturursunuz. Hazır şablonlar kontrol edip uyarlamanız için örnektir: yetkili şantiye şefinin ya da fenni mesulün yerine geçmez ve herhangi bir standarda ya da kalite programına uygunluğu belgelemez.",
         "mais": "Cevabınızı bulamadınız mı?",
         "verAjuda": "Yardım Merkezi'ni ziyaret edin"
     },

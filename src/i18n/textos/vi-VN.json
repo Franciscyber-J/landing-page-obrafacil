@@ -102,7 +102,7 @@
                 "1 công trình đang hoạt động tại một thời điểm",
                 "7 báo cáo PDF mỗi tháng có hình mờ",
                 "250 MB dung lượng cho ảnh và tài liệu",
-                "Phiếu kiểm tra với 27 mẫu có sẵn và 1 mẫu riêng",
+                "Phiếu kiểm tra: tổng cộng 3 phiếu, với 27 mẫu có sẵn",
                 "Khách hàng theo dõi công trình qua cổng thông tin"
             ]
         },
@@ -116,7 +116,7 @@
                 "10 GB dung lượng cho ảnh và tài liệu",
                 "File PDF kèm logo và chân trang của công ty bạn",
                 "Tải nhật ký định dạng ZIP và tệp công trình ngoại tuyến",
-                "Không giới hạn mẫu phiếu kiểm tra, gộp nhiều phiếu vào một PDF",
+                "Phiếu kiểm tra không giới hạn, mẫu riêng, gộp nhiều phiếu vào một PDF",
                 "Có sẵn tính năng Truy cập khách hàng cho từng công trình"
             ],
             "itensAnual": [
@@ -188,7 +188,7 @@
         "q10": "Điều gì xảy ra nếu không thanh toán gia hạn?",
         "a10": "Tài khoản sẽ quay về gói miễn phí. Không có gì bị xóa; nếu vượt quá giới hạn của gói miễn phí, việc tải lên tệp mới sẽ tạm dừng cho đến khi bạn giải phóng dung lượng hoặc đăng ký lại.",
         "q11": "Ứng dụng có phiếu kiểm tra chất lượng công việc không?",
-        "a11": "Có. Với Phiếu kiểm tra chất lượng, bạn kiểm tra từng công việc theo từng mục, kèm ảnh, ghi nhận điểm không đạt cùng biện pháp khắc phục và kiểm tra lại, rồi nghiệm thu kèm chữ ký. Trên điện thoại, mất sóng vẫn dùng được: dữ liệu sẽ được gửi khi có kết nối lại. Có sẵn 27 mẫu, và bạn có thể tạo mẫu riêng của công ty: 1 mẫu ở gói miễn phí và không giới hạn ở gói PRO. Các mẫu có sẵn là ví dụ để bạn xem lại và điều chỉnh: chúng không thay thế kỹ sư chịu trách nhiệm kỹ thuật cho công trình và không chứng nhận việc tuân thủ bất kỳ tiêu chuẩn hay chương trình chất lượng nào.",
+        "a11": "Có. Với Phiếu kiểm tra chất lượng, bạn kiểm tra từng công việc theo từng mục, kèm ảnh, ghi nhận điểm không đạt cùng biện pháp khắc phục và kiểm tra lại, rồi nghiệm thu kèm chữ ký. Trên điện thoại, mất sóng vẫn dùng được: dữ liệu sẽ được gửi khi có kết nối lại. Ở gói miễn phí, bạn lập tổng cộng 3 phiếu với 27 mẫu có sẵn để dùng thử; với gói PRO, phiếu kiểm tra không giới hạn và bạn tạo được mẫu riêng của công ty. Các mẫu có sẵn là ví dụ để bạn xem lại và điều chỉnh: chúng không thay thế kỹ sư chịu trách nhiệm kỹ thuật cho công trình và không chứng nhận việc tuân thủ bất kỳ tiêu chuẩn hay chương trình chất lượng nào.",
         "mais": "Bạn chưa tìm thấy nội dung mình cần?",
         "verAjuda": "Xem Trung tâm trợ giúp"
     },
