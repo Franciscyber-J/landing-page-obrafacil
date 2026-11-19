@@ -6,6 +6,7 @@ import path from 'node:path'
 import process from 'node:process'
 import { IDIOMAS } from './src/i18n/registro.js'
 import { moduloDasFontes } from './src/fontes/escritas.js'
+import { NOME_DA_PARTE } from './src/ajuda/formato.js'
 
 // Central de Ajuda em desenvolvimento, sem tocar no Firestore:
 //   1. No gestao_obras, gere os documentos:  node bin/publicar.mjs --saida D:\Projetos\ajuda_saida
@@ -36,12 +37,13 @@ function ajudaLocal() {
         let arquivo = null
         let tipo = 'application/json; charset=utf-8'
         // Formato novo da Central (src/ajuda/formato.js), com as mesmas pastas do Firestore:
-        // ajuda_idiomas/<idioma>.json, ajuda_idiomas/<idioma>/partes/indice.json e ajuda_idiomas/<idioma>/artigos/<id>.json
+        // ajuda_idiomas/<idioma>.json, ajuda_idiomas/<idioma>/partes/indice-<hash>-<n>.json (as partes do índice),
+        // partes/indice.json (o índice inteiro, enquanto couber) e ajuda_idiomas/<idioma>/artigos/<id>.json
         const ultimo = (partes[partes.length - 1] ?? '').replace(/\.json$/, '')
         if (saida && partes[0] === 'ajuda_idiomas' && partes.length === 2) {
           if (IDIOMA.test(ultimo)) arquivo = path.join(saida, 'ajuda_idiomas', `${ultimo}.json`)
         } else if (saida && partes[0] === 'ajuda_idiomas' && partes.length === 4 && IDIOMA.test(partes[1])) {
-          if (partes[2] === 'partes' && ['indice', 'manifesto'].includes(ultimo)) {
+          if (partes[2] === 'partes' && (['indice', 'manifesto'].includes(ultimo) || NOME_DA_PARTE.test(ultimo))) {
             arquivo = path.join(saida, 'ajuda_idiomas', partes[1], 'partes', `${ultimo}.json`)
           } else if (partes[2] === 'artigos' && ID.test(ultimo)) {
             arquivo = path.join(saida, 'ajuda_idiomas', partes[1], 'artigos', `${ultimo}.json`)

@@ -6,7 +6,7 @@ import path from 'node:path';
 import { IDIOMAS } from '../../src/i18n/idiomas.js';
 import { IDIOMAS_AJUDA } from '../../src/ajuda/idiomas.js';
 import {
-    artigoDoIdiomaValido, artigoParaPagina, caminhoDoCabecalho, caminhoDoIndice, caminhoDosArtigos, indiceValido,
+    artigoDoIdiomaValido, artigoParaPagina, caminhoDoCabecalho, caminhoDosArtigos, indiceValido, lerIndicePublicado,
 } from '../../src/ajuda/formato.js';
 import { DOCUMENTOS, PROJETO, lerCampos, textoNaCadeia, versoesDoDocumento } from '../../src/legal/firestore.js';
 import { cadeia } from '../../src/i18n/idiomas.js';
@@ -21,8 +21,9 @@ async function lerJson(url) {
 }
 
 // ---------- Central de Ajuda ----------
-// Formato novo, um documento por idioma (src/ajuda/formato.js): de cada idioma, o cabeçalho, o índice e os artigos
-// daquele idioma.
+// Formato novo, um documento por idioma (src/ajuda/formato.js): de cada idioma, o cabeçalho, o índice (as partes que o
+// cabeçalho lista, juntas; ou o índice inteiro, se ele não listar) e os artigos daquele idioma. A data do índice
+// (sitemap) é a da parte gravada por último.
 // Resultado: { indices: { <idioma>: índice }, indicesAtualizados: { <idioma>: data },
 //              artigos: { <idioma>: Map(id → artigo no formato das páginas) }, atualizados: { <idioma>: Map(id → data) } }
 // O artigo no formato das páginas tem o conteúdo inteiro no idioma e o endereço (slug) nos outros
@@ -40,18 +41,24 @@ function guardarArtigo(saida, idioma, doc, data) {
 
 async function ajudaDoFirestore() {
     const saida = { indices: {}, indicesAtualizados: {}, artigos: {}, atualizados: {} };
-    for (const idioma of IDIOMAS_AJUDA) {
+    const datas = new Map(); // caminho -> updateTime
+    const lerDocumento = async (caminho) => {
         try {
-            await lerJson(`${BASE}/${caminhoDoCabecalho(idioma)}`);
+            const corpo = await lerJson(`${BASE}/${caminho}`);
+            datas.set(caminho, corpo.updateTime ?? null);
+            return lerCampos(corpo.fields);
         } catch (erro) {
-            if (/HTTP 404/.test(erro.message)) continue; // nada publicado neste idioma
+            if (/HTTP 404/.test(erro.message)) return null;
             throw erro;
         }
-        const corpo = await lerJson(`${BASE}/${caminhoDoIndice(idioma)}`);
-        const indice = lerCampos(corpo.fields);
+    };
+    for (const idioma of IDIOMAS_AJUDA) {
+        const cabecalho = await lerDocumento(caminhoDoCabecalho(idioma));
+        if (!cabecalho) continue; // nada publicado neste idioma
+        const { indice, caminhos } = await lerIndicePublicado(idioma, lerDocumento, cabecalho);
         if (!indiceValido(indice, idioma)) throw new Error(`índice da Central em formato inesperado (${idioma})`);
         saida.indices[idioma] = indice;
-        saida.indicesAtualizados[idioma] = corpo.updateTime ?? null;
+        saida.indicesAtualizados[idioma] = maisRecente(caminhos.map((c) => datas.get(c)));
         saida.artigos[idioma] = new Map();
         saida.atualizados[idioma] = new Map();
         let pagina = '';
@@ -64,20 +71,27 @@ async function ajudaDoFirestore() {
     return saida;
 }
 
+// A data mais recente de uma lista (datas ISO do Firestore ou do arquivo; null fica de fora).
+function maisRecente(datas) {
+    return datas.filter(Boolean).sort().pop() ?? null;
+}
+
 // Pasta gravada pelo publicador do gestao_obras (node bin/publicar.mjs --saida <pasta>), com as mesmas pastas do
-// Firestore: ajuda_idiomas/<idioma>.json, ajuda_idiomas/<idioma>/partes/indice.json e .../artigos/<id>.json.
-function ajudaLocal(pasta) {
+// Firestore: ajuda_idiomas/<idioma>.json, ajuda_idiomas/<idioma>/partes/indice-<hash>-<n>.json (e partes/indice.json,
+// enquanto couber) e .../artigos/<id>.json.
+async function ajudaLocal(pasta) {
     const ler = (arq) => JSON.parse(fs.readFileSync(arq, 'utf8'));
     const data = (arq) => fs.statSync(arq).mtime.toISOString();
     const arquivo = (caminho) => path.join(pasta, ...`${caminho}.json`.split('/'));
+    const lerDocumento = async (caminho) => (fs.existsSync(arquivo(caminho)) ? ler(arquivo(caminho)) : null);
     const saida = { indices: {}, indicesAtualizados: {}, artigos: {}, atualizados: {} };
     for (const idioma of IDIOMAS_AJUDA) {
-        if (!fs.existsSync(arquivo(caminhoDoCabecalho(idioma)))) continue;
-        const arqIndice = arquivo(caminhoDoIndice(idioma));
-        const indice = ler(arqIndice);
+        const cabecalho = await lerDocumento(caminhoDoCabecalho(idioma));
+        if (!cabecalho) continue;
+        const { indice, caminhos } = await lerIndicePublicado(idioma, lerDocumento, cabecalho);
         if (!indiceValido(indice, idioma)) throw new Error(`índice da Central em formato inesperado (${idioma})`);
         saida.indices[idioma] = indice;
-        saida.indicesAtualizados[idioma] = data(arqIndice);
+        saida.indicesAtualizados[idioma] = maisRecente(caminhos.filter((c) => fs.existsSync(arquivo(c))).map((c) => data(arquivo(c))));
         saida.artigos[idioma] = new Map();
         saida.atualizados[idioma] = new Map();
         const pastaArtigos = path.join(pasta, ...caminhoDosArtigos(idioma).split('/'));
@@ -91,7 +105,7 @@ function ajudaLocal(pasta) {
 }
 
 export async function lerAjuda({ local = null } = {}) {
-    const ajuda = local ? ajudaLocal(local) : await ajudaDoFirestore();
+    const ajuda = local ? await ajudaLocal(local) : await ajudaDoFirestore();
     if (!Object.keys(ajuda.indices).length) throw new Error('nenhum índice da Central publicado');
     return ajuda;
 }

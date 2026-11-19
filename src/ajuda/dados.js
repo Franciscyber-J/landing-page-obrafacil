@@ -2,19 +2,19 @@
 //
 // Produção: lê o Firestore pela API REST pública (as regras liberam só a leitura da Central). Sem SDK do Firebase e
 // sem chave: o site só lê. Formato novo, um documento por idioma (src/ajuda/formato.js): o site lê só o idioma da
-// página (o cabeçalho, o índice quando ele muda e o artigo aberto).
+// página (o cabeçalho, o índice quando ele muda, em partes, e o artigo aberto).
 // Desenvolvimento: com AJUDA_SAIDA definido ao rodar "npm run dev", lê os documentos que o
 // publicador gravou com --saida (ver vite.config.js), sem tocar no Firestore.
 //
 // Cache: o índice de cada idioma e cada artigo ficam guardados no navegador. O índice é mostrado na hora (o da
-// página pronta ou o guardado) e conferido em segundo plano pelo cabeçalho do idioma (~0,3 KB): o índice inteiro só
-// é baixado de novo quando o hash muda. O artigo só é baixado de novo quando o hash dele no índice muda.
+// página pronta ou o guardado) e conferido em segundo plano pelo cabeçalho do idioma (~0,3 KB): o índice (as partes
+// que o cabeçalho lista, juntas) só é baixado de novo quando o hash muda. O artigo só é baixado de novo quando o hash dele no índice muda.
 
 import { ehIdiomaDaAjuda } from './idiomas.js';
 import { lerMarcacao } from './marcacao.js';
 import {
-    artigoDaPaginaValido, artigoDoIdiomaValido, artigoParaPagina, caminhoDoArtigo, caminhoDoCabecalho, caminhoDoIndice,
-    indiceValido,
+    artigoDaPaginaValido, artigoDoIdiomaValido, artigoParaPagina, caminhoDoArtigo, caminhoDoCabecalho, indiceValido,
+    lerIndicePublicado,
 } from './formato.js';
 
 export const PROJETO = 'gestao-obras-app-8342c';
@@ -102,7 +102,8 @@ function apagarCache(chave) {
 
 class NaoPublicado extends Error {}
 
-// caminho: "ajuda_idiomas/pt-BR", "ajuda_idiomas/pt-BR/partes/indice"... (formato.js; idioma e id já conferidos).
+// caminho: "ajuda_idiomas/pt-BR", "ajuda_idiomas/pt-BR/partes/indice-<hash>-1"... (formato.js; idioma e id já
+// conferidos).
 async function buscarDocumento(caminho) {
     const partes = caminho.split('/').map(encodeURIComponent).join('/');
     const url = LOCAL ? `/__ajuda/${partes}.json` : `${BASE_FIRESTORE}/${partes}`;
@@ -111,6 +112,16 @@ async function buscarDocumento(caminho) {
     if (!resposta.ok) throw new Error(`HTTP ${resposta.status} ao ler ${caminho}`);
     const corpo = await resposta.json();
     return LOCAL ? corpo : lerCampos(corpo.fields);
+}
+
+// O documento, ou null se não estiver publicado.
+async function buscarSeExistir(caminho) {
+    try {
+        return await buscarDocumento(caminho);
+    } catch (erro) {
+        if (erro instanceof NaoPublicado) return null;
+        throw erro;
+    }
 }
 
 // ---------- Índice ----------
@@ -128,7 +139,7 @@ export function indiceGuardado(idioma) {
 // Confere o índice no servidor (uma vez por visita) e chama aoAtualizar(indice | null) quando
 // vier algo diferente do que estava guardado (null = nada publicado neste idioma).
 // [conhecido]: o índice que já está na tela (o da página pronta), quando o navegador não tem um guardado.
-// Lê primeiro o cabeçalho do idioma; o índice inteiro só quando o hash dele mudou.
+// Lê primeiro o cabeçalho do idioma; o índice (as partes que o cabeçalho lista) só quando o hash dele mudou.
 // Devolve a promessa da conferência.
 export function conferirIndice(idioma, aoAtualizar, conhecido = null) {
     if (!ehIdiomaDaAjuda(idioma)) throw new Error(`Idioma inválido: ${idioma}`);
@@ -144,7 +155,8 @@ export function conferirIndice(idioma, aoAtualizar, conhecido = null) {
                     gravarCache(`indice:${idioma}`, atual); // o da página pronta passa a valer nas próximas visitas
                     return atual;
                 }
-                const doc = await buscarDocumento(caminhoDoIndice(idioma));
+                // As partes que o cabeçalho lista (ou o índice inteiro, se ele não listar).
+                const { indice: doc } = await lerIndicePublicado(idioma, buscarSeExistir, cabecalho);
                 if (!indiceValido(doc, idioma)) throw new Error('Índice da Central em formato inesperado');
                 gravarCache(`indice:${idioma}`, doc);
                 return doc;

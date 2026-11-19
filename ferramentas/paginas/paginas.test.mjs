@@ -227,6 +227,72 @@ test('fontes: Central do Firestore pela API REST, com páginas de artigos, só n
     }
 });
 
+// Índice em partes (ajuda-indice-em-partes, gestao_obras, 19/11/2026): o cabeçalho lista as partes; o build lê as
+// partes (e não o índice inteiro) e o índice fica igual ao de antes.
+function emPartes(idioma, hash = '0123456789abcdef0123') {
+    const inteiro = indiceDe(idioma, hash);
+    const nomes = [`indice-${hash.slice(0, 16)}-1`, `indice-${hash.slice(0, 16)}-2`];
+    const outro = { id: 'editar-rdo', slug: `editar-${idioma}`, modulo: 'diario', hash: 'a2' };
+    return {
+        cabecalho: { ...cabecalho(idioma, hash), total: 2, partes_do_indice: nomes },
+        partes: {
+            [nomes[0]]: { formato: 2, idioma, hash_indice: hash, parte: 1, partes: 2, total: 2, modulos: inteiro.modulos, artigos: inteiro.artigos },
+            [nomes[1]]: { formato: 2, idioma, hash_indice: hash, parte: 2, partes: 2, artigos: [outro] },
+        },
+        esperado: { ...inteiro, total: 2, artigos: [...inteiro.artigos, outro] },
+    };
+}
+
+test('fontes: índice em partes na pasta local, sem o índice inteiro (idioma em que ele não cabe mais)', async () => {
+    const pasta = fs.mkdtempSync(path.join(os.tmpdir(), 'ajuda-em-partes-'));
+    const gravar = (caminho, dados) => {
+        const arq = path.join(pasta, ...`${caminho}.json`.split('/'));
+        fs.mkdirSync(path.dirname(arq), { recursive: true });
+        fs.writeFileSync(arq, JSON.stringify(dados));
+    };
+    try {
+        const th = emPartes('th-TH');
+        gravar('ajuda_idiomas/th-TH', th.cabecalho);
+        for (const [nome, dados] of Object.entries(th.partes)) gravar(`ajuda_idiomas/th-TH/partes/${nome}`, dados);
+        gravar('ajuda_idiomas/th-TH/artigos/criar-rdo', artigoDe('th-TH'));
+        const ajuda = await lerAjuda({ local: pasta });
+        assert.deepEqual(ajuda.indices['th-TH'], th.esperado);
+        assert.ok(ajuda.indicesAtualizados['th-TH']);
+    } finally {
+        fs.rmSync(pasta, { recursive: true });
+    }
+});
+
+test('fontes: índice em partes pelo Firestore: lê as partes, não o índice inteiro; a data é a da parte mais nova', async () => {
+    const valor = (v) => (v === null ? { nullValue: null } : Array.isArray(v) ? { arrayValue: { values: v.map(valor) } }
+        : typeof v === 'object' ? { mapValue: { fields: campos(v) } } : typeof v === 'number' ? { integerValue: String(v) }
+            : typeof v === 'boolean' ? { booleanValue: v } : { stringValue: v });
+    const campos = (o) => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, valor(v)]));
+    const pt = emPartes('pt-BR');
+    const [p1, p2] = Object.keys(pt.partes);
+    const pedidos = [];
+    const original = globalThis.fetch;
+    globalThis.fetch = async (url) => {
+        const [caminho, busca = ''] = String(url).split('/documents/')[1].split('?');
+        pedidos.push(caminho + (busca ? `?${busca}` : ''));
+        const resposta = (corpo) => ({ ok: true, status: 200, json: async () => corpo });
+        if (caminho === 'ajuda_idiomas/pt-BR') return resposta({ fields: campos(pt.cabecalho) });
+        if (caminho === `ajuda_idiomas/pt-BR/partes/${p1}`) return resposta({ fields: campos(pt.partes[p1]), updateTime: '2026-11-19T10:00:00.1Z' });
+        if (caminho === `ajuda_idiomas/pt-BR/partes/${p2}`) return resposta({ fields: campos(pt.partes[p2]), updateTime: '2026-11-19T10:00:00.2Z' });
+        if (caminho === 'ajuda_idiomas/pt-BR/partes/indice') return resposta({ fields: campos(indiceDe('pt-BR', 'velho')), updateTime: '2026-10-01T10:00:00Z' });
+        if (caminho === 'ajuda_idiomas/pt-BR/artigos') return resposta({ documents: [{ fields: campos(artigoDe('pt-BR')), updateTime: '2026-11-19T09:00:00Z' }] });
+        return { ok: false, status: 404, json: async () => ({}) };
+    };
+    try {
+        const ajuda = await lerAjuda();
+        assert.deepEqual(ajuda.indices['pt-BR'], pt.esperado);
+        assert.equal(ajuda.indicesAtualizados['pt-BR'], '2026-11-19T10:00:00.2Z');
+        assert.equal(pedidos.includes('ajuda_idiomas/pt-BR/partes/indice'), false, 'o índice inteiro não é lido');
+    } finally {
+        globalThis.fetch = original;
+    }
+});
+
 const SSR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'dist-ssr', 'entrada.js');
 test('gerador sai com erro (sem gravar nada) quando a Central não é lida', { skip: fs.existsSync(SSR) ? false : 'sem dist-ssr (rode npm run build)' }, () => {
     const vazia = fs.mkdtempSync(path.join(os.tmpdir(), 'ajuda-vazia-'));
