@@ -74,13 +74,28 @@ export async function versoesDoDocumento(documento, { fetchFn = fetch, agora = D
     return escolherVersao(liberadas, existentes, agora);
 }
 
-// Texto de uma versão num idioma: { versao, texto, hash, vigenteDesde|null }. Só baixa o idioma
-// pedido (máscara), não os oito.
-export async function textoDaVersao(documento, versao, idioma, { fetchFn = fetch } = {}) {
-    if (!DOCUMENTOS.includes(documento) || !versaoValida(versao) || !/^[a-z]{2}-[A-Z]{2}$/.test(idioma)) {
-        throw new Error('Pedido de texto legal inválido');
+// Formato 2 (gestao_obras, ferramentas/legal, 19/11/2026): o texto de cada idioma num documento próprio,
+// documentos_legais/{documento}/versoes/{v}/textos/{idioma} (versao, idioma, texto, hash, resumo). null quando o
+// documento não existe (versão gravada no formato antigo) ou não é desta versão e deste idioma.
+async function textoDoIdioma(documento, versao, idioma, fetchFn) {
+    const campos = ['versao', 'idioma', 'texto', 'hash'];
+    let corpo;
+    try {
+        corpo = await buscar(`${BASE}/documentos_legais/${documento}/versoes/${encodeURIComponent(versao)}/textos/${idioma}?${mascara(campos)}`, fetchFn);
+    } catch (erro) {
+        if (erro instanceof NaoPublicado) return null;
+        throw erro;
     }
-    const campos = ['versao', 'estado', 'vigente_desde', `textos.\`${idioma}\``, `hashes.\`${idioma}\``];
+    const doc = lerCampos(corpo.fields);
+    if (doc.versao !== versao || doc.idioma !== idioma) return null;
+    if (typeof doc.texto !== 'string' || !doc.texto.startsWith('# ')) return null;
+    return { versao, texto: doc.texto, hash: typeof doc.hash === 'string' ? doc.hash : null };
+}
+
+// Formato antigo (as versões 2.0): os textos dos idiomas no campo "textos" do documento da versão. Só baixa o idioma
+// pedido (máscara), não todos.
+async function textoNoDocumentoDaVersao(documento, versao, idioma, fetchFn) {
+    const campos = ['versao', `textos.\`${idioma}\``, `hashes.\`${idioma}\``];
     let corpo;
     try {
         corpo = await buscar(`${BASE}/documentos_legais/${documento}/versoes/${encodeURIComponent(versao)}?${mascara(campos)}`, fetchFn);
@@ -91,12 +106,18 @@ export async function textoDaVersao(documento, versao, idioma, { fetchFn = fetch
     const doc = lerCampos(corpo.fields);
     const texto = doc.textos?.[idioma];
     if (typeof texto !== 'string' || !texto.startsWith('# ')) return null;
-    return {
-        versao,
-        texto,
-        hash: doc.hashes?.[idioma] ?? null,
-        vigenteDesde: doc.estado === 'preparada' ? null : (doc.vigente_desde ? Date.parse(doc.vigente_desde) : null),
-    };
+    return { versao, texto, hash: doc.hashes?.[idioma] ?? null };
+}
+
+// Texto de uma versão num idioma: { versao, texto, hash } ou null. Primeiro o documento do idioma (formato 2); sem
+// ele, o campo antigo do documento da versão. A data de vigência vem da lista das versões liberadas
+// (versoesDoDocumento), não daqui.
+export async function textoDaVersao(documento, versao, idioma, { fetchFn = fetch } = {}) {
+    if (!DOCUMENTOS.includes(documento) || !versaoValida(versao) || !/^[a-z]{2}-[A-Z]{2}$/.test(idioma)) {
+        throw new Error('Pedido de texto legal inválido');
+    }
+    return await textoDoIdioma(documento, versao, idioma, fetchFn) ??
+        await textoNoDocumentoDaVersao(documento, versao, idioma, fetchFn);
 }
 
 // Texto de uma versão no idioma ou, se a versão não tem esse idioma (idioma novo antes da versão que o traz), no

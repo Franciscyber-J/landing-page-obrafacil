@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import crypto from 'node:crypto'
 import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
@@ -68,6 +69,8 @@ function ajudaLocal() {
 //   $env:LEGAL_PASTA = "D:\Projetos\gestao_obras\legal"; npm run dev
 // Responde no formato da API REST do Firestore como se nada tivesse sido liberado ainda
 // (o site mostra a versão mais nova da pasta). Só vale para "npm run dev".
+// Os dois formatos: o documento de cada idioma (formato 2, documentos_legais/<doc>/versoes/<v>/textos/<idioma>, lido
+// primeiro pelo site) e o documento da versão com o campo textos (formato antigo das versões 2.0).
 const VERSAO = /^\d{1,4}(\.\d{1,4}){0,3}$/
 function legalLocal() {
   const pasta = process.env.LEGAL_PASTA ? path.resolve(process.env.LEGAL_PASTA) : null
@@ -104,6 +107,13 @@ function legalLocal() {
             if (IDIOMA.test(idioma)) textos[idioma] = texto(fs.readFileSync(path.join(dir, f), 'utf8'))
           }
           return enviar(200, { fields: { versao: texto(partes[3]), estado: texto('preparada'), textos: { mapValue: { fields: textos } } } })
+        }
+        if (partes.length === 6 && partes[2] === 'versoes' && VERSAO.test(partes[3]) && partes[4] === 'textos' && IDIOMA.test(partes[5])) {
+          const arquivo = path.join(pasta, doc, partes[3], `${partes[5]}.md`)
+          if (!fs.existsSync(arquivo)) return enviar(404, {})
+          const conteudo = fs.readFileSync(arquivo, 'utf8')
+          const hash = crypto.createHash('sha256').update(conteudo, 'utf8').digest('hex')
+          return enviar(200, { fields: { versao: texto(partes[3]), idioma: texto(partes[5]), texto: texto(conteudo), hash: texto(hash) } })
         }
         return next()
       })
