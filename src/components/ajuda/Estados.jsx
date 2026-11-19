@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { MessageCircle, RefreshCw, SearchX, Hourglass } from 'lucide-react';
+import { MessageCircle, MessagesSquare, RefreshCw, SearchX, Hourglass } from 'lucide-react';
 import useTituloDaPagina from './useTituloDaPagina.js';
 import useCabecaDaPagina from '../conta/useCabecaDaPagina.js';
+import { useContato } from '../atendimento/useContato.js';
 import styles from './Ajuda.module.css';
-
-const WHATSAPP = '5562992666759';
 
 export function Carregando() {
     const { t } = useTranslation();
@@ -47,7 +46,7 @@ export function ErroAoCarregar({ aoTentarDeNovo }) {
     return (
         <Aviso icone={<RefreshCw size={28} aria-hidden="true" />} titulo={t('ajuda.erroTitulo')} texto={t('ajuda.erroTexto')}>
             <button type="button" className={styles.botao} onClick={aoTentarDeNovo}>{t('ajuda.tentarDeNovo')}</button>
-            <LinkWhatsApp classe={styles.botaoContorno} />
+            <Contato classe={styles.botaoContorno} />
         </Aviso>
     );
 }
@@ -58,7 +57,7 @@ export function NadaPublicado() {
     useCabecaDaPagina({ semIndexar: true }); // sem conteúdo: fora do Google, como a tela de erro
     return (
         <Aviso icone={<Hourglass size={28} aria-hidden="true" />} titulo={t('ajuda.vazioTitulo')} texto={t('ajuda.vazioTexto')}>
-            <LinkWhatsApp classe={styles.botao} />
+            <Contato classe={styles.botao} />
         </Aviso>
     );
 }
@@ -75,26 +74,43 @@ export function NaoEncontrado({ para, titulo }) {
     );
 }
 
-export function LinkWhatsApp({ classe }) {
+// Contato da Central: WhatsApp, conversa com o Max ou os dois, pelo país do visitante (useContato). Nos dois, a
+// conversa vem primeiro (responde na hora) e o WhatsApp ao lado, com o contorno.
+export function Contato({ classe, classeSegunda = styles.botaoContorno }) {
     const { t } = useTranslation();
-    const endereco = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t('ajuda.suporteMensagem'))}`;
+    const contato = useContato('ajuda');
     return (
-        <a className={classe} href={endereco} target="_blank" rel="noopener noreferrer">
-            <MessageCircle size={18} aria-hidden="true" />
-            {t('ajuda.suporteBotao')}
-        </a>
+        <>
+            {contato.conversa && (
+                <button type="button" className={classe} onClick={contato.abrir} aria-haspopup="dialog">
+                    <MessagesSquare size={18} aria-hidden="true" />
+                    {t('atendimento.conversar')}
+                </button>
+            )}
+            {contato.whatsapp && (
+                <a className={contato.conversa ? classeSegunda : classe} href={contato.linkWhatsApp(t('ajuda.suporteMensagem'))} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle size={18} aria-hidden="true" />
+                    {t('ajuda.suporteBotao')}
+                </a>
+            )}
+        </>
     );
 }
 
+const TEXTO_DO_SUPORTE = { so_whatsapp: 'ajuda.suporteTexto', os_dois: 'atendimento.ajudaTextoDois', so_chat: 'atendimento.ajudaTextoChat' };
+
 export function BandaSuporte() {
     const { t } = useTranslation();
+    const { grupo } = useContato('ajuda');
     return (
         <section className={styles.suporte} aria-labelledby="ajuda-suporte">
             <div className={styles.suporteTexto}>
                 <h2 id="ajuda-suporte" className={styles.suporteTitulo}>{t('ajuda.suporteTitulo')}</h2>
-                <p>{t('ajuda.suporteTexto')}</p>
+                <p>{t(TEXTO_DO_SUPORTE[grupo])}</p>
             </div>
-            <LinkWhatsApp classe={styles.botao} />
+            <div className={styles.suporteAcoes}>
+                <Contato classe={styles.botao} classeSegunda={styles.botaoClaro} />
+            </div>
         </section>
     );
 }

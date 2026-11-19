@@ -1,7 +1,8 @@
-// Última chamada da página inicial: a faixa laranja da placa, com o cadastro e o WhatsApp.
+// Última chamada da página inicial: a faixa laranja da placa, com o cadastro e o atendimento (WhatsApp, conversa com o
+// Max ou os dois, pelo país: useContato).
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { linkWhatsApp } from '../../links.js';
+import { useContato } from '../atendimento/useContato.js';
 import { comDestaque } from '../../texto.jsx';
 import { COM_MOUSE, COM_MOVIMENTO, gsap, jaApareceu, magnetico, sentidoDoIdioma, tituloSobe, useGSAP } from '../../movimento/index.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
@@ -12,6 +13,7 @@ export default function Chamada() {
     const { t } = useTranslation();
     const codigo = useIdioma();
     const comecar = useLinkComecar(codigo);
+    const contato = useContato('chamada');
     const raiz = useRef(null);
 
     useGSAP(() => {
@@ -39,9 +41,21 @@ export default function Chamada() {
                 <div className={styles.acoes} data-m="lado">
                     <a {...comecar} className={styles.botao} data-m="botao">{t('chamada.acao')}</a>
                     <p className={styles.nota}>{t('hero.semCartao')}</p>
-                    <a href={linkWhatsApp(t('whatsapp.message'))} target="_blank" rel="noopener noreferrer" className={styles.whatsapp}>
-                        {t('chamada.duvida')}
-                    </a>
+                    {contato.grupo === 'so_whatsapp' && (
+                        <a href={contato.linkWhatsApp(t('whatsapp.message'))} target="_blank" rel="noopener noreferrer" className={styles.contato}>
+                            {t('chamada.duvida')}
+                        </a>
+                    )}
+                    {contato.conversa && (
+                        <button type="button" onClick={contato.abrir} aria-haspopup="dialog" className={styles.contato}>
+                            {t('atendimento.chamadaDuvida')}
+                        </button>
+                    )}
+                    {contato.grupo === 'os_dois' && (
+                        <a href={contato.linkWhatsApp(t('whatsapp.message'))} target="_blank" rel="noopener noreferrer" className={styles.contato}>
+                            {t('chamada.whatsapp')}
+                        </a>
+                    )}
                 </div>
             </div>
             </div>

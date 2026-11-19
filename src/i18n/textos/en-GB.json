@@ -57,5 +57,9 @@
                 "texto": "27 ready-made templates or your company's own. Pass, Fail or N/A on each item, with photos, and re-inspection of anything that fails. Sign-off, a PDF and the client seeing it in the portal."
             }
         }
+    },
+    "atendimento": {
+        "ajudaTextoChat": "Chat with Max, the ObraFácil assistant, right here on the site, or raise a ticket in the app.",
+        "ajudaTextoDois": "Chat with Max right here on the site, message support on WhatsApp, or raise a ticket in the app."
     }
 }

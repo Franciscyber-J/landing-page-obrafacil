@@ -5,7 +5,8 @@ import { IDIOMAS, caminhoAjuda, caminhoInicio, caminhoLegal, caminhoSuporte } fr
 import { anoNoIdioma } from '../i18n/formatos.js';
 import { useIdioma, useTrocarIdioma } from '../i18n/RotaDoIdioma.jsx';
 import { abrirAvisoCookies } from '../legal/cookies.js';
-import { WINDOWS, appStore, googlePlay, linkWhatsApp } from '../links.js';
+import { WINDOWS, appStore, googlePlay } from '../links.js';
+import { useContato } from './atendimento/useContato.js';
 import { publico } from '../publico.js';
 import styles from './Footer.module.css';
 import { useLinkComecar } from '../useNavegador.js';
@@ -15,6 +16,7 @@ export default function Footer({ comChamada = true }) {
     const codigo = useIdioma();
     const comecar = useLinkComecar(codigo);
     const trocarIdioma = useTrocarIdioma();
+    const contato = useContato('rodape');
 
     return (
         <footer className={styles.rodape}>
@@ -73,11 +75,18 @@ export default function Footer({ comChamada = true }) {
                 <nav className={styles.coluna} aria-labelledby="rodape-contato">
                     <h2 id="rodape-contato">{t('footer.contato')}</h2>
                     <ul>
-                        <li>
-                            <a href={linkWhatsApp(t('whatsapp.message'))} target="_blank" rel="noopener noreferrer">
-                                {t('footer.whatsapp')}
-                            </a>
-                        </li>
+                        {contato.whatsapp && (
+                            <li>
+                                <a href={contato.linkWhatsApp(t('whatsapp.message'))} target="_blank" rel="noopener noreferrer">
+                                    {t('footer.whatsapp')}
+                                </a>
+                            </li>
+                        )}
+                        {contato.conversa && (
+                            <li>
+                                <button type="button" onClick={contato.abrir} aria-haspopup="dialog">{t('atendimento.conversar')}</button>
+                            </li>
+                        )}
                         <li>
                             <Link to={caminhoSuporte(codigo)}>{t('footer.support')}</Link>
                         </li>

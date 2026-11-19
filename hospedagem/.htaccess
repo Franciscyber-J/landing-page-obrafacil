@@ -46,7 +46,17 @@ AddDefaultCharset UTF-8
         # Política de conteúdo do site em modo de TESTE (só avisa no console,
         # não bloqueia). Depois de conferido no navegador, troque
         # "Content-Security-Policy-Report-Only" por "Content-Security-Policy".
-        Header set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; connect-src 'self' https://firestore.googleapis.com https://firebasestorage.googleapis.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.doubleclick.net https://*.googleadservices.com https://*.google.com https://pagead2.googlesyndication.com; frame-src https://td.doubleclick.net https://bid.g.doubleclick.net https://www.googletagmanager.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+        # Conversa com o Max (atendimento do site, src/atendimento/LEIAME.md), só o estritamente necessário:
+        #   connect-src identitytoolkit.googleapis.com: criar e conferir o login anônimo;
+        #   connect-src securetoken.googleapis.com: renovar o login anônimo;
+        #   connect-src us-central1-gestao-obras-app-8342c.cloudfunctions.net: a function maxChatSite;
+        #   connect-src content-firebaseappcheck.googleapis.com: trocar o resultado do reCAPTCHA pelo token do App Check;
+        #   script-src www.gstatic.com/recaptcha/: o código do reCAPTCHA Enterprise (o enterprise.js vem de
+        #     www.google.com, já liberado para o Google Ads);
+        #   frame-src www.google.com/recaptcha/ e recaptcha.google.com/recaptcha/: o quadro invisível do reCAPTCHA.
+        # Os grupos de países e o número do WhatsApp vêm do firestore.googleapis.com, já liberado para a Central; as
+        # conversas do reCAPTCHA com o Google saem de dentro do quadro dele (www.google.com, já liberado).
+        Header set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://www.gstatic.com/recaptcha/; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; connect-src 'self' https://firestore.googleapis.com https://firebasestorage.googleapis.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://us-central1-gestao-obras-app-8342c.cloudfunctions.net https://content-firebaseappcheck.googleapis.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.doubleclick.net https://*.googleadservices.com https://*.google.com https://pagead2.googlesyndication.com; frame-src https://td.doubleclick.net https://bid.g.doubleclick.net https://www.googletagmanager.com https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
     </FilesMatch>
 
     # robots.txt, sitemap.xml (índice), os sitemaps de cada idioma (sitemap-pt-br.xml...) e llms.txt mudam a cada

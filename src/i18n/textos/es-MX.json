@@ -143,5 +143,18 @@
         "gerenciarSite": "**Si te suscribiste en el sitio web o en la computadora**: la página de pagos, en el navegador, para cambiar la tarjeta, ver los cobros o cancelar.",
         "gerenciarLugar": "Cancelar en un lugar no cancela una suscripción hecha en el otro.",
         "avisoTexto": "El banco rechazó el cobro de la suscripción. Toca **Gestionar** y agrega una tarjeta válida para no perder el PRO. Si ya pagaste, puedes ignorar el aviso."
+    },
+    "atendimento": {
+        "chamadaDuvida": "¿Tienes dudas? Platica con Max, el asistente de ObraFácil.",
+        "ajudaTextoChat": "Platica con Max, el asistente de ObraFácil, aquí en el sitio, o abre una solicitud desde la app.",
+        "ajudaTextoDois": "Platica con Max aquí en el sitio, escríbele a soporte por WhatsApp o abre una solicitud desde la app.",
+        "suporteTexto": "El asistente con IA de ObraFácil responde al instante, a cualquier hora, aquí en el sitio.",
+        "painelSubtitulo": "Asistente con IA · responde al instante",
+        "boasVindas": "¡Hola! Soy Max, el asistente de ObraFácil. Pregúntame lo que quieras sobre la app: funciones, planes, precios o cómo empezar.",
+        "dicaTeclado": "Enter envía. Shift + Enter agrega una línea.",
+        "erroGeral": "No se pudo enviar. Tu mensaje sigue en el cuadro: inténtalo de nuevo.",
+        "motivoTeto": "Max tiene mucha demanda en este momento. Inténtalo de nuevo en un rato o escribe a {{email}}.",
+        "motivoDesligado": "El chat con Max no está disponible en este momento. Escribe a {{email}} y te respondemos.",
+        "motivoLimite": "Llegaste al límite de mensajes por ahora. Inténtalo más tarde o escribe a {{email}}."
     }
 }
