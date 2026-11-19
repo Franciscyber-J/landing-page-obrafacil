@@ -7,16 +7,17 @@
 // servidor sem o App Check.
 
 export const SITE_NO_FIREBASE = Object.freeze({
-    // Chave de navegador do projeto. Troque pela chave própria do site quando ela for criada (restrita a
-    // appobrafacil.expertbr.com e às APIs do login e do App Check; LEIAME.md, "Chave de API do site").
-    apiKey: 'AIzaSyC5opi9qCHgzT9ldu4tzvznQcj2CuSNEmw',
+    // Chave própria do site, "Site ObraFácil (navegador)" (criada em 18/11/2026): só aceita pedidos de
+    // https://appobrafacil.expertbr.com/* e só as APIs do login (Identity Toolkit e Token Service) e do App Check
+    // (LEIAME.md, "Chave de API do site").
+    apiKey: 'AIzaSyBeNZVFFYtwpQ5iADTC_YqPO4lgyziLKyg',
     authDomain: 'gestao-obras-app-8342c.firebaseapp.com',
     projectId: 'gestao-obras-app-8342c',
     messagingSenderId: '1030083935852',
     // ID do app web "Site ObraFácil" no Firebase (Configurações do projeto > Seus apps), ex.: '1:1030083935852:web:…'.
-    appId: '',
+    appId: '1:1030083935852:web:5263820e011dcf60ac2249',
     // Chave do reCAPTCHA Enterprise do site (Google Cloud > Segurança > reCAPTCHA), registrada no App Check desse app.
-    recaptchaEnterprise: '',
+    recaptchaEnterprise: '6LcvUCcuAAAAAMZs1Q8IEasWBhmHDdp0ozxtYlnM',
 });
 
 // Região das functions do app (contrato, item 3).
