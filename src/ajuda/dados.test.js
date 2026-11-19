@@ -3,7 +3,11 @@
 // Firestore e navegador falsos (fetch e localStorage na memória).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { artigoParaPagina, artigoDaPaginaValido, artigoDoIdiomaValido, caminhoDoArtigo, indiceValido } from './formato.js';
+import { Buffer } from 'node:buffer';
+import {
+    artigoParaPagina, artigoDaPaginaValido, artigoDoIdiomaValido, caminhoDoArtigo, indiceValido, juntarPartesDoIndice,
+    partesDoIndiceDoCabecalho,
+} from './formato.js';
 
 // ---------- Navegador e Firestore falsos ----------
 
@@ -54,10 +58,27 @@ function artigo(idioma, id, hash, titulo = 'Criar um RDO') {
     };
 }
 
-function publicar(idioma, hash, versao, docs) {
-    publicado.set(`ajuda_idiomas/${idioma}`, { formato: 2, idioma, hash, versao, total: docs.length });
-    publicado.set(`ajuda_idiomas/${idioma}/partes/indice`, indice(idioma, hash, versao, docs.map((d) => ({ id: d.id, slug: d.conteudo.slug, titulo: d.conteudo.titulo, modulo: d.modulo, hash: d.hash }))));
+// Como o publicador grava (ajuda-indice-em-partes): o cabeçalho com a lista das partes, as partes e, enquanto couber,
+// o índice inteiro. [emPartes]: false = como antes desta mudança (cabeçalho sem lista, só o índice inteiro).
+// O publicador usa as 16 primeiras letras do hash (hexadecimal); aqui o hash de teste vira hexadecimal.
+const nomeDaParte = (hash, n) => `indice-${Buffer.from(hash).toString('hex').padEnd(16, '0').slice(0, 16)}-${n}`;
+function publicar(idioma, hash, versao, docs, { emPartes = true, inteiro = true } = {}) {
+    const completo = indice(idioma, hash, versao, docs.map((d) => ({ id: d.id, slug: d.conteudo.slug, titulo: d.conteudo.titulo, modulo: d.modulo, hash: d.hash })));
+    const cabecalho = { formato: 2, idioma, hash, versao, total: docs.length };
+    if (emPartes) {
+        // Um artigo por parte (o publicador junta até o teto; aqui, para ter mais de uma).
+        const grupos = completo.artigos.length ? completo.artigos.map((a) => [a]) : [[]];
+        cabecalho.partes_do_indice = grupos.map((_, k) => nomeDaParte(hash, k + 1));
+        grupos.forEach((artigos, k) => publicado.set(`ajuda_idiomas/${idioma}/partes/${nomeDaParte(hash, k + 1)}`, {
+            formato: 2, idioma, hash_indice: hash, parte: k + 1, partes: grupos.length,
+            ...(k === 0 ? { total: completo.total, modulos: completo.modulos } : {}), artigos,
+        }));
+    }
+    publicado.set(`ajuda_idiomas/${idioma}`, cabecalho);
+    if (inteiro) publicado.set(`ajuda_idiomas/${idioma}/partes/indice`, completo);
+    else publicado.delete(`ajuda_idiomas/${idioma}/partes/indice`);
     for (const d of docs) publicado.set(caminhoDoArtigo(idioma, d.id), d);
+    return completo;
 }
 
 // ---------- Testes ----------
@@ -80,12 +101,25 @@ test('formato: do documento do idioma para o formato das páginas, sem os campos
     assert.ok(!indiceValido(indice('pt-BR', 'h', 1, []), 'en-US'));
 });
 
-test('índice sem nada guardado: lê o cabeçalho e o índice do idioma da página, e guarda', async () => {
+test('juntar as partes: faltando, de outro índice, fora de ordem ou de outro idioma não vale', () => {
+    const cab = { idioma: 'th-TH', hash: 'h', versao: 2, partes_do_indice: ['indice-0123456789abcdef-1', 'indice-0123456789abcdef-2'] };
+    const p1 = { idioma: 'th-TH', hash_indice: 'h', parte: 1, partes: 2, total: 2, modulos: [], artigos: [{ id: 'a' }] };
+    const p2 = { idioma: 'th-TH', hash_indice: 'h', parte: 2, partes: 2, artigos: [{ id: 'b' }] };
+    assert.deepEqual(juntarPartesDoIndice(cab, [p1, p2]), { formato: 2, idioma: 'th-TH', total: 2, modulos: [], artigos: [{ id: 'a' }, { id: 'b' }], hash: 'h', versao: 2 });
+    assert.equal(juntarPartesDoIndice(cab, [p1, null]), null);
+    assert.equal(juntarPartesDoIndice(cab, [p2, p1]), null);
+    assert.equal(juntarPartesDoIndice(cab, [p1]), null);
+    assert.equal(juntarPartesDoIndice(cab, [p1, { ...p2, hash_indice: 'outro' }]), null);
+    assert.equal(juntarPartesDoIndice({ ...cab, idioma: 'pt-BR' }, [p1, p2]), null);
+    for (const lista of [[], ['indice'], ['../x'], 'indice-0123456789abcdef-1']) assert.equal(partesDoIndiceDoCabecalho({ partes_do_indice: lista }), null);
+});
+
+test('índice sem nada guardado: lê o cabeçalho e as partes do índice do idioma da página, e guarda', async () => {
     publicar('pt-BR', 'h1', 3, [artigo('pt-BR', 'criar-rdo', 'a1')]);
     pedidos.length = 0;
     let recebido;
     const novo = await dados.conferirIndice('pt-BR', (i) => { recebido = i; });
-    assert.deepEqual(pedidos, ['ajuda_idiomas/pt-BR', 'ajuda_idiomas/pt-BR/partes/indice']);
+    assert.deepEqual(pedidos, ['ajuda_idiomas/pt-BR', `ajuda_idiomas/pt-BR/partes/${nomeDaParte('h1', 1)}`]);
     assert.equal(novo.hash, 'h1');
     assert.equal(recebido.hash, 'h1');
     assert.equal(dados.indiceGuardado('pt-BR').versao, 3);
@@ -109,8 +143,50 @@ test('cabeçalho com outro hash: baixa o índice novo e avisa a tela', async () 
     pedidos.length = 0;
     let recebido;
     await dados.conferirIndice('es-ES', (i) => { recebido = i; }, antigo);
-    assert.deepEqual(pedidos, ['ajuda_idiomas/es-ES', 'ajuda_idiomas/es-ES/partes/indice']);
+    assert.deepEqual(pedidos, ['ajuda_idiomas/es-ES', `ajuda_idiomas/es-ES/partes/${nomeDaParte('h3', 1)}`]);
     assert.equal(recebido.hash, 'h3');
+});
+
+// Índice em partes (ajuda-indice-em-partes): as partes juntas são o índice inteiro de antes.
+test('índice em várias partes: junta na ordem e fica igual ao índice inteiro, sem ler o inteiro', async () => {
+    const docs = ['criar-rdo', 'editar-rdo', 'excluir-rdo'].map((id, k) => artigo('it-IT', id, `i${k}`));
+    const completo = publicar('it-IT', 'abc', 2, docs, { inteiro: false });
+    pedidos.length = 0;
+    const novo = await dados.conferirIndice('it-IT', () => {});
+    assert.deepEqual(pedidos, ['ajuda_idiomas/it-IT', ...[1, 2, 3].map((n) => `ajuda_idiomas/it-IT/partes/${nomeDaParte('abc', n)}`)]);
+    assert.deepEqual(novo, completo);
+    assert.deepEqual(dados.indiceGuardado('it-IT'), completo);
+});
+
+test('cabeçalho sem partes (publicado antes desta mudança): lê o índice inteiro, como antes', async () => {
+    publicar('de-DE', 'h6', 1, [artigo('de-DE', 'criar-rdo', 'f1')], { emPartes: false });
+    pedidos.length = 0;
+    const novo = await dados.conferirIndice('de-DE', () => {});
+    assert.deepEqual(pedidos, ['ajuda_idiomas/de-DE', 'ajuda_idiomas/de-DE/partes/indice']);
+    assert.equal(novo.hash, 'h6');
+});
+
+test('partes trocadas no meio da leitura (publicação acontecendo): lê o cabeçalho de novo e acerta', async () => {
+    publicar('fr-FR', 'novo', 4, [artigo('fr-FR', 'criar-rdo', 'g2')], { inteiro: false });
+    // O cabeçalho que o site leu primeiro ainda era o de antes, e as partes dele já saíram.
+    const cabecalhoNovo = publicado.get('ajuda_idiomas/fr-FR');
+    let primeira = true;
+    const fetchDeVerdade = globalThis.fetch;
+    globalThis.fetch = async (url) => {
+        if (primeira && String(url).endsWith('/documents/ajuda_idiomas/fr-FR')) {
+            primeira = false;
+            return { status: 200, ok: true, json: async () => ({ fields: campos({ ...cabecalhoNovo, hash: 'velho', partes_do_indice: [nomeDaParte('velho', 1)] }) }) };
+        }
+        return fetchDeVerdade(url);
+    };
+    try {
+        pedidos.length = 0;
+        const novo = await dados.conferirIndice('fr-FR', () => {});
+        assert.equal(novo.hash, 'novo');
+        assert.deepEqual(pedidos, [`ajuda_idiomas/fr-FR/partes/${nomeDaParte('velho', 1)}`, 'ajuda_idiomas/fr-FR', `ajuda_idiomas/fr-FR/partes/${nomeDaParte('novo', 1)}`]);
+    } finally {
+        globalThis.fetch = fetchDeVerdade;
+    }
 });
 
 test('idioma sem nada publicado: a tela recebe null', async () => {

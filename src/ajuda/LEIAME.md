@@ -95,13 +95,24 @@ Regras que mantêm o Google lendo certo (achados no Search Console em 11/11/2026
 - **Produção:** o formato novo, um documento por idioma (desde a `ajuda-por-idioma`, 26/10/2026;
   `src/ajuda/formato.js`), pela API REST do Firestore (leitura pública pelas regras; o site não usa chave nem
   SDK). O site lê só o idioma da página:
-  - `ajuda_idiomas/{idioma}`: cabeçalho (hash e versão do índice, ~0,1 KB), conferido uma vez por visita;
-  - `ajuda_idiomas/{idioma}/partes/indice`: o índice completo, só quando o hash do cabeçalho muda;
+  - `ajuda_idiomas/{idioma}`: cabeçalho (hash e versão do índice e a lista das partes do índice,
+    `partes_do_indice`, ~0,3 KB), conferido uma vez por visita;
+  - `ajuda_idiomas/{idioma}/partes/indice-<hash>-<n>`: o índice completo em partes (uma na maioria dos idiomas, duas
+    no tailandês e no hindi), só quando o hash do cabeçalho muda. As partes juntas (`juntarPartesDoIndice`) são o
+    mesmo índice de antes: o resto do site não muda. Se o cabeçalho não listar partes (publicado antes da
+    `ajuda-indice-em-partes`), o site lê o índice inteiro `partes/indice`, como antes;
   - `ajuda_idiomas/{idioma}/artigos/{id}`: o artigo naquele idioma, com o endereço (slug) dele nos outros idiomas
     (`slugs`), para o menu de idiomas e o hreflang.
   O formato antigo (`ajuda_indices/{idioma}` e `ajuda_artigos/{id}` com os idiomas juntos) não é mais lido pelo
   site; o publicador continua gravando só para o app das lojas e o servidor. Idioma novo só existe no formato novo.
   Prints pelo endereço público do Storage (`ajuda/prints/...`).
+- **Índice em partes (gestao_obras, `ajuda-indice-em-partes`, 19/11/2026):** o índice inteiro do tailandês chegou
+  a 95% do limite de tamanho de um documento do Firestore (a busca leva o texto dos passos). O publicador grava o
+  índice em partes abaixo de um teto e ainda grava o índice inteiro enquanto ele couber; quando o de um idioma não
+  couber mais, só as partes ficam em dia. Por isso o site com esta mudança tem de estar no ar antes de o índice
+  inteiro de algum idioma deixar de caber (o publicador avisa: "AVISO: o índice inteiro ... não cabe mais").
+  Parte que não bate com o cabeçalho (publicação acontecendo naquela hora): o site lê o cabeçalho de novo uma vez;
+  sem acerto, fica com o índice inteiro.
 - **Ordem de publicação:** o site novo só vai ao ar depois de o publicador gravar o formato novo em todos os idiomas
   de `IDIOMAS_AJUDA` (sem eles, o build para com "Central de Ajuda não lida" ou "Central de Ajuda sem N idioma(s)
   publicado(s)"). Ver `gestao_obras/docs/PUBLICACAO_PENDENTE.md`.
@@ -130,8 +141,8 @@ node ferramentas/paginas/gerar.mjs --ajuda-local D:\Projetos\ajuda_saida --legal
 
 | Arquivo | Faz |
 | --- | --- |
-| `src/ajuda/formato.js` | Caminhos do formato novo no Firestore, conferência dos documentos e o artigo do idioma no formato das páginas (`artigoParaPagina`); usado pelo site e pelas páginas prontas |
-| `src/ajuda/dados.js` | Lê cabeçalho, índice e artigo do idioma (Firestore ou local), cache e endereço dos prints |
+| `src/ajuda/formato.js` | Caminhos do formato novo no Firestore, conferência dos documentos, o índice a partir das partes (`lerIndicePublicado`, `juntarPartesDoIndice`) e o artigo do idioma no formato das páginas (`artigoParaPagina`); usado pelo site e pelas páginas prontas |
+| `src/ajuda/dados.js` | Lê cabeçalho, índice (em partes) e artigo do idioma (Firestore ou local), cache e endereço dos prints |
 | `src/ajuda/busca.js` | Busca sem acento, sem maiúscula e sem os sinais de vogal opcionais do árabe e do hebraico (harakat, tatweel, niqqud); título > tag > resumo > texto dos passos. Tolerante: não exige todas as palavras, ordena por relevância (mais palavras do assunto, as mais raras e no título primeiro) e ignora as palavras vazias do idioma do índice (29 idiomas). Cópia exata da referência do gestao_obras (`ferramentas/ajuda/src/busca.mjs`); os casos `src/ajuda/busca_casos.json` vêm de lá (`ajuda/testes/busca_site.json`) |
 | `src/ajuda/texto.js` | Lê o texto dos passos: só `**negrito**`, lista `- ` e `[texto](artigo:id)`; nunca HTML |
 | `src/ajuda/marcacao.js` | Marcação animada dos prints: leitura conferida do campo `marcacao` e as contas do desenho (iguais às do app) |
