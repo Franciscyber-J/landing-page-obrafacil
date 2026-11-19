@@ -96,8 +96,43 @@ test('Firestore: sem nada liberado lista as versões; o texto vem só no idioma 
     assert.equal(v.atual.versao, '2.0');
     const t = await textoDaVersao('termos', '2.0', 'pt-BR', { fetchFn });
     assert.equal(t.hash, 'abc');
-    assert.equal(t.vigenteDesde, null);
+    assert.equal(t.texto, '# Termos de Uso\n\nOi.');
+    // Formato antigo: primeiro procurou o documento do idioma (não existe), depois o campo do documento da versão.
+    assert.ok(pedidos.some((p) => p.includes('documentos_legais/termos/versoes/2.0/textos/pt-BR?')));
     assert.ok(pedidos.some((p) => p.includes(encodeURIComponent('textos.`pt-BR`'))));
+});
+
+test('Firestore, formato 2: o texto vem do documento do idioma, sem baixar o documento da versão', async () => {
+    const textoDoIdioma = (idioma, texto, extra = {}) => ({
+        fields: {
+            versao: { stringValue: '2.1' }, idioma: { stringValue: idioma },
+            texto: { stringValue: texto }, hash: { stringValue: 'h-' + idioma }, ...extra,
+        },
+    });
+    const { fetchFn, pedidos } = respostas({
+        'documentos_legais/termos/versoes/2.1/textos/pt-BR?': textoDoIdioma('pt-BR', '# Termos de Uso\n\nOlá.'),
+        'documentos_legais/termos/versoes/2.1/textos/en-US?': textoDoIdioma('en-US', '# Terms of Use\n\nHi.'),
+        // Documento de outro idioma no lugar do pt-PT: não vale.
+        'documentos_legais/termos/versoes/2.1/textos/pt-PT?': textoDoIdioma('pt-BR', '# Termos de Uso\n\nOlá.'),
+        // Documento da versão no formato 2: sem o campo textos.
+        'documentos_legais/termos/versoes/2.1?': { fields: { versao: { stringValue: '2.1' }, formato: { integerValue: '2' } } },
+    });
+    const t = await textoDaVersao('termos', '2.1', 'pt-BR', { fetchFn });
+    assert.deepEqual(t, { versao: '2.1', texto: '# Termos de Uso\n\nOlá.', hash: 'h-pt-BR' });
+    assert.equal(pedidos.length, 1);
+    assert.ok(pedidos[0].includes('mask.fieldPaths=texto'));
+    // Sem o documento do idioma e sem o campo antigo: null (a cadeia passa para o próximo idioma).
+    assert.equal(await textoDaVersao('termos', '2.1', 'fr-FR', { fetchFn }), null);
+    // pt-PT com documento errado: cai na base (pt-BR); fr-FR sem texto: no inglês.
+    assert.equal((await textoNaCadeia('termos', '2.1', 'pt-PT', { fetchFn })).idioma, 'pt-BR');
+    const fr = await textoNaCadeia('termos', '2.1', 'fr-FR', { fetchFn });
+    assert.equal(fr.idioma, 'en-US');
+    assert.ok(fr.texto.startsWith('# Terms of Use'));
+    // Documento de outra versão: não vale.
+    const { fetchFn: outra } = respostas({
+        'documentos_legais/termos/versoes/2.1/textos/pt-BR?': { fields: { ...textoDoIdioma('pt-BR', '# T\n').fields, versao: { stringValue: '2.0' } } },
+    });
+    assert.equal(await textoDaVersao('termos', '2.1', 'pt-BR', { fetchFn: outra }), null);
 });
 
 test('Firestore: pedido inválido é recusado antes de ir à rede', async () => {

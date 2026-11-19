@@ -4,8 +4,11 @@
 // No Firestore (gravado pelo projeto gestao_obras):
 //   documentos_legais/{documento}            versoes: lista das versões LIBERADAS (botão Liberar do
 //                                           painel), cada uma com versao, tipo e vigente_desde.
-//   documentos_legais/{documento}/versoes/{v} textos (um por idioma), hashes, estado
-//                                           ("preparada" ou "liberada") e vigente_desde.
+//   documentos_legais/{documento}/versoes/{v} hashes, estado ("preparada" ou "liberada") e vigente_desde;
+//                                           nas versões 2.0 (formato antigo), também os textos (um por idioma).
+//   documentos_legais/{documento}/versoes/{v}/textos/{idioma}
+//                                           formato 2 (19/11/2026): o texto de cada idioma num documento próprio
+//                                           (versao, idioma, texto, hash, resumo). Ver firestore.js.
 //
 // Regra:
 //   - Em vigor: a maior versão liberada cuja data de vigência já chegou.
