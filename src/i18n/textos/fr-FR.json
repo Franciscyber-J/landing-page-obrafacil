@@ -16,7 +16,7 @@
             "titulo": "{{titulo}} — ObraFácil"
         },
         "app": {
-            "descricao": "Application de gestion de chantier pour constructeurs, artisans, maîtres d'œuvre, ingénieurs et architectes : planning par étapes, rapports journaliers avec photos et PDF, finances du chantier, paie des équipes, achats et stock, et portail pour le suivi client. Fonctionne sur Android, iPhone, Windows et le web, même hors ligne sur le chantier.",
+            "descricao": "Application de gestion de chantier pour constructeurs, artisans, maîtres d'œuvre, ingénieurs et architectes : planning par étapes, rapports journaliers avec photos et PDF, fiches de contrôle qualité avec signature, finances du chantier, paie des équipes, achats et stock, et portail pour le suivi client. Fonctionne sur Android, iPhone, Windows et le web, même hors ligne sur le chantier.",
             "categoria": "Gestion de chantier"
         },
         "imagemAlt": "Logo ObraFácil, application de gestion de chantier",
@@ -102,6 +102,7 @@
                 "1 chantier à vous à la fois",
                 "7 rapports PDF par mois avec filigrane",
                 "250 Mo pour photos et fichiers",
+                "Fiches de contrôle avec les 27 modèles prêts et 1 modèle à vous",
                 "Suivi du chantier par le client sur le portail"
             ]
         },
@@ -115,6 +116,7 @@
                 "10 Go pour photos et fichiers",
                 "PDF avec le logo et le pied de page de votre entreprise",
                 "Rapports journaliers en ZIP et fichiers du chantier hors ligne",
+                "Modèles de fiches illimités et plusieurs fiches dans un seul PDF",
                 "Accès client disponible pour chaque chantier"
             ],
             "itensAnual": [
@@ -185,6 +187,8 @@
         "a9": "Oui, à tout moment et au même endroit où vous avez souscrit. Aucun nouveau prélèvement de renouvellement n'aura lieu et votre accès reste actif jusqu'à la fin de la période déjà réglée.",
         "q10": "Que se passe-t-il en cas d'échec du paiement de renouvellement ?",
         "a10": "Le compte repasse automatiquement à l'offre gratuite. Aucune donnée n'est supprimée ; si vous dépassez la limite de l'offre gratuite, seul l'envoi de nouveaux fichiers est bloqué jusqu'à ce que vous libériez de l'espace ou renouveliez votre abonnement.",
+        "q11": "L'application permet-elle de faire des fiches de contrôle qualité ?",
+        "a11": "Oui. Avec les Fiches de contrôle qualité, vous vérifiez chaque ouvrage point par point, avec photo, vous consignez la non-conformité avec une action corrective et une contre-visite, puis vous validez les travaux avec signature. Sur mobile, elles fonctionnent même sans réseau : vos saisies partent dès que la connexion revient. L'application fournit 27 modèles prêts, et vous pouvez créer ceux de votre entreprise : 1 avec l'offre gratuite, autant que vous voulez avec PRO. Les modèles prêts sont des exemples à vérifier et à adapter : ils ne remplacent pas le responsable technique qualifié et ne certifient le respect d'aucune norme ni d'aucun référentiel qualité.",
         "mais": "Vous n'avez pas trouvé votre réponse ?",
         "verAjuda": "Consulter le Centre d'aide"
     },
@@ -331,6 +335,11 @@
             "diario": {
                 "titulo": "Journal de chantier",
                 "texto": "Météo, activités, incidents, effectif présent, photos et signature. Exporté en PDF, prêt à envoyer."
+            },
+            "checklists": {
+                "titulo": "Fiches de contrôle qualité",
+                "texto": "27 modèles prêts à l'emploi ou ceux de votre entreprise. Conforme, non conforme ou sans objet pour chaque point, avec photo, et contre-visite de ce qui ne passe pas. Validation avec signature, PDF et le client qui consulte sur le portail.",
+                "tela": "Fiche de contrôle en cours, avec l'avancement et les points à renseigner"
             },
             "financeiro": {
                 "titulo": "Finances du chantier",
@@ -495,5 +504,42 @@
         "lojasTitulo": "Achat effectué sur Google Play ou l'App Store ?",
         "lojasTexto": "Les prélèvements et remboursements de ces achats sont gérés directement par le store selon ses règles. Pour résilier, utilisez **Gérer** sur la carte **Votre offre** dans Profil.",
         "perfilLink": "Où consulter votre abonnement"
+    },
+    "atendimento": {
+        "abrir": "Discuter avec nous",
+        "conversar": "Discuter avec Max",
+        "chamadaDuvida": "Une question ? Discutez avec Max, l'assistant d'ObraFácil.",
+        "ajudaTextoChat": "Discutez avec Max, l'assistant d'ObraFácil, ici sur le site, ou ouvrez un ticket directement dans l'application.",
+        "ajudaTextoDois": "Discutez avec Max ici sur le site, écrivez à l'assistance sur WhatsApp ou ouvrez un ticket directement dans l'application.",
+        "suporteTitulo": "Discussion avec Max",
+        "suporteTexto": "L'assistant IA d'ObraFácil répond tout de suite, à toute heure, ici sur le site.",
+        "painelTitulo": "Max, d'ObraFácil",
+        "painelSubtitulo": "Assistant IA · répond tout de suite",
+        "nomeMax": "Max",
+        "voce": "Vous",
+        "historico": "Messages de la discussion",
+        "boasVindas": "Bonjour ! Je suis Max, l'assistant d'ObraFácil. Posez-moi vos questions sur l'application : fonctionnalités, formules, tarifs ou prise en main.",
+        "aviso": "Échange assuré par une intelligence artificielle. La conversation est conservée 90 jours. N'envoyez ni mot de passe ni coordonnées bancaires.",
+        "avisoLink": "Politique de confidentialité",
+        "preferirWhatsapp": "Vous préférez WhatsApp ?",
+        "abrirWhatsapp": "Ouvrir WhatsApp",
+        "campoRotulo": "Votre message pour Max",
+        "campoDica": "Écrivez votre question",
+        "dicaTeclado": "Entrée pour envoyer. Maj + Entrée pour aller à la ligne.",
+        "contador": "{{usados}} sur {{limite}} caractères",
+        "enviar": "Envoyer le message",
+        "digitando": "Max est en train d'écrire…",
+        "fechar": "Fermer la discussion",
+        "erroGeral": "Impossible d'envoyer pour le moment. Votre message est toujours dans le champ : réessayez.",
+        "erroRede": "Pas de connexion internet. Votre message est toujours dans le champ : envoyez-le dès que la connexion revient.",
+        "erroRepetida": "Vous venez d'envoyer ce message. Essayez de le formuler autrement.",
+        "motivoLimite": "Vous avez atteint la limite de messages pour le moment. Réessayez plus tard ou écrivez à {{email}}.",
+        "motivoDesligado": "La discussion avec Max est indisponible pour le moment. Écrivez à {{email}}, nous vous répondrons.",
+        "motivoTeto": "Max est très sollicité en ce moment. Réessayez dans un instant ou écrivez à {{email}}.",
+        "motivoOcupada": "Max répond encore à votre message précédent. Patientez un instant puis renvoyez-le.",
+        "motivoWhatsapp": "Dans votre pays, l'assistance se fait sur WhatsApp. Votre message reste dans le champ et vous suit à l'ouverture de WhatsApp.",
+        "recaptcha": "Protégé par reCAPTCHA. Les règles de Google s'appliquent :",
+        "recaptchaPrivacidade": "Confidentialité",
+        "recaptchaTermos": "Conditions"
     }
 }

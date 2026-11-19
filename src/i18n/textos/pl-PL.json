@@ -16,7 +16,7 @@
             "titulo": "{{titulo}} — ObraFácil"
         },
         "app": {
-            "descricao": "Aplikacja do zarządzania budową dla wykonawców, inżynierów budownictwa, architektów i kierowników robót: harmonogram etapów, raporty dzienne ze zdjęciami i PDF, finanse budowy, lista płac zespołu, zaopatrzenie i magazyn oraz portal do śledzenia postępów przez inwestora. Działa na Androidzie, iPhonie, Windowsie i w przeglądarce, także bez internetu na budowie.",
+            "descricao": "Aplikacja do zarządzania budową dla wykonawców, inżynierów budownictwa, architektów i kierowników robót: harmonogram etapów, raporty dzienne ze zdjęciami i PDF, listy kontrolne jakości z podpisem, finanse budowy, lista płac zespołu, zaopatrzenie i magazyn oraz portal do śledzenia postępów przez inwestora. Działa na Androidzie, iPhonie, Windowsie i w przeglądarce, także bez internetu na budowie.",
             "categoria": "Zarządzanie budową"
         },
         "imagemAlt": "Logo ObraFácil, aplikacja do zarządzania budową",
@@ -102,6 +102,7 @@
                 "1 własna budowa aktywna jednocześnie",
                 "7 raportów PDF miesięcznie ze znakiem wodnym",
                 "250 MB na zdjęcia i pliki",
+                "Listy kontrolne z 27 gotowymi szablonami i 1 własnym",
                 "Inwestor śledzi postępy w portalu"
             ]
         },
@@ -115,6 +116,7 @@
                 "10 GB na zdjęcia i pliki",
                 "Raporty PDF z logo i stopką Twojej firmy",
                 "Raporty dzienne w formacie ZIP i pliki budowy offline",
+                "Nielimitowane szablony list kontrolnych i kilka list w jednym PDF",
                 "Dostęp klienta do włączenia dla każdej budowy"
             ],
             "itensAnual": [
@@ -185,6 +187,8 @@
         "a9": "Tak, w dowolnym momencie i w tym samym miejscu, w którym subskrypcja została wykupiona. Nie nastąpi żadne kolejne odnowienie, a dostęp pozostanie aktywny do końca opłaconego okresu.",
         "q10": "Co się stanie, jeśli płatność za odnowienie się nie powiedzie?",
         "a10": "Konto powraca automatycznie do planu darmowego. Żadne dane nie są usuwane; w przypadku przekroczenia limitu planu darmowego blokowane jest jedynie dodawanie nowych plików do czasu zwolnienia miejsca lub odnowienia subskrypcji.",
+        "q11": "Czy aplikacja ma listy kontrolne do sprawdzania jakości robót?",
+        "a11": "Tak. W listach kontrolnych jakości sprawdzasz każdą robotę punkt po punkcie, ze zdjęciem, zapisujesz niezgodność z działaniem korygującym i ponowną kontrolą, a potem odbierasz roboty z podpisem. W telefonie działa nawet bez zasięgu: wpisy wysyłają się po odzyskaniu połączenia. Jest 27 gotowych szablonów, a szablony swojej firmy możesz tworzyć sam: 1 w planie bezpłatnym i dowolnie wiele w PRO. Gotowe szablony to przykłady do sprawdzenia i dostosowania: nie zastępują uprawnionego kierownika budowy i nie potwierdzają zgodności z żadną normą ani programem jakości.",
         "mais": "Nie znajdujesz odpowiedzi na swoje pytanie?",
         "verAjuda": "Przejdź do Centrum pomocy"
     },
@@ -333,6 +337,11 @@
             "diario": {
                 "titulo": "Dziennik prac",
                 "texto": "Pogoda, wykonane prace, zdarzenia, obecność ekipy, zdjęcia i podpis. Gotowy do wysłania raport w formacie PDF."
+            },
+            "checklists": {
+                "titulo": "Listy kontrolne jakości",
+                "texto": "27 gotowych szablonów albo szablony Twojej firmy. Każdy punkt zgodny, niezgodny albo nie dotyczy, ze zdjęciem, i ponowna kontrola niezgodności. Odbiór z podpisem, PDF i inwestor, który widzi wszystko w portalu.",
+                "tela": "Lista kontrolna w trakcie wypełniania, z postępem i punktami bez odpowiedzi"
             },
             "financeiro": {
                 "titulo": "Finanse budowy",
@@ -497,5 +506,42 @@
         "lojasTitulo": "Zakup przez Google Play lub App Store?",
         "lojasTexto": "Płatności i zwroty za te zakupy są obsługiwane bezpośrednio przez dany sklep zgodnie z jego regulaminem. Aby zrezygnować, użyj opcji **Zarządzaj** w karcie **Twój plan**.",
         "perfilLink": "Gdzie sprawdzić subskrypcję"
+    },
+    "atendimento": {
+        "abrir": "Napisz do nas",
+        "conversar": "Czat z Maxem",
+        "chamadaDuvida": "Masz pytania? Porozmawiaj z Maxem, asystentem ObraFácil.",
+        "ajudaTextoChat": "Porozmawiaj z Maxem, asystentem ObraFácil, tutaj na stronie albo otwórz zgłoszenie bezpośrednio w aplikacji.",
+        "ajudaTextoDois": "Porozmawiaj z Maxem tutaj na stronie, napisz do wsparcia na WhatsAppie albo otwórz zgłoszenie bezpośrednio w aplikacji.",
+        "suporteTitulo": "Czat z Maxem",
+        "suporteTexto": "Asystent AI ObraFácil odpowiada od razu, o każdej porze, tutaj na stronie.",
+        "painelTitulo": "Max z ObraFácil",
+        "painelSubtitulo": "Asystent AI · odpowiada od razu",
+        "nomeMax": "Max",
+        "voce": "Ty",
+        "historico": "Wiadomości z czatu",
+        "boasVindas": "Cześć! Jestem Max, asystent ObraFácil. Zapytaj mnie o wszystko, co dotyczy aplikacji: funkcje, plany, ceny albo jak zacząć.",
+        "aviso": "Czat obsługuje sztuczna inteligencja. Rozmowa jest przechowywana przez 90 dni. Nie wysyłaj haseł ani danych karty czy płatności.",
+        "avisoLink": "Polityka prywatności",
+        "preferirWhatsapp": "Wolisz WhatsAppa?",
+        "abrirWhatsapp": "Otwórz WhatsAppa",
+        "campoRotulo": "Twoja wiadomość do Maxa",
+        "campoDica": "Wpisz pytanie",
+        "dicaTeclado": "Enter wysyła. Shift + Enter dodaje nowy wiersz.",
+        "contador": "{{usados}} z {{limite}} znaków",
+        "enviar": "Wyślij wiadomość",
+        "digitando": "Max pisze…",
+        "fechar": "Zamknij czat",
+        "erroGeral": "Nie udało się wysłać wiadomości. Nadal jest w polu: spróbuj ponownie.",
+        "erroRede": "Brak połączenia z internetem. Wiadomość nadal jest w polu: wyślij ją, gdy połączenie wróci.",
+        "erroRepetida": "Ta wiadomość została już przed chwilą wysłana. Spróbuj napisać ją inaczej.",
+        "motivoLimite": "Osiągnięto na razie limit wiadomości. Spróbuj ponownie później albo napisz na {{email}}.",
+        "motivoDesligado": "Czat z Maxem jest teraz niedostępny. Napisz na {{email}}, a odpowiemy.",
+        "motivoTeto": "Max ma teraz bardzo dużo rozmów. Spróbuj ponownie za chwilę albo napisz na {{email}}.",
+        "motivoOcupada": "Max jeszcze odpowiada na poprzednią wiadomość. Poczekaj chwilę i wyślij ponownie.",
+        "motivoWhatsapp": "W Twoim kraju pomoc działa przez WhatsAppa. Wiadomość zostaje w polu i trafi do WhatsAppa, gdy go otworzysz.",
+        "recaptcha": "Chronione przez reCAPTCHA. Obowiązują zasady Google:",
+        "recaptchaPrivacidade": "Prywatność",
+        "recaptchaTermos": "Warunki"
     }
 }

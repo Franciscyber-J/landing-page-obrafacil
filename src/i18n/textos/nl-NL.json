@@ -16,7 +16,7 @@
             "titulo": "{{titulo}} — ObraFácil"
         },
         "app": {
-            "descricao": "Bouwmanagement-app voor aannemers, civiel ingenieurs, architecten en uitvoerders: planning in fasen, dagrapporten met foto's en PDF, projectfinanciën, salarisadministratie van teams, inkoop en magazijn, en een portaal voor klantopvolging. Werkt op Android, iPhone, Windows en internet, zelfs offline op de bouwplaats.",
+            "descricao": "Bouwmanagement-app voor aannemers, civiel ingenieurs, architecten en uitvoerders: planning in fasen, dagrapporten met foto's en PDF, kwaliteitschecklists met handtekening, projectfinanciën, salarisadministratie van teams, inkoop en magazijn, en een portaal voor klantopvolging. Werkt op Android, iPhone, Windows en internet, zelfs offline op de bouwplaats.",
             "categoria": "Bouwmanagement"
         },
         "imagemAlt": "Logo van ObraFácil, app voor bouwmanagement",
@@ -102,6 +102,7 @@
                 "1 actief project tegelijk van jezelf",
                 "7 PDF-rapporten per maand met watermerk",
                 "250 MB voor foto's en bestanden",
+                "Checklists met de 27 kant-en-klare sjablonen en 1 eigen sjabloon",
                 "Klant volgt het project via het portaal"
             ]
         },
@@ -115,6 +116,7 @@
                 "10 GB voor foto's en bestanden",
                 "PDF met het logo en de voettekst van jouw bedrijf",
                 "Dagrapporten in ZIP en offline projectbestanden",
+                "Onbeperkt eigen checklistsjablonen en meerdere checklists in één PDF",
                 "Klanttoegang beschikbaar voor elk project"
             ],
             "itensAnual": [
@@ -185,6 +187,8 @@
         "a9": "Ja, op elk gewenst moment, op dezelfde plek waar je je hebt geabonneerd. De volgende verlenging wordt niet in rekening gebracht en je toegang blijft actief tot het einde van de betaalde periode.",
         "q10": "En als de verlenging niet wordt betaald?",
         "a10": "Het account keert terug naar het gratis abonnement. Er wordt niets gewist; als je de limiet van het gratis abonnement overschrijdt, wordt alleen het uploaden van nieuwe bestanden geblokkeerd totdat je ruimte vrijmaakt of je opnieuw abonneert.",
+        "q11": "Heeft de app checklists voor de kwaliteitscontrole van het werk?",
+        "a11": "Ja. Met de Kwaliteitschecklists controleer je elk onderdeel punt voor punt, met foto, leg je afwijkingen vast met een corrigerende maatregel en hercontrole en geef je het werk vrij met je handtekening. Op je telefoon werkt het ook zonder bereik: wat je invult, wordt verstuurd zodra er weer verbinding is. Er zijn 27 kant-en-klare sjablonen en je kunt de sjablonen van je eigen bedrijf maken: 1 met het gratis abonnement en zoveel je wilt met PRO. De kant-en-klare sjablonen zijn voorbeelden om te controleren en aan te passen: ze vervangen niet de technisch verantwoordelijke voor het bouwproject en tonen niet aan dat aan een norm of kwaliteitsprogramma wordt voldaan.",
         "mais": "Heb je niet gevonden wat je zocht?",
         "verAjuda": "Bekijk het Helpcentrum"
     },
@@ -329,6 +333,11 @@
             "diario": {
                 "titulo": "Bouwdagboek",
                 "texto": "Weer, activiteiten, incidenten, aanwezige bezetting, foto's en handtekeningen. Exporteer naar een verzendklare PDF."
+            },
+            "checklists": {
+                "titulo": "Kwaliteitschecklists",
+                "texto": "27 kant-en-klare sjablonen of die van je eigen bedrijf. Per punt akkoord, niet akkoord of niet van toepassing, met foto, en hercontrole van afwijkingen. Vrijgave met handtekening, een PDF en de klant die meekijkt in het portaal.",
+                "tela": "Checklist die wordt ingevuld, met de voortgang en de open punten"
             },
             "financeiro": {
                 "titulo": "Projectfinanciën",
@@ -493,5 +502,42 @@
         "lojasTitulo": "Gekocht via Google Play of App Store?",
         "lojasTexto": "Facturatie en terugbetalingen voor deze transacties worden rechtstreeks door de betreffende appwinkel afgehandeld. Gebruik om op te zeggen de optie **Beheren** op de kaart **Jouw abonnement**.",
         "perfilLink": "Waar je jouw abonnement vindt"
+    },
+    "atendimento": {
+        "abrir": "Chat met ons",
+        "conversar": "Chat met Max",
+        "chamadaDuvida": "Vragen? Chat met Max, de assistent van ObraFácil.",
+        "ajudaTextoChat": "Chat hier op de website met Max, de assistent van ObraFácil, of open direct een ticket in de app.",
+        "ajudaTextoDois": "Chat hier op de website met Max, stuur ons team een bericht via WhatsApp of open direct een ticket in de app.",
+        "suporteTitulo": "Chat met Max",
+        "suporteTexto": "De AI-assistent van ObraFácil antwoordt direct, op elk moment, hier op de website.",
+        "painelTitulo": "Max van ObraFácil",
+        "painelSubtitulo": "AI-assistent · antwoordt direct",
+        "nomeMax": "Max",
+        "voce": "Jij",
+        "historico": "Berichten in de chat",
+        "boasVindas": "Hoi! Ik ben Max, de assistent van ObraFácil. Vraag me alles over de app: functies, abonnementen, prijzen of hoe je begint.",
+        "aviso": "Deze chat wordt gevoerd door AI. Het gesprek wordt 90 dagen bewaard. Stuur geen wachtwoorden, kaart- of betaalgegevens.",
+        "avisoLink": "Privacybeleid",
+        "preferirWhatsapp": "Liever WhatsApp?",
+        "abrirWhatsapp": "WhatsApp openen",
+        "campoRotulo": "Je bericht aan Max",
+        "campoDica": "Typ je vraag",
+        "dicaTeclado": "Enter verstuurt. Shift + Enter voegt een regel toe.",
+        "contador": "{{usados}} van {{limite}} tekens",
+        "enviar": "Bericht versturen",
+        "digitando": "Max is aan het typen…",
+        "fechar": "Chat sluiten",
+        "erroGeral": "Versturen is niet gelukt. Je bericht staat nog in het veld: probeer het gewoon opnieuw.",
+        "erroRede": "Geen internetverbinding. Je bericht staat nog in het veld: verstuur het zodra je weer online bent.",
+        "erroRepetida": "Dit bericht heb je net al verstuurd. Probeer het anders te formuleren.",
+        "motivoLimite": "Je hebt het maximumaantal berichten voor nu bereikt. Probeer het later opnieuw of mail naar {{email}}.",
+        "motivoDesligado": "De chat met Max is nu niet beschikbaar. Mail naar {{email}}, dan nemen we contact met je op.",
+        "motivoTeto": "Het is nu erg druk bij Max. Probeer het zo opnieuw of mail naar {{email}}.",
+        "motivoOcupada": "Max is nog bezig met je vorige bericht. Wacht even en verstuur het opnieuw.",
+        "motivoWhatsapp": "In jouw land loopt de ondersteuning via WhatsApp. Je bericht staat nog in het veld en gaat mee als je WhatsApp opent.",
+        "recaptcha": "Beveiligd met reCAPTCHA. De voorwaarden van Google zijn van toepassing:",
+        "recaptchaPrivacidade": "Privacy",
+        "recaptchaTermos": "Voorwaarden"
     }
 }

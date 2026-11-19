@@ -157,5 +157,6 @@ flutuando. O escuro é o mundo principal; o claro tem a mesma forma com luzes ma
 | Imagem | Origem |
 | --- | --- |
 | `public/telas/<idioma>/*.webp` | Prints do app gerados para a Central de Ajuda (pasta `prints_5b_visual3` do Francis), com dados de demonstração ("Construtora Horizonte", "Residencial Jardim das Acácias"); reduzidos para 720 px de largura |
+| `public/telas/<idioma>/checklist.webp` (ainda não existe) | Checklists de qualidade (app 2.0.1): o print do passo 1 do artigo `preencher-checklist`, da fila de prints, reduzido para 720 px. Ao copiar, pôr o idioma em `TELAS_NOVAS.checklist.idiomas` (`src/telas.js`); até lá, o item dos Checklists na seção de recursos mostra a tela `obra` do idioma |
 | `public/logo_transparente.png` | Logotipo do ObraFácil (já existia no site) |
 | `public/bandeiras/*.svg` | Pacote `flag-icons`, copiadas no build |

@@ -16,7 +16,7 @@
             "titulo": "{{titulo}} — ObraFácil"
         },
         "app": {
-            "descricao": "Müteahhitler, inşaat mühendisleri, mimarlar ve şantiye şefleri için inşaat yönetim uygulaması: aşama aşama iş programı, fotoğraflı ve PDF formatında günlük raporlar (şantiye günlüğü), şantiye finansmanı, çalışan bordroları, tedarik ve depo takibi ile müşterinin inşaatı izleyebileceği portal. Android, iPhone, Windows ve web üzerinde, şantiyede internetsiz bile çalışır.",
+            "descricao": "Müteahhitler, inşaat mühendisleri, mimarlar ve şantiye şefleri için inşaat yönetim uygulaması: aşama aşama iş programı, fotoğraflı ve PDF formatında günlük raporlar (şantiye günlüğü), imzalı kalite kontrol listeleri, şantiye finansmanı, çalışan bordroları, tedarik ve depo takibi ile müşterinin inşaatı izleyebileceği portal. Android, iPhone, Windows ve web üzerinde, şantiyede internetsiz bile çalışır.",
             "categoria": "İnşaat yönetimi"
         },
         "imagemAlt": "ObraFácil logosu, inşaat yönetim uygulaması",
@@ -102,6 +102,7 @@
                 "Aynı anda 1 aktif şantiye",
                 "Ayda filigranlı 7 PDF raporu",
                 "Fotoğraflar ve dosyalar için 250 MB",
+                "27 hazır şablon ve 1 kendi şablonunuzla kontrol listeleri",
                 "Müşterinin portal üzerinden takibi"
             ]
         },
@@ -115,6 +116,7 @@
                 "Fotoğraflar ve dosyalar için 10 GB",
                 "Şirket logonuz ve altbilginizle PDF'ler",
                 "ZIP olarak günlük raporlar ve çevrimdışı şantiye dosyaları",
+                "Sınırsız kontrol listesi şablonu ve birden fazla listeyi tek PDF’te toplama",
                 "Her şantiye için kullanılabilir Müşteri Erişimi"
             ],
             "itensAnual": [
@@ -185,6 +187,8 @@
         "a9": "Evet, dilediğiniz zaman ve abone olduğunuz aynı platform üzerinden iptal edebilirsiniz. Yeni bir yenileme ücreti alınmaz ve erişiminiz önceden ödenen sürenin sonuna kadar aktif kalır.",
         "q10": "Yenileme ödemesi başarısız olursa ne olur?",
         "a10": "Hesap otomatik olarak ücretsiz plana döner. Hiçbir veri silinmez; ücretsiz plan sınırlarını aşıyorsanız, yer açana veya yeniden abone olana kadar yalnızca yeni dosya yüklemeleri engellenir.",
+        "q11": "Uygulamada kalite kontrol listesi var mı?",
+        "a11": "Evet. Kalite kontrol listeleriyle her imalatı madde madde, fotoğrafla kontrol eder, uygunsuzluğu düzeltici faaliyet ve yeniden kontrolle kaydeder, işi imzayla onaylarsınız. Telefonda çekmeyen yerde bile çalışır; girdikleriniz bağlantı gelince gönderilir. 27 hazır şablon gelir; firmanızın şablonlarını da oluşturabilirsiniz: ücretsiz planda 1, PRO’da istediğiniz kadar. Hazır şablonlar kontrol edip uyarlamanız için örnektir: yetkili şantiye şefinin ya da fenni mesulün yerine geçmez ve herhangi bir standarda ya da kalite programına uygunluğu belgelemez.",
         "mais": "Cevabınızı bulamadınız mı?",
         "verAjuda": "Yardım Merkezi'ni ziyaret edin"
     },
@@ -329,6 +333,11 @@
             "diario": {
                 "titulo": "Şantiye günlüğü",
                 "texto": "Hava durumu, faaliyetler, sorunlar, sahadaki personel, fotoğraflar ve imza. Paylaşıma hazır PDF olarak dışa aktarılır."
+            },
+            "checklists": {
+                "titulo": "Kalite kontrol listeleri",
+                "texto": "27 hazır şablon ya da firmanızın kendi şablonları. Her madde için uygun, uygun değil ya da kapsam dışı, fotoğrafla; uygun olmayana yeniden kontrol. İmzalı onay, PDF ve müşterinin portaldan takibi.",
+                "tela": "Doldurulmakta olan kontrol listesi: ilerleme ve yanıt bekleyen maddeler"
             },
             "financeiro": {
                 "titulo": "Şantiye finansmanı",
@@ -493,5 +502,42 @@
         "lojasTitulo": "Google Play veya App Store'dan mı satın aldınız?",
         "lojasTexto": "Bu alışverişlerin ödeme ve iade süreçleri ilgili mağazanın kurallarına tabidir. İptal etmek için Profil'deki **Planınız** kartında **Yönet** seçeneğini kullanın.",
         "perfilLink": "Aboneliğinizi nerede görebilirsiniz"
+    },
+    "atendimento": {
+        "abrir": "Bize yazın",
+        "conversar": "Max ile sohbet edin",
+        "chamadaDuvida": "Sorunuz mu var? ObraFácil asistanı Max ile sohbet edin.",
+        "ajudaTextoChat": "ObraFácil asistanı Max ile burada, sitede sohbet edin veya doğrudan uygulama içinden destek bileti açın.",
+        "ajudaTextoDois": "Max ile burada, sitede sohbet edin, WhatsApp üzerinden destek ekibimize yazın veya doğrudan uygulama içinden destek bileti açın.",
+        "suporteTitulo": "Max ile sohbet",
+        "suporteTexto": "ObraFácil'in yapay zekâ asistanı burada, sitede, günün her saati anında yanıt verir.",
+        "painelTitulo": "ObraFácil asistanı Max",
+        "painelSubtitulo": "Yapay zekâ asistanı · anında yanıt verir",
+        "nomeMax": "Max",
+        "voce": "Siz",
+        "historico": "Sohbet mesajları",
+        "boasVindas": "Merhaba! Ben Max, ObraFácil'in asistanıyım. Uygulamayla ilgili her şeyi sorabilirsiniz: özellikler, planlar, fiyatlar ya da nasıl başlayacağınız.",
+        "aviso": "Bu sohbeti yapay zekâ yürütür. Görüşme 90 gün saklanır. Lütfen şifre, kart ya da ödeme bilgisi göndermeyin.",
+        "avisoLink": "Gizlilik Politikası",
+        "preferirWhatsapp": "WhatsApp'ı mı tercih edersiniz?",
+        "abrirWhatsapp": "WhatsApp'ı aç",
+        "campoRotulo": "Max'e mesajınız",
+        "campoDica": "Sorunuzu yazın",
+        "dicaTeclado": "Enter gönderir. Shift + Enter yeni satır ekler.",
+        "contador": "{{usados}} / {{limite}} karakter",
+        "enviar": "Mesajı gönder",
+        "digitando": "Max yazıyor…",
+        "fechar": "Sohbeti kapat",
+        "erroGeral": "Mesaj şu anda gönderilemedi. Mesajınız kutuda duruyor, tekrar deneyin.",
+        "erroRede": "İnternet bağlantısı yok. Mesajınız kutuda duruyor, bağlantı gelince gönderin.",
+        "erroRepetida": "Bu mesajı az önce gönderdiniz. İsterseniz farklı bir şekilde yazın.",
+        "motivoLimite": "Şimdilik mesaj sınırına ulaştınız. Daha sonra tekrar deneyin veya {{email}} adresine yazın.",
+        "motivoDesligado": "Max ile sohbet şu anda kullanılamıyor. {{email}} adresine yazın, size dönüş yapalım.",
+        "motivoTeto": "Max şu anda çok yoğun. Biraz sonra tekrar deneyin veya {{email}} adresine yazın.",
+        "motivoOcupada": "Max hâlâ önceki mesajınızı yanıtlıyor. Biraz bekleyip tekrar gönderin.",
+        "motivoWhatsapp": "Ülkenizde destek WhatsApp üzerinden verilir. Mesajınız kutuda duruyor ve WhatsApp'ı açtığınızda oraya aktarılır.",
+        "recaptcha": "reCAPTCHA ile korunmaktadır. Google'ın kuralları geçerlidir:",
+        "recaptchaPrivacidade": "Gizlilik",
+        "recaptchaTermos": "Şartlar"
     }
 }

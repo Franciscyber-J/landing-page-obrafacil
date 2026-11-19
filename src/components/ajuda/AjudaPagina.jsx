@@ -98,7 +98,8 @@ export default function AjudaPagina({ codigo, tipo, slug, modulo }) {
     const estado = useIndice(idioma);
     const indice = estado.indice;
 
-    const preparado = useMemo(() => (indice ? prepararBusca(indice.artigos) : []), [indice]);
+    // O idioma do índice escolhe as palavras vazias da busca (as do idioma em que os artigos estão escritos).
+    const preparado = useMemo(() => prepararBusca(indice?.artigos ?? [], indice?.idioma ?? idioma), [indice, idioma]);
     const entrada = useMemo(() => {
         if (tipo !== 'artigo' || !indice) return null;
         return indice.artigos.find((a) => a.slug === slug) ?? indice.artigos.find((a) => a.id === slug) ?? null;

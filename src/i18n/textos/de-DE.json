@@ -16,7 +16,7 @@
             "titulo": "{{titulo}} — ObraFácil"
         },
         "app": {
-            "descricao": "Bauprojektmanagement-App für Bauunternehmen, Handwerker, Bauleiter, Ingenieure und Architekten: Bauzeitenplan nach Phasen, Bautagesberichte mit Fotos und PDF-Export, Baustellenfinanzen, Lohnabrechnung für das Team, Beschaffung und Lager sowie ein Portal zur Bauherrenbegleitung. Funktioniert auf Android, iPhone, Windows und im Web, auch offline auf der Baustelle.",
+            "descricao": "Bauprojektmanagement-App für Bauunternehmen, Handwerker, Bauleiter, Ingenieure und Architekten: Bauzeitenplan nach Phasen, Bautagesberichte mit Fotos und PDF-Export, Qualitäts-Checklisten mit Unterschrift, Baustellenfinanzen, Lohnabrechnung für das Team, Beschaffung und Lager sowie ein Portal zur Bauherrenbegleitung. Funktioniert auf Android, iPhone, Windows und im Web, auch offline auf der Baustelle.",
             "categoria": "Bauprojektmanagement"
         },
         "imagemAlt": "ObraFácil Logo, Bauprojektmanagement-App",
@@ -102,6 +102,7 @@
                 "1 eigenes Bauprojekt gleichzeitig",
                 "7 PDF-Berichte pro Monat mit Wasserzeichen",
                 "250 MB für Fotos und Dateien",
+                "Checklisten mit den 27 fertigen Vorlagen und 1 eigenen Vorlage",
                 "Bauherr begleitet das Projekt im Portal"
             ]
         },
@@ -115,6 +116,7 @@
                 "10 GB für Fotos und Dateien",
                 "PDFs mit Logo und Fußzeile Ihres Unternehmens",
                 "Bautagesberichte als ZIP und Projektdateien offline",
+                "Unbegrenzt eigene Checklisten-Vorlagen und mehrere Checklisten in einem PDF",
                 "Bauherrenzugang für jedes Projekt verfügbar"
             ],
             "itensAnual": [
@@ -185,6 +187,8 @@
         "a9": "Ja, jederzeit und an derselben Stelle, an der Sie es abonniert haben. Es erfolgt keine weitere Verlängerung und Ihr Zugriff bleibt bis zum Ende des bereits bezahlten Zeitraums aktiv.",
         "q10": "Was passiert, wenn die Verlängerungszahlung fehlschlägt?",
         "a10": "Das Konto fällt automatisch auf den kostenlosen Plan zurück. Es werden keine Daten gelöscht; wenn Sie das Limit des kostenlosen Plans überschreiten, wird lediglich das Hochladen neuer Dateien gesperrt, bis Sie Speicherplatz freigeben oder erneut abonnieren.",
+        "q11": "Kann ich mit der App Leistungen per Checkliste prüfen und freigeben?",
+        "a11": "Ja. Mit den Qualitäts-Checklisten prüfen Sie jede Leistung Punkt für Punkt mit Foto, erfassen Mängel mit Maßnahme und Nachprüfung und geben die Leistung mit Unterschrift frei. Auf dem Handy funktioniert das auch ohne Netz: Ihre Eingaben werden übertragen, sobald wieder Empfang da ist. Dabei sind 27 fertige Vorlagen, und Sie können die Vorlagen Ihres Unternehmens anlegen: 1 im Gratis-Plan, beliebig viele mit PRO. Die fertigen Vorlagen sind Beispiele zum Prüfen und Anpassen: Sie ersetzen weder die verantwortliche Bauleitung, noch bescheinigen sie die Einhaltung einer Norm oder eines Qualitätsprogramms.",
         "mais": "War Ihre Frage nicht dabei?",
         "verAjuda": "Hilfe-Center besuchen"
     },
@@ -329,6 +333,11 @@
             "diario": {
                 "titulo": "Bautagebuch",
                 "texto": "Wetter, Tätigkeiten, Vorkommnisse, anwesendes Team, Fotos und Unterschrift. Export als PDF, sofort versandbereit."
+            },
+            "checklists": {
+                "titulo": "Qualitäts-Checklisten",
+                "texto": "27 fertige Vorlagen oder Ihre eigenen. Jeder Prüfpunkt in Ordnung, nicht in Ordnung oder nicht zutreffend, mit Foto, und Nachprüfung bei Mängeln. Freigabe mit Unterschrift, PDF, und der Bauherr sieht es im Portal.",
+                "tela": "Checkliste in Bearbeitung mit Fortschritt und offenen Prüfpunkten"
             },
             "financeiro": {
                 "titulo": "Projektfinanzen",
@@ -493,5 +502,42 @@
         "lojasTitulo": "Über Google Play oder den App Store gekauft?",
         "lojasTexto": "Abrechnung und Erstattungen dieser Käufe erfolgen direkt über den jeweiligen Store. Zum Kündigen wählen Sie **Verwalten** auf der Karte **Ihr Plan** im Profil.",
         "perfilLink": "Wo Sie Ihr Abonnement einsehen können"
+    },
+    "atendimento": {
+        "abrir": "Schreiben Sie uns",
+        "conversar": "Mit Max chatten",
+        "chamadaDuvida": "Noch Fragen? Chatten Sie mit Max, dem Assistenten von ObraFácil.",
+        "ajudaTextoChat": "Chatten Sie hier auf der Website mit Max, dem Assistenten von ObraFácil, oder eröffnen Sie direkt ein Ticket in der App.",
+        "ajudaTextoDois": "Chatten Sie hier auf der Website mit Max, schreiben Sie unserem Support auf WhatsApp oder eröffnen Sie direkt ein Ticket in der App.",
+        "suporteTitulo": "Chat mit Max",
+        "suporteTexto": "Der KI-Assistent von ObraFácil antwortet sofort, rund um die Uhr, direkt hier auf der Website.",
+        "painelTitulo": "Max von ObraFácil",
+        "painelSubtitulo": "KI-Assistent · antwortet sofort",
+        "nomeMax": "Max",
+        "voce": "Sie",
+        "historico": "Nachrichten im Chat",
+        "boasVindas": "Hallo! Ich bin Max, der Assistent von ObraFácil. Fragen Sie mich alles zur App: Funktionen, Tarife, Preise oder wie Sie loslegen.",
+        "aviso": "Dieser Chat wird von einer KI geführt. Der Verlauf wird 90 Tage gespeichert. Bitte senden Sie keine Passwörter, Karten- oder Zahlungsdaten.",
+        "avisoLink": "Datenschutzerklärung",
+        "preferirWhatsapp": "Lieber per WhatsApp?",
+        "abrirWhatsapp": "WhatsApp öffnen",
+        "campoRotulo": "Ihre Nachricht an Max",
+        "campoDica": "Ihre Frage",
+        "dicaTeclado": "Eingabetaste sendet. Umschalt + Eingabe fügt eine Zeile ein.",
+        "contador": "{{usados}} von {{limite}} Zeichen",
+        "enviar": "Nachricht senden",
+        "digitando": "Max schreibt…",
+        "fechar": "Chat schließen",
+        "erroGeral": "Die Nachricht konnte nicht gesendet werden. Sie steht noch im Feld: Versuchen Sie es einfach erneut.",
+        "erroRede": "Keine Internetverbindung. Ihre Nachricht steht noch im Feld: Senden Sie sie, sobald die Verbindung wieder da ist.",
+        "erroRepetida": "Diese Nachricht haben Sie gerade schon gesendet. Formulieren Sie sie gern anders.",
+        "motivoLimite": "Sie haben das Nachrichtenlimit vorerst erreicht. Versuchen Sie es später erneut oder schreiben Sie an {{email}}.",
+        "motivoDesligado": "Der Chat mit Max ist gerade nicht verfügbar. Schreiben Sie an {{email}}, wir melden uns.",
+        "motivoTeto": "Max ist gerade stark gefragt. Versuchen Sie es gleich noch einmal oder schreiben Sie an {{email}}.",
+        "motivoOcupada": "Max beantwortet noch Ihre vorherige Nachricht. Warten Sie kurz und senden Sie erneut.",
+        "motivoWhatsapp": "In Ihrem Land läuft der Support über WhatsApp. Ihre Nachricht steht noch im Feld und wird beim Öffnen von WhatsApp übernommen.",
+        "recaptcha": "Geschützt durch reCAPTCHA. Es gelten die Bestimmungen von Google:",
+        "recaptchaPrivacidade": "Datenschutz",
+        "recaptchaTermos": "Nutzungsbedingungen"
     }
 }

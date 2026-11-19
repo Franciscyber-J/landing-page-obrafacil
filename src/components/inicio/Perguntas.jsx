@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 import { Plus } from 'lucide-react';
 import { caminhoAjuda, idDaSecao } from '../../i18n/idiomas.js';
 import { useIdioma } from '../../i18n/RotaDoIdioma.jsx';
-import { linkWhatsApp } from '../../links.js';
+import { useContato } from '../atendimento/useContato.js';
+import { PERGUNTAS } from '../../inicio.js';
 import styles from './Perguntas.module.css';
-
-const NUMEROS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 export default function Perguntas() {
     const { t } = useTranslation();
     const codigo = useIdioma();
+    const contato = useContato('perguntas');
 
     return (
         <section id={idDaSecao(codigo, 'faq')} className="secao" aria-labelledby="faq-titulo">
@@ -23,13 +23,20 @@ export default function Perguntas() {
                 <div className={styles.ajuda}>
                     <p>{t('faq.mais')}</p>
                     <Link to={caminhoAjuda(codigo)} className="acao-contorno">{t('faq.verAjuda')}</Link>
-                    <a href={linkWhatsApp(t('whatsapp.message'))} target="_blank" rel="noopener noreferrer" className={styles.whatsapp}>
-                        {t('chamada.whatsapp')}
-                    </a>
+                    {contato.whatsapp && (
+                        <a href={contato.linkWhatsApp(t('whatsapp.message'))} target="_blank" rel="noopener noreferrer" className={styles.contato}>
+                            {t('chamada.whatsapp')}
+                        </a>
+                    )}
+                    {contato.conversa && (
+                        <button type="button" onClick={contato.abrir} aria-haspopup="dialog" className={styles.contato}>
+                            {t('atendimento.conversar')}
+                        </button>
+                    )}
                 </div>
 
                 <div className={styles.lista} data-grupo>
-                    {NUMEROS.map((n) => (
+                    {PERGUNTAS.map((n) => (
                         <details key={n} className={styles.pergunta} data-item>
                             <summary>
                                 <span>{t(`faq.q${n}`)}</span>

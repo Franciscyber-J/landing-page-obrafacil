@@ -13,7 +13,7 @@
             "descricao": "{{descricao}} Guias passo a passo com os ecrãs da aplicação ObraFácil."
         },
         "app": {
-            "descricao": "Aplicação de gestão de obras para construtoras, engenheiros, arquitetos e empreiteiros: cronograma por etapas, diário de obra com fotografias e PDF, finanças da obra, equipa e processamento de salários, compras e armazém, e portal para o cliente acompanhar a obra. Funciona em Android, iPhone, Windows e navegador, mesmo sem internet no estaleiro."
+            "descricao": "Aplicação de gestão de obras para construtoras, engenheiros, arquitetos e empreiteiros: cronograma por etapas, diário de obra com fotografias e PDF, checklists de qualidade com assinatura, finanças da obra, equipa e processamento de salários, compras e armazém, e portal para o cliente acompanhar a obra. Funciona em Android, iPhone, Windows e navegador, mesmo sem internet no estaleiro."
         },
         "imagemAlt": "Logótipo do ObraFácil, aplicação de gestão de obras"
     },
@@ -125,6 +125,11 @@
                 "titulo": "Diário de obra",
                 "texto": "Clima, atividades, ocorrências, equipa presente, fotografias e assinatura. Sai em PDF, pronto a enviar."
             },
+            "checklists": {
+                "titulo": "Checklists de qualidade",
+                "texto": "27 modelos prontos ou os da sua empresa. Cada item conforme, não conforme ou não aplicável, com fotografia, e reinspeção do que não passou. Aprovação com assinatura, PDF da ficha (FIE) e o cliente a ver no portal.",
+                "tela": "Checklist em preenchimento, com o progresso e os itens por responder"
+            },
             "financeiro": {
                 "titulo": "Finanças da obra"
             },
@@ -175,6 +180,7 @@
                 "1 obra sua de cada vez",
                 "7 relatórios PDF por mês, com marca de água",
                 "250 MB para fotografias e ficheiros",
+                "Checklists com os 27 modelos prontos e 1 modelo seu",
                 "Cliente a acompanhar pelo portal"
             ]
         },
@@ -185,6 +191,7 @@
                 "10 GB para fotografias e ficheiros",
                 "PDF com o logótipo e o rodapé da sua empresa",
                 "RDO em ZIP e ficheiros da obra sem internet",
+                "Modelos de checklist ilimitados e várias checklists num só PDF",
                 "Acesso Cliente disponível para cada obra"
             ],
             "ctaMensal": "Subscrever o PRO mensal",
@@ -209,6 +216,8 @@
         "a8": "Sim, em Perfil > Eliminar conta. A conta fica suspensa durante 30 dias (pode voltar atrás) e depois as suas obras e dados são apagados. Alguns registos, como os de pagamento e da aceitação dos Termos, ficam guardados pelo prazo da Política de Privacidade.",
         "a9": "Sim, a qualquer momento, no mesmo local onde subscreveu. A renovação seguinte não é cobrada e o acesso mantém-se até ao fim do período pago.",
         "a10": "A conta volta ao plano grátis. Nada é apagado; se passar do limite do plano grátis, só o envio de ficheiros novos fica bloqueado até libertar espaço ou voltar a subscrever.",
+        "q11": "A aplicação tem fichas de inspeção (checklists de qualidade)?",
+        "a11": "Sim. Nas Checklists de qualidade verifica cada trabalho item a item, com fotografia, regista a não conformidade com ação corretiva e reinspeção e aprova o trabalho com assinatura. No telemóvel, funciona mesmo sem rede: o que regista é enviado quando a ligação volta. Traz 27 modelos prontos, e pode criar os da sua empresa: 1 no plano gratuito e quantos quiser no PRO. Os modelos prontos são exemplos para verificar e adaptar: não substituem o técnico habilitado responsável pela obra nem certificam o cumprimento de normas ou de programas de qualidade.",
         "mais": "Não encontrou a sua resposta?",
         "verAjuda": "Ver o Centro de Ajuda"
     },
@@ -298,5 +307,29 @@
         "centralBotao": "Abrir o Centro de Ajuda",
         "lojasTexto": "As cobranças e os reembolsos dessas compras são feitos pela própria loja, segundo as regras dela. Para cancelar, use **Gerir** no cartão **O seu plano** do Perfil.",
         "perfilLink": "Onde ver a subscrição"
+    },
+    "atendimento": {
+        "abrir": "Fale connosco",
+        "conversar": "Falar com o Max",
+        "chamadaDuvida": "Ficou com dúvidas? Fale com o Max, o assistente do ObraFácil.",
+        "ajudaTextoChat": "Fale com o Max, o assistente do ObraFácil, aqui no site, ou abra um pedido diretamente na aplicação.",
+        "ajudaTextoDois": "Fale com o Max aqui no site, contacte o apoio pelo WhatsApp ou abra um pedido diretamente na aplicação.",
+        "suporteTexto": "O assistente de IA do ObraFácil responde de imediato, a qualquer hora, aqui no site.",
+        "painelSubtitulo": "Assistente de IA · responde de imediato",
+        "boasVindas": "Olá! Sou o Max, o assistente do ObraFácil. Pergunte o que quiser sobre a aplicação: funcionalidades, planos, preços ou como começar.",
+        "aviso": "Atendimento feito por inteligência artificial. A conversa fica guardada durante 90 dias. Não envie palavras-passe nem dados do cartão ou de pagamento.",
+        "campoRotulo": "A sua mensagem para o Max",
+        "campoDica": "Escreva a sua dúvida",
+        "dicaTeclado": "Enter envia. Shift + Enter muda de linha.",
+        "digitando": "O Max está a escrever…",
+        "erroGeral": "Não foi possível enviar agora. A sua mensagem continua no campo: basta tentar novamente.",
+        "erroRede": "Sem ligação à internet. A sua mensagem continua no campo: envie quando a ligação voltar.",
+        "erroRepetida": "Acabou de enviar essa mensagem. Se quiser, escreva-a por outras palavras.",
+        "motivoLimite": "Atingiu o limite de mensagens por agora. Tente novamente mais tarde ou escreva para {{email}}.",
+        "motivoDesligado": "A conversa com o Max está indisponível de momento. Escreva para {{email}} e nós respondemos.",
+        "motivoTeto": "O Max está com muita procura neste momento. Tente novamente daqui a pouco ou escreva para {{email}}.",
+        "motivoOcupada": "O Max ainda está a responder à mensagem anterior. Aguarde um instante e envie novamente.",
+        "motivoWhatsapp": "No seu país, o atendimento é feito pelo WhatsApp. A sua mensagem continua no campo e segue junto quando abrir o WhatsApp.",
+        "recaptcha": "Protegido pelo reCAPTCHA. Aplicam-se as regras da Google:"
     }
 }

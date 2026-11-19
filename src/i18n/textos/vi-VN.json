@@ -16,7 +16,7 @@
             "titulo": "{{titulo}} — ObraFácil"
         },
         "app": {
-            "descricao": "Ứng dụng quản lý công trình dành cho nhà thầu, kỹ sư xây dựng, kiến trúc sư và chỉ huy trưởng: tiến độ theo hạng mục, nhật ký công trình kèm ảnh và PDF, tài chính công trình, bảng lương đội ngũ, vật tư và kho, cùng cổng theo dõi cho khách hàng. Hoạt động trên Android, iPhone, Windows và web, ngay cả khi ngoại tuyến tại công trình.",
+            "descricao": "Ứng dụng quản lý công trình dành cho nhà thầu, kỹ sư xây dựng, kiến trúc sư và chỉ huy trưởng: tiến độ theo hạng mục, nhật ký công trình kèm ảnh và PDF, phiếu kiểm tra chất lượng có chữ ký, tài chính công trình, bảng lương đội ngũ, vật tư và kho, cùng cổng theo dõi cho khách hàng. Hoạt động trên Android, iPhone, Windows và web, ngay cả khi ngoại tuyến tại công trình.",
             "categoria": "Quản lý công trình"
         },
         "imagemAlt": "Logo ObraFácil, ứng dụng quản lý công trình",
@@ -102,6 +102,7 @@
                 "1 công trình đang hoạt động tại một thời điểm",
                 "7 báo cáo PDF mỗi tháng có hình mờ",
                 "250 MB dung lượng cho ảnh và tài liệu",
+                "Phiếu kiểm tra với 27 mẫu có sẵn và 1 mẫu riêng",
                 "Khách hàng theo dõi công trình qua cổng thông tin"
             ]
         },
@@ -115,6 +116,7 @@
                 "10 GB dung lượng cho ảnh và tài liệu",
                 "File PDF kèm logo và chân trang của công ty bạn",
                 "Tải nhật ký định dạng ZIP và tệp công trình ngoại tuyến",
+                "Không giới hạn mẫu phiếu kiểm tra, gộp nhiều phiếu vào một PDF",
                 "Có sẵn tính năng Truy cập khách hàng cho từng công trình"
             ],
             "itensAnual": [
@@ -185,6 +187,8 @@
         "a9": "Có, bất cứ lúc nào, tại chính nơi bạn đã đăng ký. Kỳ gia hạn tiếp theo sẽ không bị tính phí và quyền truy cập vẫn duy trì đến hết thời hạn đã thanh toán.",
         "q10": "Điều gì xảy ra nếu không thanh toán gia hạn?",
         "a10": "Tài khoản sẽ quay về gói miễn phí. Không có gì bị xóa; nếu vượt quá giới hạn của gói miễn phí, việc tải lên tệp mới sẽ tạm dừng cho đến khi bạn giải phóng dung lượng hoặc đăng ký lại.",
+        "q11": "Ứng dụng có phiếu kiểm tra chất lượng công việc không?",
+        "a11": "Có. Với Phiếu kiểm tra chất lượng, bạn kiểm tra từng công việc theo từng mục, kèm ảnh, ghi nhận điểm không đạt cùng biện pháp khắc phục và kiểm tra lại, rồi nghiệm thu kèm chữ ký. Trên điện thoại, mất sóng vẫn dùng được: dữ liệu sẽ được gửi khi có kết nối lại. Có sẵn 27 mẫu, và bạn có thể tạo mẫu riêng của công ty: 1 mẫu ở gói miễn phí và không giới hạn ở gói PRO. Các mẫu có sẵn là ví dụ để bạn xem lại và điều chỉnh: chúng không thay thế kỹ sư chịu trách nhiệm kỹ thuật cho công trình và không chứng nhận việc tuân thủ bất kỳ tiêu chuẩn hay chương trình chất lượng nào.",
         "mais": "Bạn chưa tìm thấy nội dung mình cần?",
         "verAjuda": "Xem Trung tâm trợ giúp"
     },
@@ -328,6 +332,11 @@
                 "titulo": "Nhật ký công trình",
                 "texto": "Thời tiết, công việc, sự cố, nhân lực có mặt, hình ảnh và chữ ký. Xuất ra file PDF hoàn chỉnh sẵn sàng gửi đi."
             },
+            "checklists": {
+                "titulo": "Phiếu kiểm tra chất lượng",
+                "texto": "27 mẫu có sẵn hoặc mẫu riêng của công ty bạn. Mỗi mục đạt, không đạt hoặc không áp dụng, kèm ảnh, và kiểm tra lại điểm không đạt. Nghiệm thu có chữ ký, xuất PDF và khách hàng xem trên cổng thông tin.",
+                "tela": "Phiếu kiểm tra đang điền, với tiến độ và các mục chưa trả lời"
+            },
             "financeiro": {
                 "titulo": "Tài chính công trình",
                 "texto": "Dự toán, nghiệm thu và các khoản phải trả theo từng hạng mục, cùng các khoản thu, chi và báo cáo tài chính."
@@ -470,7 +479,7 @@
     },
     "suporte": {
         "metaTitulo": "Hỗ trợ · ObraFácil",
-        "metaDescricao": "Liên hệ với bộ phận hỗ trợ ObraFácil qua WhatsApp, email hoặc yêu cầu hỗ trợ trong ứng dụng, và xem hướng dẫn trong Trung tâm trợ giúp.",
+        "metaDescricao": "Liên hệ hỗ trợ ObraFácil qua trò chuyện với trợ lý AI Max trên trang web, email hoặc yêu cầu trong ứng dụng, và xem hướng dẫn trong Trung tâm trợ giúp.",
         "sobretitulo": "Hỗ trợ",
         "titulo": "Liên hệ với **đội ngũ hỗ trợ**",
         "texto": "Đặt câu hỏi, báo cáo sự cố ứng dụng hoặc yêu cầu hỗ trợ thanh toán. Thời gian phản hồi trung bình của chúng tôi là từ 24 đến 48 giờ làm việc.",
@@ -491,5 +500,42 @@
         "lojasTitulo": "Đã mua qua Google Play hoặc App Store?",
         "lojasTexto": "Hóa đơn và hoàn tiền cho các giao dịch này do kho ứng dụng tương ứng xử lý trực tiếp. Để hủy, hãy dùng nút **Quản lý** trên thẻ **Gói của bạn**.",
         "perfilLink": "Nơi xem gói đăng ký của bạn"
+    },
+    "atendimento": {
+        "abrir": "Nhắn tin cho chúng tôi",
+        "conversar": "Trò chuyện với Max",
+        "chamadaDuvida": "Bạn có thắc mắc? Hãy trò chuyện với Max, trợ lý của ObraFácil.",
+        "ajudaTextoChat": "Trò chuyện với Max, trợ lý của ObraFácil, ngay trên trang web này, hoặc tạo yêu cầu hỗ trợ trực tiếp trong ứng dụng.",
+        "ajudaTextoDois": "Trò chuyện với Max ngay trên trang web này, nhắn cho đội ngũ hỗ trợ qua WhatsApp, hoặc tạo yêu cầu hỗ trợ trực tiếp trong ứng dụng.",
+        "suporteTitulo": "Trò chuyện với Max",
+        "suporteTexto": "Trợ lý AI của ObraFácil trả lời ngay, bất cứ lúc nào, trên trang web này.",
+        "painelTitulo": "Max của ObraFácil",
+        "painelSubtitulo": "Trợ lý AI · trả lời ngay",
+        "nomeMax": "Max",
+        "voce": "Bạn",
+        "historico": "Tin nhắn trong cuộc trò chuyện",
+        "boasVindas": "Xin chào! Mình là Max, trợ lý của ObraFácil. Bạn cứ hỏi mọi điều về ứng dụng: tính năng, gói, giá hoặc cách bắt đầu.",
+        "aviso": "Cuộc trò chuyện này do AI phụ trách và được lưu trong 90 ngày. Vui lòng không gửi mật khẩu hay thông tin thẻ, thanh toán.",
+        "avisoLink": "Chính sách quyền riêng tư",
+        "preferirWhatsapp": "Bạn thích dùng WhatsApp hơn?",
+        "abrirWhatsapp": "Mở WhatsApp",
+        "campoRotulo": "Tin nhắn của bạn gửi Max",
+        "campoDica": "Nhập câu hỏi của bạn",
+        "dicaTeclado": "Nhấn Enter để gửi. Shift + Enter để xuống dòng.",
+        "contador": "{{usados}}/{{limite}} ký tự",
+        "enviar": "Gửi tin nhắn",
+        "digitando": "Max đang soạn tin…",
+        "fechar": "Đóng cuộc trò chuyện",
+        "erroGeral": "Chưa gửi được tin nhắn. Nội dung vẫn còn trong ô nhập, bạn chỉ cần thử lại.",
+        "erroRede": "Không có kết nối internet. Nội dung vẫn còn trong ô nhập, hãy gửi khi có mạng trở lại.",
+        "erroRepetida": "Bạn vừa gửi tin nhắn này. Hãy thử diễn đạt theo cách khác.",
+        "motivoLimite": "Bạn đã đạt giới hạn tin nhắn trong lúc này. Hãy thử lại sau hoặc gửi email đến {{email}}.",
+        "motivoDesligado": "Hiện chưa thể trò chuyện với Max. Hãy gửi email đến {{email}}, chúng tôi sẽ phản hồi.",
+        "motivoTeto": "Hiện có rất nhiều người đang hỏi Max. Hãy thử lại sau ít phút hoặc gửi email đến {{email}}.",
+        "motivoOcupada": "Max vẫn đang trả lời tin nhắn trước của bạn. Hãy đợi một chút rồi gửi lại.",
+        "motivoWhatsapp": "Ở quốc gia của bạn, hỗ trợ được thực hiện qua WhatsApp. Tin nhắn vẫn còn trong ô nhập và sẽ được chuyển sang khi bạn mở WhatsApp.",
+        "recaptcha": "Được bảo vệ bởi reCAPTCHA. Áp dụng quy định của Google:",
+        "recaptchaPrivacidade": "Quyền riêng tư",
+        "recaptchaTermos": "Điều khoản"
     }
 }

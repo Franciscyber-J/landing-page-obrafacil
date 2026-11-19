@@ -16,7 +16,7 @@
             "titulo": "{{titulo}} — ObraFácil"
         },
         "app": {
-            "descricao": "Építésirányítási alkalmazás kivitelezőknek, mérnököknek, építészeknek és művezetőknek: szakaszos ütemterv, napi jelentések fotókkal és PDF-ben, költségkövetés, bérelszámolás, beszerzés és raktár, valamint ügyfélportál a megrendelőnek. Működik Androidon, iPhone-on, Windowson és böngészőben, a helyszínen offline módban is.",
+            "descricao": "Építésirányítási alkalmazás kivitelezőknek, mérnököknek, építészeknek és művezetőknek: szakaszos ütemterv, napi jelentések fotókkal és PDF-ben, minőségi ellenőrzőlisták aláírással, költségkövetés, bérelszámolás, beszerzés és raktár, valamint ügyfélportál a megrendelőnek. Működik Androidon, iPhone-on, Windowson és böngészőben, a helyszínen offline módban is.",
             "categoria": "Építésirányítás"
         },
         "imagemAlt": "Az ObraFácil építésirányítási szoftver logója",
@@ -102,6 +102,7 @@
                 "1 aktív saját projekt egyidejűleg",
                 "Havi 7 PDF jelentés vízjellel",
                 "250 MB tárhely fotóknak és fájloknak",
+                "Ellenőrzőlisták a 27 kész sablonnal és 1 saját sablonnal",
                 "A megrendelő nyomon követheti az építkezést a portálon"
             ]
         },
@@ -115,6 +116,7 @@
                 "10 GB tárhely fotóknak és fájloknak",
                 "PDF-ek céged logójával és hivatalos láblécével",
                 "Napi jelentések ZIP-ben és offline projektfájlok",
+                "Korlátlan saját ellenőrzőlista-sablon és több lista egyetlen PDF-ben",
                 "Ügyfél-hozzáférés minden projekthez elérhető"
             ],
             "itensAnual": [
@@ -185,6 +187,8 @@
         "a9": "Igen, bármikor és ugyanott, ahol előfizettél rá. További megújulási díj nem kerül felszámításra, és a hozzáférésed az előre kifizetett időszak végéig aktív marad.",
         "q10": "Mi történik, ha a megújítási fizetés sikertelen?",
         "a10": "A fiók visszatér az ingyenes csomagra. Semmilyen adat nem törlődik; ha túlléped az ingyenes csomag korlátait, csak az új fájlok feltöltése zárolódik mindaddig, amíg helyet nem szabadítasz fel vagy újra elő nem fizetsz.",
+        "q11": "Van az alkalmazásban ellenőrzőlista a munkák minőségének ellenőrzéséhez?",
+        "a11": "Igen. A Minőségi ellenőrzőlistákkal minden munkát pontról pontra, fotóval ellenőrzöl, a nemmegfelelőséget helyesbítő intézkedéssel és újraellenőrzéssel rögzíted, majd aláírással átveszed a munkát. Telefonon térerő nélkül is működik: amit rögzítesz, elküldi, amint visszajön a kapcsolat. 27 kész sablon jár hozzá, és a céged saját sablonjait is elkészítheted: az ingyenes csomagban 1-et, PRO-ban korlátlanul. A kész sablonok példák, amelyeket átnézel és a sajátodra szabsz: nem helyettesítik a felelős műszaki vezetőt, és nem igazolják semmilyen szabvány vagy minőségügyi program teljesítését.",
         "mais": "Nem találtad meg a választ a kérdésedre?",
         "verAjuda": "Ugrás a Súgóközpontba"
     },
@@ -329,6 +333,11 @@
             "diario": {
                 "titulo": "Építési napló",
                 "texto": "Időjárás, munkavégzés, események, jelenlévő csapat, fotók és aláírások. Egyszerű exportálás küldésre kész PDF-be."
+            },
+            "checklists": {
+                "titulo": "Minőségi ellenőrzőlisták",
+                "texto": "27 kész sablon vagy a céged saját sablonjai. Minden pont megfelel, nem felel meg vagy nem releváns, fotóval, és a hibák újraellenőrzése. Átvétel aláírással, PDF, és a megrendelő a portálon is látja.",
+                "tela": "Kitöltés alatt álló ellenőrzőlista a haladással és a még megválaszolatlan pontokkal"
             },
             "financeiro": {
                 "titulo": "Pénzügyek",
@@ -493,5 +502,42 @@
         "lojasTitulo": "A Google Playen vagy az App Store-ban vásároltál?",
         "lojasTexto": "Ezen tranzakciók számlázását és visszatérítését közvetlenül az adott alkalmazásbolt kezeli. A lemondáshoz használd a **Kezelés** gombot a **Csomagod** lapon.",
         "perfilLink": "Hol találod meg az előfizetésedet"
+    },
+    "atendimento": {
+        "abrir": "Írj nekünk",
+        "conversar": "Csevegés Maxszel",
+        "chamadaDuvida": "Kérdésed van? Csevegj Maxszel, az ObraFácil asszisztensével.",
+        "ajudaTextoChat": "Csevegj Maxszel, az ObraFácil asszisztensével itt az oldalon, vagy nyiss jegyet közvetlenül az alkalmazásban.",
+        "ajudaTextoDois": "Csevegj Maxszel itt az oldalon, írj csapatunknak WhatsAppon, vagy nyiss jegyet közvetlenül az alkalmazásban.",
+        "suporteTitulo": "Csevegés Maxszel",
+        "suporteTexto": "Az ObraFácil MI-asszisztense azonnal válaszol, bármikor, itt az oldalon.",
+        "painelTitulo": "Max, az ObraFácil asszisztense",
+        "painelSubtitulo": "MI-asszisztens · azonnal válaszol",
+        "nomeMax": "Max",
+        "voce": "Te",
+        "historico": "A beszélgetés üzenetei",
+        "boasVindas": "Szia! Max vagyok, az ObraFácil asszisztense. Kérdezz bármit az alkalmazásról: funkciók, csomagok, árak vagy hogyan kezdj hozzá.",
+        "aviso": "A csevegést mesterséges intelligencia kezeli. A beszélgetést 90 napig őrizzük meg. Ne küldj jelszót, se kártya- vagy fizetési adatot.",
+        "avisoLink": "Adatvédelmi szabályzat",
+        "preferirWhatsapp": "Inkább WhatsAppon?",
+        "abrirWhatsapp": "WhatsApp megnyitása",
+        "campoRotulo": "Üzeneted Maxnek",
+        "campoDica": "Írd be a kérdésed",
+        "dicaTeclado": "Az Enter elküldi. Shift + Enter új sort kezd.",
+        "contador": "{{usados}} / {{limite}} karakter",
+        "enviar": "Üzenet küldése",
+        "digitando": "Max ír…",
+        "fechar": "Csevegés bezárása",
+        "erroGeral": "Most nem sikerült elküldeni. Az üzeneted a mezőben maradt, próbáld újra.",
+        "erroRede": "Nincs internetkapcsolat. Az üzeneted a mezőben maradt, küldd el, ha újra lesz kapcsolat.",
+        "erroRepetida": "Ezt az üzenetet az előbb küldted el. Fogalmazd meg másképp, ha szeretnéd.",
+        "motivoLimite": "Egyelőre elérted az üzenetkorlátot. Próbáld újra később, vagy írj a(z) {{email}} címre.",
+        "motivoDesligado": "A csevegés Maxszel most nem érhető el. Írj a(z) {{email}} címre, és válaszolunk.",
+        "motivoTeto": "Max most nagyon elfoglalt. Próbáld újra kicsit később, vagy írj a(z) {{email}} címre.",
+        "motivoOcupada": "Max még az előző üzenetedre válaszol. Várj egy kicsit, és küldd el újra.",
+        "motivoWhatsapp": "Az országodban a támogatás WhatsAppon zajlik. Az üzeneted a mezőben maradt, és a WhatsApp megnyitásakor átkerül oda.",
+        "recaptcha": "A reCAPTCHA védi. A Google szabályai érvényesek:",
+        "recaptchaPrivacidade": "Adatvédelem",
+        "recaptchaTermos": "Feltételek"
     }
 }

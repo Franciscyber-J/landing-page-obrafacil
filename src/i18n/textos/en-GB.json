@@ -12,7 +12,7 @@
             "titulo": "{{assunto}} · ObraFácil Help Centre"
         },
         "app": {
-            "descricao": "Construction management app for builders, contractors, civil engineers and architects: stage-by-stage project programme, site diary (daily reports) with photos and PDF, project finances, team and payroll, purchases and stock, and a portal where the client follows the project. Works on Android, iPhone, Windows and the web, even offline on site."
+            "descricao": "Construction management app for builders, contractors, civil engineers and architects: stage-by-stage project programme, site diary (daily reports) with photos and PDF, quality inspection checklists with sign-off, project finances, team and payroll, purchases and stock, and a portal where the client follows the project. Works on Android, iPhone, Windows and the web, even offline on site."
         }
     },
     "social": {
@@ -39,7 +39,8 @@
         "ctaTitle": "Ready to organise your next project?"
     },
     "faq": {
-        "verAjuda": "Visit the Help Centre"
+        "verAjuda": "Visit the Help Centre",
+        "a11": "Yes. With Quality checklists you inspect each piece of work item by item, with photos, record any non-conformance with a corrective action and re-inspection, and sign off the work. On your phone it works even with no signal: what you record syncs when you're back online. It comes with 27 ready-made templates, and you can create your company's own: 1 on the free plan and as many as you like on PRO. The ready-made templates are examples to review and adapt: they don't replace the qualified professional responsible for the works, and they don't certify compliance with any standard or quality programme."
     },
     "perfil": {
         "gerenciarLugar": "Cancelling in one place doesn't cancel a subscription made in the other.",
@@ -49,5 +50,16 @@
         "metaDescricao": "Contact ObraFácil support on WhatsApp, by email or with a ticket in the app, and see step-by-step guides in the Help Centre.",
         "centralTitulo": "Help Centre",
         "centralBotao": "Open the Help Centre"
+    },
+    "recursos": {
+        "itens": {
+            "checklists": {
+                "texto": "27 ready-made templates or your company's own. Pass, Fail or N/A on each item, with photos, and re-inspection of anything that fails. Sign-off, a PDF and the client seeing it in the portal."
+            }
+        }
+    },
+    "atendimento": {
+        "ajudaTextoChat": "Chat with Max, the ObraFácil assistant, right here on the site, or raise a ticket in the app.",
+        "ajudaTextoDois": "Chat with Max right here on the site, message support on WhatsApp, or raise a ticket in the app."
     }
 }

@@ -9,7 +9,7 @@ import LegalPagina from './components/legal/LegalPagina';
 import PagamentoPagina from './components/conta/PagamentoPagina';
 import PerfilPagina from './components/conta/PerfilPagina';
 import SuportePagina from './components/conta/SuportePagina';
-import FloatingWhatsApp from './components/FloatingWhatsApp';
+import Atendimento from './components/atendimento/Atendimento.jsx';
 import AvisoCookies from './components/AvisoCookies';
 import {
   analisarCaminho, caminhoDoAntigo, caminhoInicio, consultaQueSegue, idioma, secaoDaAncora,
@@ -97,7 +97,7 @@ function Site() {
       {i18n.language === codigo && <Pagina codigo={codigo} lido={lido} />}
       {/* A chamada "Começar grátis" do rodapé não aparece para quem já é cliente (volta do pagamento e Perfil). */}
       <Footer comChamada={!['inicio', 'pagamento', 'perfil'].includes(lido.pagina)} />
-      <FloatingWhatsApp />
+      <Atendimento />
     </ProvedorDeRota>
   );
 }

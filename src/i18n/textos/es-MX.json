@@ -8,7 +8,7 @@
             "descricao": "Guías paso a paso de la aplicación para administrar obras ObraFácil: reporte diario y bitácora, cronograma, finanzas, equipo y portal del cliente, con las pantallas reales de la app."
         },
         "app": {
-            "descricao": "Aplicación para administrar obras pensada para constructoras, ingenieros, arquitectos y contratistas: cronograma por etapas, bitácora y reporte diario de obra con fotos y PDF, finanzas de la obra, equipo y nómina, compras y almacén, y un portal para que el cliente siga la obra. Funciona en Android, iPhone, Windows y navegador, incluso sin señal en la obra.",
+            "descricao": "Aplicación para administrar obras pensada para constructoras, ingenieros, arquitectos y contratistas: cronograma por etapas, bitácora y reporte diario de obra con fotos y PDF, checklists de calidad con firma, finanzas de la obra, equipo y nómina, compras y almacén, y un portal para que el cliente siga la obra. Funciona en Android, iPhone, Windows y navegador, incluso sin señal en la obra.",
             "categoria": "Administración de obras"
         },
         "imagemAlt": "Logotipo de ObraFácil, aplicación para administrar obras"
@@ -86,6 +86,7 @@
                 "1 obra propia a la vez",
                 "7 reportes PDF al mes, con marca de agua",
                 "250 MB para fotos y archivos",
+                "Checklists con las 27 plantillas listas y 1 plantilla propia",
                 "Tu cliente siguiendo la obra en el portal"
             ]
         },
@@ -96,6 +97,7 @@
                 "10 GB para fotos y archivos",
                 "PDF con el logotipo y el pie de página de tu empresa",
                 "Reportes diarios en ZIP y archivos de la obra sin conexión",
+                "Plantillas de checklist ilimitadas y varios checklists en un solo PDF",
                 "Acceso Cliente disponible para cada obra"
             ],
             "comparacao": "Pagando mes a mes, 12 meses cuestan {{simbolo}}{{valor}}",
@@ -109,7 +111,8 @@
         "q4": "¿Qué datos personales se recaban?",
         "a4": "Para la cuenta: nombre, correo electrónico y teléfono; tu identificación fiscal (por ejemplo, el RFC) solo si la indicas. La lista completa, y para qué sirve cada dato, está en la Política de Privacidad.",
         "q7": "¿ObraFácil sustituye al responsable técnico de la obra?",
-        "a7": "No. Es una herramienta de gestión y no sustituye al profesional responsable de la obra."
+        "a7": "No. Es una herramienta de gestión y no sustituye al profesional responsable de la obra.",
+        "a11": "Sí. En los Checklists de calidad revisas cada trabajo punto por punto, con foto, registras la no conformidad con acción correctiva y reinspección, y apruebas el trabajo con firma. En el celular funciona aunque no haya señal: lo que marcas se envía cuando vuelve la conexión. Trae 27 plantillas listas y puedes crear las de tu empresa: 1 en el plan gratuito y todas las que quieras en el PRO. Las plantillas listas son ejemplos para revisar y adaptar: no sustituyen al profesional responsable de la obra ni certifican el cumplimiento de ninguna norma ni programa de calidad."
     },
     "conta": {
         "lojasTexto": "Entra con la misma cuenta en el celular, en la computadora o en el navegador: lo que compraste vale en todos."
@@ -140,5 +143,18 @@
         "gerenciarSite": "**Si te suscribiste en el sitio web o en la computadora**: la página de pagos, en el navegador, para cambiar la tarjeta, ver los cobros o cancelar.",
         "gerenciarLugar": "Cancelar en un lugar no cancela una suscripción hecha en el otro.",
         "avisoTexto": "El banco rechazó el cobro de la suscripción. Toca **Gestionar** y agrega una tarjeta válida para no perder el PRO. Si ya pagaste, puedes ignorar el aviso."
+    },
+    "atendimento": {
+        "chamadaDuvida": "¿Tienes dudas? Platica con Max, el asistente de ObraFácil.",
+        "ajudaTextoChat": "Platica con Max, el asistente de ObraFácil, aquí en el sitio, o abre una solicitud desde la app.",
+        "ajudaTextoDois": "Platica con Max aquí en el sitio, escríbele a soporte por WhatsApp o abre una solicitud desde la app.",
+        "suporteTexto": "El asistente con IA de ObraFácil responde al instante, a cualquier hora, aquí en el sitio.",
+        "painelSubtitulo": "Asistente con IA · responde al instante",
+        "boasVindas": "¡Hola! Soy Max, el asistente de ObraFácil. Pregúntame lo que quieras sobre la app: funciones, planes, precios o cómo empezar.",
+        "dicaTeclado": "Enter envía. Shift + Enter agrega una línea.",
+        "erroGeral": "No se pudo enviar. Tu mensaje sigue en el cuadro: inténtalo de nuevo.",
+        "motivoTeto": "Max tiene mucha demanda en este momento. Inténtalo de nuevo en un rato o escribe a {{email}}.",
+        "motivoDesligado": "El chat con Max no está disponible en este momento. Escribe a {{email}} y te respondemos.",
+        "motivoLimite": "Llegaste al límite de mensajes por ahora. Inténtalo más tarde o escribe a {{email}}."
     }
 }
