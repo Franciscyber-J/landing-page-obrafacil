@@ -12,6 +12,7 @@
 
 import { ehIdiomaDaAjuda } from './idiomas.js';
 import { lerMarcacao } from './marcacao.js';
+import { FAIXAS, FAIXAS_MAIORES } from './larguras.js';
 import {
     artigoDaPaginaValido, artigoDoIdiomaValido, artigoParaPagina, caminhoDoArtigo, caminhoDoCabecalho, caminhoDoIndice,
     indiceValido,
@@ -211,4 +212,22 @@ export function printDoPasso(passo) {
     const endereco = enderecoDoPrint(passo?.print);
     if (!endereco) return null;
     return { endereco, marcacao: lerMarcacao(passo.marcacao) };
+}
+
+// Os prints do passo por largura da tela (src/ajuda/larguras.js; desde a 2.0.2 o passo pode trazer, em "larguras", o
+// print da largura média e o de computador, cada um com a marcação medida nele). Devolve [{ faixa, faixas, endereco,
+// marcacao }], o de celular primeiro: [faixas] diz em que larguras da tela cada um aparece (o de celular também nas
+// que não têm o próprio). Lista vazia sem print válido. Versão maior sem endereço válido fica de fora (vale o de
+// celular nessa largura).
+export function printsDoPasso(passo) {
+    const celular = printDoPasso(passo);
+    if (!celular) return [];
+    const maiores = [];
+    for (const faixa of FAIXAS_MAIORES) {
+        const v = passo.larguras?.[faixa];
+        const endereco = v && typeof v === 'object' ? enderecoDoPrint(v.print) : null;
+        if (endereco) maiores.push({ faixa, faixas: [faixa], endereco, marcacao: lerMarcacao(v.marcacao) });
+    }
+    const doCelular = FAIXAS.filter((f) => !maiores.some((m) => m.faixa === f));
+    return [{ faixa: 'celular', faixas: doCelular, ...celular }, ...maiores];
 }

@@ -135,6 +135,7 @@ node ferramentas/paginas/gerar.mjs --ajuda-local D:\Projetos\ajuda_saida --legal
 | `src/ajuda/busca.js` | Busca sem acento, sem maiúscula e sem os sinais de vogal opcionais do árabe e do hebraico (harakat, tatweel, niqqud); título > tag > resumo > texto dos passos. Tolerante: não exige todas as palavras, ordena por relevância (mais palavras do assunto, as mais raras e no título primeiro) e ignora as palavras vazias do idioma do índice (29 idiomas). Cópia exata da referência do gestao_obras (`ferramentas/ajuda/src/busca.mjs`); os casos `src/ajuda/busca_casos.json` vêm de lá (`ajuda/testes/busca_site.json`) |
 | `src/ajuda/texto.js` | Lê o texto dos passos: só `**negrito**`, lista `- ` e `[texto](artigo:id)`; nunca HTML |
 | `src/ajuda/marcacao.js` | Marcação animada dos prints: leitura conferida do campo `marcacao` e as contas do desenho (iguais às do app) |
+| `src/ajuda/larguras.js` | Prints por largura da tela: as faixas (600 e 1024 px), o aparelho e a proporção do print de cada uma |
 | `src/ajuda/idiomas.js` | Idiomas em que os artigos são publicados e qual usar para cada idioma do site |
 | `src/ajuda/antigos.js` | Endereços que mudaram (assunto renomeado: 301; artigo que saiu do idioma: 410) e a conferência do build |
 | `src/ajuda/enderecos.js` | Endereços da Central no idioma do site (assunto pelo nome do módulo) |
@@ -157,6 +158,39 @@ barra de gestos. O print fica inteiro entre as duas faixas; a moldura nunca cobr
   (`gestao_obras/lib/ajuda/widgets/moldura_do_celular.dart`): mudou lá, muda aqui.
 - **Ordem de publicação:** só publicar o site com a moldura depois de a Central estar sem os prints antigos (que têm a
   barra do Android dentro da imagem); senão o print antigo aparece com duas barras de status.
+
+## Prints por largura da tela (2.0.2)
+
+Desde a branch `prints-por-largura` (19/11/2026), cada passo com print pode trazer, além do print de celular, o da
+**largura média** e o de **computador** (campo `larguras` do passo; o formato é do publicador,
+`gestao_obras/ferramentas/ajuda/src/larguras.mjs`, e vale também para o app). A escolha é pela **largura da tela**,
+nunca pelo aparelho, com os mesmos limites do app (`gestao_obras/lib/utils/faixas_de_largura.dart`):
+
+| Largura da tela | Print | Moldura |
+| --- | --- | --- |
+| abaixo de 600 px | o de celular | celular (`MolduraDoCelular.jsx`) |
+| 600 a 1023 px (iPhone Duo aberto, tablet em pé, dobráveis) | o da largura média, ou o de celular se o passo não tiver | dobrável (`MolduraDoCelular.jsx` com `aparelho="dobravel"`: o mesmo desenho com a faixa de status de um celular, 60% da largura do print) |
+| a partir de 1024 px | o de computador, ou o de celular se o passo não tiver | notebook (`MolduraDoNotebook.jsx`) |
+
+- **Como a página escolhe:** `printsDoPasso` (`src/ajuda/dados.js`) devolve os prints do passo com as larguras em que
+  cada um aparece (o de celular cobre as que não têm o próprio). `PrintDoPasso.jsx` põe todos no HTML, cada um marcado
+  (`data-celular`, `data-media`, `data-computador`), e o CSS mostra só o da largura da tela (`.printNaFaixa`, com
+  `@media` em 600 e 1024 px, em `Ajuda.module.css`). Nada disso depende do navegador: a página pronta e a hidratação
+  desenham o mesmo HTML (sem erro de hidratação), e o Google, que lê no tamanho de celular, vê o print de celular.
+- **Download:** as imagens são `loading="lazy"`; a escondida (`display: none`) não aparece na tela e o navegador não a
+  baixa. Quem abre no celular baixa só os prints de celular, como antes.
+- **Marcação:** cada print traz a dele (medida pelo roteiro dos prints naquela largura). O SVG da marcação do print
+  escondido não é desenhado (sem tamanho).
+- **Espaço reservado:** `PrintComMarcacao.jsx` recebe a proporção do print da largura (`PROPORCAO_DA_FAIXA` em
+  `src/ajuda/larguras.js`: 1080 × 2400, 669 × 951 e 1280 × 800) até a imagem chegar.
+- **Antes das baterias:** os passos publicados ainda não têm `larguras` (o publicador só leva uma largura nos idiomas de
+  `larguras_com_prints`, em `gestao_obras/ajuda/listas/prints.json`). Sem elas, o site mostra o print de celular em
+  qualquer largura, como hoje. O site com esta mudança pode ir ao ar antes ou depois dos artigos com as larguras.
+- **Mudou lá, muda aqui:** as medidas do dobrável e do notebook são as do app
+  (`gestao_obras/lib/ajuda/widgets/moldura_do_celular.dart`, `MedidasDaMoldura`); as cores, `--aj-celular*` e
+  `--aj-notebook-base` (a mesma conta do app: a tampa com 18% do claro da faixa por cima).
+- Testes: `src/ajuda/larguras.test.js` (escolha, leitura tolerante, limites do CSS e o artigo usando os prints por
+  largura).
 
 ## Marcação animada nos prints
 

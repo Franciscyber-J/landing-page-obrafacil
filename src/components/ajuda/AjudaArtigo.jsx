@@ -2,15 +2,14 @@ import { useMemo } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ExternalLink, Smartphone, Users, ListOrdered } from 'lucide-react';
-import { printDoPasso } from '../../ajuda/dados.js';
+import { printsDoPasso } from '../../ajuda/dados.js';
 import { idiomaDoConteudo } from '../../ajuda/idiomas.js';
 import { artigoRetirado } from '../../ajuda/antigos.js';
 import { IDIOMAS, caminhoArtigo } from '../../i18n/idiomas.js';
 import AjudaBusca from './AjudaBusca.jsx';
 import IconeModulo from './IconeModulo.jsx';
 import TextoDoPasso from './TextoDoPasso.jsx';
-import PrintComMarcacao from './PrintComMarcacao.jsx';
-import MolduraDoCelular from './MolduraDoCelular.jsx';
+import PrintDoPasso from './PrintDoPasso.jsx';
 import { BandaSuporte, Carregando, ErroAoCarregar, NaoEncontrado, Trilha } from './Estados.jsx';
 import useTituloDaPagina from './useTituloDaPagina.js';
 import { descricaoDaPagina, tituloDaPagina } from '../../seo/textos.js';
@@ -94,7 +93,7 @@ export default function AjudaArtigo({ codigo, idioma, indice, preparado, rotas, 
                 <article className={styles.corpoArtigo}>
                     <ol className={styles.passos}>
                         {passos.map((p, i) => {
-                            const print = printDoPasso(p);
+                            const prints = printsDoPasso(p);
                             return (
                                 <li key={i} id={`passo-${i + 1}`} className={`${styles.passo} ${i === passos.length - 1 ? styles.passoUltimo : ''}`}>
                                     <span className={styles.numero} aria-hidden="true">{i + 1}</span>
@@ -111,15 +110,8 @@ export default function AjudaArtigo({ codigo, idioma, indice, preparado, rotas, 
                                                 classeLista={styles.passoLista}
                                             />
                                         </div>
-                                        {print && (
-                                            <MolduraDoCelular>
-                                                <PrintComMarcacao
-                                                    key={print.endereco}
-                                                    src={print.endereco}
-                                                    alt={t('ajuda.printAlt', { n: i + 1, titulo: p.titulo })}
-                                                    marcacao={print.marcacao}
-                                                />
-                                            </MolduraDoCelular>
+                                        {prints.length > 0 && (
+                                            <PrintDoPasso versoes={prints} alt={t('ajuda.printAlt', { n: i + 1, titulo: p.titulo })} />
                                         )}
                                     </div>
                                 </li>

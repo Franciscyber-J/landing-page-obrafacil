@@ -2,7 +2,8 @@
 // resto, contorno pulsando, seta apontando e zoom no alvo. As contas ficam em src/ajuda/marcacao.js.
 //
 // - A imagem não muda: a marcação é um SVG por cima, decorativo (aria-hidden); o texto alternativo é o da imagem.
-// - O espaço do print é reservado antes de a imagem chegar (todos os prints são 1080 × 2400), sem pulo na página.
+// - O espaço do print é reservado antes de a imagem chegar (o de celular tem 1080 × 2400; os da largura média e do
+//   computador chegam com a proporção deles em [proporcao]), sem pulo na página.
 // - A animação só roda com o print na tela (um IntersectionObserver para todos os prints da página) e com a
 //   imagem carregada. Fora da tela não há nenhum quadro calculado.
 // - Com "reduzir movimento" no aparelho, a marcação aparece parada, já no estado final.
@@ -65,11 +66,12 @@ function observarNaTela(elemento, aviso) {
 
 const INICIO = { entrada: 0, pulso: 0 };
 
-export default function PrintComMarcacao({ src, alt, marcacao }) {
+export default function PrintComMarcacao({ src, alt, marcacao, proporcao: proporcaoEsperada = PROPORCAO_PADRAO }) {
     const caixa = useRef(null);
     const parado = useSyncExternalStore(assinarMovimento, lerMenosMovimento, () => false);
     const [area, setArea] = useState(null);
-    const [proporcao, setProporcao] = useState(PROPORCAO_PADRAO);
+    // A proporção do print da largura (a do celular, da largura média ou do computador) até a imagem chegar.
+    const [proporcao, setProporcao] = useState(proporcaoEsperada);
     const [carregou, setCarregou] = useState(false);
     const [tela, setTela] = useState({ naTela: false, comecou: false });
     const [quadro, setQuadro] = useState(INICIO);
@@ -131,7 +133,10 @@ export default function PrintComMarcacao({ src, alt, marcacao }) {
         return () => cancelAnimationFrame(pedido);
     }, [animar]);
 
-    const desenho = marcacao && carregou && area ? desenhoDaMarcacao(area, marcacao, quadro, parado) : null;
+    // Print escondido (a versão de outra largura da tela, .printNaFaixa): sem tamanho, nada a desenhar.
+    const desenho = marcacao && carregou && area && area.largura > 0 && area.altura > 0
+        ? desenhoDaMarcacao(area, marcacao, quadro, parado)
+        : null;
     const zoom = desenho?.zoom && desenho.zoom.escala !== 1
         ? { transform: `scale(${desenho.zoom.escala})`, transformOrigin: desenho.zoom.origem }
         : undefined;

@@ -1,6 +1,8 @@
 // Moldura de celular em volta do print do passo (src/ajuda/moldura.js): corpo do aparelho, faixa de status
 // desenhada (hora, câmera e ícones) e barra de gestos. O print fica inteiro entre as duas faixas: a moldura nunca
 // cobre a tela do app, e a marcação animada continua medindo só o print.
+// Com aparelho="dobravel" (o print da largura média: iPhone Duo aberto, tablet em pé), o mesmo desenho numa tela
+// maior em pé, com a moldura e a faixa de status do tamanho das de um celular (60% da largura do print), como no app.
 // Tudo o que é da moldura é enfeite (aria-hidden): para o leitor de tela existe só o texto alternativo do print.
 // O primeiro desenho (build e hidratação) é sempre o estilo "furo"; o do aparelho de quem abre entra logo depois.
 import { useSyncExternalStore } from 'react';
@@ -20,10 +22,10 @@ function IconesDeStatus() {
     );
 }
 
-export default function MolduraDoCelular({ children }) {
+export default function MolduraDoCelular({ children, aparelho = 'celular' }) {
     const estilo = useSyncExternalStore(semMudanca, () => estiloDaMoldura(), () => 'furo');
     return (
-        <figure className={styles.celular} data-moldura={estilo}>
+        <figure className={styles.celular} data-moldura={estilo} data-aparelho={aparelho}>
             <div className={styles.celularTela}>
                 <div className={styles.celularTopo} aria-hidden="true" dir="ltr">
                     <span className={styles.celularHora}>{HORA_DA_MOLDURA}</span>
