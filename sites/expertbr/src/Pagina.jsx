@@ -17,11 +17,16 @@ function ComDestaque({ texto }) {
     return partes.map((parte, n) => (n % 2 ? <em key={n}>{parte}</em> : parte));
 }
 
-// Nome da marca em letra (logotipo provisório: ainda não há logotipo aprovado da ExpertBR).
-export function Marca() {
+// Logotipo da ExpertBR ("Órbita", aprovado pelo Francis em 20/11/2026; desenho em ferramentas/marca). Uma imagem
+// para cada tema: o CSS mostra a do tema da página (.so-claro / .so-escuro), e sem JavaScript fica a do claro, como o
+// resto da página. O nome continua no texto alternativo. Tamanho pelo CSS (.marca-logo--<onde>).
+const LOGO = { largura: 155, altura: 36 }; // proporção do desenho (4,31 : 1)
+
+export function Marca({ onde = 'topo' }) {
     return (
-        <span className="marca-nome" translate="no">
-            Expert<span className="marca-br">BR</span>
+        <span className={`marca-logo marca-logo--${onde}`} translate="no">
+            <img className="so-claro" src="/logo/expertbr.svg" alt="ExpertBR" width={LOGO.largura} height={LOGO.altura} decoding="async" />
+            <img className="so-escuro" src="/logo/expertbr-escuro.svg" alt="ExpertBR" width={LOGO.largura} height={LOGO.altura} decoding="async" />
         </span>
     );
 }
@@ -315,7 +320,7 @@ function Rodape({ t, codigo }) {
             <div className="container">
                 <div className="rodape__grade">
                     <div className="rodape__marca">
-                        <a href={caminhoInicio(codigo)} aria-label={t('nav.inicio')}><Marca /></a>
+                        <a className="marca" href={caminhoInicio(codigo)} aria-label={t('nav.inicio')}><Marca onde="rodape" /></a>
                         <p>{t('rodape.descricao')}</p>
                     </div>
                     <nav aria-labelledby="rodape-apps">
@@ -374,7 +379,7 @@ export default function Pagina({ t, codigo }) {
 export function Raiz() {
     return (
         <main className="raiz" id="conteudo">
-            <p className="raiz__marca"><Marca /></p>
+            <p className="raiz__marca"><Marca onde="raiz" /></p>
             <ul className="raiz__idiomas" data-raiz>
                 {IDIOMAS.map((i) => (
                     <li key={i.codigo}>

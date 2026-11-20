@@ -65,18 +65,25 @@ body {
 }
 
 /* ---------- Marca ---------- */
-.marca-nome {
-  font-family: var(--fonte-titulo);
-  font-weight: 800;
-  font-size: 1.55rem;
-  letter-spacing: -0.035em;
-  line-height: 1;
-  color: var(--texto);
-  white-space: nowrap;
+/* Logotipo (src/Pagina.jsx, Marca): altura fixa por lugar, largura pela proporção do desenho. No celular, 28 px no
+   topo, para o botão de idioma e o do tema caberem na mesma linha. */
+.marca-logo {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
 }
 
-.marca-br {
-  color: var(--laranja-texto);
+.marca-logo img {
+  width: auto;
+  height: 36px;
+}
+
+.marca-logo--rodape img {
+  height: 40px;
+}
+
+.marca-logo--raiz img {
+  height: 56px;
 }
 
 /* Escritas fora do latim: sem a letra apertada dos títulos (no árabe ela separa as letras ligadas; no japonês,
@@ -949,10 +956,6 @@ body {
   padding: 64px 16px;
 }
 
-.raiz__marca .marca-nome {
-  font-size: 2.4rem;
-}
-
 .raiz__idiomas {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -1040,6 +1043,10 @@ body {
     margin-inline-start: auto;
   }
 
+  .marca-logo--topo img {
+    height: 28px;
+  }
+
   .elenco li + li {
     border-inline-start: 0;
     border-top: 1px solid var(--linha);
@@ -1085,10 +1092,6 @@ body {
 }
 
 @media (max-width: 420px) {
-  .marca-nome {
-    font-size: 1.4rem;
-  }
-
   .idiomas__botao {
     padding: 0 12px;
   }

@@ -135,7 +135,7 @@ export function conferirDist(dist) {
         if (llms?.includes(prod.endereco)) problemas.push(`llms.txt com o endereço de ${prod.nome}, que ainda não foi lançado`);
     }
     if (!fs.existsSync(path.join(dist, 'index.html'))) problemas.push('falta a raiz index.html');
-    for (const arquivo of ['tema.js', 'favicon.svg', 'apple-touch-icon.png', 'og.png', 'logo.png']) {
+    for (const arquivo of ['tema.js', 'favicon.svg', 'apple-touch-icon.png', 'og.png', 'logo.png', 'logo/expertbr.svg', 'logo/expertbr-escuro.svg']) {
         if (!fs.existsSync(path.join(dist, arquivo))) problemas.push(`falta ${arquivo}`);
     }
     return { paginas, problemas };

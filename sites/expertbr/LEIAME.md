@@ -6,8 +6,8 @@ A casa da marca ExpertBR, o estúdio dos aplicativos: apresenta a ExpertBR em po
 
 **A empresa ainda não existe formalmente.** O site não tem CNPJ, razão social, endereço, telefone, número de
 pessoas, clientes, prêmios nem nenhum dado inventado, e os dados estruturados também não (o build confere:
-`ferramentas/conferir.mjs`, `CAMPOS_PROIBIDOS`). O logotipo é provisório: o nome "ExpertBR" em letra (a fonte dos
-títulos do site), até haver um logotipo aprovado.
+`ferramentas/conferir.mjs`, `CAMPOS_PROIBIDOS`). O logotipo é o "Órbita", aprovado pelo Francis em 20/11/2026, 11h45
+(ver "Logotipo").
 
 Publicação na Hostinger e caminho de volta: **`PUBLICAR.md`** (nesta pasta).
 
@@ -77,12 +77,38 @@ cima dos títulos, sem cartões iguais de ícone e texto.
 - Celular de 360 e 390 px sem rolagem para o lado (conferido nos 29 idiomas, com o menu aberto).
 - Movimento: só o giro lento da órbita do Orbit, parado com "menos movimento".
 
+## Logotipo
+
+"Órbita" (aprovado pelo Francis em 20/11/2026, 11h45): o centro laranja (a origem, o Brasil), uma órbita inclinada
+em volta com um ponto azul (um app) e a frente da órbita escapando para cima em seta (o crescimento). Linha aberta,
+azul-marinho `#154F84` e laranja `#E8811F` (os do logotipo do ObraFácil), letra Montserrat convertida em contorno:
+"Expert" em negrito azul e "BR" normal laranja. Mesma família do logotipo do ObraFácil.
+
+| Arquivo (em `public/`) | Uso |
+| --- | --- |
+| `logo/expertbr.svg` | topo, rodapé e raiz no tema claro (e sem JavaScript) |
+| `logo/expertbr-escuro.svg` | o mesmo no tema escuro (linha azul-clara `#7FB3EA`, "Expert" branco) |
+| `logo/simbolo.svg`, `logo/simbolo-escuro.svg` | só o símbolo (ícone do iPhone e outros usos) |
+| `favicon.svg` | a versão de 16-32 px (abaixo); no navegador em modo escuro a linha fica azul-clara |
+
+- Na página: `Marca` em `src/Pagina.jsx`, uma imagem por tema (o CSS mostra a do tema), com o texto alternativo
+  "ExpertBR" e o link com "Página inicial da ExpertBR" (`nav.inicio`). Altura: 36 px no topo do computador, **28 px
+  no celular** (até 760 px; o botão de idioma e o do tema cabem na linha, conferido em 390 px nos 29 idiomas), 40 px
+  no rodapé e 56 px na raiz.
+- **Favicon:** em 32 px o símbolo inteiro (órbita fechada com o ponto no meio) lembrava um olho. A versão pequena
+  tem as mesmas peças, mais fortes: o ponto azul (o app) grande e solto na ponta da órbita, a órbita aberta dos dois
+  lados e a seta maior e mais para fora (`orbita_favicon` em `ferramentas/marca/simbolos.py`).
+- Desenho: `ferramentas/marca/desenhar.py` (com `simbolos.py` e `texto.py`) grava os SVG; o que fazer para rodar
+  está no começo do arquivo (precisa da Montserrat numa pasta fora do repositório). Só rodar se o desenho mudar.
+
 ## Imagens
 
-Todas geradas por `ferramentas/imagens.py` (o script diz como), nada de banco de imagens:
-`favicon.svg` e `apple-touch-icon.png` (o "E" em barras, a de baixo laranja), `logo.png` (nome em letra, logotipo
-provisório dos dados estruturados), `og.png` (prévia do link, sem texto de idioma), `marcas/obrafacil.webp` (reduzida
-de `public/favicon.png` do site do ObraFácil). `marcas/orbit.svg` é o ícone do Orbit.
+Todas geradas por script, nada de banco de imagens: os SVG do logotipo e o `favicon.svg` por
+`ferramentas/marca/desenhar.py`; os PNG por `ferramentas/imagens.py`, que fotografa esses SVG:
+`apple-touch-icon.png` (o símbolo sobre fundo branco, 180 px), `logo.png` (o logotipo horizontal sobre fundo branco,
+1200 x 300, logotipo dos dados estruturados), `og.png` (prévia do link: o logotipo e os apps da casa, sem texto de
+idioma), `marcas/obrafacil.webp` (reduzida de `public/favicon.png` do site do ObraFácil). `marcas/orbit.svg` é o
+ícone do Orbit (provisório: o logotipo do Orbit está em estudo).
 
 ## Conferência
 
