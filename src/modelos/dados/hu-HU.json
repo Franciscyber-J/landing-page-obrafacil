@@ -1,0 +1,1210 @@
+{
+ "idioma": "hu-HU",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "27 kivitelezési munkanem, amelyet az építkezésen rendszerint ellenőriznek. A tételek példák, amelyeket a céged átnéz és a saját gyakorlatához igazít: nem helyettesítik a felelős műszaki vezetőt.",
+  "criterio": "A tervek, a műszaki leírás és a gyártói előírások szerint",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "Előkészítő munkák"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "Alapozás"
+   },
+   {
+    "id": "estrutura",
+    "nome": "Teherhordó szerkezetek"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "Falazás és válaszfalak"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "Vakolás és burkolás"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "Padlók és álmennyezetek"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "Vízszigetelés"
+   },
+   {
+    "id": "cobertura",
+    "nome": "Tetők"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "Nyílászárók és korlátok"
+   },
+   {
+    "id": "pintura",
+    "nome": "Festés"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "Épületgépészet és villanyszerelés"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "Feltöltés tömörítése",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Terület megtisztítva, törmelék és szerves anyag nélkül",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Feltöltési anyag a terv szerint",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Rétegek terítése és tömörítése a technológiai utasítás szerint",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Végleges szint ellenőrizve a terv alapján",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Tömörségvizsgálat elvégezve, ha a terv előírja, jegyzőkönyv csatolva",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "Kitűzés",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Összegzett méretek ellenőrizve a terv alapján",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Sarkok derékszöge ellenőrizve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Kitűzőállások és referenciajelek szilárdan rögzítve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Magassági alappontok ellenőrizve",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "Alapozás kivitelezése",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Alaptestek kitűzése ellenőrizve",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Méretek és alapozási mélység a terv szerint",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Szegélyzsaluzat egyenesbe állítva (lemezalap)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Vezetékárkok visszatöltve és újratömörítve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Vasszerelés és betonozás saját ellenőrzőlistával átvéve",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "Zsaluzás",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Egyenesség, derékszög és függőlegesség ellenőrizve minden helyiségben",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Igazítóelemek, zsalukötő pálcák és dúcok a helyükön",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Ajtó- és ablaknyílások ellenőrizve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Zsaluzat betonozás előtt kitisztítva és tömítve",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "Vasszerelés",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Betonacélok helye és darabszáma a terv szerint",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Távtartók a helyükön (betonfedés)",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Indító- és toldóvasak a helyükön",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Vasalás tiszta és összekötözve",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "Teherhordó szerkezeti elem betonozása",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Zsaluzat és vasalás átvéve",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Villamos védőcsövek és dobozok betonozás előtt rögzítve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Roskadásvizsgálat minden mixer érkezésekor",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Beton szállítólevele egyezik a megrendeléssel",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Beton tömörítése (vibrálás) elvégezve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Utókezelés megkezdve a technológiai utasítás szerint",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "Teherhordó falazat",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Falkitűzés ellenőrizve: méretek, derékszög és nyílások",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Falazóelemek az előírás szerint",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Függőlegesség, vízszintesség és egyenesség",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Kiöntőhabarcs és vasalás a terv szerinti helyeken",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Takarítás, törmelékmentes",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "Nem teherhordó falazat és könnyűszerkezetes válaszfal",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Kitűzés ellenőrizve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Függőlegesség, vízszintesség és egyenesség",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Ajtó- és ablaknyílások ellenőrizve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Felső csatlakozás kiékelve vagy rögzítve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Takarítás, törmelékmentes",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "Belső vakolás száraz helyiségekben",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Alapfelület tiszta és előkészítve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Habarcs a technológiai utasítás szerint",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Felület kiegyenlítve és lesimítva",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Függőlegesség és derékszög",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Takarítás",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "Belső falburkolat vizes helyiségekben",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Síkfekvés, egyenesség és tapadás",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Nincs kopogó (üreges) lap",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Fugázás hiánytalan és foltmentes",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Nincs törött lap",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Lejtés a padlóösszefolyó felé",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "Külső vakolás és burkolás",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Alapfelület tiszta és előkészítve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Függőlegesség és síkfekvés",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Hézagok a terv szerint",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Nincs kopogó (üreges) rész",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Felületképzés és takarítás",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "Aljzatbeton (esztrich)",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Alapfelület tiszta",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Szint és lejtések a terv szerint",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Vastagság a terv szerint",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Felület repedésmentes",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "Belső padlóburkolat száraz helyiségekben",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Síkfekvés, egyenesség és tapadás",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Nincs kopogó (üreges) lap",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Fugázás hiánytalan és foltmentes",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Nincs törött lap",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "Belső padlóburkolat vizes helyiségekben",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Síkfekvés, egyenesség és tapadás",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Nincs kopogó (üreges) lap",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Fugázás hiánytalan és foltmentes",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Nincs törött lap",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Lejtés a padlóösszefolyó felé",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "Kültéri burkolat",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Lejtés és vízelvezetés",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Síkfekvés",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Hézagok",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Nincs törött lap",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "Álmennyezet",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Síkfekvés és vízszintesség",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Villamos kiállások nincsenek eltakarva",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Lyuk és törés nélkül",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Revíziós nyílások a terv szerint",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "Vízszigetelés",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Alapfelület mozgó repedések nélkül, sarkok és süllyesztések előkészítve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Kiegyenlítő réteg lejtéssel és lekerekített sarkokkal",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Szigetelőanyag a műszaki leírás és a szerződés szerint",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Átfedések, falra felvezetés és összefolyó-csatlakozások a terv és a gyártói előírások szerint",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Vízzárósági próba elárasztással a terv szerinti ideig",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Védőréteg (mechanikai védelem)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Takarítás",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "Magastető (tetőszerkezet és héjazat)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Tetőszerkezet a terv szerint",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Rögzítés és lekötés",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Tetőhajlásszög a héjazat gyártójának előírása szerint",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Fedőelemek átfedése és sorolása",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bádogos szegélyek és ereszcsatornák",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "Ajtótok és ajtó",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Tok függőlegesben",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Pántok egy vonalban",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Ajtó akadás nélkül nyílik és záródik",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Zár, ajtócímek és tartozékok felszerelve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "Takarólécek hibátlanok",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "Ablak",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Méret illeszkedik a nyíláshoz",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Kerületi tömítés elkészítve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Tok horpadásmentes",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Nyitás, zárás és reteszelés működik",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Nincs beázás (vízpróba)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "Korlát",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Magasság és osztásköz a terv szerint",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Szilárd rögzítés",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Felület éles élek nélkül",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "Belső festés",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Alapfelület tiszta, száraz és előkészítve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Rétegszám az előírás szerint",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Egyenletes fedés, folt- és megfolyásmentes",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Padlók és nyílászárók letisztítva",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "Külső festés",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Alapfelület tiszta, száraz és előkészítve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Felhordáshoz megfelelő időjárás a gyártói előírások szerint",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Rétegszám az előírás szerint",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Egyenletes fedés, folt- és megfolyásmentes",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Padlók és nyílászárók letisztítva",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "Villanyszerelés",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Dobozok a terv szerinti helyen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Védőcsövek a terv szerint, rögzítve",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Dobozok és csövek habarcsmentesek",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Doboz távol a gázkiállásoktól",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Vezetékek színjelölése a terv szerint",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Áramkörök feliratozva az elosztótáblán",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Dugaljak, kapcsolók és burkolatok felszerelve",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "Víz- és csatornaszerelés",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Elhelyezés és rögzítés a terv szerint",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Strangok: átmérő, egyenesség és rögzítés",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Elzárószelepek: egyenesség, szint és védelem",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Kiállások lezárva (dugók és sapkák)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Tömörségi próba szivárgás nélkül",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Összefolyók és csövek szabadok és tiszták",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "Gázszerelés",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Nyomvonal és anyagok a terv szerint",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Távolság a villamos kiállásoktól",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Tömörségi próba jogosult szakember által elvégezve, jegyzőkönyv csatolva",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Jelölés és figyelmeztető feliratok",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "Pult, szaniterek és csaptelepek",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Rögzítés és vízszintesség",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Szifon bekötése megfelelő",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Szivárgásmentes",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Tömítés és szegélyezés",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Takarítás",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "Minőségellenőrzési jegyzőkönyv",
+  "checklistPdfModelo": "Sablon",
+  "checklistPdfObra": "Projekt",
+  "checklistPdfLocal": "Hely",
+  "checklistPdfEtapa": "Szakasz",
+  "checklistPdfDataDaInspecao": "Ellenőrzés dátuma",
+  "checklistPdfAplicadoPor": "Ellenőrizte",
+  "checklistPdfColunaNumero": "Ssz.",
+  "checklistPdfColunaItem": "Tétel",
+  "checklistPdfColunaResultado": "Eredmény",
+  "checklistPdfColunaObservacao": "Megjegyzés és fotók",
+  "checklistRespostaConforme": "Megfelel",
+  "checklistRespostaNaoConforme": "Nem felel meg",
+  "checklistRespostaNaoSeAplica": "Nem releváns",
+  "checklistSecaoAntes": "Kezdés előtt",
+  "checklistSecaoDurante": "Kivitelezés közben",
+  "checklistSecaoConclusao": "Befejezéskor",
+  "checklistItemCritico": "Kritikus tétel",
+  "checklistFotoObrigatoria": "Kötelező fotó",
+  "checklistPdfNaoConformidades": "Nemmegfelelőségek",
+  "checklistPdfOQueEstaErrado": "A hiba leírása: {texto}",
+  "checklistPdfAcaoCorretiva": "Helyesbítő intézkedés: {acao} (felelős: {responsavel}; határidő: {prazo})",
+  "checklistPdfReinspecao": "{numero}. újraellenőrzés, {quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "Átvétel",
+  "checklistPdfLiberadoSemRessalvas": "A munka fenntartás nélkül átvéve.",
+  "checklistPdfLiberadoComRessalvas": "A munka fenntartással átvéve.",
+  "checklistPdfNaoLiberado": "Nincs átvéve",
+  "checklistPdfRessalvas": "Fenntartások: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "Napi jelentés – részletek",
+  "pdfRdoDateClient": "Dátum: {date} | ügyfél: {client}",
+  "rdoFormWeatherTitle": "Időjárás",
+  "weatherSunny": "Napos",
+  "weatherCloudy": "Felhős",
+  "weatherRainy": "Esős",
+  "weatherShowers": "Záporok",
+  "weatherVariable": "Változékony",
+  "pdfRdoPhysicalProgress": "Készültség: {progress}%",
+  "pdfRdoWorkforceTitle": "Létszám a helyszínen",
+  "pdfRdoColName": "Név",
+  "pdfRdoColRole": "Beosztás",
+  "pdfRdoColPresence": "Jelenlét",
+  "pdfRdoPresenceFull": "Egész nap",
+  "pdfRdoPresenceHalf": "Fél nap",
+  "rdoFormLaborAbsent": "Hiányzott",
+  "rdoFormLaborExtraTitle": "Alkalmi munkaerő",
+  "rdoFormLaborHoursWorked": "Ledolgozott órák",
+  "pdfRdoActivitiesTitle": "Elvégzett munkák",
+  "rdoFormObsTitle": "Megjegyzések / események",
+  "pdfRdoPhotosTitle": "Fotódokumentáció",
+  "rdoFormSignatureTitle": "Felelős műszaki vezető",
+  "pdfPage": "Oldal",
+  "pdfOf": "/"
+ }
+}

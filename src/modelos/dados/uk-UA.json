@@ -1,0 +1,1210 @@
+{
+ "idioma": "uk-UA",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "27 видів робіт, які зазвичай перевіряють на будмайданчику. Пункти — це приклади, які ваша компанія перевіряє й адаптує під себе: вони не замінюють відповідального виконавця робіт.",
+  "criterio": "Відповідно до проєкту, пояснювальної записки та інструкцій виробника",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "Підготовчі роботи"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "Фундаменти"
+   },
+   {
+    "id": "estrutura",
+    "nome": "Несучі конструкції"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "Стіни та перегородки"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "Штукатурення та облицювання"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "Підлоги та стелі"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "Гідроізоляція"
+   },
+   {
+    "id": "cobertura",
+    "nome": "Покрівля"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "Вікна, двері та огородження"
+   },
+   {
+    "id": "pintura",
+    "nome": "Малярні роботи"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "Інженерні мережі"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "Ущільнення насипу",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Ділянка очищена від будівельного сміття та органічних залишків",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Ґрунт для насипу відповідно до проєкту",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Шари відсипано й ущільнено відповідно до технологічної карти",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Кінцеву позначку звірено з проєктом",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Випробування на ущільнення виконано, якщо цього вимагає проєкт, протокол додано",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "Винесення осей у натуру",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Розміри наростаючим підсумком звірено з проєктом",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Прямі кути перевірено",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Обноска та кутові знаки надійно закріплені",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Висотні репери перевірено",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "Влаштування фундаментів",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Положення елементів фундаменту в плані перевірено",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Розміри та глибина закладання відповідно до проєкту",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Бортова опалубка вирівняна (фундаментна плита)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Траншеї під інженерні мережі засипано й повторно ущільнено",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Армування та бетонування прийнято за окремими чек-листами",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "Влаштування опалубки",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Прямолінійність, прямі кути та вертикальність перевірено в усіх приміщеннях",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Ригелі, стяжні болти та підпори на місці",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Прорізи дверей і вікон перевірено",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Опалубка очищена й без щілин перед бетонуванням",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "Монтаж арматури",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Розташування та кількість стрижнів відповідно до проєкту",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Фіксатори захисного шару встановлено",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Випуски арматури на місці",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Арматура чиста й зв’язана",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "Бетонування несучих конструкцій",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Опалубку й арматуру прийнято",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Труби для електропроводки та монтажні коробки закріплено до бетонування",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Перевірка осідання конуса суміші з кожного міксера під час приймання",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Накладна на бетонну суміш відповідає замовленню",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Суміш ущільнено вібруванням",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Догляд за бетоном розпочато відповідно до технологічної карти",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "Несуча кладка",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Розмітку перевірено: розміри, прямі кути та прорізи",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Блоки відповідно до специфікації",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Вертикальність, горизонтальність і прямолінійність",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Бетон заповнення та арматура в місцях, указаних у проєкті",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Прибирання, без будівельного сміття",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "Ненесуча кладка та легкі перегородки",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Розмітку перевірено",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Вертикальність, горизонтальність і прямолінійність",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Прорізи дверей і вікон перевірено",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Верх кладки розклинено або закріплено до перекриття",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Прибирання, без будівельного сміття",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "Внутрішнє штукатурення сухих приміщень",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Основа очищена й підготовлена",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Розчин відповідно до технологічної карти",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Поверхня вирівняна й затерта",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Вертикальність і прямі кути",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Прибирання",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "Внутрішнє облицювання мокрих приміщень",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Площинність, прямолінійність і зчеплення з основою",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Без пустот під плиткою (перевірка простукуванням)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Шви затерто без пропусків і плям",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Без битої плитки",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Ухил до трапа",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "Оздоблення фасадів",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Основа очищена й підготовлена",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Вертикальність і площинність",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Шви відповідно до проєкту",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Без пустот (перевірка простукуванням)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Оздоблення та прибирання",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "Стяжка підлоги",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Основа очищена",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Позначки та ухили відповідно до проєкту",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Товщина відповідно до проєкту",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Поверхня без тріщин",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "Підлоги в сухих приміщеннях",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Площинність, прямолінійність і зчеплення з основою",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Без пустот під плиткою (перевірка простукуванням)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Шви затерто без пропусків і плям",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Без битої плитки",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "Підлоги в мокрих приміщеннях",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Площинність, прямолінійність і зчеплення з основою",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Без пустот під плиткою (перевірка простукуванням)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Шви затерто без пропусків і плям",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Без битої плитки",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Ухил до трапа",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "Зовнішнє покриття підлоги",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Ухил і відведення води",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Площинність",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Шви",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Без битої плитки",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "Підвісна стеля",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Площинність і горизонтальність",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Електроточки не закрито стелею",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Без отворів і пошкоджень",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Доступи та ревізійні люки відповідно до проєкту",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "Гідроізоляція",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Основа без активних тріщин, кути та заглиблення підготовлено",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Вирівнювальний шар з ухилами й заокругленими кутами (галтелями)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Матеріал відповідно до пояснювальної записки та договору",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Напуски, заведення на стіни та примикання до трапів відповідно до проєкту й інструкцій виробника",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Випробування заливанням води на час, указаний у проєкті",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Захисний шар",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Прибирання",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "Скатний дах (кроквяна система та покрівля)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Кроквяна система відповідно до проєкту",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Кріплення та анкерування",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Ухил відповідно до вимог виробника покрівельного матеріалу",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Напуск і рівність рядів покрівельного покриття",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Планки примикання та ринви",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "Дверна коробка та двері",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Коробку встановлено вертикально",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Завіси та фурнітуру встановлено рівно",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Двері відчиняються й зачиняються без заїдання",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Замок, накладки та аксесуари встановлено",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "Лиштва без дефектів",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "Вікно",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Розмір відповідає прорізу",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Герметик по периметру",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Рама без вм’ятин",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Відчиняється, зачиняється й замикається",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Без протікання води (перевірка поливанням)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "Огородження",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Висота та відстані між елементами відповідно до проєкту",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Надійне кріплення",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Оздоблення без гострих кромок",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "Внутрішнє фарбування",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Основа чиста, суха й підготовлена",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Кількість шарів відповідно до специфікації",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Рівномірне покриття, без плям і патьоків",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Підлоги, вікна та двері очищено",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "Фарбування фасадів",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Основа чиста, суха й підготовлена",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Погодні умови для нанесення відповідно до інструкцій виробника",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Кількість шарів відповідно до специфікації",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Рівномірне покриття, без плям і патьоків",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Підлоги, вікна та двері очищено",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "Електромонтажні роботи",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Монтажні коробки на місцях за проєктом",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Труби для електропроводки відповідно до проєкту, закріплені",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Коробки та труби без розчину",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Коробки на відстані від газових точок",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Кольори провідників відповідно до проєкту",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Лінії позначено в щиті",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Розетки, вимикачі та рамки встановлено",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "Водопровід і каналізація",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Положення та кріплення відповідно до проєкту",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Стояки: діаметр, вертикальність і кріплення",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Запірна арматура: рівність, висота та захист",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Виводи заглушено (заглушки й ковпачки)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Гідравлічне випробування без протікань",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Трапи й труби прохідні та чисті",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "Внутрішній газопровід",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Траса й матеріали відповідно до проєкту",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Відстань від електроточок",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Випробування на герметичність виконано фахівцем із допуском, акт додано",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Маркування та попереджувальні знаки",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "Стільниця, санітарні прилади та змішувачі",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Кріплення та горизонтальність",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Сифон під’єднано правильно",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Без протікань",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Герметизація та оздоблення",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Прибирання",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "Лист операційного контролю робіт",
+  "checklistPdfModelo": "Шаблон",
+  "checklistPdfObra": "Об’єкт",
+  "checklistPdfLocal": "Місце",
+  "checklistPdfEtapa": "Етап",
+  "checklistPdfDataDaInspecao": "Дата перевірки",
+  "checklistPdfAplicadoPor": "Виконавець перевірки",
+  "checklistPdfColunaNumero": "№",
+  "checklistPdfColunaItem": "Пункт",
+  "checklistPdfColunaResultado": "Результат",
+  "checklistPdfColunaObservacao": "Примітка й фото",
+  "checklistRespostaConforme": "Відповідає",
+  "checklistRespostaNaoConforme": "Не відповідає",
+  "checklistRespostaNaoSeAplica": "Не застосовується",
+  "checklistSecaoAntes": "Перед початком",
+  "checklistSecaoDurante": "Під час виконання",
+  "checklistSecaoConclusao": "Після завершення",
+  "checklistItemCritico": "Критичний пункт",
+  "checklistFotoObrigatoria": "Фото обов’язкове",
+  "checklistPdfNaoConformidades": "Невідповідності",
+  "checklistPdfOQueEstaErrado": "Виявлено: {texto}",
+  "checklistPdfAcaoCorretiva": "Коригувальна дія: {acao} (відповідальний: {responsavel}; строк: {prazo})",
+  "checklistPdfReinspecao": "Повторна перевірка № {numero}, {quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "Приймання",
+  "checklistPdfLiberadoSemRessalvas": "Роботи прийнято без зауважень.",
+  "checklistPdfLiberadoComRessalvas": "Роботи прийнято із зауваженнями.",
+  "checklistPdfNaoLiberado": "Не прийнято",
+  "checklistPdfRessalvas": "Зауваження: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "Щоденний звіт — деталі",
+  "pdfRdoDateClient": "Дата: {date} | клієнт: {client}",
+  "rdoFormWeatherTitle": "Погодні умови",
+  "weatherSunny": "Сонячно",
+  "weatherCloudy": "Хмарно",
+  "weatherRainy": "Дощ",
+  "weatherShowers": "Зливи",
+  "weatherVariable": "Мінлива погода",
+  "pdfRdoPhysicalProgress": "Фізичний прогрес: {progress}%",
+  "pdfRdoWorkforceTitle": "Склад бригади на об’єкті",
+  "pdfRdoColName": "Ім’я",
+  "pdfRdoColRole": "Посада",
+  "pdfRdoColPresence": "Присутність",
+  "pdfRdoPresenceFull": "Повний день",
+  "pdfRdoPresenceHalf": "Пів дня",
+  "rdoFormLaborAbsent": "Відсутній",
+  "rdoFormLaborExtraTitle": "Позаштатні працівники",
+  "rdoFormLaborHoursWorked": "Відпрацьовані години",
+  "pdfRdoActivitiesTitle": "Виконані роботи",
+  "rdoFormObsTitle": "Примітки / інциденти",
+  "pdfRdoPhotosTitle": "Фотофіксація",
+  "rdoFormSignatureTitle": "Технічний відповідальний",
+  "pdfPage": "Сторінка",
+  "pdfOf": "з"
+ }
+}

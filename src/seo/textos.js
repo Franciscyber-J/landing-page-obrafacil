@@ -11,7 +11,8 @@ function primeiroParagrafo(blocos) {
     return texto.length > 160 ? `${texto.slice(0, 157).replace(/\s+\S*$/, '')}...` : texto;
 }
 
-// dados: { modulo } no assunto, { entrada } (item do índice) no artigo, { titulo, blocos } nos Termos/Política.
+// dados: { modulo } no assunto, { entrada } (item do índice) no artigo, { titulo, blocos } nos Termos/Política,
+// { modelo, nome } no modelo grátis (o checklist com o nome do app, ou o diário de obra).
 export function tituloDaPagina(t, pagina, dados = {}) {
     switch (pagina.tipo) {
         case 'inicio': return t('seo.inicio.titulo');
@@ -22,6 +23,10 @@ export function tituloDaPagina(t, pagina, dados = {}) {
         case 'suporte': return t('suporte.metaTitulo');
         case 'perfil': return t('perfil.metaTitulo');
         case 'pagamento': return t('pagamento.metaTitulo');
+        case 'modelos': return t('modelos.indice.metaTitulo');
+        case 'modelo': return dados.modelo?.tipo === 'diario'
+            ? t('modelos.diario.metaTitulo')
+            : t('modelos.checklist.metaTitulo', { nome: dados.modelo?.nome ?? '' });
         default: return NOME;
     }
 }
@@ -38,6 +43,10 @@ export function descricaoDaPagina(t, pagina, dados = {}) {
         case 'suporte': return t('suporte.metaDescricao');
         case 'perfil': return t('perfil.metaDescricao');
         case 'pagamento': return t('pagamento.metaDescricao');
+        case 'modelos': return t('modelos.indice.metaDescricao');
+        case 'modelo': return dados.modelo?.tipo === 'diario'
+            ? t('modelos.diario.metaDescricao')
+            : t('modelos.checklist.metaDescricao', { nome: dados.modelo?.nome ?? '' });
         default: return t('seo.inicio.descricao');
     }
 }

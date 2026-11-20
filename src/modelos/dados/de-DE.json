@@ -1,0 +1,1210 @@
+{
+ "idioma": "de-DE",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "27 Ausführungsleistungen, die auf Baustellen üblicherweise geprüft werden. Die Prüfpunkte sind Beispiele, die Ihr Unternehmen prüfen und anpassen kann. Sie ersetzen nicht die fachliche Verantwortung der Bauleitung.",
+  "criterio": "Gemäß Planung, Leistungsbeschreibung und Herstellerangaben",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "Vorbereitende Arbeiten"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "Gründung"
+   },
+   {
+    "id": "estrutura",
+    "nome": "Tragwerk"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "Mauerwerk und Trennwände"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "Putz und Wandbeläge"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "Böden und Decken"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "Abdichtung"
+   },
+   {
+    "id": "cobertura",
+    "nome": "Dach"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "Fenster, Türen und Geländer"
+   },
+   {
+    "id": "pintura",
+    "nome": "Malerarbeiten"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "Haustechnik"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "Auffüllung und Verdichtung",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Fläche geräumt, frei von Bauschutt und organischem Material",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Auffüllmaterial gemäß Planung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Lagenweiser Einbau und Verdichtung gemäß Arbeitsanweisung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Endhöhe mit der Planung abgeglichen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Verdichtungsprüfung durchgeführt, sofern in der Planung gefordert, Prüfbericht beigefügt",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "Absteckung",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Maße fortlaufend vom Bezugspunkt aus mit der Planung abgeglichen",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Rechtwinkligkeit der Ecken geprüft",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Schnurgerüst und Eckpunkte standfest",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Höhenbezugspunkte geprüft",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "Herstellung der Gründung",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Lage der Gründungsbauteile geprüft",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Abmessungen und Gründungstiefe gemäß Planung",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Randschalung der Bodenplatte in der Flucht",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Leitungsgräben verfüllt und nachverdichtet",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bewehrung und Betonage über eigene Checkliste freigegeben",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "Schalarbeiten",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Flucht, Winkel und Lot in allen Bereichen geprüft",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Richtstützen, Schalungsanker und Stützen eingebaut",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Tür- und Fensteröffnungen geprüft",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Schalung vor dem Betonieren gereinigt und dicht",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "Bewehrungsarbeiten",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Lage und Anzahl der Stäbe gemäß Bewehrungsplan",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Abstandhalter eingebaut (Betondeckung)",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Anschlussbewehrung vorhanden",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bewehrung sauber und gerödelt",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "Betonieren tragender Bauteile",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Schalung und Bewehrung freigegeben",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Leerrohre und Einbauteile vor dem Betonieren befestigt",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Konsistenzprüfung (Ausbreit- oder Setzmaß) bei Ankunft jedes Fahrmischers",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Betonlieferschein stimmt mit der Bestellung überein",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Beton verdichtet",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Nachbehandlung gemäß Arbeitsanweisung begonnen",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "Tragendes Mauerwerk",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Anriss geprüft: Maße, Winkel und Öffnungen",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Mauersteine gemäß Leistungsbeschreibung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Lot, Waage und Flucht",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Füllbeton und Bewehrung an den geplanten Stellen",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Gereinigt, frei von Bauschutt",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "Nichttragende Wände und leichte Trennwände",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Anriss geprüft",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Lot, Waage und Flucht",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Tür- und Fensteröffnungen geprüft",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Deckenanschluss oder obere Befestigung ausgeführt",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Gereinigt, frei von Bauschutt",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "Innenputz in Trockenbereichen",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Putzgrund sauber und vorbereitet",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Putzmörtel gemäß Arbeitsanweisung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Putzfläche abgezogen und fertig bearbeitet",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Lot und Winkel",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Reinigung",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "Wandbelag in Nassbereichen",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Ebenheit, Flucht und Haftung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Keine hohl liegenden Fliesen (Klopfprobe)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Fugen lückenlos und ohne Flecken",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Keine gebrochenen Fliesen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Gefälle zum Bodenablauf",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "Außenputz und Fassadenbekleidung",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Untergrund sauber und vorbereitet",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Lot und Ebenheit",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Fugen gemäß Planung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Keine Hohlstellen (Klopfprobe)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Oberfläche und Reinigung",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "Estrich",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Untergrund sauber",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Höhenlage und Gefälle gemäß Planung",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Estrichdicke gemäß Planung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Oberfläche rissfrei",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "Bodenbelag innen, Trockenbereiche",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Ebenheit, Flucht und Haftung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Keine hohl liegenden Fliesen (Klopfprobe)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Fugen lückenlos und ohne Flecken",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Keine gebrochenen Fliesen",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "Bodenbelag innen, Nassbereiche",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Ebenheit, Flucht und Haftung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Keine hohl liegenden Fliesen (Klopfprobe)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Fugen lückenlos und ohne Flecken",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Keine gebrochenen Fliesen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Gefälle zum Bodenablauf",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "Bodenbelag außen",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Gefälle und Wasserableitung",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Ebenheit",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Fugen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Keine gebrochenen Platten",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "Unterdecke",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Ebenheit und waagerechte Lage",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Elektroauslässe nicht verdeckt",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Keine Löcher oder Bruchstellen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Revisionsöffnungen gemäß Planung",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "Abdichtung",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Untergrund ohne aktive Risse, Ecken und Absenkungen fertiggestellt",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Ausgleichsschicht mit Gefälle und ausgerundeten Kehlen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Abdichtungsstoff gemäß Leistungsbeschreibung und Vertrag",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Überlappungen, Hochzüge und Anschlüsse an Abläufe gemäß Planung und Herstellerangaben",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Dichtheitsprüfung (Wasseranstau über die geplante Dauer)",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Schutzschicht",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Reinigung",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "Steildach (Dachtragwerk und Eindeckung)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Dachtragwerk gemäß Planung",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Befestigung und Sturmsicherung",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Dachneigung gemäß Herstellerangaben der Eindeckung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Überdeckung und Flucht der Dachziegel oder Dachplatten",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Blechanschlüsse und Dachrinnen",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "Türzarge und Tür",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Zarge im Lot",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Bänder in der Flucht",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Tür öffnet und schließt ohne Klemmen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Schloss, Rosetten und Zubehör montiert",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "Zargenbekleidung ohne Mängel",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "Fenster",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Fenstermaß passend zur Rohbauöffnung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Anschlussfuge umlaufend abgedichtet",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Rahmen ohne Dellen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Öffnen, Schließen und Verriegeln einwandfrei",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Kein Wassereintritt (Prüfung mit Wasser)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "Geländer",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Höhe und Abstände gemäß Planung",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Sichere Befestigung",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Oberfläche ohne scharfe Kanten",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "Innenanstrich",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Untergrund sauber, trocken und vorbereitet",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Anzahl der Anstriche gemäß Leistungsbeschreibung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Gleichmäßig deckend, ohne Flecken und Läufer",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Böden, Fenster und Türen gereinigt",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "Außenanstrich",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Untergrund sauber, trocken und vorbereitet",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Geeignete Witterung für die Verarbeitung gemäß Herstellerangaben",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Anzahl der Anstriche gemäß Leistungsbeschreibung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Gleichmäßig deckend, ohne Flecken und Läufer",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Böden, Fenster und Türen gereinigt",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "Elektroinstallation",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Dosen an den geplanten Stellen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Leerrohre gemäß Planung verlegt und befestigt",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Dosen und Leerrohre frei von Mörtel",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Dosen mit Abstand zu Gasanschlüssen",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Aderfarben gemäß Planung",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Stromkreise im Verteiler beschriftet",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Steckdosen, Schalter und Abdeckrahmen montiert",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "Sanitärinstallation (Wasser und Abwasser)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Lage und Befestigung gemäß Planung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Steig- und Fallleitungen: Nennweite, Flucht und Befestigung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Absperrarmaturen: Ausrichtung, Höhe und Schutz",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Anschlüsse verschlossen (Stopfen und Kappen)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Dichtheitsprüfung ohne Undichtigkeiten",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Abläufe und Rohre frei und sauber",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "Gasinstallation",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Leitungsführung und Materialien gemäß Planung",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Abstand zu Elektroinstallationen",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Dichtheitsprüfung durch einen zugelassenen Fachbetrieb, Protokoll beigefügt",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Kennzeichnung und Beschilderung",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "Waschtisch, Sanitärobjekte und Armaturen",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Befestigung und waagerechte Ausrichtung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Siphon korrekt angeschlossen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Keine Undichtigkeiten",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Fugen und Oberfläche einwandfrei",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Reinigung",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "Qualitätsprüfprotokoll",
+  "checklistPdfModelo": "Vorlage",
+  "checklistPdfObra": "Projekt",
+  "checklistPdfLocal": "Bereich",
+  "checklistPdfEtapa": "Phase",
+  "checklistPdfDataDaInspecao": "Prüfdatum",
+  "checklistPdfAplicadoPor": "Geprüft von",
+  "checklistPdfColunaNumero": "Nr.",
+  "checklistPdfColunaItem": "Prüfpunkt",
+  "checklistPdfColunaResultado": "Ergebnis",
+  "checklistPdfColunaObservacao": "Bemerkung und Fotos",
+  "checklistRespostaConforme": "In Ordnung",
+  "checklistRespostaNaoConforme": "Nicht in Ordnung",
+  "checklistRespostaNaoSeAplica": "Nicht zutreffend",
+  "checklistSecaoAntes": "Vor Beginn",
+  "checklistSecaoDurante": "Während der Ausführung",
+  "checklistSecaoConclusao": "Bei Fertigstellung",
+  "checklistItemCritico": "Kritischer Prüfpunkt",
+  "checklistFotoObrigatoria": "Foto erforderlich",
+  "checklistPdfNaoConformidades": "Mängel",
+  "checklistPdfOQueEstaErrado": "Mangel: {texto}",
+  "checklistPdfAcaoCorretiva": "Korrekturmaßnahme: {acao} (verantwortlich: {responsavel}; Frist: {prazo})",
+  "checklistPdfReinspecao": "{numero}. Nachprüfung am {quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "Freigabe",
+  "checklistPdfLiberadoSemRessalvas": "Leistung ohne Vorbehalt freigegeben.",
+  "checklistPdfLiberadoComRessalvas": "Leistung unter Vorbehalt freigegeben.",
+  "checklistPdfNaoLiberado": "Nicht freigegeben",
+  "checklistPdfRessalvas": "Vorbehalte: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "Bautagesbericht – Details",
+  "pdfRdoDateClient": "Datum: {date} | Bauherr: {client}",
+  "rdoFormWeatherTitle": "Wetter",
+  "weatherSunny": "Sonnig",
+  "weatherCloudy": "Bewölkt",
+  "weatherRainy": "Regnerisch",
+  "weatherShowers": "Regenschauer",
+  "weatherVariable": "Wechselhaft",
+  "pdfRdoPhysicalProgress": "Baufortschritt: {progress} %",
+  "pdfRdoWorkforceTitle": "Personal auf der Baustelle",
+  "pdfRdoColName": "Name",
+  "pdfRdoColRole": "Funktion",
+  "pdfRdoColPresence": "Anwesenheit",
+  "pdfRdoPresenceFull": "Ganzer Tag",
+  "pdfRdoPresenceHalf": "½ Tag",
+  "rdoFormLaborAbsent": "Fehlt",
+  "rdoFormLaborExtraTitle": "Zusätzliche Arbeitskräfte",
+  "rdoFormLaborHoursWorked": "Arbeitsstunden",
+  "pdfRdoActivitiesTitle": "Ausgeführte Arbeiten",
+  "rdoFormObsTitle": "Bemerkungen / Vorkommnisse",
+  "pdfRdoPhotosTitle": "Fotodokumentation",
+  "rdoFormSignatureTitle": "Bauleiter",
+  "pdfPage": "Seite",
+  "pdfOf": "von"
+ }
+}

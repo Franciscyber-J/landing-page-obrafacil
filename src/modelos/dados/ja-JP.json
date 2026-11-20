@@ -1,0 +1,1210 @@
+{
+ "idioma": "ja-JP",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "現場で一般的に確認される27の施工項目です。各項目は例として示したもので、自社で確認・調整してご利用ください。工事の技術責任者による確認に代わるものではありません。",
+  "criterio": "設計図書・仕様書・メーカー施工要領書のとおり",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "準備工事"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "基礎工事"
+   },
+   {
+    "id": "estrutura",
+    "nome": "躯体工事"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "壁・間仕切り工事"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "壁仕上げ工事"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "床・天井工事"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "防水工事"
+   },
+   {
+    "id": "cobertura",
+    "nome": "屋根工事"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "建具・手すり工事"
+   },
+   {
+    "id": "pintura",
+    "nome": "塗装工事"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "設備工事"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "盛土の締固め",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "施工範囲の清掃、がれき・有機物の除去",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "盛土材料が設計図書のとおり",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "施工要領どおりの層ごとの敷均し・締固め",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "仕上がり高さを設計図と照合",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "設計で求められる場合の締固め試験の実施と試験成績書の添付",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "位置出し（遣り方）",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "累積寸法を設計図と照合",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "隅部の直角の確認",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "遣り方・基準杭の堅固な固定",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "基準高さ（ベンチマーク）の確認",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "基礎の施工",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "基礎各部の位置の確認",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "寸法・根入れ深さが設計図のとおり",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "端部型枠の通り（べた基礎）",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "設備配管用の溝の埋戻し・再転圧",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "配筋とコンクリート打設がそれぞれのチェックリストで合格済み",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "型枠の施工",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "全室で型枠の通り・直角・鉛直を確認",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "セパレーター・フォームタイ・支保工の設置",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "ドア・窓の開口部の確認",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "打設前の型枠内の清掃とすき間の目止め",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "配筋",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "鉄筋の位置・本数が配筋図のとおり",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "スペーサーの設置（かぶり厚さの確保）",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "差し筋・継手用鉄筋の設置",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "鉄筋の清掃（泥・油の付着なし）と結束",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "構造部材のコンクリート打設",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "型枠・配筋の検査合格",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "打設前の電線管・ボックス類の固定",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "生コン車ごとの受入れ時スランプ試験",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "納品書の内容が発注どおり",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "締固め（バイブレーター）の実施",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "施工要領どおりの養生の開始",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "補強コンクリートブロック造の組積",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "墨出しの確認：寸法・直角・開口部",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ブロックが仕様どおり",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "鉛直・水平・通り",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "設計図に示す箇所のグラウト充填と補強筋",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "清掃、がれきなし",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "非構造の組積壁・軽量間仕切り",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "墨出しの確認",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "鉛直・水平・通り",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ドア・窓の開口部の確認",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "壁頂部の詰めまたは上部固定",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "清掃、がれきなし",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "内部左官仕上げ（水回り以外）",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "下地の清掃・下地処理",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "モルタルの調合・塗付けが施工要領どおり",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "不陸調整・仕上がり",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "鉛直・直角",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "清掃",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "内部壁仕上げ（水回り）",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "平たん性・通り・接着状態",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "浮きなし（打診検査）",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "目地の欠け・汚れなし",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "割れ・欠けのあるタイルなし",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "排水口への水勾配",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "外部壁仕上げ",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "下地の清掃・下地処理",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "鉛直・平たん性",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "伸縮目地が設計図のとおり",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "浮きなし（打診検査）",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "仕上がり・清掃",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "床下地モルタル",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "下地の清掃",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "レベル・水勾配が設計図のとおり",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "厚さが設計図のとおり",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "表面にひび割れなし",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "内部床仕上げ（水回り以外）",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "平たん性・通り・接着状態",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "浮きなし（打診検査）",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "目地の欠け・汚れなし",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "割れ・欠けのある床材なし",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "内部床仕上げ（水回り）",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "平たん性・通り・接着状態",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "浮きなし（打診検査）",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "目地の欠け・汚れなし",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "割れ・欠けのある床材なし",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "排水口への水勾配",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "外部床仕上げ",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "水勾配・排水",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "平たん性",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "目地",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "割れ・欠けのある床材なし",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "天井",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "平たん性・水平",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "照明・配線の取出し口がふさがれていない",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "穴・破損なし",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "点検口が設計図のとおり",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "防水",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "下地に進行中のひび割れがなく、入隅・段差部の処理済み",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "下地調整：水勾配の確保と入隅の面取り",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "防水材料が仕様書・契約のとおり",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "重ね幅・立上り・ドレン回りの納まりが設計図とメーカー仕様のとおり",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "水張り試験（設計で定める時間）",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "保護層（押えコンクリート等）",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "清掃",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "屋根（小屋組・屋根葺き）",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "小屋組が設計図のとおり",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "緊結・固定",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "屋根勾配が屋根材メーカーの基準どおり",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "屋根材の重ね・通り",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "水切り・雨どい",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "ドア枠・扉",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "枠の鉛直",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "丁番・金物の通り",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "扉の開閉がスムーズで引っかかりなし",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "錠前・座・付属金物の取付け",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "額縁に傷・不具合なし",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "窓（サッシ）",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "開口部の寸法との整合",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "周囲のシーリング",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "枠にへこみなし",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "開閉・施錠の確認",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "散水試験で漏水なし",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "手すり",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "高さ・すき間が設計図のとおり",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "取付けが堅固",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "仕上げに鋭い角・バリなし",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "内部塗装",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "素地の清掃・乾燥・下地処理済み",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "塗り回数が仕様どおり",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "塗りむら・汚れ・たれなし",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "床・建具の清掃",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "外部塗装",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "素地の清掃・乾燥・下地処理済み",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "メーカーの条件に合った施工時期（天候・乾燥時間）",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "塗り回数が仕様どおり",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "塗りむら・汚れ・たれなし",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "床・建具の清掃",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "電気設備",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ボックスの位置が設計図のとおり",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "電線管が設計図のとおりに配管・固定されている",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "ボックス・電線管内にモルタルの混入なし",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "ボックスとガス配管・ガス栓との離隔",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "電線の色別が設計図のとおり",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "分電盤の回路表示",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "コンセント・スイッチ・プレートの取付け",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "給排水衛生設備",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "配管の位置・固定が設計図のとおり",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "立て管：管径・通り・固定",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "バルブ類：通り・高さ・養生",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "配管端部の閉止（プラグ・キャップ）",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "水圧・満水試験で漏水なし",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "排水口・配管の詰まりなし、清掃済み",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "ガス設備",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "配管経路・材料が設計図のとおり",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "電気設備との離隔",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "有資格者による気密試験の実施と記録の添付",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "表示・標識",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "カウンター・衛生陶器・水栓金具",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "固定・水平",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "排水トラップの正しい接続",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "漏水なし",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "シーリング・仕上がり",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "清掃",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "施工検査記録表",
+  "checklistPdfModelo": "テンプレート",
+  "checklistPdfObra": "工事名",
+  "checklistPdfLocal": "検査箇所",
+  "checklistPdfEtapa": "工程",
+  "checklistPdfDataDaInspecao": "検査日",
+  "checklistPdfAplicadoPor": "作成者",
+  "checklistPdfColunaNumero": "No.",
+  "checklistPdfColunaItem": "確認項目",
+  "checklistPdfColunaResultado": "判定",
+  "checklistPdfColunaObservacao": "備考・写真",
+  "checklistRespostaConforme": "適合",
+  "checklistRespostaNaoConforme": "不適合",
+  "checklistRespostaNaoSeAplica": "該当なし",
+  "checklistSecaoAntes": "施工前",
+  "checklistSecaoDurante": "施工中",
+  "checklistSecaoConclusao": "完了時",
+  "checklistItemCritico": "重要項目",
+  "checklistFotoObrigatoria": "写真必須",
+  "checklistPdfNaoConformidades": "不適合事項",
+  "checklistPdfOQueEstaErrado": "不適合の内容：{texto}",
+  "checklistPdfAcaoCorretiva": "是正処置：{acao}（担当：{responsavel}、期限：{prazo}）",
+  "checklistPdfReinspecao": "{numero}回目の再検査（{quando}）：{resultado}（{por}）",
+  "checklistPdfLiberacao": "承認",
+  "checklistPdfLiberadoSemRessalvas": "施工を承認しました（条件なし）。",
+  "checklistPdfLiberadoComRessalvas": "施工を条件付きで承認しました。",
+  "checklistPdfNaoLiberado": "未承認",
+  "checklistPdfRessalvas": "承認条件：{texto}",
+  "checklistPdfAssinadoPor": "{nome}・{papel}・{quando}",
+  "pdfRdoTitle": "工事日報 - 詳細",
+  "pdfRdoDateClient": "日付：{date}｜施主：{client}",
+  "rdoFormWeatherTitle": "天候",
+  "weatherSunny": "晴れ",
+  "weatherCloudy": "曇り",
+  "weatherRainy": "雨",
+  "weatherShowers": "にわか雨",
+  "weatherVariable": "変わりやすい",
+  "pdfRdoPhysicalProgress": "出来高進捗：{progress}%",
+  "pdfRdoWorkforceTitle": "現場の作業員",
+  "pdfRdoColName": "氏名",
+  "pdfRdoColRole": "職種",
+  "pdfRdoColPresence": "出勤",
+  "pdfRdoPresenceFull": "終日",
+  "pdfRdoPresenceHalf": "半日",
+  "rdoFormLaborAbsent": "欠勤",
+  "rdoFormLaborExtraTitle": "臨時の作業員",
+  "rdoFormLaborHoursWorked": "労働時間",
+  "pdfRdoActivitiesTitle": "作業内容",
+  "rdoFormObsTitle": "備考／課題",
+  "pdfRdoPhotosTitle": "写真記録",
+  "rdoFormSignatureTitle": "技術責任者",
+  "pdfPage": "ページ",
+  "pdfOf": "/"
+ }
+}

@@ -4,7 +4,7 @@ import { ScrollTrigger, gsap, useGSAP } from '../movimento/index.js';
 import { useTranslation } from 'react-i18next';
 import { Check, ChevronDown, Menu, Moon, Sun, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { IDIOMAS, caminhoAjuda, caminhoInicio, idioma } from '../i18n/idiomas.js';
+import { IDIOMAS, caminhoAjuda, caminhoInicio, caminhoModelos, idioma } from '../i18n/idiomas.js';
 import { useIdioma, useTrocarIdioma } from '../i18n/RotaDoIdioma.jsx';
 import { login } from '../links.js';
 import { publico } from '../publico.js';
@@ -174,6 +174,7 @@ export default function Navbar() {
     const links = [
         { para: caminhoInicio(codigo, 'recursos'), texto: t('nav.recursos') },
         { para: caminhoInicio(codigo, 'precos'), texto: t('nav.precos') },
+        { para: caminhoModelos(codigo), texto: t('modelos.nav') },
         { para: caminhoAjuda(codigo), texto: t('nav.ajuda') },
     ];
 

@@ -1,0 +1,1210 @@
+{
+ "idioma": "fr-FR",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "27 ouvrages d'exécution couramment contrôlés sur chantier. Les points de contrôle sont des exemples que votre entreprise doit vérifier et adapter : ils ne remplacent pas le responsable technique du chantier.",
+  "criterio": "Conforme aux plans, au CCTP et aux prescriptions du fabricant",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "Travaux préparatoires"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "Fondations"
+   },
+   {
+    "id": "estrutura",
+    "nome": "Structure"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "Maçonnerie et cloisons"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "Revêtements"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "Sols et plafonds"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "Étanchéité"
+   },
+   {
+    "id": "cobertura",
+    "nome": "Toiture"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "Menuiseries et garde-corps"
+   },
+   {
+    "id": "pintura",
+    "nome": "Peinture"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "Installations techniques"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "Compactage de remblai",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Emprise nettoyée, sans gravats ni matière organique",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Matériau de remblai conforme au projet",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Couches mises en œuvre et compactées selon le mode opératoire",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Niveau fini contrôlé par rapport aux plans",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Essai de compactage réalisé lorsque le projet l'exige, procès-verbal joint",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "Implantation de l'ouvrage",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Cotes cumulées contrôlées par rapport aux plans",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Équerrage des angles contrôlé",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Chaises d'implantation et repères solidement fixés",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Niveaux de référence contrôlés",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "Réalisation des fondations",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Implantation des éléments contrôlée",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Dimensions et profondeur conformes aux plans",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Coffrages de rive alignés (radier)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Tranchées des réseaux remblayées et recompactées",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Ferraillage et bétonnage validés par leur propre fiche de contrôle",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "Réalisation des coffrages",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Alignement, équerrage et aplomb contrôlés dans toutes les pièces",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Raidisseurs, tiges de serrage et étais en place",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Réservations des portes et fenêtres contrôlées",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Coffrage propre et étanche avant bétonnage",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "Mise en place des armatures",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Position et nombre des barres conformes aux plans",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Cales d'enrobage en place",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Attentes et amorces en place",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Armatures propres et ligaturées",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "Bétonnage d'un élément de structure",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Coffrage et ferraillage réceptionnés",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Gaines et boîtiers fixés avant bétonnage",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Essai d'affaissement au cône d'Abrams à l'arrivée de chaque toupie",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Bon de livraison du béton conforme à la commande",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Béton vibré",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Cure engagée selon le mode opératoire",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "Maçonnerie porteuse",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Traçage contrôlé : dimensions, équerrage et baies",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Blocs conformes au descriptif",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Aplomb, niveau et alignement",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Béton de remplissage et armatures aux emplacements prévus aux plans",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Nettoyage effectué, sans gravats",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "Maçonnerie non porteuse et cloisons légères",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Traçage contrôlé",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Aplomb, niveau et alignement",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Baies des portes et fenêtres contrôlées",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bourrage ou fixation en tête",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Nettoyage effectué, sans gravats",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "Revêtement intérieur en pièce sèche",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Support propre et préparé",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Mortier mis en œuvre selon le mode opératoire",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Dressage et finition",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Aplomb et équerrage",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Nettoyage",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "Revêtement intérieur en pièce humide",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Planéité, alignement et adhérence",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Aucun carreau sonnant creux",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Joints sans manque ni tache",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Aucun carreau cassé",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Pente vers le siphon de sol",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "Revêtement de façade",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Support propre et préparé",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Aplomb et planéité",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Joints conformes aux plans",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Aucune zone sonnant creux",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Finition et nettoyage",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "Chape",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Support propre",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Niveau et pentes conformes aux plans",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Épaisseur conforme aux plans",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Surface sans fissure",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "Sol intérieur en pièce sèche",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Planéité, alignement et adhérence",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Aucun carreau sonnant creux",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Joints sans manque ni tache",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Aucun carreau cassé",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "Sol intérieur en pièce humide",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Planéité, alignement et adhérence",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Aucun carreau sonnant creux",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Joints sans manque ni tache",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Aucun carreau cassé",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Pente vers le siphon de sol",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "Sol extérieur",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Pente et écoulement des eaux",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Planéité",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Joints",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Aucun élément cassé",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "Faux plafond",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Planéité et mise à niveau",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Boîtiers électriques non recouverts",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Ni trou ni casse",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Trappes et accès conformes aux plans",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "Étanchéité",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Support sans fissure active, angles et décaissés prêts",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Forme de pente réalisée, angles arrondis",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Produit conforme au CCTP et au marché",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Recouvrements, relevés et raccords aux évacuations selon les plans et le fabricant",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Essai d'étanchéité par mise en eau pendant la durée prévue au projet",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Protection mécanique",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Nettoyage",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "Toiture en pente (charpente et couverture)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Charpente conforme aux plans",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Fixations et liaisons",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Pente conforme aux prescriptions du fabricant des tuiles",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Recouvrement et alignement des tuiles",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Solins, abergements et gouttières",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "Huisserie et porte",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Huisserie d'aplomb",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Quincaillerie alignée",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Porte qui s'ouvre et se ferme sans frotter",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Serrure, rosaces et accessoires posés",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "Chambranles sans défaut",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "Fenêtre",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Dimensions adaptées à la baie",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Mastic d'étanchéité en périphérie",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Dormant sans enfoncement",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Ouverture, fermeture et verrouillage corrects",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Aucune infiltration d'eau (essai à l'eau)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "Garde-corps",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Hauteur et espacements conformes aux plans",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Fixation solide",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Finition sans arête vive",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "Peinture intérieure",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Support propre, sec et préparé",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Nombre de couches conforme au descriptif",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Aspect uniforme, sans tache ni coulure",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Sols et menuiseries nettoyés",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "Peinture extérieure",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Support propre, sec et préparé",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Conditions météo adaptées à l'application, selon le fabricant",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Nombre de couches conforme au descriptif",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Aspect uniforme, sans tache ni coulure",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Sols et menuiseries nettoyés",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "Électricité",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Boîtiers à l'emplacement prévu aux plans",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Gaines conformes aux plans et fixées",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Boîtiers et gaines sans mortier",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Boîtiers éloignés des points de gaz",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Couleurs des conducteurs conformes aux plans",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Circuits repérés au tableau électrique",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Prises, interrupteurs et plaques de finition posés",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "Plomberie et évacuations",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Position et fixation conformes aux plans",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Colonnes et chutes : diamètre, alignement et fixation",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Robinets d'arrêt : alignement, niveau et protection",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Attentes obturées (bouchons)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Essai d'étanchéité sans fuite",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Siphons et canalisations dégagés et propres",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "Installation de gaz",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Tracé et matériaux conformes aux plans",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Distance aux équipements électriques respectée",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Essai d'étanchéité réalisé par un professionnel qualifié, attestation jointe",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Repérage et signalisation",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "Plan de toilette, sanitaires et robinetterie",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Fixation et niveau",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Raccordement du siphon correct",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Aucune fuite",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Joints d'étanchéité et finition",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Nettoyage",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "Fiche de contrôle des travaux",
+  "checklistPdfModelo": "Modèle",
+  "checklistPdfObra": "Chantier",
+  "checklistPdfLocal": "Emplacement",
+  "checklistPdfEtapa": "Étape",
+  "checklistPdfDataDaInspecao": "Date du contrôle",
+  "checklistPdfAplicadoPor": "Contrôle réalisé par",
+  "checklistPdfColunaNumero": "N°",
+  "checklistPdfColunaItem": "Point de contrôle",
+  "checklistPdfColunaResultado": "Résultat",
+  "checklistPdfColunaObservacao": "Observations et photos",
+  "checklistRespostaConforme": "Conforme",
+  "checklistRespostaNaoConforme": "Non conforme",
+  "checklistRespostaNaoSeAplica": "Sans objet",
+  "checklistSecaoAntes": "Avant de commencer",
+  "checklistSecaoDurante": "Pendant l'exécution",
+  "checklistSecaoConclusao": "En fin d'exécution",
+  "checklistItemCritico": "Point critique",
+  "checklistFotoObrigatoria": "Photo obligatoire",
+  "checklistPdfNaoConformidades": "Non-conformités",
+  "checklistPdfOQueEstaErrado": "Écart constaté : {texto}",
+  "checklistPdfAcaoCorretiva": "Action corrective : {acao} (responsable : {responsavel} ; échéance : {prazo})",
+  "checklistPdfReinspecao": "Contre-contrôle n° {numero} du {quando} : {resultado} ({por})",
+  "checklistPdfLiberacao": "Validation",
+  "checklistPdfLiberadoSemRessalvas": "Travaux validés sans réserve.",
+  "checklistPdfLiberadoComRessalvas": "Travaux validés avec réserves.",
+  "checklistPdfNaoLiberado": "Non validée",
+  "checklistPdfRessalvas": "Réserves : {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "Rapport journalier - détails",
+  "pdfRdoDateClient": "Date : {date} | client : {client}",
+  "rdoFormWeatherTitle": "Conditions météo",
+  "weatherSunny": "Ensoleillé",
+  "weatherCloudy": "Nuageux",
+  "weatherRainy": "Pluvieux",
+  "weatherShowers": "Averses",
+  "weatherVariable": "Variable",
+  "pdfRdoPhysicalProgress": "Avancement physique : {progress} %",
+  "pdfRdoWorkforceTitle": "Effectif sur le chantier",
+  "pdfRdoColName": "Nom",
+  "pdfRdoColRole": "Fonction",
+  "pdfRdoColPresence": "Présence",
+  "pdfRdoPresenceFull": "Journée",
+  "pdfRdoPresenceHalf": "1/2 journée",
+  "rdoFormLaborAbsent": "Absent",
+  "rdoFormLaborExtraTitle": "Main-d'œuvre ponctuelle",
+  "rdoFormLaborHoursWorked": "Heures travaillées",
+  "pdfRdoActivitiesTitle": "Travaux réalisés",
+  "rdoFormObsTitle": "Observations / incidents",
+  "pdfRdoPhotosTitle": "Reportage photo",
+  "rdoFormSignatureTitle": "Responsable technique",
+  "pdfPage": "Page",
+  "pdfOf": "sur"
+ }
+}

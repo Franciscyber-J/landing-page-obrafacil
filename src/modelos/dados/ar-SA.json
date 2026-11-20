@@ -1,0 +1,1210 @@
+{
+ "idioma": "ar-SA",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "27 عملًا من أعمال التنفيذ التي يجري فحصها عادةً في الموقع. البنود أمثلة تراجعها شركتك وتعدّلها بما يناسبها، ولا تغني عن المهندس المسؤول عن المشروع.",
+  "criterio": "وفق المخططات والمواصفات الفنية وتعليمات الشركة المصنعة",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "الأعمال التمهيدية"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "الأساسات"
+   },
+   {
+    "id": "estrutura",
+    "nome": "الهيكل الإنشائي"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "الجدران والقواطع"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "اللياسة والتكسيات"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "الأرضيات والأسقف المستعارة"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "العزل المائي"
+   },
+   {
+    "id": "cobertura",
+    "nome": "التسقيف"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "الأبواب والنوافذ والدرابزين"
+   },
+   {
+    "id": "pintura",
+    "nome": "الدهانات"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "التمديدات"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "دمك الردم",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "الموقع نظيف وخالٍ من المخلفات والمواد العضوية",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "مواد الردم مطابقة للمخططات",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "فرد الطبقات ودمكها وفق إجراءات العمل",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "مطابقة المنسوب النهائي للمخططات",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "إجراء اختبار الدمك عند طلبه في المشروع، مع إرفاق التقرير",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "تخطيط وتوقيع المبنى على الأرض",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "مطابقة الأبعاد التراكمية للمخططات",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "التحقق من تعامد الزوايا",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "ثبات البراويز الخشبية ونقاط المرجع",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "التحقق من مناسيب المرجع",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "تنفيذ الأساسات",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "التحقق من مواقع العناصر",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "الأبعاد والعمق وفق المخططات",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "استقامة شدات الحواف (في حالة اللبشة)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "ردم خنادق التمديدات وإعادة دمكها",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "اعتماد التسليح والصب بقائمة التحقق الخاصة بكل منهما",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "تنفيذ الشدات (الطوبار)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "التحقق من الاستقامة والتعامد والرأسية في جميع الفراغات",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "المرابط والشدادات والدعامات في أماكنها",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "التحقق من فتحات الأبواب والنوافذ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "الشدة نظيفة ومحكمة قبل الصب",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "تركيب حديد التسليح",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "مواضع الأسياخ وعددها وفق المخططات",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "المباعدات (البسكويت) في أماكنها لضمان الغطاء الخرساني",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "الأشاير وحديد الانتظار في أماكنها",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "الحديد نظيف ومربوط",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "صب العناصر الإنشائية",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "اعتماد الشدة والتسليح",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "تثبيت المواسير الكهربائية والنقاط قبل الصب",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "اختبار الهبوط (Slump) عند وصول كل شاحنة",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "سند توريد الخرسانة مطابق للطلب",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "دمك الخرسانة بالهزاز",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "بدء المعالجة وفق إجراءات العمل",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "الجدران الحاملة من البلوك",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "التحقق من التخطيط: الأبعاد والتعامد والفتحات",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "البلوك وفق المواصفات",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "الرأسية والمنسوب والاستقامة",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "الجراوت والتسليح في المواضع المحددة بالمخططات",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "النظافة وخلو الموقع من المخلفات",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "الجدران غير الحاملة والقواطع الخفيفة",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "التحقق من التخطيط",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "الرأسية والمنسوب والاستقامة",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "التحقق من فتحات الأبواب والنوافذ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "إحكام أعلى الجدار مع السقف أو تثبيته",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "النظافة وخلو الموقع من المخلفات",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "التكسية الداخلية للمناطق الجافة",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "السطح نظيف ومجهز",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "المونة وفق إجراءات العمل",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "التسوية والتشطيب",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "الرأسية والتعامد",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "النظافة",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "التكسية الداخلية للمناطق الرطبة",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "الاستواء والاستقامة والالتصاق",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "لا توجد بلاطات مجوفة (صوت أجوف عند الطرق)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "الترويب كامل وخالٍ من البقع",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "لا توجد بلاطات مكسورة",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "الميول باتجاه الصرف الأرضي",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "التكسية الخارجية",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "السطح نظيف ومجهز",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "الرأسية والاستواء",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "الفواصل وفق المخططات",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "لا يوجد صوت أجوف عند الطرق",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "التشطيب والنظافة",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "طبقة التسوية للأرضيات (السكريد)",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "السطح نظيف",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "المنسوب والميول وفق المخططات",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "السماكة وفق المخططات",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "السطح خالٍ من التشققات",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "الأرضيات الداخلية للمناطق الجافة",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "الاستواء والاستقامة والالتصاق",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "لا توجد بلاطات مجوفة (صوت أجوف عند الطرق)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "الترويب كامل وخالٍ من البقع",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "لا توجد بلاطات مكسورة",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "الأرضيات الداخلية للمناطق الرطبة",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "الاستواء والاستقامة والالتصاق",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "لا توجد بلاطات مجوفة (صوت أجوف عند الطرق)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "الترويب كامل وخالٍ من البقع",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "لا توجد بلاطات مكسورة",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "الميول باتجاه الصرف الأرضي",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "الأرضيات الخارجية",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "الميول وتصريف المياه",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "الاستواء",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "الفواصل",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "لا توجد بلاطات مكسورة",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "الأسقف المستعارة",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "الاستواء وضبط المنسوب",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "النقاط الكهربائية غير مغطاة",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "لا توجد ثقوب أو كسور",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "فتحات الصيانة والوصول وفق المخططات",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "العزل المائي",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "السطح خالٍ من الشروخ النشطة، والزوايا والمناطق المنخفضة جاهزة",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "طبقة تسوية بالميول المطلوبة وزوايا مدورة",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "المواد وفق المواصفات والعقد",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "التراكب والرفع على الجدران وتفاصيل المصارف وفق المخططات وتعليمات الشركة المصنعة",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "اختبار الغمر بالمياه للمدة المحددة في المشروع",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "طبقة الحماية",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "النظافة",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "السقف المائل (الهيكل والتغطية)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "الهيكل وفق المخططات",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "التثبيت والربط",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "الميل وفق تعليمات الشركة المصنعة لمادة التغطية",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "تراكب القرميد أو ألواح التغطية واستقامتها",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "الأغطية المعدنية (الفلاشينج) والمزاريب",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "الحلق والباب",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "الحلق مضبوط رأسيًا",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "المفصلات والقطع المعدنية على استقامة واحدة",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "الباب يُفتح ويُغلق دون احتكاك أو تعليق",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "القفل والوردات والإكسسوارات مركبة",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "البرواز (الإطار الخارجي) خالٍ من العيوب",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "النافذة",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "المقاس متوافق مع الفتحة",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "مادة مانعة للتسرب على كامل المحيط",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "الإطار خالٍ من الانبعاجات",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "تُفتح وتُغلق وتُقفل",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "لا يوجد تسرب للمياه (اختبار بالرش بالماء)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "الدرابزين",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "الارتفاع والمسافات وفق المخططات",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "التثبيت محكم",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "التشطيب خالٍ من الحواف الحادة",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "الدهانات الداخلية",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "السطح نظيف وجاف ومجهز",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "عدد الأوجه وفق المواصفات",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "تغطية متجانسة دون بقع أو سيلان",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "تنظيف الأرضيات والأبواب والنوافذ",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "الدهانات الخارجية",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "السطح نظيف وجاف ومجهز",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "الظروف الجوية وتوقيت التطبيق مناسبة وفق تعليمات الشركة المصنعة",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "عدد الأوجه وفق المواصفات",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "تغطية متجانسة دون بقع أو سيلان",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "تنظيف الأرضيات والأبواب والنوافذ",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "التمديدات الكهربائية",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "العلب في مواضعها وفق المخططات",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "المواسير وفق المخططات ومثبتة",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "العلب والمواسير خالية من المونة",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "العلب بعيدة عن نقاط الغاز",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ألوان الأسلاك وفق المخططات",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "الدوائر معرّفة في اللوحة",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "المقابس (الأفياش) والمفاتيح وأغطيتها مركبة",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "التمديدات الصحية (التغذية والصرف)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "المواضع والتثبيت وفق المخططات",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "المواسير الرأسية: القطر والاستقامة والتثبيت",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "المحابس: الاستقامة والمنسوب والحماية",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "نهايات المواسير مغلقة (سدادات وأغطية)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "اختبار الضغط دون أي تسرب",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "الصفايات والمواسير سالكة ونظيفة",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "تمديدات الغاز",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "المسار والمواد وفق المخططات",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "الابتعاد عن النقاط الكهربائية",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "اختبار الإحكام بواسطة فني مؤهل، مع إرفاق المحضر",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "التعريف واللوحات التحذيرية",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "الكاونتر والأدوات الصحية والخلاطات",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "التثبيت وضبط الاستواء",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "توصيل السيفون صحيح",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "لا يوجد تسرب",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "الإحكام بالسيليكون والتشطيب",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "النظافة",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "نموذج فحص واستلام الأعمال",
+  "checklistPdfModelo": "القالب",
+  "checklistPdfObra": "المشروع",
+  "checklistPdfLocal": "المكان",
+  "checklistPdfEtapa": "المرحلة",
+  "checklistPdfDataDaInspecao": "تاريخ الفحص",
+  "checklistPdfAplicadoPor": "القائم بالفحص",
+  "checklistPdfColunaNumero": "م",
+  "checklistPdfColunaItem": "البند",
+  "checklistPdfColunaResultado": "النتيجة",
+  "checklistPdfColunaObservacao": "الملاحظات والصور",
+  "checklistRespostaConforme": "مطابق",
+  "checklistRespostaNaoConforme": "غير مطابق",
+  "checklistRespostaNaoSeAplica": "لا ينطبق",
+  "checklistSecaoAntes": "قبل البدء",
+  "checklistSecaoDurante": "أثناء التنفيذ",
+  "checklistSecaoConclusao": "عند الانتهاء",
+  "checklistItemCritico": "بند حرج",
+  "checklistFotoObrigatoria": "الصورة إلزامية",
+  "checklistPdfNaoConformidades": "حالات عدم المطابقة",
+  "checklistPdfOQueEstaErrado": "وصف عدم المطابقة: {texto}",
+  "checklistPdfAcaoCorretiva": "الإجراء التصحيحي: {acao} (المسؤول: {responsavel}؛ الموعد النهائي: {prazo})",
+  "checklistPdfReinspecao": "إعادة الفحص رقم {numero} بتاريخ {quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "الاعتماد",
+  "checklistPdfLiberadoSemRessalvas": "تم اعتماد العمل دون تحفظات.",
+  "checklistPdfLiberadoComRessalvas": "تم اعتماد العمل بتحفظات.",
+  "checklistPdfNaoLiberado": "غير معتمد",
+  "checklistPdfRessalvas": "التحفظات: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "التقرير اليومي - التفاصيل",
+  "pdfRdoDateClient": "التاريخ: {date} | العميل: {client}",
+  "rdoFormWeatherTitle": "الأحوال الجوية",
+  "weatherSunny": "مشمس",
+  "weatherCloudy": "غائم",
+  "weatherRainy": "ممطر",
+  "weatherShowers": "زخات مطر",
+  "weatherVariable": "متقلب",
+  "pdfRdoPhysicalProgress": "الإنجاز الفعلي: {progress}%",
+  "pdfRdoWorkforceTitle": "العمالة في الموقع",
+  "pdfRdoColName": "الاسم",
+  "pdfRdoColRole": "الوظيفة",
+  "pdfRdoColPresence": "الحضور",
+  "pdfRdoPresenceFull": "يوم كامل",
+  "pdfRdoPresenceHalf": "نصف يوم",
+  "rdoFormLaborAbsent": "غائب",
+  "rdoFormLaborExtraTitle": "عمالة مؤقتة",
+  "rdoFormLaborHoursWorked": "ساعات العمل",
+  "pdfRdoActivitiesTitle": "الأعمال المنفذة",
+  "rdoFormObsTitle": "الملاحظات / المشكلات",
+  "pdfRdoPhotosTitle": "التوثيق المصوّر",
+  "rdoFormSignatureTitle": "المسؤول الفني",
+  "pdfPage": "صفحة",
+  "pdfOf": "من"
+ }
+}

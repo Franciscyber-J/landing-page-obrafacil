@@ -1,0 +1,1210 @@
+{
+ "idioma": "ro-RO",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "Cele 27 de categorii de lucrări de execuție care se verifică de obicei pe șantier. Punctele sunt exemple, pe care firma le verifică și le adaptează: nu înlocuiesc responsabilul tehnic cu execuția.",
+  "criterio": "Conform proiectului, caietului de sarcini și instrucțiunilor producătorului",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "Lucrări pregătitoare"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "Fundații"
+   },
+   {
+    "id": "estrutura",
+    "nome": "Structură"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "Zidării și compartimentări"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "Tencuieli și placări"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "Pardoseli și tavane"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "Hidroizolații"
+   },
+   {
+    "id": "cobertura",
+    "nome": "Acoperiș"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "Tâmplărie și balustrade"
+   },
+   {
+    "id": "pintura",
+    "nome": "Zugrăveli și vopsitorii"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "Instalații"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "Compactarea umpluturilor",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Teren curățat, fără moloz și fără materii organice",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Material de umplutură conform proiectului",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Straturi așternute și compactate conform procedurii",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Cota finală verificată față de proiect",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Încercare de compactare efectuată când proiectul o cere, cu buletinul atașat",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "Trasarea construcției",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Distanțe cumulate verificate față de proiect",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Echerul colțurilor verificat",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Rama de trasare și reperele de colț fixate solid",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Reperele de nivel verificate",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "Executarea fundațiilor",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Trasarea elementelor de fundație verificată",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Dimensiuni și adâncime de fundare conform proiectului",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Cofraje de margine aliniate (radier)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Șanțurile pentru instalații reumplute și recompactate",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Armarea și betonarea aprobate, fiecare pe lista de verificare proprie",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "Executarea cofrajelor",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Aliniere, echer și verticalitate verificate în toate încăperile",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Rigle de aliniere, tiranți și popi la locul lor",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Golurile pentru uși și ferestre verificate",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Cofraj curat și etanș înainte de betonare",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "Montarea armăturii",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Poziția și numărul barelor conform proiectului",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Distanțiere montate (stratul de acoperire cu beton)",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Mustățile și armăturile de așteptare la locul lor",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Armătură curată și legată",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "Betonarea elementelor structurale",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Cofraj și armătură aprobate",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Tuburile pentru instalații și dozele fixate înainte de betonare",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Încercarea de tasare (slump) la sosirea fiecărei autobetoniere",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Bonul de livrare a betonului conform comenzii",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Beton compactat prin vibrare",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Tratarea betonului după turnare începută conform procedurii",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "Zidărie portantă",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Trasarea verificată: dimensiuni, echer și goluri",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Blocuri conform specificației",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Verticalitate, orizontalitate și aliniere",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Beton de umplere și armături în punctele din proiect",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Curățenie, fără moloz",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "Zidărie neportantă și pereți despărțitori ușori",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Trasarea verificată",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Verticalitate, orizontalitate și aliniere",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Golurile pentru uși și ferestre verificate",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Împănare sub planșeu sau fixare la partea superioară",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Curățenie, fără moloz",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "Tencuieli interioare în spații uscate",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Suport curat și pregătit",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Mortar conform procedurii",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Suprafață regularizată și finisată",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Verticalitate și echer",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Curățenie",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "Placări interioare în spații umede",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Planeitate, aliniere și aderență",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Fără plăci care sună a gol",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Rosturi chituite complet, fără pete",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Fără plăci sparte",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Pantă spre sifonul de pardoseală",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "Tencuieli și placări exterioare",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Suport curat și pregătit",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Verticalitate și planeitate",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Rosturi conform proiectului",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Fără zone care sună a gol",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Finisaj și curățenie",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "Șapă",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Suport curat",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Cote și pante conform proiectului",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Grosime conform proiectului",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Suprafață fără fisuri",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "Pardoseli interioare în spații uscate",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Planeitate, aliniere și aderență",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Fără plăci care sună a gol",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Rosturi chituite complet, fără pete",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Fără plăci sparte",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "Pardoseli interioare în spații umede",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Planeitate, aliniere și aderență",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Fără plăci care sună a gol",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Rosturi chituite complet, fără pete",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Fără plăci sparte",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Pantă spre sifonul de pardoseală",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "Pardoseli exterioare",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Pantă și scurgerea apei",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Planeitate",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Rosturi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Fără plăci sparte",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "Tavane false",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Planeitate și orizontalitate",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Punctele electrice rămase accesibile, neacoperite",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Fără găuri sau spărturi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Accese și trape de vizitare conform proiectului",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "Hidroizolații",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Suport fără fisuri active, cu colțurile și zonele denivelate pregătite",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Strat de egalizare cu pante și colțuri rotunjite (scafe)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Material conform caietului de sarcini și contractului",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Suprapuneri, ridicări pe pereți și racordări la sifoane conform proiectului și producătorului",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Proba de etanșeitate prin inundare cu apă, pe durata din proiect",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Protecție mecanică",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Curățenie",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "Acoperiș în pantă (șarpantă și învelitoare)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Șarpantă conform proiectului",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Fixare și ancorare",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Pantă conform producătorului învelitorii",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Suprapunerea și alinierea elementelor de învelitoare",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Șorțuri de tablă și jgheaburi",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "Toc și ușă",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Toc montat la verticală",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Balamale și feronerie aliniate",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Ușa se deschide și se închide fără să se blocheze",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Broască, rozete și accesorii montate",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "Pervazuri fără defecte",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "Fereastră",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Dimensiune potrivită cu golul",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Sigilant pe tot conturul",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Toc fără lovituri sau îndoituri",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Se deschide, se închide și se blochează",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Fără infiltrații de apă (probă cu apă)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "Balustradă",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Înălțime și distanțe între elemente conform proiectului",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Fixare solidă",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Finisaj fără muchii tăioase",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "Zugrăveli interioare",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Suport curat, uscat și pregătit",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Număr de straturi conform specificației",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Acoperire uniformă, fără pete și fără scurgeri",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Pardoseli și tâmplărie curățate",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "Zugrăveli exterioare",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Suport curat, uscat și pregătit",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Vreme potrivită pentru aplicare, conform producătorului",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Număr de straturi conform specificației",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Acoperire uniformă, fără pete și fără scurgeri",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Pardoseli și tâmplărie curățate",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "Instalații electrice",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Doze în pozițiile din proiect",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Tuburi de protecție conform proiectului și fixate",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Doze și tuburi fără mortar",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Doze la distanță de punctele de gaze",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Culorile conductoarelor conform proiectului",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Circuite etichetate în tablou",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Prize, întrerupătoare și rame montate",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "Instalații sanitare (apă și canalizare)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Poziție și fixare conform proiectului",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Coloane: diametru, aliniere și fixare",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Robinete: aliniere, nivel și protecție",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Puncte de racord închise (dopuri și capace)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Proba de etanșeitate fără scurgeri",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Sifoane și conducte libere și curate",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "Instalații de gaze",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Traseu și materiale conform proiectului",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Distanță față de punctele electrice",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Proba de etanșeitate făcută de un instalator autorizat, cu procesul-verbal atașat",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Marcare și semnalizare",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "Blat, obiecte sanitare și baterii",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Fixare și nivel",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Racordarea corectă a sifonului",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Fără scurgeri",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Etanșare cu silicon și finisaj",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Curățenie",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "Fișă de control al calității lucrărilor",
+  "checklistPdfModelo": "Model",
+  "checklistPdfObra": "Lucrare",
+  "checklistPdfLocal": "Locație",
+  "checklistPdfEtapa": "Etapă",
+  "checklistPdfDataDaInspecao": "Data inspecției",
+  "checklistPdfAplicadoPor": "Verificat de",
+  "checklistPdfColunaNumero": "Nr.",
+  "checklistPdfColunaItem": "Punct",
+  "checklistPdfColunaResultado": "Rezultat",
+  "checklistPdfColunaObservacao": "Observații și fotografii",
+  "checklistRespostaConforme": "Conform",
+  "checklistRespostaNaoConforme": "Neconform",
+  "checklistRespostaNaoSeAplica": "Nu se aplică",
+  "checklistSecaoAntes": "Înainte de începere",
+  "checklistSecaoDurante": "În timpul execuției",
+  "checklistSecaoConclusao": "La finalizare",
+  "checklistItemCritico": "Punct critic",
+  "checklistFotoObrigatoria": "Fotografie obligatorie",
+  "checklistPdfNaoConformidades": "Neconformități",
+  "checklistPdfOQueEstaErrado": "Constatare: {texto}",
+  "checklistPdfAcaoCorretiva": "Acțiune corectivă: {acao} (responsabil: {responsavel}; termen: {prazo})",
+  "checklistPdfReinspecao": "Reinspecția nr. {numero}, {quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "Aprobare",
+  "checklistPdfLiberadoSemRessalvas": "Execuție aprobată fără rezerve.",
+  "checklistPdfLiberadoComRessalvas": "Execuție aprobată cu rezerve.",
+  "checklistPdfNaoLiberado": "Neaprobată",
+  "checklistPdfRessalvas": "Rezerve: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "Raport zilnic - detalii",
+  "pdfRdoDateClient": "Data: {date} | client: {client}",
+  "rdoFormWeatherTitle": "Condiții meteo",
+  "weatherSunny": "Însorit",
+  "weatherCloudy": "Înnorat",
+  "weatherRainy": "Ploios",
+  "weatherShowers": "Averse",
+  "weatherVariable": "Variabil",
+  "pdfRdoPhysicalProgress": "Progres fizic: {progress}%",
+  "pdfRdoWorkforceTitle": "Efectiv pe șantier",
+  "pdfRdoColName": "Nume",
+  "pdfRdoColRole": "Funcție",
+  "pdfRdoColPresence": "Prezență",
+  "pdfRdoPresenceFull": "Zi întreagă",
+  "pdfRdoPresenceHalf": "1/2 zi",
+  "rdoFormLaborAbsent": "Absent",
+  "rdoFormLaborExtraTitle": "Forță de muncă ocazională",
+  "rdoFormLaborHoursWorked": "Ore lucrate",
+  "pdfRdoActivitiesTitle": "Activități efectuate",
+  "rdoFormObsTitle": "Observații / incidente",
+  "pdfRdoPhotosTitle": "Fotografii",
+  "rdoFormSignatureTitle": "Responsabil tehnic",
+  "pdfPage": "Pagina",
+  "pdfOf": "din"
+ }
+}

@@ -1,0 +1,1210 @@
+{
+ "idioma": "vi-VN",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "27 công tác thi công thường được kiểm tra tại công trường. Các mục chỉ là ví dụ để công ty bạn rà soát và điều chỉnh, không thay thế kỹ sư chịu trách nhiệm kỹ thuật của công trình.",
+  "criterio": "Theo bản vẽ thiết kế, chỉ dẫn kỹ thuật và hướng dẫn của nhà sản xuất",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "Công tác chuẩn bị"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "Móng"
+   },
+   {
+    "id": "estrutura",
+    "nome": "Kết cấu"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "Tường xây và vách ngăn"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "Trát và ốp tường"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "Lát nền và trần"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "Chống thấm"
+   },
+   {
+    "id": "cobertura",
+    "nome": "Mái"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "Cửa và lan can"
+   },
+   {
+    "id": "pintura",
+    "nome": "Sơn"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "Cơ điện (M&E)"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "Đắp và đầm nén đất",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Mặt bằng sạch, không còn rác thải xây dựng và chất hữu cơ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Vật liệu đắp đúng thiết kế",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Rải và đầm từng lớp theo quy trình",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Cao độ hoàn thiện đã đối chiếu với bản vẽ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Thí nghiệm độ chặt khi thiết kế yêu cầu, kèm kết quả thí nghiệm",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "Định vị công trình",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Kích thước cộng dồn đã đối chiếu với bản vẽ",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Độ vuông góc của các góc đã kiểm tra",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Khung định vị và cọc mốc chắc chắn",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Mốc cao độ chuẩn đã kiểm tra",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "Thi công móng",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Định vị các cấu kiện móng đã kiểm tra",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Kích thước và chiều sâu đúng bản vẽ",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Cốp pha biên thẳng hàng (móng bè)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Rãnh đường ống kỹ thuật được lấp lại và đầm chặt",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Cốt thép và đổ bê tông đã nghiệm thu theo danh mục kiểm tra riêng",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "Thi công cốp pha",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Độ thẳng, độ vuông góc và độ thẳng đứng đã kiểm tra ở tất cả các phòng",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Thanh định vị, ty giằng và cây chống đúng vị trí",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Lỗ chờ cửa đi và cửa sổ đã kiểm tra",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Cốp pha sạch và kín khít trước khi đổ bê tông",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "Gia công và lắp dựng cốt thép",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Vị trí và số lượng thanh thép đúng bản vẽ",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Con kê đặt đủ (lớp bê tông bảo vệ)",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Thép chờ đúng vị trí",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Cốt thép sạch và buộc chắc chắn",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "Đổ bê tông cấu kiện kết cấu",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Cốp pha và cốt thép đã nghiệm thu",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Ống luồn dây và hộp chờ được cố định trước khi đổ bê tông",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Thử độ sụt (slump) với mỗi xe bồn khi đến công trường",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Phiếu giao hàng bê tông đúng với đơn đặt hàng",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Đã đầm bê tông",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bắt đầu bảo dưỡng bê tông theo quy trình",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "Tường xây chịu lực",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Mực định vị đã kiểm tra: kích thước, độ vuông góc và lỗ cửa",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Gạch hoặc khối xây đúng chỉ dẫn kỹ thuật",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Độ thẳng đứng, độ ngang bằng và độ thẳng hàng",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Vữa rót (grout) và cốt thép đúng vị trí trên bản vẽ",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Vệ sinh sạch, không còn rác thải xây dựng",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "Tường xây không chịu lực và vách ngăn nhẹ",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Mực định vị đã kiểm tra",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Độ thẳng đứng, độ ngang bằng và độ thẳng hàng",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Lỗ cửa đi và cửa sổ đã kiểm tra",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Chèn khe đỉnh tường hoặc liên kết với dầm, sàn",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Vệ sinh sạch, không còn rác thải xây dựng",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "Trát tường trong khu vực khô",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Bề mặt sạch và đã được xử lý",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Vữa trộn theo quy trình",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Độ phẳng và hoàn thiện bề mặt",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Độ thẳng đứng và độ vuông góc",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Vệ sinh",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "Ốp gạch tường trong khu vực ẩm ướt",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Độ phẳng, độ thẳng hàng và độ bám dính",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Không có viên bị bộp (gõ nghe rỗng)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Mạch chít ron đầy, không loang ố",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Không có viên bị vỡ, mẻ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Độ dốc về phễu thu sàn",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "Hoàn thiện mặt ngoài",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Bề mặt sạch và đã được xử lý",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Độ thẳng đứng và độ phẳng",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Mạch và khe co giãn đúng bản vẽ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Không có chỗ bộp khi gõ kiểm tra",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Hoàn thiện và vệ sinh",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "Cán nền (lớp vữa tạo phẳng)",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Mặt nền sạch",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Cao độ và độ dốc đúng bản vẽ",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Chiều dày đúng bản vẽ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bề mặt không nứt",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "Lát nền trong khu vực khô",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Độ phẳng, độ thẳng hàng và độ bám dính",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Không có viên bị bộp (gõ nghe rỗng)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Mạch chít ron đầy, không loang ố",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Không có viên bị vỡ, mẻ",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "Lát nền trong khu vực ẩm ướt",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Độ phẳng, độ thẳng hàng và độ bám dính",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Không có viên bị bộp (gõ nghe rỗng)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Mạch chít ron đầy, không loang ố",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Không có viên bị vỡ, mẻ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Độ dốc về phễu thu sàn",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "Lát nền ngoài trời",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Độ dốc và thoát nước",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Độ phẳng",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Mạch và khe co giãn",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Không có viên bị vỡ, mẻ",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "Thi công trần",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Độ phẳng và cao độ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Không che lấp các điểm điện",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Không thủng, không vỡ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Lỗ thăm trần đúng bản vẽ",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "Chống thấm",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Bề mặt không có vết nứt đang phát triển, góc và phần sàn hạ cốt đã sẵn sàng",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Lớp vữa tạo phẳng có độ dốc, góc được bo tròn",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Vật liệu đúng chỉ dẫn kỹ thuật và hợp đồng",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Chồng mí, vén lên chân tường và xử lý quanh phễu thu theo bản vẽ và nhà sản xuất",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Ngâm nước thử thấm (trong thời gian theo thiết kế)",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Lớp bảo vệ chống thấm",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Vệ sinh",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "Mái dốc (kết cấu mái và lợp mái)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Kết cấu mái đúng bản vẽ",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Liên kết và neo giữ chắc chắn",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Độ dốc mái theo khuyến cáo của nhà sản xuất ngói hoặc tôn",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Chồng mí và độ thẳng hàng của ngói hoặc tôn",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Diềm chống thấm (flashing) và máng xối",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "Khung bao và cánh cửa đi",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Khung bao thẳng đứng",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Bản lề và phụ kiện thẳng hàng",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Cửa đóng mở êm, không kẹt",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Khóa, tấm ốp và phụ kiện đã lắp",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "Nẹp chỉ cửa không bị lỗi",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "Cửa sổ",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Kích thước phù hợp với lỗ cửa",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Keo chống thấm quanh khung",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Khung không bị móp",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Đóng, mở và khóa được",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Không thấm nước vào trong (thử bằng phun nước)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "Lan can",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Chiều cao và khoảng hở đúng bản vẽ",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Liên kết chắc chắn",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Hoàn thiện không có cạnh sắc",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "Sơn trong nhà",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Bề mặt sạch, khô và đã được xử lý",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Số lớp sơn đúng chỉ dẫn kỹ thuật",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Màu sơn đều, không loang, không chảy",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Vệ sinh sàn và cửa",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "Sơn ngoài nhà",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Bề mặt sạch, khô và đã được xử lý",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Thời tiết phù hợp để sơn, theo khuyến cáo của nhà sản xuất",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Số lớp sơn đúng chỉ dẫn kỹ thuật",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Màu sơn đều, không loang, không chảy",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Vệ sinh sàn và cửa",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "Lắp đặt hệ thống điện",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Đế âm và hộp nối đúng vị trí trên bản vẽ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Ống luồn dây đúng bản vẽ và được cố định",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Hộp và ống luồn dây không bị vữa lọt vào",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Hộp điện cách xa điểm cấp gas",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Màu dây dẫn đúng bản vẽ",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Các mạch được ghi nhãn trong tủ điện",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Ổ cắm, công tắc và mặt che đã lắp",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "Lắp đặt hệ thống cấp thoát nước",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Vị trí và cố định ống đúng bản vẽ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Ống đứng: đường kính, độ thẳng hàng và cố định",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Van: thẳng hàng, ngang bằng và được bảo vệ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Các đầu ống chờ đã bịt (nút bịt, nắp chụp)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Thử áp lực không rò rỉ",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Phễu thu và đường ống thông thoáng, sạch",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "Lắp đặt đường ống gas",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Tuyến ống và vật liệu đúng bản vẽ",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Giữ khoảng cách với các điểm điện",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Thử kín do người có chuyên môn thực hiện, kèm biên bản",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Ghi nhãn và biển cảnh báo",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "Bàn đá lavabo, thiết bị vệ sinh và vòi nước",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Cố định chắc chắn và cân bằng",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Đấu nối ống xi phông đúng",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Không rò rỉ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Keo trám và hoàn thiện",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Vệ sinh",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "Phiếu kiểm tra chất lượng công việc",
+  "checklistPdfModelo": "Mẫu",
+  "checklistPdfObra": "Công trình",
+  "checklistPdfLocal": "Vị trí",
+  "checklistPdfEtapa": "Hạng mục",
+  "checklistPdfDataDaInspecao": "Ngày kiểm tra",
+  "checklistPdfAplicadoPor": "Người kiểm tra",
+  "checklistPdfColunaNumero": "STT",
+  "checklistPdfColunaItem": "Nội dung kiểm tra",
+  "checklistPdfColunaResultado": "Kết quả",
+  "checklistPdfColunaObservacao": "Ghi chú và ảnh",
+  "checklistRespostaConforme": "Đạt",
+  "checklistRespostaNaoConforme": "Không đạt",
+  "checklistRespostaNaoSeAplica": "Không áp dụng",
+  "checklistSecaoAntes": "Trước khi thi công",
+  "checklistSecaoDurante": "Trong khi thi công",
+  "checklistSecaoConclusao": "Khi hoàn thành",
+  "checklistItemCritico": "Mục trọng yếu",
+  "checklistFotoObrigatoria": "Bắt buộc có ảnh",
+  "checklistPdfNaoConformidades": "Các điểm không đạt",
+  "checklistPdfOQueEstaErrado": "Nội dung không đạt: {texto}",
+  "checklistPdfAcaoCorretiva": "Biện pháp khắc phục: {acao} (người phụ trách: {responsavel}; thời hạn: {prazo})",
+  "checklistPdfReinspecao": "Kiểm tra lại lần {numero} ngày {quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "Nghiệm thu",
+  "checklistPdfLiberadoSemRessalvas": "Công việc được nghiệm thu, không có tồn tại.",
+  "checklistPdfLiberadoComRessalvas": "Công việc được nghiệm thu kèm tồn tại.",
+  "checklistPdfNaoLiberado": "Chưa nghiệm thu",
+  "checklistPdfRessalvas": "Tồn tại: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "Báo cáo ngày - chi tiết",
+  "pdfRdoDateClient": "Ngày: {date} | khách hàng: {client}",
+  "rdoFormWeatherTitle": "Điều kiện thời tiết",
+  "weatherSunny": "Nắng",
+  "weatherCloudy": "Nhiều mây",
+  "weatherRainy": "Mưa",
+  "weatherShowers": "Mưa rào",
+  "weatherVariable": "Thay đổi",
+  "pdfRdoPhysicalProgress": "Khối lượng hoàn thành: {progress}%",
+  "pdfRdoWorkforceTitle": "Nhân lực tại công trình",
+  "pdfRdoColName": "Họ tên",
+  "pdfRdoColRole": "Chức vụ",
+  "pdfRdoColPresence": "Có mặt",
+  "pdfRdoPresenceFull": "Cả ngày",
+  "pdfRdoPresenceHalf": "Nửa ngày",
+  "rdoFormLaborAbsent": "Vắng",
+  "rdoFormLaborExtraTitle": "Nhân công thời vụ",
+  "rdoFormLaborHoursWorked": "Số giờ làm",
+  "pdfRdoActivitiesTitle": "Công việc đã thực hiện",
+  "rdoFormObsTitle": "Ghi chú / sự cố",
+  "pdfRdoPhotosTitle": "Hình ảnh ghi nhận",
+  "rdoFormSignatureTitle": "Phụ trách kỹ thuật",
+  "pdfPage": "Trang",
+  "pdfOf": "/"
+ }
+}

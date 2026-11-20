@@ -1,0 +1,1210 @@
+{
+ "idioma": "nl-NL",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "27 uitvoeringswerkzaamheden die op de bouwplaats meestal worden gecontroleerd. De punten zijn voorbeelden die je bedrijf kan nalopen en aanpassen. Ze vervangen niet de controle door de technisch verantwoordelijke van het project.",
+  "criterio": "Volgens tekeningen, bestek en voorschriften van de fabrikant",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "Voorbereidende werkzaamheden"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "Fundering"
+   },
+   {
+    "id": "estrutura",
+    "nome": "Draagconstructie"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "Metselwerk en wanden"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "Stucwerk en wandafwerking"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "Vloeren en plafonds"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "Waterdichting"
+   },
+   {
+    "id": "cobertura",
+    "nome": "Dak"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "Kozijnen, deuren en balustrades"
+   },
+   {
+    "id": "pintura",
+    "nome": "Schilderwerk"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "Installaties"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "Aanvullen en verdichten",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Terrein schoon, vrij van puin en organisch materiaal",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Aanvulmateriaal volgens ontwerp",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "In lagen aangebracht en verdicht volgens werkinstructie",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Eindhoogte gecontroleerd aan de hand van de tekening",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Verdichtingsmeting uitgevoerd als het ontwerp dat vraagt, met rapport bijgevoegd",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "Uitzetten",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Maten doorlopend vanaf het referentiepunt gecontroleerd met de tekening",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Haaksheid van de hoeken gecontroleerd",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Bouwraam en profielen stevig geplaatst",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Peil en hoogtematen gecontroleerd",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "Fundering aanleggen",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Uitzetting van de funderingsdelen gecontroleerd",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Afmetingen en diepte volgens ontwerp",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Randbekisting van de funderingsplaat recht uitgelijnd",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Sleuven voor leidingen aangevuld en opnieuw verdicht",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Wapening en betonstort vrijgegeven via een eigen checklist",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "Bekisting",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Rechtheid, haaksheid en verticaliteit in alle ruimtes gecontroleerd",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Richtprofielen, bekistingsankers en stempels aangebracht",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Sparingen voor deuren en ramen gecontroleerd",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bekisting schoon en dicht voor het storten",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "Wapening aanbrengen",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Positie en aantal staven volgens wapeningstekening",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Afstandhouders aangebracht (betondekking)",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Stekken en aansluitwapening aanwezig",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Wapening schoon en goed gevlochten",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "Betonstort van constructieve onderdelen",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Bekisting en wapening vrijgegeven",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Leidingen en inbouwdozen vastgezet voor het storten",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Zetmaatproef (slump) bij aankomst van elke truckmixer",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Afleverbon van de betonmortel klopt met de bestelling",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Beton verdicht",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Nabehandeling gestart volgens werkinstructie",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "Dragend metselwerk",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Uitzetting gecontroleerd: maten, haaksheid en sparingen",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Stenen of blokken volgens bestek",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Te lood, waterpas en in lijn",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Vulbeton en wapening op de aangegeven plaatsen",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Opgeruimd, vrij van puin",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "Niet-dragend metselwerk en lichte scheidingswanden",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Uitzetting gecontroleerd",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Te lood, waterpas en in lijn",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Sparingen voor deuren en ramen gecontroleerd",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Aansluiting of bevestiging aan de bovenzijde",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Opgeruimd, vrij van puin",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "Pleisterwerk binnen, droge ruimtes",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Ondergrond schoon en voorbehandeld",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Mortel volgens werkinstructie",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Vlak uitgevlakt en afgewerkt",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Te lood en haaks",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Schoongemaakt",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "Wandtegelwerk in natte ruimtes",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Vlakheid, uitlijning en hechting",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Geen holle tegels (klopproef)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Voegwerk volledig en zonder vlekken",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Geen gebroken tegels",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Afschot naar de afvoer",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "Gevelafwerking",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Ondergrond schoon en voorbehandeld",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Te lood en vlak",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Voegen volgens ontwerp",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Geen holle plekken (klopproef)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Afwerking en schoonmaak",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "Dekvloer",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Ondergrond schoon",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Hoogte en afschot volgens ontwerp",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Laagdikte volgens ontwerp",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Oppervlak zonder scheuren",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "Vloerafwerking binnen, droge ruimtes",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Vlakheid, uitlijning en hechting",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Geen holle tegels (klopproef)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Voegwerk volledig en zonder vlekken",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Geen gebroken tegels",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "Vloerafwerking binnen, natte ruimtes",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Vlakheid, uitlijning en hechting",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Geen holle tegels (klopproef)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Voegwerk volledig en zonder vlekken",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Geen gebroken tegels",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Afschot naar de afvoer",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "Vloerafwerking buiten",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Afschot en waterafvoer",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Vlakheid",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Voegen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Geen gebroken tegels of stenen",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "Plafond",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Vlak en waterpas",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Elektrapunten niet afgedekt",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Geen gaten of breuk",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Inspectieluiken volgens ontwerp",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "Waterdichting",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Ondergrond zonder actieve scheuren, hoeken en verdiepte delen gereed",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Egalisatielaag met afschot en afgeronde hoeken (holkeel)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Materiaal volgens bestek en contract",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Overlappingen, opstanden en aansluitingen op afvoeren volgens ontwerp en fabrikant",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Waterdichtheidsproef (water laten staan gedurende de voorgeschreven tijd)",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Beschermlaag aangebracht",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Schoongemaakt",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "Hellend dak (dakconstructie en dakbedekking)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Dakconstructie volgens ontwerp",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Bevestiging en verankering",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Dakhelling volgens de fabrikant van de dakpannen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Overlap en uitlijning van de dakpannen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Aansluitingen in lood of zink en dakgoten",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "Deurkozijn en deur",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Kozijn te lood",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Scharnieren in lijn",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Deur opent en sluit zonder klemmen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Slot, beslag en toebehoren gemonteerd",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "Aftimmering zonder gebreken",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "Raam",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Afmeting passend in de sparing",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Kitvoeg rondom",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Kozijn zonder deuken",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Opent, sluit en vergrendelt",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Geen waterindringing (proef met water)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "Balustrade",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Hoogte en tussenruimtes volgens ontwerp",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Stevig bevestigd",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Afwerking zonder scherpe randen",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "Schilderwerk binnen",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Ondergrond schoon, droog en voorbehandeld",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Aantal lagen volgens bestek",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Gelijkmatig dekkend, zonder vlekken en zonder zakkers",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Vloeren en kozijnen schoongemaakt",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "Schilderwerk buiten",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Ondergrond schoon, droog en voorbehandeld",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Geschikte weersomstandigheden voor het aanbrengen, volgens de fabrikant",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Aantal lagen volgens bestek",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Gelijkmatig dekkend, zonder vlekken en zonder zakkers",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Vloeren en kozijnen schoongemaakt",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "Elektrische installatie",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Inbouwdozen op de plaats volgens tekening",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Installatiebuizen volgens tekening en vastgezet",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Dozen en buizen vrij van mortel",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Doos op afstand van gaspunten",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Aderkleuren volgens ontwerp",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Groepen gemarkeerd in de groepenkast",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Wandcontactdozen, schakelaars en afdekramen gemonteerd",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "Sanitaire installatie (water en afvoer)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Positie en bevestiging volgens tekening",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Standleidingen: diameter, uitlijning en bevestiging",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Afsluiters: uitlijning, hoogte en bescherming",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Aansluitpunten afgedopt (pluggen en doppen)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Dichtheidsbeproeving zonder lekkage",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Afvoeren en leidingen vrij en schoon",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "Gasinstallatie",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Leidingtracé en materialen volgens ontwerp",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Afstand tot elektrapunten",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Dichtheidsbeproeving door een erkend installateur, met rapport bijgevoegd",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Markering en aanduiding",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "Wastafelblad, sanitair en kranen",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Bevestiging en waterpas",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Sifon correct aangesloten",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Geen lekkage",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Kitwerk en afwerking",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Schoongemaakt",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "Kwaliteitscontroleformulier",
+  "checklistPdfModelo": "Sjabloon",
+  "checklistPdfObra": "Project",
+  "checklistPdfLocal": "Locatie",
+  "checklistPdfEtapa": "Fase",
+  "checklistPdfDataDaInspecao": "Controledatum",
+  "checklistPdfAplicadoPor": "Gecontroleerd door",
+  "checklistPdfColunaNumero": "Nr.",
+  "checklistPdfColunaItem": "Controlepunt",
+  "checklistPdfColunaResultado": "Resultaat",
+  "checklistPdfColunaObservacao": "Opmerking en foto's",
+  "checklistRespostaConforme": "Akkoord",
+  "checklistRespostaNaoConforme": "Niet akkoord",
+  "checklistRespostaNaoSeAplica": "Niet van toepassing",
+  "checklistSecaoAntes": "Voor de start",
+  "checklistSecaoDurante": "Tijdens de uitvoering",
+  "checklistSecaoConclusao": "Bij afronding",
+  "checklistItemCritico": "Kritiek punt",
+  "checklistFotoObrigatoria": "Foto verplicht",
+  "checklistPdfNaoConformidades": "Afwijkingen",
+  "checklistPdfOQueEstaErrado": "Afwijking: {texto}",
+  "checklistPdfAcaoCorretiva": "Corrigerende maatregel: {acao} (verantwoordelijk: {responsavel}; termijn: {prazo})",
+  "checklistPdfReinspecao": "{numero}e hercontrole op {quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "Vrijgave",
+  "checklistPdfLiberadoSemRessalvas": "Werk zonder voorbehoud vrijgegeven.",
+  "checklistPdfLiberadoComRessalvas": "Werk onder voorbehoud vrijgegeven.",
+  "checklistPdfNaoLiberado": "Niet vrijgegeven",
+  "checklistPdfRessalvas": "Voorbehoud: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "Dagrapport - details",
+  "pdfRdoDateClient": "Datum: {date} | klant: {client}",
+  "rdoFormWeatherTitle": "Weersomstandigheden",
+  "weatherSunny": "Zonnig",
+  "weatherCloudy": "Bewolkt",
+  "weatherRainy": "Regenachtig",
+  "weatherShowers": "Buien",
+  "weatherVariable": "Wisselend",
+  "pdfRdoPhysicalProgress": "Fysieke voortgang: {progress}%",
+  "pdfRdoWorkforceTitle": "Bezetting op de bouwplaats",
+  "pdfRdoColName": "Naam",
+  "pdfRdoColRole": "Functie",
+  "pdfRdoColPresence": "Aanwezigheid",
+  "pdfRdoPresenceFull": "Hele dag",
+  "pdfRdoPresenceHalf": "Halve dag",
+  "rdoFormLaborAbsent": "Afwezig",
+  "rdoFormLaborExtraTitle": "Losse krachten",
+  "rdoFormLaborHoursWorked": "Gewerkte uren",
+  "pdfRdoActivitiesTitle": "Uitgevoerde werkzaamheden",
+  "rdoFormObsTitle": "Opmerkingen / incidenten",
+  "pdfRdoPhotosTitle": "Fotoverslag",
+  "rdoFormSignatureTitle": "Technisch verantwoordelijke",
+  "pdfPage": "Pagina",
+  "pdfOf": "van"
+ }
+}

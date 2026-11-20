@@ -18,6 +18,8 @@ function completar(entrada, porCodigo) {
         ...entrada,
         base: entrada.base ?? null,
         direcao: entrada.direcao ?? base?.direcao ?? 'ltr',
+        // Papel dos PDFs dos modelos grátis: não vem da base (en-GB e en-AU imprimem em A4; en-US e en-CA em Carta).
+        papel: entrada.papel ?? 'a4',
         regioes: entrada.regioes ?? [],
         prefixo: entrada.codigo.toLowerCase(),
         rotas: {
@@ -29,6 +31,8 @@ function completar(entrada, porCodigo) {
             compras: { ...(rotasBase.compras ?? {}), ...(rotas.compras ?? {}) },
             perfil: rotas.perfil ?? rotasBase.perfil,
             suporte: rotas.suporte ?? rotasBase.suporte,
+            modelos: rotas.modelos ?? rotasBase.modelos,
+            diario: rotas.diario ?? rotasBase.diario,
             secoes: { ...(rotasBase.secoes ?? {}), ...(rotas.secoes ?? {}) },
         },
     };
@@ -141,6 +145,17 @@ export function caminhoSuporte(codigo) {
     return `/${i.prefixo}/${i.rotas.suporte}`;
 }
 
+// Modelos grátis (checklists de qualidade e diário de obra, src/modelos/): a página com todos e a de cada modelo.
+// slug: o nome do modelo no idioma (src/modelos/modelos.js) ou, no diário de obra, a palavra rotas.diario.
+export function caminhoModelos(codigo) {
+    const i = idioma(codigo) ?? idioma(REFERENCIA);
+    return `/${i.prefixo}/${i.rotas.modelos}`;
+}
+
+export function caminhoModelo(codigo, slug) {
+    return `${caminhoModelos(codigo)}/${slug}`;
+}
+
 // Endereços que o WordPress usava (e que estão nas lojas de aplicativos): continuam valendo.
 const LEGAIS_ANTIGOS = { 'termos-de-uso': 'termos', 'politicas-de-privacidade': 'privacidade' };
 
@@ -205,6 +220,8 @@ const PALAVRAS_LEGAIS = new Map(IDIOMAS.flatMap((i) => DOCUMENTOS_LEGAIS.map((d)
 const PALAVRAS_ASSUNTO = new Set(IDIOMAS.map((i) => i.rotas.assunto.toLowerCase()));
 // Palavra do endereço (de qualquer idioma) → página de conta (pagamento, perfil, suporte) e compra.
 const PALAVRAS_CONTA = new Map(IDIOMAS.flatMap((i) => ['pagamento', 'perfil', 'suporte'].map((p) => [i.rotas[p].toLowerCase(), p])));
+const PALAVRAS_MODELOS = new Set(IDIOMAS.map((i) => i.rotas.modelos.toLowerCase()));
+const PALAVRAS_DIARIO = new Set(IDIOMAS.map((i) => i.rotas.diario.toLowerCase()));
 const PALAVRAS_COMPRA = new Map(IDIOMAS.flatMap((i) => COMPRAS.map((c) => [i.rotas.compras[c].toLowerCase(), c])));
 
 // Lê um endereço do site. Resultado:
@@ -214,7 +231,8 @@ const PALAVRAS_COMPRA = new Map(IDIOMAS.flatMap((i) => COMPRAS.map((c) => [i.rot
 //   { tipo: 'antigo', codigo: null, pagina: 'pagamento' (com compra) | 'perfil' | 'suporte' } → PAGINAS_ANTIGAS
 //   { tipo: 'pagina', codigo, pagina, modulo, slug, canonico }
 //       pagina: inicio | ajuda | assunto | artigo | legal (com documento) | pagamento (com compra, ou null)
-//               | perfil | suporte | nao-encontrado
+//               | perfil | suporte | modelos | modelo (com slug: o nome do modelo, ou rotas.diario no diário de obra)
+//               | nao-encontrado
 //       canonico: endereço certo quando o pedido veio com outra grafia (/PT-BR/help → /pt-br/ajuda)
 //   { tipo: 'desconhecido' }
 export function analisarCaminho(pathname) {
@@ -273,6 +291,17 @@ export function analisarCaminho(pathname) {
         if (resto.length !== 1) return pagina({ pagina: 'nao-encontrado' }, null);
         const certo = conta === 'perfil' ? caminhoPerfil(i.codigo) : caminhoSuporte(i.codigo);
         return pagina({ pagina: conta }, prefixoErrado || resto[0] !== r[conta] ? certo : null);
+    }
+    if (PALAVRAS_MODELOS.has(palavra)) {
+        const modelosErrado = prefixoErrado || resto[0] !== r.modelos;
+        if (resto.length === 1) return pagina({ pagina: 'modelos' }, modelosErrado ? caminhoModelos(i.codigo) : null);
+        if (resto.length !== 2) return pagina({ pagina: 'nao-encontrado' }, null);
+        // O diário de obra tem a palavra do cadastro: a de outro idioma leva à deste.
+        if (PALAVRAS_DIARIO.has(resto[1].toLowerCase())) {
+            const errado = modelosErrado || resto[1] !== r.diario;
+            return pagina({ pagina: 'modelo', slug: r.diario }, errado ? caminhoModelo(i.codigo, r.diario) : null);
+        }
+        return pagina({ pagina: 'modelo', slug: resto[1] }, modelosErrado ? caminhoModelo(i.codigo, resto[1]) : null);
     }
     if (!PALAVRAS_AJUDA.has(palavra)) return pagina({ pagina: 'nao-encontrado' }, null);
     const ajudaErrada = prefixoErrado || resto[0] !== r.ajuda;

@@ -1,0 +1,1210 @@
+{
+ "idioma": "el-GR",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "27 εργασίες κατασκευής που συνήθως ελέγχονται στο εργοτάξιο. Τα σημεία ελέγχου είναι παραδείγματα που η εταιρεία σας ελέγχει και προσαρμόζει: δεν αντικαθιστούν τον επιβλέποντα μηχανικό του έργου.",
+  "criterio": "Σύμφωνα με τη μελέτη, τις τεχνικές προδιαγραφές και τις οδηγίες του κατασκευαστή",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "Προκαταρκτικές εργασίες"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "Θεμελιώσεις"
+   },
+   {
+    "id": "estrutura",
+    "nome": "Φέρων οργανισμός"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "Τοιχοποιίες"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "Επιχρίσματα και επενδύσεις"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "Δάπεδα και ψευδοροφές"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "Στεγανοποιήσεις"
+   },
+   {
+    "id": "cobertura",
+    "nome": "Στέγες"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "Κουφώματα και κιγκλιδώματα"
+   },
+   {
+    "id": "pintura",
+    "nome": "Χρωματισμοί"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "Η/Μ εγκαταστάσεις"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "Συμπύκνωση επιχώσεων",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Επιφάνεια καθαρή, χωρίς μπάζα και οργανικά υλικά",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Υλικό επίχωσης σύμφωνα με τη μελέτη",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Διάστρωση και συμπύκνωση κατά στρώσεις σύμφωνα με τη διαδικασία",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Τελική στάθμη ελεγμένη με τη μελέτη",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Δοκιμή συμπύκνωσης όπου την απαιτεί η μελέτη, με συνημμένη έκθεση αποτελεσμάτων",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "Χάραξη έργου",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Αθροιστικές διαστάσεις ελεγμένες με τη μελέτη",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Ορθογωνισμός γωνιών ελεγμένος",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Καβαλέτα χάραξης και σημεία αναφοράς σταθερά",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Υψόμετρα αναφοράς ελεγμένα",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "Κατασκευή θεμελίωσης",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Χάραξη στοιχείων θεμελίωσης ελεγμένη",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Διαστάσεις και βάθος σύμφωνα με τη μελέτη",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Περιμετρικός ξυλότυπος ευθυγραμμισμένος (γενική κοιτόστρωση)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Τάφροι δικτύων επιχωμένες και επανασυμπυκνωμένες",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Οπλισμός και σκυροδέτηση εγκεκριμένα με το δικό τους φύλλο ελέγχου",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "Κατασκευή ξυλοτύπου",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Ευθυγράμμιση, ορθογωνισμός και κατακορυφότητα ελεγμένα σε όλους τους χώρους",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Οδηγοί ευθυγράμμισης, ντίζες και υποστυλώσεις στη θέση τους",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Ανοίγματα θυρών και παραθύρων ελεγμένα",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Ξυλότυπος καθαρός και στεγανός πριν από τη σκυροδέτηση",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "Τοποθέτηση οπλισμού",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Θέση και πλήθος ράβδων σύμφωνα με τη μελέτη",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Αποστατήρες στη θέση τους (επικάλυψη οπλισμού)",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Αναμονές οπλισμού στη θέση τους",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Οπλισμός καθαρός και δεμένος",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "Σκυροδέτηση φέροντος στοιχείου",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Ξυλότυπος και οπλισμός εγκεκριμένοι",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Ηλεκτρολογικές σωληνώσεις και κουτιά στερεωμένα πριν από τη σκυροδέτηση",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Δοκιμή κάθισης (slump) σε κάθε μπετονιέρα κατά την άφιξη",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Δελτίο αποστολής σκυροδέματος σύμφωνο με την παραγγελία",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Συμπύκνωση σκυροδέματος με δονητή",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Έναρξη συντήρησης σκυροδέματος σύμφωνα με τη διαδικασία",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "Φέρουσα τοιχοποιία",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Χάραξη ελεγμένη: διαστάσεις, ορθογωνισμός και ανοίγματα",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Λιθοσώματα σύμφωνα με τις προδιαγραφές",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Κατακορυφότητα, οριζοντιότητα και ευθυγράμμιση",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Ενέματα και οπλισμοί στα σημεία της μελέτης",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Καθαριότητα, χωρίς μπάζα",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "Μη φέρουσα τοιχοποιία και ελαφρά χωρίσματα",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Χάραξη ελεγμένη",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Κατακορυφότητα, οριζοντιότητα και ευθυγράμμιση",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Ανοίγματα θυρών και παραθύρων ελεγμένα",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Σφήνωση ή στερέωση στο άνω μέρος",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Καθαριότητα, χωρίς μπάζα",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "Εσωτερικά επιχρίσματα ξηρών χώρων",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Υπόστρωμα καθαρό και προετοιμασμένο",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Κονίαμα σύμφωνα με τη διαδικασία",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Εξομάλυνση και τελείωμα επιφάνειας",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Κατακορυφότητα και ορθογωνισμός",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Καθαριότητα",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "Εσωτερικές επενδύσεις υγρών χώρων",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Επιπεδότητα, ευθυγράμμιση και πρόσφυση",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Χωρίς κούφια πλακίδια (κούφιος ήχος στο χτύπημα)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Αρμόστοκος χωρίς κενά και λεκέδες",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Χωρίς σπασμένα πλακίδια",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Κλίση προς το σιφώνι",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "Εξωτερικά επιχρίσματα και επενδύσεις",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Υπόστρωμα καθαρό και προετοιμασμένο",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Κατακορυφότητα και επιπεδότητα",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Αρμοί σύμφωνα με τη μελέτη",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Χωρίς κούφιο ήχο στο χτύπημα",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Τελείωμα και καθαριότητα",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "Υπόστρωμα δαπέδου (γέμισμα)",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Βάση καθαρή",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Στάθμη και κλίσεις σύμφωνα με τη μελέτη",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Πάχος σύμφωνα με τη μελέτη",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Επιφάνεια χωρίς ρωγμές",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "Εσωτερικά δάπεδα ξηρών χώρων",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Επιπεδότητα, ευθυγράμμιση και πρόσφυση",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Χωρίς κούφια πλακίδια (κούφιος ήχος στο χτύπημα)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Αρμόστοκος χωρίς κενά και λεκέδες",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Χωρίς σπασμένα πλακίδια",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "Εσωτερικά δάπεδα υγρών χώρων",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Επιπεδότητα, ευθυγράμμιση και πρόσφυση",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Χωρίς κούφια πλακίδια (κούφιος ήχος στο χτύπημα)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Αρμόστοκος χωρίς κενά και λεκέδες",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Χωρίς σπασμένα πλακίδια",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Κλίση προς το σιφώνι",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "Εξωτερικά δάπεδα",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Κλίση και απορροή νερού",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Επιπεδότητα",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Αρμοί",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Χωρίς σπασμένα πλακίδια",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "Ψευδοροφή",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Επιπεδότητα και οριζοντίωση",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Ηλεκτρολογικά σημεία χωρίς να έχουν καλυφθεί",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Χωρίς τρύπες ή σπασίματα",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Θυρίδες επίσκεψης σύμφωνα με τη μελέτη",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "Στεγανοποίηση",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Υπόστρωμα χωρίς ενεργές ρωγμές, με έτοιμες γωνίες και υποβιβασμούς",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Εξομαλυντική στρώση με κλίσεις και στρογγυλεμένες γωνίες",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Υλικό σύμφωνα με τις τεχνικές προδιαγραφές και τη σύμβαση",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Επικαλύψεις, ανύψωση στα τοιχώματα και τελειώματα στα σιφώνια σύμφωνα με τη μελέτη και τον κατασκευαστή",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Δοκιμή στεγανότητας με κατάκλυση νερού για τον χρόνο της μελέτης",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Μηχανική προστασία",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Καθαριότητα",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "Στέγη (φέρουσα κατασκευή και επικάλυψη)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Φέρουσα κατασκευή σύμφωνα με τη μελέτη",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Στερέωση και αγκύρωση",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Κλίση σύμφωνα με τον κατασκευαστή των κεραμιδιών",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Επικάλυψη και ευθυγράμμιση των κεραμιδιών",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Λαμαρίνες στεγάνωσης και υδρορροές",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "Κάσα και πόρτα",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Κάσα αλφαδιασμένη κατακόρυφα",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Μεντεσέδες ευθυγραμμισμένοι",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Η πόρτα ανοίγει και κλείνει χωρίς να κολλάει",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Κλειδαριά, ροζέτες και εξαρτήματα τοποθετημένα",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "Περβάζια χωρίς ελαττώματα",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "Παράθυρο",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Διαστάσεις συμβατές με το άνοιγμα",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Σφράγιση στην περίμετρο",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Κάσα χωρίς βαθουλώματα",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Ανοίγει, κλείνει και κλειδώνει",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Χωρίς εισροή νερού (δοκιμή με νερό)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "Κιγκλίδωμα",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Ύψος και αποστάσεις σύμφωνα με τη μελέτη",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Σταθερή στερέωση",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Τελείωμα χωρίς αιχμηρές ακμές",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "Εσωτερικοί χρωματισμοί",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Υπόστρωμα καθαρό, στεγνό και προετοιμασμένο",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Αριθμός στρώσεων σύμφωνα με τις προδιαγραφές",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Ομοιόμορφη κάλυψη, χωρίς λεκέδες και τρεξίματα",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Καθαρισμός δαπέδων και κουφωμάτων",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "Εξωτερικοί χρωματισμοί",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Υπόστρωμα καθαρό, στεγνό και προετοιμασμένο",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Κατάλληλες συνθήκες εφαρμογής σύμφωνα με τον κατασκευαστή",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Αριθμός στρώσεων σύμφωνα με τις προδιαγραφές",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Ομοιόμορφη κάλυψη, χωρίς λεκέδες και τρεξίματα",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Καθαρισμός δαπέδων και κουφωμάτων",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "Ηλεκτρολογική εγκατάσταση",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Κουτιά στις θέσεις της μελέτης",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Σωληνώσεις σύμφωνα με τη μελέτη και στερεωμένες",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Κουτιά και σωληνώσεις χωρίς κονίαμα",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Κουτιά σε απόσταση από σημεία αερίου",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Χρώματα αγωγών σύμφωνα με τη μελέτη",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Κυκλώματα σημασμένα στον πίνακα",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Πρίζες, διακόπτες και πλαίσια τοποθετημένα",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "Ύδρευση και αποχέτευση",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Θέση και στήριξη σύμφωνα με τη μελέτη",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Κατακόρυφες στήλες: διάμετρος, ευθυγράμμιση και στήριξη",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Διακόπτες νερού: ευθυγράμμιση, στάθμη και προστασία",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Σημεία σφραγισμένα (τάπες)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Δοκιμή στεγανότητας χωρίς διαρροές",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Σιφώνια και σωλήνες ελεύθερα και καθαρά",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "Εγκατάσταση αερίου",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Όδευση και υλικά σύμφωνα με τη μελέτη",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Απόσταση από ηλεκτρολογικά σημεία",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Δοκιμή στεγανότητας από αδειούχο τεχνικό, με συνημμένο το πρακτικό της δοκιμής",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Σήμανση και επισήμανση",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "Πάγκος, είδη υγιεινής και μπαταρίες",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Στερέωση και οριζοντίωση",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Σωστή σύνδεση σιφωνιού",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Χωρίς διαρροές",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Σφράγιση και τελείωμα",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Καθαριότητα",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "Φύλλο ελέγχου ποιότητας εργασίας",
+  "checklistPdfModelo": "Πρότυπο",
+  "checklistPdfObra": "Έργο",
+  "checklistPdfLocal": "Θέση",
+  "checklistPdfEtapa": "Φάση",
+  "checklistPdfDataDaInspecao": "Ημερομηνία ελέγχου",
+  "checklistPdfAplicadoPor": "Ελεγκτής",
+  "checklistPdfColunaNumero": "Α/Α",
+  "checklistPdfColunaItem": "Σημείο ελέγχου",
+  "checklistPdfColunaResultado": "Αποτέλεσμα",
+  "checklistPdfColunaObservacao": "Παρατήρηση και φωτογραφίες",
+  "checklistRespostaConforme": "Σύμφωνο",
+  "checklistRespostaNaoConforme": "Μη σύμφωνο",
+  "checklistRespostaNaoSeAplica": "Δεν εφαρμόζεται",
+  "checklistSecaoAntes": "Πριν από την έναρξη",
+  "checklistSecaoDurante": "Κατά την εκτέλεση",
+  "checklistSecaoConclusao": "Κατά την ολοκλήρωση",
+  "checklistItemCritico": "Κρίσιμο σημείο",
+  "checklistFotoObrigatoria": "Υποχρεωτική φωτογραφία",
+  "checklistPdfNaoConformidades": "Μη συμμορφώσεις",
+  "checklistPdfOQueEstaErrado": "Τι βρέθηκε λάθος: {texto}",
+  "checklistPdfAcaoCorretiva": "Διορθωτική ενέργεια: {acao} (υπεύθυνος: {responsavel}, προθεσμία: {prazo})",
+  "checklistPdfReinspecao": "{numero}ος επανέλεγχος στις {quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "Έγκριση",
+  "checklistPdfLiberadoSemRessalvas": "Η εργασία εγκρίθηκε χωρίς επιφυλάξεις.",
+  "checklistPdfLiberadoComRessalvas": "Η εργασία εγκρίθηκε με επιφυλάξεις.",
+  "checklistPdfNaoLiberado": "Δεν έχει εγκριθεί",
+  "checklistPdfRessalvas": "Επιφυλάξεις: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "Ημερήσια αναφορά - λεπτομέρειες",
+  "pdfRdoDateClient": "Ημερομηνία: {date} | πελάτης: {client}",
+  "rdoFormWeatherTitle": "Καιρικές συνθήκες",
+  "weatherSunny": "Ηλιοφάνεια",
+  "weatherCloudy": "Συννεφιά",
+  "weatherRainy": "Βροχή",
+  "weatherShowers": "Μπόρες",
+  "weatherVariable": "Άστατος",
+  "pdfRdoPhysicalProgress": "Φυσική πρόοδος: {progress}%",
+  "pdfRdoWorkforceTitle": "Προσωπικό στο εργοτάξιο",
+  "pdfRdoColName": "Όνομα",
+  "pdfRdoColRole": "Ειδικότητα",
+  "pdfRdoColPresence": "Παρουσία",
+  "pdfRdoPresenceFull": "Πλήρης ημέρα",
+  "pdfRdoPresenceHalf": "Μισή ημέρα",
+  "rdoFormLaborAbsent": "Απουσία",
+  "rdoFormLaborExtraTitle": "Έκτακτο προσωπικό",
+  "rdoFormLaborHoursWorked": "Ώρες εργασίας",
+  "pdfRdoActivitiesTitle": "Εργασίες που εκτελέστηκαν",
+  "rdoFormObsTitle": "Παρατηρήσεις / συμβάντα",
+  "pdfRdoPhotosTitle": "Φωτογραφική τεκμηρίωση",
+  "rdoFormSignatureTitle": "Επιβλέπων μηχανικός",
+  "pdfPage": "Σελίδα",
+  "pdfOf": "από"
+ }
+}

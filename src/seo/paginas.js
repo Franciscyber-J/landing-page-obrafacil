@@ -7,10 +7,12 @@
 //   pagamento  + compra (null = texto geral)
 //   assunto    + modulo (o módulo do índice da Central, com "nomes" em todos os idiomas)
 //   artigo     + artigo ({ id, slugs: { <idioma dos artigos>: slug } })
+//   modelos    (a página com todos os modelos grátis)
+//   modelo     + modelo ({ id, slugs: { <idioma do site>: slug } }: um checklist ou o diário de obra, src/modelos)
 
 import {
     IDIOMAS, INTERNACIONAL, caminhoAjuda, caminhoArtigo, caminhoAssunto, caminhoInicio, caminhoLegal,
-    caminhoPagamento, caminhoPerfil, caminhoSuporte,
+    caminhoModelo, caminhoModelos, caminhoPagamento, caminhoPerfil, caminhoSuporte,
 } from '../i18n/idiomas.js';
 import { idiomaDoConteudo } from '../ajuda/idiomas.js';
 import { slugDoModulo } from '../ajuda/enderecos.js';
@@ -43,6 +45,11 @@ export function caminhoDaPagina(pagina, codigo = pagina.codigo) {
         case 'artigo': {
             const slug = pagina.artigo.slugs?.[idiomaDoConteudo(codigo)];
             return slug ? caminhoArtigo(codigo, slug) : null;
+        }
+        case 'modelos': return caminhoModelos(codigo);
+        case 'modelo': {
+            const slug = pagina.modelo.slugs?.[codigo];
+            return slug ? caminhoModelo(codigo, slug) : null;
         }
         default: throw new Error(`Tipo de página desconhecido: ${pagina.tipo}`);
     }

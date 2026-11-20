@@ -1,0 +1,1210 @@
+{
+ "idioma": "hi-IN",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "निर्माण के 27 ऐसे काम जिनकी साइट पर आमतौर पर जांच होती है। आइटम सिर्फ़ उदाहरण हैं: आपकी कंपनी इन्हें जांचकर अपने काम के हिसाब से बदल सकती है। ये प्रोजेक्ट के ज़िम्मेदार इंजीनियर की जगह नहीं लेते।",
+  "criterio": "ड्रॉइंग, स्पेसिफ़िकेशन और निर्माता के निर्देशों के अनुसार",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "शुरुआती काम"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "नींव"
+   },
+   {
+    "id": "estrutura",
+    "nome": "स्ट्रक्चर"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "चिनाई और पार्टिशन"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "प्लास्टर और दीवार फ़िनिश"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "फ़्लोरिंग और सीलिंग"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "वॉटरप्रूफ़िंग"
+   },
+   {
+    "id": "cobertura",
+    "nome": "छत"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "दरवाज़े, खिड़कियां और रेलिंग"
+   },
+   {
+    "id": "pintura",
+    "nome": "पेंटिंग"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "बिजली, प्लंबिंग और गैस"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "भराव की कुटाई (कॉम्पैक्शन)",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "जगह साफ़, मलबा और जैविक पदार्थ (घास, जड़ें) नहीं",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "भराव की सामग्री ड्रॉइंग के अनुसार",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "तय प्रक्रिया के अनुसार परतों में भराई और कुटाई",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "फ़ाइनल लेवल ड्रॉइंग से मिलाया गया",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ड्रॉइंग में मांगा गया हो तो कॉम्पैक्शन टेस्ट, रिपोर्ट अटैच",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "साइट ले-आउट (मार्किंग)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "शुरुआती बिंदु से लगातार ली गई नाप ड्रॉइंग से मिलाई गई",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "कोनों का गुनिया जांचा गया",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "प्रोफ़ाइल बोर्ड, बुर्जी और रेफ़रेंस खूंटे मज़बूती से लगे",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "रेफ़रेंस लेवल (बेंचमार्क) जांचे गए",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "नींव का काम",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "फ़ुटिंग और पाइल की जगह जांची गई",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "नाप और गहराई ड्रॉइंग के अनुसार",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "राफ़्ट के किनारे की शटरिंग सीध में",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "पाइप और केबल की खाइयां दोबारा भरी गईं और कुटाई की गई",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "सरिया और कंक्रीटिंग अपनी अलग चेकलिस्ट से पास",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "शटरिंग का काम",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "सभी कमरों में सीध, गुनिया और साहुल जांचे गए",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "सीध की पट्टियां, टाई रॉड और प्रॉप अपनी जगह",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "दरवाज़ों और खिड़कियों की ओपनिंग जांची गई",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "कंक्रीटिंग से पहले शटरिंग साफ़ और जोड़ बंद",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "सरिया बांधने का काम",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "सरियों की जगह और संख्या ड्रॉइंग के अनुसार",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "कवर ब्लॉक अपनी जगह लगे (कंक्रीट कवर)",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "स्टार्टर बार और आगे जोड़ने के लिए छोड़े गए सरिए अपनी जगह",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "सरिया साफ़ और बाइंडिंग वायर से अच्छी तरह बंधा",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "स्ट्रक्चरल हिस्से की कंक्रीटिंग (ढलाई)",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "शटरिंग और सरिया का काम पास",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "कंक्रीटिंग से पहले कंड्यूट और बॉक्स पक्के बंधे",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "हर ट्रांजिट मिक्सर के आने पर स्लंप टेस्ट",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "कंक्रीट का डिलीवरी चालान ऑर्डर के अनुसार",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "वाइब्रेटर से कंक्रीट का कॉम्पैक्शन किया गया",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "तय प्रक्रिया के अनुसार क्योरिंग शुरू",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "लोड-बेयरिंग चिनाई",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "मार्किंग जांची गई: नाप, गुनिया और ओपनिंग",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ब्लॉक स्पेसिफ़िकेशन के अनुसार",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "साहुल, लेवल और सीध",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "ड्रॉइंग में बताई जगहों पर ग्राउट और सरिया",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "सफ़ाई, मलबा नहीं",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "नॉन-लोड-बेयरिंग चिनाई और हल्की पार्टिशन",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "मार्किंग जांची गई",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "साहुल, लेवल और सीध",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "दरवाज़ों और खिड़कियों की ओपनिंग जांची गई",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "दीवार के ऊपर बीम या स्लैब तक भराई या फ़िक्सिंग",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "सफ़ाई, मलबा नहीं",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "सूखे हिस्सों में अंदरूनी प्लास्टर",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "सतह साफ़ और तैयार",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "मसाला तय प्रक्रिया के अनुसार",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "सतह बराबर और फ़िनिश ठीक",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "साहुल और गुनिया",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "सफ़ाई",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "गीले हिस्सों में दीवार की टाइलिंग",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "समतलता, सीध और पकड़",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "कोई खोखली टाइल नहीं (ठोकने पर खोखली आवाज़)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "जोड़ों की भराई (ग्राउट) में कमी या दाग नहीं",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "कोई टूटी टाइल नहीं",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "फ़्लोर ट्रैप की ओर ढलान",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "बाहरी दीवार की फ़िनिश",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "सतह साफ़ और तैयार",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "साहुल और समतलता",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "जोड़ और ग्रूव ड्रॉइंग के अनुसार",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ठोकने पर कहीं खोखली आवाज़ नहीं",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "फ़िनिश और सफ़ाई",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "फ़र्श का स्क्रीड (बेस लेयर)",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "नीचे की सतह साफ़",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "लेवल और ढलान ड्रॉइंग के अनुसार",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "मोटाई ड्रॉइंग के अनुसार",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "सतह पर दरारें नहीं",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "सूखे हिस्सों में अंदरूनी फ़्लोरिंग",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "समतलता, सीध और पकड़",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "कोई खोखली टाइल नहीं (ठोकने पर खोखली आवाज़)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "जोड़ों की भराई (ग्राउट) में कमी या दाग नहीं",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "कोई टूटी टाइल नहीं",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "गीले हिस्सों में अंदरूनी फ़्लोरिंग",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "समतलता, सीध और पकड़",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "कोई खोखली टाइल नहीं (ठोकने पर खोखली आवाज़)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "जोड़ों की भराई (ग्राउट) में कमी या दाग नहीं",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "कोई टूटी टाइल नहीं",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "फ़्लोर ट्रैप की ओर ढलान",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "बाहरी फ़्लोरिंग",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ढलान और पानी की निकासी",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "समतलता",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "जोड़",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "कोई टूटा पीस नहीं",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "फ़ॉल्स सीलिंग",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "समतलता और लेवल",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "बिजली के पॉइंट ढके नहीं",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "कोई छेद या टूट-फूट नहीं",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "एक्सेस पैनल और ओपनिंग ड्रॉइंग के अनुसार",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "वॉटरप्रूफ़िंग",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "सतह पर बढ़ती दरारें नहीं, कोने और सनकन हिस्से तैयार",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "ढलान के साथ सतह बराबर और कोनों पर गोलाई (कोविंग)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "सामग्री स्पेसिफ़िकेशन और कॉन्ट्रैक्ट के अनुसार",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ओवरलैप, दीवार पर ऊपर तक मोड़ और नालियों के पास फ़िनिशिंग ड्रॉइंग और निर्माता के अनुसार",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "पॉन्डिंग टेस्ट (ड्रॉइंग में बताए समय तक पानी भरकर)",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ऊपर सुरक्षा परत (प्रोटेक्शन स्क्रीड)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "सफ़ाई",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "ढलान वाली छत (ढांचा और शीट या टाइल)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ढांचा ड्रॉइंग के अनुसार",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "फ़िक्सिंग और एंकरिंग",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "ढलान शीट या टाइल के निर्माता के अनुसार",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "शीट या टाइल का ओवरलैप और सीध",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "फ़्लैशिंग और गटर",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "चौखट और दरवाज़ा",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "चौखट साहुल में",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "कब्ज़े और हार्डवेयर सीध में",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "दरवाज़ा बिना अटके खुलता और बंद होता है",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "ताला, प्लेट और बाकी फ़िटिंग लगी",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "आर्किट्रेव में कोई खराबी नहीं",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "खिड़की",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "नाप ओपनिंग से मेल खाता है",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "फ़्रेम के चारों तरफ़ सीलेंट",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "फ़्रेम में कोई डेंट नहीं",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "खुलती, बंद होती और लॉक होती है",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "पानी अंदर नहीं आता (पानी डालकर टेस्ट)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "रेलिंग",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ऊंचाई और गैप ड्रॉइंग के अनुसार",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "मज़बूत फ़िक्सिंग",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "फ़िनिश में कोई नुकीला किनारा नहीं",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "अंदरूनी पेंटिंग",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "सतह साफ़, सूखी और तैयार",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "कोट की संख्या स्पेसिफ़िकेशन के अनुसार",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "रंग एक जैसा, कोई धब्बा या बहाव नहीं",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "फ़र्श, दरवाज़ों और खिड़कियों की सफ़ाई",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "बाहरी पेंटिंग",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "सतह साफ़, सूखी और तैयार",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "निर्माता के अनुसार पेंट करने लायक मौसम",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "कोट की संख्या स्पेसिफ़िकेशन के अनुसार",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "रंग एक जैसा, कोई धब्बा या बहाव नहीं",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "फ़र्श, दरवाज़ों और खिड़कियों की सफ़ाई",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "इलेक्ट्रिकल का काम",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "स्विच और सॉकेट बॉक्स ड्रॉइंग वाली जगह पर",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "कंड्यूट ड्रॉइंग के अनुसार और ठीक से बंधे",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "बॉक्स और कंड्यूट में मसाला नहीं भरा",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "बिजली का बॉक्स गैस पॉइंट से दूर",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "तारों के रंग ड्रॉइंग के अनुसार",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "DB में हर सर्किट पर लेबल",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "सॉकेट, स्विच और कवर प्लेट लगे",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "प्लंबिंग और सैनिटरी का काम",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "पाइप की जगह और फ़िक्सिंग ड्रॉइंग के अनुसार",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "वर्टिकल पाइप लाइन: साइज़, सीध और फ़िक्सिंग",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "वाल्व: सीध, लेवल और सुरक्षा",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "खुले पॉइंट बंद (प्लग और कैप)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "प्रेशर टेस्ट में कोई रिसाव नहीं",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "नालियां और पाइप खुले और साफ़",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "गैस पाइपलाइन",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "पाइप का रूट और सामग्री ड्रॉइंग के अनुसार",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "बिजली के पॉइंट से सही दूरी",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "योग्य व्यक्ति से लीकेज टेस्ट, रिकॉर्ड अटैच",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "पाइप पर पहचान और चेतावनी के निशान",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "काउंटर, सैनिटरी वेयर और CP फ़िटिंग",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "फ़िक्सिंग और लेवल",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "बोतल ट्रैप और वेस्ट पाइप का कनेक्शन सही",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "कोई रिसाव नहीं",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "सीलिंग और फ़िनिश",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "सफ़ाई",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "क्वालिटी इंस्पेक्शन चेकलिस्ट",
+  "checklistPdfModelo": "टेम्पलेट",
+  "checklistPdfObra": "प्रोजेक्ट",
+  "checklistPdfLocal": "जगह",
+  "checklistPdfEtapa": "चरण",
+  "checklistPdfDataDaInspecao": "जांच की तारीख",
+  "checklistPdfAplicadoPor": "जांच करने वाले",
+  "checklistPdfColunaNumero": "क्र.सं.",
+  "checklistPdfColunaItem": "आइटम",
+  "checklistPdfColunaResultado": "नतीजा",
+  "checklistPdfColunaObservacao": "टिप्पणी और फ़ोटो",
+  "checklistRespostaConforme": "सही",
+  "checklistRespostaNaoConforme": "सही नहीं",
+  "checklistRespostaNaoSeAplica": "लागू नहीं",
+  "checklistSecaoAntes": "शुरू करने से पहले",
+  "checklistSecaoDurante": "काम के दौरान",
+  "checklistSecaoConclusao": "काम पूरा होने पर",
+  "checklistItemCritico": "अहम आइटम",
+  "checklistFotoObrigatoria": "फ़ोटो ज़रूरी",
+  "checklistPdfNaoConformidades": "कमियां",
+  "checklistPdfOQueEstaErrado": "क्या गलत था: {texto}",
+  "checklistPdfAcaoCorretiva": "सुधार की कार्रवाई: {acao} (ज़िम्मेदार: {responsavel}; समय-सीमा: {prazo})",
+  "checklistPdfReinspecao": "दोबारा जांच {numero}, {quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "मंज़ूरी",
+  "checklistPdfLiberadoSemRessalvas": "काम बिना किसी शर्त के पास।",
+  "checklistPdfLiberadoComRessalvas": "काम शर्तों के साथ पास।",
+  "checklistPdfNaoLiberado": "पास नहीं हुई",
+  "checklistPdfRessalvas": "शर्तें: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "दैनिक रिपोर्ट - विवरण",
+  "pdfRdoDateClient": "तारीख: {date} | क्लाइंट: {client}",
+  "rdoFormWeatherTitle": "मौसम",
+  "weatherSunny": "धूप",
+  "weatherCloudy": "बादल",
+  "weatherRainy": "बारिश",
+  "weatherShowers": "बौछारें",
+  "weatherVariable": "बदलता मौसम",
+  "pdfRdoPhysicalProgress": "भौतिक प्रगति: {progress}%",
+  "pdfRdoWorkforceTitle": "साइट पर मौजूद टीम",
+  "pdfRdoColName": "नाम",
+  "pdfRdoColRole": "काम",
+  "pdfRdoColPresence": "हाज़िरी",
+  "pdfRdoPresenceFull": "पूरा दिन",
+  "pdfRdoPresenceHalf": "आधा दिन",
+  "rdoFormLaborAbsent": "अनुपस्थित",
+  "rdoFormLaborExtraTitle": "अतिरिक्त मज़दूर",
+  "rdoFormLaborHoursWorked": "काम के घंटे",
+  "pdfRdoActivitiesTitle": "किए गए काम",
+  "rdoFormObsTitle": "टिप्पणियां / समस्याएं",
+  "pdfRdoPhotosTitle": "फ़ोटो रिकॉर्ड",
+  "rdoFormSignatureTitle": "तकनीकी ज़िम्मेदार",
+  "pdfPage": "पेज",
+  "pdfOf": "/"
+ }
+}

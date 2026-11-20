@@ -12,6 +12,7 @@ import './index.css'
 import i18n, { textosProntos } from './i18n/config'
 import { cadeia } from './i18n/idiomas.js'
 import { definirDadosIniciais } from './dadosIniciais.js'
+import { carregarDadosDosModelos } from './modelos/carregar.js'
 import { marcarChegadaPronta } from './movimento/index.js'
 import App from './App.jsx'
 
@@ -64,6 +65,8 @@ async function dadosDaPaginaPronta() {
     if (!resposta.ok) throw new Error(`HTTP ${resposta.status}`)
     dados.ajuda = { ...dados.ajuda, indice: await resposta.json() }
   }
+  // Modelos grátis: os dados do idioma (o mesmo arquivo do app copiado para src/modelos/dados) antes de hidratar.
+  if (typeof dados.modelos?.idioma === 'string') await carregarDadosDosModelos(dados.modelos.idioma)
   return dados
 }
 

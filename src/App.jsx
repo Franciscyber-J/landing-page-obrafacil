@@ -9,6 +9,8 @@ import LegalPagina from './components/legal/LegalPagina';
 import PagamentoPagina from './components/conta/PagamentoPagina';
 import PerfilPagina from './components/conta/PerfilPagina';
 import SuportePagina from './components/conta/SuportePagina';
+import ModelosPagina from './components/modelos/ModelosPagina.jsx';
+import ModeloPagina from './components/modelos/ModeloPagina.jsx';
 import Atendimento from './components/atendimento/Atendimento.jsx';
 import AvisoCookies from './components/AvisoCookies';
 import {
@@ -60,6 +62,8 @@ function Pagina({ codigo, lido }) {
   if (lido.pagina === 'pagamento') return <PagamentoPagina codigo={codigo} compra={lido.compra} />;
   if (lido.pagina === 'perfil') return <PerfilPagina codigo={codigo} />;
   if (lido.pagina === 'suporte') return <SuportePagina codigo={codigo} />;
+  if (lido.pagina === 'modelos') return <ModelosPagina key={codigo} codigo={codigo} />;
+  if (lido.pagina === 'modelo') return <ModeloPagina key={`${codigo}:${lido.slug}`} codigo={codigo} slug={lido.slug} />;
   return <AjudaPagina key={codigo} codigo={codigo} tipo={lido.pagina === 'ajuda' ? 'inicio' : lido.pagina} modulo={lido.modulo} slug={lido.slug} />;
 }
 

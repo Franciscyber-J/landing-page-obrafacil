@@ -1,0 +1,780 @@
+/* Modelos grátis (checklists de qualidade e diário de obra). Mesmo mundo do site (DESIGN.md): cabeça em painel azul,
+   luzes do fundo, vidro e cantos arredondados. Na página de cada modelo (leitura), a coluna é calma e o desenho
+   próprio fica nos itens: cada linha é a linha da ficha de papel, com o número e as três caixas das respostas do
+   app (conforme, não conforme, não se aplica). Cores só dos tokens (src/styles/design-tokens.css): claro e escuro.
+   Só lados lógicos (árabe e hebraico espelham sozinhos). */
+
+.pagina {
+  position: relative;
+  overflow-x: clip;
+  margin-top: -90px;
+  padding-top: 90px;
+}
+
+.brilho {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 260px), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 260px), transparent);
+  background:
+    radial-gradient(720px 520px at 100% 12%, var(--luz-azul), transparent 70%),
+    radial-gradient(640px 520px at 0% 70%, var(--luz-laranja), transparent 70%);
+}
+
+.conteudo {
+  position: relative;
+  z-index: 1;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 24px var(--margem) 96px;
+}
+
+/* ── Trilha ─────────────────────────────────────────────────────────────── */
+.trilha ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 8px;
+  margin-bottom: 12px;
+  font-size: 0.875rem;
+  color: var(--texto-2);
+}
+
+.trilha li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.trilha li + li::before {
+  content: '/';
+  opacity: 0.6;
+}
+
+.trilha a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--azul-vivo);
+  font-weight: 600;
+}
+
+.trilha a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.trilha [aria-current='page'] {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Cabeça em painel ───────────────────────────────────────────────────── */
+.cabeca {
+  padding: 44px var(--respiro-painel) 40px;
+  border-radius: var(--raio-xg);
+  color: var(--painel-texto);
+  background:
+    radial-gradient(560px 360px at 100% 0%, rgba(31, 111, 209, 0.5), transparent 70%),
+    radial-gradient(440px 320px at 0% 100%, rgba(242, 138, 31, 0.28), transparent 70%),
+    var(--painel);
+  box-shadow: var(--sombra-forte);
+}
+
+.titulo {
+  max-width: 24ch;
+  font-size: clamp(2rem, 4.6vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  overflow-wrap: anywhere;
+}
+
+.cabecaIndice .titulo {
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  max-width: 16ch;
+}
+
+.resumo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.resumo span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 4px 14px;
+  border-radius: var(--pilula);
+  background: var(--painel-vidro);
+  border: 1px solid var(--painel-linha);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.texto {
+  max-width: 64ch;
+  margin-top: 20px;
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--painel-texto-2);
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--vao-botoes);
+  margin-top: 28px;
+}
+
+/* Botões que podem quebrar a linha (textos longos em alguns idiomas, celular de 360 px). */
+.botao {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.notaPdf {
+  font-size: 0.875rem;
+  color: var(--texto-2);
+}
+
+.notaNoPainel {
+  color: var(--painel-texto-2);
+}
+
+/* ── Coluna de leitura (página do modelo) ───────────────────────────────── */
+.leitura {
+  max-width: 800px;
+  margin: 48px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.bloco {
+  min-width: 0;
+}
+
+.blocoTopo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-bottom: 14px;
+}
+
+.blocoTitulo {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  line-height: 1.1;
+}
+
+.bloco > .blocoTitulo {
+  margin-bottom: 20px;
+}
+
+.legendaRespostas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font-size: 0.875rem;
+  color: var(--texto-2);
+}
+
+.legendaRespostas span,
+.opcao {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.criterio {
+  max-width: 70ch;
+  padding: 14px 18px;
+  border-radius: var(--raio-p);
+  background: var(--fundo-2);
+  color: var(--texto-2);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.criterio strong {
+  color: var(--texto);
+}
+
+.secao {
+  margin-top: 28px;
+}
+
+.secaoTitulo {
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--texto);
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+}
+
+/* Cada item é uma linha da ficha: número, o texto do app e as três caixas das respostas. */
+.itens,
+.campos {
+  display: flex;
+  flex-direction: column;
+}
+
+.item,
+.campo {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  gap: 4px 16px;
+  align-items: start;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--linha);
+}
+
+.campo {
+  grid-template-columns: 36px minmax(0, 1fr);
+}
+
+.itemNumero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--pilula);
+  background: var(--fundo-2);
+  border: 1px solid var(--vidro-borda);
+  font-weight: 800;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.itemCorpo {
+  min-width: 0;
+  padding-top: 4px;
+}
+
+.itemTexto {
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.campo .itemTexto {
+  color: var(--texto-2);
+}
+
+.campoTitulo {
+  margin-bottom: 4px;
+  font-family: var(--fonte-texto);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+.campoForm {
+  overflow-wrap: anywhere;
+}
+
+/* Linha para preencher à mão, como no PDF. */
+.branco {
+  display: inline-block;
+  width: 4.5em;
+  height: 0.9em;
+  margin-inline: 0.25em;
+  border-bottom: 1.5px dashed var(--texto-2);
+  vertical-align: baseline;
+}
+
+.etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.etiqueta,
+.etiquetaCritico {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  padding: 2px 10px;
+  border-radius: var(--pilula);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.etiqueta {
+  color: var(--azul-vivo);
+  background: var(--fundo-2);
+}
+
+.etiquetaCritico {
+  color: var(--laranja-texto);
+  background: rgba(242, 138, 31, 0.14);
+}
+
+.respostas {
+  display: inline-flex;
+  gap: 8px;
+  padding-top: 7px;
+}
+
+.caixa {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--texto-2);
+  border-radius: 5px;
+}
+
+.opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 10px;
+  font-size: 0.9375rem;
+}
+
+/* Como usar no papel */
+.passos {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  counter-reset: passo;
+}
+
+.passos li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.passos p {
+  padding-top: 4px;
+  line-height: 1.6;
+  color: var(--texto-2);
+}
+
+.passoNumero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--pilula);
+  background: var(--laranja);
+  color: var(--sobre-laranja);
+  font-weight: 800;
+  font-size: 0.875rem;
+}
+
+.baixarFim {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+  padding: 24px;
+  border-radius: var(--raio-g);
+  background: var(--vidro);
+  border: 1px solid var(--vidro-borda);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.notaBiblioteca {
+  max-width: 72ch;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--texto-2);
+}
+
+/* ── No ObraFácil (painel azul que leva ao app) ─────────────────────────── */
+.noApp {
+  margin-top: 72px;
+  padding: 44px var(--respiro-painel);
+  border-radius: var(--raio-xg);
+  color: var(--painel-texto);
+  background:
+    radial-gradient(520px 340px at 0% 0%, rgba(242, 138, 31, 0.24), transparent 70%),
+    radial-gradient(560px 360px at 100% 100%, rgba(31, 111, 209, 0.45), transparent 70%),
+    var(--painel);
+  box-shadow: var(--sombra-forte);
+}
+
+.noAppTitulo {
+  max-width: 26ch;
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.noAppLista {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 32px;
+  margin-top: 28px;
+}
+
+.noAppLista li {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  line-height: 1.5;
+}
+
+.noAppMarca {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--pilula);
+  background: var(--laranja);
+  color: var(--sobre-laranja);
+}
+
+.noAppPlanos {
+  max-width: 72ch;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--painel-linha);
+  color: var(--painel-texto-2);
+  line-height: 1.6;
+}
+
+.noAppAcoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin-top: 24px;
+}
+
+.noAppNota {
+  font-size: 0.875rem;
+  color: var(--painel-texto-2);
+}
+
+/* ── Mais modelos ───────────────────────────────────────────────────────── */
+.mais {
+  max-width: 800px;
+  margin: 64px auto 0;
+}
+
+.maisTitulo {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.maisLista {
+  margin-bottom: 24px;
+}
+
+.maisLista li + li {
+  border-top: 1px solid var(--linha);
+}
+
+.maisLista a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 52px;
+  padding: 10px 0;
+  font-weight: 700;
+}
+
+.maisLista a svg {
+  flex-shrink: 0;
+  color: var(--laranja-texto);
+}
+
+.maisLista a:hover {
+  color: var(--azul-vivo);
+}
+
+/* ── Página com todos os modelos ────────────────────────────────────────── */
+.destaqueDiario {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 32px;
+  align-items: center;
+  margin-top: var(--vao-blocos);
+  padding: var(--respiro-cartao-g);
+  border-radius: var(--raio-g);
+  background: var(--vidro);
+  border: 1px solid var(--vidro-borda);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: var(--sombra);
+}
+
+.destaqueTexto {
+  min-width: 0;
+}
+
+.destaqueTexto .notaPdf {
+  margin-top: 14px;
+}
+
+.destaqueIcone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  border-radius: var(--pilula);
+  background: var(--fundo-2);
+  color: var(--laranja-texto);
+}
+
+.destaqueTitulo {
+  font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+  line-height: 1.08;
+}
+
+.destaqueTitulo a:hover {
+  color: var(--azul-vivo);
+}
+
+.destaqueParagrafo {
+  max-width: 60ch;
+  margin-top: 12px;
+  color: var(--texto-2);
+  line-height: 1.6;
+}
+
+/* A folha do diário com os campos reais do app, como a pessoa vai ver no papel. */
+.folha {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 26px 24px;
+  border-radius: var(--raio);
+  background: var(--vidro-forte);
+  border: 1px solid var(--vidro-borda);
+  box-shadow: var(--sombra);
+  rotate: calc(-1.5deg * var(--sentido));
+}
+
+.folhaTitulo {
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--texto);
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.folhaLinha {
+  display: grid;
+  grid-template-columns: auto minmax(24px, 1fr);
+  gap: 10px;
+  align-items: end;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--texto-2);
+}
+
+.folhaRisco {
+  height: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1.5px dashed var(--linha);
+}
+
+.checklists {
+  margin-top: 80px;
+  scroll-margin-top: 110px;
+}
+
+.checklistsTopo {
+  max-width: 760px;
+  margin-bottom: 32px;
+}
+
+.checklistsTitulo {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+}
+
+/* Os grupos do app em duas colunas, cada um com o tamanho da própria lista (como o índice de um manual). */
+.grupos {
+  columns: 2 360px;
+  column-gap: 24px;
+}
+
+.grupo {
+  break-inside: avoid;
+  margin-bottom: 24px;
+  padding: 22px 24px 10px;
+  border-radius: var(--raio-g);
+  background: var(--vidro);
+  border: 1px solid var(--vidro-borda);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.grupoTitulo {
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--texto);
+  font-size: 1.1875rem;
+}
+
+.linha {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.linha + .linha {
+  border-top: 1px solid var(--linha);
+}
+
+.linhaLink {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  min-height: 60px;
+  padding: 10px 0;
+}
+
+.linhaNome {
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.linhaLink:hover .linhaNome {
+  color: var(--azul-vivo);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.linhaConta {
+  margin-top: 2px;
+  font-size: 0.8125rem;
+  color: var(--texto-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.pdfCompacto {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: var(--pilula);
+  border: 1px solid var(--vidro-borda);
+  background: var(--vidro-forte);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: var(--texto);
+  transition: border-color var(--tempo) var(--suave), color var(--tempo) var(--suave);
+}
+
+.pdfCompacto:hover {
+  border-color: var(--laranja);
+  color: var(--laranja-texto);
+}
+
+.checklists > .notaBiblioteca {
+  margin-top: 8px;
+}
+
+/* ── Estados ────────────────────────────────────────────────────────────── */
+.estado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 120px 0;
+  color: var(--texto-2);
+  text-align: center;
+}
+
+.giro {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid var(--linha);
+  border-top-color: var(--laranja);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .giro {
+    animation: girar 0.9s linear infinite;
+  }
+}
+
+@keyframes girar {
+  to { rotate: 360deg; }
+}
+
+/* ── Celular ────────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .destaqueDiario {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .folha {
+    rotate: none;
+  }
+
+  .noAppLista {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .cabeca,
+  .noApp {
+    padding-top: 32px;
+    padding-bottom: 30px;
+    border-radius: var(--raio-g);
+  }
+
+  .leitura {
+    margin-top: 36px;
+    gap: 44px;
+  }
+
+  .item {
+    grid-template-columns: 32px minmax(0, 1fr);
+  }
+
+  /* No celular as caixas das respostas vão para baixo do texto, alinhadas com ele. */
+  .item .respostas {
+    grid-column: 2;
+    padding-top: 2px;
+  }
+
+  .grupo {
+    padding-inline: 18px;
+  }
+
+  .baixarFim {
+    padding: 20px;
+  }
+}

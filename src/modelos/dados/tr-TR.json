@@ -1,0 +1,1210 @@
+{
+ "idioma": "tr-TR",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "Şantiyede genellikle kontrol edilen 27 uygulama işi. Maddeler, firmanızın gözden geçirip kendi işine göre uyarlaması için verilen örneklerdir; şantiye şefinin yerini tutmaz.",
+  "criterio": "Proje, teknik şartname ve üretici talimatlarına uygun",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "Hazırlık işleri"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "Temeller"
+   },
+   {
+    "id": "estrutura",
+    "nome": "Taşıyıcı sistem"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "Duvarlar ve bölmeler"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "Sıva ve kaplamalar"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "Zemin kaplamaları ve asma tavanlar"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "Su yalıtımı"
+   },
+   {
+    "id": "cobertura",
+    "nome": "Çatı"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "Doğrama ve korkuluklar"
+   },
+   {
+    "id": "pintura",
+    "nome": "Boya"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "Tesisat"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "Dolgu sıkıştırma",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Alan temiz, moloz ve organik malzeme yok",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Dolgu malzemesi projeye uygun",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Katmanlar prosedüre göre serilip sıkıştırıldı",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Son kot projeyle karşılaştırılarak kontrol edildi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Projede istendiğinde sıkışma deneyi yapıldı, rapor eklendi",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "Yapı aplikasyonu",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Kümülatif ölçüler projeyle kontrol edildi",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Köşelerin gönyesi kontrol edildi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Kanaviçe ve referans noktaları sağlam",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Referans kotları kontrol edildi",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "Temel imalatı",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Temel elemanlarının aplikasyonu kontrol edildi",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Boyutlar ve derinlik projeye uygun",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Kenar kalıpları hizalı (radye temelde)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Tesisat kanalları geri dolduruldu ve yeniden sıkıştırıldı",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Donatı ve beton dökümü kendi kontrol listeleriyle onaylandı",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "Kalıp imalatı",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Tüm mahallerde hiza, gönye ve şakül kontrol edildi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Kalıp bağları, gergiler ve dikmeler yerinde",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Kapı ve pencere boşlukları kontrol edildi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Kalıp beton dökümünden önce temiz ve sızdırmaz",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "Donatı montajı",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Donatı çubuklarının konumu ve adedi projeye uygun",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Mesafe takozları yerinde (paspayı)",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Filiz donatıları yerinde",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Donatı temiz ve bağlanmış",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "Taşıyıcı eleman beton dökümü",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Kalıp ve donatı onaylandı",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Elektrik boruları ve buatlar dökümden önce sabitlendi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Her mikser gelişinde slump (çökme) deneyi",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Beton irsaliyesi siparişe uygun",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Vibratörle sıkıştırma yapıldı",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Kür prosedüre göre başlatıldı",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "Taşıyıcı blok duvar",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Duvar aplikasyonu kontrol edildi: boyutlar, gönye ve boşluklar",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Bloklar şartnameye uygun",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Şakül, terazi ve hiza",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Grout ve donatı projede belirtilen noktalarda",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Temizlik yapıldı, moloz yok",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "Taşıyıcı olmayan duvar ve hafif bölme",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Duvar aplikasyonu kontrol edildi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Şakül, terazi ve hiza",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Kapı ve pencere boşlukları kontrol edildi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Duvar üstü tavana kamalandı veya sabitlendi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Temizlik yapıldı, moloz yok",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "İç mekân kaplaması (kuru alanlar)",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Yüzey temiz ve hazırlanmış",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Harç prosedüre uygun",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Düzeltme ve son kat",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Şakül ve gönye",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Temizlik",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "İç mekân kaplaması (ıslak alanlar)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Düzlük, hiza ve yapışma",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Kof karo yok (vurunca boş ses)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Derz dolgusu eksiksiz ve lekesiz",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Kırık karo yok",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Yer süzgecine doğru eğim",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "Dış cephe kaplaması",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Yüzey temiz ve hazırlanmış",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Şakül ve düzlük",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Derzler projeye uygun",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Vurunca boş ses yok",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Son işlem ve temizlik",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "Şap",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Zemin temiz",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Kot ve eğimler projeye uygun",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Kalınlık projeye uygun",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Yüzeyde çatlak yok",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "İç mekân zemin kaplaması (kuru alanlar)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Düzlük, hiza ve yapışma",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Kof karo yok (vurunca boş ses)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Derz dolgusu eksiksiz ve lekesiz",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Kırık karo yok",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "İç mekân zemin kaplaması (ıslak alanlar)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Düzlük, hiza ve yapışma",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Kof karo yok (vurunca boş ses)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Derz dolgusu eksiksiz ve lekesiz",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Kırık karo yok",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Yer süzgecine doğru eğim",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "Dış zemin kaplaması",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Eğim ve su tahliyesi",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Düzlük",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Derzler",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Kırık parça yok",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "Asma tavan",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Düzlük ve terazi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Elektrik noktaları kapatılmamış",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Delik veya kırık yok",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Erişim ve müdahale kapakları projeye uygun",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "Su yalıtımı",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Yüzeyde aktif çatlak yok, köşeler ve kot farkları hazır",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Eğimli tesviye ve köşelerde pah",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Malzeme şartname ve sözleşmeye uygun",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Bindirmeler, duvara dönüşler ve süzgeç detayları proje ve üretici talimatına uygun",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Su tutma deneyi (projede belirtilen süre boyunca)",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Koruma tabakası",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Temizlik",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "Kiremit çatı (konstrüksiyon ve örtü)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Çatı konstrüksiyonu projeye uygun",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Sabitleme ve bağlantılar",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Eğim kiremit üreticisinin talimatına uygun",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Kiremit bindirmeleri ve hizası",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Etek sacları ve yağmur olukları",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "Kapı kasası ve kapı",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Kasa şakülünde",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Menteşe ve donanım hizalı",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Kapı sıkışmadan açılıp kapanıyor",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Kilit, rozetler ve aksesuarlar takılı",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "Pervazlar kusursuz",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "Pencere",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Ölçü boşluğa uygun",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Çevresinde sızdırmazlık mastiği",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Kasada ezik yok",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Açılıyor, kapanıyor ve kilitleniyor",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Su sızdırmıyor (su testi)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "Korkuluk",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Yükseklik ve aralıklar projeye uygun",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Sağlam sabitleme",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Keskin kenar olmadan son işlem",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "İç mekân boyası",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Yüzey temiz, kuru ve hazırlanmış",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Kat sayısı şartnameye uygun",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Örtücülük homojen, leke ve akıntı yok",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Zeminler ve doğramalar temizlendi",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "Dış cephe boyası",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Yüzey temiz, kuru ve hazırlanmış",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Hava koşulları ve uygulama zamanı üretici talimatına uygun",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Kat sayısı şartnameye uygun",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Örtücülük homojen, leke ve akıntı yok",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Zeminler ve doğramalar temizlendi",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "Elektrik tesisatı",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Buatlar projedeki yerlerinde",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Borular projeye uygun ve sabitlenmiş",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Buat ve borularda harç yok",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Buat gaz noktasından uzakta",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "İletken renkleri projeye uygun",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Devreler panoda etiketli",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Prizler, anahtarlar ve kapakları takılı",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "Sıhhi tesisat",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Konum ve sabitleme projeye uygun",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Kolon hatları: çap, hiza ve sabitleme",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Vanalar: hiza, kot ve koruma",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Uç noktalar kapalı (tapa ve kapaklar)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Sızdırmazlık testinde kaçak yok",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Süzgeçler ve borular açık ve temiz",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "Gaz tesisatı",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Güzergâh ve malzemeler projeye uygun",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Elektrik noktalarına mesafe",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Sızdırmazlık testi yetkili bir uzman tarafından yapıldı, tutanak eklendi",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Etiketleme ve uyarı işaretleri",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "Tezgâh, vitrifiye ve armatür",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Sabitleme ve terazi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Sifon bağlantısı doğru",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Sızıntı yok",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Silikon ve son işlem",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Temizlik",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "İmalat kontrol formu",
+  "checklistPdfModelo": "Şablon",
+  "checklistPdfObra": "Şantiye",
+  "checklistPdfLocal": "Konum",
+  "checklistPdfEtapa": "Aşama",
+  "checklistPdfDataDaInspecao": "Kontrol tarihi",
+  "checklistPdfAplicadoPor": "Uygulayan",
+  "checklistPdfColunaNumero": "No.",
+  "checklistPdfColunaItem": "Madde",
+  "checklistPdfColunaResultado": "Sonuç",
+  "checklistPdfColunaObservacao": "Not ve fotoğraflar",
+  "checklistRespostaConforme": "Uygun",
+  "checklistRespostaNaoConforme": "Uygun değil",
+  "checklistRespostaNaoSeAplica": "Kapsam dışı",
+  "checklistSecaoAntes": "Başlamadan önce",
+  "checklistSecaoDurante": "Uygulama sırasında",
+  "checklistSecaoConclusao": "İş bitiminde",
+  "checklistItemCritico": "Kritik madde",
+  "checklistFotoObrigatoria": "Fotoğraf zorunlu",
+  "checklistPdfNaoConformidades": "Uygunsuzluklar",
+  "checklistPdfOQueEstaErrado": "Hatalı olan: {texto}",
+  "checklistPdfAcaoCorretiva": "Düzeltici faaliyet: {acao} (sorumlu: {responsavel}; son tarih: {prazo})",
+  "checklistPdfReinspecao": "{numero}. yeniden kontrol, {quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "Onay",
+  "checklistPdfLiberadoSemRessalvas": "İş çekincesiz onaylandı.",
+  "checklistPdfLiberadoComRessalvas": "İş çekinceyle onaylandı.",
+  "checklistPdfNaoLiberado": "Onaylanmadı",
+  "checklistPdfRessalvas": "Çekinceler: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "Günlük rapor - ayrıntılar",
+  "pdfRdoDateClient": "Tarih: {date} | müşteri: {client}",
+  "rdoFormWeatherTitle": "Hava durumu",
+  "weatherSunny": "Güneşli",
+  "weatherCloudy": "Bulutlu",
+  "weatherRainy": "Yağmurlu",
+  "weatherShowers": "Sağanak yağış",
+  "weatherVariable": "Değişken",
+  "pdfRdoPhysicalProgress": "Fiziki ilerleme: %{progress}",
+  "pdfRdoWorkforceTitle": "Sahadaki personel",
+  "pdfRdoColName": "Ad",
+  "pdfRdoColRole": "Görev",
+  "pdfRdoColPresence": "Devam",
+  "pdfRdoPresenceFull": "Tam gün",
+  "pdfRdoPresenceHalf": "Yarım gün",
+  "rdoFormLaborAbsent": "Yok",
+  "rdoFormLaborExtraTitle": "Geçici işçilik",
+  "rdoFormLaborHoursWorked": "Çalışılan saat",
+  "pdfRdoActivitiesTitle": "Yapılan işler",
+  "rdoFormObsTitle": "Notlar / sorunlar",
+  "pdfRdoPhotosTitle": "Fotoğraf kaydı",
+  "rdoFormSignatureTitle": "Teknik sorumlu",
+  "pdfPage": "Sayfa",
+  "pdfOf": "/"
+ }
+}

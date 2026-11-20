@@ -8,6 +8,7 @@ import { IDIOMAS, caminhoAjuda, caminhoInicio, caminhoSuporte } from '../i18n/id
 import { precosDoIdioma } from '../i18n/pricing.js';
 import { EMAIL_SUPORTE, WINDOWS, appStore, googlePlay } from '../links.js';
 import { NOME, SITE, absoluto, caminhoDaPagina } from './paginas.js';
+import { caminhoDoPdf } from '../modelos/modelos.js';
 
 const ORGANIZACAO = `${SITE}/#organizacao`;
 const SITE_ID = `${SITE}/#site`;
@@ -112,8 +113,65 @@ function trilha(url, itens) {
     };
 }
 
+// Modelos grátis. Página com todos: coleção com a lista dos modelos (dados.lista: [{ nome, url }]). Página de um
+// modelo: o passo a passo de uso no papel (HowTo, com os mesmos passos da página), os itens do checklist (ItemList,
+// o texto do app) e o PDF da página (MediaObject). Nada de nota, número de downloads ou avaliação.
+function modelos(t, { url, codigo, base, dados }) {
+    const inicio = { nome: NOME, url: absoluto(caminhoInicio(codigo)) };
+    return [
+        { ...base, '@type': 'CollectionPage', breadcrumb: { '@id': `${url}#trilha` }, mainEntity: { '@id': `${url}#lista` } },
+        trilha(url, [inicio, { nome: t('modelos.nav'), url }]),
+        {
+            '@type': 'ItemList',
+            '@id': `${url}#lista`,
+            name: t('modelos.indice.metaTitulo'),
+            numberOfItems: dados.lista.length,
+            itemListElement: dados.lista.map((m, n) => ({ '@type': 'ListItem', position: n + 1, name: m.nome, url: m.url })),
+        },
+    ];
+}
+
+function modelo(t, { url, titulo, descricao, codigo, base, dados }) {
+    const diario = dados.modelo.tipo === 'diario';
+    const inicio = { nome: NOME, url: absoluto(caminhoInicio(codigo)) };
+    const lista = absoluto(caminhoDaPagina({ tipo: 'modelos', codigo }));
+    const passos = t(`modelos.usar.${diario ? 'diario' : 'checklist'}`, { returnObjects: true });
+    const pdf = {
+        '@type': 'MediaObject',
+        '@id': `${url}#pdf`,
+        name: dados.nome,
+        contentUrl: absoluto(caminhoDoPdf(codigo, dados.modelo.slug)),
+        encodingFormat: 'application/pdf',
+        inLanguage: codigo,
+        isAccessibleForFree: true,
+    };
+    const grafo = [
+        { ...base, breadcrumb: { '@id': `${url}#trilha` }, mainEntity: { '@id': `${url}#comoUsar` }, associatedMedia: { '@id': `${url}#pdf` } },
+        trilha(url, [inicio, { nome: t('modelos.nav'), url: lista }, { nome: dados.nome, url }]),
+        {
+            '@type': 'HowTo',
+            '@id': `${url}#comoUsar`,
+            name: titulo,
+            description: descricao,
+            inLanguage: codigo,
+            step: (Array.isArray(passos) ? passos : []).map((texto, n) => ({ '@type': 'HowToStep', position: n + 1, text: texto })),
+        },
+        pdf,
+    ];
+    if (!diario) {
+        grafo.push({
+            '@type': 'ItemList',
+            '@id': `${url}#itens`,
+            name: `${dados.modelo.nome}: ${t('modelos.checklist.itensTitulo')}`,
+            numberOfItems: dados.modelo.itens.length,
+            itemListElement: dados.modelo.itens.map((item, n) => ({ '@type': 'ListItem', position: n + 1, name: item.texto })),
+        });
+    }
+    return grafo;
+}
+
 // Tudo o que vai no <script type="application/ld+json"> da página, num único @graph.
-// dados: { modulo } (assunto), { modulo, entrada } (artigo).
+// dados: { modulo } (assunto), { modulo, entrada } (artigo), { lista } (modelos), { modelo, nome } (modelo).
 export function dadosEstruturados({ t, pagina: p, url, titulo, descricao, dados = {} }) {
     const codigo = p.codigo;
     const grafo = [organizacao(codigo), site()];
@@ -127,6 +185,10 @@ export function dadosEstruturados({ t, pagina: p, url, titulo, descricao, dados 
         }
         itens.push({ nome: p.tipo === 'artigo' ? dados.entrada.titulo : dados.modulo.nome, url });
         grafo.push({ ...base, breadcrumb: { '@id': `${url}#trilha` } }, trilha(url, itens));
+    } else if (p.tipo === 'modelos') {
+        grafo.push(...modelos(t, { url, codigo, base, dados }));
+    } else if (p.tipo === 'modelo') {
+        grafo.push(...modelo(t, { url, titulo, descricao, codigo, base, dados }));
     } else {
         grafo.push(base);
     }

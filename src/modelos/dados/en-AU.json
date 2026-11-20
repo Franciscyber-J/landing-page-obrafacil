@@ -1,0 +1,1210 @@
+{
+ "idioma": "en-AU",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "27 building works that are commonly inspected on site. The items are examples for your company to check and adapt; they do not replace the engineer responsible for the works.",
+  "criterio": "In accordance with the drawings, specification and manufacturer's instructions",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "Site preparation"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "Foundations"
+   },
+   {
+    "id": "estrutura",
+    "nome": "Structure"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "Walls and partitions"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "Wall finishes"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "Floors and ceilings"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "Waterproofing"
+   },
+   {
+    "id": "cobertura",
+    "nome": "Roofing"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "Doors, windows and balustrades"
+   },
+   {
+    "id": "pintura",
+    "nome": "Painting"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "Building services"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "Fill compaction",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Area cleared, free of debris and organic material",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Fill material as specified",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Layers placed and compacted in accordance with the procedure",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Finished levels checked against the drawings",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Compaction testing carried out where required by the design, with test results attached",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "Set-out",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Cumulative dimensions checked against the drawings",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Corners checked for square",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Profiles and pegs secure",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Datum and reduced levels checked",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "Foundation construction",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Location of foundation elements checked",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Dimensions and depth as per drawings",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Edge forms aligned (raft slab)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Service trenches backfilled and recompacted",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Reinforcement and concrete pour signed off on their own checklists",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "Formwork installation",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Alignment, square and plumb checked in all areas",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Walers, ties and props in place",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Door and window openings checked",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Formwork clean and sealed before the pour",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "Reinforcement fixing",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Bar positions and number as per drawings",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Bar chairs and spacers in place (cover)",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Starter bars and continuity bars in place",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Reinforcement clean and securely tied",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "Concrete pour of structural elements",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Formwork and reinforcement signed off",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Conduits and cast-in items fixed before the pour",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Slump test on arrival of each truck",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Concrete delivery docket matches the order",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Concrete compacted (vibrated)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Curing started in accordance with the procedure",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "Structural blockwork",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Set-out checked: dimensions, square and openings",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Blocks as specified",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Plumb, level and line",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Core filling and reinforcement where shown on the drawings",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Area clean, free of debris",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "Non-loadbearing masonry and lightweight partitions",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Set-out checked",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Plumb, level and line",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Door and window openings checked",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Top of wall packed or fixed with head restraints",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Area clean, free of debris",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "Internal render in dry areas",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Substrate clean and prepared",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Render mixed and applied in accordance with the procedure",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Surface levelled and finished",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Plumb and square",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Area cleaned up",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "Internal wall tiling in wet areas",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Flatness, alignment and adhesion",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "No drummy tiles (tap test)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Grout joints complete, with no gaps or stains",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "No cracked or chipped tiles",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Falls to the floor waste",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "External render and cladding",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Substrate clean and prepared",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Plumb and flatness",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Control joints per drawings",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "No drummy areas (tap test)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Finish and cleanup",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "Floor screed",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Substrate clean",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Levels and falls as per drawings",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Thickness as per drawings",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Surface free of cracks",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "Internal floor tiling in dry areas",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Flatness, alignment and adhesion",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "No drummy tiles (tap test)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Grout joints complete, with no gaps or stains",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "No cracked or chipped tiles",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "Internal floor tiling in wet areas",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Flatness, alignment and adhesion",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "No drummy tiles (tap test)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Grout joints complete, with no gaps or stains",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "No cracked or chipped tiles",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Falls to the floor waste",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "External paving",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Falls and stormwater drainage",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Flatness",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Joints",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "No broken pavers or tiles",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "Ceilings",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Flat and level",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Electrical points not concealed",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "No holes or damage",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Access panels and manholes as per drawings",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "Waterproofing",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Substrate free of active cracks, with corners and recesses ready",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Screed laid to falls, with coved corners",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Membrane as per specification and contract",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Laps, upturns and floor waste details as per drawings and manufacturer",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Flood test (water retained for the period set in the design)",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Protection layer installed",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Area cleaned up",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "Roof framing and roof cladding",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Roof framing as per drawings",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Fixings and tie-downs",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Roof pitch as per the cladding manufacturer",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Tile or sheet laps and alignment",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Flashings and gutters",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "Door jamb and door",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Jamb plumb",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Hardware aligned",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Door opens and closes without sticking",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Lockset, door furniture and accessories fitted",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "Architraves free of defects",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "Windows",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Size matches the rough opening",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Perimeter sealant applied",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Frame free of dents",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Opens, closes and locks",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "No water leaks (water test)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "Balustrade",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Height and spacing as per drawings",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Securely fixed",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Finish free of sharp edges",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "Internal painting",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Surface clean, dry and prepared",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Number of coats as specified",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Even coverage, no patchiness or runs",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Floors, doors and windows cleaned of paint",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "External painting",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Surface clean, dry and prepared",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Weather suitable for application, as per the manufacturer",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Number of coats as specified",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Even coverage, no patchiness or runs",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Floors, doors and windows cleaned of paint",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "Electrical installation",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Wall boxes in the positions shown on the drawings",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Conduit routed as per drawings and fixed",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Wall boxes and conduit free of mortar",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Wall boxes kept clear of gas points",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Cable colours as per drawings",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Circuits labelled at the switchboard",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Power points, switches and cover plates fitted",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "Plumbing and drainage",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Position and fixing as per drawings",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Stacks and risers: diameter, alignment and fixing",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Isolation valves: alignment, level and protection",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Open ends sealed (plugs and caps)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Pressure test passed with no leaks",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Floor wastes, drains and pipes clear and clean",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "Gas installation",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Routing and materials as per drawings",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Clearance from electrical points",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Leak test carried out by a licensed gasfitter, with record attached",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Pipework identification and labelling",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "Benchtops, sanitaryware and tapware",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Fixed and level",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Trap connection correct",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "No leaks",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Sealant joints and finish",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Area cleaned up",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "Inspection and Test Record",
+  "checklistPdfModelo": "Template",
+  "checklistPdfObra": "Project",
+  "checklistPdfLocal": "Location",
+  "checklistPdfEtapa": "Stage",
+  "checklistPdfDataDaInspecao": "Inspection date",
+  "checklistPdfAplicadoPor": "Inspected by",
+  "checklistPdfColunaNumero": "No.",
+  "checklistPdfColunaItem": "Item",
+  "checklistPdfColunaResultado": "Result",
+  "checklistPdfColunaObservacao": "Notes and photos",
+  "checklistRespostaConforme": "Pass",
+  "checklistRespostaNaoConforme": "Fail",
+  "checklistRespostaNaoSeAplica": "N/A",
+  "checklistSecaoAntes": "Before starting",
+  "checklistSecaoDurante": "During the work",
+  "checklistSecaoConclusao": "At completion",
+  "checklistItemCritico": "Critical item",
+  "checklistFotoObrigatoria": "Photo required",
+  "checklistPdfNaoConformidades": "Non-conformances",
+  "checklistPdfOQueEstaErrado": "What was wrong: {texto}",
+  "checklistPdfAcaoCorretiva": "Corrective action: {acao} (assigned to: {responsavel}; due: {prazo})",
+  "checklistPdfReinspecao": "Reinspection {numero} on {quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "Approval",
+  "checklistPdfLiberadoSemRessalvas": "Work approved without comments.",
+  "checklistPdfLiberadoComRessalvas": "Work approved with comments.",
+  "checklistPdfNaoLiberado": "Not approved",
+  "checklistPdfRessalvas": "Comments: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "Daily Report - Details",
+  "pdfRdoDateClient": "Date: {date} | Client: {client}",
+  "rdoFormWeatherTitle": "Weather Conditions",
+  "weatherSunny": "Sunny",
+  "weatherCloudy": "Cloudy",
+  "weatherRainy": "Rainy",
+  "weatherShowers": "Showers",
+  "weatherVariable": "Variable",
+  "pdfRdoPhysicalProgress": "Physical Progress: {progress}%",
+  "pdfRdoWorkforceTitle": "Workforce on Site",
+  "pdfRdoColName": "Name",
+  "pdfRdoColRole": "Role",
+  "pdfRdoColPresence": "Presence",
+  "pdfRdoPresenceFull": "Full Day",
+  "pdfRdoPresenceHalf": "Half Day",
+  "rdoFormLaborAbsent": "Absent",
+  "rdoFormLaborExtraTitle": "Extra Workforce",
+  "rdoFormLaborHoursWorked": "Hours Worked",
+  "pdfRdoActivitiesTitle": "Activities Performed",
+  "rdoFormObsTitle": "Observations / Incidents",
+  "pdfRdoPhotosTitle": "Photographic Record",
+  "rdoFormSignatureTitle": "Technical Responsible",
+  "pdfPage": "Page",
+  "pdfOf": "of"
+ }
+}

@@ -1,0 +1,1210 @@
+{
+ "idioma": "pl-PL",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "27 rodzajów robót, które zwykle sprawdza się na budowie. Pozycje są przykładami, które firma może sprawdzić i dostosować do siebie. Nie zastępują kierownika budowy.",
+  "criterio": "Zgodnie z projektem, specyfikacją techniczną i instrukcją producenta",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "Roboty przygotowawcze"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "Fundamenty"
+   },
+   {
+    "id": "estrutura",
+    "nome": "Konstrukcja"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "Ściany i przegrody"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "Tynki i okładziny"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "Posadzki i sufity"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "Hydroizolacje"
+   },
+   {
+    "id": "cobertura",
+    "nome": "Dach"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "Stolarka okienna i drzwiowa, balustrady"
+   },
+   {
+    "id": "pintura",
+    "nome": "Roboty malarskie"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "Instalacje"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "Zagęszczanie nasypu",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Teren oczyszczony, bez gruzu i materiału organicznego",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Materiał nasypu zgodny z projektem",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Warstwy układane i zagęszczane zgodnie z instrukcją wykonania",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Rzędna końcowa sprawdzona z projektem",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Badanie zagęszczenia wykonane, jeśli wymaga go projekt, protokół załączony",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "Wytyczenie obiektu",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Wymiary narastająco sprawdzone z projektem",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Prostopadłość narożników sprawdzona",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Ławy ciesielskie i punkty odniesienia stabilne",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Repery wysokościowe sprawdzone",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "Wykonanie fundamentów",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Wytyczenie elementów fundamentów sprawdzone",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Wymiary i głębokość posadowienia zgodne z projektem",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Szalunek krawędziowy płyty fundamentowej w linii",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Wykopy pod instalacje zasypane i ponownie zagęszczone",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Zbrojenie i betonowanie odebrane na osobnych listach kontrolnych",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "Wykonanie deskowania",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Liniowość, prostopadłość i pion sprawdzone we wszystkich pomieszczeniach",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Rygle, ściągi i stemple zamontowane",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Otwory drzwiowe i okienne sprawdzone",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Deskowanie oczyszczone i szczelne przed betonowaniem",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "Montaż zbrojenia",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Położenie i liczba prętów zgodne z projektem",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Podkładki dystansowe na miejscu (otulina)",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Pręty startowe i wypusty zbrojenia na miejscu",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Zbrojenie czyste i powiązane",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "Betonowanie elementu konstrukcyjnego",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Deskowanie i zbrojenie odebrane",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Rurki instalacyjne i puszki zamocowane przed betonowaniem",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Badanie konsystencji metodą opadu stożka przy przyjęciu każdej betonomieszarki",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Dokument dostawy betonu (WZ) zgodny z zamówieniem",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Beton zagęszczony",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Pielęgnacja betonu rozpoczęta zgodnie z instrukcją wykonania",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "Mury nośne",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Wytyczenie sprawdzone: wymiary, prostopadłość i otwory",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Elementy murowe zgodne ze specyfikacją",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Pion, poziom i liniowość",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Beton wypełniający i zbrojenie w miejscach wskazanych w projekcie",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Uprzątnięte, bez gruzu",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "Ściany nienośne i lekkie ścianki działowe",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Wytyczenie sprawdzone",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Pion, poziom i liniowość",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Otwory drzwiowe i okienne sprawdzone",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Zaklinowanie lub zamocowanie pod stropem",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Uprzątnięte, bez gruzu",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "Tynki wewnętrzne w pomieszczeniach suchych",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Podłoże czyste i przygotowane",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Zaprawa zgodnie z instrukcją wykonania",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Wyrównanie i wykończenie powierzchni",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Pion i kąty proste",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Uprzątnięcie",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "Okładziny ścienne w pomieszczeniach mokrych",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Płaskość, liniowość i przyczepność",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Brak głuchych płytek (opukiwanie)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Fugi pełne i bez przebarwień",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Brak pękniętych płytek",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Spadek w kierunku odpływu",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "Tynki i okładziny zewnętrzne",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Podłoże czyste i przygotowane",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Pion i płaskość",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Spoiny i dylatacje zgodne z projektem",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Brak głuchych miejsc (opukiwanie)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Wykończenie i uprzątnięcie",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "Podkład podłogowy (wylewka)",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Podłoże czyste",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Poziom i spadki zgodne z projektem",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Grubość zgodna z projektem",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Powierzchnia bez rys",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "Posadzka wewnętrzna w pomieszczeniach suchych",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Płaskość, liniowość i przyczepność",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Brak głuchych płytek (opukiwanie)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Fugi pełne i bez przebarwień",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Brak pękniętych płytek",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "Posadzka wewnętrzna w pomieszczeniach mokrych",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Płaskość, liniowość i przyczepność",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Brak głuchych płytek (opukiwanie)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Fugi pełne i bez przebarwień",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Brak pękniętych płytek",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Spadek w kierunku odpływu",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "Posadzka zewnętrzna",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Spadek i odprowadzenie wody",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Płaskość",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Fugi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Brak pękniętych płytek",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "Sufit",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Płaskość i wypoziomowanie",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Punkty elektryczne niezakryte",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Bez otworów i uszkodzeń",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Otwory rewizyjne zgodne z projektem",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "Hydroizolacja",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Podłoże bez rys aktywnych, z przygotowanymi narożami i zagłębieniami",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Warstwa wyrównawcza ze spadkami i zaokrąglonymi narożami (fasety)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Materiał zgodny ze specyfikacją i umową",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Zakłady, wywinięcia na ściany i obróbka wpustów zgodnie z projektem i instrukcją producenta",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Próba szczelności (zalanie wodą na czas określony w projekcie)",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Warstwa ochronna",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Uprzątnięcie",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "Dach skośny (więźba i pokrycie)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Więźba zgodna z projektem",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Mocowanie i kotwienie",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Kąt nachylenia zgodny z wymaganiami producenta pokrycia",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Zakłady i ułożenie w linii elementów pokrycia",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Obróbki blacharskie i rynny",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "Ościeżnica i drzwi",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Ościeżnica w pionie",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Zawiasy w linii",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Drzwi otwierają się i zamykają bez zacinania",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Zamek, szyldy i akcesoria zamontowane",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "Opaski bez wad",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "Okno",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Wymiar dopasowany do otworu",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Uszczelnienie na obwodzie",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Rama bez wgnieceń",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Prawidłowe otwieranie, zamykanie i ryglowanie",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Brak przecieków (próba wodna)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "Balustrada",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Wysokość i rozstaw zgodne z projektem",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Mocowanie stabilne",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Wykończenie bez ostrych krawędzi",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "Malowanie wewnętrzne",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Podłoże czyste, suche i przygotowane",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Liczba warstw zgodna ze specyfikacją",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Równomierne krycie, bez plam i zacieków",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Posadzki i stolarka oczyszczone",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "Malowanie zewnętrzne",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Podłoże czyste, suche i przygotowane",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Odpowiednie warunki pogodowe do malowania, zgodnie z instrukcją producenta",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Liczba warstw zgodna ze specyfikacją",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Równomierne krycie, bez plam i zacieków",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Posadzki i stolarka oczyszczone",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "Instalacja elektryczna",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Puszki w miejscach wskazanych w projekcie",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Rurki instalacyjne zgodne z projektem i zamocowane",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Puszki i rurki bez zaprawy",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Puszka w odpowiedniej odległości od punktu gazowego",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Kolory przewodów zgodne z projektem",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Obwody opisane w rozdzielnicy",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Gniazda, łączniki i ramki zamontowane",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "Instalacja wodno-kanalizacyjna",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Położenie i mocowanie zgodne z projektem",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Piony: średnica, liniowość i mocowanie",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Zawory: ustawienie, poziom i zabezpieczenie",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Podejścia zaślepione (korki i zaślepki)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Próba szczelności bez przecieków",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Wpusty i rury drożne i czyste",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "Instalacja gazowa",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Trasa i materiały zgodne z projektem",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Odległość od punktów elektrycznych",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Próba szczelności wykonana przez osobę z uprawnieniami, protokół załączony",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Oznakowanie i oznaczenia ostrzegawcze",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "Blat, ceramika sanitarna i armatura",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Mocowanie i wypoziomowanie",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Syfon prawidłowo podłączony",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Brak przecieków",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Uszczelnienie i wykończenie",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Uprzątnięcie",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "Karta kontroli jakości robót",
+  "checklistPdfModelo": "Szablon",
+  "checklistPdfObra": "Budowa",
+  "checklistPdfLocal": "Lokalizacja",
+  "checklistPdfEtapa": "Etap",
+  "checklistPdfDataDaInspecao": "Data kontroli",
+  "checklistPdfAplicadoPor": "Osoba kontrolująca",
+  "checklistPdfColunaNumero": "Lp.",
+  "checklistPdfColunaItem": "Pozycja",
+  "checklistPdfColunaResultado": "Wynik",
+  "checklistPdfColunaObservacao": "Notatki i zdjęcia",
+  "checklistRespostaConforme": "Zgodne",
+  "checklistRespostaNaoConforme": "Niezgodne",
+  "checklistRespostaNaoSeAplica": "Nie dotyczy",
+  "checklistSecaoAntes": "Przed rozpoczęciem",
+  "checklistSecaoDurante": "W trakcie wykonywania",
+  "checklistSecaoConclusao": "Po zakończeniu",
+  "checklistItemCritico": "Pozycja krytyczna",
+  "checklistFotoObrigatoria": "Wymagane zdjęcie",
+  "checklistPdfNaoConformidades": "Niezgodności",
+  "checklistPdfOQueEstaErrado": "Opis niezgodności: {texto}",
+  "checklistPdfAcaoCorretiva": "Działanie korygujące: {acao} (odpowiada: {responsavel}; termin: {prazo})",
+  "checklistPdfReinspecao": "{numero}. ponowna kontrola, {quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "Odbiór",
+  "checklistPdfLiberadoSemRessalvas": "Roboty odebrane bez zastrzeżeń.",
+  "checklistPdfLiberadoComRessalvas": "Roboty odebrane z zastrzeżeniami.",
+  "checklistPdfNaoLiberado": "Nieodebrane",
+  "checklistPdfRessalvas": "Zastrzeżenia: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "Raport dzienny – szczegóły",
+  "pdfRdoDateClient": "Data: {date} | klient: {client}",
+  "rdoFormWeatherTitle": "Warunki pogodowe",
+  "weatherSunny": "Słonecznie",
+  "weatherCloudy": "Pochmurno",
+  "weatherRainy": "Deszczowo",
+  "weatherShowers": "Przelotne opady",
+  "weatherVariable": "Zmiennie",
+  "pdfRdoPhysicalProgress": "Postęp rzeczowy: {progress}%",
+  "pdfRdoWorkforceTitle": "Obsada na budowie",
+  "pdfRdoColName": "Imię i nazwisko",
+  "pdfRdoColRole": "Funkcja",
+  "pdfRdoColPresence": "Obecność",
+  "pdfRdoPresenceFull": "Cały dzień",
+  "pdfRdoPresenceHalf": "1/2 dnia",
+  "rdoFormLaborAbsent": "Nieobecny",
+  "rdoFormLaborExtraTitle": "Pracownicy dorywczy",
+  "rdoFormLaborHoursWorked": "Przepracowane godziny",
+  "pdfRdoActivitiesTitle": "Wykonane prace",
+  "rdoFormObsTitle": "Uwagi / zdarzenia",
+  "pdfRdoPhotosTitle": "Dokumentacja zdjęciowa",
+  "rdoFormSignatureTitle": "Osoba odpowiedzialna",
+  "pdfPage": "Strona",
+  "pdfOf": "z"
+ }
+}

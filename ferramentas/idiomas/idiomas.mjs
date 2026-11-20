@@ -281,7 +281,8 @@ function conferirCadastro(erros) {
             regioesPorLingua.set(chave, i.codigo);
             if (`${lingua}-${r}` === i.codigo || IDIOMAS.some((o) => o.codigo === `${lingua}-${r}`)) erros.push(`${onde}: a região ${r} já é um idioma cadastrado`);
         }
-        const palavras = [['ajuda', i.rotas.ajuda], ['assunto', i.rotas.assunto], ['termos', i.rotas.termos], ['privacidade', i.rotas.privacidade], ...SECOES.map((s) => [`secoes.${s}`, i.rotas.secoes[s]])];
+        if (!['a4', 'carta'].includes(i.papel)) erros.push(`${onde}: papel deve ser 'a4' ou 'carta'`);
+        const palavras = [['ajuda', i.rotas.ajuda], ['assunto', i.rotas.assunto], ['termos', i.rotas.termos], ['privacidade', i.rotas.privacidade], ['modelos', i.rotas.modelos], ['diario', i.rotas.diario], ...SECOES.map((s) => [`secoes.${s}`, i.rotas.secoes[s]])];
         for (const [campo, valor] of palavras) {
             if (!valor) erros.push(`${onde}: falta rotas.${campo}${i.base ? ' (nem na base)' : ''}`);
             else if (!palavraDeEnderecoValida(valor)) erros.push(`${onde}: rotas.${campo} "${valor}" só pode ter letras da escrita do idioma (minúsculas onde ela tem maiúscula), as marcas dela, números e hífen entre as palavras, em NFC (sem espaço, pontuação nem barra)`);
@@ -298,6 +299,11 @@ function conferirCadastro(erros) {
             if (IDIOMAS.some((o) => o.rotas.ajuda === valor)) erros.push(`${onde}: rotas.${doc} "${valor}" é igual à palavra da Central de algum idioma`);
             if (['termos-de-uso', 'politicas-de-privacidade'].includes(valor) && doc !== (valor === 'termos-de-uso' ? 'termos' : 'privacidade')) erros.push(`${onde}: rotas.${doc} "${valor}" é endereço antigo de outro documento`);
         }
+        // Modelos grátis: a palavra da página fica no lugar da palavra da Central, dos documentos e das páginas da conta
+        // (de qualquer idioma: o site lê a palavra de qualquer idioma em qualquer prefixo).
+        const primeiras = (o) => [o.rotas.ajuda, o.rotas.termos, o.rotas.privacidade, o.rotas.pagamento, o.rotas.perfil, o.rotas.suporte];
+        if (i.rotas.modelos && IDIOMAS.some((o) => primeiras(o).includes(i.rotas.modelos))) erros.push(`${onde}: rotas.modelos "${i.rotas.modelos}" é igual a outra palavra de endereço de algum idioma`);
+        if (i.rotas.diario && IDIOMAS.some((o) => o.rotas.modelos === i.rotas.diario)) erros.push(`${onde}: rotas.diario "${i.rotas.diario}" é igual à palavra dos modelos de algum idioma`);
         const secoes = SECOES.map((s) => i.rotas.secoes[s]).filter(Boolean);
         if (new Set(secoes).size !== secoes.length) erros.push(`${onde}: duas seções com a mesma palavra`);
     }

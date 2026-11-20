@@ -1,0 +1,1210 @@
+{
+ "idioma": "he-IL",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "27 עבודות ביצוע שנהוג לבדוק באתר. הסעיפים הם דוגמאות שהחברה שלך יכולה לבדוק ולהתאים, והם אינם מחליפים את האחראי המקצועי על הפרויקט.",
+  "criterio": "לפי התוכניות, המפרט הטכני והוראות היצרן",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "עבודות הכנה"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "יסודות"
+   },
+   {
+    "id": "estrutura",
+    "nome": "שלד"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "קירות ומחיצות"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "טיח וחיפויים"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "ריצוף ותקרות"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "איטום"
+   },
+   {
+    "id": "cobertura",
+    "nome": "גגות"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "דלתות, חלונות ומעקות"
+   },
+   {
+    "id": "pintura",
+    "nome": "צביעה"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "מערכות"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "הידוק מילוי",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "השטח נקי, ללא פסולת וללא חומר אורגני",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "חומר המילוי לפי התוכניות",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "פיזור והידוק בשכבות לפי הנוהל",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "המפלס הסופי נבדק מול התוכניות",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "בדיקת הידוק בוצעה כשהתוכנית דורשת, והדוח מצורף",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "סימון המבנה בשטח",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "מידות מצטברות נבדקו מול התוכניות",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ניצבות הפינות נבדקה",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "לוחות הסימון ונקודות הייחוס יציבים",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "מפלסי הייחוס נבדקו",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "ביצוע יסודות",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "מיקום האלמנטים נבדק",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "מידות ועומק לפי התוכניות",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "תבניות השוליים מיושרות (ברפסודה)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "תעלות המערכות מולאו והודקו מחדש",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "הזיון והיציקה אושרו ברשימת בדיקה נפרדת",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "ביצוע טפסנות",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "קו, ניצבות ואנכיות נבדקו בכל החללים",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "מיישרים, מותחנים ותמוכות במקומם",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "פתחי דלתות וחלונות נבדקו",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "התבנית נקייה ואטומה לפני היציקה",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "הרכבת זיון",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "מיקום וכמות המוטות לפי התוכניות",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "מרחיקים במקומם (כיסוי בטון)",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "קוצים והמשכים במקומם",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "הזיון נקי וקשור",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "יציקת אלמנט שלד",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "התבנית והזיון אושרו",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "צנרת החשמל והנקודות קובעו לפני היציקה",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "בדיקת שקיעה (סלאמפ) בהגעת כל מערבל",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "תעודת המשלוח של הבטון תואמת את ההזמנה",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "ריטוט בוצע",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "האשפרה התחילה לפי הנוהל",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "בנייה נושאת בבלוקים",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "הסימון נבדק: מידות, ניצבות ופתחים",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "בלוקים לפי המפרט",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "אנכיות, מפלס וקו",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "גראוט וזיון בנקודות שבתוכנית",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ניקיון, ללא פסולת",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "בנייה לא נושאת ומחיצות קלות",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "הסימון נבדק",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "אנכיות, מפלס וקו",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "פתחי דלתות וחלונות נבדקו",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "סגירת המרווח מתחת לתקרה או קיבוע בראש הקיר",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ניקיון, ללא פסולת",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "חיפוי פנים באזורים יבשים",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "התשתית נקייה ומוכנה",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "טיט לפי הנוהל",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "יישור וגמר",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "אנכיות וניצבות",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "ניקיון",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "חיפוי פנים באזורים רטובים",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "מישוריות, קו והדבקה",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "אין אריחים חלולים (צליל חלול בהקשה)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "רובה רציפה וללא כתמים",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "אין אריחים שבורים",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "שיפוע לכיוון נקודת הניקוז",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "חיפוי חוץ",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "התשתית נקייה ומוכנה",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "אנכיות ומישוריות",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "מישקים לפי התוכניות",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "אין צליל חלול בהקשה",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "גמר וניקיון",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "מדה (שכבת יישור)",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "התשתית נקייה",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "מפלס ושיפועים לפי התוכניות",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "עובי לפי התוכניות",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "פני השטח ללא סדקים",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "ריצוף פנים באזורים יבשים",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "מישוריות, קו והדבקה",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "אין אריחים חלולים (צליל חלול בהקשה)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "רובה רציפה וללא כתמים",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "אין אריחים שבורים",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "ריצוף פנים באזורים רטובים",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "מישוריות, קו והדבקה",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "אין אריחים חלולים (צליל חלול בהקשה)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "רובה רציפה וללא כתמים",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "אין אריחים שבורים",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "שיפוע לכיוון נקודת הניקוז",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "ריצוף חוץ",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "שיפוע וניקוז מים",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "מישוריות",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "מישקים",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "אין אריחים שבורים",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "תקרה מונמכת",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "מישוריות ופילוס",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "נקודות החשמל לא מוסתרות",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "ללא חורים או שברים",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "פתחי גישה ושירות לפי התוכניות",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "איטום",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "תשתית ללא סדקים פעילים, עם פינות ושקעים מוכנים",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "שכבת שיפועים ורולקות בפינות",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "חומר לפי המפרט והחוזה",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "חפיפות, הגבהה על הקירות וסגירה סביב מחסומים לפי התוכנית והוראות היצרן",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "בדיקת הצפה למשך הזמן שנקבע בתוכנית",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "הגנה מכנית",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "ניקיון",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "גג רעפים (קונסטרוקציה וכיסוי)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "קונסטרוקציה לפי התוכניות",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "קיבוע וקשירה",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "שיפוע לפי הוראות יצרן הרעפים",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "חפיפה ויישור של הרעפים",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "פחי חיפוי ומרזבים",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "משקוף ודלת",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "המשקוף מותקן באנך",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "צירים ופרזול מיושרים",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "הדלת נפתחת ונסגרת בלי להיתקע",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "מנעול, רוזטות ואביזרים מותקנים",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "פרוזים ללא פגמים",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "חלון",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "המידה מתאימה לפתח",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "חומר איטום בכל ההיקף",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "מסגרת החלון ללא מעיכות",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "נפתח, נסגר וננעל",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "אין חדירת מים (בדיקת המטרה)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "מעקה",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "גובה ומרווחים לפי התוכניות",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "קיבוע יציב",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "גמר ללא קצוות חדים",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "צביעת פנים",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "התשתית נקייה, יבשה ומוכנה",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "מספר שכבות לפי המפרט",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "כיסוי אחיד, ללא כתמים וללא נזילות",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ניקוי רצפות, דלתות וחלונות",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "צביעת חוץ",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "התשתית נקייה, יבשה ומוכנה",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "תנאי מזג אוויר ועיתוי מתאימים ליישום, לפי הוראות היצרן",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "מספר שכבות לפי המפרט",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "כיסוי אחיד, ללא כתמים וללא נזילות",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ניקוי רצפות, דלתות וחלונות",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "מערכת חשמל",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "קופסאות במקום שבתוכנית",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "צנרת לפי התוכנית ומקובעת",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "קופסאות וצנרת ללא טיט",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "קופסה מרוחקת מנקודת גז",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "צבעי המוליכים לפי התוכנית",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "המעגלים מסומנים בלוח",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "שקעים, מפסקים ומכסים מותקנים",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "אינסטלציה (מים וביוב)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "מיקום וקיבוע לפי התוכנית",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "קווים אנכיים: קוטר, יישור וקיבוע",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "ברזי ניתוק: יישור, מפלס והגנה",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "נקודות סגורות (פקקים ומכסים)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "בדיקת אטימות ללא דליפה",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "מחסומים וצנרת פתוחים ונקיים",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "מערכת גז",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "תוואי וחומרים לפי התוכנית",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "מרחק מנקודות חשמל",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "בדיקת אטימות בוצעה על ידי גזאי מוסמך, והתיעוד מצורף",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "סימון ושילוט",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "משטח, כלים סניטריים וברזים",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "קיבוע ופילוס",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "חיבור הסיפון תקין",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ללא דליפה",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "איטום וגמר",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "ניקיון",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "טופס בקרת ביצוע",
+  "checklistPdfModelo": "תבנית",
+  "checklistPdfObra": "פרויקט",
+  "checklistPdfLocal": "מיקום",
+  "checklistPdfEtapa": "שלב",
+  "checklistPdfDataDaInspecao": "תאריך הבדיקה",
+  "checklistPdfAplicadoPor": "הבודק",
+  "checklistPdfColunaNumero": "מס׳",
+  "checklistPdfColunaItem": "סעיף",
+  "checklistPdfColunaResultado": "תוצאה",
+  "checklistPdfColunaObservacao": "הערות ותמונות",
+  "checklistRespostaConforme": "תקין",
+  "checklistRespostaNaoConforme": "לא תקין",
+  "checklistRespostaNaoSeAplica": "לא רלוונטי",
+  "checklistSecaoAntes": "לפני תחילת העבודה",
+  "checklistSecaoDurante": "במהלך הביצוע",
+  "checklistSecaoConclusao": "בסיום",
+  "checklistItemCritico": "סעיף קריטי",
+  "checklistFotoObrigatoria": "תמונת חובה",
+  "checklistPdfNaoConformidades": "אי-התאמות",
+  "checklistPdfOQueEstaErrado": "מה לא היה תקין: {texto}",
+  "checklistPdfAcaoCorretiva": "פעולה מתקנת: {acao} (אחראי: {responsavel}; תאריך יעד: {prazo})",
+  "checklistPdfReinspecao": "בדיקה חוזרת מס׳ {numero} ב-{quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "אישור",
+  "checklistPdfLiberadoSemRessalvas": "העבודה אושרה ללא הסתייגויות.",
+  "checklistPdfLiberadoComRessalvas": "העבודה אושרה בהסתייגויות.",
+  "checklistPdfNaoLiberado": "לא אושר",
+  "checklistPdfRessalvas": "הסתייגויות: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "יומן עבודה - פרטים",
+  "pdfRdoDateClient": "תאריך: {date} | לקוח: {client}",
+  "rdoFormWeatherTitle": "מזג אוויר",
+  "weatherSunny": "שמשי",
+  "weatherCloudy": "מעונן",
+  "weatherRainy": "גשום",
+  "weatherShowers": "ממטרים",
+  "weatherVariable": "משתנה",
+  "pdfRdoPhysicalProgress": "התקדמות פיזית: {progress}%",
+  "pdfRdoWorkforceTitle": "כוח אדם באתר",
+  "pdfRdoColName": "שם",
+  "pdfRdoColRole": "תפקיד",
+  "pdfRdoColPresence": "נוכחות",
+  "pdfRdoPresenceFull": "יום מלא",
+  "pdfRdoPresenceHalf": "חצי יום",
+  "rdoFormLaborAbsent": "נעדר",
+  "rdoFormLaborExtraTitle": "עובדים מזדמנים",
+  "rdoFormLaborHoursWorked": "שעות עבודה",
+  "pdfRdoActivitiesTitle": "עבודות שבוצעו",
+  "rdoFormObsTitle": "הערות / אירועים",
+  "pdfRdoPhotosTitle": "תיעוד מצולם",
+  "rdoFormSignatureTitle": "אחראי מקצועי",
+  "pdfPage": "עמוד",
+  "pdfOf": "מתוך"
+ }
+}

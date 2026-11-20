@@ -1,0 +1,1210 @@
+{
+ "idioma": "zh-TW",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "收錄工地常見的 27 項施工查驗項目。各項目僅為範例，請貴公司依實際情況檢視並調整；不能取代工程技術負責人的查驗與判斷。",
+  "criterio": "依設計圖說、施工說明書及原廠施工說明",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "前置作業"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "基礎工程"
+   },
+   {
+    "id": "estrutura",
+    "nome": "結構工程"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "砌牆及隔間工程"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "牆面裝修工程"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "地坪及天花板工程"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "防水工程"
+   },
+   {
+    "id": "cobertura",
+    "nome": "屋頂工程"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "門窗及欄杆工程"
+   },
+   {
+    "id": "pintura",
+    "nome": "油漆工程"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "水電及設備工程"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "回填土夯實",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "場地清理，無廢棄物及有機物",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "回填材料符合設計圖說",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "依施工程序分層鋪築及夯實",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "完成高程與設計圖核對",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "設計要求時辦理夯實度試驗，並附試驗報告",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "建物放樣",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "累計尺寸與設計圖核對",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "轉角直角檢查",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "龍門板及基準樁固定牢靠",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "基準高程（水準點）檢查",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "基礎施工",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "基礎各構件位置檢查",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "尺寸及深度符合設計圖",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "邊模對齊（筏式基礎）",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "管線溝槽回填並重新夯實",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "鋼筋綁紮及混凝土澆置已依各自檢查表查驗通過",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "模板組立",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "各空間模板之線形、直角及垂直度檢查",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "隔件、繫結螺桿及支撐就位",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "門窗開口檢查",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "澆置前模板內清潔並封閉縫隙",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "鋼筋綁紮",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "鋼筋位置及支數符合配筋圖",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "保護層墊塊就位",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "預留插筋及續接鋼筋就位",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "鋼筋清潔並綁紮牢固",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "結構構件混凝土澆置",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "模板及鋼筋查驗通過",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "澆置前電管及出線盒固定",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "每車預拌混凝土到場時做坍度試驗",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "混凝土送貨單與訂單相符",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "搗實（振動）完成",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "依施工程序開始養護",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "結構砌體（加強砌體）",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "放樣檢查：尺寸、直角及開口",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "砌塊符合規格",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "垂直、水平及線形",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "設計圖所示位置灌漿及配筋",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "清潔，無廢棄物",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "非結構砌牆及輕隔間",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "放樣檢查",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "垂直、水平及線形",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "門窗開口檢查",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "牆頂塞縫或固定",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "清潔，無廢棄物",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "室內牆面粉刷（乾區）",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "底材清潔及前處理",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "水泥砂漿依施工程序拌製及施作",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "整平及表面修飾",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "垂直及直角",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "清潔",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "室內牆面裝修（濕區）",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "平整度、線形及黏著",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "無空心（敲擊檢查）",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "填縫無缺漏、無污漬",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "無破損磁磚",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "朝落水頭的洩水坡度",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "外牆裝修",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "底材清潔及前處理",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "垂直及平整度",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "伸縮縫符合設計圖",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "無空心（敲擊檢查）",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "收邊及清潔",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "地坪水泥砂漿整平層",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "底材清潔",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "高程及洩水坡度符合設計圖",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "厚度符合設計圖",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "表面無裂縫",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "室內地坪（乾區）",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "平整度、線形及黏著",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "無空心（敲擊檢查）",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "填縫無缺漏、無污漬",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "無破損地磚",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "室內地坪（濕區）",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "平整度、線形及黏著",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "無空心（敲擊檢查）",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "填縫無缺漏、無污漬",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "無破損地磚",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "朝落水頭的洩水坡度",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "室外地坪",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "洩水坡度及排水",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "平整度",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "伸縮縫",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "無破損地磚",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "天花板",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "平整度及水平",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "電氣出線口未被遮蓋",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "無破洞或破損",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "檢修口符合設計圖",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "防水",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "底材無持續發展的裂縫，轉角及降板處已完成",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "整平層做出洩水坡度，陰角做圓角處理",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "防水材料符合施工說明書及合約",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "搭接、立面上翻及落水頭收頭依設計圖及原廠說明",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "積水試驗（依設計規定時間）",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "保護層",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "清潔",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "斜屋頂（屋架及屋面材）",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "屋架符合設計圖",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "固定及繫結",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "屋面坡度符合屋面材製造商規定",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "屋面材搭接及線形",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "泛水板及簷溝",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "門框及門扇",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "門框垂直",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "鉸鍊及五金對齊",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "門扇開關順暢不卡",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "門鎖、蓋板及配件安裝完成",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "門框飾條無瑕疵",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "窗",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "窗尺寸與開口相符",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "周邊打矽利康填縫",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "窗框無凹損",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "開關及上鎖正常",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "灑水試驗無滲水",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "欄杆",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "高度及間距符合設計圖",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "固定牢靠",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "表面無銳角及毛邊",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "室內油漆",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "底材清潔、乾燥並完成批土整理",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "塗刷道數符合規格",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "塗膜均勻，無污漬、無垂流",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "地面及門窗清潔",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "外牆油漆",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "底材清潔、乾燥並完成批土整理",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "施工時機符合製造商條件（天候、乾燥時間）",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "塗刷道數符合規格",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "塗膜均勻，無污漬、無垂流",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "地面及門窗清潔",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "電氣配管配線",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "出線盒位置符合設計圖",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "電管依設計圖配置並固定",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "出線盒及電管內無砂漿",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "出線盒與瓦斯管線保持距離",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "導線顏色符合設計圖",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "配電盤迴路標示",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "插座、開關及蓋板安裝完成",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "給排水衛生設備",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "管線位置及固定符合設計圖",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "立管：管徑、線形及固定",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "閥門：線形、高度及保護",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "管口封閉（管塞及管帽）",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "試水（試壓）無滲漏",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "落水頭及管線暢通並清潔",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "瓦斯配管",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "管線路徑及材料符合設計圖",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "與電氣設備保持距離",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "由合格專業人員進行氣密試驗，並附紀錄",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "標示及警示",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "檯面、衛浴設備及龍頭五金",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "固定及水平",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "存水彎連接正確",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "無漏水",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "收邊填縫及修飾",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "清潔",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "施工自主檢查表",
+  "checklistPdfModelo": "範本",
+  "checklistPdfObra": "工程名稱",
+  "checklistPdfLocal": "檢查位置",
+  "checklistPdfEtapa": "工項",
+  "checklistPdfDataDaInspecao": "檢查日期",
+  "checklistPdfAplicadoPor": "檢查人員",
+  "checklistPdfColunaNumero": "項次",
+  "checklistPdfColunaItem": "檢查項目",
+  "checklistPdfColunaResultado": "檢查結果",
+  "checklistPdfColunaObservacao": "備註及照片",
+  "checklistRespostaConforme": "合格",
+  "checklistRespostaNaoConforme": "不合格",
+  "checklistRespostaNaoSeAplica": "不適用",
+  "checklistSecaoAntes": "施工前",
+  "checklistSecaoDurante": "施工中",
+  "checklistSecaoConclusao": "完成時",
+  "checklistItemCritico": "重要項目",
+  "checklistFotoObrigatoria": "須附照片",
+  "checklistPdfNaoConformidades": "缺失事項",
+  "checklistPdfOQueEstaErrado": "缺失內容：{texto}",
+  "checklistPdfAcaoCorretiva": "改善措施：{acao}（負責人：{responsavel}；期限：{prazo}）",
+  "checklistPdfReinspecao": "第 {numero} 次複查（{quando}）：{resultado}（{por}）",
+  "checklistPdfLiberacao": "核可",
+  "checklistPdfLiberadoSemRessalvas": "施工已核可，無附帶條件。",
+  "checklistPdfLiberadoComRessalvas": "施工已附條件核可。",
+  "checklistPdfNaoLiberado": "尚未核可",
+  "checklistPdfRessalvas": "附帶條件：{texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "施工日誌－詳細資料",
+  "pdfRdoDateClient": "日期：{date}｜業主：{client}",
+  "rdoFormWeatherTitle": "天氣狀況",
+  "weatherSunny": "晴天",
+  "weatherCloudy": "陰天",
+  "weatherRainy": "雨天",
+  "weatherShowers": "陣雨",
+  "weatherVariable": "晴雨不定",
+  "pdfRdoPhysicalProgress": "實際進度：{progress}%",
+  "pdfRdoWorkforceTitle": "出工人員",
+  "pdfRdoColName": "姓名",
+  "pdfRdoColRole": "職務",
+  "pdfRdoColPresence": "出勤",
+  "pdfRdoPresenceFull": "全天",
+  "pdfRdoPresenceHalf": "半天",
+  "rdoFormLaborAbsent": "缺勤",
+  "rdoFormLaborExtraTitle": "臨時工",
+  "rdoFormLaborHoursWorked": "工作時數",
+  "pdfRdoActivitiesTitle": "已完成作業",
+  "rdoFormObsTitle": "備註／異常狀況",
+  "pdfRdoPhotosTitle": "施工照片",
+  "rdoFormSignatureTitle": "技術負責人",
+  "pdfPage": "頁次",
+  "pdfOf": "/"
+ }
+}

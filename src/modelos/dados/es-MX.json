@@ -1,0 +1,1210 @@
+{
+ "idioma": "es-MX",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "Son 27 trabajos de ejecución que suelen revisarse en obra. Los puntos son ejemplos para que su empresa los revise y adapte: no sustituyen al responsable técnico de la obra.",
+  "criterio": "Conforme a proyecto, especificaciones e instrucciones del fabricante",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "Preliminares"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "Cimentación"
+   },
+   {
+    "id": "estrutura",
+    "nome": "Estructura"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "Muros y divisiones"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "Revestimientos"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "Pisos y plafones"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "Impermeabilización"
+   },
+   {
+    "id": "cobertura",
+    "nome": "Cubiertas"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "Cancelería, puertas y barandales"
+   },
+   {
+    "id": "pintura",
+    "nome": "Pintura"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "Instalaciones"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "Compactación de relleno",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Área limpia, sin escombro ni material orgánico",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Material de relleno conforme a proyecto",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Capas tendidas y compactadas conforme al procedimiento",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Nivel final verificado contra proyecto",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Prueba de compactación realizada cuando el proyecto la pida, con el reporte anexo",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "Trazo y nivelación",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Medidas acumuladas verificadas contra proyecto",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Escuadra de las esquinas verificada",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Puentes de trazo y referencias firmes",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bancos de nivel verificados",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "Ejecución de cimentación",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Trazo de los elementos verificado",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Dimensiones y profundidad conforme a proyecto",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Cimbra de orilla alineada (losa de cimentación)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Zanjas de instalaciones rellenadas y recompactadas",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Armado y colado liberados con su propio checklist",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "Ejecución de cimbra",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Alineación, escuadra y plomo verificados en todos los espacios",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Alineadores, tensores y puntales en su lugar",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Vanos de puertas y ventanas verificados",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Cimbra limpia y sellada antes del colado",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "Armado de acero de refuerzo",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Posición y cantidad de varillas conforme a proyecto",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Silletas y separadores en su lugar (recubrimiento)",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Anclajes y preparaciones en su lugar",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Acero limpio y amarrado",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "Colado de elemento estructural",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Cimbra y acero de refuerzo liberados",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Tubería y chalupas fijadas antes del colado",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Prueba de revenimiento a la llegada de cada camión revolvedor",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Remisión del concreto conforme al pedido",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Vibrado realizado",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Curado iniciado conforme al procedimiento",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "Mampostería estructural",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Trazo verificado: dimensiones, escuadra y vanos",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Block conforme a especificación",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Plomo, nivel y alineación",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Grout y acero de refuerzo en los puntos del proyecto",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Limpieza, sin escombro",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "Muros no estructurales y divisiones ligeras",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Trazo verificado",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Plomo, nivel y alineación",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Vanos de puertas y ventanas verificados",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Remate o fijación en la parte superior del muro",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Limpieza, sin escombro",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "Aplanado interior en áreas secas",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Base limpia y preparada",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Mortero conforme al procedimiento",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Regularización y acabado",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Plomo y escuadra",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Limpieza",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "Recubrimiento interior en áreas húmedas",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Planicidad, alineación y adherencia",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Sin piezas huecas (suenan a hueco)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Boquilla sin fallas ni manchas",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Sin piezas rotas",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Pendiente hacia la coladera",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "Recubrimiento exterior",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Base limpia y preparada",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Plomo y planicidad",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Juntas conforme a proyecto",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Sin zonas huecas al golpeo",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Acabado y limpieza",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "Firme",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Base limpia",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Nivel y pendientes conforme a proyecto",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Espesor conforme a proyecto",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Superficie sin fisuras",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "Piso interior en áreas secas",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Planicidad, alineación y adherencia",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Sin piezas huecas (suenan a hueco)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Boquilla sin fallas ni manchas",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Sin piezas rotas",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "Piso interior en áreas húmedas",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Planicidad, alineación y adherencia",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Sin piezas huecas (suenan a hueco)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Boquilla sin fallas ni manchas",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Sin piezas rotas",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Pendiente hacia la coladera",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "Piso exterior",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Pendiente y escurrimiento del agua",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Planicidad",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Juntas",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Sin piezas rotas",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "Plafón",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Planicidad y nivelación",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Salidas eléctricas sin cubrir",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Sin perforaciones ni roturas",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Registros y accesos conforme a proyecto",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "Impermeabilización",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Base sin grietas activas, con esquinas y rebajes terminados",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Regularización con pendientes y chaflanes en las esquinas",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Material conforme a especificaciones y contrato",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Traslapes, subida en muros y remates de coladeras conforme a proyecto y fabricante",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Prueba de inundación durante el tiempo indicado en el proyecto",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Protección mecánica",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Limpieza",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "Techumbre inclinada (estructura y cubierta)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Estructura conforme a proyecto",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Fijación y amarre",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Pendiente conforme al fabricante de la teja",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Traslape y alineación de las tejas",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Botaguas, tapajuntas y canalones",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "Marco y puerta",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Marco a plomo",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Herrajes alineados",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "La puerta abre y cierra sin atorarse",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Chapa, rosetas y accesorios instalados",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "Chambrana sin defectos",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "Ventana",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Medida compatible con el vano",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Sellador en todo el perímetro",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Marco sin golpes ni abolladuras",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Abre, cierra y pone seguro",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Sin filtraciones (prueba con agua)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "Barandal",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Altura y separaciones conforme a proyecto",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Fijación firme",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Acabado sin filos",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "Pintura interior",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Superficie limpia, seca y preparada",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Manos conforme a especificación",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Cubrimiento uniforme, sin manchas ni escurrimientos",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Limpieza de pisos y cancelería",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "Pintura exterior",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Superficie limpia, seca y preparada",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Clima adecuado para aplicar, conforme al fabricante",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Manos conforme a especificación",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Cubrimiento uniforme, sin manchas ni escurrimientos",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Limpieza de pisos y cancelería",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "Instalación eléctrica",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Chalupas y cajas en la ubicación del proyecto",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Tubería conduit conforme a proyecto y fijada",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Cajas y tubería sin mortero",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Cajas alejadas de salidas de gas",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Colores de los conductores conforme a proyecto",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Circuitos identificados en el tablero",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Contactos, apagadores y tapas instalados",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "Instalación hidrosanitaria",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Ubicación y fijación conforme a proyecto",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Bajantes y columnas: diámetro, alineación y fijación",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Llaves de paso: alineación, nivel y protección",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Salidas selladas con tapones",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Prueba de hermeticidad sin fugas",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Coladeras y tuberías limpias y sin obstrucciones",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "Instalación de gas",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Trayectoria y materiales conforme a proyecto",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Separación de salidas eléctricas",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Prueba de hermeticidad realizada por personal calificado, con el registro anexo",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Identificación y señalización",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "Cubierta, muebles sanitarios y grifería",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Fijación y nivel",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Conexión del céspol correcta",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Sin fugas",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Sellado y acabado",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Limpieza",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "Formato de inspección de calidad",
+  "checklistPdfModelo": "Plantilla",
+  "checklistPdfObra": "Obra",
+  "checklistPdfLocal": "Ubicación",
+  "checklistPdfEtapa": "Etapa",
+  "checklistPdfDataDaInspecao": "Fecha de inspección",
+  "checklistPdfAplicadoPor": "Realizado por",
+  "checklistPdfColunaNumero": "No.",
+  "checklistPdfColunaItem": "Punto",
+  "checklistPdfColunaResultado": "Resultado",
+  "checklistPdfColunaObservacao": "Observaciones y fotos",
+  "checklistRespostaConforme": "Conforme",
+  "checklistRespostaNaoConforme": "No conforme",
+  "checklistRespostaNaoSeAplica": "No aplica",
+  "checklistSecaoAntes": "Antes de empezar",
+  "checklistSecaoDurante": "Durante la ejecución",
+  "checklistSecaoConclusao": "Al terminar",
+  "checklistItemCritico": "Punto crítico",
+  "checklistFotoObrigatoria": "Foto obligatoria",
+  "checklistPdfNaoConformidades": "No conformidades",
+  "checklistPdfOQueEstaErrado": "Qué se detectó: {texto}",
+  "checklistPdfAcaoCorretiva": "Acción correctiva: {acao} (responsable: {responsavel}; plazo: {prazo})",
+  "checklistPdfReinspecao": "{numero}.ª reinspección el {quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "Aprobación",
+  "checklistPdfLiberadoSemRessalvas": "Trabajo aprobado sin observaciones.",
+  "checklistPdfLiberadoComRessalvas": "Trabajo aprobado con observaciones.",
+  "checklistPdfNaoLiberado": "No aprobado",
+  "checklistPdfRessalvas": "Observaciones: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "Reporte diario - detalles",
+  "pdfRdoDateClient": "Fecha: {date} | cliente: {client}",
+  "rdoFormWeatherTitle": "Condiciones climáticas",
+  "weatherSunny": "Soleado",
+  "weatherCloudy": "Nublado",
+  "weatherRainy": "Lluvioso",
+  "weatherShowers": "Chubascos",
+  "weatherVariable": "Variable",
+  "pdfRdoPhysicalProgress": "Avance físico: {progress}%",
+  "pdfRdoWorkforceTitle": "Fuerza Laboral en Obra",
+  "pdfRdoColName": "Nombre",
+  "pdfRdoColRole": "Función",
+  "pdfRdoColPresence": "Presencia",
+  "pdfRdoPresenceFull": "Día Completo",
+  "pdfRdoPresenceHalf": "Medio Día",
+  "rdoFormLaborAbsent": "Falta",
+  "rdoFormLaborExtraTitle": "Mano de obra extra",
+  "rdoFormLaborHoursWorked": "Horas Trabajadas",
+  "pdfRdoActivitiesTitle": "Actividades Realizadas",
+  "rdoFormObsTitle": "Observaciones / incidentes",
+  "pdfRdoPhotosTitle": "Registro fotográfico",
+  "rdoFormSignatureTitle": "Responsable técnico",
+  "pdfPage": "Página",
+  "pdfOf": "de"
+ }
+}

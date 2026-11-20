@@ -1,0 +1,1210 @@
+{
+ "idioma": "cs-CZ",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "27 stavebních prací, které se na stavbě běžně kontrolují. Položky jsou příklady, které si vaše firma ověří a upraví podle sebe: nenahrazují odborné vedení stavby.",
+  "criterio": "Podle projektové dokumentace, technické zprávy a pokynů výrobce",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "Přípravné práce"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "Základy"
+   },
+   {
+    "id": "estrutura",
+    "nome": "Nosné konstrukce"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "Zdivo a příčky"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "Omítky a obklady"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "Podlahy a podhledy"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "Hydroizolace"
+   },
+   {
+    "id": "cobertura",
+    "nome": "Střechy"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "Výplně otvorů a zábradlí"
+   },
+   {
+    "id": "pintura",
+    "nome": "Malby a nátěry"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "Technické instalace"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "Hutnění násypu",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Plocha vyčištěná, bez suti a organického materiálu",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Materiál násypu podle projektu",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Vrstvy sypané a hutněné podle technologického postupu",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Konečná výška pláně ověřena podle projektu",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Zkouška zhutnění provedena, pokud ji projekt požaduje, protokol přiložen",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "Vytyčení stavby",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Součtové kóty ověřeny podle projektu",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Pravoúhlost rohů ověřena",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Lavičky a vytyčovací body pevně osazeny",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Výškové body ověřeny",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "Provedení základů",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Vytyčení základových prvků ověřeno",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Rozměry a hloubka založení podle projektu",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Okrajové bednění vyrovnané (základová deska)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Rýhy pro instalace zasypané a znovu zhutněné",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Výztuž a betonáž převzaty podle vlastních kontrolních listů",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "Provedení bednění",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Přímost, pravoúhlost a svislost ověřeny ve všech místnostech",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Rovnací prvky, spínací tyče a stojky osazeny",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Otvory pro dveře a okna ověřeny",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bednění před betonáží čisté a těsné",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "Osazení výztuže",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Poloha a počet prutů podle projektu",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Distanční podložky osazeny (krytí výztuže)",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Startovací a čekací výztuž osazena",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Výztuž čistá a svázaná",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "Betonáž nosného prvku",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Bednění a výztuž převzaty",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Elektroinstalační trubky a krabice upevněny před betonáží",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Zkouška konzistence sednutím kužele u každého autodomíchávače při příjezdu",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Dodací list betonu odpovídá objednávce",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Beton zhutněn vibrováním",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Ošetřování betonu zahájeno podle technologického postupu",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "Nosné zdivo",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Vytyčení zdiva ověřeno: rozměry, pravoúhlost a otvory",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Zdicí prvky podle specifikace",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Svislost, vodorovnost a přímost",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Zálivka a výztuž v místech podle projektu",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Uklizeno, bez suti",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "Nenosné zdivo a lehké příčky",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Vytyčení ověřeno",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Svislost, vodorovnost a přímost",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Otvory pro dveře a okna ověřeny",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Napojení na strop vyklínováno nebo ukotveno",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Uklizeno, bez suti",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "Vnitřní omítky v suchých prostorech",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Podklad čistý a připravený",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Malta podle technologického postupu",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Vyrovnání a povrchová úprava",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Svislost a pravoúhlost",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Uklizeno",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "Vnitřní obklady ve vlhkých prostorech",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Rovinnost, přímost a přídržnost",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bez dutých míst (poklepová zkouška)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Spárování bez vad a bez skvrn",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Bez prasklých obkladaček",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Spád ke vpusti",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "Vnější omítky a obklady",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Podklad čistý a připravený",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Svislost a rovinnost",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Spáry podle projektu",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bez dutých míst (poklepová zkouška)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Povrchová úprava a úklid",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "Potěr",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Podklad čistý",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Výška a spády podle projektu",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Tloušťka podle projektu",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Povrch bez trhlin",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "Vnitřní podlahy v suchých prostorech",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Rovinnost, přímost a přídržnost",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bez dutých míst (poklepová zkouška)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Spárování bez vad a bez skvrn",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Bez prasklých dlaždic",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "Vnitřní podlahy ve vlhkých prostorech",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Rovinnost, přímost a přídržnost",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bez dutých míst (poklepová zkouška)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Spárování bez vad a bez skvrn",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Bez prasklých dlaždic",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Spád ke vpusti",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "Venkovní dlažby",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Spád a odvod vody",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Rovinnost",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Spáry",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bez prasklých dlaždic",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "Podhled",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Rovinnost a vodorovnost",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Elektrické vývody nezakryté",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Bez otvorů a poškození",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Revizní otvory podle projektu",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "Hydroizolace",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Podklad bez aktivních trhlin, rohy a snížená místa připravena",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Vyrovnávací vrstva se spády a zaoblenými rohy",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Materiál podle technické zprávy a smlouvy",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Přesahy, vytažení na stěny a napojení na vpusti podle projektu a pokynů výrobce",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Zkouška těsnosti zátopou po dobu stanovenou projektem",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Ochranná vrstva",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Uklizeno",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "Šikmá střecha (krov a krytina)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Krov podle projektu",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Upevnění a kotvení",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Sklon podle výrobce krytiny",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Přesahy a vyrovnání řad krytiny",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Oplechování a žlaby",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "Zárubeň a dveře",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Zárubeň ve svislici",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Závěsy v jedné ose",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Dveře se otevírají a zavírají bez drhnutí",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Zámek, štítky a příslušenství osazeny",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "Obložky bez vad",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "Okno",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Rozměr odpovídá otvoru",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Připojovací spára po obvodu utěsněna",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Rám bez promáčklin",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Otevírání, zavírání a zamykání funkční",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Bez zatékání (zkouška vodou)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "Zábradlí",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Výška a rozestupy podle projektu",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Pevné ukotvení",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Povrch bez ostrých hran",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "Vnitřní malby a nátěry",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Podklad čistý, suchý a připravený",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Počet vrstev podle specifikace",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Rovnoměrné krytí, bez skvrn a stékanců",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Podlahy a výplně otvorů očištěny",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "Vnější nátěry",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Podklad čistý, suchý a připravený",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Vhodné podmínky pro aplikaci podle pokynů výrobce",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Počet vrstev podle specifikace",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Rovnoměrné krytí, bez skvrn a stékanců",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Podlahy a výplně otvorů očištěny",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "Elektroinstalace",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Krabice v místech podle projektu",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Trubky podle projektu a upevněné",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Krabice a trubky bez malty",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Krabice v odstupu od plynových vývodů",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Barvy vodičů podle projektu",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Obvody v rozvaděči označeny",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Zásuvky, vypínače a kryty osazeny",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "Zdravotechnika (vodovod a kanalizace)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Poloha a upevnění podle projektu",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Stoupačky: průměr, přímost a upevnění",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Uzávěry: vyrovnání, výška a ochrana",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Vývody zaslepené (zátky a víčka)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Zkouška těsnosti bez úniku",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Vpusti a potrubí průchodné a čisté",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "Plynoinstalace",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Trasa a materiály podle projektu",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Odstup od elektrických vývodů",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Zkouška těsnosti provedena oprávněnou osobou, záznam přiložen",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Označení a bezpečnostní značení",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "Pracovní deska, zařizovací předměty a baterie",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Upevnění a vodorovnost",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Sifon správně připojen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bez úniku vody",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Utěsnění a dokončovací úpravy",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Uklizeno",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "Kontrolní list kvality prací",
+  "checklistPdfModelo": "Šablona",
+  "checklistPdfObra": "Stavba",
+  "checklistPdfLocal": "Místo",
+  "checklistPdfEtapa": "Etapa",
+  "checklistPdfDataDaInspecao": "Datum kontroly",
+  "checklistPdfAplicadoPor": "Kontrolující osoba",
+  "checklistPdfColunaNumero": "Č.",
+  "checklistPdfColunaItem": "Položka",
+  "checklistPdfColunaResultado": "Výsledek",
+  "checklistPdfColunaObservacao": "Poznámka a fotky",
+  "checklistRespostaConforme": "Vyhovuje",
+  "checklistRespostaNaoConforme": "Nevyhovuje",
+  "checklistRespostaNaoSeAplica": "Netýká se",
+  "checklistSecaoAntes": "Před zahájením",
+  "checklistSecaoDurante": "V průběhu provádění",
+  "checklistSecaoConclusao": "Při dokončení",
+  "checklistItemCritico": "Kritická položka",
+  "checklistFotoObrigatoria": "Povinná fotka",
+  "checklistPdfNaoConformidades": "Neshody",
+  "checklistPdfOQueEstaErrado": "Popis neshody: {texto}",
+  "checklistPdfAcaoCorretiva": "Nápravné opatření: {acao} (zodpovídá: {responsavel}; termín: {prazo})",
+  "checklistPdfReinspecao": "{numero}. opakovaná kontrola {quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "Převzetí",
+  "checklistPdfLiberadoSemRessalvas": "Práce převzaty bez výhrad.",
+  "checklistPdfLiberadoComRessalvas": "Práce převzaty s výhradami.",
+  "checklistPdfNaoLiberado": "Nepřevzato",
+  "checklistPdfRessalvas": "Výhrady: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "Denní záznam – podrobnosti",
+  "pdfRdoDateClient": "Datum: {date} | klient: {client}",
+  "rdoFormWeatherTitle": "Počasí",
+  "weatherSunny": "Slunečno",
+  "weatherCloudy": "Zataženo",
+  "weatherRainy": "Deštivo",
+  "weatherShowers": "Přeháňky",
+  "weatherVariable": "Proměnlivo",
+  "pdfRdoPhysicalProgress": "Postup prací: {progress} %",
+  "pdfRdoWorkforceTitle": "Pracovníci na stavbě",
+  "pdfRdoColName": "Jméno",
+  "pdfRdoColRole": "Profese",
+  "pdfRdoColPresence": "Přítomnost",
+  "pdfRdoPresenceFull": "Celý den",
+  "pdfRdoPresenceHalf": "1/2 dne",
+  "rdoFormLaborAbsent": "Absence",
+  "rdoFormLaborExtraTitle": "Výpomoc",
+  "rdoFormLaborHoursWorked": "Odpracované hodiny",
+  "pdfRdoActivitiesTitle": "Provedené práce",
+  "rdoFormObsTitle": "Poznámky / události",
+  "pdfRdoPhotosTitle": "Fotodokumentace",
+  "rdoFormSignatureTitle": "Odpovědná osoba",
+  "pdfPage": "Strana",
+  "pdfOf": "z"
+ }
+}

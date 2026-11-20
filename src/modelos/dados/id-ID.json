@@ -1,0 +1,1210 @@
+{
+ "idioma": "id-ID",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "27 pekerjaan pelaksanaan yang biasanya diperiksa di lapangan. Butir-butirnya hanya contoh untuk diperiksa dan disesuaikan oleh perusahaan Anda, dan tidak menggantikan penanggung jawab teknis proyek.",
+  "criterio": "Sesuai gambar kerja, RKS, dan petunjuk pabrikan",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "Pekerjaan persiapan"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "Pondasi"
+   },
+   {
+    "id": "estrutura",
+    "nome": "Struktur"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "Dinding dan partisi"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "Plesteran dan pelapis dinding"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "Lantai dan plafon"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "Waterproofing"
+   },
+   {
+    "id": "cobertura",
+    "nome": "Atap"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "Kusen, pintu, jendela, dan railing"
+   },
+   {
+    "id": "pintura",
+    "nome": "Pengecatan"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "Instalasi MEP"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "Pemadatan urugan",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Area bersih, tanpa puing dan tanpa bahan organik",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Material urugan sesuai gambar kerja",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Penghamparan dan pemadatan lapis demi lapis sesuai prosedur",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Elevasi akhir dicek terhadap gambar kerja",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Uji kepadatan dilakukan bila diminta dalam gambar kerja, dengan laporan uji terlampir",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "Pengukuran dan pemasangan bouwplank",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Ukuran kumulatif dicek terhadap gambar kerja",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Siku di setiap sudut diperiksa",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Bouwplank dan patok acuan terpasang kokoh",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Elevasi acuan (peil) diperiksa",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "Pekerjaan pondasi",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Posisi titik pondasi diperiksa",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Dimensi dan kedalaman sesuai gambar kerja",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Bekisting tepi lurus (pondasi rakit)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Galian jalur utilitas diurug kembali dan dipadatkan",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Pembesian dan pengecoran sudah disetujui lewat daftar periksa masing-masing",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "Pekerjaan bekisting",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Kelurusan, siku, dan ketegakan diperiksa di semua ruangan",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Penyelaras, tie rod, dan skur terpasang di tempatnya",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Bukaan pintu dan jendela diperiksa",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bekisting bersih dan rapat sebelum pengecoran",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "Pemasangan pembesian",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Posisi dan jumlah tulangan sesuai gambar kerja",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Beton decking terpasang (selimut beton)",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Besi stek dan tulangan tunggu terpasang di tempatnya",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Tulangan bersih dan terikat kuat",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "Pengecoran elemen struktur",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Bekisting dan pembesian sudah disetujui",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Pipa conduit dan titik instalasi terpasang kuat sebelum pengecoran",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Uji slump setiap truk mixer datang",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Surat jalan beton sesuai pesanan",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Pemadatan dengan vibrator dilakukan",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Perawatan beton (curing) dimulai sesuai prosedur",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "Pasangan dinding pemikul beban",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Marking diperiksa: dimensi, siku, dan bukaan",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Bata atau blok sesuai spesifikasi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Ketegakan, kedataran, dan kelurusan",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Grouting dan tulangan di titik sesuai gambar kerja",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Bersih, tanpa puing",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "Pasangan dinding non-struktural dan partisi ringan",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Marking diperiksa",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Ketegakan, kedataran, dan kelurusan",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Bukaan pintu dan jendela diperiksa",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Celah di atas dinding terisi atau dinding terikat ke balok atau pelat",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Bersih, tanpa puing",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "Plesteran dinding dalam area kering",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Permukaan bersih dan siap",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Adukan sesuai prosedur",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Kerataan dan hasil akhir",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Ketegakan dan siku",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Kebersihan",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "Pemasangan keramik dinding area basah",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Kerataan, kelurusan, dan daya lekat",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Tidak ada keramik kopong (bunyi kosong saat diketuk)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Nat terisi penuh dan tanpa noda",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Tidak ada keramik pecah",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Kemiringan ke arah floor drain",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "Pelapis dinding luar",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Permukaan bersih dan siap",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Ketegakan dan kerataan",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Nat dan siar sesuai gambar kerja",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Tidak ada bunyi kopong saat diketuk",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Hasil akhir dan kebersihan",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "Screed lantai",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Permukaan dasar bersih",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Elevasi dan kemiringan sesuai gambar kerja",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Ketebalan sesuai gambar kerja",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Permukaan tanpa retak",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "Pemasangan lantai dalam area kering",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Kerataan, kelurusan, dan daya lekat",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Tidak ada ubin kopong (bunyi kosong saat diketuk)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Nat terisi penuh dan tanpa noda",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Tidak ada ubin pecah",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "Pemasangan lantai dalam area basah",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Kerataan, kelurusan, dan daya lekat",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Tidak ada ubin kopong (bunyi kosong saat diketuk)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Nat terisi penuh dan tanpa noda",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Tidak ada ubin pecah",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Kemiringan ke arah floor drain",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "Pemasangan lantai luar",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Kemiringan dan aliran air",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Kerataan",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Nat dan siar",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Tidak ada ubin pecah",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "Plafon",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Kerataan dan kedataran",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Titik listrik tidak tertutup plafon",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Tidak berlubang dan tidak pecah",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Manhole plafon dan akses sesuai gambar kerja",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "Waterproofing",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Permukaan tanpa retak aktif, sudut dan lantai yang diturunkan sudah siap",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Screed perata dengan kemiringan dan sudut dibuat tumpul",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Material sesuai RKS dan kontrak",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Overlap, lapisan naik ke dinding, dan detail sekitar floor drain sesuai gambar kerja dan pabrikan",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Uji rendam (genangan air selama waktu yang ditentukan dalam gambar kerja)",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Lapisan pelindung (screed proteksi)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Kebersihan",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "Atap (rangka dan penutup atap)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Rangka atap sesuai gambar kerja",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Sambungan dan pengikatan kuat",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Kemiringan sesuai ketentuan pabrikan penutup atap",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Overlap dan kelurusan genteng",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Flashing dan talang",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "Kusen dan daun pintu",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Kusen tegak lurus",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Engsel dan perlengkapan pintu lurus",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Pintu membuka dan menutup tanpa macet",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "Kunci, rozet, dan aksesori terpasang",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "List kusen tanpa cacat",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "Jendela",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Ukuran sesuai dengan bukaan",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Sealant di sekeliling kusen",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Kusen tidak penyok",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Bisa dibuka, ditutup, dan dikunci",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Tidak ada rembesan air (uji siram air)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "Railing pengaman",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Tinggi dan jarak antarjeruji sesuai gambar kerja",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Terpasang kokoh",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Finishing tanpa sisi tajam",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "Pengecatan interior",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Permukaan bersih, kering, dan siap",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Jumlah lapisan cat sesuai spesifikasi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Cat merata, tanpa belang dan tanpa meleleh",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Lantai, kusen, pintu, dan jendela dibersihkan",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "Pengecatan eksterior",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "Permukaan bersih, kering, dan siap",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "Cuaca sesuai untuk pengecatan, mengikuti ketentuan pabrikan",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Jumlah lapisan cat sesuai spesifikasi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Cat merata, tanpa belang dan tanpa meleleh",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Lantai, kusen, pintu, dan jendela dibersihkan",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "Instalasi listrik",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Inbow dus pada posisi sesuai gambar kerja",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Pipa conduit sesuai gambar kerja dan terikat kuat",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Inbow dus dan pipa conduit tidak tersumbat adukan",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Kotak listrik berjarak aman dari titik gas",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Warna kabel sesuai gambar kerja",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Setiap sirkuit diberi label di panel listrik",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Stopkontak, sakelar, dan cover terpasang",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "Instalasi air bersih dan air kotor",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Posisi dan pengikatan pipa sesuai gambar kerja",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Pipa tegak: diameter, kelurusan, dan pengikatan",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "Stop kran: kelurusan, kedataran, dan perlindungan",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "Ujung pipa ditutup (plug dan dop)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Uji tekanan tanpa kebocoran",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Floor drain dan pipa tidak tersumbat dan bersih",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "Instalasi gas",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Jalur pipa dan material sesuai gambar kerja",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Berjarak aman dari titik listrik",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Uji kebocoran oleh tenaga ahli yang kompeten, dengan berita acara terlampir",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Penandaan dan rambu peringatan",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "Meja wastafel, saniter, dan kran",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "Terpasang kokoh dan rata air",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "Sambungan sifon (leher angsa) benar",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "Tidak bocor",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "Seal dan finishing rapi",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "Kebersihan",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "Lembar pemeriksaan mutu pekerjaan",
+  "checklistPdfModelo": "Templat",
+  "checklistPdfObra": "Proyek",
+  "checklistPdfLocal": "Lokasi",
+  "checklistPdfEtapa": "Tahap",
+  "checklistPdfDataDaInspecao": "Tanggal pemeriksaan",
+  "checklistPdfAplicadoPor": "Diperiksa oleh",
+  "checklistPdfColunaNumero": "No.",
+  "checklistPdfColunaItem": "Butir",
+  "checklistPdfColunaResultado": "Hasil",
+  "checklistPdfColunaObservacao": "Keterangan dan foto",
+  "checklistRespostaConforme": "Sesuai",
+  "checklistRespostaNaoConforme": "Tidak sesuai",
+  "checklistRespostaNaoSeAplica": "Tidak berlaku",
+  "checklistSecaoAntes": "Sebelum mulai",
+  "checklistSecaoDurante": "Selama pelaksanaan",
+  "checklistSecaoConclusao": "Saat selesai",
+  "checklistItemCritico": "Butir kritis",
+  "checklistFotoObrigatoria": "Wajib foto",
+  "checklistPdfNaoConformidades": "Ketidaksesuaian",
+  "checklistPdfOQueEstaErrado": "Yang tidak sesuai: {texto}",
+  "checklistPdfAcaoCorretiva": "Tindakan perbaikan: {acao} (penanggung jawab: {responsavel}; tenggat: {prazo})",
+  "checklistPdfReinspecao": "Pemeriksaan ulang ke-{numero} pada {quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "Persetujuan",
+  "checklistPdfLiberadoSemRessalvas": "Pekerjaan disetujui tanpa catatan.",
+  "checklistPdfLiberadoComRessalvas": "Pekerjaan disetujui dengan catatan.",
+  "checklistPdfNaoLiberado": "Belum disetujui",
+  "checklistPdfRessalvas": "Catatan: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "Laporan harian - detail",
+  "pdfRdoDateClient": "Tanggal: {date} | klien: {client}",
+  "rdoFormWeatherTitle": "Kondisi cuaca",
+  "weatherSunny": "Cerah",
+  "weatherCloudy": "Berawan",
+  "weatherRainy": "Hujan",
+  "weatherShowers": "Hujan lokal",
+  "weatherVariable": "Berubah-ubah",
+  "pdfRdoPhysicalProgress": "Progres fisik: {progress}%",
+  "pdfRdoWorkforceTitle": "Tenaga kerja di lokasi",
+  "pdfRdoColName": "Nama",
+  "pdfRdoColRole": "Jabatan",
+  "pdfRdoColPresence": "Kehadiran",
+  "pdfRdoPresenceFull": "Penuh",
+  "pdfRdoPresenceHalf": "1/2 hari",
+  "rdoFormLaborAbsent": "Absen",
+  "rdoFormLaborExtraTitle": "Tenaga kerja lepas",
+  "rdoFormLaborHoursWorked": "Jam kerja",
+  "pdfRdoActivitiesTitle": "Pekerjaan yang dilakukan",
+  "rdoFormObsTitle": "Catatan / kejadian",
+  "pdfRdoPhotosTitle": "Dokumentasi foto",
+  "rdoFormSignatureTitle": "Penanggung jawab teknis",
+  "pdfPage": "Halaman",
+  "pdfOf": "dari"
+ }
+}

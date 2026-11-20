@@ -1,0 +1,1210 @@
+{
+ "idioma": "th-TH",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "งานก่อสร้าง 27 รายการที่มักตรวจกันที่หน้างาน หัวข้อตรวจเป็นเพียงตัวอย่างให้บริษัทของคุณตรวจทานและปรับใช้ ไม่ใช้แทนวิศวกรผู้ควบคุมงาน",
+  "criterio": "ตามแบบ รายการประกอบแบบ และคำแนะนำของผู้ผลิต",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "งานเตรียมการ"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "งานฐานราก"
+   },
+   {
+    "id": "estrutura",
+    "nome": "งานโครงสร้าง"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "งานผนัง"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "งานฉาบและผิวผนัง"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "งานพื้นและฝ้าเพดาน"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "งานกันซึม"
+   },
+   {
+    "id": "cobertura",
+    "nome": "งานหลังคา"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "งานประตู หน้าต่าง และราวกันตก"
+   },
+   {
+    "id": "pintura",
+    "nome": "งานสี"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "งานระบบ (ไฟฟ้า ประปา แก๊ส)"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "งานบดอัดดินถม",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "พื้นที่สะอาด ไม่มีเศษวัสดุและวัสดุอินทรีย์",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "วัสดุถมตามแบบ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ถมและบดอัดเป็นชั้นตามขั้นตอนที่กำหนด",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ตรวจระดับสุดท้ายเทียบกับแบบ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ทดสอบการบดอัดเมื่อแบบกำหนด พร้อมแนบผลทดสอบ",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "งานวางผังอาคาร",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ตรวจระยะสะสมเทียบกับแบบ",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ตรวจฉากที่มุม",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "ผังและหมุดอ้างอิงยึดแน่นมั่นคง",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ตรวจระดับอ้างอิง (หมุดระดับ)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "งานฐานราก",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "ตรวจตำแหน่งฐานรากแต่ละจุด",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ขนาดและความลึกตามแบบ",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "แบบหล่อขอบได้แนว (ฐานรากแพ)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "ร่องงานระบบถมกลับและบดอัดแล้ว",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "งานเหล็กเสริมและงานเทคอนกรีตผ่านการตรวจตามเช็กลิสต์ของแต่ละงานแล้ว",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "งานแบบหล่อ",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ตรวจแนว ฉาก และดิ่งครบทุกห้อง",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ตัวจัดแนว เหล็กยึดแบบ และค้ำยันอยู่ครบตำแหน่ง",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "ตรวจช่องเปิดประตูและหน้าต่าง",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "แบบหล่อสะอาดและอุดรอยต่อแน่นก่อนเทคอนกรีต",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "งานผูกเหล็กเสริม",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ตำแหน่งและจำนวนเหล็กเสริมตามแบบ",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ลูกปูนรองเหล็กครบ (ระยะคอนกรีตหุ้มเหล็ก)",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "เหล็กเสียบและเหล็กรอต่ออยู่ครบตำแหน่ง",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "เหล็กเสริมสะอาดและผูกแน่น",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "งานเทคอนกรีตโครงสร้าง",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "งานแบบหล่อและเหล็กเสริมผ่านการตรวจแล้ว",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "ท่อร้อยสายไฟและจุดงานระบบยึดแน่นก่อนเทคอนกรีต",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ทดสอบค่ายุบตัว (slump) ทุกคันรถโม่ที่มาถึง",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ใบส่งคอนกรีตตรงกับใบสั่งซื้อ",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "จี้เขย่าคอนกรีตแล้ว",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "เริ่มบ่มคอนกรีตตามขั้นตอนที่กำหนด",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "งานก่อผนังรับน้ำหนัก",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "ตรวจแนวผัง: ขนาด ฉาก และช่องเปิด",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "บล็อกตามรายการประกอบแบบ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ดิ่ง ระดับ และแนว",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "เกราท์และเหล็กเสริมอยู่ตามตำแหน่งในแบบ",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ทำความสะอาด ไม่มีเศษวัสดุ",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "งานก่อผนังไม่รับน้ำหนักและผนังเบา",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "ตรวจแนวผัง",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ดิ่ง ระดับ และแนว",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ตรวจช่องเปิดประตูและหน้าต่าง",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "อุดช่องหัวผนังหรือยึดหัวผนังกับคานหรือพื้น",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ทำความสะอาด ไม่มีเศษวัสดุ",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "งานฉาบผนังภายในพื้นที่แห้ง",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "พื้นผิวสะอาดและเตรียมพร้อม",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ผสมปูนฉาบตามขั้นตอนที่กำหนด",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ความเรียบและผิวงาน",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ดิ่งและฉาก",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "ทำความสะอาด",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "งานปูกระเบื้องผนังภายในพื้นที่เปียก",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ความเรียบ แนว และการยึดเกาะ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ไม่มีแผ่นกลวง (เคาะแล้วเสียงโปร่ง)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ยาแนวเต็ม ไม่มีรอยด่าง",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "ไม่มีกระเบื้องแตกบิ่น",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "ลาดเอียงลงฟลอร์เดรน",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "งานผิวผนังภายนอก",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "พื้นผิวสะอาดและเตรียมพร้อม",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ดิ่งและความเรียบ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "รอยต่อตามแบบ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "เคาะแล้วไม่มีเสียงกลวง",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ผิวงานเรียบร้อยและสะอาด",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "งานเทปรับระดับพื้น (สกรีด)",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "พื้นผิวเดิมสะอาด",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ระดับและความลาดเอียงตามแบบ",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ความหนาตามแบบ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ผิวไม่มีรอยร้าว",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "งานปูพื้นภายในพื้นที่แห้ง",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ความเรียบ แนว และการยึดเกาะ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ไม่มีแผ่นกลวง (เคาะแล้วเสียงโปร่ง)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ยาแนวเต็ม ไม่มีรอยด่าง",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "ไม่มีกระเบื้องแตกบิ่น",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "งานปูพื้นภายในพื้นที่เปียก",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ความเรียบ แนว และการยึดเกาะ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ไม่มีแผ่นกลวง (เคาะแล้วเสียงโปร่ง)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ยาแนวเต็ม ไม่มีรอยด่าง",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "ไม่มีกระเบื้องแตกบิ่น",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "ลาดเอียงลงฟลอร์เดรน",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "งานปูพื้นภายนอก",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ความลาดเอียงและการระบายน้ำ",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ความเรียบ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "รอยต่อ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ไม่มีแผ่นแตกบิ่น",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "งานฝ้าเพดาน",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ความเรียบและได้ระดับ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "จุดไฟฟ้าไม่ถูกปิดทับ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "ไม่มีรูหรือแตกเสียหาย",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "ช่องเซอร์วิสฝ้าตามแบบ",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "งานกันซึม",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "พื้นผิวไม่มีรอยร้าวที่ยังขยายตัว มุมและพื้นลดระดับเตรียมพร้อม",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "ปรับผิวให้ได้ความลาดเอียงและทำมุมโค้งมน",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "วัสดุตามรายการประกอบแบบและสัญญา",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ระยะทับซ้อน การพับขึ้นผนัง และการเก็บงานรอบท่อระบายน้ำตามแบบและผู้ผลิต",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ทดสอบขังน้ำ (ขังน้ำตามระยะเวลาที่แบบกำหนด)",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ชั้นป้องกันผิวกันซึม",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "ทำความสะอาด",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "งานหลังคา (โครงหลังคาและการมุง)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "โครงหลังคาตามแบบ",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "การยึดและการผูกยึด",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "ความลาดชันตามที่ผู้ผลิตกระเบื้องหลังคากำหนด",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "ระยะทับซ้อนและแนวของกระเบื้อง",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "แผ่นปิดรอยต่อ (แฟลชชิ่ง) และรางน้ำ",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "วงกบและบานประตู",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "วงกบได้ดิ่ง",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "บานพับและอุปกรณ์ได้แนว",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "ประตูเปิดปิดได้ไม่ติดขัด",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "กุญแจ แผ่นครอบ และอุปกรณ์ติดตั้งครบ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "บัววงกบไม่มีตำหนิ",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "หน้าต่าง",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ขนาดพอดีกับช่องเปิด",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ซีลแลนท์รอบวงกบ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "วงกบไม่บุบ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "เปิด ปิด และล็อกได้",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "น้ำไม่รั่วเข้า (ทดสอบฉีดน้ำ)",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "ราวกันตก",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ความสูงและระยะช่องว่างตามแบบ",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ยึดแน่นมั่นคง",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ผิวงานไม่มีขอบคม",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "งานทาสีภายใน",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "พื้นผิวสะอาด แห้ง และเตรียมพร้อม",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "จำนวนเที่ยวการทาตามรายการประกอบแบบ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "สีเรียบสม่ำเสมอ ไม่ด่าง ไม่ไหลย้อย",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ทำความสะอาดพื้นและประตูหน้าต่าง",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "งานทาสีภายนอก",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "พื้นผิวสะอาด แห้ง และเตรียมพร้อม",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "สภาพอากาศเหมาะกับการทาสีตามที่ผู้ผลิตกำหนด",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "จำนวนเที่ยวการทาตามรายการประกอบแบบ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "สีเรียบสม่ำเสมอ ไม่ด่าง ไม่ไหลย้อย",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ทำความสะอาดพื้นและประตูหน้าต่าง",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "งานระบบไฟฟ้า",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "บ็อกซ์ไฟฟ้าอยู่ตามตำแหน่งในแบบ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ท่อร้อยสายตามแบบและยึดแน่น",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "บ็อกซ์และท่อร้อยสายไม่มีปูนอุดตัน",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "บ็อกซ์ไฟฟ้าอยู่ห่างจากจุดแก๊ส",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "สีสายไฟตามแบบ",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ระบุชื่อวงจรในตู้ไฟ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "เต้ารับ สวิตช์ และหน้ากากติดตั้งครบ",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "งานระบบประปาและสุขาภิบาล",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "ตำแหน่งและการยึดท่อตามแบบ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ท่อแนวดิ่ง: ขนาด แนว และการยึด",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "วาล์ว: แนว ระดับ และการป้องกัน",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "ปลายท่ออุดปิด (ปลั๊กอุดและฝาครอบ)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ทดสอบแรงดันแล้วไม่มีรั่วซึม",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ท่อระบายน้ำและท่อไม่อุดตันและสะอาด",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "งานระบบแก๊ส",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "แนวท่อและวัสดุตามแบบ",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "เว้นระยะห่างจากจุดไฟฟ้า",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ทดสอบรั่วซึมโดยช่างที่มีคุณสมบัติ พร้อมแนบบันทึกผล",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ป้ายระบุและสัญลักษณ์เตือน",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "เคาน์เตอร์ สุขภัณฑ์ และก๊อกน้ำ",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "การยึดและได้ระดับ",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "ต่อท่อน้ำทิ้งและท่อดักกลิ่นถูกต้อง",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "ไม่มีรั่วซึม",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "ยาแนวและผิวงานเรียบร้อย",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "ทำความสะอาด",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "แบบฟอร์มตรวจสอบคุณภาพงาน",
+  "checklistPdfModelo": "แม่แบบ",
+  "checklistPdfObra": "โครงการ",
+  "checklistPdfLocal": "ตำแหน่ง",
+  "checklistPdfEtapa": "ขั้นตอนงาน",
+  "checklistPdfDataDaInspecao": "วันที่ตรวจ",
+  "checklistPdfAplicadoPor": "ผู้ตรวจ",
+  "checklistPdfColunaNumero": "ลำดับ",
+  "checklistPdfColunaItem": "หัวข้อตรวจ",
+  "checklistPdfColunaResultado": "ผลการตรวจ",
+  "checklistPdfColunaObservacao": "หมายเหตุและรูปภาพ",
+  "checklistRespostaConforme": "ผ่าน",
+  "checklistRespostaNaoConforme": "ไม่ผ่าน",
+  "checklistRespostaNaoSeAplica": "ไม่เกี่ยวข้อง",
+  "checklistSecaoAntes": "ก่อนเริ่มงาน",
+  "checklistSecaoDurante": "ระหว่างทำงาน",
+  "checklistSecaoConclusao": "เมื่องานเสร็จ",
+  "checklistItemCritico": "หัวข้อสำคัญ",
+  "checklistFotoObrigatoria": "ต้องมีรูปภาพ",
+  "checklistPdfNaoConformidades": "ข้อบกพร่อง",
+  "checklistPdfOQueEstaErrado": "สิ่งที่ไม่ถูกต้อง: {texto}",
+  "checklistPdfAcaoCorretiva": "การแก้ไข: {acao} (ผู้รับผิดชอบ: {responsavel} กำหนดเสร็จ: {prazo})",
+  "checklistPdfReinspecao": "ตรวจซ้ำครั้งที่ {numero} เมื่อ {quando}: {resultado} ({por})",
+  "checklistPdfLiberacao": "การอนุมัติ",
+  "checklistPdfLiberadoSemRessalvas": "อนุมัติงานโดยไม่มีข้อสังเกต",
+  "checklistPdfLiberadoComRessalvas": "อนุมัติงานโดยมีข้อสังเกต",
+  "checklistPdfNaoLiberado": "ยังไม่อนุมัติ",
+  "checklistPdfRessalvas": "ข้อสังเกต: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "รายงานประจำวัน - รายละเอียด",
+  "pdfRdoDateClient": "วันที่: {date} | ลูกค้า: {client}",
+  "rdoFormWeatherTitle": "สภาพอากาศ",
+  "weatherSunny": "แดดจัด",
+  "weatherCloudy": "มีเมฆมาก",
+  "weatherRainy": "ฝนตก",
+  "weatherShowers": "ฝนตกเป็นช่วง",
+  "weatherVariable": "แปรปรวน",
+  "pdfRdoPhysicalProgress": "ความคืบหน้างาน: {progress}%",
+  "pdfRdoWorkforceTitle": "กำลังคนที่หน้างาน",
+  "pdfRdoColName": "ชื่อ",
+  "pdfRdoColRole": "หน้าที่",
+  "pdfRdoColPresence": "การมาทำงาน",
+  "pdfRdoPresenceFull": "เต็มวัน",
+  "pdfRdoPresenceHalf": "ครึ่งวัน",
+  "rdoFormLaborAbsent": "ขาดงาน",
+  "rdoFormLaborExtraTitle": "แรงงานจ้างเพิ่มรายวัน",
+  "rdoFormLaborHoursWorked": "ชั่วโมงทำงาน",
+  "pdfRdoActivitiesTitle": "งานที่ทำ",
+  "rdoFormObsTitle": "หมายเหตุ / เหตุการณ์",
+  "pdfRdoPhotosTitle": "ภาพถ่ายหน้างาน",
+  "rdoFormSignatureTitle": "ผู้รับผิดชอบด้านเทคนิค",
+  "pdfPage": "หน้า",
+  "pdfOf": "จาก"
+ }
+}

@@ -1,7 +1,7 @@
 // Rodapé: chamada curta (fora da página inicial, que já tem a dela), colunas de links e o idioma.
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { IDIOMAS, caminhoAjuda, caminhoInicio, caminhoLegal, caminhoSuporte } from '../i18n/idiomas.js';
+import { IDIOMAS, caminhoAjuda, caminhoInicio, caminhoLegal, caminhoModelos, caminhoSuporte } from '../i18n/idiomas.js';
 import { anoNoIdioma } from '../i18n/formatos.js';
 import { useIdioma, useTrocarIdioma } from '../i18n/RotaDoIdioma.jsx';
 import { abrirAvisoCookies } from '../legal/cookies.js';
@@ -50,6 +50,7 @@ export default function Footer({ comChamada = true }) {
                     <ul>
                         <li><Link to={caminhoInicio(codigo, 'recursos')}>{t('nav.recursos')}</Link></li>
                         <li><Link to={caminhoInicio(codigo, 'precos')}>{t('nav.precos')}</Link></li>
+                        <li><Link to={caminhoModelos(codigo)}>{t('modelos.nav')}</Link></li>
                         <li><Link to={caminhoAjuda(codigo)}>{t('footer.help')}</Link></li>
                     </ul>
                 </nav>

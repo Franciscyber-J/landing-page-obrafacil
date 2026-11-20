@@ -1,0 +1,1210 @@
+{
+ "idioma": "ko-KR",
+ "biblioteca": {
+  "versao": 1,
+  "nota": "현장에서 일반적으로 점검하는 27개 시공 공종입니다. 각 항목은 예시이므로 회사에서 검토하고 현장에 맞게 수정하여 사용하세요. 현장 기술 책임자의 확인을 대신하지 않습니다.",
+  "criterio": "설계도서, 시방서 및 제조사 시공 지침에 따름",
+  "grupos": [
+   {
+    "id": "preliminares",
+    "nome": "준비 공사"
+   },
+   {
+    "id": "fundacoes",
+    "nome": "기초 공사"
+   },
+   {
+    "id": "estrutura",
+    "nome": "골조 공사"
+   },
+   {
+    "id": "vedacoes",
+    "nome": "조적·칸막이 공사"
+   },
+   {
+    "id": "revestimentos",
+    "nome": "벽체 마감 공사"
+   },
+   {
+    "id": "pisos_forros",
+    "nome": "바닥·천장 공사"
+   },
+   {
+    "id": "impermeabilizacao",
+    "nome": "방수 공사"
+   },
+   {
+    "id": "cobertura",
+    "nome": "지붕 공사"
+   },
+   {
+    "id": "esquadrias",
+    "nome": "창호·난간 공사"
+   },
+   {
+    "id": "pintura",
+    "nome": "도장 공사"
+   },
+   {
+    "id": "instalacoes",
+    "nome": "설비 공사"
+   }
+  ],
+  "modelos": [
+   {
+    "id": "compactacao_aterro",
+    "grupo": "preliminares",
+    "nome": "성토 다짐",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "부지 정리 상태: 잔재물 및 유기물 제거",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "성토 재료가 설계도서와 일치",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "시공 절차에 따른 층별 포설 및 다짐",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "최종 계획고를 설계도와 대조 확인",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "설계에서 요구하는 경우 다짐 시험 실시 및 시험 성적서 첨부",
+      "critico": true,
+      "foto": true
+     }
+    ]
+   },
+   {
+    "id": "locacao_obra",
+    "grupo": "preliminares",
+    "nome": "건물 위치 측량 및 규준틀 설치",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "누적 치수를 설계도와 대조 확인",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "모서리 직각 확인",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "규준틀 및 기준 말뚝의 견고한 고정",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "기준 레벨(BM) 확인",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_fundacao",
+    "grupo": "fundacoes",
+    "nome": "기초 시공",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "기초 부재 위치 확인",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "치수 및 근입 깊이가 설계도와 일치",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "테두리 거푸집 정렬(매트 기초)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "설비 배관 트렌치 되메우기 및 재다짐",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "철근 배근 및 콘크리트 타설은 각 체크리스트로 승인 완료",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "execucao_forma",
+    "grupo": "estrutura",
+    "nome": "거푸집 설치",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "모든 실의 거푸집 정렬, 직각 및 수직 확인",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "세퍼레이터, 폼타이 및 동바리 설치 상태",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "문·창 개구부 확인",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "타설 전 거푸집 내부 청소 및 틈새 밀실 처리",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "montagem_armadura",
+    "grupo": "estrutura",
+    "nome": "철근 배근",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "철근 위치 및 개수가 배근도와 일치",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "스페이서 설치(피복 두께 확보)",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "다월바 및 이음용 대기 철근 설치",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "철근 청결 상태 및 결속",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "concretagem_peca",
+    "grupo": "estrutura",
+    "nome": "구조 부재 콘크리트 타설",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "거푸집 및 철근 배근 검측 승인",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "타설 전 전선관 및 박스 고정",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "레미콘 차량 도착 시마다 슬럼프 시험",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "레미콘 납품서 내용이 주문과 일치",
+      "critico": false,
+      "foto": true
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "다짐(진동기) 실시",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "시공 절차에 따른 양생 시작",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_estrutural",
+    "grupo": "vedacoes",
+    "nome": "구조용 조적(보강 블록조)",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "먹매김 확인: 치수, 직각 및 개구부",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "블록이 시방과 일치",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "수직, 수평 및 정렬",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "설계도에 표시된 위치의 그라우트 충전 및 보강 철근",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "청소 상태, 잔재물 없음",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "alvenaria_vedacao",
+    "grupo": "vedacoes",
+    "nome": "비구조 조적 및 경량 칸막이",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "먹매김 확인",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "수직, 수평 및 정렬",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "문·창 개구부 확인",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "상부 사춤 또는 상단 고정",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "청소 상태, 잔재물 없음",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_seco",
+    "grupo": "revestimentos",
+    "nome": "내부 미장(건조 공간)",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "바탕면 청소 및 바탕 처리",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "모르타르 배합 및 바르기가 시공 절차와 일치",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "면 고르기 및 마감 상태",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "수직 및 직각",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "청소",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_interno_umido",
+    "grupo": "revestimentos",
+    "nome": "내부 벽 마감(물 사용 공간)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "평탄도, 정렬 및 부착 상태",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "들뜸 없음(타진 검사)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "줄눈 누락 및 오염 없음",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "깨진 타일 없음",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "배수구 방향 물매",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "revestimento_externo",
+    "grupo": "revestimentos",
+    "nome": "외벽 마감",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "바탕면 청소 및 바탕 처리",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "수직 및 평탄도",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "줄눈이 설계도와 일치",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "들뜸 없음(타진 검사)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "마감 상태 및 청소",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "contrapiso",
+    "grupo": "pisos_forros",
+    "nome": "바닥 바탕 모르타르",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "바탕면 청소",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "레벨 및 물매가 설계도와 일치",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "두께가 설계도와 일치",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "표면 균열 없음",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_seco",
+    "grupo": "pisos_forros",
+    "nome": "내부 바닥 마감(건조 공간)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "평탄도, 정렬 및 부착 상태",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "들뜸 없음(타진 검사)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "줄눈 누락 및 오염 없음",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "깨진 바닥재 없음",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_interno_umido",
+    "grupo": "pisos_forros",
+    "nome": "내부 바닥 마감(물 사용 공간)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "평탄도, 정렬 및 부착 상태",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "들뜸 없음(타진 검사)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "줄눈 누락 및 오염 없음",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "깨진 바닥재 없음",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "배수구 방향 물매",
+      "critico": true,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "piso_externo",
+    "grupo": "pisos_forros",
+    "nome": "외부 바닥 마감",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "물매 및 배수",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "평탄도",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "줄눈",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "깨진 바닥재 없음",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "forro",
+    "grupo": "pisos_forros",
+    "nome": "천장",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "평탄도 및 수평",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "전기 인출구가 가려지지 않음",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "구멍 및 파손 없음",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "점검구가 설계도와 일치",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "impermeabilizacao",
+    "grupo": "impermeabilizacao",
+    "nome": "방수",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "바탕면에 진행성 균열이 없고 모서리 및 단차부 처리 완료",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "바탕 조정: 물매 확보 및 모서리 둥글게 처리",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "방수재가 시방서 및 계약과 일치",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "겹침, 치켜올림 및 배수구 주변 마감이 설계도와 제조사 지침과 일치",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "담수 시험(설계에서 정한 시간)",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "보호층(누름 콘크리트 등)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "청소",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "cobertura_telhado",
+    "grupo": "cobertura",
+    "nome": "지붕(지붕틀 및 지붕 잇기)",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "지붕틀이 설계도와 일치",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "결속 및 고정",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "지붕 경사가 지붕재 제조사 기준과 일치",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "지붕재 겹침 및 정렬",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "후레싱 및 홈통",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "batente_porta",
+    "grupo": "esquadrias",
+    "nome": "문틀 및 문",
+    "itens": [
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "문틀 수직",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "경첩 및 철물 정렬",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "문 개폐 원활, 걸림 없음",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c4",
+      "secao": "C",
+      "texto": "도어록, 로제트 및 부속 철물 설치",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c5",
+      "secao": "C",
+      "texto": "문선 몰딩 하자 없음",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "janela",
+    "grupo": "esquadrias",
+    "nome": "창호",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "개구부 치수와 일치",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "둘레 실란트 시공",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "창틀 찌그러짐 없음",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "개폐 및 잠금 작동",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "살수 시험 결과 누수 없음",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "guarda_corpo",
+    "grupo": "esquadrias",
+    "nome": "난간",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "높이 및 간격이 설계도와 일치",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "견고한 고정",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "날카로운 모서리 없는 마감",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_interna",
+    "grupo": "pintura",
+    "nome": "내부 도장",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "바탕면 청소, 건조 및 바탕 처리",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "도장 횟수가 시방과 일치",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "도막 균일, 얼룩 및 흘러내림 없음",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "바닥 및 창호 청소",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "pintura_externa",
+    "grupo": "pintura",
+    "nome": "외부 도장",
+    "itens": [
+     {
+      "codigo": "a1",
+      "secao": "A",
+      "texto": "바탕면 청소, 건조 및 바탕 처리",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "a2",
+      "secao": "A",
+      "texto": "제조사 조건에 맞는 시공 시기(날씨, 건조 시간)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "도장 횟수가 시방과 일치",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "도막 균일, 얼룩 및 흘러내림 없음",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "바닥 및 창호 청소",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_eletrica",
+    "grupo": "instalacoes",
+    "nome": "전기 설비",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "박스 위치가 설계도와 일치",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "전선관이 설계도와 일치하고 고정됨",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "박스 및 전선관 내부 모르타르 유입 없음",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "박스와 가스 배관의 이격",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "전선 색상이 설계도와 일치",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "분전반 회로 표시",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "콘센트, 스위치 및 커버 플레이트 설치",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_hidrossanitaria",
+    "grupo": "instalacoes",
+    "nome": "급배수 위생 설비",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "배관 위치 및 고정이 설계도와 일치",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "입상관: 관경, 정렬 및 고정",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d3",
+      "secao": "D",
+      "texto": "밸브: 정렬, 높이 및 보호",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d4",
+      "secao": "D",
+      "texto": "배관 끝 밀봉(플러그 및 캡)",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "수압·만수 시험 결과 누수 없음",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "배수구 및 배관 막힘 없음, 청소 완료",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "instalacao_gas",
+    "grupo": "instalacoes",
+    "nome": "가스 설비",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "배관 경로 및 자재가 설계도와 일치",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "전기 설비와의 이격",
+      "critico": true,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "자격을 갖춘 전문가의 기밀 시험 실시 및 기록 첨부",
+      "critico": true,
+      "foto": true
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "표시 및 안내 표지",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   },
+   {
+    "id": "bancada_loucas_metais",
+    "grupo": "instalacoes",
+    "nome": "카운터, 위생도기 및 수전",
+    "itens": [
+     {
+      "codigo": "d1",
+      "secao": "D",
+      "texto": "고정 및 수평",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "d2",
+      "secao": "D",
+      "texto": "트랩 연결 상태",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c1",
+      "secao": "C",
+      "texto": "누수 없음",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c2",
+      "secao": "C",
+      "texto": "실링 및 마감",
+      "critico": false,
+      "foto": false
+     },
+     {
+      "codigo": "c3",
+      "secao": "C",
+      "texto": "청소",
+      "critico": false,
+      "foto": false
+     }
+    ]
+   }
+  ]
+ },
+ "app": {
+  "checklistPdfTitulo": "시공 검측 체크리스트",
+  "checklistPdfModelo": "템플릿",
+  "checklistPdfObra": "현장",
+  "checklistPdfLocal": "위치",
+  "checklistPdfEtapa": "공정",
+  "checklistPdfDataDaInspecao": "검사일",
+  "checklistPdfAplicadoPor": "점검자",
+  "checklistPdfColunaNumero": "번호",
+  "checklistPdfColunaItem": "점검 항목",
+  "checklistPdfColunaResultado": "결과",
+  "checklistPdfColunaObservacao": "비고 및 사진",
+  "checklistRespostaConforme": "적합",
+  "checklistRespostaNaoConforme": "부적합",
+  "checklistRespostaNaoSeAplica": "해당 없음",
+  "checklistSecaoAntes": "시공 전",
+  "checklistSecaoDurante": "시공 중",
+  "checklistSecaoConclusao": "완료 시",
+  "checklistItemCritico": "중요 항목",
+  "checklistFotoObrigatoria": "사진 필수",
+  "checklistPdfNaoConformidades": "부적합 사항",
+  "checklistPdfOQueEstaErrado": "부적합 내용: {texto}",
+  "checklistPdfAcaoCorretiva": "시정 조치: {acao}(담당: {responsavel}, 기한: {prazo})",
+  "checklistPdfReinspecao": "{numero}차 재검사({quando}): {resultado}({por})",
+  "checklistPdfLiberacao": "승인",
+  "checklistPdfLiberadoSemRessalvas": "조건 없이 시공을 승인했습니다.",
+  "checklistPdfLiberadoComRessalvas": "조건부로 시공을 승인했습니다.",
+  "checklistPdfNaoLiberado": "미승인",
+  "checklistPdfRessalvas": "보완 사항: {texto}",
+  "checklistPdfAssinadoPor": "{nome} · {papel} · {quando}",
+  "pdfRdoTitle": "공사일보 - 상세",
+  "pdfRdoDateClient": "날짜: {date} | 건축주: {client}",
+  "rdoFormWeatherTitle": "날씨",
+  "weatherSunny": "맑음",
+  "weatherCloudy": "흐림",
+  "weatherRainy": "비",
+  "weatherShowers": "소나기",
+  "weatherVariable": "변덕",
+  "pdfRdoPhysicalProgress": "공정률: {progress}%",
+  "pdfRdoWorkforceTitle": "투입 인원",
+  "pdfRdoColName": "이름",
+  "pdfRdoColRole": "직종",
+  "pdfRdoColPresence": "출근",
+  "pdfRdoPresenceFull": "종일",
+  "pdfRdoPresenceHalf": "반일",
+  "rdoFormLaborAbsent": "결근",
+  "rdoFormLaborExtraTitle": "추가 인력",
+  "rdoFormLaborHoursWorked": "근무 시간",
+  "pdfRdoActivitiesTitle": "작업 내용",
+  "rdoFormObsTitle": "특이사항 / 이슈",
+  "pdfRdoPhotosTitle": "사진 기록",
+  "rdoFormSignatureTitle": "기술 책임자",
+  "pdfPage": "페이지",
+  "pdfOf": "/"
+ }
+}
