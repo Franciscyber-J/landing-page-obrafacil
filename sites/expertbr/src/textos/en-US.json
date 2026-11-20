@@ -1,0 +1,84 @@
+{
+    "ancoras": {
+        "produtos": "apps",
+        "sobre": "about",
+        "contato": "contact"
+    },
+    "seo": {
+        "titulo": "ExpertBR: app studio, maker of ObraFácil",
+        "descricao": "ExpertBR builds apps for everyday work. ObraFácil, for construction management and daily logs, is live; Orbit, for customer messaging, is on the way.",
+        "imagemAlt": "ExpertBR, a Brazilian app studio",
+        "organizacao": "Brazilian studio building apps for everyday work, maker of ObraFácil, a construction management app.",
+        "llms": {
+            "sobre": "What ExpertBR is",
+            "aplicativos": "Apps",
+            "emBreve": "coming soon, not launched yet",
+            "contato": "Contact",
+            "idiomas": "The site is available in these languages"
+        }
+    },
+    "nav": {
+        "inicio": "ExpertBR home page",
+        "navegacao": "Main navigation",
+        "produtos": "Apps",
+        "sobre": "About",
+        "contato": "Contact",
+        "escolherIdioma": "Choose the site language",
+        "tema": "Switch between light and dark theme",
+        "pular": "Skip to content"
+    },
+    "abertura": {
+        "titulo": "One app for every **job**.",
+        "texto": "ExpertBR is an app studio from Brazil. Each app takes care of one job from start to finish: ObraFácil already runs construction projects, and Orbit is on the way for customer conversations on social media.",
+        "secundaria": "See the apps"
+    },
+    "produtos": {
+        "titulo": "The apps",
+        "texto": "The first one is already in the stores. The next one is on the way.",
+        "noAr": "Live",
+        "emBreve": "Coming soon",
+        "conhecer": "Explore {{produto}}",
+        "ondeUsar": "Where to use {{produto}}",
+        "navegador": "In your browser",
+        "orbit": {
+            "linha": "Customer service and sales on Instagram, WhatsApp and Messenger, all in one place.",
+            "descricao": "One inbox for conversations from all three channels, with automatic replies and a profile for every customer.",
+            "destaques": [
+                "One shared inbox",
+                "Automatic replies",
+                "Comments that become conversations",
+                "Customers with tags"
+            ],
+            "aviso": "Not launched yet. When it opens, its address will show up here."
+        }
+    },
+    "sobre": {
+        "titulo": "About ExpertBR",
+        "paragrafos": [
+            "ExpertBR is a Brazilian studio that builds apps for everyday work. Instead of one system that tries to do everything, each app handles a single job, and handles all of it.",
+            "We started with construction, with ObraFácil. Next comes Orbit, for people who serve and sell through social media."
+        ],
+        "comoTitulo": "How we build",
+        "itens": {
+            "lugar": "Made for where the work happens",
+            "aparelhos": "On whatever device is at hand",
+            "idiomas": "In each country's language",
+            "idiomasTexto": "From Portuguese to Japanese, from Arabic to Hindi: ObraFácil speaks its users' language, with prices in the local currency."
+        }
+    },
+    "contato": {
+        "titulo": "Get in touch",
+        "texto": "Questions, partnerships or press: email us.",
+        "email": "Email",
+        "ajudaTitulo": "Already using ObraFácil?",
+        "ajudaTexto": "The Help Center has step-by-step guides with screenshots of the app. If you need more, talk to Support."
+    },
+    "rodape": {
+        "descricao": "App studio from Brazil.",
+        "aplicativos": "Apps",
+        "politicas": "Policies",
+        "termos": "ObraFácil Terms of Use",
+        "privacidade": "ObraFácil Privacy Policy",
+        "idioma": "Site language"
+    }
+}

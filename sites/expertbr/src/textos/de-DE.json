@@ -1,0 +1,84 @@
+{
+    "ancoras": {
+        "produtos": "apps",
+        "sobre": "ueber-uns",
+        "contato": "kontakt"
+    },
+    "seo": {
+        "titulo": "ExpertBR: App-Studio, Macher von ObraFácil",
+        "descricao": "ExpertBR entwickelt Apps für die tägliche Arbeit. ObraFácil für Bauprojektmanagement und Bautagebuch ist verfügbar; Orbit für die Kundenkommunikation folgt bald.",
+        "imagemAlt": "ExpertBR, App-Studio aus Brasilien",
+        "organizacao": "App-Studio aus Brasilien für die tägliche Arbeit, Macher von ObraFácil, einer App für Bauprojektmanagement.",
+        "llms": {
+            "sobre": "Was ExpertBR ist",
+            "aplicativos": "Apps",
+            "emBreve": "demnächst, noch nicht veröffentlicht",
+            "contato": "Kontakt",
+            "idiomas": "Die Website gibt es in diesen Sprachen"
+        }
+    },
+    "nav": {
+        "inicio": "Startseite von ExpertBR",
+        "navegacao": "Hauptnavigation",
+        "produtos": "Apps",
+        "sobre": "Über uns",
+        "contato": "Kontakt",
+        "escolherIdioma": "Sprache der Website wählen",
+        "tema": "Zwischen hellem und dunklem Design wechseln",
+        "pular": "Zum Inhalt springen"
+    },
+    "abertura": {
+        "titulo": "Eine App für jede **Aufgabe**.",
+        "texto": "ExpertBR ist ein App-Studio aus Brasilien. Jede App übernimmt eine Aufgabe von Anfang bis Ende: ObraFácil organisiert schon Baustellen, und Orbit kommt bald für die Kundenkommunikation in sozialen Netzwerken.",
+        "secundaria": "Zu den Apps"
+    },
+    "produtos": {
+        "titulo": "Die Apps",
+        "texto": "Die erste ist schon in den Stores. Die nächste ist unterwegs.",
+        "noAr": "Verfügbar",
+        "emBreve": "Demnächst",
+        "conhecer": "{{produto}} entdecken",
+        "ondeUsar": "Wo Sie {{produto}} nutzen",
+        "navegador": "Im Browser",
+        "orbit": {
+            "linha": "Kundenservice und Verkauf über Instagram, WhatsApp und Messenger, an einem Ort.",
+            "descricao": "Ein Posteingang für die Gespräche aus allen drei Kanälen, mit automatischen Antworten und einem Profil für jeden Kunden.",
+            "destaques": [
+                "Ein gemeinsamer Posteingang",
+                "Automatische Antworten",
+                "Aus Kommentaren werden Gespräche",
+                "Kunden mit Schlagwörtern"
+            ],
+            "aviso": "Noch nicht veröffentlicht. Sobald es startet, steht die Adresse hier."
+        }
+    },
+    "sobre": {
+        "titulo": "Über ExpertBR",
+        "paragrafos": [
+            "ExpertBR ist ein Studio aus Brasilien, das Apps für die tägliche Arbeit entwickelt. Statt eines Systems, das alles können will, übernimmt jede App genau eine Aufgabe, und die vollständig.",
+            "Angefangen haben wir am Bau, mit ObraFácil. Als Nächstes kommt Orbit, für alle, die über soziale Netzwerke beraten und verkaufen."
+        ],
+        "comoTitulo": "So arbeiten wir",
+        "itens": {
+            "lugar": "Gemacht für den Ort, an dem gearbeitet wird",
+            "aparelhos": "Auf dem Gerät, das gerade zur Hand ist",
+            "idiomas": "In der Sprache jedes Landes",
+            "idiomasTexto": "Von Portugiesisch bis Japanisch, von Arabisch bis Hindi: ObraFácil spricht die Sprache seiner Nutzer, mit Preisen in der Landeswährung."
+        }
+    },
+    "contato": {
+        "titulo": "Schreiben Sie uns",
+        "texto": "Fragen, Partnerschaften oder Presse: Schreiben Sie uns eine E-Mail.",
+        "email": "E-Mail",
+        "ajudaTitulo": "Sie nutzen ObraFácil schon?",
+        "ajudaTexto": "Im Hilfe-Center finden Sie Schritt-für-Schritt-Anleitungen mit den Bildschirmen der App. Bei Bedarf hilft Ihnen der Support."
+    },
+    "rodape": {
+        "descricao": "App-Studio aus Brasilien.",
+        "aplicativos": "Apps",
+        "politicas": "Rechtliches",
+        "termos": "Nutzungsbedingungen von ObraFácil",
+        "privacidade": "Datenschutzerklärung von ObraFácil",
+        "idioma": "Sprache der Website"
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "ancoras": {
+        "produtos": "aplicativos",
+        "sobre": "sobre",
+        "contato": "contato"
+    },
+    "seo": {
+        "titulo": "ExpertBR: estúdio de aplicativos, criadora do ObraFácil",
+        "descricao": "A ExpertBR cria aplicativos para o trabalho do dia a dia. O ObraFácil, de gestão de obras e diário de obra, já está no ar; o Orbit, de atendimento, vem aí.",
+        "imagemAlt": "ExpertBR, estúdio brasileiro de aplicativos",
+        "organizacao": "Estúdio brasileiro de aplicativos para o trabalho do dia a dia, criadora do ObraFácil, aplicativo de gestão de obras.",
+        "llms": {
+            "sobre": "O que é a ExpertBR",
+            "aplicativos": "Aplicativos",
+            "emBreve": "em breve, ainda não lançado",
+            "contato": "Contato",
+            "idiomas": "O site está nestes idiomas"
+        }
+    },
+    "nav": {
+        "inicio": "Página inicial da ExpertBR",
+        "navegacao": "Navegação principal",
+        "produtos": "Aplicativos",
+        "sobre": "Sobre",
+        "contato": "Contato",
+        "escolherIdioma": "Escolher o idioma do site",
+        "tema": "Alternar tema claro e escuro",
+        "pular": "Pular para o conteúdo"
+    },
+    "abertura": {
+        "titulo": "Um aplicativo para cada **trabalho**.",
+        "texto": "A ExpertBR é um estúdio brasileiro de aplicativos. Cada um cuida de um trabalho do começo ao fim: o ObraFácil já organiza obras, e o Orbit vem aí para o atendimento pelas redes sociais.",
+        "secundaria": "Ver os aplicativos"
+    },
+    "produtos": {
+        "titulo": "Os aplicativos",
+        "texto": "O primeiro já está nas lojas. O próximo está a caminho.",
+        "noAr": "No ar",
+        "emBreve": "Em breve",
+        "conhecer": "Conhecer o {{produto}}",
+        "ondeUsar": "Onde usar o {{produto}}",
+        "navegador": "No navegador",
+        "orbit": {
+            "linha": "Atendimento e vendas pelo Instagram, WhatsApp e Messenger, num lugar só.",
+            "descricao": "Uma caixa de entrada para as conversas dos três canais, com respostas automáticas e a ficha de cada cliente.",
+            "destaques": [
+                "Caixa de entrada única",
+                "Respostas automáticas",
+                "Comentário que vira conversa",
+                "Clientes com etiquetas"
+            ],
+            "aviso": "Ainda não foi lançado. Quando abrir, o endereço aparece aqui."
+        }
+    },
+    "sobre": {
+        "titulo": "Sobre a ExpertBR",
+        "paragrafos": [
+            "A ExpertBR é um estúdio brasileiro que cria aplicativos para o trabalho do dia a dia. Em vez de um sistema que tenta fazer tudo, cada aplicativo cuida de um trabalho só, e cuida dele inteiro.",
+            "Começamos pela obra, com o ObraFácil. O próximo é o Orbit, para quem atende e vende pelas redes sociais."
+        ],
+        "comoTitulo": "Como fazemos",
+        "itens": {
+            "lugar": "Feito para onde o trabalho acontece",
+            "aparelhos": "No aparelho que estiver à mão",
+            "idiomas": "Na língua de cada país",
+            "idiomasTexto": "Do português ao japonês, do árabe ao hindi: o ObraFácil fala a língua de quem usa, com os preços na moeda de cada lugar."
+        }
+    },
+    "contato": {
+        "titulo": "Fale com a gente",
+        "texto": "Dúvidas, parcerias ou imprensa: escreva para o nosso e-mail.",
+        "email": "E-mail",
+        "ajudaTitulo": "Já usa o ObraFácil?",
+        "ajudaTexto": "A Central de Ajuda tem guias passo a passo com as telas do app. Se precisar, fale com o Suporte."
+    },
+    "rodape": {
+        "descricao": "Estúdio brasileiro de aplicativos.",
+        "aplicativos": "Aplicativos",
+        "politicas": "Políticas",
+        "termos": "Termos de Uso do ObraFácil",
+        "privacidade": "Política de Privacidade do ObraFácil",
+        "idioma": "Idioma do site"
+    }
+}

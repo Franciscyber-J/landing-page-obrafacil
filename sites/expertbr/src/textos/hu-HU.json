@@ -1,0 +1,84 @@
+{
+    "ancoras": {
+        "produtos": "alkalmazasok",
+        "sobre": "rolunk",
+        "contato": "kapcsolat"
+    },
+    "seo": {
+        "titulo": "ExpertBR: alkalmazásstúdió, az ObraFácil fejlesztője",
+        "descricao": "Az ExpertBR a mindennapi munkához fejleszt alkalmazásokat. Az építésirányításra és építési naplóra szolgáló ObraFácil már elérhető; az ügyfélkommunikációs Orbit hamarosan érkezik.",
+        "imagemAlt": "ExpertBR, brazil alkalmazásstúdió",
+        "organizacao": "Brazil stúdió, amely a mindennapi munkához fejleszt alkalmazásokat; az ObraFácil építésirányítási alkalmazás fejlesztője.",
+        "llms": {
+            "sobre": "Mi az ExpertBR",
+            "aplicativos": "Alkalmazások",
+            "emBreve": "hamarosan, még nem jelent meg",
+            "contato": "Kapcsolat",
+            "idiomas": "A webhely ezeken a nyelveken érhető el"
+        }
+    },
+    "nav": {
+        "inicio": "Az ExpertBR kezdőlapja",
+        "navegacao": "Fő navigáció",
+        "produtos": "Alkalmazások",
+        "sobre": "Rólunk",
+        "contato": "Kapcsolat",
+        "escolherIdioma": "A webhely nyelvének kiválasztása",
+        "tema": "Váltás világos és sötét téma között",
+        "pular": "Ugrás a tartalomhoz"
+    },
+    "abertura": {
+        "titulo": "Minden **munkára** egy alkalmazás.",
+        "texto": "Az ExpertBR egy brazil alkalmazásstúdió. Mindegyik alkalmazás egy munkát visz végig az elejétől a végéig: az ObraFácil már építkezéseket szervez, az Orbit pedig hamarosan érkezik a közösségi médiás ügyfélkommunikációhoz.",
+        "secundaria": "Az alkalmazások"
+    },
+    "produtos": {
+        "titulo": "Az alkalmazások",
+        "texto": "Az első már az áruházakban van. A következő úton van.",
+        "noAr": "Elérhető",
+        "emBreve": "Hamarosan",
+        "conhecer": "Ismerje meg: {{produto}}",
+        "ondeUsar": "Hol használható: {{produto}}",
+        "navegador": "Böngészőben",
+        "orbit": {
+            "linha": "Ügyfélszolgálat és értékesítés Instagramon, WhatsAppon és Messengeren, egy helyen.",
+            "descricao": "Egyetlen beérkező mappa a három csatorna beszélgetéseihez, automatikus válaszokkal és minden ügyfél adatlapjával.",
+            "destaques": [
+                "Közös beérkező mappa",
+                "Automatikus válaszok",
+                "Hozzászólásból beszélgetés",
+                "Ügyfelek címkékkel"
+            ],
+            "aviso": "Még nem jelent meg. Amikor elindul, itt lesz a címe."
+        }
+    },
+    "sobre": {
+        "titulo": "Az ExpertBR-ről",
+        "paragrafos": [
+            "Az ExpertBR brazil stúdió, amely a mindennapi munkához fejleszt alkalmazásokat. Egy mindent tudni akaró rendszer helyett minden alkalmazás egyetlen munkát végez, de azt teljes egészében.",
+            "Az építkezéssel kezdtük, az ObraFácillal. A következő az Orbit, azoknak, akik a közösségi médián keresztül szolgálják ki az ügyfeleket és értékesítenek."
+        ],
+        "comoTitulo": "Hogyan dolgozunk",
+        "itens": {
+            "lugar": "Oda készül, ahol a munka folyik",
+            "aparelhos": "Azon az eszközön, ami éppen kéznél van",
+            "idiomas": "Minden ország saját nyelvén",
+            "idiomasTexto": "Portugáltól a japánig, arabtól a hindiig: az ObraFácil a felhasználói nyelvén beszél, az árakat pedig helyi pénznemben mutatja."
+        }
+    },
+    "contato": {
+        "titulo": "Írjon nekünk",
+        "texto": "Kérdés, együttműködés vagy sajtó: írjon nekünk e-mailt.",
+        "email": "E-mail",
+        "ajudaTitulo": "Már használja az ObraFácilt?",
+        "ajudaTexto": "A Súgóközpontban lépésről lépésre haladó útmutatók vannak az alkalmazás képernyőivel. Ha kell, forduljon az Ügyfélszolgálathoz."
+    },
+    "rodape": {
+        "descricao": "Brazil alkalmazásstúdió.",
+        "aplicativos": "Alkalmazások",
+        "politicas": "Jogi információk",
+        "termos": "Az ObraFácil felhasználási feltételei",
+        "privacidade": "Az ObraFácil adatvédelmi tájékoztatója",
+        "idioma": "A webhely nyelve"
+    }
+}

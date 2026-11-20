@@ -1,0 +1,84 @@
+{
+    "ancoras": {
+        "produtos": "aplikasi",
+        "sobre": "tentang-kami",
+        "contato": "kontak"
+    },
+    "seo": {
+        "titulo": "ExpertBR: studio aplikasi, pembuat ObraFácil",
+        "descricao": "ExpertBR membuat aplikasi untuk pekerjaan sehari-hari. ObraFácil, untuk manajemen proyek konstruksi dan laporan harian, sudah tersedia; Orbit, untuk layanan pelanggan, segera hadir.",
+        "imagemAlt": "ExpertBR, studio aplikasi dari Brasil",
+        "organizacao": "Studio aplikasi dari Brasil untuk pekerjaan sehari-hari, pembuat ObraFácil, aplikasi manajemen proyek konstruksi.",
+        "llms": {
+            "sobre": "Tentang ExpertBR",
+            "aplicativos": "Aplikasi",
+            "emBreve": "segera hadir, belum diluncurkan",
+            "contato": "Kontak",
+            "idiomas": "Situs ini tersedia dalam bahasa berikut"
+        }
+    },
+    "nav": {
+        "inicio": "Beranda ExpertBR",
+        "navegacao": "Navigasi utama",
+        "produtos": "Aplikasi",
+        "sobre": "Tentang kami",
+        "contato": "Kontak",
+        "escolherIdioma": "Pilih bahasa situs",
+        "tema": "Ganti tema terang dan gelap",
+        "pular": "Langsung ke konten"
+    },
+    "abertura": {
+        "titulo": "Satu aplikasi untuk setiap **pekerjaan**.",
+        "texto": "ExpertBR adalah studio aplikasi dari Brasil. Setiap aplikasi menangani satu pekerjaan dari awal sampai akhir: ObraFácil sudah mengatur proyek konstruksi, dan Orbit segera hadir untuk layanan pelanggan di media sosial.",
+        "secundaria": "Lihat aplikasinya"
+    },
+    "produtos": {
+        "titulo": "Aplikasi kami",
+        "texto": "Yang pertama sudah ada di toko aplikasi. Yang berikutnya sedang disiapkan.",
+        "noAr": "Tersedia",
+        "emBreve": "Segera hadir",
+        "conhecer": "Kenali {{produto}}",
+        "ondeUsar": "Tempat memakai {{produto}}",
+        "navegador": "Di browser",
+        "orbit": {
+            "linha": "Layanan pelanggan dan penjualan lewat Instagram, WhatsApp, dan Messenger, di satu tempat.",
+            "descricao": "Satu kotak masuk untuk percakapan dari ketiga kanal, dengan balasan otomatis dan profil untuk setiap pelanggan.",
+            "destaques": [
+                "Satu kotak masuk bersama",
+                "Balasan otomatis",
+                "Komentar yang jadi percakapan",
+                "Pelanggan dengan label"
+            ],
+            "aviso": "Belum diluncurkan. Saat dibuka, alamatnya akan muncul di sini."
+        }
+    },
+    "sobre": {
+        "titulo": "Tentang ExpertBR",
+        "paragrafos": [
+            "ExpertBR adalah studio dari Brasil yang membuat aplikasi untuk pekerjaan sehari-hari. Alih-alih satu sistem yang ingin mengerjakan semuanya, setiap aplikasi menangani satu pekerjaan saja, dan menanganinya sampai tuntas.",
+            "Kami memulai dari proyek konstruksi, dengan ObraFácil. Berikutnya Orbit, untuk mereka yang melayani dan berjualan lewat media sosial."
+        ],
+        "comoTitulo": "Cara kami bekerja",
+        "itens": {
+            "lugar": "Dibuat untuk tempat pekerjaan dilakukan",
+            "aparelhos": "Di perangkat apa pun yang sedang dipegang",
+            "idiomas": "Dalam bahasa setiap negara",
+            "idiomasTexto": "Dari bahasa Portugis sampai Jepang, dari Arab sampai Hindi: ObraFácil berbicara dalam bahasa penggunanya, dengan harga dalam mata uang setempat."
+        }
+    },
+    "contato": {
+        "titulo": "Hubungi kami",
+        "texto": "Pertanyaan, kerja sama, atau media: kirimi kami email.",
+        "email": "Email",
+        "ajudaTitulo": "Sudah memakai ObraFácil?",
+        "ajudaTexto": "Pusat Bantuan berisi panduan langkah demi langkah dengan tampilan aplikasi. Jika perlu, hubungi Dukungan."
+    },
+    "rodape": {
+        "descricao": "Studio aplikasi dari Brasil.",
+        "aplicativos": "Aplikasi",
+        "politicas": "Kebijakan",
+        "termos": "Ketentuan Layanan ObraFácil",
+        "privacidade": "Kebijakan Privasi ObraFácil",
+        "idioma": "Bahasa situs"
+    }
+}

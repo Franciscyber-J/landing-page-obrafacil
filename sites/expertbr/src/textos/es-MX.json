@@ -1,0 +1,18 @@
+{
+    "seo": {
+        "descricao": "ExpertBR crea aplicaciones para el trabajo de todos los días. ObraFácil, para administrar obras y llevar la bitácora de obra, ya está disponible; Orbit, de atención al cliente, llega pronto.",
+        "organizacao": "Estudio brasileño de aplicaciones para el trabajo de todos los días, creador de ObraFácil, aplicación para administrar obras."
+    },
+    "sobre": {
+        "paragrafos": [
+            "ExpertBR es un estudio brasileño que crea aplicaciones para el trabajo de todos los días. En lugar de un sistema que intenta hacerlo todo, cada aplicación se encarga de un solo trabajo, y se encarga de él completo.",
+            "Empezamos por la obra, con ObraFácil. La siguiente es Orbit, para quien atiende y vende en redes sociales."
+        ],
+        "itens": {
+            "aparelhos": "En el dispositivo que tengas a la mano"
+        }
+    },
+    "contato": {
+        "titulo": "Contáctanos"
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "ancoras": {
+        "produtos": "앱",
+        "sobre": "소개",
+        "contato": "문의"
+    },
+    "seo": {
+        "titulo": "ExpertBR: 앱 스튜디오, ObraFácil 개발사",
+        "descricao": "ExpertBR는 매일의 일을 위한 앱을 만듭니다. 공사일보와 현장 관리 앱 ObraFácil은 지금 이용할 수 있고, 고객 응대 앱 Orbit은 곧 나옵니다.",
+        "imagemAlt": "ExpertBR, 브라질의 앱 스튜디오",
+        "organizacao": "매일의 일을 위한 앱을 만드는 브라질 스튜디오이자 현장 관리 앱 ObraFácil의 개발사입니다.",
+        "llms": {
+            "sobre": "ExpertBR 소개",
+            "aplicativos": "앱",
+            "emBreve": "출시 예정, 아직 출시 전",
+            "contato": "문의",
+            "idiomas": "사이트 지원 언어"
+        }
+    },
+    "nav": {
+        "inicio": "ExpertBR 홈",
+        "navegacao": "주 메뉴",
+        "produtos": "앱",
+        "sobre": "소개",
+        "contato": "문의",
+        "escolherIdioma": "사이트 언어 선택",
+        "tema": "라이트 테마와 다크 테마 전환",
+        "pular": "본문으로 건너뛰기"
+    },
+    "abertura": {
+        "titulo": "하나의 **일**에 하나의 앱.",
+        "texto": "ExpertBR는 브라질의 앱 스튜디오입니다. 앱마다 한 가지 일을 처음부터 끝까지 맡습니다. ObraFácil은 이미 공사 현장을 관리하고 있고, SNS 고객 응대를 위한 Orbit도 곧 나옵니다.",
+        "secundaria": "앱 보기"
+    },
+    "produtos": {
+        "titulo": "앱",
+        "texto": "첫 번째 앱은 이미 스토어에 있습니다. 다음 앱도 준비 중입니다.",
+        "noAr": "이용 가능",
+        "emBreve": "출시 예정",
+        "conhecer": "{{produto}} 알아보기",
+        "ondeUsar": "{{produto}} 이용 방법",
+        "navegador": "브라우저에서",
+        "orbit": {
+            "linha": "Instagram, WhatsApp, Messenger의 고객 응대와 판매를 한곳에서.",
+            "descricao": "세 채널의 대화를 하나의 받은편지함에 모으고, 자동 응답과 고객별 카드로 관리합니다.",
+            "destaques": [
+                "하나로 모은 받은편지함",
+                "자동 응답",
+                "대화로 이어지는 댓글",
+                "태그로 관리하는 고객"
+            ],
+            "aviso": "아직 출시 전입니다. 문을 열면 여기에 주소를 알려 드립니다."
+        }
+    },
+    "sobre": {
+        "titulo": "ExpertBR 소개",
+        "paragrafos": [
+            "ExpertBR는 매일의 일을 위한 앱을 만드는 브라질 스튜디오입니다. 모든 것을 하려는 하나의 시스템 대신, 앱마다 한 가지 일만 맡고 그 일을 끝까지 책임집니다.",
+            "첫 시작은 건설 현장, ObraFácil이었습니다. 다음은 SNS로 고객을 응대하고 판매하는 분들을 위한 Orbit입니다."
+        ],
+        "comoTitulo": "일하는 방식",
+        "itens": {
+            "lugar": "일이 벌어지는 현장을 위해",
+            "aparelhos": "손에 있는 기기 그대로",
+            "idiomas": "나라마다 그 나라의 언어로",
+            "idiomasTexto": "포르투갈어부터 일본어까지, 아랍어부터 힌디어까지. ObraFácil은 쓰는 사람의 언어로 말하고, 요금도 현지 통화로 보여 줍니다."
+        }
+    },
+    "contato": {
+        "titulo": "문의하기",
+        "texto": "문의, 제휴, 취재 요청은 이메일로 보내 주세요.",
+        "email": "이메일",
+        "ajudaTitulo": "이미 ObraFácil을 쓰고 계신가요?",
+        "ajudaTexto": "도움말 센터에서 앱 화면이 담긴 단계별 가이드를 볼 수 있습니다. 필요하면 고객 지원에 문의하세요."
+    },
+    "rodape": {
+        "descricao": "브라질의 앱 스튜디오.",
+        "aplicativos": "앱",
+        "politicas": "약관 및 정책",
+        "termos": "ObraFácil 이용약관",
+        "privacidade": "ObraFácil 개인정보처리방침",
+        "idioma": "사이트 언어"
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "ancoras": {
+        "produtos": "アプリ",
+        "sobre": "会社概要",
+        "contato": "お問い合わせ"
+    },
+    "seo": {
+        "titulo": "ExpertBR：アプリスタジオ｜ObraFácil の開発元",
+        "descricao": "ExpertBR は日々の仕事のためのアプリをつくるスタジオです。工事日報と現場施工管理の ObraFácil は提供中、顧客対応の Orbit は近日公開予定です。",
+        "imagemAlt": "ExpertBR（ブラジルのアプリスタジオ）",
+        "organizacao": "日々の仕事のためのアプリをつくるブラジルのスタジオ。現場施工管理アプリ ObraFácil の開発元です。",
+        "llms": {
+            "sobre": "ExpertBR について",
+            "aplicativos": "アプリ",
+            "emBreve": "近日公開（未リリース）",
+            "contato": "お問い合わせ",
+            "idiomas": "このサイトの対応言語"
+        }
+    },
+    "nav": {
+        "inicio": "ExpertBR のホーム",
+        "navegacao": "メインメニュー",
+        "produtos": "アプリ",
+        "sobre": "会社概要",
+        "contato": "お問い合わせ",
+        "escolherIdioma": "サイトの言語を選ぶ",
+        "tema": "ライトテーマとダークテーマを切り替える",
+        "pular": "本文へ移動"
+    },
+    "abertura": {
+        "titulo": "ひとつの**仕事**に、ひとつのアプリ。",
+        "texto": "ExpertBR はブラジルのアプリスタジオです。アプリごとにひとつの仕事を最初から最後まで受け持ちます。ObraFácil はすでに工事現場を支えていて、SNS での顧客対応を担う Orbit も準備中です。",
+        "secundaria": "アプリを見る"
+    },
+    "produtos": {
+        "titulo": "アプリ",
+        "texto": "ひとつ目はすでにストアで公開中。次のアプリも準備しています。",
+        "noAr": "提供中",
+        "emBreve": "近日公開",
+        "conhecer": "{{produto}} を見る",
+        "ondeUsar": "{{produto}} を使える場所",
+        "navegador": "ブラウザ版",
+        "orbit": {
+            "linha": "Instagram・WhatsApp・Messenger での顧客対応と販売を、ひとつの場所で。",
+            "descricao": "3つのチャネルの会話をひとつの受信箱にまとめ、自動返信と顧客ごとのカルテで対応できます。",
+            "destaques": [
+                "ひとつにまとまった受信箱",
+                "自動返信",
+                "コメントから会話へ",
+                "タグで顧客を管理"
+            ],
+            "aviso": "まだリリース前です。公開したら、ここにアドレスを載せます。"
+        }
+    },
+    "sobre": {
+        "titulo": "ExpertBR について",
+        "paragrafos": [
+            "ExpertBR は、日々の仕事のためのアプリをつくるブラジルのスタジオです。何でもこなそうとするひとつのシステムではなく、アプリごとにひとつの仕事を受け持ち、その仕事を丸ごと支えます。",
+            "最初は建設現場から、ObraFácil で始めました。次は、SNS で接客や販売をする人のための Orbit です。"
+        ],
+        "comoTitulo": "つくり方",
+        "itens": {
+            "lugar": "仕事の現場のためにつくる",
+            "aparelhos": "手元にある端末で使える",
+            "idiomas": "それぞれの国の言葉で",
+            "idiomasTexto": "ポルトガル語から日本語まで、アラビア語からヒンディー語まで。ObraFácil は使う人の言葉で話し、料金も現地の通貨で表示します。"
+        }
+    },
+    "contato": {
+        "titulo": "お問い合わせ",
+        "texto": "ご質問、提携、取材のご依頼はメールでどうぞ。",
+        "email": "メール",
+        "ajudaTitulo": "ObraFácil をお使いですか？",
+        "ajudaTexto": "ヘルプセンターに、アプリの画面つきの手順ガイドがあります。必要なときはサポートにご連絡ください。"
+    },
+    "rodape": {
+        "descricao": "ブラジルのアプリスタジオ。",
+        "aplicativos": "アプリ",
+        "politicas": "規約",
+        "termos": "ObraFácil 利用規約",
+        "privacidade": "ObraFácil プライバシーポリシー",
+        "idioma": "サイトの言語"
+    }
+}

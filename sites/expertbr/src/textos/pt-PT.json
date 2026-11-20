@@ -1,0 +1,52 @@
+{
+    "ancoras": {
+        "produtos": "aplicacoes"
+    },
+    "seo": {
+        "titulo": "ExpertBR: estúdio de aplicações, criador do ObraFácil",
+        "descricao": "A ExpertBR cria aplicações para o trabalho do dia a dia. O ObraFácil, de gestão de obras e diário de obra, já está disponível; o Orbit, de atendimento, vem a caminho.",
+        "imagemAlt": "ExpertBR, estúdio brasileiro de aplicações",
+        "organizacao": "Estúdio brasileiro de aplicações para o trabalho do dia a dia, criador do ObraFácil, aplicação de gestão de obras.",
+        "llms": {
+            "aplicativos": "Aplicações",
+            "emBreve": "brevemente, ainda não lançada"
+        }
+    },
+    "nav": {
+        "produtos": "Aplicações",
+        "inicio": "Página inicial da ExpertBR"
+    },
+    "abertura": {
+        "titulo": "Uma aplicação para cada **trabalho**.",
+        "texto": "A ExpertBR é um estúdio brasileiro de aplicações. Cada uma trata de um trabalho do início ao fim: o ObraFácil já organiza obras, e o Orbit vem a caminho para o atendimento nas redes sociais.",
+        "secundaria": "Ver as aplicações"
+    },
+    "produtos": {
+        "titulo": "As aplicações",
+        "texto": "A primeira já está nas lojas. A próxima vem a caminho.",
+        "noAr": "Disponível",
+        "emBreve": "Brevemente",
+        "orbit": {
+            "aviso": "Ainda não foi lançada. Quando abrir, o endereço aparece aqui.",
+            "descricao": "Uma caixa de entrada para as conversas dos três canais, com respostas automáticas e a ficha de cada cliente."
+        }
+    },
+    "sobre": {
+        "paragrafos": [
+            "A ExpertBR é um estúdio brasileiro que cria aplicações para o trabalho do dia a dia. Em vez de um sistema que tenta fazer tudo, cada aplicação trata de um só trabalho, e trata dele por inteiro.",
+            "Começámos pela obra, com o ObraFácil. A próxima é o Orbit, para quem atende e vende nas redes sociais."
+        ],
+        "itens": {
+            "aparelhos": "No dispositivo que estiver à mão"
+        }
+    },
+    "contato": {
+        "titulo": "Fale connosco",
+        "ajudaTexto": "O Centro de Ajuda tem guias passo a passo com os ecrãs da aplicação. Se precisar, fale com o Suporte."
+    },
+    "rodape": {
+        "descricao": "Estúdio brasileiro de aplicações.",
+        "aplicativos": "Aplicações",
+        "termos": "Termos de Utilização do ObraFácil"
+    }
+}

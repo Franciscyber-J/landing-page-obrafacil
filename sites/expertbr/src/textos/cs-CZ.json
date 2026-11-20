@@ -1,0 +1,84 @@
+{
+    "ancoras": {
+        "produtos": "aplikace",
+        "sobre": "o-nas",
+        "contato": "kontakt"
+    },
+    "seo": {
+        "titulo": "ExpertBR: studio aplikací, tvůrce ObraFácil",
+        "descricao": "ExpertBR vyvíjí aplikace pro každodenní práci. ObraFácil pro řízení staveb a stavební deník je k dispozici; Orbit pro komunikaci se zákazníky se chystá.",
+        "imagemAlt": "ExpertBR, brazilské studio aplikací",
+        "organizacao": "Brazilské studio aplikací pro každodenní práci, tvůrce ObraFácil, aplikace pro řízení staveb.",
+        "llms": {
+            "sobre": "Co je ExpertBR",
+            "aplicativos": "Aplikace",
+            "emBreve": "připravujeme, zatím nevydáno",
+            "contato": "Kontakt",
+            "idiomas": "Web je v těchto jazycích"
+        }
+    },
+    "nav": {
+        "inicio": "Úvodní stránka ExpertBR",
+        "navegacao": "Hlavní navigace",
+        "produtos": "Aplikace",
+        "sobre": "O nás",
+        "contato": "Kontakt",
+        "escolherIdioma": "Vyberte jazyk webu",
+        "tema": "Přepnout světlý a tmavý motiv",
+        "pular": "Přeskočit na obsah"
+    },
+    "abertura": {
+        "titulo": "Na každou **práci** jedna aplikace.",
+        "texto": "ExpertBR je brazilské studio aplikací. Každá aplikace zvládne jednu práci od začátku do konce: ObraFácil už organizuje stavby a Orbit se chystá pro komunikaci se zákazníky na sociálních sítích.",
+        "secundaria": "Zobrazit aplikace"
+    },
+    "produtos": {
+        "titulo": "Aplikace",
+        "texto": "První už je v obchodech. Další je na cestě.",
+        "noAr": "K dispozici",
+        "emBreve": "Připravujeme",
+        "conhecer": "Poznejte {{produto}}",
+        "ondeUsar": "Kde používat {{produto}}",
+        "navegador": "V prohlížeči",
+        "orbit": {
+            "linha": "Zákaznický servis a prodej přes Instagram, WhatsApp a Messenger na jednom místě.",
+            "descricao": "Jedna schránka pro konverzace ze všech tří kanálů, s automatickými odpověďmi a kartou každého zákazníka.",
+            "destaques": [
+                "Jedna společná schránka",
+                "Automatické odpovědi",
+                "Komentáře, ze kterých jsou konverzace",
+                "Zákazníci se štítky"
+            ],
+            "aviso": "Zatím nebyl spuštěn. Jakmile se otevře, objeví se tu jeho adresa."
+        }
+    },
+    "sobre": {
+        "titulo": "O ExpertBR",
+        "paragrafos": [
+            "ExpertBR je brazilské studio, které vyvíjí aplikace pro každodenní práci. Místo jednoho systému, který chce umět všechno, se každá aplikace stará o jednu práci, a to celou.",
+            "Začali jsme stavbou, s ObraFácil. Další je Orbit, pro ty, kdo obsluhují zákazníky a prodávají přes sociální sítě."
+        ],
+        "comoTitulo": "Jak pracujeme",
+        "itens": {
+            "lugar": "Pro místo, kde se pracuje",
+            "aparelhos": "Na zařízení, které máte zrovna po ruce",
+            "idiomas": "V jazyce každé země",
+            "idiomasTexto": "Od portugalštiny po japonštinu, od arabštiny po hindštinu: ObraFácil mluví jazykem svých uživatelů a ceny ukazuje v místní měně."
+        }
+    },
+    "contato": {
+        "titulo": "Napište nám",
+        "texto": "Dotazy, spolupráce nebo média: napište nám e-mail.",
+        "email": "E-mail",
+        "ajudaTitulo": "Už ObraFácil používáte?",
+        "ajudaTexto": "V Centru nápovědy najdete návody krok za krokem s obrazovkami aplikace. Když bude potřeba, ozvěte se Podpoře."
+    },
+    "rodape": {
+        "descricao": "Brazilské studio aplikací.",
+        "aplicativos": "Aplikace",
+        "politicas": "Dokumenty",
+        "termos": "Podmínky používání ObraFácil",
+        "privacidade": "Zásady ochrany osobních údajů ObraFácil",
+        "idioma": "Jazyk webu"
+    }
+}

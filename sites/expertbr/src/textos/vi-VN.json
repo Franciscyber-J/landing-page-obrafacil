@@ -1,0 +1,84 @@
+{
+    "ancoras": {
+        "produtos": "ung-dung",
+        "sobre": "gioi-thieu",
+        "contato": "lien-he"
+    },
+    "seo": {
+        "titulo": "ExpertBR: studio ứng dụng, đơn vị làm ra ObraFácil",
+        "descricao": "ExpertBR làm ứng dụng cho công việc hằng ngày. ObraFácil, ứng dụng quản lý công trình và nhật ký thi công, đã ra mắt; Orbit, cho chăm sóc khách hàng, sắp có.",
+        "imagemAlt": "ExpertBR, studio ứng dụng đến từ Brazil",
+        "organizacao": "Studio đến từ Brazil làm ứng dụng cho công việc hằng ngày, đơn vị làm ra ObraFácil, ứng dụng quản lý công trình.",
+        "llms": {
+            "sobre": "ExpertBR là gì",
+            "aplicativos": "Ứng dụng",
+            "emBreve": "sắp ra mắt, chưa phát hành",
+            "contato": "Liên hệ",
+            "idiomas": "Trang web có các ngôn ngữ sau"
+        }
+    },
+    "nav": {
+        "inicio": "Trang chủ ExpertBR",
+        "navegacao": "Điều hướng chính",
+        "produtos": "Ứng dụng",
+        "sobre": "Giới thiệu",
+        "contato": "Liên hệ",
+        "escolherIdioma": "Chọn ngôn ngữ của trang",
+        "tema": "Chuyển giao diện sáng và tối",
+        "pular": "Đến phần nội dung"
+    },
+    "abertura": {
+        "titulo": "Mỗi **công việc**, một ứng dụng.",
+        "texto": "ExpertBR là studio ứng dụng đến từ Brazil. Mỗi ứng dụng lo trọn một công việc từ đầu đến cuối: ObraFácil đã giúp quản lý công trình, còn Orbit sắp ra mắt để chăm sóc khách hàng trên mạng xã hội.",
+        "secundaria": "Xem các ứng dụng"
+    },
+    "produtos": {
+        "titulo": "Các ứng dụng",
+        "texto": "Ứng dụng đầu tiên đã có trên các kho ứng dụng. Ứng dụng tiếp theo đang được chuẩn bị.",
+        "noAr": "Đã ra mắt",
+        "emBreve": "Sắp ra mắt",
+        "conhecer": "Tìm hiểu {{produto}}",
+        "ondeUsar": "Dùng {{produto}} ở đâu",
+        "navegador": "Trên trình duyệt",
+        "orbit": {
+            "linha": "Chăm sóc khách hàng và bán hàng qua Instagram, WhatsApp và Messenger, ở cùng một chỗ.",
+            "descricao": "Một hộp thư chung cho các cuộc trò chuyện từ cả ba kênh, có trả lời tự động và hồ sơ cho từng khách hàng.",
+            "destaques": [
+                "Hộp thư chung",
+                "Trả lời tự động",
+                "Bình luận thành cuộc trò chuyện",
+                "Khách hàng có nhãn"
+            ],
+            "aviso": "Chưa ra mắt. Khi mở, địa chỉ sẽ được cập nhật ở đây."
+        }
+    },
+    "sobre": {
+        "titulo": "Giới thiệu ExpertBR",
+        "paragrafos": [
+            "ExpertBR là studio đến từ Brazil, làm ứng dụng cho công việc hằng ngày. Thay vì một hệ thống muốn làm mọi thứ, mỗi ứng dụng chỉ lo một công việc, và lo trọn công việc đó.",
+            "Chúng tôi bắt đầu từ công trình, với ObraFácil. Tiếp theo là Orbit, dành cho những người chăm sóc khách hàng và bán hàng trên mạng xã hội."
+        ],
+        "comoTitulo": "Cách chúng tôi làm",
+        "itens": {
+            "lugar": "Làm cho nơi công việc diễn ra",
+            "aparelhos": "Trên thiết bị đang có trong tay",
+            "idiomas": "Bằng ngôn ngữ của từng nước",
+            "idiomasTexto": "Từ tiếng Bồ Đào Nha đến tiếng Nhật, từ tiếng Ả Rập đến tiếng Hindi: ObraFácil nói ngôn ngữ của người dùng, với giá theo tiền tệ địa phương."
+        }
+    },
+    "contato": {
+        "titulo": "Liên hệ với chúng tôi",
+        "texto": "Câu hỏi, hợp tác hay báo chí: hãy gửi email cho chúng tôi.",
+        "email": "Email",
+        "ajudaTitulo": "Bạn đã dùng ObraFácil?",
+        "ajudaTexto": "Trung tâm trợ giúp có hướng dẫn từng bước kèm màn hình ứng dụng. Khi cần, hãy liên hệ bộ phận Hỗ trợ."
+    },
+    "rodape": {
+        "descricao": "Studio ứng dụng đến từ Brazil.",
+        "aplicativos": "Ứng dụng",
+        "politicas": "Chính sách",
+        "termos": "Điều khoản sử dụng ObraFácil",
+        "privacidade": "Chính sách quyền riêng tư ObraFácil",
+        "idioma": "Ngôn ngữ của trang"
+    }
+}
