@@ -182,7 +182,13 @@ function DesenhoOrbit() {
                     <circle className="orbita__satelite" cx="30" cy="235" r="6" />
                 </g>
             </svg>
-            <span className="orbita__centro" translate="no">Orbit</span>
+            <span className="orbita__centro">
+                {/* O símbolo "Monograma" do Orbit (aprovado em 20/11/2026): o O partido, azul a empresa e coral o cliente. */}
+                <svg className="orbita__simbolo" viewBox="0 0 64 64">
+                    <path d="M25.15,54.87A22.35,22.35 0 0 1 25.15,11.9L28.32,22.97A10.83,10.83 0 0 0 28.32,43.79Z" fill="#154F84" />
+                    <path d="M38.85,9.13A22.35,22.35 0 0 1 38.85,52.1L35.68,41.03A10.83,10.83 0 0 0 35.68,20.21Z" fill="#FF7A66" />
+                </svg>
+            </span>
             {canais.map((c, n) => <span key={c} className={`orbita__canal orbita__canal--${n + 1}`} translate="no">{c}</span>)}
         </div>
     );

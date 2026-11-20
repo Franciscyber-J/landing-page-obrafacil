@@ -78,7 +78,7 @@ export const PRODUTOS = [
         cor: 'orbit',
         // Ícone do Orbit: o logotipo "Monograma" (aprovado pelo Francis em 20/11/2026, 13h07) no quadrado branco, como o
         // do ObraFácil ao lado. Gerado no repositório do Orbit: ferramentas/marca/gerar_marca.py --expertbr.
-        simbolo: { arquivo: 'marcas/orbit.svg', largura: 64, altura: 64 },
+        simbolo: { arquivo: 'marcas/orbit-monograma.svg', largura: 64, altura: 64 },
         textos: {
             linha: 'produtos.orbit.linha',
             descricao: 'produtos.orbit.descricao',
