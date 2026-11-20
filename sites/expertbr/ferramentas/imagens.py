@@ -5,16 +5,15 @@ Como usar (na raiz do repositório, depois do npm ci):
     python3 sites/expertbr/ferramentas/imagens.py   (Linux/Mac)
 Precisa do Python com Pillow e Playwright (python -m playwright install chromium).
 
-O que gera, e de onde vem:
-    favicon.svg            desenhado aqui (o "E" da ExpertBR em barras, a de baixo laranja), nas cores do site
-    apple-touch-icon.png   o mesmo desenho, 180 x 180
-    logo.png               o nome "ExpertBR" em letra (Bricolage Grotesque 800, a fonte dos títulos do site),
-                           1200 x 300, fundo branco: logotipo PROVISÓRIO dos dados estruturados (Organization.logo)
-                           até a ExpertBR ter um logotipo aprovado pelo Francis
-    og.png                 prévia do link (WhatsApp, redes sociais), 1200 x 630: o nome em letra e os apps da casa,
-                           sem texto de idioma (vale para os 29)
+O logotipo ("Rumo", aprovado pelo Francis em 20/11/2026, confirmado às 12h26) nasce em ferramentas/marca/desenhar.py, que grava
+os SVG (public/logo/*.svg e public/favicon.svg). Este script só fotografa esses SVG para os PNG:
+    apple-touch-icon.png   o símbolo sobre fundo branco, 180 x 180 (o iPhone arredonda os cantos sozinho)
+    logo.png               o logotipo horizontal sobre fundo branco, 1200 x 300: logotipo dos dados estruturados
+                           (Organization.logo)
+    og.png                 prévia do link (WhatsApp, redes sociais), 1200 x 630: o logotipo e os apps da casa, sem
+                           texto de idioma (vale para os 29)
     marcas/obrafacil.webp  símbolo do ObraFácil, 128 x 128, reduzido de public/favicon.png do site do ObraFácil
-Nada vem de banco de imagens nem de outro site. Fontes: pacotes @fontsource do node_modules (licença OFL).
+Nada vem de banco de imagens nem de outro site. Fonte do og.png: pacote @fontsource do node_modules (licença OFL).
 """
 
 import tempfile
@@ -27,18 +26,7 @@ RAIZ = PASTA.parent.parent
 PUBLICO = PASTA / "public"
 FONTES = RAIZ / "node_modules" / "@fontsource"
 
-AZUL = "#0f3a63"
 NOITE = "#08172a"
-LARANJA = "#f28a1f"
-
-FAVICON = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="{AZUL}"/>
-  <rect x="17" y="14" width="8" height="36" rx="2" fill="#ffffff"/>
-  <rect x="17" y="14" width="30" height="8" rx="2" fill="#ffffff"/>
-  <rect x="17" y="28" width="24" height="8" rx="2" fill="#ffffff"/>
-  <rect x="17" y="42" width="30" height="8" rx="2" fill="{LARANJA}"/>
-</svg>
-"""
 
 
 def fonte(pacote, arquivo):
@@ -46,28 +34,32 @@ def fonte(pacote, arquivo):
 
 
 ESTILO = f"""
-@font-face {{ font-family: 'Bricolage'; font-weight: 800; src: url('{fonte('bricolage-grotesque', 'bricolage-grotesque-latin-800-normal.woff2')}'); }}
-@font-face {{ font-family: 'Bricolage'; font-weight: 700; src: url('{fonte('bricolage-grotesque', 'bricolage-grotesque-latin-700-normal.woff2')}'); }}
 @font-face {{ font-family: 'Manrope'; font-weight: 700; src: url('{fonte('manrope', 'manrope-latin-700-normal.woff2')}'); }}
 * {{ margin: 0; box-sizing: border-box; }}
 body {{ width: var(--l); height: var(--a); overflow: hidden; }}
-.nome {{ font-family: 'Bricolage'; font-weight: 800; letter-spacing: -0.035em; line-height: 1; }}
-.br {{ color: {LARANJA}; }}
 """
+
+
+def svg(nome):
+    return (PUBLICO / nome).as_uri()
+
+
+ICONE = f"""<html><head><style>{ESTILO}
+body {{ --l: 180px; --a: 180px; background: #ffffff; display: grid; place-items: center; }}
+img {{ width: 150px; height: 150px; }}
+</style></head><body><img src="{svg('logo/simbolo.svg')}"></body></html>"""
 
 LOGO = f"""<html><head><style>{ESTILO}
 body {{ --l: 1200px; --a: 300px; background: #ffffff; display: grid; place-items: center; }}
-.nome {{ font-size: 190px; color: #0d2136; }}
-.br {{ color: #d9700f; }}
-</style></head><body><div class="nome">Expert<span class="br">BR</span></div></body></html>"""
+img {{ height: 196px; }}
+</style></head><body><img src="{svg('logo/expertbr.svg')}"></body></html>"""
 
 OG = f"""<html><head><style>{ESTILO}
 body {{ --l: 1200px; --a: 630px; background:
-  radial-gradient(700px 520px at 88% 0%, rgba(31,111,209,.55), transparent 70%),
-  radial-gradient(560px 420px at 0% 100%, rgba(242,138,31,.28), transparent 70%), {NOITE};
-  color: #eef3f9; padding: 88px 96px; display: flex; flex-direction: column; justify-content: space-between; }}
-.nome {{ font-size: 164px; }}
-.br {{ color: #ffb35c; }}
+  radial-gradient(700px 520px at 88% 0%, rgba(31,111,209,.45), transparent 70%),
+  radial-gradient(560px 420px at 0% 100%, rgba(232,129,31,.22), transparent 70%), {NOITE};
+  color: #eef3f9; padding: 0 96px; display: flex; flex-direction: column; justify-content: center; gap: 72px; }}
+.logo {{ height: 200px; align-self: flex-start; margin-inline-start: -8px; }}
 .apps {{ display: flex; gap: 20px; font-family: 'Manrope'; font-weight: 700; font-size: 34px; }}
 .app {{ display: flex; align-items: center; gap: 16px; padding: 18px 30px; border-radius: 999px;
   border: 2px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06); }}
@@ -75,9 +67,9 @@ body {{ --l: 1200px; --a: 630px; background:
 .ponto {{ width: 14px; height: 14px; border-radius: 50%; background: #ff7a66; }}
 .ponto.ar {{ background: #3ecf7a; }}
 </style></head><body>
-<div class="nome">Expert<span class="br">BR</span></div>
+<img class="logo" src="{svg('logo/expertbr-escuro.svg')}">
 <div class="apps">
-  <div class="app"><img src="{(PUBLICO / 'marcas' / 'obrafacil.webp').as_uri()}"><span>ObraFácil</span><span class="ponto ar"></span></div>
+  <div class="app"><img src="{svg('marcas/obrafacil.webp')}"><span>ObraFácil</span><span class="ponto ar"></span></div>
   <div class="app"><span>Orbit</span><span class="ponto"></span></div>
 </div>
 </body></html>"""
@@ -87,7 +79,9 @@ def principal():
     (PUBLICO / "marcas").mkdir(parents=True, exist_ok=True)
     simbolo = Image.open(RAIZ / "public" / "favicon.png").convert("RGB").resize((128, 128), Image.LANCZOS)
     simbolo.save(PUBLICO / "marcas" / "obrafacil.webp", "WEBP", quality=90, method=6)
-    (PUBLICO / "favicon.svg").write_text(FAVICON, encoding="utf-8")
+    for nome in ["logo/simbolo.svg", "logo/expertbr.svg", "logo/expertbr-escuro.svg", "favicon.svg"]:
+        if not (PUBLICO / nome).exists():
+            raise SystemExit(f"Falta {nome}: rode antes ferramentas/marca/desenhar.py")
 
     with sync_playwright() as p:
         navegador = p.chromium.launch()
@@ -101,9 +95,8 @@ def principal():
             pagina.wait_for_timeout(200)
             pagina.screenshot(path=str(destino), clip={"x": 0, "y": 0, "width": largura, "height": altura})
             pagina.close()
-        # Ícone do iPhone sem os cantos arredondados (o aparelho arredonda sozinho).
-        quadrado = FAVICON.replace('rx="14" ', '').replace('<svg ', '<svg width="180" height="180" ')
-        foto(f"<html><body style='margin:0'>{quadrado}</body></html>", 180, 180, PUBLICO / "apple-touch-icon.png")
+            Path(arquivo.name).unlink(missing_ok=True)
+        foto(ICONE, 180, 180, PUBLICO / "apple-touch-icon.png")
         foto(LOGO, 1200, 300, PUBLICO / "logo.png")
         foto(OG, 1200, 630, PUBLICO / "og.png")
         navegador.close()
