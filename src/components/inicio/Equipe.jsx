@@ -62,7 +62,7 @@ export default function Equipe() {
                             src={enderecoDaTela(codigo, 'equipe')}
                             alt={t('equipe.tela')}
                             width="720"
-                            height="1600"
+                            height="1515"
                             loading="lazy"
                         />
                     </div>

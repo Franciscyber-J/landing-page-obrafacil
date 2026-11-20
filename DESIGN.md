@@ -160,7 +160,6 @@ flutuando. O escuro é o mundo principal; o claro tem a mesma forma com luzes ma
 
 | Imagem | Origem |
 | --- | --- |
-| `public/telas/<idioma>/*.webp` | Prints do app gerados para a Central de Ajuda (pasta `prints_5b_visual3` do Francis), com dados de demonstração ("Construtora Horizonte", "Residencial Jardim das Acácias"); reduzidos para 720 px de largura |
-| `public/telas/<idioma>/checklist.webp` (ainda não existe) | Checklists de qualidade (app 2.0.1): o print do passo 1 do artigo `preencher-checklist`, da fila de prints, reduzido para 720 px. Ao copiar, pôr o idioma em `TELAS_NOVAS.checklist.idiomas` (`src/telas.js`); até lá, o item dos Checklists na seção de recursos mostra a tela `obra` do idioma |
+| `public/telas/<idioma>/*.webp` | Prints do app no visual 2.0 (20/11/2026), os mesmos da Central de Ajuda (rodada `prints-dados-engenheiros`, com a construtora de demonstração de cada idioma), nos 29 idiomas; sem a barra de status do celular (o print já vem cortado no alto) e reduzidos para 720 x 1515 px (webp, qualidade 80). Artigo e passo de cada tela: comentário no alto de `src/telas.js` (obra: `painel-de-prazo` 1; rdo e equipe: `criar-rdo` 3 e 4; etapas e financeiro: `controlar-custos` 1 e 5; portal: `cliente-no-portal` 3; acesso: `permissoes-do-cliente` 2; checklist: `preencher-checklist` 1). As molduras de celular usam a mesma proporção (`aspect-ratio: 720 / 1515`) |
 | `public/logo_transparente.png` | Logotipo do ObraFácil (já existia no site) |
 | `public/bandeiras/*.svg` | Pacote `flag-icons`, copiadas no build |

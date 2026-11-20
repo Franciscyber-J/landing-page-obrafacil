@@ -40,8 +40,9 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 ## Material visual
 
-- Telas do app: `public/telas/<idioma>/*.webp`, dos prints da Central de Ajuda (pasta `D:\Projetos\prints_5b_visual3`,
-  gerados pelo app com dados de demonstração da construtora fictícia "Construtora Horizonte"/"Residencial Jardim das
-  Acácias"). São dados de exemplo; a legenda diz "tela do app".
+- Telas do app: `public/telas/<idioma>/*.webp`, dos prints da Central de Ajuda no visual 2.0 (rodada
+  `prints-dados-engenheiros`, 20/11/2026; antes, pasta `D:\Projetos\prints_5b_visual3`), gerados pelo app com a
+  construtora de demonstração de cada idioma (no pt-BR, "Construtora Horizonte"/"Residencial Jardim das Acácias").
+  São dados de exemplo; a legenda diz "tela do app". Artigo e passo de cada tela: `src/telas.js`.
 - Logotipo: `public/logo_transparente.png` (chapa branca atrás dele, nos dois temas).
 - Sem fotos de banco de imagens.

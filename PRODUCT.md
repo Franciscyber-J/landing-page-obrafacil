@@ -75,9 +75,9 @@ engenheiro, equipe e cliente.
 
 ## Evidence on Hand
 
-- Telas reais e atuais do app nos 8 idiomas: os prints da Central de Ajuda (gerados pelo app com dados de
-  demonstração de uma construtora fictícia), copiados para `public/telas/<idioma>/` (obra, rdo, equipe, etapas,
-  financeiro, portal, acesso). As imagens antigas de `public/` (desktop-*.png, mobile-*.png) mostram telas que não
+- Telas reais e atuais do app (visual 2.0) nos 29 idiomas: os prints da Central de Ajuda (gerados pelo app com
+  dados de demonstração de uma construtora fictícia de cada país), copiados para `public/telas/<idioma>/` (obra, rdo,
+  equipe, etapas, financeiro, portal, acesso, checklist; atualizadas em 20/11/2026). As imagens antigas de `public/` (desktop-*.png, mobile-*.png) mostram telas que não
   existem mais e não devem ser usadas.
 - Depoimentos (Carlos M., Roberto F., Sandro P., Juliana T., Fernando S.): reais e com autorização, segundo o
   Francis (18/10/2026).
