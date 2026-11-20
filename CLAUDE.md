@@ -11,7 +11,7 @@ o que é do Claude.
 - Trabalho completo e correto, nunca paliativo nem "versão rápida".
 - Antes de executar algo que ele não pediu com clareza, explique e espere o OK.
 - O Claude pode criar a branch da tarefa, fazer commit nela e enviá-la ao GitHub. Nunca commit, merge nem push na `main`.
-- Publicar (Hostinger, Firestore) é só com ele. Entregue os passos na ordem (skill `publicar-site`).
+- Hostinger (decisão do Francis, 20/11/2026, 07h01): o Claude tem acesso à conta inteira da Hostinger pelo conector oficial (`hostinger@claude-plugins-official`). Consultar (arquivos, painel, saúde do site, registros) é livre. Publicar (o site do ObraFácil, o instalador do Windows, o `.htaccess`, o deploy do Orbit) o Claude faz pedindo no chat o "sim" do Francis a cada publicação, como no deploy do Firebase, guarda antes a cópia do que vai ser trocado e confere no ar depois. DNS, domínios, e-mails, planos, pagamentos e a VPS (Orbit, n8n, Evolution): só quando o Francis pedir aquilo, com o "sim" para cada ação. Nada é apagado sem cópia guardada. A publicação do site segue a skill `publicar-site`.
 - Quando ele mesmo for mexer no código: antes o comando `git switch <branch>`; alteração como
   "procure isso → substitua por isso" com o caminho completo do arquivo; arquivo novo como comando PowerShell
   `$p = Join-Path $PWD 'caminho'; [System.IO.File]::WriteAllText($p, @'...'@)`.

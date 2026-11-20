@@ -5,8 +5,9 @@ description: Gerar o site do ObraFácil e publicar na Hostinger (conteúdo de di
 
 # Publicar o site
 
-Quem publica é o Francis. A Hostinger não gera o site a partir do GitHub: ele envia os arquivos pelo
-Gerenciador de Arquivos, em `public_html/appobrafacil`. Passe os passos um por um no chat, na ordem.
+Desde 20/11/2026 o Claude publica pelo conector oficial da Hostinger (decisão do Francis), pedindo o "sim" dele
+no chat a cada publicação; sem o conector, quem envia é o Francis pelo Gerenciador de Arquivos. A Hostinger não gera
+o site a partir do GitHub: os arquivos vão para `public_html/appobrafacil`. Os passos abaixo valem nos dois casos.
 
 ## Antes
 
