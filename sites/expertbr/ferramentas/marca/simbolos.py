@@ -1,16 +1,15 @@
-"""Símbolo da ExpertBR, "Órbita" (aprovado pelo Francis em 20/11/2026, 11h45), desenhado em coordenadas numa
-caixa de 240 x 240.
+"""Símbolo da ExpertBR, "Rumo" (aprovado pelo Francis em 20/11/2026; confirmado com print às 12h26), desenhado em
+coordenadas numa caixa de 240 x 240.
 
 Mesma família do símbolo do ObraFácil: linha aberta, sem placa, duas cores, a fita laranja afinada nas pontas que
-sobe e termina em seta, e a linha azul interrompida onde a fita e os pontos passam.
+sobe e termina em seta, e as linhas azuis interrompidas onde a fita passa.
 
-- O centro laranja: a origem (o Brasil, o "BR").
-- A órbita inclinada: a família de apps em volta; o ponto azul é um app em órbita.
-- A frente da órbita escapa para cima em seta: o crescimento.
+- O globo de linhas azul: o mundo (os apps são para o mundo inteiro, em 29 idiomas).
+- O ponto laranja no hemisfério sul: o Brasil, de onde a marca sai (o "BR").
+- A fita laranja que sai do ponto, corta o globo e termina em seta: o rumo, o crescimento.
 
-Duas versões: `orbita` (a aprovada, para tamanhos a partir de uns 40 px) e `orbita_favicon` (16 a 32 px: o mesmo
-desenho com traço grosso, o ponto azul maior e separado da linha, a órbita aberta e a seta maior; em 32 px a versão
-anterior, com a órbita fechada e o ponto no meio, lembrava um olho).
+Duas versões: `rumo` (a aprovada, para tamanhos a partir de uns 40 px) e `rumo_favicon` (16 a 32 px: o mesmo desenho
+com traço grosso, só o meridiano dentro do globo, o ponto do Brasil maior e a seta maior; ver a função).
 """
 import math
 
@@ -162,53 +161,43 @@ class Desenho:
                 f'<g fill="{cores["acento"]}">{laranjas}</g>{circ}')
 
 
-CX, CY, ROT = 108, 134, math.radians(-30)
+def circulo(cx, cy, rx, ry, n=240):
+    """Pontos de uma volta fechada (círculo ou elipse em pé)."""
+    pts = [(cx + rx * math.cos(2 * math.pi * k / n), cy + ry * math.sin(2 * math.pi * k / n)) for k in range(n + 1)]
+    return pts + [pts[1]]
 
 
-def _frente_e_saida(rx, ry, fim):
-    """A frente da órbita (laranja): do extremo esquerdo, por baixo, até a direita; dali escapa para cima."""
-    a_ini, a_fim = 178, 76
-    frente = [_elipse(CX, CY, rx, ry, ROT, math.radians(a_ini - (a_ini - a_fim) * k / 90)) for k in range(91)]
-    p0 = frente[-1]
-    p1 = _elipse(CX, CY, rx, ry, ROT, math.radians(a_fim - 1))
-    tx, ty = p1[0] - p0[0], p1[1] - p0[1]
-    L = math.hypot(tx, ty)
-    tx, ty = tx / L, ty / L
-    saida = amostrar([(p0, (p0[0] + tx * 62, p0[1] + ty * 62), (fim[0] - 50, fim[1] + 62), fim)], 60)
-    return frente + saida[1:]
-
-
-def orbita():
-    """O símbolo aprovado (o mesmo desenho da prancha de 20/11, 11h45)."""
+def rumo():
+    """O símbolo aprovado (o mesmo desenho da prancha da rodada 2, opção 1)."""
     d = Desenho()
-    rx, ry = 94, 52
-    ini, fimz = math.radians(-166), math.radians(36)
-    arco = [_elipse(CX, CY, rx, ry, ROT, ini + (fimz - ini) * k / 160) for k in range(161)]
-    d.azul.append((arco, 14))
-    f = fita(_frente_e_saida(rx, ry, (220, 36)), 4, 18, 15, tm=0.45, seta=(38, 20))
+    cx, cy, R = 114, 128, 84
+    d.azul.append((circulo(cx, cy, R, R), 14))
+    d.azul.append((circulo(cx, cy, 34, R), 10))                       # o meridiano
+    par = amostrar([((cx - R * 0.87, cy - R * 0.45), (cx - 30, cy - R * 0.62),
+                     (cx + 30, cy - R * 0.62), (cx + R * 0.87, cy - R * 0.45))])
+    d.azul.append((par, 10))                                          # um paralelo no hemisfério norte
+    bx, by = cx - 34, cy + 40                                         # o Brasil: no sul, à esquerda do meridiano
+    f = fita(amostrar([((bx, by), (bx + 40, by + 10), (bx + 64, by - 44), (198, 50))]), 9, 19, 16, seta=(38, 20))
     d.laranja.append(f)
     d.cortes.append((f, 6))
-    sx, sy = _elipse(CX, CY, rx, ry, ROT, math.radians(-118))
-    d.cortes.append(('c', sx, sy, 18))
-    d.circulos.append((sx, sy, 12, 'linha'))
-    d.circulos.append((CX, CY, 20, 'acento'))
+    d.cortes.append(('c', bx, by, 11 + 6))
+    d.circulos.append((bx, by, 11, 'acento'))
     return d
 
 
-def orbita_favicon():
-    """Versão para 16 a 32 px (favicon). As mesmas peças, mais fortes: o ponto azul (o app) grande e solto na ponta
-    da órbita, a órbita aberta dos dois lados e a seta maior e mais para fora."""
+def rumo_favicon():
+    """Versão para 16 a 32 px (favicon). Em 32 px as três linhas finas do globo empastavam, e só o anel com a seta (a
+    versão pequena da rodada 2) perdia o globo e lembrava o símbolo do masculino. Aqui: o anel e o meridiano em traço
+    grosso (o paralelo sai, é o único corte), o ponto do Brasil maior e a seta maior, saindo do globo."""
     d = Desenho()
-    rx, ry = 92, 56
-    sat = -128
-    ini, fimz = math.radians(sat + 30), math.radians(30)
-    arco = [_elipse(CX, CY, rx, ry, ROT, ini + (fimz - ini) * k / 160) for k in range(161)]
-    d.azul.append((arco, 24))
-    f = fita(_frente_e_saida(rx, ry, (222, 30)), 8, 28, 26, tm=0.45, seta=(74, 44))
+    cx, cy, R, rxm = 108, 134, 90, 42
+    d.azul.append((circulo(cx, cy, R, R), 20))
+    d.azul.append((circulo(cx, cy, rxm, R), 14))
+    bx, by = cx - rxm, cy + 42
+    f = fita(amostrar([((bx, by), (bx + 44, by + 8), (bx + 70, by - 50), (210, 40))]), 14.4, 24, 22.8, tm=0.45,
+             seta=(66, 40))
     d.laranja.append(f)
     d.cortes.append((f, 9))
-    sx, sy = _elipse(CX, CY, rx, ry, ROT, math.radians(sat))
-    d.cortes.append(('c', sx, sy, 30))
-    d.circulos.append((sx, sy, 20, 'linha'))
-    d.circulos.append((CX, CY, 25, 'acento'))
+    d.cortes.append(('c', bx, by, 19 + 9))
+    d.circulos.append((bx, by, 19, 'acento'))
     return d

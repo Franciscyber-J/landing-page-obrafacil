@@ -5,7 +5,7 @@ Como usar (na raiz do repositório, depois do npm ci):
     python3 sites/expertbr/ferramentas/imagens.py   (Linux/Mac)
 Precisa do Python com Pillow e Playwright (python -m playwright install chromium).
 
-O logotipo ("Órbita", aprovado pelo Francis em 20/11/2026, 11h45) nasce em ferramentas/marca/desenhar.py, que grava
+O logotipo ("Rumo", aprovado pelo Francis em 20/11/2026, confirmado às 12h26) nasce em ferramentas/marca/desenhar.py, que grava
 os SVG (public/logo/*.svg e public/favicon.svg). Este script só fotografa esses SVG para os PNG:
     apple-touch-icon.png   o símbolo sobre fundo branco, 180 x 180 (o iPhone arredonda os cantos sozinho)
     logo.png               o logotipo horizontal sobre fundo branco, 1200 x 300: logotipo dos dados estruturados

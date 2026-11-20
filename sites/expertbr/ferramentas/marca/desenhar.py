@@ -1,4 +1,5 @@
-"""Desenha os arquivos do logotipo da ExpertBR ("Órbita", aprovado pelo Francis em 20/11/2026, 11h45).
+"""Desenha os arquivos do logotipo da ExpertBR ("Rumo", aprovado pelo Francis em 20/11/2026, confirmado com print às
+12h26).
 
 Grava em sites/expertbr/public (os arquivos são versionados; só rodar de novo se o desenho mudar):
     logo/expertbr.svg            logotipo horizontal para fundo claro (símbolo + "Expert" negrito azul + "BR" laranja)
@@ -22,7 +23,7 @@ import sys
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, AQUI)
-from simbolos import _n, orbita, orbita_favicon  # noqa: E402
+from simbolos import _n, rumo, rumo_favicon  # noqa: E402
 from texto import Fonte  # noqa: E402
 
 PUBLICO = os.path.join(AQUI, '..', '..', 'public')
@@ -47,7 +48,7 @@ def simbolo(desenho, cores, uid, margem=6, titulo='ExpertBR'):
 def horizontal(cores, uid):
     """Símbolo à esquerda e o nome à direita, nas proporções do logotipo do ObraFácil ("Obra" negrito, "Fácil" normal)."""
     negrito, normal = Fonte('montserrat-700'), Fonte('montserrat-400')
-    desenho = orbita()
+    desenho = rumo()
     x, y, w, h = desenho.caixa()
     H = 100.0                       # altura do símbolo no desenho
     esc = H / h
@@ -67,13 +68,12 @@ def horizontal(cores, uid):
 
 def favicon():
     """Linha azul-marinho; com o navegador em modo escuro, azul-claro (a aba escura apagaria o azul-marinho)."""
-    d = orbita_favicon()
+    d = rumo_favicon()
     x, y, w, h = d.caixa()
     lado = max(w, h) + 4
     vx, vy = x + w / 2 - lado / 2, y + h / 2 - lado / 2
     corpo = d.svg(CLARO, 'f').replace(f'stroke="{AZUL}"', f'class="l" stroke="{AZUL}"', 1)
-    corpo = corpo.replace(f'fill="{AZUL}"', f'class="p" fill="{AZUL}"')
-    estilo = f'<style>@media (prefers-color-scheme: dark){{.l{{stroke:{AZUL_CLARO}}}.p{{fill:{AZUL_CLARO}}}}}</style>'
+    estilo = f'<style>@media (prefers-color-scheme: dark){{.l{{stroke:{AZUL_CLARO}}}}}</style>'
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{_n(vx)} {_n(vy)} {_n(lado)} {_n(lado)}">'
             f'{estilo}{corpo}</svg>\n')
 
@@ -91,8 +91,8 @@ def principal():
     escuro, _ = horizontal(ESCURO, 'me')
     gravar('logo/expertbr.svg', claro)
     gravar('logo/expertbr-escuro.svg', escuro)
-    gravar('logo/simbolo.svg', simbolo(orbita(), CLARO, 'sc'))
-    gravar('logo/simbolo-escuro.svg', simbolo(orbita(), ESCURO, 'se'))
+    gravar('logo/simbolo.svg', simbolo(rumo(), CLARO, 'sc'))
+    gravar('logo/simbolo-escuro.svg', simbolo(rumo(), ESCURO, 'se'))
     gravar('favicon.svg', favicon())
     print(f'proporção do logotipo horizontal: {tam[0] / tam[1]:.4f} (largura / altura)')
 

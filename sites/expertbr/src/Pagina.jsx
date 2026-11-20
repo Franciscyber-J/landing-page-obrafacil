@@ -17,10 +17,10 @@ function ComDestaque({ texto }) {
     return partes.map((parte, n) => (n % 2 ? <em key={n}>{parte}</em> : parte));
 }
 
-// Logotipo da ExpertBR ("Órbita", aprovado pelo Francis em 20/11/2026; desenho em ferramentas/marca). Uma imagem
+// Logotipo da ExpertBR ("Rumo", aprovado pelo Francis em 20/11/2026; desenho em ferramentas/marca). Uma imagem
 // para cada tema: o CSS mostra a do tema da página (.so-claro / .so-escuro), e sem JavaScript fica a do claro, como o
 // resto da página. O nome continua no texto alternativo. Tamanho pelo CSS (.marca-logo--<onde>).
-const LOGO = { largura: 155, altura: 36 }; // proporção do desenho (4,31 : 1)
+const LOGO = { largura: 150, altura: 36 }; // proporção do desenho (4,15 : 1)
 
 export function Marca({ onde = 'topo' }) {
     return (

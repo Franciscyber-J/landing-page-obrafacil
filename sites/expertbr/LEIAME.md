@@ -6,8 +6,8 @@ A casa da marca ExpertBR, o estúdio dos aplicativos: apresenta a ExpertBR em po
 
 **A empresa ainda não existe formalmente.** O site não tem CNPJ, razão social, endereço, telefone, número de
 pessoas, clientes, prêmios nem nenhum dado inventado, e os dados estruturados também não (o build confere:
-`ferramentas/conferir.mjs`, `CAMPOS_PROIBIDOS`). O logotipo é o "Órbita", aprovado pelo Francis em 20/11/2026, 11h45
-(ver "Logotipo").
+`ferramentas/conferir.mjs`, `CAMPOS_PROIBIDOS`). O logotipo é o "Rumo", aprovado pelo Francis em 20/11/2026 (confirmado com print às
+12h26; ver "Logotipo").
 
 Publicação na Hostinger e caminho de volta: **`PUBLICAR.md`** (nesta pasta).
 
@@ -79,10 +79,11 @@ cima dos títulos, sem cartões iguais de ícone e texto.
 
 ## Logotipo
 
-"Órbita" (aprovado pelo Francis em 20/11/2026, 11h45): o centro laranja (a origem, o Brasil), uma órbita inclinada
-em volta com um ponto azul (um app) e a frente da órbita escapando para cima em seta (o crescimento). Linha aberta,
-azul-marinho `#154F84` e laranja `#E8811F` (os do logotipo do ObraFácil), letra Montserrat convertida em contorno:
-"Expert" em negrito azul e "BR" normal laranja. Mesma família do logotipo do ObraFácil.
+"Rumo" (aprovado pelo Francis em 20/11/2026; confirmado com print às 12h26, depois de um engano de leitura do
+número que chegou a aplicar o "Órbita" nesta branch): um globo de linhas azul (o mundo), um ponto laranja no
+hemisfério sul (o Brasil, o "BR") e, saindo dele, a fita laranja que corta o globo e termina em seta (o rumo, o
+crescimento). Linha aberta, azul-marinho `#154F84` e laranja `#E8811F` (os do logotipo do ObraFácil), letra Montserrat
+convertida em contorno: "Expert" em negrito azul e "BR" normal laranja. Mesma família do logotipo do ObraFácil.
 
 | Arquivo (em `public/`) | Uso |
 | --- | --- |
@@ -95,9 +96,11 @@ azul-marinho `#154F84` e laranja `#E8811F` (os do logotipo do ObraFácil), letra
   "ExpertBR" e o link com "Página inicial da ExpertBR" (`nav.inicio`). Altura: 36 px no topo do computador, **28 px
   no celular** (até 760 px; o botão de idioma e o do tema cabem na linha, conferido em 390 px nos 29 idiomas), 40 px
   no rodapé e 56 px na raiz.
-- **Favicon:** em 32 px o símbolo inteiro (órbita fechada com o ponto no meio) lembrava um olho. A versão pequena
-  tem as mesmas peças, mais fortes: o ponto azul (o app) grande e solto na ponta da órbita, a órbita aberta dos dois
-  lados e a seta maior e mais para fora (`orbita_favicon` em `ferramentas/marca/simbolos.py`).
+- **Favicon (16 a 32 px):** o globo inteiro tem três linhas finas que empastam em 32 px, e só o anel com a seta (a
+  versão pequena da rodada 2) perdia o globo e lembrava o símbolo do masculino (♂). A versão pequena guarda o anel e o
+  meridiano em traço grosso (o paralelo sai: é o único corte), o ponto do Brasil maior e a seta maior
+  (`rumo_favicon` em `ferramentas/marca/simbolos.py`). Dos 40 px para cima (ícone do iPhone, topo, rodapé) vale o
+  desenho inteiro.
 - Desenho: `ferramentas/marca/desenhar.py` (com `simbolos.py` e `texto.py`) grava os SVG; o que fazer para rodar
   está no começo do arquivo (precisa da Montserrat numa pasta fora do repositório). Só rodar se o desenho mudar.
 
