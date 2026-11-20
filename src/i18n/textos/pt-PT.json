@@ -331,5 +331,80 @@
         "motivoOcupada": "O Max ainda está a responder à mensagem anterior. Aguarde um instante e envie novamente.",
         "motivoWhatsapp": "No seu país, o atendimento é feito pelo WhatsApp. A sua mensagem continua no campo e segue junto quando abrir o WhatsApp.",
         "recaptcha": "Protegido pelo reCAPTCHA. Aplicam-se as regras da Google:"
+    },
+    "modelos": {
+        "nav": "Modelos gratuitos",
+        "indice": {
+            "metaTitulo": "Modelos gratuitos: checklists de qualidade e diário de obra",
+            "metaDescricao": "27 modelos de checklist de qualidade e o modelo de diário de obra para descarregar em PDF e imprimir. Os mesmos da aplicação ObraFácil.",
+            "titulo": "Modelos gratuitos para **a obra**",
+            "texto": "Os 27 checklists de qualidade e o diário de obra, com os mesmos itens da aplicação ObraFácil. Leia-os aqui, descarregue o PDF e imprima para usar em papel, sem registo.",
+            "diarioTexto": "Data, estado do tempo, equipa presente, atividades, ocorrências, fotografias e a assinatura do responsável técnico, nos mesmos campos do diário de obra da aplicação.",
+            "checklistsTexto": "Um modelo para cada trabalho da obra, com o que verificar antes de começar, durante a execução e na conclusão."
+        },
+        "checklist": {
+            "metaTitulo": "{{nome}}: modelo de checklist gratuito em PDF",
+            "metaDescricao": "{{nome}}: modelo gratuito de checklist de qualidade com o que verificar antes, durante e na conclusão do trabalho. Descarregue o PDF ou use-o na aplicação ObraFácil.",
+            "titulo": "{{nome}}: checklist de qualidade",
+            "paraQue": "O modelo indica o que verificar no trabalho em três momentos: antes de começar, durante a execução e na conclusão. Em cada item, a resposta é conforme, não conforme ou não aplicável. O que não passar torna-se uma não conformidade, com ação corretiva e reinspeção, até à aprovação do trabalho.",
+            "criterio": "Critério de aceitação"
+        },
+        "diario": {
+            "nome": "Diário de obra",
+            "metaTitulo": "Diário de obra: modelo gratuito em PDF",
+            "metaDescricao": "Modelo gratuito de diário de obra com estado do tempo, pessoal, atividades, ocorrências, fotografias e assinatura do responsável técnico. Descarregue o PDF.",
+            "titulo": "Diário de obra: **modelo gratuito**",
+            "paraQue": "O diário de obra regista o dia em obra: o tempo, quem trabalhou, o que foi feito, o que aconteceu e as fotografias, com a assinatura do responsável técnico. Este modelo tem os mesmos campos do diário de obra do ObraFácil.",
+            "campos": {
+                "avulsa": "Quem trabalhou sem fazer parte da equipa da obra, com a função e as horas.",
+                "fotos": "As fotografias do dia, com o número e o que cada uma mostra."
+            }
+        },
+        "usar": {
+            "checklist": [
+                "Descarregue o PDF e imprima uma ficha para cada trabalho e cada local verificado.",
+                "Preencha a obra, o local, a etapa, a data da inspeção e quem a fez.",
+                "Em cada item, assinale conforme, não conforme ou não aplicável, e anote o que viu.",
+                "No que não passou, escreva o que estava errado, a ação corretiva, o responsável e o prazo. Depois, registe a reinspeção.",
+                "Com o trabalho verificado, assinale a aprovação e assine."
+            ],
+            "diario": [
+                "Descarregue o PDF e imprima uma folha para cada dia de obra.",
+                "Preencha a data, o cliente e o avanço, e assinale o estado do tempo.",
+                "Anote a equipa presente, com a função, as horas e a presença de cada um, e a mão de obra avulsa.",
+                "Escreva as atividades realizadas e as ocorrências, e numere as fotografias do dia.",
+                "No fim do dia, o responsável técnico assina."
+            ]
+        },
+        "app": {
+            "tituloChecklist": "Na aplicação ObraFácil, o mesmo modelo passa a **checklist a sério**",
+            "checklist": [
+                "Resposta em cada item: conforme, não conforme ou não aplicável, com a fotografia tirada no momento",
+                "Não conformidade com ação corretiva, responsável, prazo e reinspeção",
+                "Aprovação do trabalho com assinatura e o PDF da ficha pronto a enviar",
+                "O cliente vê no portal da obra os checklists aprovados que marcar para ele",
+                "Funciona sem rede em obra: o que regista é enviado quando a ligação volta"
+            ],
+            "planosChecklist": "No plano gratuito, aplica 3 checklists no total com os 27 modelos prontos. No PRO, os checklists são ilimitados, cria os modelos da sua empresa e junta vários checklists num só PDF.",
+            "tituloDiario": "Na aplicação ObraFácil, o diário de obra **sai pronto do telemóvel**",
+            "diario": [
+                "Tempo, equipa presente e horas registados em poucos toques",
+                "Até 20 fotografias por diário, pela câmara ou pela galeria",
+                "Assinatura do responsável: o nome escrito, desenhada no ecrã ou por imagem",
+                "PDF do relatório pronto a enviar",
+                "O cliente acompanha os diários no portal da obra",
+                "Funciona sem rede: o diário fica guardado no dispositivo e é enviado depois"
+            ],
+            "planosDiario": "No plano gratuito, são 7 relatórios em PDF por mês, com marca de água. No PRO, os relatórios são ilimitados, sem marca de água e com o logótipo da sua empresa, e os diários saem em ZIP.",
+            "nota": "O PDF é a versão para imprimir. As funções acima estão na aplicação."
+        },
+        "baixar": "Descarregar o PDF",
+        "baixarNota": "PDF {{papel}} · gratuito, sem registo",
+        "todos": "Todos os modelos gratuitos",
+        "carregando": "A carregar o modelo…",
+        "pdf": {
+            "conviteChecklist": "Na aplicação ObraFácil, este modelo passa a checklist com fotografias, reinspeção e assinatura. Comece gratuitamente:",
+            "conviteDiario": "Na aplicação ObraFácil, o diário de obra sai pronto com o tempo, a equipa, as fotografias e a assinatura. Comece gratuitamente:"
+        }
     }
 }

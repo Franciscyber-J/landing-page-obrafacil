@@ -541,5 +541,107 @@
         "recaptcha": "Protejat de reCAPTCHA. Se aplică regulile Google:",
         "recaptchaPrivacidade": "Confidențialitate",
         "recaptchaTermos": "Termeni"
+    },
+    "modelos": {
+        "nav": "Modele gratuite",
+        "indice": {
+            "metaTitulo": "Modele gratuite: liste de verificare și jurnal de șantier",
+            "metaDescricao": "27 de modele gratuite de liste de verificare a calității și un model de jurnal de șantier, de descărcat în PDF și de tipărit. Aceleași ca în aplicația ObraFácil.",
+            "titulo": "Modele gratuite **pentru șantier**",
+            "texto": "Cele 27 de liste de verificare a calității și jurnalul de șantier, cu aceleași puncte ca în aplicația ObraFácil. Citiți-le aici, descărcați PDF-ul și tipăriți-l pentru lucrul pe hârtie, fără cont.",
+            "verChecklists": "Vedeți cele 27 de liste",
+            "diarioTexto": "Data, vremea, efectivul de pe șantier, lucrările executate, incidentele, fotografiile și semnătura responsabilului tehnic, cu aceleași câmpuri ca jurnalul de șantier din aplicație.",
+            "checklistsTexto": "Un model pentru fiecare tip de lucrare, cu ce trebuie verificat înainte de începere, în timpul execuției și la finalizare.",
+            "abrir": "Vedeți modelul"
+        },
+        "itens_one": "{{count}} punct",
+        "itens_few": "{{count}} puncte",
+        "itens_other": "{{count}} de puncte",
+        "criticos_one": "{{count}} critic",
+        "criticos_few": "{{count}} critice",
+        "criticos_other": "{{count}} de puncte critice",
+        "fotos_one": "{{count}} cu fotografie obligatorie",
+        "fotos_few": "{{count}} cu fotografie obligatorie",
+        "fotos_other": "{{count}} de puncte cu fotografie obligatorie",
+        "checklist": {
+            "metaTitulo": "{{nome}}: listă de verificare gratuită (PDF)",
+            "metaDescricao": "{{nome}}: model gratuit de listă de verificare a calității, cu ce trebuie verificat înainte, în timpul și la finalul lucrării. Descărcați PDF-ul sau folosiți-l în ObraFácil.",
+            "titulo": "{{nome}}: listă de verificare a calității",
+            "paraQue": "Modelul arată ce trebuie verificat la lucrare în trei momente: înainte de începere, în timpul execuției și la finalizare. Fiecare punct se marchează conform, neconform sau nu se aplică. Ce nu trece devine neconformitate, cu acțiune corectivă și reinspecție, până la aprobarea lucrării.",
+            "itensTitulo": "Punctele modelului",
+            "criterio": "Criteriu de acceptare"
+        },
+        "diario": {
+            "nome": "Jurnal de șantier",
+            "metaTitulo": "Jurnal de șantier: model gratuit în PDF",
+            "metaDescricao": "Model gratuit de jurnal de șantier cu vremea, efectivul, lucrările executate, incidentele, fotografiile și semnătura responsabilului tehnic. Descărcați PDF-ul.",
+            "titulo": "Jurnal de șantier: **model gratuit**",
+            "paraQue": "Jurnalul de șantier consemnează ziua de lucru: vremea, cine a lucrat, ce s-a făcut, ce s-a întâmplat și fotografiile, cu semnătura responsabilului tehnic. Acest model are aceleași câmpuri ca jurnalul de șantier din ObraFácil.",
+            "camposTitulo": "Câmpurile modelului",
+            "campos": {
+                "data": "Ziua raportului și clientul lucrării.",
+                "clima": "Vremea zilei, cu una dintre aceste opțiuni:",
+                "avanco": "Cât din lucrare este gata, în procente.",
+                "efetivo": "Cine a lucrat în ziua respectivă: nume, funcție, ore și prezență, cu una dintre aceste opțiuni:",
+                "avulsa": "Cine a lucrat fără să facă parte din echipa lucrării, cu funcția și orele.",
+                "atividades": "Ce s-a făcut în ziua respectivă, lucrare cu lucrare.",
+                "observacoes": "Vizite, livrări, probleme și tot ce cere atenție.",
+                "fotos": "Fotografiile zilei, numerotate, cu ce arată fiecare.",
+                "responsavel": "Numele și semnătura celui care răspunde de lucrare."
+            }
+        },
+        "usar": {
+            "titulo": "Cum îl folosiți pe hârtie",
+            "checklist": [
+                "Descărcați PDF-ul și tipăriți o fișă pentru fiecare tip de lucrare și fiecare loc verificat.",
+                "Completați lucrarea, locul, etapa, data inspecției și cine a făcut-o.",
+                "La fiecare punct, bifați conform, neconform sau nu se aplică și notați ce ați văzut.",
+                "La ce nu trece, scrieți ce nu era în regulă, acțiunea corectivă, responsabilul și termenul. Apoi notați reinspecția.",
+                "După verificare, bifați aprobarea și semnați."
+            ],
+            "diario": [
+                "Descărcați PDF-ul și tipăriți o foaie pentru fiecare zi de lucru.",
+                "Completați data, clientul și progresul și bifați vremea zilei.",
+                "Notați efectivul de pe șantier, cu funcția, orele și prezența fiecăruia, plus muncitorii ocazionali.",
+                "Scrieți lucrările executate și incidentele și numerotați fotografiile zilei.",
+                "La sfârșitul zilei, semnează responsabilul tehnic."
+            ]
+        },
+        "app": {
+            "tituloChecklist": "În ObraFácil, același model devine **o listă de verificare adevărată**",
+            "checklist": [
+                "Conform, neconform sau nu se aplică la fiecare punct, cu fotografie făcută pe loc",
+                "Neconformități cu acțiune corectivă, responsabil, termen și reinspecție",
+                "Aprobare cu semnătură și fișa în PDF, gata de trimis",
+                "Clientul vede în portalul lucrării listele aprobate pe care le marcați pentru el",
+                "Funcționează fără semnal pe șantier: ce notați se trimite când revine conexiunea"
+            ],
+            "planosChecklist": "În planul gratuit aplicați 3 liste de verificare în total, cu cele 27 de modele gata făcute. În PRO, listele sunt nelimitate, creați modelele firmei dumneavoastră și puneți mai multe liste într-un singur PDF.",
+            "tituloDiario": "În ObraFácil, jurnalul de șantier **iese gata din telefon**",
+            "diario": [
+                "Vremea, efectivul și orele în câteva atingeri",
+                "Până la 20 de fotografii pe raport, din cameră sau din galerie",
+                "Semnătura responsabilului: numele scris, semnătură desenată pe ecran sau imagine",
+                "Raportul în PDF, gata de trimis",
+                "Clientul urmărește rapoartele zilnice în portalul lucrării",
+                "Funcționează fără semnal: raportul rămâne pe dispozitiv și se trimite mai târziu"
+            ],
+            "planosDiario": "În planul gratuit aveți 7 rapoarte PDF pe lună, cu filigran. În PRO, rapoartele sunt nelimitate, fără filigran și cu sigla firmei dumneavoastră, iar rapoartele zilnice se exportă în ZIP.",
+            "nota": "PDF-ul este versiunea de tipărit. Funcțiile de mai sus sunt în aplicație."
+        },
+        "baixar": "Descărcați PDF-ul",
+        "papel": {
+            "a4": "A4",
+            "carta": "Letter"
+        },
+        "baixarNota": "PDF {{papel}} · gratuit, fără cont",
+        "outros": "Alte modele: {{grupo}}",
+        "todos": "Toate modelele gratuite",
+        "carregando": "Se încarcă modelul…",
+        "pdf": {
+            "feitoCom": "Realizat cu ObraFácil",
+            "conviteChecklist": "În aplicația ObraFácil, acest model devine o listă de verificare cu fotografii, reinspecție și semnătură. Începeți gratuit:",
+            "conviteDiario": "În aplicația ObraFácil, jurnalul de șantier iese gata cu vremea, efectivul, fotografiile și semnătura. Începeți gratuit:"
+        }
     }
 }

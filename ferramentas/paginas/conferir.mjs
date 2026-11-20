@@ -46,7 +46,23 @@ export function lerPagina(html) {
         h1: /<h1[\s>]/.test(html.slice(html.indexOf('<div id="root"'))),
         texto: textoVisivel(html),
         links: linksInternos(html),
+        pdfs: linksDePdf(html),
     };
+}
+
+// Links do corpo da página para os PDFs do próprio site (os modelos grátis, /modelos-pdf/...), como caminho do arquivo.
+function linksDePdf(html) {
+    const raiz = html.indexOf('<div id="root"');
+    if (raiz < 0) return [];
+    const vistos = new Set();
+    for (const m of html.slice(raiz).matchAll(/<a\s[^>]*?href="(\/[^"]*\.pdf)"/g)) {
+        try {
+            vistos.add(decodeURIComponent(decodificar(m[1])).normalize('NFC'));
+        } catch {
+            vistos.add(decodificar(m[1]));
+        }
+    }
+    return [...vistos];
 }
 
 // Links do corpo da página (<a href>) para páginas do próprio site (/pt-br/..., /en-us/help/...), como endereço
@@ -285,6 +301,17 @@ export function conferirDist(dist) {
         else if (JSON.stringify(pagina.alternativos) !== JSON.stringify(e.alternativos)) problemas.push(`sitemap: hreflang de ${e.loc} diferente do da página`);
     }
     problemas.push(...conferirLinks(paginas));
+    // Todo PDF apontado por uma página existe no dist e é um PDF.
+    const pdfsVistos = new Set();
+    for (const [url, p] of paginas) {
+        for (const pdf of p.pdfs ?? []) {
+            if (pdfsVistos.has(pdf)) continue;
+            pdfsVistos.add(pdf);
+            const arquivo = path.join(dist, ...pdf.split('/').filter(Boolean));
+            if (!fs.existsSync(arquivo)) problemas.push(`${decodeURI(url)}: link para ${pdf}, que não existe`);
+            else if (fs.readFileSync(arquivo).subarray(0, 5).toString('latin1') !== '%PDF-') problemas.push(`${pdf} não é um PDF`);
+        }
+    }
     const noSitemap = new Set(entradas.map((e) => e.loc));
     for (const [url, p] of paginas) if (!p.noindex && !noSitemap.has(url)) problemas.push(`${url} pode ir para o Google mas não está no sitemap`);
     problemas.push(...conferirRobots(fs.readFileSync(path.join(dist, 'robots.txt'), 'utf8')));

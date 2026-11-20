@@ -3,7 +3,8 @@
 // mesmos textos, preços e endereços do site: muda sozinho quando eles mudam.
 // Inglês primeiro (o idioma internacional do site) e depois português (o idioma de referência).
 
-import { IDIOMAS, INTERNACIONAL, REFERENCIA, caminhoAjuda, caminhoInicio, caminhoLegal, caminhoSuporte, idioma } from '../i18n/idiomas.js';
+import { IDIOMAS, INTERNACIONAL, REFERENCIA, caminhoAjuda, caminhoInicio, caminhoLegal, caminhoModelos, caminhoSuporte, idioma } from '../i18n/idiomas.js';
+import { caminhoDoModelo, gruposComModelos, modeloPeloId, DIARIO } from '../modelos/modelos.js';
 import { casasNaTela, precosDoIdioma } from '../i18n/pricing.js';
 import { formatarNumero } from '../i18n/formatos.js';
 import { EMAIL_SUPORTE, WINDOWS, appStore, googlePlay, linkWhatsApp } from '../links.js';
@@ -31,7 +32,19 @@ function preco(codigo, valor, moeda) {
     }
 }
 
-function secaoDoIdioma(t, codigo, indice) {
+// Modelos grátis (src/modelos): a lista, o diário de obra e os 27 checklists do app, por grupo, com o endereço de cada um.
+function secaoDosModelos(t, codigo, dados, titulo, s) {
+    titulo(t('modelos.nav'));
+    s.push(limpo(t('modelos.indice.texto')), '', limpo(t('modelos.app.planosChecklist')), '');
+    s.push(`- [${limpo(t('modelos.indice.metaTitulo'))}](${absoluto(caminhoModelos(codigo))})`);
+    const diario = modeloPeloId(dados, codigo, DIARIO);
+    s.push(`- [${limpo(t('modelos.diario.nome'))}](${absoluto(caminhoDoModelo(codigo, diario))}): ${limpo(t('modelos.diario.metaDescricao'))}`);
+    for (const g of gruposComModelos(dados, codigo)) {
+        s.push(`- ${limpo(g.nome)}: ${g.modelos.map((m) => `[${limpo(m.nome)}](${absoluto(caminhoDoModelo(codigo, m))})`).join(', ')}`);
+    }
+}
+
+function secaoDoIdioma(t, codigo, indice, modelos) {
     const s = [];
     const titulo = (texto) => s.push('', `## ${limpo(texto)}`, '');
     const nomeDoIdioma = idioma(codigo).nome;
@@ -66,9 +79,12 @@ function secaoDoIdioma(t, codigo, indice) {
     titulo(t('seo.llms.paginas'));
     s.push(`- [${limpo(t('seo.inicio.titulo'))}](${absoluto(caminhoInicio(codigo))}): ${limpo(t('seo.inicio.descricao'))}`);
     s.push(`- [${limpo(t('seo.ajuda.titulo'))}](${absoluto(caminhoAjuda(codigo))}): ${limpo(t('seo.ajuda.descricao'))}`);
+    s.push(`- [${limpo(t('modelos.indice.metaTitulo'))}](${absoluto(caminhoModelos(codigo))}): ${limpo(t('modelos.indice.metaDescricao'))}`);
     s.push(`- [${limpo(t('suporte.metaTitulo'))}](${absoluto(caminhoSuporte(codigo))}): ${limpo(t('suporte.metaDescricao'))}`);
     s.push(`- [${limpo(t('footer.terms'))}](${absoluto(caminhoLegal(codigo, 'termos'))})`);
     s.push(`- [${limpo(t('footer.privacy'))}](${absoluto(caminhoLegal(codigo, 'privacidade'))})`);
+
+    if (modelos) secaoDosModelos(t, codigo, modelos, titulo, s);
 
     if (indice) {
         const rotas = criarRotas(codigo);
@@ -88,14 +104,15 @@ function secaoDoIdioma(t, codigo, indice) {
     return s;
 }
 
-// tradutor(codigo) → t do idioma; indices: { <idioma dos artigos>: índice da Central } (pode faltar).
-export function gerarLlms({ tradutor, indices = {} }) {
+// tradutor(codigo) → t do idioma; indices: { <idioma dos artigos>: índice da Central } (pode faltar); modelos:
+// { <idioma do site>: dados dos modelos grátis (src/modelos/dados) } (pode faltar).
+export function gerarLlms({ tradutor, indices = {}, modelos = {} }) {
     const en = tradutor(INTERNACIONAL);
     const linhas = [`# ${NOME}`, '', `> ${limpo(en('seo.app.descricao'))}`, ''];
     linhas.push(`${limpo(en('seo.llms.idiomas'))}:`, '');
     for (const i of IDIOMAS) linhas.push(`- [${i.nome}](${absoluto(caminhoInicio(i.codigo))})`);
     for (const codigo of [INTERNACIONAL, REFERENCIA]) {
-        linhas.push(...secaoDoIdioma(tradutor(codigo), codigo, indices[idiomaDoConteudo(codigo)] ?? null));
+        linhas.push(...secaoDoIdioma(tradutor(codigo), codigo, indices[idiomaDoConteudo(codigo)] ?? null, modelos[codigo] ?? null));
     }
     const todos = indices[idiomaDoConteudo(INTERNACIONAL)];
     if (todos) {

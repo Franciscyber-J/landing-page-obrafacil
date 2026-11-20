@@ -541,5 +541,107 @@
         "recaptcha": "Protegido por reCAPTCHA. Se aplican las condiciones de Google:",
         "recaptchaPrivacidade": "Privacidad",
         "recaptchaTermos": "Términos"
+    },
+    "modelos": {
+        "nav": "Plantillas gratis",
+        "indice": {
+            "metaTitulo": "Plantillas gratis: checklists de calidad y parte diario",
+            "metaDescricao": "27 plantillas de checklist de calidad y la plantilla de parte diario de obra para descargar en PDF e imprimir. Las mismas de la app ObraFácil.",
+            "titulo": "Plantillas gratis para **la obra**",
+            "texto": "Los 27 checklists de calidad y el parte diario de obra, con los mismos puntos que la app ObraFácil. Léelos aquí, descarga el PDF e imprímelo para usarlo en papel, sin registrarte.",
+            "verChecklists": "Ver los 27 checklists",
+            "diarioTexto": "Fecha, clima, equipo presente, trabajos realizados, incidencias, fotos y la firma del responsable técnico, con los mismos campos que el parte diario de la app.",
+            "checklistsTexto": "Una plantilla para cada trabajo de la obra, con lo que hay que revisar antes de empezar, durante la ejecución y al terminar.",
+            "abrir": "Ver la plantilla"
+        },
+        "itens_one": "{{count}} punto",
+        "itens_many": "{{count}} de puntos",
+        "itens_other": "{{count}} puntos",
+        "criticos_one": "{{count}} crítico",
+        "criticos_many": "{{count}} de críticos",
+        "criticos_other": "{{count}} críticos",
+        "fotos_one": "{{count}} con foto obligatoria",
+        "fotos_many": "{{count}} de puntos con foto obligatoria",
+        "fotos_other": "{{count}} con foto obligatoria",
+        "checklist": {
+            "metaTitulo": "{{nome}}: checklist de calidad gratis en PDF",
+            "metaDescricao": "{{nome}}: plantilla gratis de checklist de calidad con lo que hay que revisar antes, durante y al terminar el trabajo. Descarga el PDF o úsala en la app ObraFácil.",
+            "titulo": "{{nome}}: checklist de calidad",
+            "paraQue": "La plantilla indica qué revisar en el trabajo en tres momentos: antes de empezar, durante la ejecución y al terminar. Cada punto se marca como conforme, no conforme o no aplica. Lo que no pasa se convierte en una no conformidad, con acción correctiva y reinspección, hasta que se aprueba el trabajo.",
+            "itensTitulo": "Puntos de la plantilla",
+            "criterio": "Criterio de aceptación"
+        },
+        "diario": {
+            "nome": "Parte diario de obra",
+            "metaTitulo": "Parte diario de obra: plantilla gratis en PDF",
+            "metaDescricao": "Plantilla gratis de parte diario de obra con clima, personal, trabajos, incidencias, fotos y firma del responsable técnico. Descarga el PDF o hazlo en la app.",
+            "titulo": "Parte diario de obra: **plantilla gratis**",
+            "paraQue": "El parte diario registra la jornada en la obra: el tiempo, quién trabajó, qué se hizo, qué pasó y las fotos, con la firma del responsable técnico. Esta plantilla tiene los mismos campos que el parte diario de ObraFácil.",
+            "camposTitulo": "Campos de la plantilla",
+            "campos": {
+                "data": "El día del parte y el cliente de la obra.",
+                "clima": "El tiempo del día, en una de estas opciones:",
+                "avanco": "Cuánto de la obra está terminado, en porcentaje.",
+                "efetivo": "Quién trabajó ese día: nombre, función, horas y asistencia, en una de estas opciones:",
+                "avulsa": "Quién trabajó sin estar en el equipo de la obra, con su función y sus horas.",
+                "atividades": "Lo que se hizo en el día, trabajo por trabajo.",
+                "observacoes": "Visitas, entregas, problemas y lo que requiere atención.",
+                "fotos": "Las fotos del día, con su número y lo que muestra cada una.",
+                "responsavel": "Nombre y firma de quien responde de la obra."
+            }
+        },
+        "usar": {
+            "titulo": "Cómo usarla en papel",
+            "checklist": [
+                "Descarga el PDF e imprime una ficha por cada trabajo y cada lugar que revises.",
+                "Rellena la obra, el lugar, la etapa, la fecha de la inspección y quién la hizo.",
+                "En cada punto, marca conforme, no conforme o no aplica, y anota lo que viste.",
+                "En lo que no pase, escribe qué estaba mal, la acción correctiva, el responsable y el plazo. Después, anota la reinspección.",
+                "Con el trabajo revisado, marca la aprobación y firma."
+            ],
+            "diario": [
+                "Descarga el PDF e imprime una hoja por cada día de obra.",
+                "Rellena la fecha, el cliente y el avance, y marca el tiempo del día.",
+                "Anota el equipo presente, con la función, las horas y la asistencia de cada uno, y el personal eventual.",
+                "Escribe los trabajos realizados y las incidencias, y numera las fotos del día.",
+                "Al final de la jornada, firma el responsable técnico."
+            ]
+        },
+        "app": {
+            "tituloChecklist": "En ObraFácil, la misma plantilla se convierte en **un checklist de verdad**",
+            "checklist": [
+                "Conforme, no conforme o no aplica en cada punto, con la foto hecha en el momento",
+                "No conformidades con acción correctiva, responsable, plazo y reinspección",
+                "Aprobación del trabajo con firma y el PDF de la ficha listo para enviar",
+                "El cliente ve en el portal de la obra los checklists aprobados que marques para él",
+                "Funciona sin cobertura en la obra: lo que marcas se envía cuando vuelve la conexión"
+            ],
+            "planosChecklist": "En el plan gratuito aplicas 3 checklists en total con las 27 plantillas listas. En el PRO, los checklists son ilimitados, creas las plantillas de tu empresa y juntas varios checklists en un solo PDF.",
+            "tituloDiario": "En ObraFácil, el parte diario **sale listo del móvil**",
+            "diario": [
+                "Clima, equipo presente y horas en pocos toques",
+                "Hasta 20 fotos por parte, con la cámara o desde la galería",
+                "Firma del responsable: el nombre escrito, dibujada en la pantalla o con una imagen",
+                "El PDF del parte, listo para enviar",
+                "El cliente sigue los partes en el portal de la obra",
+                "Funciona sin cobertura: el parte se guarda en el dispositivo y se envía después"
+            ],
+            "planosDiario": "En el plan gratuito tienes 7 informes PDF al mes, con marca de agua. En el PRO, los informes son ilimitados, sin marca de agua y con el logotipo de tu empresa, y los partes diarios salen en ZIP.",
+            "nota": "El PDF es la versión para imprimir. Las funciones de arriba están en la app."
+        },
+        "baixar": "Descargar el PDF",
+        "papel": {
+            "a4": "A4",
+            "carta": "Carta"
+        },
+        "baixarNota": "PDF {{papel}} · gratis, sin registro",
+        "outros": "Más plantillas: {{grupo}}",
+        "todos": "Todas las plantillas gratis",
+        "carregando": "Cargando la plantilla…",
+        "pdf": {
+            "feitoCom": "Hecho con ObraFácil",
+            "conviteChecklist": "En la app ObraFácil, esta plantilla se convierte en un checklist con fotos, reinspección y firma. Empieza gratis:",
+            "conviteDiario": "En la app ObraFácil, el parte diario sale listo con clima, equipo, fotos y firma. Empieza gratis:"
+        }
     }
 }

@@ -541,5 +541,107 @@
         "recaptcha": "Protégé par reCAPTCHA. Les règles de Google s'appliquent :",
         "recaptchaPrivacidade": "Confidentialité",
         "recaptchaTermos": "Conditions"
+    },
+    "modelos": {
+        "nav": "Modèles gratuits",
+        "indice": {
+            "metaTitulo": "Modèles gratuits : fiches de contrôle et journal de chantier",
+            "metaDescricao": "27 modèles de fiches de contrôle qualité et un modèle de journal de chantier à télécharger en PDF et à imprimer. Les mêmes que dans l'app ObraFácil.",
+            "titulo": "Modèles gratuits pour **le chantier**",
+            "texto": "Les 27 fiches de contrôle qualité et le journal de chantier, avec les mêmes points que l'app ObraFácil. Consultez-les ici, téléchargez le PDF et imprimez-le pour l'utiliser sur papier, sans inscription.",
+            "verChecklists": "Voir les 27 fiches",
+            "diarioTexto": "Date, météo, effectif présent, travaux réalisés, incidents, photos et signature du responsable technique, avec les mêmes champs que le journal de chantier de l'app.",
+            "checklistsTexto": "Un modèle pour chaque ouvrage, avec ce qu'il faut contrôler avant de commencer, pendant l'exécution et en fin d'exécution.",
+            "abrir": "Voir le modèle"
+        },
+        "itens_one": "{{count}} point",
+        "itens_many": "{{count}} de points",
+        "itens_other": "{{count}} points",
+        "criticos_one": "{{count}} critique",
+        "criticos_many": "{{count}} de points critiques",
+        "criticos_other": "{{count}} critiques",
+        "fotos_one": "{{count}} avec photo obligatoire",
+        "fotos_many": "{{count}} de points avec photo obligatoire",
+        "fotos_other": "{{count}} avec photo obligatoire",
+        "checklist": {
+            "metaTitulo": "{{nome}} : fiche de contrôle gratuite (PDF)",
+            "metaDescricao": "{{nome}} : modèle gratuit de fiche de contrôle qualité, avec ce qu'il faut vérifier avant, pendant et en fin de travaux. Téléchargez le PDF ou utilisez-le dans l'app ObraFácil.",
+            "titulo": "{{nome}} : fiche de contrôle qualité",
+            "paraQue": "Le modèle indique ce qu'il faut contrôler sur l'ouvrage à trois moments : avant de commencer, pendant l'exécution et en fin d'exécution. Chaque point est noté conforme, non conforme ou sans objet. Ce qui ne passe pas devient une non-conformité, avec action corrective et contre-contrôle, jusqu'à la validation des travaux.",
+            "itensTitulo": "Points du modèle",
+            "criterio": "Critère d'acceptation"
+        },
+        "diario": {
+            "nome": "Journal de chantier",
+            "metaTitulo": "Journal de chantier : modèle gratuit en PDF",
+            "metaDescricao": "Modèle gratuit de journal de chantier avec météo, effectif, travaux réalisés, incidents, photos et signature. Téléchargez le PDF ou remplissez-le dans l'app.",
+            "titulo": "Journal de chantier : **modèle gratuit**",
+            "paraQue": "Le journal de chantier consigne la journée : le temps qu'il a fait, qui a travaillé, ce qui a été fait, ce qui s'est passé et les photos, avec la signature du responsable technique. Ce modèle reprend les mêmes champs que le journal de chantier d'ObraFácil.",
+            "camposTitulo": "Champs du modèle",
+            "campos": {
+                "data": "Le jour du rapport et le client du chantier.",
+                "clima": "La météo du jour, parmi ces options :",
+                "avanco": "L'avancement du chantier, en pourcentage.",
+                "efetivo": "Qui a travaillé ce jour-là : nom, poste, heures et présence, parmi ces options :",
+                "avulsa": "Les personnes qui ont travaillé sans faire partie de l'équipe du chantier, avec leur poste et leurs heures.",
+                "atividades": "Ce qui a été fait dans la journée, corps d'état par corps d'état.",
+                "observacoes": "Visites, livraisons, problèmes et tout ce qui demande de l'attention.",
+                "fotos": "Les photos du jour, numérotées, avec ce que montre chacune.",
+                "responsavel": "Nom et signature de la personne responsable du chantier."
+            }
+        },
+        "usar": {
+            "titulo": "Comment l'utiliser sur papier",
+            "checklist": [
+                "Téléchargez le PDF et imprimez une fiche pour chaque ouvrage et chaque zone contrôlée.",
+                "Remplissez le chantier, la zone, la phase, la date du contrôle et qui l'a réalisé.",
+                "Pour chaque point, cochez conforme, non conforme ou sans objet, et notez ce que vous avez constaté.",
+                "Pour ce qui ne passe pas, indiquez ce qui n'allait pas, l'action corrective, le responsable et le délai. Notez ensuite le contre-contrôle.",
+                "Une fois l'ouvrage contrôlé, cochez la validation et signez."
+            ],
+            "diario": [
+                "Téléchargez le PDF et imprimez une feuille par jour de chantier.",
+                "Remplissez la date, le client et l'avancement, et cochez la météo du jour.",
+                "Notez l'effectif présent, avec le poste, les heures et la présence de chacun, ainsi que la main-d'œuvre ponctuelle.",
+                "Décrivez les travaux réalisés et les incidents, et numérotez les photos du jour.",
+                "En fin de journée, le responsable technique signe."
+            ]
+        },
+        "app": {
+            "tituloChecklist": "Dans ObraFácil, le même modèle devient **une vraie fiche de contrôle**",
+            "checklist": [
+                "Conforme, non conforme ou sans objet sur chaque point, avec la photo prise sur place",
+                "Non-conformités avec action corrective, responsable, délai et contre-contrôle",
+                "Validation des travaux avec signature et le PDF de la fiche prêt à envoyer",
+                "Le client voit sur le portail du chantier les fiches validées que vous lui partagez",
+                "Fonctionne sans réseau sur le chantier : vos saisies partent dès que la connexion revient"
+            ],
+            "planosChecklist": "Avec l'offre gratuite, vous créez 3 fiches au total avec les 27 modèles prêts. Avec PRO, les fiches sont illimitées, vous créez les modèles de votre entreprise et regroupez plusieurs fiches dans un seul PDF.",
+            "tituloDiario": "Dans ObraFácil, le journal de chantier **se remplit depuis le téléphone**",
+            "diario": [
+                "Météo, effectif présent et heures en quelques touches",
+                "Jusqu'à 20 photos par rapport, depuis l'appareil photo ou la galerie",
+                "Signature du responsable : nom saisi, signature dessinée à l'écran ou image",
+                "Le PDF du rapport, prêt à envoyer",
+                "Le client suit les rapports journaliers sur le portail du chantier",
+                "Fonctionne sans réseau : le rapport reste sur l'appareil et part ensuite"
+            ],
+            "planosDiario": "Avec l'offre gratuite, vous avez 7 rapports PDF par mois, avec filigrane. Avec PRO, les rapports sont illimités, sans filigrane et avec le logo de votre entreprise, et les rapports journaliers s'exportent en ZIP.",
+            "nota": "Le PDF est la version à imprimer. Les fonctions ci-dessus sont dans l'app."
+        },
+        "baixar": "Télécharger le PDF",
+        "papel": {
+            "a4": "A4",
+            "carta": "Letter"
+        },
+        "baixarNota": "PDF {{papel}} · gratuit, sans inscription",
+        "outros": "Autres modèles : {{grupo}}",
+        "todos": "Tous les modèles gratuits",
+        "carregando": "Chargement du modèle…",
+        "pdf": {
+            "feitoCom": "Réalisé avec ObraFácil",
+            "conviteChecklist": "Dans l'app ObraFácil, ce modèle devient une fiche de contrôle avec photos, contre-contrôle et signature. Commencez gratuitement :",
+            "conviteDiario": "Dans l'app ObraFácil, le journal de chantier sort prêt avec météo, effectif, photos et signature. Commencez gratuitement :"
+        }
     }
 }

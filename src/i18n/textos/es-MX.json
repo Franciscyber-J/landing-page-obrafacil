@@ -156,5 +156,78 @@
         "motivoTeto": "Max tiene mucha demanda en este momento. Inténtalo de nuevo en un rato o escribe a {{email}}.",
         "motivoDesligado": "El chat con Max no está disponible en este momento. Escribe a {{email}} y te respondemos.",
         "motivoLimite": "Llegaste al límite de mensajes por ahora. Inténtalo más tarde o escribe a {{email}}."
+    },
+    "modelos": {
+        "nav": "Formatos gratis",
+        "indice": {
+            "metaTitulo": "Formatos gratis: checklists de calidad y reporte diario",
+            "metaDescricao": "27 formatos de checklist de calidad y el formato de reporte diario de obra (bitácora) para descargar en PDF e imprimir. Los mismos de la app ObraFácil.",
+            "titulo": "Formatos gratis para **la obra**",
+            "texto": "Los 27 checklists de calidad y el reporte diario de obra, con los mismos puntos que la app ObraFácil. Léelos aquí, descarga el PDF e imprímelo para usarlo en papel, sin registrarte.",
+            "diarioTexto": "Fecha, clima, equipo presente, trabajos realizados, incidencias, fotos y la firma del responsable técnico, con los mismos campos que el reporte diario de la app.",
+            "checklistsTexto": "Un formato para cada trabajo de la obra, con lo que hay que revisar antes de empezar, durante la ejecución y al terminar.",
+            "abrir": "Ver el formato"
+        },
+        "checklist": {
+            "metaDescricao": "{{nome}}: formato gratis de checklist de calidad con lo que hay que revisar antes, durante y al terminar el trabajo. Descarga el PDF o úsalo en la app ObraFácil.",
+            "paraQue": "El formato indica qué revisar en el trabajo en tres momentos: antes de empezar, durante la ejecución y al terminar. Cada punto se marca como conforme, no conforme o no aplica. Lo que no pasa se convierte en una no conformidad, con acción correctiva y reinspección, hasta que se aprueba el trabajo.",
+            "itensTitulo": "Puntos del formato"
+        },
+        "diario": {
+            "nome": "Reporte diario de obra",
+            "metaTitulo": "Reporte diario de obra: formato gratis en PDF",
+            "metaDescricao": "Formato gratis de reporte diario de obra (bitácora) con clima, personal, trabajos, incidencias, fotos y firma del responsable técnico. Descarga el PDF.",
+            "titulo": "Reporte diario de obra: **formato gratis**",
+            "paraQue": "El reporte diario registra la jornada en la obra: el clima, quién trabajó, qué se hizo, qué pasó y las fotos, con la firma del responsable técnico. Este formato tiene los mismos campos que el reporte diario de ObraFácil.",
+            "camposTitulo": "Campos del formato",
+            "campos": {
+                "data": "El día del reporte y el cliente de la obra.",
+                "clima": "El clima del día, en una de estas opciones:"
+            }
+        },
+        "usar": {
+            "titulo": "Cómo usarlo en papel",
+            "checklist": [
+                "Descarga el PDF e imprime un formato por cada trabajo y cada lugar que revises.",
+                "Llena la obra, el lugar, la etapa, la fecha de la inspección y quién la hizo.",
+                "En cada punto, marca conforme, no conforme o no aplica, y anota lo que viste.",
+                "En lo que no pase, escribe qué estaba mal, la acción correctiva, el responsable y el plazo. Después, anota la reinspección.",
+                "Con el trabajo revisado, marca la aprobación y firma."
+            ],
+            "diario": [
+                "Descarga el PDF e imprime una hoja por cada día de obra.",
+                "Llena la fecha, el cliente y el avance, y marca el clima del día.",
+                "Anota el equipo presente, con la función, las horas y la asistencia de cada uno, y la mano de obra eventual.",
+                "Escribe los trabajos realizados y las incidencias, y numera las fotos del día.",
+                "Al final de la jornada, firma el responsable técnico."
+            ]
+        },
+        "app": {
+            "tituloChecklist": "En ObraFácil, el mismo formato se convierte en **un checklist de verdad**",
+            "checklist": [
+                "Conforme, no conforme o no aplica en cada punto, con la foto tomada en el momento",
+                "No conformidades con acción correctiva, responsable, plazo y reinspección",
+                "Aprobación del trabajo con firma y el PDF del formato listo para enviar",
+                "El cliente ve en el portal de la obra los checklists aprobados que marques para él",
+                "Funciona sin señal en la obra: lo que marcas se envía cuando vuelve la conexión"
+            ],
+            "tituloDiario": "En ObraFácil, el reporte diario **sale listo del celular**",
+            "diario": [
+                "Clima, equipo presente y horas en pocos toques",
+                "Hasta 20 fotos por reporte, con la cámara o desde la galería",
+                "Firma del responsable: el nombre escrito, dibujada en la pantalla o con una imagen",
+                "El PDF del reporte, listo para enviar",
+                "El cliente sigue los reportes en el portal de la obra",
+                "Funciona sin señal: el reporte se guarda en el dispositivo y se envía después"
+            ],
+            "planosDiario": "En el plan gratuito tienes 7 reportes PDF al mes, con marca de agua. En el PRO, los reportes son ilimitados, sin marca de agua y con el logotipo de tu empresa, y los reportes diarios salen en ZIP."
+        },
+        "outros": "Más formatos: {{grupo}}",
+        "todos": "Todos los formatos gratis",
+        "carregando": "Cargando el formato…",
+        "pdf": {
+            "conviteChecklist": "En la app ObraFácil, este formato se convierte en un checklist con fotos, reinspección y firma. Empieza gratis:",
+            "conviteDiario": "En la app ObraFácil, el reporte diario sale listo con clima, equipo, fotos y firma. Empieza gratis:"
+        }
     }
 }

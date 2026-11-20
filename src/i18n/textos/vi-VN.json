@@ -537,5 +537,101 @@
         "recaptcha": "Được bảo vệ bởi reCAPTCHA. Áp dụng quy định của Google:",
         "recaptchaPrivacidade": "Quyền riêng tư",
         "recaptchaTermos": "Điều khoản"
+    },
+    "modelos": {
+        "nav": "Mẫu miễn phí",
+        "indice": {
+            "metaTitulo": "Mẫu miễn phí: phiếu kiểm tra chất lượng và nhật ký công trình",
+            "metaDescricao": "27 mẫu phiếu kiểm tra chất lượng và mẫu nhật ký công trình, tải PDF miễn phí để in. Giống hệt các mẫu trong ứng dụng ObraFácil.",
+            "titulo": "Mẫu miễn phí **cho công trường**",
+            "texto": "27 phiếu kiểm tra chất lượng và nhật ký công trình, với các mục giống hệt trong ứng dụng ObraFácil. Xem ngay tại đây, tải PDF và in ra để dùng trên giấy, không cần đăng ký.",
+            "verChecklists": "Xem 27 phiếu kiểm tra",
+            "diarioTexto": "Ngày, thời tiết, nhân lực tại công trình, công việc đã làm, sự cố, ảnh và chữ ký của phụ trách kỹ thuật, với các ô giống nhật ký công trình trong ứng dụng.",
+            "checklistsTexto": "Mỗi hạng mục có một mẫu, ghi rõ cần kiểm tra gì trước khi thi công, trong khi thi công và khi hoàn thành.",
+            "abrir": "Xem mẫu"
+        },
+        "itens_other": "{{count}} mục",
+        "criticos_other": "{{count}} mục quan trọng",
+        "fotos_other": "{{count}} mục bắt buộc có ảnh",
+        "checklist": {
+            "metaTitulo": "{{nome}}: phiếu kiểm tra miễn phí (PDF)",
+            "metaDescricao": "{{nome}}: mẫu phiếu kiểm tra chất lượng miễn phí, ghi rõ cần kiểm tra gì trước, trong và khi hoàn thành công việc. Tải PDF hoặc dùng trong ứng dụng ObraFácil.",
+            "titulo": "{{nome}}: phiếu kiểm tra chất lượng",
+            "paraQue": "Mẫu này cho biết cần kiểm tra gì ở ba thời điểm: trước khi thi công, trong khi thi công và khi hoàn thành. Mỗi mục được đánh dấu đạt, không đạt hoặc không áp dụng. Mục không đạt trở thành điểm không đạt, kèm biện pháp khắc phục và kiểm tra lại, cho đến khi công việc được nghiệm thu.",
+            "itensTitulo": "Các mục của mẫu",
+            "criterio": "Tiêu chí chấp nhận"
+        },
+        "diario": {
+            "nome": "Nhật ký công trình",
+            "metaTitulo": "Nhật ký công trình: mẫu miễn phí (PDF)",
+            "metaDescricao": "Mẫu nhật ký công trình miễn phí với thời tiết, nhân lực, công việc, sự cố, ảnh và chữ ký phụ trách kỹ thuật. Tải PDF hoặc ghi ngay trong ứng dụng.",
+            "titulo": "Nhật ký công trình: **mẫu miễn phí**",
+            "paraQue": "Nhật ký công trình ghi lại một ngày ở công trường: thời tiết, ai làm việc, đã làm gì, đã xảy ra chuyện gì và ảnh, có chữ ký của phụ trách kỹ thuật. Mẫu này có các ô giống nhật ký công trình trong ObraFácil.",
+            "camposTitulo": "Các ô của mẫu",
+            "campos": {
+                "data": "Ngày của báo cáo và khách hàng của công trình.",
+                "clima": "Thời tiết trong ngày, chọn một trong các mục:",
+                "avanco": "Khối lượng công trình đã hoàn thành, tính theo phần trăm.",
+                "efetivo": "Ai làm việc hôm đó: họ tên, chức danh, số giờ và tình trạng đi làm, chọn một trong các mục:",
+                "avulsa": "Người làm việc không thuộc đội công trình, kèm chức danh và số giờ.",
+                "atividades": "Công việc đã làm trong ngày, theo từng hạng mục.",
+                "observacoes": "Khách đến, giao hàng, sự cố và những việc cần chú ý.",
+                "fotos": "Ảnh trong ngày, đánh số và ghi ảnh chụp gì.",
+                "responsavel": "Họ tên và chữ ký của người chịu trách nhiệm công trình."
+            }
+        },
+        "usar": {
+            "titulo": "Cách dùng trên giấy",
+            "checklist": [
+                "Tải PDF và in một phiếu cho mỗi hạng mục và mỗi vị trí kiểm tra.",
+                "Điền tên công trình, vị trí, giai đoạn, ngày kiểm tra và người kiểm tra.",
+                "Ở mỗi mục, đánh dấu đạt, không đạt hoặc không áp dụng, và ghi lại điều bạn thấy.",
+                "Với mục không đạt, ghi điều gì sai, biện pháp khắc phục, người phụ trách và hạn xử lý. Sau đó ghi kết quả kiểm tra lại.",
+                "Khi đã kiểm tra xong, đánh dấu nghiệm thu và ký."
+            ],
+            "diario": [
+                "Tải PDF và in một tờ cho mỗi ngày làm việc.",
+                "Điền ngày, khách hàng và tiến độ, rồi đánh dấu thời tiết trong ngày.",
+                "Ghi nhân lực tại công trình, kèm chức danh, số giờ và tình trạng đi làm của từng người, cả lao động thời vụ.",
+                "Ghi công việc đã làm và sự cố, đánh số ảnh trong ngày.",
+                "Cuối ngày, phụ trách kỹ thuật ký tên."
+            ]
+        },
+        "app": {
+            "tituloChecklist": "Trong ObraFácil, cùng mẫu đó trở thành **phiếu kiểm tra thực thụ**",
+            "checklist": [
+                "Đạt, không đạt hoặc không áp dụng cho từng mục, chụp ảnh ngay tại chỗ",
+                "Điểm không đạt kèm biện pháp khắc phục, người phụ trách, hạn xử lý và kiểm tra lại",
+                "Nghiệm thu có chữ ký và PDF của phiếu sẵn sàng gửi",
+                "Khách hàng xem trên cổng thông tin công trình các phiếu đã nghiệm thu mà bạn chọn chia sẻ",
+                "Hoạt động không cần mạng ở công trường: dữ liệu được gửi khi có kết nối trở lại"
+            ],
+            "planosChecklist": "Gói miễn phí cho phép áp dụng tổng cộng 3 phiếu kiểm tra với 27 mẫu có sẵn. Gói PRO không giới hạn phiếu kiểm tra, cho phép tạo mẫu riêng của công ty và gộp nhiều phiếu vào một PDF.",
+            "tituloDiario": "Trong ObraFácil, nhật ký công trình **xong ngay trên điện thoại**",
+            "diario": [
+                "Thời tiết, nhân lực và số giờ chỉ với vài lần chạm",
+                "Tối đa 20 ảnh mỗi báo cáo, từ máy ảnh hoặc thư viện",
+                "Chữ ký người phụ trách: gõ tên, ký trên màn hình hoặc tải ảnh lên",
+                "PDF báo cáo sẵn sàng gửi",
+                "Khách hàng theo dõi báo cáo ngày trên cổng thông tin công trình",
+                "Hoạt động không cần mạng: báo cáo được lưu trên máy và gửi sau"
+            ],
+            "planosDiario": "Gói miễn phí có 7 báo cáo PDF mỗi tháng, có hình mờ. Gói PRO không giới hạn báo cáo, không có hình mờ, có logo công ty bạn và xuất báo cáo ngày dạng ZIP.",
+            "nota": "PDF là bản để in. Các tính năng ở trên có trong ứng dụng."
+        },
+        "baixar": "Tải PDF",
+        "papel": {
+            "a4": "A4",
+            "carta": "Letter"
+        },
+        "baixarNota": "PDF khổ {{papel}} · miễn phí, không cần đăng ký",
+        "outros": "Mẫu khác: {{grupo}}",
+        "todos": "Tất cả mẫu miễn phí",
+        "carregando": "Đang tải mẫu…",
+        "pdf": {
+            "feitoCom": "Tạo bằng ObraFácil",
+            "conviteChecklist": "Trong ứng dụng ObraFácil, mẫu này trở thành phiếu kiểm tra có ảnh, kiểm tra lại và chữ ký. Bắt đầu miễn phí:",
+            "conviteDiario": "Trong ứng dụng ObraFácil, nhật ký công trình xong ngay với thời tiết, nhân lực, ảnh và chữ ký. Bắt đầu miễn phí:"
+        }
     }
 }

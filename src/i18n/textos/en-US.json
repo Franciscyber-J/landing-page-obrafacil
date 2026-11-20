@@ -539,5 +539,104 @@
         "recaptcha": "Protected by reCAPTCHA. Google's policies apply:",
         "recaptchaPrivacidade": "Privacy",
         "recaptchaTermos": "Terms"
+    },
+    "modelos": {
+        "nav": "Free templates",
+        "indice": {
+            "metaTitulo": "Free quality checklists & daily report templates",
+            "metaDescricao": "27 free quality control checklist templates and a construction daily report template to download as PDF and print. The same ones as in the ObraFácil app.",
+            "titulo": "Free templates for **the job site**",
+            "texto": "The 27 quality checklists and the construction daily report, with the same items as the ObraFácil app. Read them here, download the PDF and print it to use on paper. No sign-up needed.",
+            "verChecklists": "See the 27 checklists",
+            "diarioTexto": "Date, weather, crew on site, work done, incidents, photos and the sign-off of the person responsible, with the same fields as the app's daily report.",
+            "checklistsTexto": "One template for each type of work, with what to check before starting, during the work and at completion.",
+            "abrir": "View template"
+        },
+        "itens_one": "{{count}} item",
+        "itens_other": "{{count}} items",
+        "criticos_one": "{{count}} critical",
+        "criticos_other": "{{count}} critical",
+        "fotos_one": "{{count}} photo required",
+        "fotos_other": "{{count}} photos required",
+        "checklist": {
+            "metaTitulo": "{{nome}}: free inspection checklist (PDF)",
+            "metaDescricao": "{{nome}}: free quality checklist template with what to inspect before, during and at completion of the work. Download the PDF or use it in the ObraFácil app.",
+            "titulo": "{{nome}}: quality checklist",
+            "paraQue": "This template tells you what to inspect on the work at three points: before starting, during the work and at completion. Each item is marked Pass, Fail or N/A. Anything that fails becomes a nonconformance, with a corrective action and reinspection, until the work is approved.",
+            "itensTitulo": "Template items",
+            "criterio": "Acceptance criteria"
+        },
+        "diario": {
+            "nome": "Construction daily report",
+            "metaTitulo": "Construction daily report: free template (PDF)",
+            "metaDescricao": "Free construction daily report template with weather, crew, work done, incidents, photos and sign-off. Download the PDF or fill it in on the ObraFácil app.",
+            "titulo": "Construction daily report: **free template**",
+            "paraQue": "A daily report records the day on site: the weather, who worked, what got done, what happened and the photos, signed by the person responsible. This template has the same fields as the ObraFácil daily report.",
+            "camposTitulo": "Template fields",
+            "campos": {
+                "data": "The report date and the project's client.",
+                "clima": "The day's weather, as one of these options:",
+                "avanco": "How much of the project is complete, as a percentage.",
+                "efetivo": "Who worked that day: name, role, hours and attendance, as one of these options:",
+                "avulsa": "People who worked without being on the project team, with their role and hours.",
+                "atividades": "What got done that day, trade by trade.",
+                "observacoes": "Visits, deliveries, problems and anything that needs attention.",
+                "fotos": "The day's photos, numbered, with what each one shows.",
+                "responsavel": "Name and signature of the person responsible for the work."
+            }
+        },
+        "usar": {
+            "titulo": "How to use it on paper",
+            "checklist": [
+                "Download the PDF and print one sheet for each type of work and each location you inspect.",
+                "Fill in the project, location, stage, inspection date and who inspected.",
+                "On each item, check Pass, Fail or N/A, and note what you saw.",
+                "For anything that fails, write what was wrong, the corrective action, who it's assigned to and the due date. Then record the reinspection.",
+                "Once the work has been checked, mark the approval and sign."
+            ],
+            "diario": [
+                "Download the PDF and print one sheet for each workday.",
+                "Fill in the date, client and progress, and check the day's weather.",
+                "List the crew on site with each person's role, hours and attendance, plus any extra labor.",
+                "Write down the work done and the incidents, and number the day's photos.",
+                "At the end of the day, the person responsible signs."
+            ]
+        },
+        "app": {
+            "tituloChecklist": "In ObraFácil, the same template becomes **a real checklist**",
+            "checklist": [
+                "Pass, Fail or N/A on every item, with a photo taken on the spot",
+                "Nonconformances with a corrective action, assignee, due date and reinspection",
+                "Approval with a signature and the inspection PDF ready to send",
+                "Your client sees the approved checklists you share with them in the project portal",
+                "Works offline on site: what you record syncs when you're back online"
+            ],
+            "planosChecklist": "On the free plan, you can start 3 checklists in total with the 27 ready-made templates. On PRO, checklists are unlimited, you can create your company's own templates and combine several checklists in one PDF.",
+            "tituloDiario": "In ObraFácil, the daily report is **done right from your phone**",
+            "diario": [
+                "Weather, crew on site and hours logged in a few taps",
+                "Up to 20 photos per report, from the camera or the gallery",
+                "Sign-off on screen: drawn, typed or uploaded",
+                "The report PDF, ready to send",
+                "Your client follows the daily reports in the project portal",
+                "Works offline: the report is saved on your device and syncs later"
+            ],
+            "planosDiario": "On the free plan, you get 7 PDF reports a month, watermarked. On PRO, reports are unlimited, with no watermark and with your company logo, and daily reports export as a ZIP.",
+            "nota": "The PDF is the printable version. The features above are in the app."
+        },
+        "baixar": "Download the PDF",
+        "papel": {
+            "a4": "A4",
+            "carta": "Letter"
+        },
+        "baixarNota": "{{papel}} PDF · free, no sign-up",
+        "outros": "More templates: {{grupo}}",
+        "todos": "All free templates",
+        "carregando": "Loading the template…",
+        "pdf": {
+            "feitoCom": "Made with ObraFácil",
+            "conviteChecklist": "In the ObraFácil app, this template becomes a checklist with photos, reinspection and sign-off. Start free:",
+            "conviteDiario": "In the ObraFácil app, the daily report comes out ready with weather, crew, photos and sign-off. Start free:"
+        }
     }
 }

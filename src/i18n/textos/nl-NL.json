@@ -539,5 +539,104 @@
         "recaptcha": "Beveiligd met reCAPTCHA. De voorwaarden van Google zijn van toepassing:",
         "recaptchaPrivacidade": "Privacy",
         "recaptchaTermos": "Voorwaarden"
+    },
+    "modelos": {
+        "nav": "Gratis sjablonen",
+        "indice": {
+            "metaTitulo": "Gratis sjablonen: kwaliteitschecklists en bouwdagboek",
+            "metaDescricao": "27 gratis sjablonen voor kwaliteitscontrole en een sjabloon voor het bouwdagboek, als PDF om te downloaden en te printen. Dezelfde als in de app ObraFácil.",
+            "titulo": "Gratis sjablonen voor **de bouwplaats**",
+            "texto": "De 27 kwaliteitschecklists en het bouwdagboek, met dezelfde punten als in de app ObraFácil. Lees ze hier, download de PDF en print hem om op papier te gebruiken, zonder account.",
+            "verChecklists": "Bekijk de 27 checklists",
+            "diarioTexto": "Datum, weer, aanwezige mensen, uitgevoerd werk, voorvallen, foto's en de handtekening van de verantwoordelijke, met dezelfde velden als het bouwdagboek in de app.",
+            "checklistsTexto": "Een sjabloon per werksoort, met wat je controleert voor de start, tijdens de uitvoering en bij afronding.",
+            "abrir": "Sjabloon bekijken"
+        },
+        "itens_one": "{{count}} punt",
+        "itens_other": "{{count}} punten",
+        "criticos_one": "{{count}} kritiek",
+        "criticos_other": "{{count}} kritiek",
+        "fotos_one": "{{count}} met verplichte foto",
+        "fotos_other": "{{count}} met verplichte foto",
+        "checklist": {
+            "metaTitulo": "{{nome}}: gratis controlechecklist (PDF)",
+            "metaDescricao": "{{nome}}: gratis sjabloon voor de kwaliteitscontrole, met wat je controleert voor, tijdens en na de uitvoering. Download de PDF of gebruik hem in de app ObraFácil.",
+            "titulo": "{{nome}}: kwaliteitschecklist",
+            "paraQue": "Het sjabloon zegt wat je op drie momenten controleert: voor de start, tijdens de uitvoering en bij afronding. Elk punt krijgt akkoord, niet akkoord of niet van toepassing. Wat niet akkoord is, wordt een afwijking, met een corrigerende maatregel en hercontrole, tot het werk is vrijgegeven.",
+            "itensTitulo": "Punten van het sjabloon",
+            "criterio": "Acceptatiecriterium"
+        },
+        "diario": {
+            "nome": "Bouwdagboek",
+            "metaTitulo": "Bouwdagboek: gratis sjabloon als PDF",
+            "metaDescricao": "Gratis sjabloon voor het bouwdagboek met weer, bezetting, uitgevoerd werk, voorvallen, foto's en handtekening. Download de PDF of vul het in de app in.",
+            "titulo": "Bouwdagboek: **gratis sjabloon**",
+            "paraQue": "Het bouwdagboek legt de dag op de bouwplaats vast: het weer, wie er werkte, wat er gedaan is, wat er gebeurde en de foto's, met de handtekening van de verantwoordelijke. Dit sjabloon heeft dezelfde velden als het bouwdagboek in ObraFácil.",
+            "camposTitulo": "Velden van het sjabloon",
+            "campos": {
+                "data": "De datum van het rapport en de opdrachtgever.",
+                "clima": "Het weer van de dag, met een van deze opties:",
+                "avanco": "Hoeveel van het werk af is, in procenten.",
+                "efetivo": "Wie er die dag werkte: naam, functie, uren en aanwezigheid, met een van deze opties:",
+                "avulsa": "Wie er werkte zonder in het vaste team te zitten, met functie en uren.",
+                "atividades": "Wat er die dag gedaan is, per werksoort.",
+                "observacoes": "Bezoeken, leveringen, problemen en alles wat aandacht nodig heeft.",
+                "fotos": "De foto's van de dag, genummerd, met wat elke foto laat zien.",
+                "responsavel": "Naam en handtekening van wie verantwoordelijk is voor het werk."
+            }
+        },
+        "usar": {
+            "titulo": "Zo gebruik je het op papier",
+            "checklist": [
+                "Download de PDF en print een formulier per werksoort en per gecontroleerde plek.",
+                "Vul het project, de plek, de fase, de controledatum en de controleur in.",
+                "Kruis bij elk punt akkoord, niet akkoord of niet van toepassing aan en noteer wat je zag.",
+                "Schrijf bij afwijkingen op wat er mis was, de maatregel, wie verantwoordelijk is en de deadline. Noteer daarna de hercontrole.",
+                "Is het werk gecontroleerd, kruis dan de vrijgave aan en teken."
+            ],
+            "diario": [
+                "Download de PDF en print een blad per werkdag.",
+                "Vul de datum, de opdrachtgever en de voortgang in en kruis het weer aan.",
+                "Noteer wie er aanwezig was, met functie, uren en aanwezigheid, en de losse krachten.",
+                "Schrijf het uitgevoerde werk en de voorvallen op en nummer de foto's van de dag.",
+                "Aan het eind van de dag tekent de verantwoordelijke."
+            ]
+        },
+        "app": {
+            "tituloChecklist": "In ObraFácil wordt hetzelfde sjabloon **een echte checklist**",
+            "checklist": [
+                "Akkoord, niet akkoord of niet van toepassing per punt, met een foto ter plekke",
+                "Afwijkingen met maatregel, verantwoordelijke, deadline en hercontrole",
+                "Vrijgave met handtekening en de controle als PDF, klaar om te versturen",
+                "De klant ziet in het portaal de vrijgegeven checklists die je voor hem markeert",
+                "Werkt zonder bereik op de bouwplaats: wat je invult, gaat mee zodra er weer verbinding is"
+            ],
+            "planosChecklist": "Met het gratis abonnement maak je in totaal 3 checklists met de 27 kant-en-klare sjablonen. Met PRO zijn checklists onbeperkt, maak je de sjablonen van je eigen bedrijf en zet je meerdere checklists in één PDF.",
+            "tituloDiario": "In ObraFácil is het bouwdagboek **meteen klaar op je telefoon**",
+            "diario": [
+                "Weer, aanwezige mensen en uren in een paar tikken",
+                "Tot 20 foto's per rapport, met de camera of uit de galerij",
+                "Handtekening van de verantwoordelijke: getypte naam, getekend op het scherm of als afbeelding",
+                "Het rapport als PDF, klaar om te versturen",
+                "De klant volgt de dagrapporten in het portaal",
+                "Werkt zonder bereik: het rapport blijft op je toestel en gaat later mee"
+            ],
+            "planosDiario": "Met het gratis abonnement heb je 7 PDF-rapporten per maand met watermerk. Met PRO zijn de rapporten onbeperkt, zonder watermerk en met het logo van je bedrijf, en dagrapporten exporteer je als ZIP.",
+            "nota": "De PDF is de versie om te printen. De functies hierboven zitten in de app."
+        },
+        "baixar": "PDF downloaden",
+        "papel": {
+            "a4": "A4",
+            "carta": "Letter"
+        },
+        "baixarNota": "PDF {{papel}} · gratis, zonder account",
+        "outros": "Meer sjablonen: {{grupo}}",
+        "todos": "Alle gratis sjablonen",
+        "carregando": "Sjabloon laden…",
+        "pdf": {
+            "feitoCom": "Gemaakt met ObraFácil",
+            "conviteChecklist": "In de app ObraFácil wordt dit sjabloon een checklist met foto's, hercontrole en handtekening. Gratis starten:",
+            "conviteDiario": "In de app ObraFácil is het bouwdagboek meteen klaar met weer, bezetting, foto's en handtekening. Gratis starten:"
+        }
     }
 }

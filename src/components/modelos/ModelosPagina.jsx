@@ -35,7 +35,7 @@ function FolhaDoDiario({ dados, nome }) {
 function Diario({ codigo, dados }) {
     const { t } = useTranslation();
     const modelo = modeloPeloId(dados, codigo, DIARIO);
-    const nome = t('recursos.itens.diario.titulo');
+    const nome = t('modelos.diario.nome');
     return (
         <section className={styles.destaqueDiario} aria-labelledby="modelos-diario">
             <div className={styles.destaqueTexto}>

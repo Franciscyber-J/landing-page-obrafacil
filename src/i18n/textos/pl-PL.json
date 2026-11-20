@@ -543,5 +543,110 @@
         "recaptcha": "Chronione przez reCAPTCHA. Obowiązują zasady Google:",
         "recaptchaPrivacidade": "Prywatność",
         "recaptchaTermos": "Warunki"
+    },
+    "modelos": {
+        "nav": "Darmowe wzory",
+        "indice": {
+            "metaTitulo": "Darmowe wzory: listy kontrolne jakości i dziennik prac",
+            "metaDescricao": "27 darmowych wzorów list kontrolnych jakości i wzór dziennika prac do pobrania w PDF i wydruku. Te same, które są w aplikacji ObraFácil.",
+            "titulo": "Darmowe wzory **na budowę**",
+            "texto": "27 list kontrolnych jakości i dziennik prac, z tymi samymi punktami co w aplikacji ObraFácil. Przeczytaj je tutaj, pobierz PDF i wydrukuj, żeby pracować na papierze, bez rejestracji.",
+            "verChecklists": "Zobacz 27 list kontrolnych",
+            "diarioTexto": "Data, pogoda, obsada na budowie, wykonane prace, zdarzenia, zdjęcia i podpis osoby odpowiedzialnej, z tymi samymi polami co dziennik prac w aplikacji.",
+            "checklistsTexto": "Wzór dla każdego rodzaju robót: co sprawdzić przed rozpoczęciem, w trakcie wykonywania i po zakończeniu.",
+            "abrir": "Zobacz wzór"
+        },
+        "itens_one": "1 punkt",
+        "itens_few": "{{count}} punkty",
+        "itens_many": "{{count}} punktów",
+        "itens_other": "{{count}} punktu",
+        "criticos_one": "1 krytyczny",
+        "criticos_few": "{{count}} krytyczne",
+        "criticos_many": "{{count}} krytycznych",
+        "criticos_other": "{{count}} krytycznego",
+        "fotos_one": "1 z obowiązkowym zdjęciem",
+        "fotos_few": "{{count}} z obowiązkowym zdjęciem",
+        "fotos_many": "{{count}} z obowiązkowym zdjęciem",
+        "fotos_other": "{{count}} z obowiązkowym zdjęciem",
+        "checklist": {
+            "metaTitulo": "{{nome}}: darmowa lista kontrolna (PDF)",
+            "metaDescricao": "{{nome}}: darmowy wzór listy kontrolnej jakości z tym, co sprawdzić przed robotami, w trakcie i po ich zakończeniu. Pobierz PDF albo użyj go w aplikacji ObraFácil.",
+            "titulo": "{{nome}}: lista kontrolna jakości",
+            "paraQue": "Wzór mówi, co sprawdzić w robotach na trzech etapach: przed rozpoczęciem, w trakcie wykonywania i po zakończeniu. Każdy punkt oznacza się jako zgodny, niezgodny albo nie dotyczy. To, co nie przejdzie, staje się niezgodnością z działaniem korygującym i ponowną kontrolą, aż do odbioru robót.",
+            "itensTitulo": "Punkty wzoru",
+            "criterio": "Kryterium odbioru"
+        },
+        "diario": {
+            "nome": "Dziennik prac",
+            "metaTitulo": "Dziennik prac: darmowy wzór w PDF",
+            "metaDescricao": "Darmowy wzór dziennika prac z pogodą, obsadą, wykonanymi pracami, zdarzeniami, zdjęciami i podpisem osoby odpowiedzialnej. Pobierz PDF albo wypełnij w aplikacji.",
+            "titulo": "Dziennik prac: **darmowy wzór**",
+            "paraQue": "Dziennik prac zapisuje dzień na budowie: pogodę, kto pracował, co zrobiono, co się wydarzyło i zdjęcia, z podpisem osoby odpowiedzialnej. Ten wzór ma te same pola co dziennik prac w ObraFácil.",
+            "camposTitulo": "Pola wzoru",
+            "campos": {
+                "data": "Dzień raportu i klient budowy.",
+                "clima": "Pogoda danego dnia, jedna z tych opcji:",
+                "avanco": "Ile budowy jest gotowe, w procentach.",
+                "efetivo": "Kto pracował tego dnia: imię i nazwisko, funkcja, godziny i obecność, jedna z tych opcji:",
+                "avulsa": "Osoby, które pracowały spoza zespołu budowy, z funkcją i godzinami.",
+                "atividades": "Co zrobiono tego dnia, roboty po kolei.",
+                "observacoes": "Wizyty, dostawy, problemy i wszystko, co wymaga uwagi.",
+                "fotos": "Zdjęcia z danego dnia, ponumerowane, z opisem, co pokazują.",
+                "responsavel": "Imię, nazwisko i podpis osoby odpowiedzialnej za budowę."
+            }
+        },
+        "usar": {
+            "titulo": "Jak używać go na papierze",
+            "checklist": [
+                "Pobierz PDF i wydrukuj kartę dla każdego rodzaju robót i każdego sprawdzanego miejsca.",
+                "Wpisz budowę, miejsce, etap, datę kontroli i osobę, która ją przeprowadziła.",
+                "Przy każdym punkcie zaznacz zgodne, niezgodne albo nie dotyczy i zapisz, co widzisz.",
+                "Przy niezgodnościach zapisz, co było nie tak, działanie korygujące, osobę odpowiedzialną i termin. Potem wpisz ponowną kontrolę.",
+                "Po sprawdzeniu robót zaznacz odbiór i podpisz."
+            ],
+            "diario": [
+                "Pobierz PDF i wydrukuj jedną kartę na każdy dzień budowy.",
+                "Wpisz datę, klienta i postęp, zaznacz pogodę.",
+                "Zapisz obsadę na budowie z funkcją, godzinami i obecnością każdej osoby oraz pracowników dorywczych.",
+                "Opisz wykonane prace i zdarzenia, ponumeruj zdjęcia z danego dnia.",
+                "Na koniec dnia podpisuje osoba odpowiedzialna."
+            ]
+        },
+        "app": {
+            "tituloChecklist": "W ObraFácil ten sam wzór staje się **prawdziwą listą kontrolną**",
+            "checklist": [
+                "Zgodne, niezgodne albo nie dotyczy przy każdym punkcie, ze zdjęciem zrobionym na miejscu",
+                "Niezgodności z działaniem korygującym, osobą odpowiedzialną, terminem i ponowną kontrolą",
+                "Odbiór z podpisem i karta w PDF gotowa do wysłania",
+                "Klient widzi w portalu budowy odebrane listy, które dla niego zaznaczysz",
+                "Działa bez zasięgu na budowie: to, co zaznaczysz, wyśle się po powrocie połączenia"
+            ],
+            "planosChecklist": "W planie darmowym zastosujesz łącznie 3 listy kontrolne z 27 gotowymi szablonami. W PRO listy kontrolne są bez limitu, tworzysz szablony swojej firmy i łączysz kilka list w jednym PDF.",
+            "tituloDiario": "W ObraFácil dziennik prac **powstaje od razu w telefonie**",
+            "diario": [
+                "Pogoda, obsada i godziny w kilku dotknięciach",
+                "Do 20 zdjęć w raporcie, z aparatu albo z galerii",
+                "Podpis osoby odpowiedzialnej: wpisane imię i nazwisko, podpis narysowany na ekranie albo obraz",
+                "Raport w PDF gotowy do wysłania",
+                "Klient śledzi raporty dzienne w portalu budowy",
+                "Działa bez zasięgu: raport zostaje w urządzeniu i wysyła się później"
+            ],
+            "planosDiario": "W planie darmowym masz 7 raportów PDF miesięcznie ze znakiem wodnym. W PRO raporty są bez limitu, bez znaku wodnego i z logo Twojej firmy, a raporty dzienne eksportujesz do ZIP.",
+            "nota": "PDF to wersja do druku. Funkcje opisane wyżej są w aplikacji."
+        },
+        "baixar": "Pobierz PDF",
+        "papel": {
+            "a4": "A4",
+            "carta": "Letter"
+        },
+        "baixarNota": "PDF {{papel}} · za darmo, bez rejestracji",
+        "outros": "Więcej wzorów: {{grupo}}",
+        "todos": "Wszystkie darmowe wzory",
+        "carregando": "Wczytywanie wzoru…",
+        "pdf": {
+            "feitoCom": "Przygotowano w ObraFácil",
+            "conviteChecklist": "W aplikacji ObraFácil ten wzór staje się listą kontrolną ze zdjęciami, ponowną kontrolą i podpisem. Zacznij za darmo:",
+            "conviteDiario": "W aplikacji ObraFácil dziennik prac powstaje od razu z pogodą, obsadą, zdjęciami i podpisem. Zacznij za darmo:"
+        }
     }
 }

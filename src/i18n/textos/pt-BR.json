@@ -541,5 +541,107 @@
         "recaptcha": "Protegido pelo reCAPTCHA. Valem as regras do Google:",
         "recaptchaPrivacidade": "Privacidade",
         "recaptchaTermos": "Termos"
+    },
+    "modelos": {
+        "nav": "Modelos grátis",
+        "indice": {
+            "metaTitulo": "Modelos grátis: checklists FVS e diário de obra (RDO)",
+            "metaDescricao": "27 modelos de checklist de qualidade (FVS) e o modelo de diário de obra (RDO) para baixar em PDF e imprimir. Os mesmos do app ObraFácil.",
+            "titulo": "Modelos grátis para **a obra**",
+            "texto": "Os 27 checklists de qualidade (FVS) e o diário de obra (RDO), com os mesmos itens do app ObraFácil. Leia aqui, baixe o PDF e imprima para usar no papel, sem cadastro.",
+            "verChecklists": "Ver os 27 checklists",
+            "diarioTexto": "Data, clima, equipe presente, atividades, ocorrências, fotos e a assinatura do responsável técnico, nos mesmos campos do RDO do app.",
+            "checklistsTexto": "Um modelo para cada serviço da obra, com o que conferir antes de começar, durante a execução e na conclusão.",
+            "abrir": "Ver o modelo"
+        },
+        "itens_one": "{{count}} item",
+        "itens_many": "{{count}} de itens",
+        "itens_other": "{{count}} itens",
+        "criticos_one": "{{count}} crítico",
+        "criticos_many": "{{count}} de críticos",
+        "criticos_other": "{{count}} críticos",
+        "fotos_one": "{{count}} com foto obrigatória",
+        "fotos_many": "{{count}} de itens com foto obrigatória",
+        "fotos_other": "{{count}} com foto obrigatória",
+        "checklist": {
+            "metaTitulo": "{{nome}}: checklist FVS grátis em PDF",
+            "metaDescricao": "{{nome}}: modelo grátis de checklist de qualidade (FVS) com o que conferir antes, durante e na conclusão do serviço. Baixe o PDF ou use no app ObraFácil.",
+            "titulo": "{{nome}}: checklist de qualidade (FVS)",
+            "paraQue": "O modelo diz o que conferir no serviço em três momentos: antes de começar, durante a execução e na conclusão. Em cada item, a resposta é conforme, não conforme ou não se aplica. O que não passar vira não conformidade, com ação corretiva e reinspeção, até a liberação do serviço.",
+            "itensTitulo": "Itens do modelo",
+            "criterio": "Critério de aceite"
+        },
+        "diario": {
+            "nome": "Diário de obra (RDO)",
+            "metaTitulo": "Diário de obra (RDO): modelo grátis em PDF",
+            "metaDescricao": "Modelo grátis de diário de obra (RDO) com clima, efetivo, atividades, ocorrências, fotos e assinatura do responsável técnico. Baixe o PDF ou faça no app.",
+            "titulo": "Diário de obra (RDO): **modelo grátis**",
+            "paraQue": "O diário de obra registra o dia no canteiro: o tempo, quem trabalhou, o que foi feito, o que aconteceu e as fotos, com a assinatura do responsável técnico. Este modelo tem os mesmos campos do RDO do ObraFácil.",
+            "camposTitulo": "Campos do modelo",
+            "campos": {
+                "data": "O dia do relatório e o cliente da obra.",
+                "clima": "O tempo do dia, numa destas opções:",
+                "avanco": "Quanto da obra já está pronto, em porcentagem.",
+                "efetivo": "Quem trabalhou no dia: nome, função, horas e presença, numa destas opções:",
+                "avulsa": "Quem trabalhou sem estar na equipe da obra, com a função e as horas.",
+                "atividades": "O que foi feito no dia, serviço por serviço.",
+                "observacoes": "Visitas, entregas, problemas e o que precisa de atenção.",
+                "fotos": "As fotos do dia, com o número e o que cada uma mostra.",
+                "responsavel": "Nome e assinatura de quem responde pela obra."
+            }
+        },
+        "usar": {
+            "titulo": "Como usar no papel",
+            "checklist": [
+                "Baixe o PDF e imprima uma ficha para cada serviço e cada local conferido.",
+                "Preencha a obra, o local, a etapa, a data da inspeção e quem aplicou.",
+                "Em cada item, marque conforme, não conforme ou não se aplica, e anote o que viu.",
+                "No que não passou, escreva o que estava errado, a ação corretiva, o responsável e o prazo. Depois, anote a reinspeção.",
+                "Com o serviço conferido, marque a liberação e assine."
+            ],
+            "diario": [
+                "Baixe o PDF e imprima uma folha para cada dia de obra.",
+                "Preencha a data, o cliente e o avanço, e marque o clima do dia.",
+                "Anote a equipe presente, com a função, as horas e a presença de cada um, e a mão de obra avulsa.",
+                "Escreva as atividades realizadas e as ocorrências, e numere as fotos do dia.",
+                "No fim do dia, o responsável técnico assina."
+            ]
+        },
+        "app": {
+            "tituloChecklist": "No ObraFácil, o mesmo modelo vira **checklist de verdade**",
+            "checklist": [
+                "Resposta em cada item: conforme, não conforme ou não se aplica, com a foto tirada na hora",
+                "Não conformidade com ação corretiva, responsável, prazo e reinspeção",
+                "Liberação do serviço com assinatura e o PDF da ficha pronto para enviar",
+                "O cliente vê no portal da obra os checklists liberados que você marcar para ele",
+                "Funciona sem internet no canteiro: o que você marca sobe quando a conexão volta"
+            ],
+            "planosChecklist": "No plano grátis, você aplica 3 checklists no total com os 27 modelos prontos. No PRO, os checklists são ilimitados, você cria os modelos da sua empresa e junta vários checklists num PDF só.",
+            "tituloDiario": "No ObraFácil, o diário de obra **sai pronto do celular**",
+            "diario": [
+                "Clima, equipe presente e horas marcados em poucos toques",
+                "Até 20 fotos por diário, pela câmera ou pela galeria",
+                "Assinatura do responsável: o nome digitado, desenhada na tela ou por imagem",
+                "PDF do relatório pronto para enviar",
+                "O cliente acompanha os diários pelo portal da obra",
+                "Funciona sem internet: o diário fica guardado no aparelho e sobe depois"
+            ],
+            "planosDiario": "No plano grátis, são 7 relatórios em PDF por mês, com marca d’água. No PRO, os relatórios são ilimitados, sem marca d’água e com o logotipo da sua empresa, e os RDOs saem em ZIP.",
+            "nota": "O PDF é a versão para imprimir. As funções acima ficam no app."
+        },
+        "baixar": "Baixar o PDF",
+        "papel": {
+            "a4": "A4",
+            "carta": "Carta"
+        },
+        "baixarNota": "PDF {{papel}} · grátis, sem cadastro",
+        "outros": "Mais modelos: {{grupo}}",
+        "todos": "Todos os modelos grátis",
+        "carregando": "Carregando o modelo…",
+        "pdf": {
+            "feitoCom": "Feito com ObraFácil",
+            "conviteChecklist": "No app ObraFácil, este modelo vira checklist com foto, reinspeção e assinatura. Comece grátis:",
+            "conviteDiario": "No app ObraFácil, o diário de obra sai pronto com clima, equipe, fotos e assinatura. Comece grátis:"
+        }
     }
 }

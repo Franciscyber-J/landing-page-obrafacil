@@ -3,7 +3,8 @@
 //
 // Para cada idioma, grava em dist/ uma página de verdade, com o texto já dentro do HTML, título, descrição,
 // canonical, hreflang, Open Graph e dados estruturados: página inicial, Central de Ajuda (início, assuntos e
-// artigos), Termos, Política, Suporte, Perfil e volta do pagamento. Robôs (Google, buscadores com IA) e
+// artigos), Termos, Política, Suporte, Perfil, volta do pagamento e os modelos grátis (a lista e cada modelo, com o PDF
+// de cada um em modelos-pdf/, ferramentas/modelos/pdf.mjs). Robôs (Google, buscadores com IA) e
 // navegadores sem JavaScript leem tudo; o site, ao abrir, "hidrata" a página (liga os botões) sem redesenhar.
 // Grava também sitemap.xml, robots.txt, llms.txt e o índice da Central de cada idioma em dados/ajuda/.
 //
@@ -18,7 +19,7 @@ import path from 'node:path';
 import process from 'node:process';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { COMPRAS, DOCUMENTOS_LEGAIS, IDIOMAS } from '../../src/i18n/idiomas.js';
+import { COMPRAS, DOCUMENTOS_LEGAIS, IDIOMAS, palavraDeEnderecoValida } from '../../src/i18n/idiomas.js';
 import { idiomaDoConteudo } from '../../src/ajuda/idiomas.js';
 import { slugDoModulo } from '../../src/ajuda/enderecos.js';
 import { conferirEnderecosAntigos } from '../../src/ajuda/antigos.js';
@@ -28,6 +29,8 @@ import { absoluto, arquivoDaPagina, indexavel } from '../../src/seo/paginas.js';
 import { cabecaDaPagina, montarPagina } from '../../src/seo/cabeca.js';
 import { arquivoDoSitemap, gerarIndiceDeSitemaps, gerarRobots, gerarSitemap } from '../../src/seo/sitemap.js';
 import { gerarLlms } from '../../src/seo/llms.js';
+import { caminhoDoModelo, modelosDoIdioma, problemasDoIdioma } from '../../src/modelos/modelos.js';
+import { gerarPdfs } from '../modelos/pdf.mjs';
 import { conferirFontes, lerAjuda, lerLegal } from './fontes.mjs';
 import { conferirDist } from './conferir.mjs';
 import { ORIGEM } from './origem.mjs';
@@ -35,6 +38,30 @@ import { ORIGEM } from './origem.mjs';
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.join(RAIZ, 'dist');
 const SSR = path.join(RAIZ, 'dist-ssr', 'entrada.js');
+const DADOS_DOS_MODELOS = path.join(RAIZ, 'src', 'modelos', 'dados');
+
+// Modelos grátis de cada idioma (copiados do app por "npm run modelos -- copiar"), conferidos.
+function lerModelos() {
+    const porIdioma = {};
+    const problemas = [];
+    for (const { codigo } of IDIOMAS) {
+        const arquivo = path.join(DADOS_DOS_MODELOS, `${codigo}.json`);
+        if (!fs.existsSync(arquivo)) {
+            problemas.push(`${codigo}: src/modelos/dados/${codigo}.json não existe (npm run modelos -- copiar)`);
+            continue;
+        }
+        const dados = JSON.parse(fs.readFileSync(arquivo, 'utf8'));
+        problemas.push(...problemasDoIdioma(dados, codigo, palavraDeEnderecoValida));
+        porIdioma[codigo] = dados;
+    }
+    const origem = JSON.parse(fs.readFileSync(path.join(DADOS_DOS_MODELOS, 'origem.json'), 'utf8'));
+    // O endereço de cada modelo em cada idioma (hreflang e troca de idioma na página).
+    const slugs = {};
+    for (const [codigo, dados] of Object.entries(porIdioma)) {
+        for (const m of modelosDoIdioma(dados, codigo)) (slugs[m.id] ??= {})[codigo] = m.slug;
+    }
+    return { porIdioma, slugs, data: origem.data ?? null, problemas };
+}
 
 function opcao(nome) {
     const i = process.argv.indexOf(nome);
@@ -117,9 +144,17 @@ async function principal() {
         throw new Error('o conteúdo do Firestore não foi lido ou está incompleto (lista acima); nada foi gravado');
     }
 
+    const modelos = lerModelos();
+    if (modelos.problemas.length) {
+        for (const problema of modelos.problemas) console.error(`ERRO: ${problema}`);
+        throw new Error('modelos grátis com problema (lista acima; nada foi gravado)');
+    }
+
     // ---------- Lista das páginas ----------
     const dataCodigo = dataDoCodigo();
+    const dataModelos = maisRecente([dataCodigo, modelos.data]);
     const paginas = [];
+    const pdfs = [];
     const indicesGravados = {};
     const artigosDoSiteFaltando = [];
     for (const { codigo } of IDIOMAS) {
@@ -137,6 +172,31 @@ async function principal() {
         paginas.push({ pagina: { tipo: 'suporte', codigo }, dados: daConta, lastmod: dataCodigo });
         paginas.push({ pagina: { tipo: 'perfil', codigo }, dados: daConta });
         for (const compra of [null, ...COMPRAS]) paginas.push({ pagina: { tipo: 'pagamento', codigo, compra }, dados: daConta });
+
+        // Modelos grátis: a lista e cada modelo. A página pronta leva só o idioma (o site baixa os dados dele antes de
+        // hidratar, src/main.jsx) e, no modelo, o endereço dele nos outros idiomas; o desenho do build recebe os dados.
+        const dadosModelos = modelos.porIdioma[codigo];
+        const t = tradutor(codigo);
+        const lista = modelosDoIdioma(dadosModelos, codigo);
+        const nomeDe = (m) => (m.tipo === 'diario' ? t('modelos.diario.nome') : m.nome);
+        paginas.push({
+            pagina: { tipo: 'modelos', codigo },
+            dadosCabeca: { lista: lista.map((m) => ({ nome: nomeDe(m), url: absoluto(caminhoDoModelo(codigo, m)) })) },
+            dados: { modelos: { idioma: codigo } },
+            dadosRender: { modelos: { idioma: codigo, dados: dadosModelos } },
+            lastmod: dataModelos,
+        });
+        for (const m of lista) {
+            const slugs = { id: m.id, porIdioma: modelos.slugs[m.id] };
+            paginas.push({
+                pagina: { tipo: 'modelo', codigo, modelo: { id: m.id, slugs: modelos.slugs[m.id] } },
+                dadosCabeca: { modelo: m, nome: nomeDe(m) },
+                dados: { modelos: { idioma: codigo, slugs } },
+                dadosRender: { modelos: { idioma: codigo, dados: dadosModelos, slugs } },
+                lastmod: dataModelos,
+            });
+            pdfs.push({ codigo, dados: dadosModelos, modelo: m, nome: nomeDe(m), t });
+        }
 
         for (const documento of DOCUMENTOS_LEGAIS) {
             const dados = legal[documento]?.[codigo];
@@ -235,6 +295,11 @@ async function principal() {
         fs.writeFileSync(destino, JSON.stringify(indice));
     }
 
+    // PDFs dos modelos grátis (um por modelo em cada idioma), dos mesmos dados das páginas.
+    for (const nome of ['modelos-pdf']) fs.rmSync(path.join(DIST, nome), { recursive: true, force: true });
+    const feitos = await gerarPdfs({ dist: DIST, itens: pdfs, aoAvisar: (texto) => console.log(texto) });
+    console.log(`PDFs dos modelos grátis: ${pdfs.length} (${feitos.gerados} desenhados agora, ${feitos.guardados} já guardados).`);
+
     // Um sitemap por idioma e o índice deles em sitemap.xml (src/seo/sitemap.js). Arquivos de um build antigo que não
     // existem mais (idioma retirado) saem do dist.
     const noSitemap = paginas.filter((p) => indexavel(p.pagina));
@@ -251,7 +316,7 @@ async function principal() {
     }
     fs.writeFileSync(path.join(DIST, 'sitemap.xml'), gerarIndiceDeSitemaps(sitemaps));
     fs.writeFileSync(path.join(DIST, 'robots.txt'), gerarRobots());
-    fs.writeFileSync(path.join(DIST, 'llms.txt'), gerarLlms({ tradutor, indices: ajuda?.indices ?? {} }));
+    fs.writeFileSync(path.join(DIST, 'llms.txt'), gerarLlms({ tradutor, indices: ajuda?.indices ?? {}, modelos: modelos.porIdioma }));
 
     const porTipo = {};
     for (const p of paginas) porTipo[p.pagina.tipo] = (porTipo[p.pagina.tipo] ?? 0) + 1;

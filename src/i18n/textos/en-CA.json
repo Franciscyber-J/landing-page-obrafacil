@@ -41,5 +41,16 @@
     "atendimento": {
         "ajudaTextoChat": "Chat with Max, the ObraFácil assistant, right here on the site, or raise a ticket in the app.",
         "ajudaTextoDois": "Chat with Max right here on the site, message support on WhatsApp, or raise a ticket in the app."
+    },
+    "modelos": {
+        "usar": {
+            "diario": [
+                "Download the PDF and print one sheet for each workday.",
+                "Fill in the date, client and progress, and check the day's weather.",
+                "List the crew on site with each person's role, hours and attendance, plus any extra labour.",
+                "Write down the work done and the incidents, and number the day's photos.",
+                "At the end of the day, the person responsible signs."
+            ]
+        }
     }
 }

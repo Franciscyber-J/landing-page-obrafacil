@@ -539,5 +539,104 @@
         "recaptcha": "Geschützt durch reCAPTCHA. Es gelten die Bestimmungen von Google:",
         "recaptchaPrivacidade": "Datenschutz",
         "recaptchaTermos": "Nutzungsbedingungen"
+    },
+    "modelos": {
+        "nav": "Kostenlose Vorlagen",
+        "indice": {
+            "metaTitulo": "Kostenlose Vorlagen: Prüfprotokolle und Bautagebuch",
+            "metaDescricao": "27 kostenlose Checklisten-Vorlagen für die Qualitätsprüfung und eine Bautagebuch-Vorlage als PDF zum Herunterladen und Drucken. Dieselben wie in der App ObraFácil.",
+            "titulo": "Kostenlose Vorlagen für **die Baustelle**",
+            "texto": "Die 27 Qualitäts-Checklisten und das Bautagebuch, mit denselben Prüfpunkten wie in der App ObraFácil. Hier lesen, als PDF herunterladen und für die Arbeit auf Papier ausdrucken, ohne Anmeldung.",
+            "verChecklists": "Die 27 Checklisten ansehen",
+            "diarioTexto": "Datum, Wetter, anwesendes Personal, ausgeführte Arbeiten, Vorkommnisse, Fotos und die Unterschrift der Bauleitung, mit denselben Feldern wie das Bautagebuch der App.",
+            "checklistsTexto": "Eine Vorlage für jedes Gewerk, mit dem, was vor Beginn, während der Ausführung und bei Fertigstellung zu prüfen ist.",
+            "abrir": "Vorlage ansehen"
+        },
+        "itens_one": "{{count}} Prüfpunkt",
+        "itens_other": "{{count}} Prüfpunkte",
+        "criticos_one": "{{count}} kritisch",
+        "criticos_other": "{{count}} kritisch",
+        "fotos_one": "{{count}} mit Fotopflicht",
+        "fotos_other": "{{count}} mit Fotopflicht",
+        "checklist": {
+            "metaTitulo": "{{nome}}: kostenlose Prüf-Checkliste (PDF)",
+            "metaDescricao": "{{nome}}: kostenlose Checkliste für die Qualitätsprüfung, mit allem, was vor, während und nach der Ausführung zu prüfen ist. Als PDF oder in der App ObraFácil.",
+            "titulo": "{{nome}}: Qualitäts-Checkliste",
+            "paraQue": "Die Vorlage sagt, was an der Leistung zu drei Zeitpunkten zu prüfen ist: vor Beginn, während der Ausführung und bei Fertigstellung. Jeder Prüfpunkt wird mit In Ordnung, Nicht in Ordnung oder Nicht zutreffend bewertet. Was nicht in Ordnung ist, wird als Mangel erfasst, mit Maßnahme und Nachprüfung, bis die Leistung freigegeben ist.",
+            "itensTitulo": "Prüfpunkte der Vorlage",
+            "criterio": "Abnahmekriterium"
+        },
+        "diario": {
+            "nome": "Bautagebuch",
+            "metaTitulo": "Bautagebuch: kostenlose Vorlage als PDF",
+            "metaDescricao": "Kostenlose Bautagebuch-Vorlage mit Wetter, Personal, ausgeführten Arbeiten, Vorkommnissen, Fotos und Unterschrift. Als PDF herunterladen oder in der App führen.",
+            "titulo": "Bautagebuch: **kostenlose Vorlage**",
+            "paraQue": "Das Bautagebuch hält den Tag auf der Baustelle fest: das Wetter, wer gearbeitet hat, was erledigt wurde, was passiert ist und die Fotos, mit der Unterschrift der Bauleitung. Diese Vorlage hat dieselben Felder wie das Bautagebuch in ObraFácil.",
+            "camposTitulo": "Felder der Vorlage",
+            "campos": {
+                "data": "Das Datum des Berichts und der Bauherr.",
+                "clima": "Das Wetter des Tages, mit einer dieser Angaben:",
+                "avanco": "Wie weit der Bau fertig ist, in Prozent.",
+                "efetivo": "Wer an diesem Tag gearbeitet hat: Name, Funktion, Stunden und Anwesenheit, mit einer dieser Angaben:",
+                "avulsa": "Wer ohne feste Zugehörigkeit zum Bauteam gearbeitet hat, mit Funktion und Stunden.",
+                "atividades": "Was an diesem Tag erledigt wurde, Gewerk für Gewerk.",
+                "observacoes": "Besuche, Lieferungen, Probleme und alles, was Aufmerksamkeit braucht.",
+                "fotos": "Die Fotos des Tages, nummeriert, mit dem, was jedes zeigt.",
+                "responsavel": "Name und Unterschrift der verantwortlichen Bauleitung."
+            }
+        },
+        "usar": {
+            "titulo": "So nutzen Sie die Vorlage auf Papier",
+            "checklist": [
+                "Laden Sie das PDF herunter und drucken Sie ein Blatt für jedes Gewerk und jeden geprüften Bereich.",
+                "Tragen Sie Bauvorhaben, Bereich, Bauabschnitt, Prüfdatum und den Prüfer ein.",
+                "Kreuzen Sie bei jedem Prüfpunkt In Ordnung, Nicht in Ordnung oder Nicht zutreffend an und notieren Sie, was Sie gesehen haben.",
+                "Bei Mängeln notieren Sie, was nicht stimmte, die Maßnahme, wer zuständig ist und bis wann. Danach tragen Sie die Nachprüfung ein.",
+                "Ist die Leistung geprüft, kreuzen Sie die Freigabe an und unterschreiben."
+            ],
+            "diario": [
+                "Laden Sie das PDF herunter und drucken Sie ein Blatt für jeden Bautag.",
+                "Tragen Sie Datum, Bauherr und Baufortschritt ein und kreuzen Sie das Wetter an.",
+                "Notieren Sie das anwesende Personal mit Funktion, Stunden und Anwesenheit und dazu die Aushilfen.",
+                "Schreiben Sie die ausgeführten Arbeiten und die Vorkommnisse auf und nummerieren Sie die Fotos des Tages.",
+                "Am Ende des Tages unterschreibt die Bauleitung."
+            ]
+        },
+        "app": {
+            "tituloChecklist": "In ObraFácil wird dieselbe Vorlage zur **echten Prüf-Checkliste**",
+            "checklist": [
+                "In Ordnung, Nicht in Ordnung oder Nicht zutreffend bei jedem Prüfpunkt, mit Foto direkt vor Ort",
+                "Mängel mit Maßnahme, Zuständigem, Frist und Nachprüfung",
+                "Freigabe mit Unterschrift und das Prüfprotokoll als PDF, sofort versandbereit",
+                "Der Bauherr sieht im Portal die freigegebenen Checklisten, die Sie für ihn markieren",
+                "Funktioniert ohne Netz auf der Baustelle: Ihre Eingaben werden übertragen, sobald wieder Empfang da ist"
+            ],
+            "planosChecklist": "Im Gratis-Plan legen Sie insgesamt 3 Checklisten mit den 27 fertigen Vorlagen an. Mit PRO sind Checklisten unbegrenzt, Sie legen die Vorlagen Ihres Unternehmens an und fassen mehrere Checklisten in einem PDF zusammen.",
+            "tituloDiario": "In ObraFácil ist das Bautagebuch **direkt am Handy fertig**",
+            "diario": [
+                "Wetter, anwesendes Personal und Stunden mit wenigen Fingertipps",
+                "Bis zu 20 Fotos pro Bericht, mit der Kamera oder aus der Galerie",
+                "Unterschrift der Bauleitung: getippter Name, auf dem Bildschirm gezeichnet oder als Bild",
+                "Der Bericht als PDF, sofort versandbereit",
+                "Der Bauherr verfolgt die Berichte im Portal",
+                "Funktioniert ohne Netz: Der Bericht bleibt auf dem Gerät und wird später übertragen"
+            ],
+            "planosDiario": "Im Gratis-Plan haben Sie 7 PDF-Berichte pro Monat mit Wasserzeichen. Mit PRO sind die Berichte unbegrenzt, ohne Wasserzeichen und mit dem Logo Ihres Unternehmens, und Bautagesberichte lassen sich als ZIP exportieren.",
+            "nota": "Das PDF ist die Version zum Ausdrucken. Die Funktionen oben gibt es in der App."
+        },
+        "baixar": "PDF herunterladen",
+        "papel": {
+            "a4": "A4",
+            "carta": "Letter"
+        },
+        "baixarNota": "PDF im Format {{papel}} · kostenlos, ohne Anmeldung",
+        "outros": "Weitere Vorlagen: {{grupo}}",
+        "todos": "Alle kostenlosen Vorlagen",
+        "carregando": "Vorlage wird geladen…",
+        "pdf": {
+            "feitoCom": "Erstellt mit ObraFácil",
+            "conviteChecklist": "In der App ObraFácil wird diese Vorlage zur Checkliste mit Fotos, Nachprüfung und Unterschrift. Kostenlos starten:",
+            "conviteDiario": "In der App ObraFácil ist das Bautagebuch mit Wetter, Personal, Fotos und Unterschrift sofort fertig. Kostenlos starten:"
+        }
     }
 }

@@ -61,5 +61,65 @@
     "atendimento": {
         "ajudaTextoChat": "Chat with Max, the ObraFácil assistant, right here on the site, or raise a ticket in the app.",
         "ajudaTextoDois": "Chat with Max right here on the site, message support on WhatsApp, or raise a ticket in the app."
+    },
+    "modelos": {
+        "indice": {
+            "metaTitulo": "Free quality checklists & site diary templates",
+            "metaDescricao": "27 free quality inspection checklist templates and a site diary template to download as PDF and print. The same ones as in the ObraFácil app.",
+            "texto": "The 27 quality checklists and the site diary, with the same items as the ObraFácil app. Read them here, download the PDF and print it to use on paper. No sign-up needed.",
+            "diarioTexto": "Date, weather, workforce on site, work done, incidents, photos and the sign-off of the person responsible, with the same fields as the app's site diary."
+        },
+        "checklist": {
+            "paraQue": "This template tells you what to inspect on the works at three points: before starting, during the work and at completion. Each item is marked Pass, Fail or N/A. Anything that fails becomes a non-conformance, with a corrective action and reinspection, until the work is approved."
+        },
+        "diario": {
+            "nome": "Site diary",
+            "metaTitulo": "Site diary: free template (PDF)",
+            "metaDescricao": "Free site diary template with weather, workforce, work done, incidents, photos and sign-off. Download the PDF or fill it in on the ObraFácil app.",
+            "titulo": "Site diary: **free template**",
+            "paraQue": "A site diary records the day on site: the weather, who worked, what got done, what happened and the photos, signed off by the person responsible. This template has the same fields as the ObraFácil site diary.",
+            "campos": {
+                "data": "The diary date and the project's client.",
+                "atividades": "What got done that day, trade by trade."
+            }
+        },
+        "usar": {
+            "diario": [
+                "Download the PDF and print one sheet for each day on site.",
+                "Fill in the date, client and progress, and tick the day's weather.",
+                "List the workforce on site with each person's role, hours and attendance, plus any casual labour.",
+                "Write down the work done and the incidents, and number the day's photos.",
+                "At the end of the day, the person responsible signs it off."
+            ],
+            "checklist": [
+                "Download the PDF and print one sheet for each type of work and each location you inspect.",
+                "Fill in the project, location, stage, inspection date and who inspected.",
+                "On each item, tick Pass, Fail or N/A, and note what you saw.",
+                "For anything that fails, write what was wrong, the corrective action, who it's assigned to and the due date. Then record the reinspection.",
+                "Once the work has been checked, mark the approval and sign."
+            ]
+        },
+        "app": {
+            "checklist": [
+                "Pass, Fail or N/A on every item, with a photo taken on the spot",
+                "Non-conformances with a corrective action, assignee, due date and reinspection",
+                "Approval with a signature and the inspection PDF ready to send",
+                "Your client sees the approved checklists you share with them in the project portal",
+                "Works offline on site: what you record syncs when you're back online"
+            ],
+            "tituloDiario": "In ObraFácil, the site diary is **done right from your phone**",
+            "diario": [
+                "Weather, workforce on site and hours logged in a few taps",
+                "Up to 20 photos per diary entry, from the camera or the gallery",
+                "Sign-off on screen: drawn, typed or uploaded",
+                "The diary PDF, ready to send",
+                "Your client follows the site diary in the project portal",
+                "Works offline: the entry is saved on your device and syncs later"
+            ],
+            "planosDiario": "On the free plan, you get 7 PDF reports a month, watermarked. On PRO, reports are unlimited, with no watermark and with your company logo, and site diary entries export as a ZIP."
+        },
+        "pdf": {
+            "conviteDiario": "In the ObraFácil app, the site diary comes out ready with weather, workforce, photos and sign-off. Start free:"
+        }
     }
 }

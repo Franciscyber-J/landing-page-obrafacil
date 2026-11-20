@@ -537,5 +537,101 @@
         "recaptcha": "Dilindungi reCAPTCHA. Berlaku ketentuan Google:",
         "recaptchaPrivacidade": "Privasi",
         "recaptchaTermos": "Persyaratan"
+    },
+    "modelos": {
+        "nav": "Templat gratis",
+        "indice": {
+            "metaTitulo": "Templat gratis: daftar periksa mutu dan laporan harian proyek",
+            "metaDescricao": "27 templat daftar periksa mutu dan templat laporan harian proyek, gratis diunduh dalam PDF untuk dicetak. Sama dengan yang ada di aplikasi ObraFácil.",
+            "titulo": "Templat gratis **untuk proyek**",
+            "texto": "27 daftar periksa mutu dan laporan harian proyek, dengan butir yang sama seperti di aplikasi ObraFácil. Baca di sini, unduh PDF-nya, lalu cetak untuk dipakai di kertas, tanpa daftar akun.",
+            "verChecklists": "Lihat 27 daftar periksa",
+            "diarioTexto": "Tanggal, cuaca, tenaga kerja di lokasi, pekerjaan yang selesai, kejadian, foto, dan tanda tangan penanggung jawab teknis, dengan kolom yang sama seperti laporan harian di aplikasi.",
+            "checklistsTexto": "Satu templat untuk tiap jenis pekerjaan, berisi apa yang diperiksa sebelum mulai, selama pelaksanaan, dan saat selesai.",
+            "abrir": "Lihat templat"
+        },
+        "itens_other": "{{count}} butir",
+        "criticos_other": "{{count}} butir penting",
+        "fotos_other": "{{count}} wajib foto",
+        "checklist": {
+            "metaTitulo": "{{nome}}: daftar periksa gratis (PDF)",
+            "metaDescricao": "{{nome}}: templat daftar periksa mutu gratis, berisi apa yang diperiksa sebelum, selama, dan setelah pekerjaan. Unduh PDF-nya atau pakai di aplikasi ObraFácil.",
+            "titulo": "{{nome}}: daftar periksa mutu",
+            "paraQue": "Templat ini menunjukkan apa yang perlu diperiksa pada pekerjaan di tiga tahap: sebelum mulai, selama pelaksanaan, dan saat selesai. Tiap butir ditandai sesuai, tidak sesuai, atau tidak berlaku. Yang tidak sesuai menjadi ketidaksesuaian, dengan tindakan perbaikan dan pemeriksaan ulang, sampai pekerjaan disetujui.",
+            "itensTitulo": "Butir templat",
+            "criterio": "Kriteria penerimaan"
+        },
+        "diario": {
+            "nome": "Laporan harian proyek",
+            "metaTitulo": "Laporan harian proyek: templat gratis (PDF)",
+            "metaDescricao": "Templat laporan harian proyek gratis dengan cuaca, tenaga kerja, pekerjaan, kejadian, foto, dan tanda tangan penanggung jawab teknis. Unduh PDF atau isi di aplikasi.",
+            "titulo": "Laporan harian proyek: **templat gratis**",
+            "paraQue": "Laporan harian mencatat satu hari di lokasi proyek: cuaca, siapa yang bekerja, apa yang dikerjakan, apa yang terjadi, dan foto, dengan tanda tangan penanggung jawab teknis. Templat ini punya kolom yang sama seperti laporan harian di ObraFácil.",
+            "camposTitulo": "Kolom templat",
+            "campos": {
+                "data": "Tanggal laporan dan klien proyek.",
+                "clima": "Cuaca hari itu, pilih salah satu:",
+                "avanco": "Progres proyek secara keseluruhan, dalam persen.",
+                "efetivo": "Siapa yang bekerja hari itu: nama, jabatan, jam kerja, dan kehadiran, pilih salah satu:",
+                "avulsa": "Pekerja di luar tim proyek, beserta jabatan dan jam kerjanya.",
+                "atividades": "Apa yang dikerjakan hari itu, per jenis pekerjaan.",
+                "observacoes": "Kunjungan, pengiriman material, masalah, dan hal yang perlu diperhatikan.",
+                "fotos": "Foto hari itu, diberi nomor dan keterangan isinya.",
+                "responsavel": "Nama dan tanda tangan penanggung jawab proyek."
+            }
+        },
+        "usar": {
+            "titulo": "Cara memakainya di kertas",
+            "checklist": [
+                "Unduh PDF-nya dan cetak satu lembar untuk tiap jenis pekerjaan dan tiap lokasi yang diperiksa.",
+                "Isi nama proyek, lokasi, tahap, tanggal pemeriksaan, dan pemeriksanya.",
+                "Di tiap butir, centang sesuai, tidak sesuai, atau tidak berlaku, lalu catat yang Anda lihat.",
+                "Untuk yang tidak sesuai, tulis apa yang salah, tindakan perbaikan, penanggung jawab, dan tenggat. Lalu catat pemeriksaan ulangnya.",
+                "Setelah pekerjaan diperiksa, centang persetujuan dan tanda tangani."
+            ],
+            "diario": [
+                "Unduh PDF-nya dan cetak satu lembar untuk tiap hari kerja.",
+                "Isi tanggal, klien, dan progres, lalu centang cuaca hari itu.",
+                "Catat tenaga kerja di lokasi beserta jabatan, jam kerja, dan kehadiran masing-masing, termasuk pekerja harian lepas.",
+                "Tulis pekerjaan yang selesai dan kejadian hari itu, lalu beri nomor pada foto.",
+                "Di akhir hari, penanggung jawab teknis menandatangani."
+            ]
+        },
+        "app": {
+            "tituloChecklist": "Di ObraFácil, templat yang sama menjadi **daftar periksa sungguhan**",
+            "checklist": [
+                "Sesuai, tidak sesuai, atau tidak berlaku di tiap butir, dengan foto langsung di lokasi",
+                "Ketidaksesuaian dengan tindakan perbaikan, penanggung jawab, tenggat, dan pemeriksaan ulang",
+                "Persetujuan dengan tanda tangan dan PDF lembar periksa yang siap dikirim",
+                "Klien melihat di portal proyek daftar periksa yang sudah disetujui dan Anda bagikan",
+                "Tetap jalan tanpa sinyal di lokasi: data terkirim begitu koneksi kembali"
+            ],
+            "planosChecklist": "Di paket gratis, Anda bisa menerapkan total 3 daftar periksa dengan 27 templat siap pakai. Di PRO, daftar periksa tanpa batas, Anda bisa membuat templat perusahaan sendiri dan menggabungkan beberapa daftar dalam satu PDF.",
+            "tituloDiario": "Di ObraFácil, laporan harian **langsung jadi dari ponsel**",
+            "diario": [
+                "Cuaca, tenaga kerja, dan jam kerja dalam beberapa ketukan",
+                "Hingga 20 foto per laporan, dari kamera atau galeri",
+                "Tanda tangan penanggung jawab: nama diketik, digambar di layar, atau gambar",
+                "PDF laporan yang siap dikirim",
+                "Klien memantau laporan harian di portal proyek",
+                "Tetap jalan tanpa sinyal: laporan tersimpan di perangkat dan dikirim nanti"
+            ],
+            "planosDiario": "Di paket gratis, ada 7 laporan PDF per bulan dengan watermark. Di PRO, laporan tanpa batas, tanpa watermark, memakai logo perusahaan Anda, dan laporan harian bisa diekspor ke ZIP.",
+            "nota": "PDF ini versi untuk dicetak. Fitur di atas ada di aplikasi."
+        },
+        "baixar": "Unduh PDF",
+        "papel": {
+            "a4": "A4",
+            "carta": "Letter"
+        },
+        "baixarNota": "PDF {{papel}} · gratis, tanpa daftar",
+        "outros": "Templat lain: {{grupo}}",
+        "todos": "Semua templat gratis",
+        "carregando": "Memuat templat…",
+        "pdf": {
+            "feitoCom": "Dibuat dengan ObraFácil",
+            "conviteChecklist": "Di aplikasi ObraFácil, templat ini menjadi daftar periksa dengan foto, pemeriksaan ulang, dan tanda tangan. Mulai gratis:",
+            "conviteDiario": "Di aplikasi ObraFácil, laporan harian langsung jadi dengan cuaca, tenaga kerja, foto, dan tanda tangan. Mulai gratis:"
+        }
     }
 }

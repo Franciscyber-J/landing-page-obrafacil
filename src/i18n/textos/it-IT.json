@@ -541,5 +541,107 @@
         "recaptcha": "Protetto da reCAPTCHA. Si applicano le norme di Google:",
         "recaptchaPrivacidade": "Privacy",
         "recaptchaTermos": "Termini"
+    },
+    "modelos": {
+        "nav": "Modelli gratuiti",
+        "indice": {
+            "metaTitulo": "Modelli gratuiti: checklist di qualità e giornale dei lavori",
+            "metaDescricao": "27 modelli di checklist di controllo qualità e il modello di giornale dei lavori da scaricare in PDF e stampare. Gli stessi dell'app ObraFácil.",
+            "titulo": "Modelli gratuiti per **il cantiere**",
+            "texto": "Le 27 checklist di qualità e il giornale dei lavori, con le stesse voci dell'app ObraFácil. Leggili qui, scarica il PDF e stampalo per usarlo su carta, senza registrarti.",
+            "verChecklists": "Vedi le 27 checklist",
+            "diarioTexto": "Data, meteo, squadra presente, lavori eseguiti, imprevisti, foto e la firma del direttore tecnico, con gli stessi campi del giornale dei lavori dell'app.",
+            "checklistsTexto": "Un modello per ogni lavorazione, con cosa controllare prima di iniziare, durante l'esecuzione e a fine lavorazione.",
+            "abrir": "Vedi il modello"
+        },
+        "itens_one": "{{count}} voce",
+        "itens_many": "{{count}} di voci",
+        "itens_other": "{{count}} voci",
+        "criticos_one": "{{count}} critica",
+        "criticos_many": "{{count}} di voci critiche",
+        "criticos_other": "{{count}} critiche",
+        "fotos_one": "{{count}} con foto obbligatoria",
+        "fotos_many": "{{count}} di voci con foto obbligatoria",
+        "fotos_other": "{{count}} con foto obbligatoria",
+        "checklist": {
+            "metaTitulo": "{{nome}}: checklist di controllo gratis (PDF)",
+            "metaDescricao": "{{nome}}: modello gratuito di checklist di controllo qualità, con cosa verificare prima, durante e a fine lavorazione. Scarica il PDF o usalo nell'app ObraFácil.",
+            "titulo": "{{nome}}: checklist di qualità",
+            "paraQue": "Il modello indica cosa controllare nella lavorazione in tre momenti: prima di iniziare, durante l'esecuzione e a fine lavorazione. Ogni voce si segna come conforme, non conforme o non applicabile. Quello che non va diventa una non conformità, con azione correttiva e ricontrollo, fino all'approvazione della lavorazione.",
+            "itensTitulo": "Voci del modello",
+            "criterio": "Criterio di accettazione"
+        },
+        "diario": {
+            "nome": "Giornale dei lavori",
+            "metaTitulo": "Giornale dei lavori: modello gratuito in PDF",
+            "metaDescricao": "Modello gratuito di giornale dei lavori con meteo, manodopera, lavori eseguiti, imprevisti, foto e firma del direttore tecnico. Scarica il PDF o compilalo nell'app.",
+            "titulo": "Giornale dei lavori: **modello gratuito**",
+            "paraQue": "Il giornale dei lavori registra la giornata in cantiere: il tempo, chi ha lavorato, cosa è stato fatto, cosa è successo e le foto, con la firma del direttore tecnico. Questo modello ha gli stessi campi del giornale dei lavori di ObraFácil.",
+            "camposTitulo": "Campi del modello",
+            "campos": {
+                "data": "Il giorno del rapportino e il committente.",
+                "clima": "Il meteo della giornata, con una di queste opzioni:",
+                "avanco": "Quanto del cantiere è completato, in percentuale.",
+                "efetivo": "Chi ha lavorato quel giorno: nome, mansione, ore e presenza, con una di queste opzioni:",
+                "avulsa": "Chi ha lavorato senza far parte della squadra del cantiere, con mansione e ore.",
+                "atividades": "Cosa è stato fatto nella giornata, lavorazione per lavorazione.",
+                "observacoes": "Visite, consegne, problemi e tutto ciò che richiede attenzione.",
+                "fotos": "Le foto della giornata, numerate, con cosa mostra ognuna.",
+                "responsavel": "Nome e firma di chi risponde del cantiere."
+            }
+        },
+        "usar": {
+            "titulo": "Come usarlo su carta",
+            "checklist": [
+                "Scarica il PDF e stampa una scheda per ogni lavorazione e ogni zona controllata.",
+                "Compila il cantiere, la zona, la fase, la data del controllo e chi l'ha eseguito.",
+                "Per ogni voce segna conforme, non conforme o non applicabile, e annota cosa hai visto.",
+                "Per quello che non va, scrivi cosa non andava, l'azione correttiva, il responsabile e la scadenza. Poi annota il ricontrollo.",
+                "A controllo completato, segna l'approvazione e firma."
+            ],
+            "diario": [
+                "Scarica il PDF e stampa un foglio per ogni giorno di cantiere.",
+                "Compila data, committente e avanzamento, e segna il meteo della giornata.",
+                "Annota la squadra presente, con mansione, ore e presenza di ciascuno, e la manodopera occasionale.",
+                "Scrivi i lavori eseguiti e gli imprevisti, e numera le foto della giornata.",
+                "A fine giornata firma il direttore tecnico."
+            ]
+        },
+        "app": {
+            "tituloChecklist": "In ObraFácil, lo stesso modello diventa **una vera checklist**",
+            "checklist": [
+                "Conforme, non conforme o non applicabile su ogni voce, con la foto scattata sul posto",
+                "Non conformità con azione correttiva, responsabile, scadenza e ricontrollo",
+                "Approvazione con firma e il PDF della scheda pronto da inviare",
+                "Il committente vede nel portale del cantiere le checklist approvate che condividi con lui",
+                "Funziona senza campo in cantiere: quello che segni parte appena torna la connessione"
+            ],
+            "planosChecklist": "Con il piano gratuito apri 3 checklist in tutto con i 27 modelli pronti. Con PRO le checklist sono illimitate, crei i modelli della tua impresa e unisci più checklist in un unico PDF.",
+            "tituloDiario": "In ObraFácil, il giornale dei lavori **si compila dal telefono**",
+            "diario": [
+                "Meteo, squadra presente e ore in pochi tocchi",
+                "Fino a 20 foto per rapportino, dalla fotocamera o dalla galleria",
+                "Firma del responsabile: nome digitato, firma disegnata sullo schermo o immagine",
+                "Il PDF del rapportino, pronto da inviare",
+                "Il committente segue i rapportini nel portale del cantiere",
+                "Funziona senza campo: il rapportino resta sul dispositivo e parte dopo"
+            ],
+            "planosDiario": "Con il piano gratuito hai 7 report PDF al mese con filigrana. Con PRO i report sono illimitati, senza filigrana e con il logo della tua impresa, e i rapportini si esportano in ZIP.",
+            "nota": "Il PDF è la versione da stampare. Le funzioni qui sopra sono nell'app."
+        },
+        "baixar": "Scarica il PDF",
+        "papel": {
+            "a4": "A4",
+            "carta": "Letter"
+        },
+        "baixarNota": "PDF {{papel}} · gratis, senza registrazione",
+        "outros": "Altri modelli: {{grupo}}",
+        "todos": "Tutti i modelli gratuiti",
+        "carregando": "Caricamento del modello…",
+        "pdf": {
+            "feitoCom": "Realizzato con ObraFácil",
+            "conviteChecklist": "Nell'app ObraFácil, questo modello diventa una checklist con foto, ricontrollo e firma. Inizia gratis:",
+            "conviteDiario": "Nell'app ObraFácil, il giornale dei lavori esce pronto con meteo, squadra, foto e firma. Inizia gratis:"
+        }
     }
 }

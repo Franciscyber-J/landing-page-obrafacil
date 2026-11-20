@@ -539,5 +539,104 @@
         "recaptcha": "A reCAPTCHA védi. A Google szabályai érvényesek:",
         "recaptchaPrivacidade": "Adatvédelem",
         "recaptchaTermos": "Feltételek"
+    },
+    "modelos": {
+        "nav": "Ingyenes sablonok",
+        "indice": {
+            "metaTitulo": "Ingyenes sablonok: minőségi ellenőrzőlisták és építési napló",
+            "metaDescricao": "27 ingyenes minőségi ellenőrzőlista-sablon és egy építésinapló-sablon, PDF-ben letölthető és nyomtatható. Ugyanazok, mint az ObraFácil appban.",
+            "titulo": "Ingyenes sablonok **az építkezéshez**",
+            "texto": "A 27 minőségi ellenőrzőlista és az építési napló, ugyanazokkal a pontokkal, mint az ObraFácil appban. Olvasd el itt, töltsd le a PDF-et, és nyomtasd ki papíros használatra, regisztráció nélkül.",
+            "verChecklists": "Mind a 27 ellenőrzőlista",
+            "diarioTexto": "Dátum, időjárás, létszám a helyszínen, elvégzett munkák, események, fotók és a felelős műszaki vezető aláírása, ugyanazokkal a mezőkkel, mint az app építési naplója.",
+            "checklistsTexto": "Minden munkanemhez egy sablon: mit kell ellenőrizni kezdés előtt, kivitelezés közben és befejezéskor.",
+            "abrir": "Sablon megnyitása"
+        },
+        "itens_one": "{{count}} pont",
+        "itens_other": "{{count}} pont",
+        "criticos_one": "{{count}} kritikus",
+        "criticos_other": "{{count}} kritikus",
+        "fotos_one": "{{count}} kötelező fotóval",
+        "fotos_other": "{{count}} kötelező fotóval",
+        "checklist": {
+            "metaTitulo": "{{nome}}: ingyenes ellenőrzőlista (PDF)",
+            "metaDescricao": "{{nome}}: ingyenes minőségi ellenőrzőlista-sablon arról, mit kell ellenőrizni a munka előtt, közben és a végén. Töltsd le a PDF-et, vagy használd az ObraFácil appban.",
+            "titulo": "{{nome}}: minőségi ellenőrzőlista",
+            "paraQue": "A sablon megmutatja, mit kell ellenőrizni a munkán három ponton: kezdés előtt, kivitelezés közben és befejezéskor. Minden pont megfelel, nem felel meg vagy nem releváns jelölést kap. Ami nem felel meg, nemmegfelelőség lesz, javító intézkedéssel és újraellenőrzéssel, egészen a munka átvételéig.",
+            "itensTitulo": "A sablon pontjai",
+            "criterio": "Átvételi feltétel"
+        },
+        "diario": {
+            "nome": "Építési napló",
+            "metaTitulo": "Építési napló: ingyenes PDF-sablon",
+            "metaDescricao": "Ingyenes építésinapló-sablon időjárással, létszámmal, elvégzett munkákkal, eseményekkel, fotókkal és aláírással. Töltsd le a PDF-et, vagy vezesd az appban.",
+            "titulo": "Építési napló: **ingyenes sablon**",
+            "paraQue": "Az építési napló rögzíti a napot a helyszínen: az időjárást, ki dolgozott, mi készült el, mi történt, és a fotókat, a felelős műszaki vezető aláírásával. Ebben a sablonban ugyanazok a mezők vannak, mint az ObraFácil építési naplójában.",
+            "camposTitulo": "A sablon mezői",
+            "campos": {
+                "data": "A jelentés napja és a megrendelő.",
+                "clima": "A nap időjárása, az alábbiak egyikével:",
+                "avanco": "Mennyi készült el a munkából, százalékban.",
+                "efetivo": "Ki dolgozott aznap: név, munkakör, órák és jelenlét, az alábbiak egyikével:",
+                "avulsa": "Aki a projektcsapaton kívülről dolgozott, munkakörrel és órákkal.",
+                "atividades": "Mi készült el aznap, munkanemenként.",
+                "observacoes": "Látogatások, szállítások, problémák és minden, ami figyelmet kíván.",
+                "fotos": "A nap fotói, számozva, azzal, hogy mit mutatnak.",
+                "responsavel": "A munkáért felelős személy neve és aláírása."
+            }
+        },
+        "usar": {
+            "titulo": "Így használd papíron",
+            "checklist": [
+                "Töltsd le a PDF-et, és nyomtass egy lapot minden munkanemhez és minden ellenőrzött helyhez.",
+                "Töltsd ki a projektet, a helyet, a szakaszt, az ellenőrzés dátumát és az ellenőrt.",
+                "Minden pontnál jelöld be: megfelel, nem felel meg vagy nem releváns, és írd le, mit láttál.",
+                "Ahol nem felel meg, írd le, mi volt a hiba, a javító intézkedést, a felelőst és a határidőt. Utána jegyezd fel az újraellenőrzést.",
+                "Ha a munka ellenőrizve van, jelöld be az átvételt, és írd alá."
+            ],
+            "diario": [
+                "Töltsd le a PDF-et, és nyomtass egy lapot minden munkanapra.",
+                "Töltsd ki a dátumot, a megrendelőt és a készültséget, és jelöld be az időjárást.",
+                "Írd fel a helyszíni létszámot munkakörrel, órákkal és jelenléttel, valamint az alkalmi munkásokat.",
+                "Írd le az elvégzett munkákat és az eseményeket, és számozd meg a nap fotóit.",
+                "A nap végén a felelős műszaki vezető aláírja."
+            ]
+        },
+        "app": {
+            "tituloChecklist": "Az ObraFácilban ugyanabból a sablonból **valódi ellenőrzőlista** lesz",
+            "checklist": [
+                "Megfelel, nem felel meg vagy nem releváns minden pontnál, a helyszínen készült fotóval",
+                "Nemmegfelelőségek javító intézkedéssel, felelőssel, határidővel és újraellenőrzéssel",
+                "Átvétel aláírással, és a lap PDF-ben, küldésre készen",
+                "A megrendelő a projekt portálján látja az átvett listákat, amelyeket megjelölsz neki",
+                "Térerő nélkül is működik a helyszínen: amit rögzítesz, elmegy, amint visszajön a kapcsolat"
+            ],
+            "planosChecklist": "Az ingyenes csomagban összesen 3 ellenőrzőlistát alkalmazhatsz a 27 kész sablonnal. A PRO-ban az ellenőrzőlisták korlátlanok, létrehozhatod a cég saját sablonjait, és több listát egy PDF-be tehetsz.",
+            "tituloDiario": "Az ObraFácilban az építési napló **a telefonon készül el**",
+            "diario": [
+                "Időjárás, létszám és órák néhány koppintással",
+                "Jelentésenként legfeljebb 20 fotó, a kamerából vagy a galériából",
+                "A felelős aláírása: begépelt név, a képernyőn rajzolt aláírás vagy kép",
+                "A jelentés PDF-ben, küldésre készen",
+                "A megrendelő a projekt portálján követi a napi jelentéseket",
+                "Térerő nélkül is működik: a jelentés a készüléken marad, és később elmegy"
+            ],
+            "planosDiario": "Az ingyenes csomagban havi 7 PDF-jelentés jár, vízjellel. A PRO-ban a jelentések korlátlanok, vízjel nélküliek és a céged logójával készülnek, a napi jelentéseket pedig ZIP-ben is exportálhatod.",
+            "nota": "A PDF a nyomtatható változat. A fenti funkciók az appban vannak."
+        },
+        "baixar": "PDF letöltése",
+        "papel": {
+            "a4": "A4",
+            "carta": "Letter"
+        },
+        "baixarNota": "{{papel}} PDF · ingyenes, regisztráció nélkül",
+        "outros": "További sablonok: {{grupo}}",
+        "todos": "Az összes ingyenes sablon",
+        "carregando": "A sablon betöltése…",
+        "pdf": {
+            "feitoCom": "Készült az ObraFácillal",
+            "conviteChecklist": "Az ObraFácil appban ebből a sablonból fotós, újraellenőrzéses és aláírt ellenőrzőlista lesz. Kezdd ingyen:",
+            "conviteDiario": "Az ObraFácil appban az építési napló időjárással, létszámmal, fotókkal és aláírással készül el. Kezdd ingyen:"
+        }
     }
 }

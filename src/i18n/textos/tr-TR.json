@@ -539,5 +539,104 @@
         "recaptcha": "reCAPTCHA ile korunmaktadır. Google'ın kuralları geçerlidir:",
         "recaptchaPrivacidade": "Gizlilik",
         "recaptchaTermos": "Şartlar"
+    },
+    "modelos": {
+        "nav": "Ücretsiz şablonlar",
+        "indice": {
+            "metaTitulo": "Ücretsiz şablonlar: kalite kontrol listeleri ve şantiye günlüğü",
+            "metaDescricao": "27 ücretsiz kalite kontrol listesi şablonu ve şantiye günlüğü şablonu; PDF olarak indirip yazdırın. ObraFácil uygulamasındakilerin aynısı.",
+            "titulo": "**Şantiye** için ücretsiz şablonlar",
+            "texto": "27 kalite kontrol listesi ve şantiye günlüğü, ObraFácil uygulamasındaki maddelerin aynısıyla. Burada okuyun, PDF'i indirip yazdırın ve kâğıt üzerinde kullanın; kayıt gerekmez.",
+            "verChecklists": "27 kontrol listesini görün",
+            "diarioTexto": "Tarih, hava durumu, sahadaki personel, yapılan işler, olaylar, fotoğraflar ve teknik sorumlunun imzası; uygulamadaki şantiye günlüğüyle aynı alanlar.",
+            "checklistsTexto": "Her iş kalemi için bir şablon: başlamadan önce, uygulama sırasında ve iş bitiminde neyin kontrol edileceği.",
+            "abrir": "Şablonu görün"
+        },
+        "itens_one": "{{count}} madde",
+        "itens_other": "{{count}} madde",
+        "criticos_one": "{{count}} kritik",
+        "criticos_other": "{{count}} kritik",
+        "fotos_one": "{{count}} madde fotoğraf zorunlu",
+        "fotos_other": "{{count}} madde fotoğraf zorunlu",
+        "checklist": {
+            "metaTitulo": "{{nome}}: ücretsiz kontrol listesi (PDF)",
+            "metaDescricao": "{{nome}}: işten önce, iş sırasında ve iş bitiminde neyin kontrol edileceğini gösteren ücretsiz kalite kontrol şablonu. PDF'i indirin ya da ObraFácil'de kullanın.",
+            "titulo": "{{nome}}: kalite kontrol listesi",
+            "paraQue": "Şablon, işte üç aşamada neyin kontrol edileceğini gösterir: başlamadan önce, uygulama sırasında ve iş bitiminde. Her madde uygun, uygun değil ya da kapsam dışı olarak işaretlenir. Uygun olmayan madde, düzeltici faaliyet ve yeniden kontrolle birlikte uygunsuzluk olarak kaydedilir; iş onaylanana kadar takip edilir.",
+            "itensTitulo": "Şablondaki maddeler",
+            "criterio": "Kabul kriteri"
+        },
+        "diario": {
+            "nome": "Şantiye günlüğü",
+            "metaTitulo": "Şantiye günlüğü: ücretsiz PDF şablon",
+            "metaDescricao": "Hava durumu, personel, yapılan işler, olaylar, fotoğraflar ve teknik sorumlu imzası içeren ücretsiz şantiye günlüğü şablonu. PDF'i indirin ya da uygulamada doldurun.",
+            "titulo": "Şantiye günlüğü: **ücretsiz şablon**",
+            "paraQue": "Şantiye günlüğü sahadaki günü kayda geçirir: hava durumu, kimin çalıştığı, neyin yapıldığı, ne olduğu ve fotoğraflar, teknik sorumlunun imzasıyla. Bu şablonda ObraFácil'deki şantiye günlüğünün alanlarının aynısı var.",
+            "camposTitulo": "Şablonun alanları",
+            "campos": {
+                "data": "Raporun tarihi ve projenin müşterisi.",
+                "clima": "Günün hava durumu, şu seçeneklerden biriyle:",
+                "avanco": "Projenin ne kadarının tamamlandığı, yüzde olarak.",
+                "efetivo": "O gün kim çalıştı: ad, görev, saat ve devam durumu, şu seçeneklerden biriyle:",
+                "avulsa": "Proje ekibinde olmadan çalışanlar, görevi ve saatiyle.",
+                "atividades": "O gün yapılan işler, iş kalemi iş kalemi.",
+                "observacoes": "Ziyaretler, teslimatlar, sorunlar ve dikkat gerektiren her şey.",
+                "fotos": "Günün fotoğrafları, numaralı ve her birinin neyi gösterdiğiyle.",
+                "responsavel": "İşten sorumlu kişinin adı ve imzası."
+            }
+        },
+        "usar": {
+            "titulo": "Kâğıt üzerinde nasıl kullanılır",
+            "checklist": [
+                "PDF'i indirin; her iş kalemi ve kontrol edilen her mahal için bir form yazdırın.",
+                "Projeyi, mahali, aşamayı, kontrol tarihini ve kontrolü yapanı doldurun.",
+                "Her maddede uygun, uygun değil ya da kapsam dışı seçeneğini işaretleyin ve gördüğünüzü not edin.",
+                "Uygun olmayanlarda sorunu, düzeltici faaliyeti, sorumluyu ve süreyi yazın. Ardından yeniden kontrolü kaydedin.",
+                "İş kontrol edildiğinde onayı işaretleyip imzalayın."
+            ],
+            "diario": [
+                "PDF'i indirin ve her iş günü için bir sayfa yazdırın.",
+                "Tarihi, müşteriyi ve ilerlemeyi doldurun, günün hava durumunu işaretleyin.",
+                "Sahadaki personeli görevi, saati ve devam durumuyla, ayrıca dışarıdan gelen işçileri yazın.",
+                "Yapılan işleri ve olayları yazın, günün fotoğraflarını numaralayın.",
+                "Gün sonunda teknik sorumlu imzalar."
+            ]
+        },
+        "app": {
+            "tituloChecklist": "ObraFácil'de aynı şablon **gerçek bir kontrol listesine** dönüşür",
+            "checklist": [
+                "Her maddede uygun, uygun değil ya da kapsam dışı; fotoğraf yerinde çekilir",
+                "Düzeltici faaliyet, sorumlu, süre ve yeniden kontrolle uygunsuzluk kaydı",
+                "İmzalı onay ve gönderilmeye hazır PDF form",
+                "Müşteri, onun için işaretlediğiniz onaylı listeleri proje portalında görür",
+                "Sahada internetsiz çalışır: girdiğiniz bilgiler bağlantı gelince gönderilir"
+            ],
+            "planosChecklist": "Ücretsiz planda 27 hazır şablonla toplam 3 kontrol listesi uygulayabilirsiniz. PRO'da kontrol listeleri sınırsızdır, firmanızın şablonlarını oluşturur ve birden fazla listeyi tek PDF'te toplarsınız.",
+            "tituloDiario": "ObraFácil'de şantiye günlüğü **telefondan hazır çıkar**",
+            "diario": [
+                "Hava durumu, sahadaki personel ve saatler birkaç dokunuşta",
+                "Rapor başına 20'ye kadar fotoğraf, kameradan ya da galeriden",
+                "Sorumlunun imzası: yazılı ad, ekranda çizilmiş imza ya da görsel",
+                "Gönderilmeye hazır rapor PDF'i",
+                "Müşteri günlük raporları proje portalından takip eder",
+                "İnternetsiz çalışır: rapor cihazda kalır ve sonra gönderilir"
+            ],
+            "planosDiario": "Ücretsiz planda ayda filigranlı 7 PDF rapor alırsınız. PRO'da raporlar sınırsızdır, filigransızdır ve firmanızın logosunu taşır; günlük raporlar ZIP olarak da indirilir.",
+            "nota": "PDF yazdırmalık sürümdür. Yukarıdaki özellikler uygulamada."
+        },
+        "baixar": "PDF'i indir",
+        "papel": {
+            "a4": "A4",
+            "carta": "Letter"
+        },
+        "baixarNota": "{{papel}} PDF · ücretsiz, kayıt gerekmez",
+        "outros": "Diğer şablonlar: {{grupo}}",
+        "todos": "Tüm ücretsiz şablonlar",
+        "carregando": "Şablon yükleniyor…",
+        "pdf": {
+            "feitoCom": "ObraFácil ile hazırlandı",
+            "conviteChecklist": "ObraFácil uygulamasında bu şablon fotoğraflı, yeniden kontrollü ve imzalı bir kontrol listesine dönüşür. Ücretsiz başlayın:",
+            "conviteDiario": "ObraFácil uygulamasında şantiye günlüğü hava durumu, personel, fotoğraflar ve imzayla hazır çıkar. Ücretsiz başlayın:"
+        }
     }
 }

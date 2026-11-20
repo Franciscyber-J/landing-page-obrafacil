@@ -184,7 +184,7 @@ function MaisModelos({ codigo, dados, modelo }) {
 function Conteudo({ codigo, dados, modelo }) {
     const { t } = useTranslation();
     const diario = modelo.tipo === 'diario';
-    const nome = diario ? t('recursos.itens.diario.titulo') : modelo.nome;
+    const nome = diario ? t('modelos.diario.nome') : modelo.nome;
     const titulo = diario ? t('modelos.diario.titulo') : t('modelos.checklist.titulo', { nome: modelo.nome });
     const pagina = { tipo: 'modelo', codigo };
     useCabecaDaPagina({

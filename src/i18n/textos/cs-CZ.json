@@ -543,5 +543,110 @@
         "recaptcha": "Chráněno službou reCAPTCHA. Platí zásady společnosti Google:",
         "recaptchaPrivacidade": "Ochrana soukromí",
         "recaptchaTermos": "Smluvní podmínky"
+    },
+    "modelos": {
+        "nav": "Šablony zdarma",
+        "indice": {
+            "metaTitulo": "Šablony zdarma: kontrolní listy kvality a stavební deník",
+            "metaDescricao": "27 šablon kontrolních listů kvality a šablona stavebního deníku zdarma ke stažení v PDF a k tisku. Stejné jako v aplikaci ObraFácil.",
+            "titulo": "Šablony zdarma **pro stavbu**",
+            "texto": "27 kontrolních listů kvality a stavební deník se stejnými body jako v aplikaci ObraFácil. Přečtěte si je tady, stáhněte PDF a vytiskněte ho pro práci na papíře, bez registrace.",
+            "verChecklists": "Zobrazit 27 kontrolních listů",
+            "diarioTexto": "Datum, počasí, pracovníci na stavbě, provedené práce, události, fotky a podpis odpovědné osoby, se stejnými poli jako stavební deník v aplikaci.",
+            "checklistsTexto": "Šablona pro každý druh prací: co zkontrolovat před zahájením, v průběhu provádění a při dokončení.",
+            "abrir": "Zobrazit šablonu"
+        },
+        "itens_one": "1 bod",
+        "itens_few": "{{count}} body",
+        "itens_many": "{{count}} bodu",
+        "itens_other": "{{count}} bodů",
+        "criticos_one": "1 kritický",
+        "criticos_few": "{{count}} kritické",
+        "criticos_many": "{{count}} kritického",
+        "criticos_other": "{{count}} kritických",
+        "fotos_one": "1 s povinnou fotkou",
+        "fotos_few": "{{count}} s povinnou fotkou",
+        "fotos_many": "{{count}} s povinnou fotkou",
+        "fotos_other": "{{count}} s povinnou fotkou",
+        "checklist": {
+            "metaTitulo": "{{nome}}: kontrolní list zdarma (PDF)",
+            "metaDescricao": "{{nome}}: šablona kontrolního listu kvality zdarma – co zkontrolovat před pracemi, v jejich průběhu a při dokončení. Stáhněte PDF nebo ji použijte v aplikaci ObraFácil.",
+            "titulo": "{{nome}}: kontrolní list kvality",
+            "paraQue": "Šablona říká, co u prací zkontrolovat ve třech fázích: před zahájením, v průběhu provádění a při dokončení. Každý bod se označí jako vyhovuje, nevyhovuje nebo netýká se. Co nevyhoví, se zapíše jako neshoda s nápravným opatřením a opakovanou kontrolou, až do převzetí prací.",
+            "itensTitulo": "Body šablony",
+            "criterio": "Kritérium přijetí"
+        },
+        "diario": {
+            "nome": "Stavební deník",
+            "metaTitulo": "Stavební deník: šablona zdarma v PDF",
+            "metaDescricao": "Šablona stavebního deníku zdarma: počasí, pracovníci, provedené práce, události, fotky a podpis odpovědné osoby. Stáhněte PDF nebo deník veďte v aplikaci.",
+            "titulo": "Stavební deník: **šablona zdarma**",
+            "paraQue": "Stavební deník zaznamenává den na stavbě: počasí, kdo pracoval, co se udělalo, co se stalo a fotky, s podpisem odpovědné osoby. Tato šablona má stejná pole jako stavební deník v ObraFácil.",
+            "camposTitulo": "Pole šablony",
+            "campos": {
+                "data": "Den záznamu a klient stavby.",
+                "clima": "Počasí toho dne, jedna z těchto možností:",
+                "avanco": "Kolik stavby je hotovo, v procentech.",
+                "efetivo": "Kdo ten den pracoval: jméno, funkce, hodiny a docházka, jedna z těchto možností:",
+                "avulsa": "Kdo pracoval mimo tým stavby, s funkcí a hodinami.",
+                "atividades": "Co se ten den udělalo, práce po práci.",
+                "observacoes": "Návštěvy, dodávky, problémy a vše, co potřebuje pozornost.",
+                "fotos": "Fotky toho dne, očíslované, s tím, co každá ukazuje.",
+                "responsavel": "Jméno a podpis osoby odpovědné za stavbu."
+            }
+        },
+        "usar": {
+            "titulo": "Jak ji použít na papíře",
+            "checklist": [
+                "Stáhněte PDF a vytiskněte jeden list pro každý druh prací a každé kontrolované místo.",
+                "Vyplňte stavbu, místo, etapu, datum kontroly a kdo ji provedl.",
+                "U každého bodu zaškrtněte vyhovuje, nevyhovuje nebo netýká se a poznamenejte, co jste viděli.",
+                "U neshod zapište, co bylo špatně, nápravné opatření, odpovědnou osobu a termín. Pak zapište opakovanou kontrolu.",
+                "Po kontrole prací zaškrtněte převzetí a podepište."
+            ],
+            "diario": [
+                "Stáhněte PDF a vytiskněte jeden list na každý den stavby.",
+                "Vyplňte datum, klienta a postup prací a zaškrtněte počasí.",
+                "Zapište pracovníky na stavbě s funkcí, hodinami a docházkou a také brigádníky.",
+                "Popište provedené práce a události a očíslujte fotky toho dne.",
+                "Na konci dne podepíše odpovědná osoba."
+            ]
+        },
+        "app": {
+            "tituloChecklist": "V ObraFácil se ze stejné šablony stane **skutečný kontrolní list**",
+            "checklist": [
+                "Vyhovuje, nevyhovuje nebo netýká se u každého bodu, s fotkou pořízenou na místě",
+                "Neshody s nápravným opatřením, odpovědnou osobou, termínem a opakovanou kontrolou",
+                "Převzetí s podpisem a list v PDF připravený k odeslání",
+                "Klient vidí v portálu stavby převzaté listy, které mu označíte",
+                "Funguje bez signálu na stavbě: co zaznamenáte, odešle se po obnovení připojení"
+            ],
+            "planosChecklist": "V bezplatném tarifu použijete celkem 3 kontrolní listy s 27 hotovými šablonami. V PRO jsou kontrolní listy bez omezení, vytvoříte šablony své firmy a spojíte více listů do jednoho PDF.",
+            "tituloDiario": "V ObraFácil je stavební deník **hotový přímo v telefonu**",
+            "diario": [
+                "Počasí, pracovníci na stavbě a hodiny několika klepnutími",
+                "Až 20 fotek na záznam, z fotoaparátu nebo z galerie",
+                "Podpis odpovědné osoby: napsané jméno, podpis nakreslený na displeji nebo obrázek",
+                "Záznam v PDF připravený k odeslání",
+                "Klient sleduje denní záznamy v portálu stavby",
+                "Funguje bez signálu: záznam zůstane v zařízení a odešle se později"
+            ],
+            "planosDiario": "V bezplatném tarifu máte 7 PDF reportů měsíčně s vodoznakem. V PRO jsou reporty bez omezení, bez vodoznaku a s logem vaší firmy a denní záznamy můžete exportovat do ZIP.",
+            "nota": "PDF je verze k tisku. Funkce popsané výše jsou v aplikaci."
+        },
+        "baixar": "Stáhnout PDF",
+        "papel": {
+            "a4": "A4",
+            "carta": "Letter"
+        },
+        "baixarNota": "PDF {{papel}} · zdarma, bez registrace",
+        "outros": "Další šablony: {{grupo}}",
+        "todos": "Všechny šablony zdarma",
+        "carregando": "Načítání šablony…",
+        "pdf": {
+            "feitoCom": "Vytvořeno v ObraFácil",
+            "conviteChecklist": "V aplikaci ObraFácil se z této šablony stane kontrolní list s fotkami, opakovanou kontrolou a podpisem. Začněte zdarma:",
+            "conviteDiario": "V aplikaci ObraFácil je stavební deník hotový i s počasím, pracovníky, fotkami a podpisem. Začněte zdarma:"
+        }
     }
 }
