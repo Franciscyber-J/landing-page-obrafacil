@@ -405,6 +405,10 @@
         "pdf": {
             "conviteChecklist": "Na aplicação ObraFácil, este modelo passa a checklist com fotografias, reinspeção e assinatura. Comece gratuitamente:",
             "conviteDiario": "Na aplicação ObraFácil, o diário de obra sai pronto com o tempo, a equipa, as fotografias e a assinatura. Comece gratuitamente:"
+        },
+        "aviso": {
+            "texto": "Os modelos são de referência, de uso geral, e não substituem o projeto, as normas técnicas aplicáveis nem a avaliação profissional. Verificar e adaptar cada item ao projeto e às normas, e responder tecnicamente pela execução e pela aprovação dos trabalhos, cabe ao diretor de obra (engenheiro, engenheiro técnico ou arquiteto habilitado). A utilização dos modelos não dispensa essa revisão.",
+            "pdf": "Modelo de referência, de uso geral. Não substitui o projeto, as normas técnicas aplicáveis nem a revisão do diretor de obra (engenheiro, engenheiro técnico ou arquiteto habilitado), que responde pela execução e pela aprovação dos trabalhos."
         }
     }
 }

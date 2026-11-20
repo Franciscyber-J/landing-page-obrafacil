@@ -2,7 +2,7 @@
 // e os estados de carregamento. Texto só por chave de tradução; o texto do modelo vem do app (src/modelos/dados).
 import { useTranslation } from 'react-i18next';
 import { Link, Navigate } from 'react-router-dom';
-import { Check, Download, RefreshCw } from 'lucide-react';
+import { Check, Download, RefreshCw, ShieldCheck } from 'lucide-react';
 import { caminhoInicio } from '../../i18n/idiomas.js';
 import { caminhoDoPdf, nomeDoArquivo, papelDoIdioma } from '../../modelos/modelos.js';
 import { publico } from '../../publico.js';
@@ -76,6 +76,21 @@ export function NoApp({ codigo, tipo, id }) {
                 <p className={styles.noAppNota}>{t('modelos.app.nota')}</p>
             </div>
         </section>
+    );
+}
+
+// Aviso de responsabilidade técnica (decisão do Francis, 20/11/2026, D18 revista): os modelos são de referência e
+// não dispensam a revisão do responsável técnico da obra, com o nome certo do profissional em cada país.
+export function AvisoTecnico({ id, classe = '' }) {
+    const { t } = useTranslation();
+    return (
+        <aside className={`${styles.aviso} ${classe}`} aria-labelledby={id}>
+            <span className={styles.avisoIcone} aria-hidden="true"><ShieldCheck size={22} strokeWidth={2.25} /></span>
+            <div>
+                <h2 id={id} className={styles.avisoTitulo}>{t('modelos.aviso.titulo')}</h2>
+                <p className={styles.avisoTexto}>{t('modelos.aviso.texto')}</p>
+            </div>
+        </aside>
     );
 }
 

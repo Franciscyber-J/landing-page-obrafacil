@@ -228,6 +228,10 @@
         "pdf": {
             "conviteChecklist": "En la app ObraFácil, este formato se convierte en un checklist con fotos, reinspección y firma. Empieza gratis:",
             "conviteDiario": "En la app ObraFácil, el reporte diario sale listo con clima, equipo, fotos y firma. Empieza gratis:"
+        },
+        "aviso": {
+            "texto": "Los formatos son de referencia y de uso general, y no sustituyen al proyecto, a las normas técnicas aplicables ni a la evaluación profesional. Revisar y adaptar cada punto al proyecto y a la normativa, y responder técnicamente por la ejecución y la aprobación de los trabajos, le corresponde al responsable técnico de la obra (ingeniero o arquitecto con cédula profesional). El uso de los formatos no exime de esa revisión.",
+            "pdf": "Formato de referencia de uso general. No sustituye al proyecto, a la normativa aplicable ni a la revisión del responsable técnico de la obra (ingeniero o arquitecto con cédula profesional), que responde por la ejecución y la aprobación de los trabajos."
         }
     }
 }

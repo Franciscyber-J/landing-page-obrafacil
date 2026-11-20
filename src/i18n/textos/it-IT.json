@@ -642,6 +642,11 @@
             "feitoCom": "Realizzato con ObraFácil",
             "conviteChecklist": "Nell'app ObraFácil, questo modello diventa una checklist con foto, ricontrollo e firma. Inizia gratis:",
             "conviteDiario": "Nell'app ObraFácil, il giornale dei lavori esce pronto con meteo, squadra, foto e firma. Inizia gratis:"
+        },
+        "aviso": {
+            "titulo": "Responsabilità tecnica",
+            "texto": "I modelli sono di riferimento e di uso generale: non sostituiscono il progetto, le norme tecniche applicabili né la valutazione del professionista. Verificare e adattare ogni voce al progetto e alle norme, e rispondere tecnicamente dell'esecuzione e dell'approvazione delle lavorazioni, spetta al direttore dei lavori (ingegnere, architetto o geometra abilitato). L'uso dei modelli non sostituisce questa verifica.",
+            "pdf": "Modello di riferimento di uso generale. Non sostituisce il progetto, le norme applicabili né la verifica del direttore dei lavori (ingegnere, architetto o geometra abilitato), che risponde dell'esecuzione e dell'approvazione delle lavorazioni."
         }
     }
 }

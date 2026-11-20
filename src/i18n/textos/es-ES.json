@@ -642,6 +642,11 @@
             "feitoCom": "Hecho con ObraFácil",
             "conviteChecklist": "En la app ObraFácil, esta plantilla se convierte en un checklist con fotos, reinspección y firma. Empieza gratis:",
             "conviteDiario": "En la app ObraFácil, el parte diario sale listo con clima, equipo, fotos y firma. Empieza gratis:"
+        },
+        "aviso": {
+            "titulo": "Responsabilidad técnica",
+            "texto": "Las plantillas son de referencia y de uso general, y no sustituyen al proyecto, a las normas técnicas aplicables ni a la valoración profesional. Revisar y adaptar cada punto al proyecto y a la normativa, y responder técnicamente de la ejecución y de la aprobación de los trabajos, corresponde a la dirección facultativa de la obra (arquitecto, arquitecto técnico o ingeniero competente). El uso de las plantillas no exime de esa revisión.",
+            "pdf": "Plantilla de referencia de uso general. No sustituye al proyecto, a la normativa aplicable ni a la revisión de la dirección facultativa de la obra (arquitecto, arquitecto técnico o ingeniero competente), que responde de la ejecución y de la aprobación de los trabajos."
         }
     }
 }

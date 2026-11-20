@@ -19,6 +19,12 @@ buscas, e leva ao app, onde o mesmo modelo vira checklist de verdade. Primeira l
   algum idioma. Texto do site (para que serve, como usar, o que o app faz, os limites do grátis e do PRO) fica nas
   chaves `modelos.*` de `src/i18n/textos`, escrito nativo em cada idioma, com os limites que o app tem
   (`lib/checklists/limites_do_gratis.dart` e os preços do site).
+- **Responsabilidade técnica** (decisão do Francis, 20/11/2026, D18 revista: sem revisão por engenheiro, os modelos
+  são usados como estão): o aviso `modelos.aviso.*` (título, texto e a linha do PDF) aparece na lista, na página de
+  cada modelo logo depois dos itens ou dos campos e no rodapé de cada PDF. Diz que o modelo é de referência, não
+  substitui o projeto, as normas nem a revisão do responsável técnico da obra, com o nome do profissional de cada país
+  (pt-BR "engenheiro ou arquiteto habilitado", es-ES "dirección facultativa", it-IT "direttore dei lavori", pl-PL
+  "kierownik budowy"...), sem citar número de norma nem órgão. A nota da biblioteca do app não é usada no site.
 - **Endereços:** `/pt-br/modelos-gratis` (palavra `rotas.modelos`), `/pt-br/modelos-gratis/<nome do modelo>` e
   `/pt-br/modelos-gratis/diario-de-obra-rdo` (palavra `rotas.diario`). PDF em `/modelos-pdf/<idioma>/<mesmo nome>.pdf`
   (fora das pastas dos idiomas; o build confere que cada PDF apontado existe).

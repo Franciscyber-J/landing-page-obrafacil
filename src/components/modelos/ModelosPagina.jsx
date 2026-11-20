@@ -14,7 +14,7 @@ import { comDestaque } from '../../texto.jsx';
 import { descricaoDaPagina, tituloDaPagina } from '../../seo/textos.js';
 import { useLinkComecar } from '../../useNavegador.js';
 import useCabecaDaPagina from '../conta/useCabecaDaPagina.js';
-import { BaixarPdf, Carregando, Erro, NoApp, NotaDoPdf, Trilha } from './partes.jsx';
+import { AvisoTecnico, BaixarPdf, Carregando, Erro, NoApp, NotaDoPdf, Trilha } from './partes.jsx';
 import styles from './Modelos.module.css';
 
 // Folha do diário de obra desenhada com os campos reais do app (os mesmos do PDF): mostra o que a pessoa leva.
@@ -91,7 +91,7 @@ function Checklists({ codigo, dados }) {
                     </section>
                 ))}
             </div>
-            <p className={styles.notaBiblioteca}>{dados.biblioteca.nota}</p>
+            <AvisoTecnico id="modelos-aviso" />
         </section>
     );
 }

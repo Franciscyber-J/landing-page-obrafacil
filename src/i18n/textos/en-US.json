@@ -637,6 +637,11 @@
             "feitoCom": "Made with ObraFácil",
             "conviteChecklist": "In the ObraFácil app, this template becomes a checklist with photos, reinspection and sign-off. Start free:",
             "conviteDiario": "In the ObraFácil app, the daily report comes out ready with weather, crew, photos and sign-off. Start free:"
+        },
+        "aviso": {
+            "titulo": "Professional responsibility",
+            "texto": "These templates are general-purpose references. They don't replace the project drawings and specifications, the applicable codes and standards, or professional judgment. Checking and adapting each item to the project and the applicable requirements, and taking responsibility for the work and its approval, rests with the licensed professional responsible for the project (a licensed engineer or architect). Using these templates doesn't replace that review.",
+            "pdf": "General-purpose reference template. It doesn't replace the project documents, the applicable codes or the review of the licensed professional responsible for the project (licensed engineer or architect), who is accountable for the work and its approval."
         }
     }
 }

@@ -632,6 +632,11 @@
             "feitoCom": "Tạo bằng ObraFácil",
             "conviteChecklist": "Trong ứng dụng ObraFácil, mẫu này trở thành phiếu kiểm tra có ảnh, kiểm tra lại và chữ ký. Bắt đầu miễn phí:",
             "conviteDiario": "Trong ứng dụng ObraFácil, nhật ký công trình xong ngay với thời tiết, nhân lực, ảnh và chữ ký. Bắt đầu miễn phí:"
+        },
+        "aviso": {
+            "titulo": "Trách nhiệm chuyên môn",
+            "texto": "Các mẫu chỉ mang tính tham khảo, dùng chung, không thay thế hồ sơ thiết kế, quy chuẩn và tiêu chuẩn kỹ thuật áp dụng hay đánh giá của người có chuyên môn. Việc kiểm tra, điều chỉnh từng mục cho phù hợp với thiết kế và tiêu chuẩn, cũng như chịu trách nhiệm kỹ thuật về thi công và nghiệm thu, thuộc về chỉ huy trưởng công trường và tư vấn giám sát (kỹ sư, kiến trúc sư có chứng chỉ hành nghề). Việc dùng mẫu không thay thế bước kiểm tra này.",
+            "pdf": "Mẫu tham khảo dùng chung. Không thay thế hồ sơ thiết kế, tiêu chuẩn áp dụng hay việc kiểm tra của chỉ huy trưởng và tư vấn giám sát (kỹ sư, kiến trúc sư có chứng chỉ hành nghề), những người chịu trách nhiệm về thi công và nghiệm thu."
         }
     }
 }

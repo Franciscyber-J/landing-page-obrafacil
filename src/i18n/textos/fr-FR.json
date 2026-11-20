@@ -642,6 +642,11 @@
             "feitoCom": "Réalisé avec ObraFácil",
             "conviteChecklist": "Dans l'app ObraFácil, ce modèle devient une fiche de contrôle avec photos, contre-contrôle et signature. Commencez gratuitement :",
             "conviteDiario": "Dans l'app ObraFácil, le journal de chantier sort prêt avec météo, effectif, photos et signature. Commencez gratuitement :"
+        },
+        "aviso": {
+            "titulo": "Responsabilité technique",
+            "texto": "Ces modèles sont des références d'usage général. Ils ne remplacent ni le projet et les pièces du marché, ni les normes et règles de l'art applicables, ni l'appréciation d'un professionnel. Vérifier et adapter chaque point au projet et aux règles applicables, et assumer la responsabilité technique de l'exécution et de la validation des travaux, revient au responsable technique du chantier (maître d'œuvre, architecte ou ingénieur qualifié). L'utilisation des modèles ne dispense pas de cette vérification.",
+            "pdf": "Modèle de référence d'usage général. Il ne remplace ni le projet, ni les règles applicables, ni la vérification du responsable technique du chantier (maître d'œuvre, architecte ou ingénieur qualifié), qui répond de l'exécution et de la validation des travaux."
         }
     }
 }

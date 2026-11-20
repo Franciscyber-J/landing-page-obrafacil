@@ -637,6 +637,11 @@
             "feitoCom": "ObraFácil ile hazırlandı",
             "conviteChecklist": "ObraFácil uygulamasında bu şablon fotoğraflı, yeniden kontrollü ve imzalı bir kontrol listesine dönüşür. Ücretsiz başlayın:",
             "conviteDiario": "ObraFácil uygulamasında şantiye günlüğü hava durumu, personel, fotoğraflar ve imzayla hazır çıkar. Ücretsiz başlayın:"
+        },
+        "aviso": {
+            "titulo": "Teknik sorumluluk",
+            "texto": "Şablonlar genel kullanıma yönelik referanslardır; projenin, yürürlükteki teknik mevzuat ve standartların ya da mesleki değerlendirmenin yerini tutmaz. Her maddeyi projeye ve mevzuata göre kontrol edip uyarlamak ve işin uygulanmasından ve onayından teknik olarak sorumlu olmak, işin teknik sorumlusunun (şantiye şefi, yetkili mühendis veya mimar) görevidir. Şablonların kullanılması bu kontrolü ortadan kaldırmaz.",
+            "pdf": "Genel kullanım için referans şablondur. Projenin, yürürlükteki mevzuatın ve uygulama ile onaydan sorumlu teknik sorumlunun (şantiye şefi, yetkili mühendis veya mimar) kontrolünün yerini tutmaz."
         }
     }
 }

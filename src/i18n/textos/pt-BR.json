@@ -642,6 +642,11 @@
             "feitoCom": "Feito com ObraFácil",
             "conviteChecklist": "No app ObraFácil, este modelo vira checklist com foto, reinspeção e assinatura. Comece grátis:",
             "conviteDiario": "No app ObraFácil, o diário de obra sai pronto com clima, equipe, fotos e assinatura. Comece grátis:"
+        },
+        "aviso": {
+            "titulo": "Responsabilidade técnica",
+            "texto": "Os modelos são de referência, de uso geral, e não substituem o projeto, as normas técnicas aplicáveis nem a avaliação profissional. Conferir e adaptar cada item ao projeto e às normas, e responder tecnicamente pela execução e pela liberação dos serviços, cabe ao responsável técnico da obra (engenheiro ou arquiteto habilitado). O uso dos modelos não dispensa essa revisão.",
+            "pdf": "Modelo de referência, de uso geral. Não substitui o projeto, as normas técnicas aplicáveis nem a revisão do responsável técnico da obra (engenheiro ou arquiteto habilitado), que responde pela execução e pela liberação dos serviços."
         }
     }
 }

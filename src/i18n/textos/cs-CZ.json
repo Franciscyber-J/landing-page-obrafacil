@@ -647,6 +647,11 @@
             "feitoCom": "Vytvořeno v ObraFácil",
             "conviteChecklist": "V aplikaci ObraFácil se z této šablony stane kontrolní list s fotkami, opakovanou kontrolou a podpisem. Začněte zdarma:",
             "conviteDiario": "V aplikaci ObraFácil je stavební deník hotový i s počasím, pracovníky, fotkami a podpisem. Začněte zdarma:"
+        },
+        "aviso": {
+            "titulo": "Technická odpovědnost",
+            "texto": "Šablony jsou obecné a slouží jako vodítko. Nenahrazují projektovou dokumentaci, platné předpisy a technické normy ani odborné posouzení. Zkontrolovat a přizpůsobit každý bod projektu a předpisům a nést technickou odpovědnost za provedení a převzetí prací je úkolem stavbyvedoucího nebo technického dozoru stavebníka (autorizovaný inženýr či technik). Použití šablon tuto kontrolu nenahrazuje.",
+            "pdf": "Obecná šablona pro orientaci. Nenahrazuje projektovou dokumentaci, platné předpisy ani kontrolu stavbyvedoucího nebo technického dozoru (autorizovaný inženýr či technik), který odpovídá za provedení a převzetí prací."
         }
     }
 }

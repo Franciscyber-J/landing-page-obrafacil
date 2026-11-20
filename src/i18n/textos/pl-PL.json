@@ -647,6 +647,11 @@
             "feitoCom": "Przygotowano w ObraFácil",
             "conviteChecklist": "W aplikacji ObraFácil ten wzór staje się listą kontrolną ze zdjęciami, ponowną kontrolą i podpisem. Zacznij za darmo:",
             "conviteDiario": "W aplikacji ObraFácil dziennik prac powstaje od razu z pogodą, obsadą, zdjęciami i podpisem. Zacznij za darmo:"
+        },
+        "aviso": {
+            "titulo": "Odpowiedzialność techniczna",
+            "texto": "Wzory mają charakter pomocniczy i ogólny. Nie zastępują projektu, obowiązujących przepisów i norm technicznych ani oceny fachowca. Sprawdzenie i dostosowanie każdego punktu do projektu i przepisów oraz odpowiedzialność za wykonanie i odbiór robót należą do kierownika budowy lub inspektora nadzoru (osoby z uprawnieniami budowlanymi). Korzystanie ze wzorów nie zwalnia z tej weryfikacji.",
+            "pdf": "Wzór pomocniczy do ogólnego użytku. Nie zastępuje projektu, obowiązujących przepisów ani weryfikacji przez kierownika budowy lub inspektora nadzoru (osobę z uprawnieniami budowlanymi), który odpowiada za wykonanie i odbiór robót."
         }
     }
 }

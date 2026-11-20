@@ -17,7 +17,7 @@ import {
 import { comDestaque } from '../../texto.jsx';
 import { tituloDaPagina, descricaoDaPagina } from '../../seo/textos.js';
 import useCabecaDaPagina from '../conta/useCabecaDaPagina.js';
-import { BaixarPdf, Carregando, Erro, NoApp, NotaDoPdf, ParaALista, Trilha } from './partes.jsx';
+import { AvisoTecnico, BaixarPdf, Carregando, Erro, NoApp, NotaDoPdf, ParaALista, Trilha } from './partes.jsx';
 import styles from './Modelos.module.css';
 
 // Endereço do mesmo modelo nos outros idiomas: o diário pela palavra do cadastro; o checklist pelos endereços que o
@@ -102,6 +102,7 @@ function ItensDoChecklist({ dados, modelo }) {
                     </ol>
                 </div>
             ))}
+            <AvisoTecnico id="modelo-aviso" classe={styles.avisoNosItens} />
         </section>
     );
 }
@@ -135,6 +136,7 @@ function CamposDoDiario({ dados }) {
                     </li>
                 ))}
             </ol>
+            <AvisoTecnico id="modelo-aviso" classe={styles.avisoNosItens} />
         </section>
     );
 }
@@ -225,7 +227,6 @@ function Conteudo({ codigo, dados, modelo }) {
                         <BaixarPdf codigo={codigo} modelo={modelo} nome={nome} />
                         <NotaDoPdf codigo={codigo} />
                     </div>
-                    {!diario && <p className={styles.notaBiblioteca}>{dados.biblioteca.nota}</p>}
                 </div>
 
                 <NoApp codigo={codigo} tipo={diario ? 'diario' : 'checklist'} id="modelo-no-app" />

@@ -637,6 +637,11 @@
             "feitoCom": "Gemaakt met ObraFácil",
             "conviteChecklist": "In de app ObraFácil wordt dit sjabloon een checklist met foto's, hercontrole en handtekening. Gratis starten:",
             "conviteDiario": "In de app ObraFácil is het bouwdagboek meteen klaar met weer, bezetting, foto's en handtekening. Gratis starten:"
+        },
+        "aviso": {
+            "titulo": "Technische verantwoordelijkheid",
+            "texto": "De sjablonen zijn algemene referenties. Ze vervangen niet het ontwerp en het bestek, de geldende regels en normen of het oordeel van een vakman. Elk punt controleren en afstemmen op het ontwerp en de regels, en technisch verantwoordelijk zijn voor de uitvoering en de vrijgave van het werk, is de taak van de technisch verantwoordelijke van het werk (zoals de uitvoerder, constructeur of architect). Het gebruik van de sjablonen vervangt die controle niet.",
+            "pdf": "Algemeen referentiesjabloon. Vervangt niet het ontwerp, de geldende regels of de controle door de technisch verantwoordelijke van het werk (uitvoerder, constructeur of architect), die verantwoordelijk is voor de uitvoering en de vrijgave."
         }
     }
 }

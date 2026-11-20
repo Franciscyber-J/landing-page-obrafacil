@@ -637,6 +637,11 @@
             "feitoCom": "Készült az ObraFácillal",
             "conviteChecklist": "Az ObraFácil appban ebből a sablonból fotós, újraellenőrzéses és aláírt ellenőrzőlista lesz. Kezdd ingyen:",
             "conviteDiario": "Az ObraFácil appban az építési napló időjárással, létszámmal, fotókkal és aláírással készül el. Kezdd ingyen:"
+        },
+        "aviso": {
+            "titulo": "Műszaki felelősség",
+            "texto": "A sablonok általános célú segédanyagok. Nem helyettesítik a terveket, a vonatkozó jogszabályokat és műszaki szabványokat, sem a szakember értékelését. Minden pont ellenőrzése és hozzáigazítása a tervekhez és az előírásokhoz, valamint a kivitelezésért és a munkák átvételéért viselt műszaki felelősség a felelős műszaki vezető és a műszaki ellenőr (jogosultsággal rendelkező szakember) feladata. A sablonok használata nem váltja ki ezt az ellenőrzést.",
+            "pdf": "Általános célú segédsablon. Nem helyettesíti a terveket, a vonatkozó előírásokat, sem a kivitelezésért és az átvételért felelős műszaki vezető és műszaki ellenőr (jogosultsággal rendelkező szakember) ellenőrzését."
         }
     }
 }

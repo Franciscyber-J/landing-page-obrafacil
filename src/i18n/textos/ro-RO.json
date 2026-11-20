@@ -642,6 +642,11 @@
             "feitoCom": "Realizat cu ObraFácil",
             "conviteChecklist": "În aplicația ObraFácil, acest model devine o listă de verificare cu fotografii, reinspecție și semnătură. Începeți gratuit:",
             "conviteDiario": "În aplicația ObraFácil, jurnalul de șantier iese gata cu vremea, efectivul, fotografiile și semnătura. Începeți gratuit:"
+        },
+        "aviso": {
+            "titulo": "Responsabilitate tehnică",
+            "texto": "Modelele au caracter de referință și sunt de uz general. Nu înlocuiesc proiectul, normativele și standardele tehnice aplicabile și nici evaluarea unui specialist. Verificarea și adaptarea fiecărui punct la proiect și la normative, precum și răspunderea tehnică pentru execuția și recepția lucrărilor, revin responsabilului tehnic cu execuția și dirigintelui de șantier (specialiști autorizați). Folosirea modelelor nu înlocuiește această verificare.",
+            "pdf": "Model de referință, de uz general. Nu înlocuiește proiectul, normativele aplicabile și nici verificarea responsabilului tehnic cu execuția și a dirigintelui de șantier (specialiști autorizați), care răspund de execuția și recepția lucrărilor."
         }
     }
 }

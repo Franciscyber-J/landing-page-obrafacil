@@ -124,3 +124,15 @@ test('o mapa de endereços (troca de idioma na página do modelo) bate com os no
         }
     }
 });
+
+test('o aviso de responsabilidade técnica está escrito em cada idioma (título, texto e a linha do PDF)', () => {
+    const TEXTOS = path.join(PASTA, '..', '..', 'i18n', 'textos');
+    for (const i of IDIOMAS) {
+        const aviso = JSON.parse(fs.readFileSync(path.join(TEXTOS, `${i.codigo}.json`), 'utf8')).modelos?.aviso ?? {};
+        const daBase = i.base ? JSON.parse(fs.readFileSync(path.join(TEXTOS, `${i.base}.json`), 'utf8')).modelos.aviso : {};
+        for (const campo of ['titulo', 'texto', 'pdf']) {
+            const valor = aviso[campo] ?? daBase[campo];
+            assert.ok(typeof valor === 'string' && valor.trim().length > 1, `${i.codigo}: modelos.aviso.${campo}`);
+        }
+    }
+});

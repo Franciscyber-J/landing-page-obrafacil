@@ -637,6 +637,11 @@
             "feitoCom": "Erstellt mit ObraFácil",
             "conviteChecklist": "In der App ObraFácil wird diese Vorlage zur Checkliste mit Fotos, Nachprüfung und Unterschrift. Kostenlos starten:",
             "conviteDiario": "In der App ObraFácil ist das Bautagebuch mit Wetter, Personal, Fotos und Unterschrift sofort fertig. Kostenlos starten:"
+        },
+        "aviso": {
+            "titulo": "Fachliche Verantwortung",
+            "texto": "Die Vorlagen sind allgemeine Orientierungshilfen. Sie ersetzen weder die Planung und Leistungsbeschreibung noch die geltenden technischen Regeln und Normen noch die fachliche Beurteilung. Jeden Prüfpunkt an das Bauvorhaben und die geltenden Regeln anzupassen und die Verantwortung für Ausführung und Freigabe der Leistungen zu tragen, ist Aufgabe der verantwortlichen Bauleitung (Bauleiter, Architekt oder Ingenieur mit entsprechender Qualifikation). Die Nutzung der Vorlagen ersetzt diese Prüfung nicht.",
+            "pdf": "Allgemeine Vorlage zur Orientierung. Sie ersetzt weder die Planung noch die geltenden Regeln noch die Prüfung durch die verantwortliche Bauleitung (Bauleiter, Architekt oder Ingenieur), die für Ausführung und Freigabe verantwortlich ist."
         }
     }
 }

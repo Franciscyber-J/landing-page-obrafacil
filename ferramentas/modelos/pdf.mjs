@@ -177,7 +177,7 @@ ${cabecalho({ documento: textoDoApp(dados, 'checklistPdfTitulo'), titulo: modelo
   ${campo(dados, 'checklistPdfRessalvas')}
   ${assinatura(dados)}
 </section>
-${rodape({ t, codigo, convite: t('modelos.pdf.conviteChecklist'), nota: dados.biblioteca.nota })}`;
+${rodape({ t, codigo, convite: t('modelos.pdf.conviteChecklist'), nota: t('modelos.aviso.pdf') })}`;
 }
 
 function linhasEmBranco(n) {
@@ -223,7 +223,7 @@ ${cabecalho({ titulo: nome })}
 <section class="bloco"><h2>${e(textoDoApp(dados, 'rdoFormObsTitle'))}</h2>${linhasEmBranco(3)}</section>
 <section class="bloco"><h2>${e(textoDoApp(dados, 'pdfRdoPhotosTitle'))}</h2>${linhasEmBranco(2)}</section>
 ${assinatura(dados)}
-${rodape({ t, codigo, convite: t('modelos.pdf.conviteDiario') })}`;
+${rodape({ t, codigo, convite: t('modelos.pdf.conviteDiario'), nota: t('modelos.aviso.pdf') })}`;
 }
 
 const ESTILO = `
@@ -279,7 +279,7 @@ h1 { font-size: 14pt; line-height: 1.12; font-weight: 800; color: #0f3a63; }
 .feito { font-weight: 800; color: #0f3a63; }
 .convite { flex: 1; text-align: end; }
 .convite a { color: #1a5fb8; font-weight: 700; text-decoration: none; white-space: nowrap; }
-.nota { margin-top: 1.2mm; font-size: 6.3pt; color: #6a7d90; }
+.nota { margin-top: 1.2mm; font-size: 6.3pt; color: #4a5f75; }
 `;
 
 // O HTML de um PDF. modelo: o checklist ou o diário (src/modelos/modelos.js); nome: o nome da página.

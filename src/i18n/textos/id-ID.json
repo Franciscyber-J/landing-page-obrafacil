@@ -632,6 +632,11 @@
             "feitoCom": "Dibuat dengan ObraFácil",
             "conviteChecklist": "Di aplikasi ObraFácil, templat ini menjadi daftar periksa dengan foto, pemeriksaan ulang, dan tanda tangan. Mulai gratis:",
             "conviteDiario": "Di aplikasi ObraFácil, laporan harian langsung jadi dengan cuaca, tenaga kerja, foto, dan tanda tangan. Mulai gratis:"
+        },
+        "aviso": {
+            "titulo": "Tanggung jawab teknis",
+            "texto": "Templat ini bersifat acuan untuk penggunaan umum dan tidak menggantikan dokumen perencanaan, standar teknis yang berlaku, maupun penilaian tenaga ahli. Memeriksa dan menyesuaikan tiap butir dengan perencanaan dan standar, serta bertanggung jawab secara teknis atas pelaksanaan dan persetujuan pekerjaan, adalah tugas penanggung jawab teknis proyek (insinyur atau arsitek bersertifikat). Penggunaan templat tidak menggantikan pemeriksaan tersebut.",
+            "pdf": "Templat acuan untuk penggunaan umum. Tidak menggantikan dokumen perencanaan, standar yang berlaku, maupun pemeriksaan penanggung jawab teknis proyek (insinyur atau arsitek bersertifikat) yang bertanggung jawab atas pelaksanaan dan persetujuan pekerjaan."
         }
     }
 }
