@@ -6,12 +6,12 @@ import { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Camera, TriangleAlert } from 'lucide-react';
-import { caminhoModelo, caminhoModelos } from '../../i18n/idiomas.js';
+import { caminhoModelo, caminhoModelos, idioma } from '../../i18n/idiomas.js';
 import { useRotaEquivalente } from '../../i18n/RotaDoIdioma.jsx';
 import { dadosIniciais } from '../../dadosIniciais.js';
-import { useDadosDosModelos } from '../../modelos/carregar.js';
+import { useDadosDosModelos, useEnderecosDosModelos } from '../../modelos/carregar.js';
 import {
-    CAMPOS_DO_DIARIO, caminhoDoModelo, contagem, itensPorSecao, modeloPeloSlug, modelosDoIdioma, nomeDoGrupo,
+    CAMPOS_DO_DIARIO, DIARIO, caminhoDoModelo, contagem, itensPorSecao, modeloPeloSlug, modelosDoIdioma, nomeDoGrupo,
     partesDoTexto, rotuloDoApp, textoDoApp,
 } from '../../modelos/modelos.js';
 import { comDestaque } from '../../texto.jsx';
@@ -20,15 +20,18 @@ import useCabecaDaPagina from '../conta/useCabecaDaPagina.js';
 import { BaixarPdf, Carregando, Erro, NoApp, NotaDoPdf, ParaALista, Trilha } from './partes.jsx';
 import styles from './Modelos.module.css';
 
-// Endereço do mesmo modelo nos outros idiomas: o build manda os endereços (dadosIniciais().modelos.slugs); sem eles
-// (navegando dentro do site), a lista de modelos do outro idioma.
+// Endereço do mesmo modelo nos outros idiomas: o diário pela palavra do cadastro; o checklist pelos endereços que o
+// build manda na página pronta (dadosIniciais().modelos.slugs) ou pelo mapa de endereços (navegando dentro do site).
+// Sem nenhum dos dois (o mapa ainda não chegou), a lista de modelos do outro idioma.
 function useEnderecoNosOutrosIdiomas(codigo, modelo) {
+    const enderecos = useEnderecosDosModelos();
     useRotaEquivalente((outro) => {
+        if (!modelo) return caminhoModelos(outro);
+        if (modelo.id === DIARIO) return caminhoModelo(outro, idioma(outro).rotas.diario);
         const slugs = dadosIniciais()?.modelos?.slugs;
-        if (outro === codigo && modelo) return caminhoDoModelo(codigo, modelo);
-        if (slugs?.id === modelo?.id && slugs?.porIdioma?.[outro]) return caminhoModelo(outro, slugs.porIdioma[outro]);
-        return caminhoModelos(outro);
-    }, [codigo, modelo?.id]);
+        const slug = (slugs?.id === modelo.id ? slugs.porIdioma?.[outro] : null) ?? enderecos?.[modelo.id]?.[outro];
+        return slug ? caminhoModelo(outro, slug) : caminhoModelos(outro);
+    }, [codigo, modelo?.id, enderecos]);
 }
 
 // Texto do app com os campos em branco desenhados como linha para preencher ("Data: ____ | cliente: ____").
@@ -202,7 +205,7 @@ function Conteudo({ codigo, dados, modelo }) {
                     <h1 className={styles.titulo}>{comDestaque(titulo)}</h1>
                     {conta && (
                         <p className={styles.resumo}>
-                            <span>{nomeDoGrupo(dados, modelo.grupo)}</span>
+                            {nomeDoGrupo(dados, modelo.grupo) !== modelo.nome && <span>{nomeDoGrupo(dados, modelo.grupo)}</span>}
                             <span>{t('modelos.itens', { count: conta.itens })}</span>
                             {conta.criticos > 0 && <span>{t('modelos.criticos', { count: conta.criticos })}</span>}
                             {conta.fotos > 0 && <span>{t('modelos.fotos', { count: conta.fotos })}</span>}

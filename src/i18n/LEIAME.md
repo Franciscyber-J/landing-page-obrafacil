@@ -26,6 +26,13 @@ O idioma é o começo do endereço e as palavras vêm do cadastro:
 | `/pt-br/ajuda` | `/en-us/help` | `/es-es/ayuda` |
 | `/pt-br/ajuda/assunto/financeiro-da-obra` | `/en-us/help/topic/project-finances` | `/es-es/ayuda/tema/finanzas-de-la-obra` |
 | `/pt-br/ajuda/criar-rdo` | `/en-us/help/create-daily-report` | `/es-es/ayuda/crear-informe-diario` |
+| `/pt-br/modelos-gratis` | `/en-us/free-templates` | `/es-es/plantillas-gratis` |
+| `/pt-br/modelos-gratis/alvenaria-estrutural` | `/en-us/free-templates/structural-masonry` | `/es-es/plantillas-gratis/fabrica-estructural` |
+| `/pt-br/modelos-gratis/diario-de-obra-rdo` | `/en-us/free-templates/construction-daily-report` | `/es-es/plantillas-gratis/parte-diario-de-obra` |
+
+Modelos grátis (`src/modelos/LEIAME.md`): a palavra da lista é `rotas.modelos` e a do diário de obra é `rotas.diario`
+(cadastro); o endereço de cada checklist é o nome do modelo no idioma, como o app escreve (`slugDoTexto`). O papel dos
+PDFs vem do campo `papel` do cadastro (`'carta'` em en-US, en-CA e es-MX; sem o campo, A4), como o app faz pelo país.
 
 - `/` leva ao idioma da pessoa pelo navegador, respeitando a região (`es-AR` → es-MX, `pt-AO` → pt-PT,
   `en-NZ` → en-AU); sem nenhum parecido, inglês (en-US). No servidor é um redirecionamento 302 (`.htaccess`); só

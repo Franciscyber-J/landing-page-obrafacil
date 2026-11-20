@@ -8,7 +8,7 @@
 import { useEffect, useState } from 'react';
 import { dadosIniciais } from '../dadosIniciais.js';
 
-const ARQUIVOS = import.meta.glob(['./dados/*.json', '!./dados/origem.json'], { import: 'default' });
+const ARQUIVOS = import.meta.glob(['./dados/*.json', '!./dados/origem.json', '!./dados/enderecos.json'], { import: 'default' });
 const prontos = new Map();
 
 export function dadosJaProntos(codigo) {
@@ -44,4 +44,21 @@ export function useDadosDosModelos(codigo) {
         erro: atual.erro,
         tentarDeNovo: () => setEstado({ codigo, dados: null, erro: null, vez: atual.vez + 1 }),
     };
+}
+
+// O endereço de cada checklist em cada idioma ({ <id>: { <idioma>: slug } }, src/modelos/dados/enderecos.json), para a
+// troca de idioma na página do modelo. Baixado só ali (um arquivo pequeno), depois que a página aparece.
+let enderecos = null;
+export function useEnderecosDosModelos() {
+    const [valor, setValor] = useState(enderecos);
+    useEffect(() => {
+        if (enderecos) return undefined;
+        let valendo = true;
+        import('./dados/enderecos.json').then((m) => {
+            enderecos = m.default;
+            if (valendo) setValor(enderecos);
+        }, () => {});
+        return () => { valendo = false; };
+    }, []);
+    return valor;
 }

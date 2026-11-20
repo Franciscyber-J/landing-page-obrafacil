@@ -131,7 +131,7 @@ function modelos(t, { url, codigo, base, dados }) {
     ];
 }
 
-function modelo(t, { url, titulo, descricao, codigo, base, dados }) {
+function modelo(t, { url, descricao, codigo, base, dados }) {
     const diario = dados.modelo.tipo === 'diario';
     const inicio = { nome: NOME, url: absoluto(caminhoInicio(codigo)) };
     const lista = absoluto(caminhoDaPagina({ tipo: 'modelos', codigo }));
@@ -151,7 +151,7 @@ function modelo(t, { url, titulo, descricao, codigo, base, dados }) {
         {
             '@type': 'HowTo',
             '@id': `${url}#comoUsar`,
-            name: titulo,
+            name: `${t('modelos.usar.titulo')}: ${dados.nome}`,
             description: descricao,
             inLanguage: codigo,
             step: (Array.isArray(passos) ? passos : []).map((texto, n) => ({ '@type': 'HowToStep', position: n + 1, text: texto })),
@@ -188,7 +188,7 @@ export function dadosEstruturados({ t, pagina: p, url, titulo, descricao, dados 
     } else if (p.tipo === 'modelos') {
         grafo.push(...modelos(t, { url, codigo, base, dados }));
     } else if (p.tipo === 'modelo') {
-        grafo.push(...modelo(t, { url, titulo, descricao, codigo, base, dados }));
+        grafo.push(...modelo(t, { url, descricao, codigo, base, dados }));
     } else {
         grafo.push(base);
     }

@@ -14,8 +14,9 @@
 //     seções, não conformidade, liberação) e os campos do diário de obra (clima, efetivo, atividades, fotos,
 //     responsável técnico). Os {nome} dos textos do app ficam como estão: o PDF do site troca por um espaço em branco
 //     para preencher à mão.
-// Grava src/modelos/dados/<idioma do site>.json (um por idioma) e src/modelos/dados/origem.json (commit e data do app
-// de onde veio a cópia). Nada é inventado: falta um modelo, um item ou um texto em algum idioma, para com o erro.
+// Grava src/modelos/dados/<idioma do site>.json (um por idioma), src/modelos/dados/enderecos.json (o endereço de cada
+// checklist em cada idioma, para a troca de idioma na página do modelo levar ao mesmo modelo) e
+// src/modelos/dados/origem.json (commit e data do app de onde veio a cópia). Nada é inventado: falta um modelo, um item ou um texto em algum idioma, para com o erro.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -26,6 +27,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DESTINO = path.join(RAIZ, 'src', 'modelos', 'dados');
 const { IDIOMAS } = await import(pathToFileURL(path.join(RAIZ, 'src', 'i18n', 'idiomas.js')).href);
+const { slugDoModelo } = await import(pathToFileURL(path.join(RAIZ, 'src', 'modelos', 'modelos.js')).href);
 
 // Mesma relação do app (baseDaVariante em biblioteca_de_checklists.dart).
 const BASE_DA_VARIANTE = { pt_PT: 'pt_BR', en_GB: 'en_US', en_AU: 'en_US', en_CA: 'en_US', es_MX: 'es_ES' };
@@ -179,6 +181,13 @@ export function lerDoApp(pasta) {
         const dados = montarIdioma({ estrutura, textos, arb: lerJson(arquivoArb), codigo: i.codigo, erros });
         arquivos.set(`${i.codigo}.json`, `${JSON.stringify(dados, null, 1)}\n`);
     }
+    const enderecos = {};
+    for (const [nome, conteudo] of arquivos) {
+        const dados = JSON.parse(conteudo);
+        for (const m of dados.biblioteca.modelos) (enderecos[m.id] ??= {})[dados.idioma] = slugDoModelo(m);
+        void nome;
+    }
+    arquivos.set('enderecos.json', `${JSON.stringify(enderecos)}\n`);
     const origem = origemDoApp(pasta);
     arquivos.set('origem.json', `${JSON.stringify({
         _leia: 'Copiado do app (gestao_obras) por "npm run modelos -- copiar". Não edite os arquivos desta pasta à mão.',
@@ -205,7 +214,7 @@ function principal() {
         fs.mkdirSync(DESTINO, { recursive: true });
         for (const nome of fs.readdirSync(DESTINO)) if (nome.endsWith('.json') && !arquivos.has(nome)) fs.rmSync(path.join(DESTINO, nome));
         for (const [nome, conteudo] of arquivos) fs.writeFileSync(path.join(DESTINO, nome), conteudo);
-        console.log(`Modelos copiados do app: ${arquivos.size - 1} idioma(s) em src/modelos/dados (app ${JSON.parse(arquivos.get('origem.json')).commit?.slice(0, 8) ?? 'sem git'}).`);
+        console.log(`Modelos copiados do app: ${arquivos.size - 2} idioma(s) em src/modelos/dados (app ${JSON.parse(arquivos.get('origem.json')).commit?.slice(0, 8) ?? 'sem git'}).`);
         return;
     }
     if (comando === 'conferir') {

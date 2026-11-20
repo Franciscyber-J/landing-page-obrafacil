@@ -120,6 +120,10 @@ flutuando. O escuro é o mundo principal; o claro tem a mesma forma com luzes ma
   celular do meio, ações, lojas; três celulares em leque com a planta baixa desenhando atrás.
 - Cartões de vidro nas listas (pontos do cliente, papéis, depoimentos, perguntas, plano grátis).
 - Central de Ajuda e Termos/Política no mesmo mundo (luzes no topo da Central, cabeça em painel nos Termos).
+- Modelos grátis (`src/components/modelos/`): a lista com cabeça em painel, a folha do diário desenhada com os campos
+  reais do app e os grupos em duas colunas como o índice de um manual (cada linha com o PDF direto); a página de cada
+  modelo em coluna de leitura, com cada item desenhado como a linha da ficha de papel (número, texto do app e as três
+  caixas das respostas) e o painel azul "No ObraFácil" que leva ao app.
 
 ## Motion
 

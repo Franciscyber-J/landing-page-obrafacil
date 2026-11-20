@@ -17,6 +17,11 @@ o site a partir do GitHub: os arquivos vão para `public_html/appobrafacil`. Os 
    idiomas de `src/ajuda/idiomas.js` (29 desde a 2.0); faltando um, o build para (ver abaixo).
 3. Pasta dos pacotes fora do projeto: `D:\Projetos\pacotes_site` (o `npm run pacote` cria se não existir e recusa
    pasta dentro do projeto).
+4. Modelos grátis (`src/modelos/LEIAME.md`): os checklists e o diário de obra do site são cópia do app. Se os modelos
+   prontos ou os textos dos PDFs do app mudaram (`assets/checklists`, ARB), primeiro a versão do app que os traz e
+   depois `npm run modelos -- copiar D:\Projetos\gestao_obras` (com a `main` do gestao_obras), commit e merge. O
+   `npm run modelos -- conferir D:\Projetos\gestao_obras` diz se a cópia está igual ao app.
+5. Uma vez só no computador: `npx playwright install chromium` (o build desenha os PDFs dos modelos com ele).
 
 ## Gerar o pacote (no computador dele, que lê o Firestore)
 
@@ -35,7 +40,12 @@ npm run pacote -- D:\Projetos\pacotes_site
 
 O `npm run build` faz tudo: confere os idiomas, gera o site, desenha as páginas prontas de cada idioma (lendo a
 Central e os Termos no Firestore, só leitura) e grava o `sitemap.xml` (índice), um `sitemap-<idioma>.xml` por idioma,
-`robots.txt` e `llms.txt`. No fim ele confere todas as páginas e para com erro se alguma estiver errada.
+`robots.txt` e `llms.txt`, mais os PDFs dos modelos grátis em `modelos-pdf/` (812: 28 modelos em 29 idiomas, uma
+folha cada; os já desenhados ficam guardados em `node_modules/.cache` e o build seguinte só desenha o que mudou). No
+fim ele confere todas as páginas (e que cada PDF apontado existe) e para com erro se alguma estiver errada.
+- `não consegui abrir o Chromium para gerar os PDFs dos modelos` = falta o passo 5 de "Antes".
+- `PDFs dos modelos fora do tamanho` = um modelo passou de uma folha (texto novo maior no app): mande a mensagem para
+  o Claude ajustar o desenho (`ferramentas/modelos/pdf.mjs`).
 
 - Tem que terminar com `Conferência: ... página(s) pronta(s) sem problema.` A linha `Páginas prontas: ...` mostra
   quantas saíram (com os 29 idiomas e a Central de 02/11/2026: `ajuda 29, assunto 406, artigo 4705`).
@@ -93,6 +103,8 @@ Tem que terminar com "Tudo certo." (inclui os 29 idiomas, a direção da escrita
 de cada idioma, os 301 e os 410 da Central e o instalador do Windows). Depois, no navegador: `/` leva ao idioma certo, a troca de idioma mantém a
 página, a Central abre um artigo, `/termos-de-uso/` abre os Termos no idioma do navegador, e o console (F12) não
 mostra erro (avisos de `Content-Security-Policy-Report-Only` são anotados para a decisão de ativar a CSP).
+Modelos grátis: `/pt-br/modelos-gratis` abre a lista, um modelo abre com os itens, o botão "Baixar o PDF" baixa a
+folha (A4; Carta em en-US, en-CA e es-MX) e a troca de idioma na página de um modelo leva ao mesmo modelo.
 O logo dos e-mails abre como imagem: `https://appobrafacil.expertbr.com/email/logo-obrafacil.png` (352 × 78, PNG).
 
 ## Avisar o Google (Search Console, propriedade do domínio expertbr.com)

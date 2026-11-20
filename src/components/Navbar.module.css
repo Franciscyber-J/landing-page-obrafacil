@@ -232,7 +232,10 @@
   display: none !important;
 }
 
-@media (max-width: 1020px) {
+/* Menu recolhido (botão de menu) até 1140 px: com os quatro links (Recursos, Preços, Modelos grátis e Central de Ajuda),
+   os idiomas de palavras longas (russo, francês, húngaro, alemão, grego) passavam da largura da tela entre 1021 e
+   1140 px. */
+@media (max-width: 1140px) {
   .links,
   .direita {
     display: none;
