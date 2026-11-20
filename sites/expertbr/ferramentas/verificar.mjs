@@ -150,7 +150,7 @@ export const ENDERECOS_DO_OBRAFACIL = [
     ['/download/Instalador_ObraFacil_Windows.exe', null], ['/nao-existe-xyz', null], ['/wp-admin/', null], ['/planos/', null],
 ];
 // Cabeçalhos que mudam sozinhos a cada pedido (data, identificador do pedido na CDN, estado do cache da CDN).
-const VARIAM = ['date', 'x-hcdn-request-id', 'x-hcdn-cache-status', 'x-hcdn-upstream-rt', 'age', 'alt-svc', 'set-cookie', 'connection', 'keep-alive', 'transfer-encoding', 'content-length', 'etag', 'last-modified'];
+const VARIAM = ['date', 'x-hcdn-request-id', 'x-hcdn-cache-status', 'x-hcdn-upstream-rt', 'age', 'alt-svc', 'set-cookie', 'connection', 'keep-alive', 'transfer-encoding', 'content-length', 'etag', 'last-modified', 'expires'];
 
 async function fotografar() {
     const foto = {};
