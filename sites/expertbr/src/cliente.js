@@ -34,6 +34,11 @@ if (menu) {
     menu.addEventListener('toggle', () => {
         if (!menu.open) return;
         const lista = menu.querySelector('ul');
+        // As bandeiras da lista chegam com loading="lazy" (só baixam quando o menu abre). O Safari do iPhone não baixa
+        // imagem "lazy" que estava escondida num <details> fechado nem depois de abrir: ao abrir, passam a "eager".
+        lista?.querySelectorAll('img[loading="lazy"]').forEach((img) => {
+            img.loading = 'eager';
+        });
         const atual = lista?.querySelector('[aria-current="true"]');
         if (lista && atual) lista.scrollTop = atual.offsetTop - lista.clientHeight / 2 + atual.clientHeight / 2;
     });
