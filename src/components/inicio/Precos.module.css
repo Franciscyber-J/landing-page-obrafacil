@@ -19,8 +19,6 @@
   border-radius: var(--pilula);
   background: var(--vidro);
   border: 1px solid var(--vidro-borda);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
 }
 
 .periodo button {
@@ -67,8 +65,6 @@
   border-radius: var(--raio-g);
   background: var(--vidro);
   border: 1px solid var(--vidro-borda);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
 }
 
 .pro {
@@ -270,4 +266,18 @@
     gap: 4px 8px;
   }
 
+}
+
+/* Desfoque do vidro só com mouse: no toque o fundo atrás é liso e o desfoque só criava camadas que o Safari do iPhone
+   apagava e redesenhava ao rolar (ver .acao-contorno em src/index.css). */
+@media (hover: hover) and (pointer: fine) {
+  .periodo {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .gratis {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
 }

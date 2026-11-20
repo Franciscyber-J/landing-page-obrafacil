@@ -36,8 +36,11 @@ export default function FitaDeObra() {
         const s = sentidoDoIdioma(codigo);
         mm.add(COM_MOVIMENTO, () => {
             const [a, b] = gsap.utils.toArray('[data-m="trilho"]', raiz.current);
-            const ida = gsap.to(a, { xPercent: -50 * s, duration: 38, ease: 'none', repeat: -1 });
-            const volta = gsap.fromTo(b, { xPercent: -50 * s }, { xPercent: 0, duration: 44, ease: 'none', repeat: -1 });
+            // force3D: false: o trilho anda em 2D, sem virar camada separada. Em 3D (o padrão do GSAP durante a
+            // animação), ele ficava em camada mesmo parado fora da tela, e todo o resto da página, que vem depois dele,
+            // era juntado em camadas do tamanho da página, que o Safari do iPhone apagava e redesenhava ao rolar.
+            const ida = gsap.to(a, { xPercent: -50 * s, duration: 38, ease: 'none', repeat: -1, force3D: false });
+            const volta = gsap.fromTo(b, { xPercent: -50 * s }, { xPercent: 0, duration: 44, ease: 'none', repeat: -1, force3D: false });
             // A velocidade da rolagem dá um empurrão nas fitas, que voltam ao ritmo normal aos poucos.
             const gatilho = ScrollTrigger.create({
                 trigger: raiz.current,

@@ -32,7 +32,7 @@ export default function Footer({ comChamada = true }) {
             <div className={`container ${styles.grade}`}>
                 <div className={styles.marca}>
                     <Link to={caminhoInicio(codigo)} className={styles.logo} aria-label={t('nav.inicio')}>
-                        <img src={publico('logo_transparente.png')} alt="ObraFácil" width="1050" height="238" loading="lazy" />
+                        <img src={publico('logo-obrafacil.webp')} alt="ObraFácil" width="529" height="120" loading="lazy" decoding="async" />
                     </Link>
                     <p className={styles.frase}>{t('footer.tagline')}</p>
                     <label className={styles.idioma}>

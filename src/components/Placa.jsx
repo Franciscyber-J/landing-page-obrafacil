@@ -96,6 +96,21 @@ export default function Placa() {
         });
     }, { scope: raiz, dependencies: [codigo], revertOnUpdate: true });
 
+    // Luzes do fundo e celulares flutuando só andam com a placa na tela: fora dela, a seção ganha data-parado e o CSS
+    // para as duas animações sem fim (index.css e Placa.module.css). Rodando sempre, elas mantinham camadas enormes
+    // vivas enquanto a pessoa lia o resto da página, e o Safari do iPhone apagava e redesenhava o conteúdo ao voltar.
+    // Atributo posto direto no elemento depois de montar: a página pronta do build e a hidratação não mudam.
+    useEffect(() => {
+        const secao = raiz.current;
+        if (!secao || typeof IntersectionObserver === 'undefined') return undefined;
+        const observador = new IntersectionObserver(([e]) => secao.toggleAttribute('data-parado', !e.isIntersecting));
+        observador.observe(secao);
+        return () => {
+            observador.disconnect();
+            secao.removeAttribute('data-parado');
+        };
+    }, []);
+
     // Depois da primeira tela, baixa as outras três em segundo plano (troca sem espera).
     useEffect(() => {
         const id = window.setTimeout(() => {

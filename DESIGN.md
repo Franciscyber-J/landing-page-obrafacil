@@ -107,6 +107,12 @@ flutuando. O escuro é o mundo principal; o claro tem a mesma forma com luzes ma
 
 - Profundidade por vidro (desfoque do que está atrás), luzes e sombras longas e suaves (`--sombra`,
   `--sombra-forte`); o botão laranja tem uma sombra laranja.
+- No toque (celular, tablet: `(hover: none), (pointer: coarse)`), o vidro dos cartões, abas e botões fica sem o
+  desfoque (o fundo atrás deles é liso, então o visual é o mesmo) e as luzes são gradientes parados no lugar do
+  desfoque de 90 px. A barra do topo e o aviso de cookies, que ficam por cima do texto que passa, mantêm o desfoque.
+  Motivo: no Safari do iPhone cada desfoque e cada `will-change` vira uma camada guardada na memória, e com muitas
+  ele apagava e redesenhava as áreas ao rolar de volta (relato do Francis, 20/11/2026). Desfoque novo em cartão
+  dentro da página entra só em `@media (hover: hover) and (pointer: fine)`.
 
 ## Shapes
 
@@ -135,7 +141,10 @@ flutuando. O escuro é o mundo principal; o claro tem a mesma forma com luzes ma
 - Momentos: a placa monta ao abrir; fitas de obra cruzadas; mensagens do cliente chegando; celular
   parado com a tela trocando nos recursos (tela larga); títulos que sobem linha por linha (máscara
   com folga para o acento); inclinação 3D e botões magnéticos só com mouse; linha de leitura na barra.
-- Luzes do fundo (`.luzes`) vagam devagar (16 a 20 s) e param com "menos movimento".
+- Luzes do fundo (`.luzes`) vagam devagar (16 a 20 s) e param com "menos movimento"; no toque ficam paradas.
+- Animação sem fim só anda com a área na tela (luzes e celulares da abertura param com `data-parado`; as fitas de
+  obra pausam fora da tela e andam em 2D, `force3D: false`). `will-change` só onde há inclinação com mouse
+  (`.palco-3d` com `(hover: hover) and (pointer: fine)`), nunca permanente no toque.
 - Direita para a esquerda: o que se move em X espelha. No GSAP, `x`, `xPercent`, `rotationY` e `rotationZ` são
   multiplicados por `sentidoDoIdioma(codigo)` e o `transformOrigin` usa `inicioDoIdioma(codigo)`
   (`src/movimento/sentido.js`, pelo cadastro do idioma, sem depender do navegador); no CSS, `var(--sentido)`. O que

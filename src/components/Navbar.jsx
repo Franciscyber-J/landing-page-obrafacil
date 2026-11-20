@@ -194,7 +194,9 @@ export default function Navbar() {
                         }
                     }}
                 >
-                    <img src={publico('logo_transparente.png')} alt="ObraFácil" width="1050" height="238" />
+                    {/* Logotipo no tamanho em que aparece (até 30 px de altura, 4x para telas de alta densidade): 23 KB em vez dos
+                        180 KB do PNG original, que continua em public/ para quem já tem o endereço dele. */}
+                    <img src={publico('logo-obrafacil.webp')} alt="ObraFácil" width="529" height="120" decoding="async" />
                 </Link>
 
                 <nav className={styles.links} aria-label={t('nav.navegacao')}>
