@@ -204,9 +204,12 @@ body {
   top: calc(100% + 10px);
   inset-inline-end: 0;
   width: min(300px, calc(100vw - 32px));
-  max-height: min(440px, 70vh);
+  /* Uns 7 idiomas à vista (44 px cada) e o começo do oitavo, para mostrar que a lista rola (pedido do Francis, 20/11). */
+  max-height: min(350px, 60vh);
   overflow-y: auto;
   overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--linha) transparent;
   padding: 8px;
   background: var(--superficie);
   border: 1px solid var(--linha);
@@ -1015,13 +1018,15 @@ body {
     display: none;
   }
 
-  /* No celular a lista de idiomas ocupa a largura da tela, logo abaixo da barra (não sai pela lateral). */
+  /* No celular a lista abre logo abaixo da barra, do lado do botão, no mesmo tamanho do computador (uns 7 idiomas e a
+     barra de rolagem), sem cobrir a tela inteira e sem sair pela lateral. */
   .idiomas__lista {
     position: fixed;
     top: 80px;
-    inset-inline: 16px;
-    width: auto;
-    max-height: calc(100vh - 112px);
+    inset-inline-start: auto;
+    inset-inline-end: max(16px, env(safe-area-inset-right, 0px));
+    width: min(300px, calc(100vw - 32px));
+    max-height: min(350px, calc(100vh - 112px));
   }
 
   /* Ações com o nome do app podem ser longas em alguns idiomas (turco, alemão): quebram a linha. */
