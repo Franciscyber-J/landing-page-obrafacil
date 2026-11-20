@@ -104,6 +104,7 @@
     },
     "cliente": {
         "titulo": "Chega de responder **«como está a obra?»**",
+        "digitando": "a escrever…",
         "texto": "O cliente recebe um convite por e-mail e acompanha a obra pelo Portal do Cliente, sem pagar nada: fotografias, diários, cronograma e o resumo das finanças.",
         "msg1": "Olá! Está tudo bem? Como está a obra? Tem fotografias de hoje?",
         "msg2": "Na próxima sexta-feira já dá para ver os pavimentos?",

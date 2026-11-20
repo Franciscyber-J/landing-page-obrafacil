@@ -69,61 +69,274 @@
   color: var(--sobre-laranja);
 }
 
-/* Conversa genérica (sem imitar a marca de nenhum aplicativo de mensagens) */
+/* Conversa do WhatsApp num celular (pedido do Francis, 20/11/2026): moldura de celular como a das telas do portal,
+   cabeçalho, fundo com desenhos leves, balões com a pontinha, hora e tiques, e a barra de escrever. As cores são as
+   do WhatsApp no claro e no escuro (--conversa-* em design-tokens.css). */
 .conversa {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 16px 14px 20px;
-  border-radius: var(--raio-g);
-  background: var(--vidro-forte);
-  border: 1px solid var(--vidro-borda);
-  box-shadow: var(--sombra);
+  max-width: 380px;
+  border: 6px solid var(--conversa-moldura);
+  border-radius: 36px;
+  overflow: hidden;
+  background: var(--conversa-fundo);
+  box-shadow: var(--sombra-forte);
+  color: var(--conversa-texto);
+  container-type: inline-size;
 }
 
+.cabeca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 10px 10px;
+  background: var(--conversa-cabeca);
+  color: var(--conversa-cabeca-texto);
+}
+
+.voltar {
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+
+.avatar {
+  flex: none;
+  display: grid;
+  place-items: end center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--conversa-avatar);
+  color: var(--conversa-avatar-icone);
+}
+
+.avatar svg {
+  width: 34px;
+  height: 34px;
+  margin-bottom: -6px;
+  stroke-width: 1.6;
+}
+
+.quem {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  line-height: 1.25;
+}
+
+/* Nome do contato: até duas linhas (nome comprido em alemão, grego, turco... não é cortado no celular estreito). */
 .contato {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
   font-weight: 700;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--linha);
+  font-size: 0.9375rem;
+  overflow-wrap: anywhere;
+}
+
+.status {
+  overflow: hidden;
+  font-size: 0.75rem;
+  color: var(--conversa-cabeca-texto-2);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* "digitando..." no cabeçalho: só durante a animação (começa fechado). */
+.statusDigitando {
+  display: none;
+}
+
+.acoes {
+  flex: none;
+  display: flex;
+  gap: 14px;
+  padding-inline-end: 2px;
+}
+
+.acoes svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* A área da conversa: o fundo bege (ou escuro) com os desenhos por baixo dos balões. */
+.tela {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 14px 14px;
+}
+
+.desenho {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  color: var(--conversa-desenho);
 }
 
 .dia {
   align-self: center;
-  padding: 2px 10px;
-  border-radius: var(--pilula);
-  background: var(--fundo-2);
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: var(--conversa-dia);
+  box-shadow: var(--conversa-sombra);
   font-size: 0.75rem;
-  color: var(--texto-2);
+  color: var(--conversa-dia-texto);
 }
 
+/* Balões. A hora fica no canto de baixo, no fim da linha: o ::after reserva o espaço dela na última linha do texto
+   (como o WhatsApp faz), e ela é posta por cima, no fim do balão. */
 .recebida,
 .enviada {
-  max-width: 88%;
-  padding: 9px 12px 7px;
+  position: relative;
+  max-width: 86%;
+  padding: 6px 9px 8px;
+  border-radius: 8px;
   font-size: 0.9375rem;
-  line-height: 1.4;
-  border-radius: 18px;
+  line-height: 1.38;
+  overflow-wrap: anywhere;
+  box-shadow: var(--conversa-sombra);
 }
 
-.recebida span,
-.enviada span {
-  display: block;
-  margin-top: 2px;
-  font-size: 0.6875rem;
-  color: var(--texto-2);
-  text-align: end;
+.recebida::after,
+.enviada::after {
+  content: '';
+  display: inline-block;
+  width: 3.4em;
+}
+
+.enviada::after {
+  width: 4.8em;
 }
 
 .recebida {
   align-self: flex-start;
-  background: var(--fundo-2);
-  border-end-start-radius: 6px;
+  background: var(--conversa-recebida);
 }
 
 .enviada {
   align-self: flex-end;
-  background: rgba(26, 95, 184, 0.14);
-  border-end-end-radius: 6px;
+  background: var(--conversa-enviada);
+}
+
+.hora {
+  position: absolute;
+  inset-inline-end: 8px;
+  bottom: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.6875rem;
+  line-height: 1;
+  color: var(--conversa-hora);
+}
+
+.enviada .hora {
+  color: var(--conversa-hora-enviada);
+}
+
+.tiques {
+  width: 16px;
+  height: 16px;
+  color: var(--conversa-tiques);
+  stroke-width: 2.4;
+}
+
+/* A pontinha do primeiro balão de cada lado: um triângulo grudado no canto de cima, do lado de quem fala. Ele espelha
+   na escrita da direita para a esquerda (scale com --sentido), junto com o balão. */
+.ponta {
+  margin-top: 8px;
+}
+
+.ponta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 8px;
+  height: 13px;
+  background: inherit;
+  scale: var(--sentido) 1;
+}
+
+.recebida.ponta {
+  border-start-start-radius: 0;
+}
+
+.recebida.ponta::before {
+  inset-inline-start: -8px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.enviada.ponta {
+  border-start-end-radius: 0;
+}
+
+.enviada.ponta::before {
+  inset-inline-end: -8px;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+/* Barra de escrever (desenho, não é um campo de verdade). */
+.barra {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px 14px;
+}
+
+.campo {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--conversa-campo);
+  box-shadow: var(--conversa-sombra);
+  color: var(--conversa-icone);
+}
+
+.campo svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+
+.dica {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  font-size: 0.9375rem;
+  color: var(--conversa-campo-texto);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.microfone {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--conversa-microfone);
+  color: var(--conversa-microfone-icone);
+}
+
+.microfone svg {
+  width: 20px;
+  height: 20px;
 }
 
 .aviso {
@@ -149,22 +362,99 @@
   width: min(210px, 62%) !important;
 }
 
-/* "Digitando...": só aparece durante a animação (começa fechado). */
+/* Celular estreito (a coluna do "antes" na tela larga tem uns 240 px): sai a câmera de vídeo do cabeçalho e a câmera
+   da barra, como o próprio WhatsApp faz quando falta espaço, para o nome do contato e o "Mensagem" caberem. */
+@container (max-width: 300px) {
+  .cabeca {
+    gap: 5px;
+    padding-inline: 6px;
+  }
+
+  .voltar {
+    width: 18px;
+    height: 18px;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .avatar svg {
+    width: 28px;
+    height: 28px;
+    margin-bottom: -5px;
+  }
+
+  .contato {
+    font-size: 0.875rem;
+  }
+
+  .acoes {
+    gap: 10px;
+    padding-inline-end: 0;
+  }
+
+  .acoes svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .acoes svg:first-child,
+  .campo svg:last-child {
+    display: none;
+  }
+
+  .campo {
+    gap: 8px;
+    padding: 0 10px;
+  }
+}
+
+/* Mais estreito (a coluna do "antes" na tela larga): letra menor no "Mensagem" e no microfone. */
+@container (max-width: 250px) {
+  .dica {
+    font-size: 0.875rem;
+  }
+
+  .campo {
+    gap: 6px;
+    min-height: 38px;
+    padding: 0 9px;
+  }
+
+  .microfone {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* Mais estreito ainda (tela larga entre 1021 e 1200 px): o cabeçalho fica só com o menu e a barra só com o emoji. */
+@container (max-width: 220px) {
+  .acoes svg:nth-child(2),
+  .campo svg:nth-child(3) {
+    display: none;
+  }
+}
+
+/* Balão do "digitando": só aparece durante a animação (começa fechado). */
 .digitando {
   display: none;
   align-self: flex-start;
   gap: 4px;
-  padding: 0 12px;
-  border-radius: 18px;
-  background: var(--fundo-2);
+  margin-top: 8px;
+  padding: 0 13px;
+  border-radius: 8px;
+  background: var(--conversa-recebida);
+  box-shadow: var(--conversa-sombra);
 }
 
 .digitando i {
-  width: 6px;
-  height: 6px;
-  margin: 11px 0;
+  width: 7px;
+  height: 7px;
+  margin: 13px 0;
   border-radius: 50%;
-  background: var(--texto-2);
+  background: var(--conversa-hora);
   animation: pulo 900ms ease-in-out infinite;
 }
 
@@ -185,6 +475,18 @@
   .grade {
     grid-template-columns: 1fr;
     gap: 48px;
+  }
+}
+
+@media (max-width: 760px) {
+  .conversa {
+    border-radius: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .digitando i {
+    animation: none;
   }
 }
 
