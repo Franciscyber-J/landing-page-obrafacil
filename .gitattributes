@@ -1,3 +1,4 @@
 # O .htaccess vai para a Hostinger exatamente como está na pasta: sempre com o fim de linha do Linux (LF),
 # também no Windows (onde o Git troca por CRLF ao baixar). Os testes de ferramentas/hospedagem conferem isso.
 hospedagem/.htaccess text eol=lf
+sites/expertbr/hospedagem/.htaccess text eol=lf

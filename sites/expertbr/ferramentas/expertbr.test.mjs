@@ -13,7 +13,8 @@ import { ESTADOS, PRODUTOS, arquivosDasTelas } from '../src/produtos.js';
 
 const PASTA = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const RAIZ = path.resolve(PASTA, '..', '..');
-const htaccess = fs.readFileSync(ARQUIVO, 'utf8');
+// No Windows o Git pode ter baixado com CRLF numa cópia antiga: a comparação é pelo texto, com o fim de linha do Linux.
+const htaccess = fs.readFileSync(ARQUIVO, 'utf8').replace(/\r\n/g, '\n');
 const linhas = htaccess.split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('#'));
 
 test('textos dos 29 idiomas completos e coerentes (npm run expertbr:idiomas)', () => {
