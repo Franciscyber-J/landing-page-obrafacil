@@ -138,8 +138,17 @@ button {
   background: var(--vidro);
   color: var(--texto);
   border: 1px solid var(--vidro-borda);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Desfoque do vidro só com mouse (computador). No toque (celular, tablet) o fundo atrás dos cartões é liso (cor ou
+   gradiente), então o vidro fica igual sem o desfoque; com ele, cada cartão virava uma camada à parte no Safari do
+   iPhone, que apagava e redesenhava as áreas ao rolar de volta (relato do Francis, 20/11/2026). A barra do topo e o
+   aviso de cookies ficam por cima do texto que passa e mantêm o desfoque em todos os aparelhos. */
+@media (hover: hover) and (pointer: fine) {
+  .acao-contorno {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
 }
 
 .acao-contorno:hover {
@@ -204,6 +213,56 @@ button {
 
   .luzes::after {
     animation: vagar 20s ease-in-out infinite reverse;
+  }
+
+  /* Fora da tela as luzes param (data-parado vem da Placa): animação sem parar mantinha camadas enormes vivas
+     enquanto a pessoa lia o resto da página. Voltam a andar quando a primeira dobra aparece de novo. */
+  [data-parado] .luzes::before,
+  [data-parado] .luzes::after {
+    animation: none;
+  }
+}
+
+/* No toque (celular, tablet): as mesmas manchas, pintadas como gradiente (sem o desfoque de 90 px) e paradas.
+   O desfoque animado virava duas camadas de mais de 1000 x 1000 px (x3 na tela do iPhone) que o Safari descartava
+   e redesenhava ao rolar. A caixa cresce 200 px para cada lado, o espaço que o desfoque ocupava, e o gradiente segue
+   a curva do desfoque (cheio no meio, metade na borda do círculo, some 180 px depois dela). Primeiro um gradiente
+   simples, para o Safari antigo que não conhece color-mix. */
+@media (hover: none), (pointer: coarse) {
+  .luzes::before,
+  .luzes::after {
+    filter: none;
+    animation: none;
+  }
+
+  .luzes::before {
+    width: 960px;
+    height: 960px;
+    top: -380px;
+    inset-inline-end: -340px;
+    background: radial-gradient(closest-side, var(--luz-azul) 21%, transparent 96%);
+    background: radial-gradient(closest-side,
+        var(--luz-azul) 21%,
+        color-mix(in srgb, var(--luz-azul) 84%, transparent) 40%,
+        color-mix(in srgb, var(--luz-azul) 50%, transparent) 58%,
+        color-mix(in srgb, var(--luz-azul) 16%, transparent) 77%,
+        color-mix(in srgb, var(--luz-azul) 2%, transparent) 96%,
+        transparent);
+  }
+
+  .luzes::after {
+    width: 860px;
+    height: 860px;
+    bottom: -360px;
+    inset-inline-start: -400px;
+    background: radial-gradient(closest-side, var(--luz-laranja) 12%, transparent 95%);
+    background: radial-gradient(closest-side,
+        var(--luz-laranja) 12%,
+        color-mix(in srgb, var(--luz-laranja) 84%, transparent) 33%,
+        color-mix(in srgb, var(--luz-laranja) 50%, transparent) 53%,
+        color-mix(in srgb, var(--luz-laranja) 16%, transparent) 74%,
+        color-mix(in srgb, var(--luz-laranja) 2%, transparent) 95%,
+        transparent);
   }
 }
 
@@ -331,8 +390,14 @@ button {
   background: var(--vidro);
   border: 1px solid var(--vidro-borda);
   border-radius: var(--raio-g);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+}
+
+/* Desfoque só com mouse: ver .acao-contorno. */
+@media (hover: hover) and (pointer: fine) {
+  .vidro {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
 }
 
 /* Moldura de aparelho para as telas reais do app */
@@ -390,14 +455,19 @@ button {
   scale: -1 1;
 }
 
-/* Perspectiva para as telas inclinadas em 3D */
+/* Perspectiva para as telas inclinadas em 3D (as entradas giram em 3D em todos os aparelhos). */
 .palco-3d {
   perspective: 1400px;
 }
 
-.palco-3d > * {
-  transform-style: preserve-3d;
-  will-change: transform;
+/* Preparo permanente para a inclinação que segue o ponteiro: só com mouse, onde ela existe. No toque, cada filho
+   virava uma camada guardada o tempo todo (os celulares e os dois cartões de preço), e o vidro dentro dela
+   piscava e sumia no Safari do iPhone. As entradas em 3D continuam: o GSAP cria a camada só enquanto anima. */
+@media (hover: hover) and (pointer: fine) {
+  .palco-3d > * {
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
 }
 
 /* Sobre os painéis azuis o destaque usa o laranja claro (contraste alto no azul, nos dois temas). */

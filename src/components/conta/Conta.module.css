@@ -141,8 +141,6 @@
   border-radius: var(--raio-g);
   background: var(--vidro);
   border: 1px solid var(--vidro-borda);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
   box-shadow: var(--sombra);
 }
 
@@ -361,8 +359,6 @@
   border-radius: var(--raio-g);
   background: var(--vidro);
   border: 1px solid var(--vidro-borda);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
   box-shadow: var(--sombra);
 }
 
@@ -442,5 +438,19 @@
 
   .gradeCanais {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Desfoque do vidro só com mouse: no toque o fundo atrás é liso e o desfoque só criava camadas que o Safari do iPhone
+   apagava e redesenhava ao rolar (ver .acao-contorno em src/index.css). */
+@media (hover: hover) and (pointer: fine) {
+  .cartao {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .canal {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
   }
 }

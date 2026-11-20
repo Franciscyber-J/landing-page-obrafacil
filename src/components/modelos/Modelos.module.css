@@ -392,8 +392,6 @@
   border-radius: var(--raio-g);
   background: var(--vidro);
   border: 1px solid var(--vidro-borda);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
 }
 
 /* Aviso de responsabilidade técnica: perto dos itens, sóbrio (sem cor de alerta), com o ícone do escudo. */
@@ -555,8 +553,6 @@
   border-radius: var(--raio-g);
   background: var(--vidro);
   border: 1px solid var(--vidro-borda);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
   box-shadow: var(--sombra);
 }
 
@@ -662,8 +658,6 @@
   border-radius: var(--raio-g);
   background: var(--vidro);
   border: 1px solid var(--vidro-borda);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
 }
 
 .grupoTitulo {
@@ -811,5 +805,24 @@
 
   .baixarFim {
     padding: 20px;
+  }
+}
+
+/* Desfoque do vidro só com mouse: no toque o fundo atrás é liso e o desfoque só criava camadas que o Safari do iPhone
+   apagava e redesenhava ao rolar (ver .acao-contorno em src/index.css). */
+@media (hover: hover) and (pointer: fine) {
+  .baixarFim {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .destaqueDiario {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .grupo {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
   }
 }
