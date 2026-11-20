@@ -89,7 +89,7 @@ export default function Cliente() {
                                     src={enderecoDaTela(codigo, 'portal')}
                                     alt={t('cliente.telaPortal')}
                                     width="720"
-                                    height="1600"
+                                    height="1515"
                                     loading="lazy"
                                 />
                             </div>
@@ -98,7 +98,7 @@ export default function Cliente() {
                                     src={enderecoDaTela(codigo, 'acesso')}
                                     alt={t('cliente.telaAcesso')}
                                     width="720"
-                                    height="1600"
+                                    height="1515"
                                     loading="lazy"
                                 />
                             </div>

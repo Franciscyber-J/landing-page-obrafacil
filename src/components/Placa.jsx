@@ -231,10 +231,10 @@ export default function Placa() {
                 <div className={`${styles.palco} palco-3d`} data-m="painel">
                     <div data-m="planta" className={styles.plantaCaixa}><Planta /></div>
                     <div className={`${styles.lado} ${styles.ladoEsquerdo}`} data-m="lado" aria-hidden="true">
-                        <img src={enderecoDaTela(codigo, 'obra')} alt="" width="720" height="1600" />
+                        <img src={enderecoDaTela(codigo, 'obra')} alt="" width="720" height="1515" />
                     </div>
                     <div className={`${styles.lado} ${styles.ladoDireito}`} data-m="lado" aria-hidden="true">
-                        <img src={enderecoDaTela(codigo, 'equipe')} alt="" width="720" height="1600" />
+                        <img src={enderecoDaTela(codigo, 'equipe')} alt="" width="720" height="1515" />
                     </div>
                     <figure
                         data-m="aparelho"
@@ -251,7 +251,7 @@ export default function Placa() {
                                 aria-hidden="true"
                                 className={styles.telaBaixo}
                                 width="720"
-                                height="1600"
+                                height="1515"
                             />
                         )}
                         <img
@@ -260,7 +260,7 @@ export default function Placa() {
                             alt={t(`hero.telas.${campo.id}`)}
                             className={anterior === null ? styles.tela : `${styles.tela} ${styles.telaNova}`}
                             width="720"
-                            height="1600"
+                            height="1515"
                             fetchPriority={anterior === null ? 'high' : undefined}
                             onAnimationEnd={() => setAnterior(null)}
                         />

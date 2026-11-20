@@ -96,7 +96,7 @@ export default function Recursos() {
                                     aria-hidden="true"
                                     className={styles.telaBaixo}
                                     width="720"
-                                    height="1600"
+                                    height="1515"
                                 />
                             )}
                             <img
@@ -105,7 +105,7 @@ export default function Recursos() {
                                 alt={alt}
                                 className={anterior !== null && anterior !== tela ? `${styles.tela} ${styles.telaNova}` : styles.tela}
                                 width="720"
-                                height="1600"
+                                height="1515"
                                 loading="lazy"
                                 onAnimationEnd={() => setAnterior(null)}
                             />

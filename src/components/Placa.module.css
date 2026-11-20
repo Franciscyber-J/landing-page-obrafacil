@@ -188,7 +188,7 @@
 .aparelho,
 .lado {
   position: absolute;
-  aspect-ratio: 720 / 1600;
+  aspect-ratio: 720 / 1515;
   border: 6px solid #1c2c40;
   border-radius: 38px;
   overflow: hidden;
