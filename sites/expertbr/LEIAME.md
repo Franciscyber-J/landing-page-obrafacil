@@ -67,8 +67,8 @@ faltar.
 Mesmo mundo do site do ObraFácil (tokens, Bricolage Grotesque nos títulos e Manrope no texto, laranja só na ação e no
 destaque, claro e escuro), com composição de estúdio: título grande ("Um aplicativo para cada **trabalho**."), o
 elenco dos apps em linha logo na primeira dobra (como os créditos de um estúdio) e um painel por app na cor dele. O
-ObraFácil no painel azul do site dele, com as telas reais subindo da borda; o Orbit em coral (a cor do ícone dele,
-`marcas/orbit.svg`, desenhado a partir de `orbit/public/app-icon.html`), com um desenho simples das três conversas
+ObraFácil no painel azul do site dele, com as telas reais subindo da borda; o Orbit em coral (a cor do cliente no
+logotipo "Monograma" dele, `marcas/orbit.svg`), com um desenho simples das três conversas
 chegando numa caixa só (sem tela inventada e sem logotipo de outra empresa). Sem gradiente no texto, sem selo em
 cima dos títulos, sem cartões iguais de ícone e texto.
 
@@ -111,7 +111,9 @@ Todas geradas por script, nada de banco de imagens: os SVG do logotipo e o `favi
 `apple-touch-icon.png` (o símbolo sobre fundo branco, 180 px), `logo.png` (o logotipo horizontal sobre fundo branco,
 1200 x 300, logotipo dos dados estruturados), `og.png` (prévia do link: o logotipo e os apps da casa, sem texto de
 idioma), `marcas/obrafacil.webp` (reduzida de `public/favicon.png` do site do ObraFácil). `marcas/orbit.svg` é o
-ícone do Orbit (provisório: o logotipo do Orbit está em estudo).
+ícone do Orbit: o logotipo "Monograma" (aprovado em 20/11/2026, 13h07) no quadrado branco, como o do ObraFácil, gerado
+no repositório do Orbit (`python3 ferramentas/marca/gerar_marca.py --expertbr sites/expertbr/public/marcas`, com o
+caminho desta pasta).
 
 ## Conferência
 

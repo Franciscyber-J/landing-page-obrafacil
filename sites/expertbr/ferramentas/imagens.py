@@ -13,6 +13,7 @@ os SVG (public/logo/*.svg e public/favicon.svg). Este script só fotografa esses
     og.png                 prévia do link (WhatsApp, redes sociais), 1200 x 630: o logotipo e os apps da casa, sem
                            texto de idioma (vale para os 29)
     marcas/obrafacil.webp  símbolo do ObraFácil, 128 x 128, reduzido de public/favicon.png do site do ObraFácil
+    (marcas/orbit.svg, o ícone do Orbit, vem pronto do repositório do Orbit: ferramentas/marca/gerar_marca.py)
 Nada vem de banco de imagens nem de outro site. Fonte do og.png: pacote @fontsource do node_modules (licença OFL).
 """
 
@@ -70,7 +71,7 @@ body {{ --l: 1200px; --a: 630px; background:
 <img class="logo" src="{svg('logo/expertbr-escuro.svg')}">
 <div class="apps">
   <div class="app"><img src="{svg('marcas/obrafacil.webp')}"><span>ObraFácil</span><span class="ponto ar"></span></div>
-  <div class="app"><span>Orbit</span><span class="ponto"></span></div>
+  <div class="app"><img src="{svg('marcas/orbit.svg')}"><span>Orbit</span><span class="ponto"></span></div>
 </div>
 </body></html>"""
 
