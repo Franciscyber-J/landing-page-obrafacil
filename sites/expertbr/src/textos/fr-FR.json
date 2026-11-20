@@ -1,0 +1,84 @@
+{
+    "ancoras": {
+        "produtos": "applications",
+        "sobre": "a-propos",
+        "contato": "contact"
+    },
+    "seo": {
+        "titulo": "ExpertBR : studio d'applications, créateur d'ObraFácil",
+        "descricao": "ExpertBR crée des applications pour le travail de tous les jours. ObraFácil, pour la gestion de chantier et le journal de chantier, est disponible ; Orbit, pour la relation client, arrive bientôt.",
+        "imagemAlt": "ExpertBR, studio brésilien d'applications",
+        "organizacao": "Studio brésilien d'applications pour le travail de tous les jours, créateur d'ObraFácil, application de gestion de chantier.",
+        "llms": {
+            "sobre": "Qui est ExpertBR",
+            "aplicativos": "Applications",
+            "emBreve": "bientôt disponible, pas encore lancé",
+            "contato": "Contact",
+            "idiomas": "Le site est disponible dans ces langues"
+        }
+    },
+    "nav": {
+        "inicio": "Page d'accueil d'ExpertBR",
+        "navegacao": "Navigation principale",
+        "produtos": "Applications",
+        "sobre": "À propos",
+        "contato": "Contact",
+        "escolherIdioma": "Choisir la langue du site",
+        "tema": "Basculer entre thème clair et thème sombre",
+        "pular": "Aller au contenu"
+    },
+    "abertura": {
+        "titulo": "Une application pour chaque **métier**.",
+        "texto": "ExpertBR est un studio brésilien d'applications. Chacune prend en charge un métier du début à la fin : ObraFácil organise déjà les chantiers, et Orbit arrive bientôt pour la relation client sur les réseaux sociaux.",
+        "secundaria": "Voir les applications"
+    },
+    "produtos": {
+        "titulo": "Les applications",
+        "texto": "La première est déjà sur les stores. La suivante est en route.",
+        "noAr": "Disponible",
+        "emBreve": "Bientôt",
+        "conhecer": "Découvrir {{produto}}",
+        "ondeUsar": "Où utiliser {{produto}}",
+        "navegador": "Dans le navigateur",
+        "orbit": {
+            "linha": "Service client et ventes sur Instagram, WhatsApp et Messenger, au même endroit.",
+            "descricao": "Une seule boîte de réception pour les conversations des trois canaux, avec des réponses automatiques et la fiche de chaque client.",
+            "destaques": [
+                "Boîte de réception unique",
+                "Réponses automatiques",
+                "Commentaires transformés en conversations",
+                "Clients avec étiquettes"
+            ],
+            "aviso": "Pas encore lancé. À son ouverture, son adresse apparaîtra ici."
+        }
+    },
+    "sobre": {
+        "titulo": "À propos d'ExpertBR",
+        "paragrafos": [
+            "ExpertBR est un studio brésilien qui crée des applications pour le travail de tous les jours. Plutôt qu'un logiciel qui veut tout faire, chaque application s'occupe d'un seul métier, et s'en occupe entièrement.",
+            "Nous avons commencé par le chantier, avec ObraFácil. La prochaine est Orbit, pour ceux qui servent et vendent sur les réseaux sociaux."
+        ],
+        "comoTitulo": "Notre façon de faire",
+        "itens": {
+            "lugar": "Pensé pour là où le travail se fait",
+            "aparelhos": "Sur l'appareil que vous avez sous la main",
+            "idiomas": "Dans la langue de chaque pays",
+            "idiomasTexto": "Du portugais au japonais, de l'arabe à l'hindi : ObraFácil parle la langue de ses utilisateurs, avec les prix dans la monnaie locale."
+        }
+    },
+    "contato": {
+        "titulo": "Nous contacter",
+        "texto": "Questions, partenariats ou presse : écrivez-nous par e-mail.",
+        "email": "E-mail",
+        "ajudaTitulo": "Vous utilisez déjà ObraFácil ?",
+        "ajudaTexto": "Le Centre d'aide propose des guides pas à pas avec les écrans de l'application. Si besoin, contactez l'Assistance."
+    },
+    "rodape": {
+        "descricao": "Studio brésilien d'applications.",
+        "aplicativos": "Applications",
+        "politicas": "Mentions légales",
+        "termos": "Conditions d'utilisation d'ObraFácil",
+        "privacidade": "Politique de confidentialité d'ObraFácil",
+        "idioma": "Langue du site"
+    }
+}

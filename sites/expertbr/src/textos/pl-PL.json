@@ -1,0 +1,84 @@
+{
+    "ancoras": {
+        "produtos": "aplikacje",
+        "sobre": "o-nas",
+        "contato": "kontakt"
+    },
+    "seo": {
+        "titulo": "ExpertBR: studio aplikacji, twórca ObraFácil",
+        "descricao": "ExpertBR tworzy aplikacje do codziennej pracy. ObraFácil do zarządzania budową i dziennika prac już działa; Orbit do obsługi klientów jest w drodze.",
+        "imagemAlt": "ExpertBR, brazylijskie studio aplikacji",
+        "organizacao": "Brazylijskie studio aplikacji do codziennej pracy, twórca ObraFácil, aplikacji do zarządzania budową.",
+        "llms": {
+            "sobre": "Czym jest ExpertBR",
+            "aplicativos": "Aplikacje",
+            "emBreve": "wkrótce, jeszcze nie wydana",
+            "contato": "Kontakt",
+            "idiomas": "Strona jest dostępna w tych językach"
+        }
+    },
+    "nav": {
+        "inicio": "Strona główna ExpertBR",
+        "navegacao": "Menu główne",
+        "produtos": "Aplikacje",
+        "sobre": "O nas",
+        "contato": "Kontakt",
+        "escolherIdioma": "Wybierz język strony",
+        "tema": "Przełącz motyw jasny i ciemny",
+        "pular": "Przejdź do treści"
+    },
+    "abertura": {
+        "titulo": "Jedna aplikacja do każdej **pracy**.",
+        "texto": "ExpertBR to brazylijskie studio aplikacji. Każda z nich zajmuje się jedną pracą od początku do końca: ObraFácil już porządkuje budowy, a Orbit wkrótce zajmie się obsługą klientów w mediach społecznościowych.",
+        "secundaria": "Zobacz aplikacje"
+    },
+    "produtos": {
+        "titulo": "Aplikacje",
+        "texto": "Pierwsza jest już w sklepach. Następna jest w drodze.",
+        "noAr": "Dostępna",
+        "emBreve": "Wkrótce",
+        "conhecer": "Poznaj {{produto}}",
+        "ondeUsar": "Gdzie korzystać z {{produto}}",
+        "navegador": "W przeglądarce",
+        "orbit": {
+            "linha": "Obsługa klientów i sprzedaż przez Instagram, WhatsApp i Messenger w jednym miejscu.",
+            "descricao": "Jedna skrzynka na rozmowy z trzech kanałów, z automatycznymi odpowiedziami i kartą każdego klienta.",
+            "destaques": [
+                "Jedna wspólna skrzynka",
+                "Automatyczne odpowiedzi",
+                "Komentarze, które stają się rozmowami",
+                "Klienci z etykietami"
+            ],
+            "aviso": "Jeszcze nie wydana. Gdy ruszy, jej adres pojawi się tutaj."
+        }
+    },
+    "sobre": {
+        "titulo": "O ExpertBR",
+        "paragrafos": [
+            "ExpertBR to brazylijskie studio, które tworzy aplikacje do codziennej pracy. Zamiast jednego systemu, który próbuje robić wszystko, każda aplikacja zajmuje się jedną pracą i obsługuje ją w całości.",
+            "Zaczęliśmy od budowy, z ObraFácil. Następny jest Orbit, dla tych, którzy obsługują klientów i sprzedają w mediach społecznościowych."
+        ],
+        "comoTitulo": "Jak pracujemy",
+        "itens": {
+            "lugar": "Stworzone tam, gdzie toczy się praca",
+            "aparelhos": "Na urządzeniu, które masz pod ręką",
+            "idiomas": "W języku każdego kraju",
+            "idiomasTexto": "Od portugalskiego po japoński, od arabskiego po hindi: ObraFácil mówi językiem swoich użytkowników, z cenami w lokalnej walucie."
+        }
+    },
+    "contato": {
+        "titulo": "Napisz do nas",
+        "texto": "Pytania, współpraca lub media: napisz do nas e-mail.",
+        "email": "E-mail",
+        "ajudaTitulo": "Już korzystasz z ObraFácil?",
+        "ajudaTexto": "W Centrum pomocy znajdziesz instrukcje krok po kroku z ekranami aplikacji. W razie potrzeby skontaktuj się ze Wsparciem technicznym."
+    },
+    "rodape": {
+        "descricao": "Brazylijskie studio aplikacji.",
+        "aplicativos": "Aplikacje",
+        "politicas": "Dokumenty",
+        "termos": "Regulamin ObraFácil",
+        "privacidade": "Polityka prywatności ObraFácil",
+        "idioma": "Język strony"
+    }
+}

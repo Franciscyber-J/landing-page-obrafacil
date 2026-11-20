@@ -1,0 +1,84 @@
+{
+    "ancoras": {
+        "produtos": "aplicatii",
+        "sobre": "despre-noi",
+        "contato": "contact"
+    },
+    "seo": {
+        "titulo": "ExpertBR: studio de aplicații, creatorul ObraFácil",
+        "descricao": "ExpertBR creează aplicații pentru munca de zi cu zi. ObraFácil, pentru managementul șantierului și jurnalul de șantier, e disponibilă; Orbit, pentru relația cu clienții, vine curând.",
+        "imagemAlt": "ExpertBR, studio brazilian de aplicații",
+        "organizacao": "Studio brazilian de aplicații pentru munca de zi cu zi, creatorul ObraFácil, aplicație de management de șantier.",
+        "llms": {
+            "sobre": "Ce este ExpertBR",
+            "aplicativos": "Aplicații",
+            "emBreve": "în curând, încă nelansată",
+            "contato": "Contact",
+            "idiomas": "Site-ul este disponibil în aceste limbi"
+        }
+    },
+    "nav": {
+        "inicio": "Pagina principală ExpertBR",
+        "navegacao": "Navigare principală",
+        "produtos": "Aplicații",
+        "sobre": "Despre noi",
+        "contato": "Contact",
+        "escolherIdioma": "Alege limba site-ului",
+        "tema": "Comută între tema deschisă și cea închisă",
+        "pular": "Salt la conținut"
+    },
+    "abertura": {
+        "titulo": "O aplicație pentru fiecare **meserie**.",
+        "texto": "ExpertBR este un studio brazilian de aplicații. Fiecare se ocupă de o meserie de la cap la coadă: ObraFácil organizează deja șantiere, iar Orbit vine curând pentru relația cu clienții pe rețelele sociale.",
+        "secundaria": "Vezi aplicațiile"
+    },
+    "produtos": {
+        "titulo": "Aplicațiile",
+        "texto": "Prima e deja în magazine. Următoarea e pe drum.",
+        "noAr": "Disponibilă",
+        "emBreve": "În curând",
+        "conhecer": "Descoperă {{produto}}",
+        "ondeUsar": "Unde folosești {{produto}}",
+        "navegador": "În browser",
+        "orbit": {
+            "linha": "Relații cu clienții și vânzări pe Instagram, WhatsApp și Messenger, într-un singur loc.",
+            "descricao": "O singură căsuță pentru conversațiile din toate cele trei canale, cu răspunsuri automate și fișa fiecărui client.",
+            "destaques": [
+                "O singură căsuță de mesaje",
+                "Răspunsuri automate",
+                "Comentarii care devin conversații",
+                "Clienți cu etichete"
+            ],
+            "aviso": "Încă nu a fost lansată. Când se deschide, adresa apare aici."
+        }
+    },
+    "sobre": {
+        "titulo": "Despre ExpertBR",
+        "paragrafos": [
+            "ExpertBR este un studio brazilian care creează aplicații pentru munca de zi cu zi. În loc de un sistem care încearcă să facă totul, fiecare aplicație se ocupă de o singură meserie, și o duce până la capăt.",
+            "Am început cu șantierul, cu ObraFácil. Urmează Orbit, pentru cei care servesc clienți și vând pe rețelele sociale."
+        ],
+        "comoTitulo": "Cum lucrăm",
+        "itens": {
+            "lugar": "Făcută pentru locul unde se muncește",
+            "aparelhos": "Pe dispozitivul pe care îl ai la îndemână",
+            "idiomas": "În limba fiecărei țări",
+            "idiomasTexto": "De la portugheză la japoneză, de la arabă la hindi: ObraFácil vorbește limba celor care o folosesc, cu prețuri în moneda locală."
+        }
+    },
+    "contato": {
+        "titulo": "Scrie-ne",
+        "texto": "Întrebări, parteneriate sau presă: trimite-ne un e-mail.",
+        "email": "E-mail",
+        "ajudaTitulo": "Folosești deja ObraFácil?",
+        "ajudaTexto": "Centrul de ajutor are ghiduri pas cu pas cu ecranele aplicației. Dacă e nevoie, scrie echipei de Asistență."
+    },
+    "rodape": {
+        "descricao": "Studio brazilian de aplicații.",
+        "aplicativos": "Aplicații",
+        "politicas": "Documente legale",
+        "termos": "Termenii de utilizare ObraFácil",
+        "privacidade": "Politica de confidențialitate ObraFácil",
+        "idioma": "Limba site-ului"
+    }
+}

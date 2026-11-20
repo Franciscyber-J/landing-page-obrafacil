@@ -1,0 +1,354 @@
+# =============================================================================
+# ExpertBR — expertbr.com (Hostinger, conta u719958343, pasta public_html, a raiz do domínio)
+#
+# Nesta pasta fica o site da ExpertBR: o conteúdo de sites/expertbr/dist (gerado por "npm run expertbr:build").
+# Este arquivo é versionado em sites/expertbr/hospedagem/.htaccess: para mudar, edite no repositório e envie o
+# arquivo INTEIRO. O bloco "IDIOMAS DA EXPERTBR" é gerado por "npm run expertbr:htaccess".
+#
+# !!! A subpasta appobrafacil/ é o site do ObraFácil (appobrafacil.expertbr.com) e NÃO pode ser afetada. !!!
+# O servidor lê também este arquivo nos pedidos do appobrafacil.expertbr.com (a pasta dele fica aqui dentro). Por isso:
+#   1. Cabeçalhos só com "env=EXPERTBR" (marcado só quando o endereço pedido é expertbr.com ou www.expertbr.com).
+#   2. Nada de mod_expires, ErrorDocument, DirectorySlash ou outra regra que valha para a pasta inteira sem
+#      essa marca. DirectoryIndex, Options e AddDefaultCharset abaixo são iguais aos do .htaccess do ObraFácil
+#      (que, de todo jeito, declara os dele).
+#   3. Regras de endereço (mod_rewrite): a pasta do ObraFácil tem o próprio "RewriteEngine On", então estas não
+#      rodam lá; mesmo assim a primeira regra encerra tudo para qualquer endereço que não seja o expertbr.com e
+#      para o caminho /appobrafacil.
+#   4. Variáveis com nome próprio (EXPERTBR_...): o .htaccess do ObraFácil usa outras.
+# O teste sites/expertbr/ferramentas/hospedagem.test.mjs confere essas quatro regras.
+# =============================================================================
+
+DirectoryIndex index.html
+Options -Indexes -MultiViews
+AddDefaultCharset UTF-8
+
+# Marca os pedidos do expertbr.com (com ou sem www). Só eles recebem os cabeçalhos abaixo.
+SetEnvIfNoCase Host ^(www\.)?expertbr\.com(:\d+)?$ EXPERTBR=1
+
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000" env=EXPERTBR
+    Header always set X-Content-Type-Options "nosniff" env=EXPERTBR
+    Header always set X-Frame-Options "DENY" env=EXPERTBR
+    Header always set Referrer-Policy "strict-origin-when-cross-origin" env=EXPERTBR
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), usb=(), interest-cohort=()" env=EXPERTBR
+    # Política de conteúdo: o site só carrega o que é dele (sem script, fonte ou imagem de outro site; sem script
+    # embutido). Os dados estruturados (application/ld+json) não são executados e não dependem dela. Conferida no
+    # navegador antes de publicar (sites/expertbr/LEIAME.md, "Conferência").
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests" env=EXPERTBR
+
+    # Raiz "/" (o destino depende do idioma do navegador): ninguém guarda.
+    Header always merge Vary "Accept-Language" env=EXPERTBR_VARIA
+    Header always set Cache-Control "no-cache, private" env=EXPERTBR_VARIA
+
+    # Páginas, robots.txt, sitemap.xml, llms.txt e tema.js: sempre conferir se há versão nova.
+    <FilesMatch "(\.html|^robots\.txt|^sitemap\.xml|^llms\.txt|^tema\.js)$">
+        Header set Cache-Control "no-cache" env=EXPERTBR
+    </FilesMatch>
+    # assets/: o nome muda a cada build, pode ficar guardado. Imagens com nome fixo: uma semana.
+    <FilesMatch "-[A-Za-z0-9_-]{8}\.(js|css|woff2?)$">
+        Header set Cache-Control "public, max-age=31536000, immutable" env=EXPERTBR
+    </FilesMatch>
+    <FilesMatch "\.(png|webp|svg)$">
+        Header set Cache-Control "public, max-age=604800" env=EXPERTBR
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# -----------------------------------------------------------------------------
+# 0) Só o expertbr.com. Qualquer outro endereço que passe por aqui (appobrafacil.expertbr.com, cuja pasta fica
+#    dentro desta) sai sem regra nenhuma, e o caminho /appobrafacil também. Validação de certificado
+#    (.well-known) passa direto.
+# -----------------------------------------------------------------------------
+RewriteCond %{HTTP_HOST} !^(www\.)?expertbr\.com(:\d+)?$ [NC]
+RewriteRule ^ - [L]
+RewriteRule ^appobrafacil(/|$) - [L,NC]
+RewriteRule ^\.well-known/ - [L]
+
+# -----------------------------------------------------------------------------
+# 1) Um endereço só: www.expertbr.com → expertbr.com (301, mesmo caminho).
+# -----------------------------------------------------------------------------
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://expertbr.com/$1 [R=301,L,NE]
+
+# -----------------------------------------------------------------------------
+# 2) Arquivos que nunca devem ser abertos (backups, logs, configuração).
+# -----------------------------------------------------------------------------
+RewriteRule ^(\.user\.ini|php\.ini|error_log|\.htaccess\..*)$ - [F,L,NC]
+RewriteRule \.(bak|bk|old|orig|sql|log|swp|zip|tar|gz)$ - [F,L,NC]
+
+# -----------------------------------------------------------------------------
+# 3) Endereços do WordPress que saiu (cópia guardada; ver sites/expertbr/PUBLICAR.md).
+#    a) O artigo "O Fim da Desorganização..." (o endereço tinha o título; qualquer data ou final) e o artigo
+#       pelo número (?p=...) → página inicial do ObraFácil em português (o artigo era em português, sobre organizar
+#       a obra; o 301 passa o histórico dele para o site do app).
+#    b) Termos, privacidade, suporte e as páginas de volta do pagamento → o mesmo endereço no site do ObraFácil,
+#       que leva ao idioma do navegador.
+#    c) Mapa do site do WordPress → o sitemap novo.
+#    d) Partes do WordPress (painel, login, xmlrpc, feeds, API, arquivos enviados, busca, categorias, autores):
+#       410, removido de vez (o Google tira do índice).
+#    e) Qualquer outra página do WordPress (endereço terminado em "/", que não é pasta nem arquivo do site novo)
+#       → site do ObraFácil (era o único produto do WordPress). Endereço sem a barra no fim que não existe: 404.
+#    Endereço com visitas descoberto depois (Search Console): regra própria aqui, antes da "e".
+# -----------------------------------------------------------------------------
+RewriteRule ^(?:\d{4}/(?:\d{2}/)?(?:\d{2}/)?)?o-fim-da-desorganiza https://appobrafacil.expertbr.com/pt-br/ [NC,R=301,L]
+RewriteCond %{QUERY_STRING} (?:^|&)(?:p|page_id|preview_id)=\d+ [NC]
+RewriteRule ^(?:index\.php)?$ https://appobrafacil.expertbr.com/pt-br/? [NC,R=301,L]
+RewriteRule ^(termos-de-uso|politicas?-de-privacidade|suporte|perfil|primeiros-passos|pagamento-ok|pacote-downloads-extras|expansao-20gb-ok)/?$ https://appobrafacil.expertbr.com/$1 [NC,R=301,L]
+RewriteRule ^(?:wp-sitemap[^/]*\.xml|sitemap_index\.xml|[a-z_-]+-sitemap\d*\.xml)$ /sitemap.xml [NC,R=301,L]
+RewriteRule ^(?:wp-admin|wp-includes|wp-content|wp-json|feed|comments/feed|category|tag|author|page)(?:/.*)?$ - [G,NC]
+RewriteRule ^(?:wp-[a-z-]+|xmlrpc|index)\.php$ - [G,NC]
+RewriteRule ^(?:[^/]+/)*feed/?$ - [G,NC]
+RewriteCond %{QUERY_STRING} (?:^|&)(?:s|cat|tag|author|feed|rest_route)= [NC]
+RewriteRule ^(?:index\.php)?$ - [G,NC]
+
+# >>> IDIOMAS DA EXPERTBR
+# Gerado por "npm run expertbr:htaccess" a partir de src/i18n/registro.js. Não edite à mão: rode o comando.
+#
+# a) Idioma com maiúsculas (/PT-BR/) → minúsculas; sem a barra (/pt-br) → com a barra; qualquer outro endereço
+#    dentro do idioma (/pt-br/algo) → a página do idioma (o site tem uma página por idioma).
+RewriteCond %{REQUEST_URI} !^/pt-br(?:/|$)
+RewriteRule ^pt-br(/.*)?$ /pt-br/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/pt-pt(?:/|$)
+RewriteRule ^pt-pt(/.*)?$ /pt-pt/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/en-us(?:/|$)
+RewriteRule ^en-us(/.*)?$ /en-us/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/en-gb(?:/|$)
+RewriteRule ^en-gb(/.*)?$ /en-gb/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/en-au(?:/|$)
+RewriteRule ^en-au(/.*)?$ /en-au/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/en-ca(?:/|$)
+RewriteRule ^en-ca(/.*)?$ /en-ca/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/es-es(?:/|$)
+RewriteRule ^es-es(/.*)?$ /es-es/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/es-mx(?:/|$)
+RewriteRule ^es-mx(/.*)?$ /es-mx/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/fr-fr(?:/|$)
+RewriteRule ^fr-fr(/.*)?$ /fr-fr/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/de-de(?:/|$)
+RewriteRule ^de-de(/.*)?$ /de-de/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/ar-sa(?:/|$)
+RewriteRule ^ar-sa(/.*)?$ /ar-sa/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/it-it(?:/|$)
+RewriteRule ^it-it(/.*)?$ /it-it/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/tr-tr(?:/|$)
+RewriteRule ^tr-tr(/.*)?$ /tr-tr/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/pl-pl(?:/|$)
+RewriteRule ^pl-pl(/.*)?$ /pl-pl/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/id-id(?:/|$)
+RewriteRule ^id-id(/.*)?$ /id-id/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/ja-jp(?:/|$)
+RewriteRule ^ja-jp(/.*)?$ /ja-jp/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/hi-in(?:/|$)
+RewriteRule ^hi-in(/.*)?$ /hi-in/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/vi-vn(?:/|$)
+RewriteRule ^vi-vn(/.*)?$ /vi-vn/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/nl-nl(?:/|$)
+RewriteRule ^nl-nl(/.*)?$ /nl-nl/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/ko-kr(?:/|$)
+RewriteRule ^ko-kr(/.*)?$ /ko-kr/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/zh-tw(?:/|$)
+RewriteRule ^zh-tw(/.*)?$ /zh-tw/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/ro-ro(?:/|$)
+RewriteRule ^ro-ro(/.*)?$ /ro-ro/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/th-th(?:/|$)
+RewriteRule ^th-th(/.*)?$ /th-th/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/uk-ua(?:/|$)
+RewriteRule ^uk-ua(/.*)?$ /uk-ua/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/ru-kz(?:/|$)
+RewriteRule ^ru-kz(/.*)?$ /ru-kz/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/cs-cz(?:/|$)
+RewriteRule ^cs-cz(/.*)?$ /cs-cz/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/el-gr(?:/|$)
+RewriteRule ^el-gr(/.*)?$ /el-gr/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/hu-hu(?:/|$)
+RewriteRule ^hu-hu(/.*)?$ /hu-hu/ [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/he-il(?:/|$)
+RewriteRule ^he-il(/.*)?$ /he-il/ [NC,R=301,L]
+RewriteRule ^(pt-br|pt-pt|en-us|en-gb|en-au|en-ca|es-es|es-mx|fr-fr|de-de|ar-sa|it-it|tr-tr|pl-pl|id-id|ja-jp|hi-in|vi-vn|nl-nl|ko-kr|zh-tw|ro-ro|th-th|uk-ua|ru-kz|cs-cz|el-gr|hu-hu|he-il)$ /$1/ [R=301,L]
+#    Pelo pedido original (THE_REQUEST): o servidor entrega /pt-br/ abrindo pt-br/index.html por dentro, e esse
+#    pedido interno não pode virar redirecionamento (seria um vaivém sem fim).
+RewriteCond %{THE_REQUEST} ^[A-Z]+\s/+(pt-br|pt-pt|en-us|en-gb|en-au|en-ca|es-es|es-mx|fr-fr|de-de|ar-sa|it-it|tr-tr|pl-pl|id-id|ja-jp|hi-in|vi-vn|nl-nl|ko-kr|zh-tw|ro-ro|th-th|uk-ua|ru-kz|cs-cz|el-gr|hu-hu|he-il)/[^\s?]+[\s?]
+RewriteRule ^ /%1/ [R=301,L]
+
+# b) Raiz "/": a página no idioma do navegador (Accept-Language): a primeira língua da lista que o site tem; a
+#    região escolhe a variante (es-AR → es-MX, pt-AO → pt-PT). Sem língua conhecida (e robôs, que não mandam o
+#    cabeçalho), en-US. 302 de propósito: o destino muda conforme quem abre, e a raiz é a "x-default"
+#    do hreflang. A resposta não fica guardada (cabeçalhos com EXPERTBR_VARIA, no começo do arquivo).
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*pt-(?:br)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:pt-br]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*pt-(?:pt|ao|mz|cv|gw|st|tl|mo)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:pt-pt]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*en-(?:us)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:en-us]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*en-(?:gb|ie|in|za|sg|hk|ng|ke)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:en-gb]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*en-(?:au|nz)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:en-au]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*en-(?:ca)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:en-ca]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*es-(?:es)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:es-es]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*es-(?:mx|419|ar|bo|cl|co|cr|cu|do|ec|gt|hn|ni|pa|pe|pr|py|sv|us|uy|ve)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:es-mx]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*fr-(?:fr)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:fr-fr]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*de-(?:de)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:de-de]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ar-(?:sa)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:ar-sa]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*it-(?:it)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:it-it]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*tr-(?:tr)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:tr-tr]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*pl-(?:pl)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:pl-pl]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*id-(?:id)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:id-id]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ja-(?:jp)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:ja-jp]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*hi-(?:in)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:hi-in]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*vi-(?:vn)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:vi-vn]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*nl-(?:nl)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:nl-nl]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ko-(?:kr)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:ko-kr]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*zh-(?:tw)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:zh-tw]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ro-(?:ro)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:ro-ro]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*th-(?:th)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:th-th]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*uk-(?:ua)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:uk-ua]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ru-(?:kz)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:ru-kz]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*cs-(?:cz)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:cs-cz]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*el-(?:gr)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:el-gr]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*hu-(?:hu)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:hu-hu]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*he-(?:il)(?![a-z0-9]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:he-il]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*pt(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:pt-br]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*en(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:en-us]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*es(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:es-es]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*fr(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:fr-fr]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*de(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:de-de]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ar(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:ar-sa]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*it(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:it-it]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*tr(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:tr-tr]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*pl(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:pl-pl]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*id(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:id-id]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ja(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:ja-jp]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*hi(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:hi-in]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*vi(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:vi-vn]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*nl(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:nl-nl]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ko(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:ko-kr]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*zh(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:zh-tw]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ro(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:ro-ro]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*th(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:th-th]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*uk(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:uk-ua]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*ru(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:ru-kz]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*cs(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:cs-cz]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*el(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:el-gr]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*hu(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:hu-hu]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteCond %{HTTP:Accept-Language} ^(?:\s*(?!(?:pt|en|es|fr|de|ar|it|tr|pl|id|ja|hi|vi|nl|ko|zh|ro|th|uk|ru|cs|el|hu|he)(?![a-z]))[^,]*,)*\s*he(?![a-z]) [NC]
+RewriteRule ^$ - [E=EXPERTBR_IDIOMA:he-il]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^$
+RewriteRule ^$ /en-us/ [R=302,L,E=EXPERTBR_VARIA:1,E=Cache-Control:no-cache]
+RewriteCond %{ENV:EXPERTBR_IDIOMA} ^(pt-br|pt-pt|en-us|en-gb|en-au|en-ca|es-es|es-mx|fr-fr|de-de|ar-sa|it-it|tr-tr|pl-pl|id-id|ja-jp|hi-in|vi-vn|nl-nl|ko-kr|zh-tw|ro-ro|th-th|uk-ua|ru-kz|cs-cz|el-gr|hu-hu|he-il)$
+RewriteRule ^$ /%1/ [R=302,L,E=EXPERTBR_VARIA:1,E=Cache-Control:no-cache]
+# <<< IDIOMAS DA EXPERTBR
+
+# -----------------------------------------------------------------------------
+# 4) Um endereço só para cada página: /index.html → /. (THE_REQUEST é o pedido original do navegador.)
+# -----------------------------------------------------------------------------
+RewriteCond %{THE_REQUEST} ^[A-Z]+\s/+index\.html[\s?] [NC]
+RewriteRule ^ / [R=301,L]
+
+# 3e) Outras páginas do WordPress (terminadas em "/"), depois das regras dos idiomas.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^[^./][^/]*(?:/[^/]+)*/$ https://appobrafacil.expertbr.com/ [R=301,L]
+</IfModule>

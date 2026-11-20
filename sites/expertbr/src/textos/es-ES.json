@@ -1,0 +1,84 @@
+{
+    "ancoras": {
+        "produtos": "aplicaciones",
+        "sobre": "acerca-de",
+        "contato": "contacto"
+    },
+    "seo": {
+        "titulo": "ExpertBR: estudio de aplicaciones, creador de ObraFácil",
+        "descricao": "ExpertBR crea aplicaciones para el trabajo de cada día. ObraFácil, de gestión de obras y parte diario, ya está disponible; Orbit, de atención al cliente, llega pronto.",
+        "imagemAlt": "ExpertBR, estudio brasileño de aplicaciones",
+        "organizacao": "Estudio brasileño de aplicaciones para el trabajo de cada día, creador de ObraFácil, aplicación de gestión de obras.",
+        "llms": {
+            "sobre": "Qué es ExpertBR",
+            "aplicativos": "Aplicaciones",
+            "emBreve": "próximamente, aún sin lanzar",
+            "contato": "Contacto",
+            "idiomas": "El sitio está en estos idiomas"
+        }
+    },
+    "nav": {
+        "inicio": "Página de inicio de ExpertBR",
+        "navegacao": "Navegación principal",
+        "produtos": "Aplicaciones",
+        "sobre": "Acerca de",
+        "contato": "Contacto",
+        "escolherIdioma": "Elegir el idioma del sitio",
+        "tema": "Cambiar entre tema claro y oscuro",
+        "pular": "Saltar al contenido"
+    },
+    "abertura": {
+        "titulo": "Una aplicación para cada **trabajo**.",
+        "texto": "ExpertBR es un estudio brasileño de aplicaciones. Cada una se encarga de un trabajo de principio a fin: ObraFácil ya organiza obras, y Orbit llega pronto para atender a los clientes en las redes sociales.",
+        "secundaria": "Ver las aplicaciones"
+    },
+    "produtos": {
+        "titulo": "Las aplicaciones",
+        "texto": "La primera ya está en las tiendas. La siguiente está en camino.",
+        "noAr": "Disponible",
+        "emBreve": "Próximamente",
+        "conhecer": "Conocer {{produto}}",
+        "ondeUsar": "Dónde usar {{produto}}",
+        "navegador": "En el navegador",
+        "orbit": {
+            "linha": "Atención al cliente y ventas por Instagram, WhatsApp y Messenger, en un solo lugar.",
+            "descricao": "Una bandeja de entrada para las conversaciones de los tres canales, con respuestas automáticas y la ficha de cada cliente.",
+            "destaques": [
+                "Bandeja de entrada única",
+                "Respuestas automáticas",
+                "Comentarios que se convierten en conversaciones",
+                "Clientes con etiquetas"
+            ],
+            "aviso": "Aún no se ha lanzado. Cuando abra, su dirección aparecerá aquí."
+        }
+    },
+    "sobre": {
+        "titulo": "Acerca de ExpertBR",
+        "paragrafos": [
+            "ExpertBR es un estudio brasileño que crea aplicaciones para el trabajo de cada día. En lugar de un sistema que intenta hacerlo todo, cada aplicación se ocupa de un solo trabajo, y se ocupa de él entero.",
+            "Empezamos por la obra, con ObraFácil. La siguiente es Orbit, para quien atiende y vende por las redes sociales."
+        ],
+        "comoTitulo": "Cómo trabajamos",
+        "itens": {
+            "lugar": "Hecho para donde ocurre el trabajo",
+            "aparelhos": "En el dispositivo que tengas a mano",
+            "idiomas": "En el idioma de cada país",
+            "idiomasTexto": "Del portugués al japonés, del árabe al hindi: ObraFácil habla el idioma de quien lo usa, con los precios en la moneda de cada lugar."
+        }
+    },
+    "contato": {
+        "titulo": "Habla con nosotros",
+        "texto": "Dudas, colaboraciones o prensa: escríbenos por correo.",
+        "email": "Correo electrónico",
+        "ajudaTitulo": "¿Ya usas ObraFácil?",
+        "ajudaTexto": "El Centro de Ayuda tiene guías paso a paso con las pantallas de la aplicación. Si lo necesitas, habla con Soporte."
+    },
+    "rodape": {
+        "descricao": "Estudio brasileño de aplicaciones.",
+        "aplicativos": "Aplicaciones",
+        "politicas": "Políticas",
+        "termos": "Términos de uso de ObraFácil",
+        "privacidade": "Política de privacidad de ObraFácil",
+        "idioma": "Idioma del sitio"
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "ancoras": {
+        "produtos": "uygulamalar",
+        "sobre": "hakkimizda",
+        "contato": "iletisim"
+    },
+    "seo": {
+        "titulo": "ExpertBR: Uygulama stüdyosu, ObraFácil'in yapımcısı",
+        "descricao": "ExpertBR, günlük iş için uygulamalar geliştirir. İnşaat yönetimi ve şantiye günlüğü uygulaması ObraFácil yayında; müşteri iletişimi için Orbit yolda.",
+        "imagemAlt": "ExpertBR, Brezilyalı uygulama stüdyosu",
+        "organizacao": "Günlük iş için uygulamalar geliştiren Brezilyalı stüdyo; inşaat yönetimi uygulaması ObraFácil'in yapımcısı.",
+        "llms": {
+            "sobre": "ExpertBR nedir",
+            "aplicativos": "Uygulamalar",
+            "emBreve": "yakında, henüz yayında değil",
+            "contato": "İletişim",
+            "idiomas": "Site şu dillerde"
+        }
+    },
+    "nav": {
+        "inicio": "ExpertBR ana sayfası",
+        "navegacao": "Ana menü",
+        "produtos": "Uygulamalar",
+        "sobre": "Hakkımızda",
+        "contato": "İletişim",
+        "escolherIdioma": "Sitenin dilini seçin",
+        "tema": "Açık ve koyu tema arasında geçiş yap",
+        "pular": "İçeriğe geç"
+    },
+    "abertura": {
+        "titulo": "Her **iş** için bir uygulama.",
+        "texto": "ExpertBR, Brezilyalı bir uygulama stüdyosudur. Her uygulama bir işi baştan sona üstlenir: ObraFácil şantiyeleri zaten düzenliyor, Orbit ise sosyal medyada müşteri iletişimi için yolda.",
+        "secundaria": "Uygulamaları gör"
+    },
+    "produtos": {
+        "titulo": "Uygulamalar",
+        "texto": "İlki zaten mağazalarda. Sıradaki yolda.",
+        "noAr": "Yayında",
+        "emBreve": "Yakında",
+        "conhecer": "{{produto}} uygulamasını keşfedin",
+        "ondeUsar": "{{produto}} nerede kullanılır",
+        "navegador": "Tarayıcıda",
+        "orbit": {
+            "linha": "Instagram, WhatsApp ve Messenger'da müşteri hizmetleri ve satış, tek bir yerde.",
+            "descricao": "Üç kanaldaki konuşmalar için tek gelen kutusu; otomatik yanıtlar ve her müşteri için bir kart.",
+            "destaques": [
+                "Tek gelen kutusu",
+                "Otomatik yanıtlar",
+                "Konuşmaya dönüşen yorumlar",
+                "Etiketli müşteriler"
+            ],
+            "aviso": "Henüz yayında değil. Açıldığında adresi burada görünecek."
+        }
+    },
+    "sobre": {
+        "titulo": "ExpertBR hakkında",
+        "paragrafos": [
+            "ExpertBR, günlük iş için uygulamalar geliştiren Brezilyalı bir stüdyodur. Her şeyi yapmaya çalışan tek bir sistem yerine her uygulama tek bir işi üstlenir ve o işin tamamını yürütür.",
+            "İşe şantiyeden, ObraFácil ile başladık. Sıradaki Orbit; sosyal medyada müşteriyle ilgilenen ve satış yapanlar için."
+        ],
+        "comoTitulo": "Nasıl çalışıyoruz",
+        "itens": {
+            "lugar": "İşin yapıldığı yer için tasarlandı",
+            "aparelhos": "Elinizdeki cihazda",
+            "idiomas": "Her ülkenin kendi dilinde",
+            "idiomasTexto": "Portekizceden Japoncaya, Arapçadan Hintçeye: ObraFácil kullanıcısının dilini konuşur, fiyatları da yerel para biriminde gösterir."
+        }
+    },
+    "contato": {
+        "titulo": "Bize yazın",
+        "texto": "Sorular, iş birlikleri veya basın: bize e-posta gönderin.",
+        "email": "E-posta",
+        "ajudaTitulo": "ObraFácil'i zaten kullanıyor musunuz?",
+        "ajudaTexto": "Yardım Merkezi'nde uygulama ekranlarıyla adım adım rehberler var. Gerekirse Müşteri Desteği'ne yazın."
+    },
+    "rodape": {
+        "descricao": "Brezilyalı uygulama stüdyosu.",
+        "aplicativos": "Uygulamalar",
+        "politicas": "Yasal",
+        "termos": "ObraFácil Kullanım Koşulları",
+        "privacidade": "ObraFácil Gizlilik Politikası",
+        "idioma": "Site dili"
+    }
+}

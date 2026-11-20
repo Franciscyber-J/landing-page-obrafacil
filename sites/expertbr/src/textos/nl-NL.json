@@ -1,0 +1,84 @@
+{
+    "ancoras": {
+        "produtos": "apps",
+        "sobre": "over-ons",
+        "contato": "contact"
+    },
+    "seo": {
+        "titulo": "ExpertBR: app-studio, maker van ObraFácil",
+        "descricao": "ExpertBR maakt apps voor het dagelijkse werk. ObraFácil, voor bouwprojectbeheer en het bouwdagboek, is beschikbaar; Orbit, voor klantcontact, komt eraan.",
+        "imagemAlt": "ExpertBR, Braziliaanse app-studio",
+        "organizacao": "Braziliaanse studio die apps maakt voor het dagelijkse werk, maker van ObraFácil, een app voor bouwprojectbeheer.",
+        "llms": {
+            "sobre": "Wat ExpertBR is",
+            "aplicativos": "Apps",
+            "emBreve": "binnenkort, nog niet gelanceerd",
+            "contato": "Contact",
+            "idiomas": "De site is beschikbaar in deze talen"
+        }
+    },
+    "nav": {
+        "inicio": "Startpagina van ExpertBR",
+        "navegacao": "Hoofdmenu",
+        "produtos": "Apps",
+        "sobre": "Over ons",
+        "contato": "Contact",
+        "escolherIdioma": "Kies de taal van de site",
+        "tema": "Wissel tussen licht en donker thema",
+        "pular": "Naar de inhoud"
+    },
+    "abertura": {
+        "titulo": "Eén app voor elke **klus**.",
+        "texto": "ExpertBR is een app-studio uit Brazilië. Elke app regelt één klus van begin tot eind: ObraFácil organiseert al bouwprojecten, en Orbit komt eraan voor klantcontact via sociale media.",
+        "secundaria": "Bekijk de apps"
+    },
+    "produtos": {
+        "titulo": "De apps",
+        "texto": "De eerste staat al in de stores. De volgende is onderweg.",
+        "noAr": "Beschikbaar",
+        "emBreve": "Binnenkort",
+        "conhecer": "Ontdek {{produto}}",
+        "ondeUsar": "Waar je {{produto}} gebruikt",
+        "navegador": "In de browser",
+        "orbit": {
+            "linha": "Klantenservice en verkoop via Instagram, WhatsApp en Messenger, op één plek.",
+            "descricao": "Eén inbox voor de gesprekken uit alle drie de kanalen, met automatische antwoorden en een kaart per klant.",
+            "destaques": [
+                "Eén gedeelde inbox",
+                "Automatische antwoorden",
+                "Reacties die gesprekken worden",
+                "Klanten met labels"
+            ],
+            "aviso": "Nog niet gelanceerd. Zodra het opengaat, staat het adres hier."
+        }
+    },
+    "sobre": {
+        "titulo": "Over ExpertBR",
+        "paragrafos": [
+            "ExpertBR is een Braziliaanse studio die apps maakt voor het dagelijkse werk. In plaats van één systeem dat alles wil doen, regelt elke app één klus, en die helemaal.",
+            "We begonnen in de bouw, met ObraFácil. Daarna komt Orbit, voor wie via sociale media klanten helpt en verkoopt."
+        ],
+        "comoTitulo": "Zo werken wij",
+        "itens": {
+            "lugar": "Gemaakt voor de plek waar het werk gebeurt",
+            "aparelhos": "Op het apparaat dat je bij de hand hebt",
+            "idiomas": "In de taal van elk land",
+            "idiomasTexto": "Van Portugees tot Japans, van Arabisch tot Hindi: ObraFácil spreekt de taal van wie het gebruikt, met prijzen in de lokale valuta."
+        }
+    },
+    "contato": {
+        "titulo": "Neem contact op",
+        "texto": "Vragen, samenwerkingen of pers: stuur ons een e-mail.",
+        "email": "E-mail",
+        "ajudaTitulo": "Gebruik je ObraFácil al?",
+        "ajudaTexto": "Het Helpcentrum heeft stapsgewijze handleidingen met de schermen van de app. Kom je er niet uit, neem dan contact op met Ondersteuning."
+    },
+    "rodape": {
+        "descricao": "App-studio uit Brazilië.",
+        "aplicativos": "Apps",
+        "politicas": "Juridisch",
+        "termos": "Gebruiksvoorwaarden van ObraFácil",
+        "privacidade": "Privacybeleid van ObraFácil",
+        "idioma": "Taal van de site"
+    }
+}

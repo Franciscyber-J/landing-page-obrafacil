@@ -1,0 +1,84 @@
+{
+    "ancoras": {
+        "produtos": "應用程式",
+        "sobre": "關於我們",
+        "contato": "聯絡我們"
+    },
+    "seo": {
+        "titulo": "ExpertBR：App 工作室，ObraFácil 開發者",
+        "descricao": "ExpertBR 為日常工作打造 App。整合施工日誌的工程管理 App ObraFácil 已上架；處理客服的 Orbit 即將推出。",
+        "imagemAlt": "ExpertBR，來自巴西的 App 工作室",
+        "organizacao": "為日常工作打造 App 的巴西工作室，工程管理 App ObraFácil 的開發者。",
+        "llms": {
+            "sobre": "ExpertBR 是什麼",
+            "aplicativos": "App",
+            "emBreve": "即將推出，尚未上架",
+            "contato": "聯絡我們",
+            "idiomas": "網站提供以下語言"
+        }
+    },
+    "nav": {
+        "inicio": "ExpertBR 首頁",
+        "navegacao": "主選單",
+        "produtos": "App",
+        "sobre": "關於我們",
+        "contato": "聯絡我們",
+        "escolherIdioma": "選擇網站語言",
+        "tema": "切換淺色與深色主題",
+        "pular": "跳至主要內容"
+    },
+    "abertura": {
+        "titulo": "一份**工作**，一個 App。",
+        "texto": "ExpertBR 是來自巴西的 App 工作室。每個 App 從頭到尾負責一份工作：ObraFácil 已經在管理工地，處理社群平台客服的 Orbit 也即將推出。",
+        "secundaria": "看看我們的 App"
+    },
+    "produtos": {
+        "titulo": "我們的 App",
+        "texto": "第一個已經上架，下一個正在路上。",
+        "noAr": "已上架",
+        "emBreve": "即將推出",
+        "conhecer": "認識 {{produto}}",
+        "ondeUsar": "在哪裡使用 {{produto}}",
+        "navegador": "在瀏覽器使用",
+        "orbit": {
+            "linha": "Instagram、WhatsApp、Messenger 的客服與銷售，集中在一個地方。",
+            "descricao": "三個管道的對話集中在同一個收件匣，有自動回覆，也有每位客戶的資料卡。",
+            "destaques": [
+                "統一收件匣",
+                "自動回覆",
+                "留言轉成對話",
+                "用標籤管理客戶"
+            ],
+            "aviso": "尚未上架。開放後，網址會公布在這裡。"
+        }
+    },
+    "sobre": {
+        "titulo": "關於 ExpertBR",
+        "paragrafos": [
+            "ExpertBR 是為日常工作打造 App 的巴西工作室。我們不做什麼都想包辦的系統，而是讓每個 App 只負責一份工作，並把它完整做好。",
+            "我們從工地開始，做出 ObraFácil。下一個是 Orbit，給在社群平台上服務客戶、做生意的人。"
+        ],
+        "comoTitulo": "我們的做法",
+        "itens": {
+            "lugar": "為工作現場而設計",
+            "aparelhos": "手邊有什麼裝置就能用",
+            "idiomas": "說每個國家的語言",
+            "idiomasTexto": "從葡萄牙語到日語，從阿拉伯語到印地語：ObraFácil 說使用者的語言，價格也用當地貨幣顯示。"
+        }
+    },
+    "contato": {
+        "titulo": "與我們聯絡",
+        "texto": "問題、合作或媒體採訪，歡迎來信。",
+        "email": "電子郵件",
+        "ajudaTitulo": "已經在用 ObraFácil 了嗎？",
+        "ajudaTexto": "說明中心有附 App 畫面的逐步教學。需要協助時，請聯絡客服支援。"
+    },
+    "rodape": {
+        "descricao": "來自巴西的 App 工作室。",
+        "aplicativos": "App",
+        "politicas": "條款與政策",
+        "termos": "ObraFácil 服務條款",
+        "privacidade": "ObraFácil 隱私權政策",
+        "idioma": "網站語言"
+    }
+}
