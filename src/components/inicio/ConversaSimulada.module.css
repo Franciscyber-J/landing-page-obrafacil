@@ -1,0 +1,921 @@
+/* Conversa do "antes" num celular (ConversaSimulada.jsx; pedidos do Francis de 20/11/2026): o aplicativo de mensagens do
+   país do idioma, pelo data-app (src/i18n/aplicativoDeMensagens.js). A base é o WhatsApp; cada aplicativo muda depois
+   só o que é dele (cabeçalho, balões, hora, barra de escrever). As cores são variáveis --conversa-* de
+   design-tokens.css, no claro e no escuro. Nada aqui imita logotipo: só cores e formas que lembram o aplicativo. */
+.conversa {
+  --raio-balao: 8px;
+  --recuo-foto: 0px;
+  display: flex;
+  flex-direction: column;
+  max-width: 380px;
+  border: 6px solid var(--conversa-moldura);
+  border-radius: 36px;
+  overflow: hidden;
+  background: var(--conversa-fundo);
+  box-shadow: var(--sombra-forte);
+  color: var(--conversa-texto);
+  container-type: inline-size;
+}
+
+/* ---------- Cabeçalho ---------- */
+.cabeca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 10px 10px;
+  background: var(--conversa-cabeca);
+  color: var(--conversa-cabeca-texto);
+}
+
+.voltar {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  color: var(--conversa-cabeca-icone);
+}
+
+.avatar {
+  flex: none;
+  display: grid;
+  place-items: end center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--conversa-avatar);
+  color: var(--conversa-avatar-icone);
+}
+
+.avatar svg {
+  width: 34px;
+  height: 34px;
+  margin-bottom: -6px;
+  stroke-width: 1.6;
+}
+
+.quem {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  line-height: 1.25;
+}
+
+/* Nome do contato: até duas linhas (nome comprido em alemão, grego, turco... não é cortado no celular estreito). */
+.contato {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  overflow-wrap: anywhere;
+}
+
+.status {
+  overflow: hidden;
+  font-size: 0.75rem;
+  color: var(--conversa-cabeca-texto-2);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* "digitando..." no cabeçalho: só durante a animação (começa fechado). */
+.statusDigitando {
+  display: none;
+}
+
+.acoes {
+  flex: none;
+  display: flex;
+  gap: 14px;
+  padding-inline-end: 2px;
+  color: var(--conversa-cabeca-icone);
+}
+
+.acoes svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* ---------- Área da conversa ---------- */
+.tela {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 14px 14px;
+}
+
+.desenho {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  color: var(--conversa-desenho);
+}
+
+.dia {
+  align-self: center;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: var(--conversa-dia);
+  box-shadow: var(--conversa-sombra);
+  font-size: 0.75rem;
+  color: var(--conversa-dia-texto);
+}
+
+/* Balões. Com a hora dentro (WhatsApp, Telegram, Viber), ela fica no canto de baixo, no fim da linha: o ::after
+   reserva o espaço dela na última linha do texto, e ela é posta por cima, no fim do balão. */
+.recebida,
+.enviada {
+  position: relative;
+  max-width: 86%;
+  padding: 6px 9px 8px;
+  border-radius: var(--raio-balao);
+  font-size: 0.9375rem;
+  line-height: 1.38;
+  overflow-wrap: anywhere;
+  box-shadow: var(--conversa-sombra);
+}
+
+.conversa[data-hora='dentro'] .recebida::after,
+.conversa[data-hora='dentro'] .enviada::after {
+  content: '';
+  display: inline-block;
+  width: 3.4em;
+}
+
+.conversa[data-hora='dentro'] .enviada::after {
+  width: 4.8em;
+}
+
+.recebida {
+  align-self: flex-start;
+  margin-inline-start: var(--recuo-foto);
+  background: var(--conversa-recebida);
+}
+
+.enviada {
+  align-self: flex-end;
+  background: var(--conversa-enviada);
+  color: var(--conversa-texto-enviada);
+}
+
+.hora {
+  position: absolute;
+  inset-inline-end: 8px;
+  bottom: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.6875rem;
+  line-height: 1;
+  color: var(--conversa-hora);
+}
+
+.enviada .hora {
+  color: var(--conversa-hora-enviada);
+}
+
+.tiques {
+  width: 16px;
+  height: 16px;
+  color: var(--conversa-tiques);
+  stroke-width: 2.4;
+}
+
+/* Hora do lado de fora do balão (LINE, KakaoTalk): embaixo, ao lado; no balão enviado, do lado de dentro da tela. */
+.conversa[data-hora='fora'] .recebida,
+.conversa[data-hora='fora'] .enviada {
+  max-width: 68%;
+}
+
+.conversa[data-hora='fora'] .hora {
+  inset-inline-start: calc(100% + 5px);
+  inset-inline-end: auto;
+  bottom: 1px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  white-space: nowrap;
+  color: var(--conversa-hora-fora);
+}
+
+.conversa[data-hora='fora'] .enviada .hora {
+  inset-inline-start: auto;
+  inset-inline-end: calc(100% + 5px);
+  align-items: flex-end;
+}
+
+.lidoNaHora {
+  color: var(--conversa-lido);
+}
+
+/* "Lido" embaixo do balão enviado (Zalo, mensagens do celular) e a fotinho de quem viu (Messenger). */
+.lidoAbaixo,
+.vistoFoto {
+  position: absolute;
+  top: calc(100% + 4px);
+  inset-inline-end: 0;
+}
+
+.lidoAbaixo {
+  font-size: 0.6875rem;
+  line-height: 1.3;
+  color: var(--conversa-lido);
+  white-space: nowrap;
+}
+
+.conversa:has(.lidoAbaixo) .enviada,
+.conversa:has(.vistoFoto) .enviada {
+  margin-bottom: 20px;
+}
+
+/* Fotos pequenas do contato: ao lado do balão recebido (LINE, KakaoTalk, Zalo, Messenger) e "visto" (Messenger). */
+.fotoTopo,
+.fotoBase,
+.vistoFoto {
+  display: grid;
+  place-items: end center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--conversa-avatar);
+  color: var(--conversa-avatar-icone);
+}
+
+.fotoTopo,
+.fotoBase {
+  position: absolute;
+  inset-inline-start: -38px;
+  width: 30px;
+  height: 30px;
+}
+
+.fotoTopo {
+  top: 0;
+}
+
+/* A foto fica ao lado do primeiro balão (LINE, KakaoTalk, Zalo) ou do último (Messenger). */
+.fotoBase {
+  bottom: 0;
+  display: none;
+}
+
+.conversa[data-app='messenger'] .fotoBase {
+  display: grid;
+}
+
+.conversa[data-app='messenger'] .fotoTopo {
+  display: none;
+}
+
+.fotoTopo svg,
+.fotoBase svg {
+  width: 28px;
+  height: 28px;
+  margin-bottom: -5px;
+  stroke-width: 1.6;
+}
+
+.vistoFoto {
+  width: 14px;
+  height: 14px;
+}
+
+.vistoFoto svg {
+  width: 13px;
+  height: 13px;
+  margin-bottom: -2px;
+}
+
+.nomeNaConversa {
+  position: absolute;
+  bottom: calc(100% + 3px);
+  inset-inline-start: 0;
+  font-size: 0.75rem;
+  color: var(--conversa-hora-fora);
+  white-space: nowrap;
+}
+
+/* A pontinha do primeiro balão de cada lado (WhatsApp, LINE, KakaoTalk): um triângulo grudado no canto de cima, do
+   lado de quem fala. Ela espelha na escrita da direita para a esquerda (scale com --sentido), junto com o balão. */
+.ponta {
+  margin-top: 8px;
+}
+
+.ponta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 8px;
+  height: 13px;
+  background: inherit;
+  scale: var(--sentido) 1;
+}
+
+.recebida.ponta {
+  border-start-start-radius: 0;
+}
+
+.recebida.ponta::before {
+  inset-inline-start: -8px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.enviada.ponta {
+  border-start-end-radius: 0;
+}
+
+.enviada.ponta::before {
+  inset-inline-end: -8px;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+/* Balão do "digitando": só aparece durante a animação (começa fechado). */
+.digitando {
+  display: none;
+  align-self: flex-start;
+  gap: 4px;
+  margin-top: 8px;
+  margin-inline-start: var(--recuo-foto);
+  padding: 0 13px;
+  border-radius: var(--raio-balao);
+  background: var(--conversa-recebida);
+  box-shadow: var(--conversa-sombra);
+}
+
+.digitando i {
+  width: 7px;
+  height: 7px;
+  margin: 13px 0;
+  border-radius: 50%;
+  background: var(--conversa-hora);
+  animation: pulo 900ms ease-in-out infinite;
+}
+
+.digitando i:nth-child(2) {
+  animation-delay: 150ms;
+}
+
+.digitando i:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+@keyframes pulo {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(-3px); opacity: 1; }
+}
+
+/* ---------- Barra de escrever (desenho, não é um campo de verdade) ---------- */
+.barra {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px 14px;
+  background: var(--conversa-barra);
+}
+
+.iconeBarra {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  color: var(--conversa-destaque);
+}
+
+.campo {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--conversa-campo-borda);
+  border-radius: 999px;
+  background: var(--conversa-campo);
+  box-shadow: var(--conversa-sombra);
+  color: var(--conversa-icone);
+}
+
+.campo svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+
+.dica {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  font-size: 0.9375rem;
+  color: var(--conversa-campo-texto);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.depois {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--conversa-microfone-icone);
+}
+
+.depois svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* WhatsApp: microfone no círculo verde. */
+.conversa[data-app='whatsapp'] .depois {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--conversa-microfone);
+}
+
+.conversa[data-app='whatsapp'] .depois svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Aplicativos com a barra de escrever numa faixa própria (não flutuando sobre o fundo). */
+.conversa:not([data-app='whatsapp']) .barra {
+  gap: 12px;
+  padding: 8px 12px 14px;
+}
+
+.conversa:not([data-app='whatsapp']) .campo {
+  box-shadow: none;
+}
+
+/* ---------- LINE (Japão, Tailândia, Taiwan) ---------- */
+.conversa[data-app='line'] {
+  --raio-balao: 18px;
+  --recuo-foto: 38px;
+}
+
+.conversa[data-app='line'] .cabeca,
+.conversa[data-app='kakao'] .cabeca {
+  gap: 6px;
+  padding-inline: 8px 12px;
+}
+
+.conversa[data-app='line'] .contato,
+.conversa[data-app='kakao'] .contato {
+  font-size: 1rem;
+}
+
+.conversa[data-app='line'] .ponta::before {
+  top: 4px;
+  width: 7px;
+  height: 9px;
+}
+
+.conversa[data-app='line'] .recebida.ponta {
+  border-start-start-radius: var(--raio-balao);
+}
+
+.conversa[data-app='line'] .enviada.ponta {
+  border-start-end-radius: var(--raio-balao);
+}
+
+.conversa[data-app='line'] .recebida.ponta::before {
+  inset-inline-start: -5px;
+}
+
+.conversa[data-app='line'] .enviada.ponta::before {
+  inset-inline-end: -5px;
+}
+
+.conversa[data-app='line'] .recebida,
+.conversa[data-app='line'] .enviada,
+.conversa[data-app='kakao'] .recebida,
+.conversa[data-app='kakao'] .enviada {
+  padding: 7px 12px;
+}
+
+.conversa[data-app='line'] .dia,
+.conversa[data-app='kakao'] .dia,
+.conversa[data-app='zalo'] .dia,
+.conversa[data-app='telegram'] .dia,
+.conversa[data-app='viber'] .dia {
+  border-radius: 999px;
+  padding: 3px 12px;
+}
+
+.conversa[data-app='line'] .campo {
+  min-height: 36px;
+}
+
+/* ---------- KakaoTalk (Coreia) ---------- */
+.conversa[data-app='kakao'] {
+  --raio-balao: 6px;
+  --recuo-foto: 44px;
+}
+
+.conversa[data-app='kakao'] .fotoTopo {
+  inset-inline-start: -44px;
+  width: 36px;
+  height: 36px;
+  border-radius: 14px;
+}
+
+.conversa[data-app='kakao'] .fotoTopo svg {
+  width: 34px;
+  height: 34px;
+  margin-bottom: -6px;
+}
+
+.conversa[data-app='kakao'] .recebida.ponta {
+  margin-top: 26px;
+}
+
+.conversa[data-app='kakao'] .ponta::before {
+  top: 6px;
+  width: 6px;
+  height: 8px;
+}
+
+.conversa[data-app='kakao'] .recebida.ponta,
+.conversa[data-app='kakao'] .enviada.ponta {
+  border-radius: var(--raio-balao);
+}
+
+.conversa[data-app='kakao'] .recebida.ponta::before {
+  inset-inline-start: -5px;
+}
+
+.conversa[data-app='kakao'] .enviada.ponta::before {
+  inset-inline-end: -5px;
+}
+
+.conversa[data-app='kakao'] .campo {
+  min-height: 36px;
+  padding-inline: 4px;
+  border-radius: 0;
+}
+
+.conversa[data-app='kakao'] .depois {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--conversa-microfone);
+}
+
+.conversa[data-app='kakao'] .depois svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------- Zalo (Vietnã) ---------- */
+.conversa[data-app='zalo'] {
+  --raio-balao: 12px;
+  --recuo-foto: 38px;
+}
+
+.conversa[data-app='zalo'] .ponta::before,
+.conversa[data-app='viber'] .ponta::before,
+.conversa[data-app='messenger'] .ponta::before {
+  content: none;
+}
+
+.conversa[data-app='zalo'] .recebida.ponta,
+.conversa[data-app='zalo'] .enviada.ponta,
+.conversa[data-app='viber'] .recebida.ponta,
+.conversa[data-app='viber'] .enviada.ponta {
+  border-radius: var(--raio-balao);
+}
+
+/* No Zalo a hora vai numa linha própria, embaixo do texto. */
+.conversa[data-app='zalo'] .recebida,
+.conversa[data-app='zalo'] .enviada {
+  padding: 8px 12px;
+}
+
+.conversa[data-app='zalo'] .recebida::after,
+.conversa[data-app='zalo'] .enviada::after {
+  content: none;
+}
+
+.conversa[data-app='zalo'] .hora {
+  position: static;
+  display: flex;
+  margin-top: 4px;
+}
+
+.conversa[data-app='zalo'] .lidoAbaixo {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--conversa-dia);
+  color: var(--conversa-dia-texto);
+}
+
+.conversa[data-app='zalo'] .campo {
+  padding-inline: 4px;
+  border-radius: 0;
+}
+
+/* ---------- Telegram (Ucrânia) ---------- */
+.conversa[data-app='telegram'] {
+  --raio-balao: 14px;
+}
+
+/* A pontinha do Telegram fica embaixo, no último balão de cada lado. */
+.conversa[data-app='telegram'] .ponta::before,
+.conversa[data-app='mensagens'] .ponta::before {
+  content: none;
+}
+
+.conversa[data-app='telegram'] .recebida.ponta,
+.conversa[data-app='telegram'] .enviada.ponta,
+.conversa[data-app='mensagens'] .recebida.ponta,
+.conversa[data-app='mensagens'] .enviada.ponta {
+  border-radius: var(--raio-balao);
+}
+
+.conversa[data-app='telegram'] .ultima::before,
+.conversa[data-app='mensagens'] .ultima::before {
+  content: '';
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  width: 9px;
+  height: 12px;
+  background: inherit;
+  scale: var(--sentido) 1;
+}
+
+.conversa[data-app='telegram'] .recebida.ultima,
+.conversa[data-app='mensagens'] .recebida.ultima {
+  border-end-start-radius: 0;
+}
+
+.conversa[data-app='telegram'] .recebida.ultima::before,
+.conversa[data-app='mensagens'] .recebida.ultima::before {
+  inset-inline-start: -8px;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.conversa[data-app='telegram'] .enviada.ultima,
+.conversa[data-app='mensagens'] .enviada.ultima {
+  border-end-end-radius: 0;
+}
+
+.conversa[data-app='telegram'] .enviada.ultima::before,
+.conversa[data-app='mensagens'] .enviada.ultima::before {
+  inset-inline-end: -8px;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+.conversa[data-app='telegram'] .campo {
+  padding-inline: 2px;
+  border-radius: 0;
+}
+
+/* ---------- Viber (Grécia) ---------- */
+.conversa[data-app='viber'] {
+  --raio-balao: 18px;
+}
+
+.conversa[data-app='viber'] .recebida,
+.conversa[data-app='viber'] .enviada {
+  padding: 8px 12px 9px;
+}
+
+.conversa[data-app='viber'] .hora {
+  inset-inline-end: 12px;
+  bottom: 6px;
+}
+
+.conversa[data-app='viber'] .campo {
+  min-height: 38px;
+}
+
+/* ---------- Messenger (Hungria, Polônia) ---------- */
+.conversa[data-app='messenger'] {
+  --raio-balao: 18px;
+  --recuo-foto: 38px;
+}
+
+.conversa[data-app='messenger'] .recebida,
+.conversa[data-app='messenger'] .enviada {
+  padding: 8px 12px;
+}
+
+/* Balões em sequência do mesmo lado: o canto do meio fica menos redondo. */
+.conversa[data-app='messenger'] .recebida.ponta {
+  border-end-start-radius: 4px;
+}
+
+.conversa[data-app='messenger'] .recebida.ultima {
+  border-start-start-radius: 4px;
+}
+
+.conversa[data-app='messenger'] .enviada.ponta {
+  border-radius: var(--raio-balao);
+}
+
+/* Bolinha verde de "ativo" na foto do cabeçalho. */
+.conversa[data-app='messenger'] .avatar {
+  position: relative;
+  overflow: visible;
+}
+
+.conversa[data-app='messenger'] .avatar svg {
+  border-radius: 50%;
+}
+
+.conversa[data-app='messenger'] .avatar::after {
+  content: '';
+  position: absolute;
+  inset-inline-end: -1px;
+  bottom: -1px;
+  width: 11px;
+  height: 11px;
+  border: 2px solid var(--conversa-cabeca);
+  border-radius: 50%;
+  background: #31a24c;
+}
+
+.conversa[data-app='messenger'] .campo {
+  min-height: 36px;
+}
+
+/* ---------- Mensagens de texto do celular (EUA, Canadá, Austrália) ---------- */
+.conversa[data-app='mensagens'] {
+  --raio-balao: 18px;
+}
+
+/* Cabeçalho centralizado: foto em cima, nome embaixo. */
+.conversa[data-app='mensagens'] .cabeca {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  justify-items: center;
+  row-gap: 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--conversa-campo-borda);
+}
+
+.conversa[data-app='mensagens'] .voltar {
+  grid-row: 1 / span 2;
+  justify-self: start;
+  width: 24px;
+  height: 24px;
+}
+
+.conversa[data-app='mensagens'] .avatar {
+  grid-column: 2;
+  grid-row: 1;
+  width: 40px;
+  height: 40px;
+}
+
+.conversa[data-app='mensagens'] .quem {
+  grid-column: 2;
+  grid-row: 2;
+  text-align: center;
+}
+
+.conversa[data-app='mensagens'] .contato {
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+.conversa[data-app='mensagens'] .acoes {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  justify-self: end;
+}
+
+.conversa[data-app='mensagens'] .recebida,
+.conversa[data-app='mensagens'] .enviada {
+  padding: 7px 12px;
+}
+
+.conversa[data-app='mensagens'] .dia,
+.conversa[data-app='messenger'] .dia {
+  padding: 0;
+  box-shadow: none;
+  font-weight: 600;
+  font-size: 0.6875rem;
+}
+
+.conversa[data-app='mensagens'] .campo {
+  min-height: 36px;
+}
+
+/* ---------- Celular estreito ---------- */
+@media (max-width: 760px) {
+  .conversa {
+    border-radius: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .digitando i {
+    animation: none;
+  }
+}
+
+/* Celular estreito (a coluna do "antes" na tela larga tem uns 240 px): saem a câmera de vídeo do cabeçalho e os ícones
+   extras da barra, como o próprio aplicativo faz quando falta espaço, para o nome do contato e o "Mensagem" caberem. */
+@container (max-width: 300px) {
+  .cabeca {
+    gap: 5px;
+    padding-inline: 6px;
+  }
+
+  .voltar {
+    width: 18px;
+    height: 18px;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .avatar svg {
+    width: 28px;
+    height: 28px;
+    margin-bottom: -5px;
+  }
+
+  .contato {
+    font-size: 0.875rem;
+  }
+
+  .acoes {
+    gap: 10px;
+    padding-inline-end: 0;
+  }
+
+  .acoes svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .acoes [data-icone='video'],
+  .acoes [data-icone='busca'],
+  .campo [data-icone='camera'],
+  .barra > .iconeBarra ~ .iconeBarra,
+  .depois [data-icone='mais'],
+  .depois [data-icone='imagem'] {
+    display: none;
+  }
+
+  .campo {
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .conversa:not([data-app='whatsapp']) .barra {
+    gap: 8px;
+    padding-inline: 8px;
+  }
+
+  .conversa[data-app='mensagens'] .acoes [data-icone='video'] {
+    display: block;
+  }
+}
+
+/* Mais estreito (a coluna do "antes" na tela larga): letra menor no "Mensagem" e no microfone. */
+@container (max-width: 250px) {
+  .dica {
+    font-size: 0.875rem;
+  }
+
+  .campo {
+    gap: 6px;
+    min-height: 38px;
+    padding: 0 9px;
+  }
+
+  .conversa[data-app='whatsapp'] .depois {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Hora do lado de fora do balão: o balão estreita para a hora caber dentro do celular. */
+  .conversa[data-hora='fora'] .recebida,
+  .conversa[data-hora='fora'] .enviada {
+    max-width: 60%;
+  }
+}
+
+/* Mais estreito ainda (tela larga entre 1021 e 1200 px): o cabeçalho fica só com o menu e a barra com o essencial. */
+@container (max-width: 220px) {
+  .acoes [data-icone='telefone'],
+  .campo [data-icone='clipe'] {
+    display: none;
+  }
+}

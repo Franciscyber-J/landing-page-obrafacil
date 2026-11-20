@@ -125,5 +125,9 @@
             "texto": "These templates are general-purpose references. They don't replace the project drawings and specification, the applicable regulations and standards, or professional judgement. Checking and adapting each item to the project and the applicable requirements, and taking responsibility for the works and their approval, rests with the qualified professional responsible for the works (a qualified engineer or registered architect). Using these templates doesn't replace that review.",
             "pdf": "General-purpose reference template. It doesn't replace the project documents, the applicable regulations or the review of the qualified professional responsible for the works (qualified engineer or registered architect), who is accountable for the works and their approval."
         }
+    },
+    "cliente": {
+        "antes": "Before: everything over WhatsApp",
+        "mensagem": "Message"
     }
 }

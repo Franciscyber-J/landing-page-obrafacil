@@ -128,25 +128,259 @@
   --conversa-cabeca: #008069;          /* nome e status em branco: 4,9:1 */
   --conversa-cabeca-texto: #ffffff;
   --conversa-cabeca-texto-2: #ffffff;
+  --conversa-cabeca-icone: #ffffff;
   --conversa-fundo: #efeae2;
   --conversa-desenho: rgba(110, 90, 60, 0.16);
   --conversa-recebida: #ffffff;
   --conversa-enviada: #d9fdd3;
   --conversa-texto: #111b21;           /* 17:1 no branco, 15,8:1 no verde */
+  --conversa-texto-enviada: #111b21;
   --conversa-hora: #667781;            /* 4,7:1 no branco */
   --conversa-hora-enviada: #5e6f78;    /* 4,7:1 no verde */
+  --conversa-hora-fora: #54656f;
   --conversa-tiques: #53bdeb;
+  --conversa-lido: #54656f;
   --conversa-dia: #ffffff;
   --conversa-dia-texto: #54656f;       /* 6:1 */
+  --conversa-barra: transparent;
   --conversa-campo: #ffffff;
+  --conversa-campo-borda: transparent;
   --conversa-campo-texto: #667781;     /* 4,7:1 */
   --conversa-icone: #54656f;
+  --conversa-destaque: #54656f;
   --conversa-microfone: #00a884;
   --conversa-microfone-icone: #ffffff;
   --conversa-sombra: 0 1px 0.5px rgba(11, 20, 26, 0.13);
   --conversa-avatar: #dfe5e7;
   --conversa-avatar-icone: #ffffff;
   --conversa-moldura: #1c2c40;
+}
+
+/* As outras aparências da conversa do "antes" (o aplicativo de mensagens de cada país, src/i18n/aplicativoDeMensagens.js;
+   pedido do Francis, 20/11/2026). Mesmo jogo de variáveis do WhatsApp (acima), no elemento com data-app. Cores que
+   lembram cada aplicativo, com os textos acima de 4,5:1 (conta no comentário). Escuro no fim do arquivo. */
+/* LINE (Japão, Tailândia, Taiwan) */
+[data-app='line'] {
+  --conversa-cabeca: #ffffff;
+  --conversa-cabeca-texto: #111111;
+  --conversa-cabeca-texto-2: #5f6672;
+  --conversa-cabeca-icone: #111111;
+  --conversa-fundo: #8babd8;
+  --conversa-desenho: transparent;
+  --conversa-recebida: #ffffff;
+  --conversa-enviada: #8fe36b;
+  --conversa-texto: #111111;
+  --conversa-texto-enviada: #111111; /* 12:1 */
+  --conversa-hora: #5f6672;
+  --conversa-hora-enviada: #5f6672;
+  --conversa-hora-fora: #13294b; /* 6,2:1 no azul */
+  --conversa-tiques: #13294b;
+  --conversa-lido: #13294b;
+  --conversa-dia: #4d6077;
+  --conversa-dia-texto: #ffffff; /* 6,5:1 */
+  --conversa-barra: #ffffff;
+  --conversa-campo: #f2f3f5;
+  --conversa-campo-borda: transparent;
+  --conversa-campo-texto: #5f6672; /* 5,2:1 */
+  --conversa-icone: #2b2b2b;
+  --conversa-destaque: #2b2b2b;
+  --conversa-microfone: transparent;
+  --conversa-microfone-icone: #2b2b2b;
+  --conversa-sombra: none;
+  --conversa-avatar: #c9d4e3;
+  --conversa-avatar-icone: #ffffff;
+}
+
+/* KakaoTalk (Coreia) */
+[data-app='kakao'] {
+  --conversa-cabeca: #b2c7da;
+  --conversa-cabeca-texto: #191919;
+  --conversa-cabeca-texto-2: #36475a;
+  --conversa-cabeca-icone: #191919;
+  --conversa-fundo: #b2c7da;
+  --conversa-desenho: transparent;
+  --conversa-recebida: #ffffff;
+  --conversa-enviada: #fee500;
+  --conversa-texto: #191919;
+  --conversa-texto-enviada: #191919; /* 13,8:1 */
+  --conversa-hora: #36475a;
+  --conversa-hora-enviada: #36475a;
+  --conversa-hora-fora: #36475a; /* 5,5:1 */
+  --conversa-tiques: #36475a;
+  --conversa-lido: #36475a;
+  --conversa-dia: #5b6c7d;
+  --conversa-dia-texto: #ffffff; /* 5,4:1 */
+  --conversa-barra: #ffffff;
+  --conversa-campo: #ffffff;
+  --conversa-campo-borda: transparent;
+  --conversa-campo-texto: #707070; /* 5:1 */
+  --conversa-icone: #444444;
+  --conversa-destaque: #191919;
+  --conversa-microfone: #fee500;
+  --conversa-microfone-icone: #191919;
+  --conversa-sombra: none;
+  --conversa-avatar: #a5b8cb;
+  --conversa-avatar-icone: #ffffff;
+}
+
+/* Zalo (Vietnã) */
+[data-app='zalo'] {
+  --conversa-cabeca: linear-gradient(90deg, #005ae0, #0a7cf0);
+  --conversa-cabeca-texto: #ffffff; /* 5,9:1 */
+  --conversa-cabeca-texto-2: #ffffff;
+  --conversa-cabeca-icone: #ffffff;
+  --conversa-fundo: #e2e9f1;
+  --conversa-desenho: transparent;
+  --conversa-recebida: #ffffff;
+  --conversa-enviada: #dbebff;
+  --conversa-texto: #081c36;
+  --conversa-texto-enviada: #081c36;
+  --conversa-hora: #5f6f82; /* 5,1:1 */
+  --conversa-hora-enviada: #55657a; /* 4,9:1 */
+  --conversa-hora-fora: #5f6f82;
+  --conversa-tiques: #0068ff;
+  --conversa-lido: #3b4757;
+  --conversa-dia: #5f6e81;
+  --conversa-dia-texto: #ffffff; /* 5,2:1 */
+  --conversa-barra: #ffffff;
+  --conversa-campo: transparent;
+  --conversa-campo-borda: transparent;
+  --conversa-campo-texto: #6b7785; /* 4,6:1 */
+  --conversa-icone: #47505c;
+  --conversa-destaque: #0068ff;
+  --conversa-microfone: transparent;
+  --conversa-microfone-icone: #0068ff;
+  --conversa-sombra: 0 1px 1px rgba(8, 28, 54, 0.08);
+  --conversa-avatar: #b9c7d8;
+  --conversa-avatar-icone: #ffffff;
+}
+
+/* Telegram (Ucrânia) */
+[data-app='telegram'] {
+  --conversa-cabeca: #46698c;
+  --conversa-cabeca-texto: #ffffff; /* 5,7:1 */
+  --conversa-cabeca-texto-2: #dde8f2; /* 4,6:1 */
+  --conversa-cabeca-icone: #ffffff;
+  --conversa-fundo: #c9d8b6;
+  --conversa-desenho: rgba(60, 90, 40, 0.2);
+  --conversa-recebida: #ffffff;
+  --conversa-enviada: #effedd;
+  --conversa-texto: #000000;
+  --conversa-texto-enviada: #000000;
+  --conversa-hora: #66788a; /* 4,6:1 */
+  --conversa-hora-enviada: #3f7f39; /* 4,6:1 */
+  --conversa-hora-fora: #66788a;
+  --conversa-tiques: #3f7f39;
+  --conversa-lido: #3f7f39;
+  --conversa-dia: #5f7550;
+  --conversa-dia-texto: #ffffff; /* 5,1:1 */
+  --conversa-barra: #ffffff;
+  --conversa-campo: transparent;
+  --conversa-campo-borda: transparent;
+  --conversa-campo-texto: #707579; /* 4,7:1 */
+  --conversa-icone: #7f878d;
+  --conversa-destaque: #7f878d;
+  --conversa-microfone: transparent;
+  --conversa-microfone-icone: #7f878d;
+  --conversa-sombra: 0 1px 1px rgba(0, 0, 0, 0.12);
+  --conversa-avatar: #7fb2dd;
+  --conversa-avatar-icone: #ffffff;
+}
+
+/* Viber (Grécia) */
+[data-app='viber'] {
+  --conversa-cabeca: #665cac;
+  --conversa-cabeca-texto: #ffffff; /* 5,7:1 */
+  --conversa-cabeca-texto-2: #ebe8fb; /* 4,7:1 */
+  --conversa-cabeca-icone: #ffffff;
+  --conversa-fundo: #f7f7fa;
+  --conversa-desenho: transparent;
+  --conversa-recebida: #eceef3;
+  --conversa-enviada: #e3dcfc;
+  --conversa-texto: #1d1d1f;
+  --conversa-texto-enviada: #1d1d1f;
+  --conversa-hora: #5f6470; /* 5,1:1 */
+  --conversa-hora-enviada: #5d5480; /* 5,2:1 */
+  --conversa-hora-fora: #5f6470;
+  --conversa-tiques: #665cac;
+  --conversa-lido: #665cac;
+  --conversa-dia: #e9e9ef;
+  --conversa-dia-texto: #5f6470; /* 4,9:1 */
+  --conversa-barra: #ffffff;
+  --conversa-campo: #f1f1f5;
+  --conversa-campo-borda: transparent;
+  --conversa-campo-texto: #60646f; /* 5,3:1 */
+  --conversa-icone: #665cac;
+  --conversa-destaque: #665cac;
+  --conversa-microfone: transparent;
+  --conversa-microfone-icone: #665cac;
+  --conversa-sombra: none;
+  --conversa-avatar: #c9c4ea;
+  --conversa-avatar-icone: #ffffff;
+}
+
+/* Messenger (Hungria, Polônia) */
+[data-app='messenger'] {
+  --conversa-cabeca: #ffffff;
+  --conversa-cabeca-texto: #050505;
+  --conversa-cabeca-texto-2: #65676b; /* 5,7:1 */
+  --conversa-cabeca-icone: #0866ff;
+  --conversa-fundo: #ffffff;
+  --conversa-desenho: transparent;
+  --conversa-recebida: #f0f0f0;
+  --conversa-enviada: linear-gradient(160deg, #0866ff, #8f2bd8);
+  --conversa-texto: #050505;
+  --conversa-texto-enviada: #ffffff; /* 4,8:1 no azul, 6:1 no roxo */
+  --conversa-hora: #65676b;
+  --conversa-hora-enviada: #ffffff;
+  --conversa-hora-fora: #65676b;
+  --conversa-tiques: #0866ff;
+  --conversa-lido: #65676b;
+  --conversa-dia: transparent;
+  --conversa-dia-texto: #65676b; /* 5,7:1 */
+  --conversa-barra: #ffffff;
+  --conversa-campo: #f0f2f5;
+  --conversa-campo-borda: transparent;
+  --conversa-campo-texto: #65676b; /* 5:1 */
+  --conversa-icone: #0866ff;
+  --conversa-destaque: #0866ff;
+  --conversa-microfone: transparent;
+  --conversa-microfone-icone: #0866ff;
+  --conversa-sombra: none;
+  --conversa-avatar: #d8dadf;
+  --conversa-avatar-icone: #ffffff;
+}
+
+/* Mensagens de texto do celular (EUA, Canadá, Austrália) */
+[data-app='mensagens'] {
+  --conversa-cabeca: #f5f5f7;
+  --conversa-cabeca-texto: #000000;
+  --conversa-cabeca-texto-2: #6e6e73;
+  --conversa-cabeca-icone: #0b67d6;
+  --conversa-fundo: #ffffff;
+  --conversa-desenho: transparent;
+  --conversa-recebida: #e9e9eb;
+  --conversa-enviada: #0b67d6;
+  --conversa-texto: #000000; /* 17:1 */
+  --conversa-texto-enviada: #ffffff; /* 5,4:1 */
+  --conversa-hora: #6e6e73;
+  --conversa-hora-enviada: #ffffff;
+  --conversa-hora-fora: #6e6e73;
+  --conversa-tiques: #0b67d6;
+  --conversa-lido: #6e6e73; /* 5,1:1 */
+  --conversa-dia: transparent;
+  --conversa-dia-texto: #6e6e73; /* 5,1:1 */
+  --conversa-barra: #ffffff;
+  --conversa-campo: #ffffff;
+  --conversa-campo-borda: #c7c7cc;
+  --conversa-campo-texto: #6e6e73; /* 5,1:1 */
+  --conversa-icone: #8e8e93;
+  --conversa-destaque: #8e8e93;
+  --conversa-microfone: transparent;
+  --conversa-microfone-icone: #8e8e93;
+  --conversa-sombra: none;
+  --conversa-avatar: #a3a8b3;
+  --conversa-avatar-icone: #ffffff;
 }
 
 /* Árabe e hebraico (da direita para a esquerda) */
@@ -202,23 +436,248 @@
   --conversa-cabeca: #202c33;
   --conversa-cabeca-texto: #e9edef;    /* 12:1 */
   --conversa-cabeca-texto-2: #8696a0;  /* 4,7:1 */
+  --conversa-cabeca-icone: #aebac1;
   --conversa-fundo: #0b141a;
   --conversa-desenho: rgba(255, 255, 255, 0.06);
   --conversa-recebida: #202c33;
   --conversa-enviada: #005c4b;
   --conversa-texto: #e9edef;           /* 12:1 no cinza, 6,8:1 no verde */
+  --conversa-texto-enviada: #e9edef;
   --conversa-hora: #8696a0;            /* 4,7:1 no cinza */
   --conversa-hora-enviada: #bfd1cc;    /* 4,8:1 no verde */
+  --conversa-hora-fora: #8696a0;
   --conversa-tiques: #53bdeb;
+  --conversa-lido: #8696a0;
   --conversa-dia: #182229;
   --conversa-dia-texto: #8696a0;       /* 5,3:1 */
+  --conversa-barra: transparent;
   --conversa-campo: #2a3942;
+  --conversa-campo-borda: transparent;
   --conversa-campo-texto: #99a8b1;     /* 4,9:1 */
   --conversa-icone: #8696a0;
+  --conversa-destaque: #8696a0;
   --conversa-microfone: #00a884;
   --conversa-microfone-icone: #0b141a;
   --conversa-sombra: 0 1px 0.5px rgba(0, 0, 0, 0.3);
   --conversa-avatar: #6a7175;
   --conversa-avatar-icone: #cfd4d6;
   --conversa-moldura: #2b3d52;
+}
+
+/* Conversa do "antes" no tema escuro de cada aplicativo (o claro fica logo depois das cores do WhatsApp). */
+[data-theme='dark'] [data-app='line'] {
+  --conversa-cabeca: #111111;
+  --conversa-cabeca-texto: #f0f0f0;
+  --conversa-cabeca-texto-2: #a3a9b3;
+  --conversa-cabeca-icone: #f0f0f0;
+  --conversa-fundo: #22262e;
+  --conversa-desenho: transparent;
+  --conversa-recebida: #33373e;
+  --conversa-enviada: #5bc86f;
+  --conversa-texto: #f0f0f0; /* 10,5:1 */
+  --conversa-texto-enviada: #0d0d0d; /* 9,2:1 */
+  --conversa-hora: #a3a9b3;
+  --conversa-hora-enviada: #1f3d26;
+  --conversa-hora-fora: #a3a9b3; /* 6,4:1 */
+  --conversa-tiques: #a3a9b3;
+  --conversa-lido: #a3a9b3;
+  --conversa-dia: #3a3f48;
+  --conversa-dia-texto: #e6e6e6; /* 8,5:1 */
+  --conversa-barra: #111111;
+  --conversa-campo: #2a2d33;
+  --conversa-campo-borda: transparent;
+  --conversa-campo-texto: #a3a9b3; /* 5,8:1 */
+  --conversa-icone: #d0d0d0;
+  --conversa-destaque: #d0d0d0;
+  --conversa-microfone: transparent;
+  --conversa-microfone-icone: #d0d0d0;
+  --conversa-sombra: none;
+  --conversa-avatar: #4a505a;
+  --conversa-avatar-icone: #b8bec8;
+}
+
+[data-theme='dark'] [data-app='kakao'] {
+  --conversa-cabeca: #1f2023;
+  --conversa-cabeca-texto: #ececec;
+  --conversa-cabeca-texto-2: #a0a4aa;
+  --conversa-cabeca-icone: #ececec;
+  --conversa-fundo: #1f2023;
+  --conversa-desenho: transparent;
+  --conversa-recebida: #3a3d42;
+  --conversa-enviada: #fee500;
+  --conversa-texto: #ececec; /* 9,2:1 */
+  --conversa-texto-enviada: #191919;
+  --conversa-hora: #a0a4aa;
+  --conversa-hora-enviada: #36475a;
+  --conversa-hora-fora: #a0a4aa; /* 6,5:1 */
+  --conversa-tiques: #a0a4aa;
+  --conversa-lido: #a0a4aa;
+  --conversa-dia: #3d4046;
+  --conversa-dia-texto: #e8e8e8; /* 8,5:1 */
+  --conversa-barra: #26282c;
+  --conversa-campo: #26282c;
+  --conversa-campo-borda: transparent;
+  --conversa-campo-texto: #9a9ea4; /* 5,5:1 */
+  --conversa-icone: #c9cbcf;
+  --conversa-destaque: #c9cbcf;
+  --conversa-microfone: #fee500;
+  --conversa-microfone-icone: #191919;
+  --conversa-sombra: none;
+  --conversa-avatar: #55595f;
+  --conversa-avatar-icone: #9da2a8;
+}
+
+[data-theme='dark'] [data-app='zalo'] {
+  --conversa-cabeca: #1e1f22;
+  --conversa-cabeca-texto: #ededed;
+  --conversa-cabeca-texto-2: #a5acb5; /* 7,2:1 */
+  --conversa-cabeca-icone: #ededed;
+  --conversa-fundo: #121314;
+  --conversa-desenho: transparent;
+  --conversa-recebida: #26282b;
+  --conversa-enviada: #0a3d80;
+  --conversa-texto: #e6e6e6; /* 11,8:1 */
+  --conversa-texto-enviada: #e6efff; /* 9,1:1 */
+  --conversa-hora: #9aa3ad; /* 5,8:1 */
+  --conversa-hora-enviada: #a9c3ea; /* 5,9:1 */
+  --conversa-hora-fora: #9aa3ad;
+  --conversa-tiques: #4a9aff;
+  --conversa-lido: #c9ced4;
+  --conversa-dia: #2c2f33;
+  --conversa-dia-texto: #c9ced4; /* 8,5:1 */
+  --conversa-barra: #1e1f22;
+  --conversa-campo: transparent;
+  --conversa-campo-borda: transparent;
+  --conversa-campo-texto: #9aa3ad; /* 6,5:1 */
+  --conversa-icone: #c0c6cd;
+  --conversa-destaque: #4a9aff;
+  --conversa-microfone: transparent;
+  --conversa-microfone-icone: #4a9aff;
+  --conversa-sombra: none;
+  --conversa-avatar: #3a3f46;
+  --conversa-avatar-icone: #a5acb5;
+}
+
+[data-theme='dark'] [data-app='telegram'] {
+  --conversa-cabeca: #17212b;
+  --conversa-cabeca-texto: #f5f5f5;
+  --conversa-cabeca-texto-2: #8a9bad; /* 5,7:1 */
+  --conversa-cabeca-icone: #f5f5f5;
+  --conversa-fundo: #0e1621;
+  --conversa-desenho: rgba(255, 255, 255, 0.05);
+  --conversa-recebida: #182533;
+  --conversa-enviada: #2b5278;
+  --conversa-texto: #f5f5f5;
+  --conversa-texto-enviada: #f5f5f5; /* 7,5:1 */
+  --conversa-hora: #8597a9; /* 5,2:1 */
+  --conversa-hora-enviada: #a8c8e8; /* 4,7:1 */
+  --conversa-hora-fora: #8597a9;
+  --conversa-tiques: #a8c8e8;
+  --conversa-lido: #a8c8e8;
+  --conversa-dia: #1e2c3a;
+  --conversa-dia-texto: #e0e6ec; /* 11:1 */
+  --conversa-barra: #17212b;
+  --conversa-campo: transparent;
+  --conversa-campo-borda: transparent;
+  --conversa-campo-texto: #8a9bad; /* 5,7:1 */
+  --conversa-icone: #8a9bad;
+  --conversa-destaque: #8a9bad;
+  --conversa-microfone: transparent;
+  --conversa-microfone-icone: #8a9bad;
+  --conversa-sombra: none;
+  --conversa-avatar: #3d6a95;
+  --conversa-avatar-icone: #c9dcef;
+}
+
+[data-theme='dark'] [data-app='viber'] {
+  --conversa-cabeca: #1f1d2b;
+  --conversa-cabeca-texto: #f2f2f2;
+  --conversa-cabeca-texto-2: #a9a6c2; /* 7:1 */
+  --conversa-cabeca-icone: #f2f2f2;
+  --conversa-fundo: #121217;
+  --conversa-desenho: transparent;
+  --conversa-recebida: #26252f;
+  --conversa-enviada: #4a3f9e;
+  --conversa-texto: #ececf1;
+  --conversa-texto-enviada: #f4f2ff; /* 7,6:1 */
+  --conversa-hora: #9b98ad; /* 5,4:1 */
+  --conversa-hora-enviada: #c9c2f2; /* 5:1 */
+  --conversa-hora-fora: #9b98ad;
+  --conversa-tiques: #c9c2f2;
+  --conversa-lido: #c9c2f2;
+  --conversa-dia: #26252f;
+  --conversa-dia-texto: #b9b6c9; /* 7,6:1 */
+  --conversa-barra: #1a1922;
+  --conversa-campo: #26252f;
+  --conversa-campo-borda: transparent;
+  --conversa-campo-texto: #9b98ad; /* 5,4:1 */
+  --conversa-icone: #a99cff;
+  --conversa-destaque: #a99cff;
+  --conversa-microfone: transparent;
+  --conversa-microfone-icone: #a99cff;
+  --conversa-sombra: none;
+  --conversa-avatar: #3a3650;
+  --conversa-avatar-icone: #a9a6c2;
+}
+
+[data-theme='dark'] [data-app='messenger'] {
+  --conversa-cabeca: #000000;
+  --conversa-cabeca-texto: #e4e6eb;
+  --conversa-cabeca-texto-2: #b0b3b8; /* 10:1 */
+  --conversa-cabeca-icone: #3d8bff;
+  --conversa-fundo: #000000;
+  --conversa-desenho: transparent;
+  --conversa-recebida: #303030;
+  --conversa-enviada: linear-gradient(160deg, #0866ff, #8f2bd8);
+  --conversa-texto: #e4e6eb; /* 10,6:1 */
+  --conversa-texto-enviada: #ffffff;
+  --conversa-hora: #b0b3b8;
+  --conversa-hora-enviada: #ffffff;
+  --conversa-hora-fora: #b0b3b8;
+  --conversa-tiques: #3d8bff;
+  --conversa-lido: #b0b3b8;
+  --conversa-dia: transparent;
+  --conversa-dia-texto: #b0b3b8; /* 10:1 */
+  --conversa-barra: #000000;
+  --conversa-campo: #303030;
+  --conversa-campo-borda: transparent;
+  --conversa-campo-texto: #b0b3b8; /* 6,3:1 */
+  --conversa-icone: #3d8bff;
+  --conversa-destaque: #3d8bff;
+  --conversa-microfone: transparent;
+  --conversa-microfone-icone: #3d8bff;
+  --conversa-sombra: none;
+  --conversa-avatar: #3a3b3c;
+  --conversa-avatar-icone: #b0b3b8;
+}
+
+[data-theme='dark'] [data-app='mensagens'] {
+  --conversa-cabeca: #1c1c1e;
+  --conversa-cabeca-texto: #ffffff;
+  --conversa-cabeca-texto-2: #98989f;
+  --conversa-cabeca-icone: #3d8bff;
+  --conversa-fundo: #000000;
+  --conversa-desenho: transparent;
+  --conversa-recebida: #26252a;
+  --conversa-enviada: #0b67d6;
+  --conversa-texto: #ffffff; /* 15:1 */
+  --conversa-texto-enviada: #ffffff;
+  --conversa-hora: #98989f;
+  --conversa-hora-enviada: #ffffff;
+  --conversa-hora-fora: #98989f;
+  --conversa-tiques: #3d8bff;
+  --conversa-lido: #98989f; /* 7,3:1 */
+  --conversa-dia: transparent;
+  --conversa-dia-texto: #98989f; /* 7,3:1 */
+  --conversa-barra: #000000;
+  --conversa-campo: #000000;
+  --conversa-campo-borda: #3a3a3c;
+  --conversa-campo-texto: #98989f; /* 7,3:1 */
+  --conversa-icone: #98989f;
+  --conversa-destaque: #98989f;
+  --conversa-microfone: transparent;
+  --conversa-microfone-icone: #98989f;
+  --conversa-sombra: none;
+  --conversa-avatar: #5a5d66;
+  --conversa-avatar-icone: #d1d3d9;
 }

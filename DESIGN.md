@@ -119,11 +119,14 @@ flutuando. O escuro é o mundo principal; o claro tem a mesma forma com luzes ma
 - Abertura (`Placa.jsx`): selo de plataformas, título com destaque, abas em cápsula que trocam a tela do
   celular do meio, ações, lojas; três celulares em leque com a planta baixa desenhando atrás.
 - Cartões de vidro nas listas (pontos do cliente, papéis, depoimentos, perguntas, plano grátis).
-- Conversa do "antes" no cliente (`Cliente.jsx`, pedido do Francis em 20/11/2026): uma conversa do WhatsApp num
-  celular, com as cores dele no claro e no escuro (`--conversa-*` em `design-tokens.css`): cabeçalho com avatar, nome
-  e "online"/"digitando...", fundo com desenhos de linha próprios (`DesenhoDaConversa.jsx`, nunca o papel de parede do
-  WhatsApp), balões com a pontinha, hora e tiques azuis, e a barra de escrever. Sem o logotipo do WhatsApp. No celular
-  estreito (container query) saem os ícones que não cabem, como o próprio WhatsApp faz; o nome tem até duas linhas.
+- Conversa do "antes" no cliente (`ConversaSimulada.jsx`, pedidos do Francis em 20/11/2026): a conversa num celular,
+  no aplicativo de mensagens do país do idioma (`src/i18n/aplicativoDeMensagens.js`, um lugar só, com teste): WhatsApp,
+  LINE, KakaoTalk, Zalo, Telegram, Viber, Messenger ou as mensagens de texto do celular. Cada um com as cores dele no
+  claro e no escuro (`--conversa-*` em `design-tokens.css`, por `data-app`) e as formas dele (cabeçalho, balões, hora
+  dentro ou fora, "lido", barra de escrever; `ConversaSimulada.module.css`). Fundo com desenhos de linha próprios
+  (`DesenhoDaConversa.jsx`) só onde o aplicativo tem fundo desenhado (WhatsApp, Telegram). Nenhum logotipo, papel de
+  parede, figurinha ou mascote dos aplicativos. No celular estreito (container query) saem os ícones que não cabem,
+  como o próprio aplicativo faz; o nome tem até duas linhas.
 - Central de Ajuda e Termos/Política no mesmo mundo (luzes no topo da Central, cabeça em painel nos Termos).
 - Modelos grátis (`src/components/modelos/`): a lista com cabeça em painel, a folha do diário desenhada com os campos
   reais do app e os grupos em duas colunas como o índice de um manual (cada linha com o PDF direto); a página de cada
