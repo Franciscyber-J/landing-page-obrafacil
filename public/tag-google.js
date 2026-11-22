@@ -20,9 +20,9 @@ if (escolhaCookies === 'aceito') {
 gtag('set', 'ads_data_redaction', escolhaCookies !== 'aceito');
 gtag('js', new Date());
 gtag('config', 'AW-18200904302');
-// Google Analytics 4: preencher com o código de medição (G-...) quando a propriedade for criada.
+// Google Analytics 4: propriedade "ObraFácil" (conta ExpertBR), fluxo "Site ObraFácil" (criada em 22/11/2026).
 // Vazio = o Analytics não é carregado. A Política de Privacidade 2.0 já cita o Analytics.
-var MEDICAO_GA4 = '';
+var MEDICAO_GA4 = 'G-LQGBJYEWS7';
 if (MEDICAO_GA4) gtag('config', MEDICAO_GA4);
 
 // Cliques que contam como conversão: todo link com data-conversao (src/comecar.js e os botões das lojas e do PRO).
