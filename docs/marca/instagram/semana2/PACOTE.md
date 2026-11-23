@@ -1,7 +1,8 @@
 # Instagram do ObraFácil — pacote da semana 2 (24 a 30/11/2026)
 
-Agente: Claude (22/11/2026, noite). **Nada daqui foi agendado nem publicado.** O pacote passa pela aprovação do
-Francis; quem agenda é o Claude principal, depois do "sim" dele. Nenhum anúncio criado, nenhum dinheiro gasto.
+Agente: Claude (22/11/2026, noite). Aprovado pelo Francis em 22/11/2026, 20h21. **Agendado em 22–23/11/2026** (ver a
+seção 9): todos os stories, o carrossel e os 3 posts, no Instagram e no Facebook. O Reels de sábado não foi agendado
+(vai com música e em 1080p). Nenhum anúncio criado, nenhum dinheiro gasto.
 
 Prévia com todas as peças (dia a dia, zoom ao tocar, claro e escuro): `previa.html` gerada no scratchpad da sessão
 (o Claude principal publica). Imagens finais nesta pasta: `stories/` (39 telas 1080 × 1920) e `feed/` (carrossel e
@@ -262,8 +263,9 @@ Só para quem nunca assinou o PRO e só no Brasil. Depois do 1º mês, renova pe
 #gestaodeobras #diariodeobra #blackfriday #cybermonday #construcaocivil
 ```
 
-Reels: opcional. Pelo Business Suite sai em 720p e sem música (lição da semana 1). O MP4 ainda não foi exportado
-(design `DAHbrtUltAo`, 4 telas); se o Francis quiser, exportar 5 s por tela e publicar pelo celular com música.
+Reels: o Francis quer em boa qualidade e com música. MP4 exportado em 23/11 (1080 × 1920, 20 s, 4 telas de 5 s, sem
+som): `D:\Downloads\000_claude\marca_obrafacil\semana2\reels_s2_sabado_28-11_1080x1920.mp4`. Não foi agendado no
+Business Suite (lá sai em 720p e sem música). Ver a seção 9.
 
 ## 7. Conferência (skill instagram-obrafacil)
 
@@ -272,7 +274,7 @@ Reels: opcional. Pelo Business Suite sai em 720p e sem música (lição da seman
 - [x] Primeira linha de cada legenda com dor/benefício e palavra-chave (até 124 caracteres); um pedido só; 5 hashtags.
 - [x] Oferta escrita exatamente como aprovada; sem valor em reais; "termina hoje às 23h59" só na segunda.
 - [x] Imagens 1080 × 1920 e 1080 × 1350 exportadas e conferidas olhando (folha de contato).
-- [ ] "Sim" do Francis para textos, imagens e horários.
+- [x] "Sim" do Francis para textos, imagens e horários (22/11/2026, 20h21: "Aprovado").
 
 ## 8. Lições desta leva
 
@@ -286,3 +288,40 @@ Reels: opcional. Pelo Business Suite sai em 720p e sem música (lição da seman
 - Os prints da Central ficam no Storage de produção, que a rede não alcança; os prints locais de tela média
   (2007 × 2725) servem bem num aparelho "tablet" inclinado.
 - Texto do story com figurinha de link: deixar livre a faixa de 1000 a 1450 px (a tela 24 teve o texto subido para isso).
+
+## 9. Agendado (22–23/11/2026, 23h a 0h50, Meta Business Suite)
+
+Tudo conferido antes de programar: imagem (comparada com o arquivo original), ordem das telas, legenda igual à da
+seção 6, data e hora nos dois campos (Facebook e Instagram), endereço e texto de cada figurinha de link e as regras da
+Black Friday (50% no 1º mês do PRO mensal, de 27/11 0h a 30/11 23h59, só para quem nunca assinou e só no Brasil).
+Impulsionamento recusado ("Talvez mais tarde") em todos os posts. No fim, conferido no Planner (visão de semana): cada
+bloco aparece uma vez no Instagram e uma no Facebook.
+
+| Dia | Hora | Peça | Figurinha | IG | FB |
+| --- | --- | --- | --- | --- | --- |
+| Ter 24/11 | 6h30 | stories 1, 2, 3 | — | [x] | [x] |
+| Ter 24/11 | 12h00 | carrossel "Choveu na obra?" (7 telas) + legenda | — | [x] | [x] |
+| Ter 24/11 | 12h05 | stories 4, 5, 6 | — | [x] | [x] |
+| Ter 24/11 | 19h30 | stories 7, 8 | "Começar grátis" → site (tela 8) | [x] | [x] |
+| Qua 25/11 | 6h30 | stories 9, 10, 11 | — | [x] | [x] |
+| Qua 25/11 | 12h00 | stories 12, 13, 14 | — | [x] | [x] |
+| Qua 25/11 | 18h00 | post "Quanto a sua equipe tem a receber?" + legenda | — | [x] | [x] |
+| Qua 25/11 | 19h30 | stories 15, 16, 17 | "Começar grátis" → site (tela 17) | [x] | [x] |
+| Qui 26/11 | 6h30 | stories 18, 19, 20 | — | [x] | [x] |
+| Qui 26/11 | 12h00 | stories 21, 22 | — | [x] | [x] |
+| Qui 26/11 | 19h30 | stories 23, 24 | "Ver o PRO" → site `#precos` (tela 24) | [x] | [x] |
+| Sex 27/11 | 6h30 | stories 25, 26, 27 | "Mandar BLACK no direct" → `ig.me/m/oficial.obrafacil` (tela 26) | [x] | [x] |
+| Sex 27/11 | 8h00 | post "Black Friday · PRO 50% no 1º mês" + legenda | — | [x] | [x] |
+| Sex 27/11 | 12h00 | stories 28, 29, 30 | "Mandar BLACK no direct" (tela 30) | [x] | [x] |
+| Sex 27/11 | 19h30 | stories 31, 24 | "Mandar BLACK no direct" (tela 24) | [x] | [x] |
+| Sáb 28/11 | 8h00 | stories 32, 33 | "Mandar BLACK no direct" (tela 33) | [x] | [x] |
+| Sáb 28/11 | 10h00 | Reels | — | [ ] | [ ] |
+| Dom 29/11 | 10h00 | stories 34, 33 | "Mandar BLACK no direct" (tela 33) | [x] | [x] |
+| Seg 30/11 | 6h30 | stories 35, 36 | — | [x] | [x] |
+| Seg 30/11 | 12h00 | post "Termina hoje, 23h59" + legenda | — | [x] | [x] |
+| Seg 30/11 | 12h05 | stories 37, 38 | "Mandar BLACK no direct" (tela 38) | [x] | [x] |
+| Seg 30/11 | 19h30 | stories 39, 38 | "Mandar BLACK no direct" (tela 38) | [x] | [x] |
+
+Figurinhas de link: colocadas na faixa livre, entre cerca de 1140 e 1290 px da tela de 1920, abaixo do texto.
+Reels de sábado 10h: pendente, com música e em 1080p (o caminho está no relatório do agendamento e em
+`docs/marketing/INSTAGRAM.md` do gestao_obras, branch `instagram-semana2-agenda`).
